@@ -1,0 +1,17 @@
+/usr/sbin
+
+/usr/share/bubba-frontend
+/usr/share/web-admin
+/usr/share/web-admin/admin
+
+/var/log/web-admin
+/var/cache/web-admin
+
+/etc/apache2/conf.d
+/etc/apache2/sites-available
+
+/etc/init.d
+
+/etc/lighttpd/conf-available
+
+/etc/php5/cgi/conf.d

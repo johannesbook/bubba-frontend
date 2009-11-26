@@ -1,0 +1,415 @@
+<?php
+
+class Users extends Controller{
+
+	function Users(){
+		parent::Controller();
+		
+		require_once(APPPATH."/legacy/defines.php");
+		require_once(ADMINFUNCS);
+
+		$this->Auth_model->RequireUser('admin');
+
+		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
+	}
+
+	function _renderfull($content){
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
+		if($this->session->userdata('run_wizard')) {
+			$mdata["subnav"]="";
+			$mdata["content"]="";
+			$mdata["wizard"]=$content;
+		} else {
+			$mdata["subnav"]="";
+			$mdata["content"]=$content;
+			$mdata["wizard"]="";
+		}
+		$this->load->view(THEME.'/main_view',$mdata);
+	}
+	
+	function _get_uinfo() {
+
+		$userinfo=get_userinfo();
+
+		foreach($userinfo as $i => $value){
+			if($value["uid"]<1000 || $value["uid"]>60000){
+				unset($userinfo[$i]);
+				continue;
+			}
+			if($i=="admin"){
+				$userinfo[$i]["shell"]="";
+			}
+			
+			if(trim($value["shell"])=="/bin/bash"){
+				$userinfo[$i]["shell"]=true;;
+			}else{
+				$userinfo[$i]["shell"]=false;
+			}
+		}
+		return $userinfo;
+				
+	}	
+
+	function add($strip=""){
+		// if $strip == -1 $data will be returned and no view loaded.
+		
+		require_once(APPPATH."/legacy/user_auth.php");
+
+		$uname=$this->input->post("uname");
+		$realname=$this->input->post("realname");
+		$shell=$this->input->post("shell");
+		$pass1=$this->input->post("pass1");
+		$pass2=$this->input->post("pass2");
+
+		$lc_uname=strtolower($uname);
+	
+		$uinfo=get_userinfo();
+		
+		$data["uname"]=$uname;
+		$data["realname"]=$realname;
+		$data["shell"]=$shell;
+		
+		$data["success"]=false;
+		$data["usr_caseerr"]=false;
+		$data["usr_existerr"]=false;
+		$data["usr_nonameerr"]=false;
+		$data["usr_spacerr"]=false;
+		$data["pwd_charerr"]=false;
+		$data["usr_charerr"]=false;
+		$data["usr_longerr"]=false;
+		$data["pwd_mismatcherr"]=false;
+		
+		if ($lc_uname != $uname) {	
+			// Uppercase letters in username
+			$data["usr_caseerr"]=true;
+		}elseif (isset($uinfo[$uname])||$uname=="root"||$uname=="storage"||$uname=="web") {
+			// user already exists or is admin account
+			$data["usr_existerr"]=true;
+		}elseif ($uname == "") {
+			// No username given
+			$data["usr_nonameerr"]=true;
+		}elseif (count(explode(" ",$uname))!=1) {
+			// Username contains spaces
+			$data["usr_spacerr"]=true;		
+		}elseif (!preg_match('/^\w+$/',$pass1)){
+			// Illegal chars in passwd
+			$data["pwd_charerr"]=true;		
+		}elseif (!preg_match('/^[a-z0-9 _-]+$/',$uname)){
+			// Illegal chars in username
+			$data["usr_charerr"]=true;		
+		}elseif ( strlen($uname)>32){
+			// Username to long
+			$data["usr_longerr"]=true;
+		}elseif ($uname[0]=='-'){
+			// Illegal chars in username cant start with -
+			$data["usr_charerr"]=true;		
+		}else{
+			// data valid
+			if ((trim($pass1) == trim($pass2)) && (trim($pass1)!="" ||trim($pass2)!="")) {
+				$group="users";
+				if(add_user($realname,$group,$shell,$pass1,$uname)){
+				}else{
+					$data["success"]=true;
+				}
+			}else{
+				// Passwords dont match or passwd empty
+				$data["pwd_mismatcherr"]=true;
+			}
+		}
+		if($strip == -1) {
+			return $data;
+		} elseif($strip){		
+			$this->load->view(THEME.'/users/user_add_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_add_view',$data,true));
+		}
+	}	
+
+	function askdelete($strip=""){
+		$data["uname"]=$this->input->post("uname");
+		
+		if($strip){
+			$this->load->view(THEME.'/users/user_askdelete_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_askdelete_view',$data,true));
+		}
+	}
+
+	function dodelete($strip=""){
+		if(!$this->input->post("proceed") || !$this->input->post("uname")){
+			redirect("users");
+			exit();
+		}
+		$uname=$this->input->post("uname");
+		$userdata=$this->input->post("userdata");
+		
+		// TODO: fix this to only allow users with uid>999 to be deleted
+		if($uname=="root" || $uname=="admin"){		
+			print"User [$uname] is root or admin<br/>";			
+			//redirect("users");
+			exit();
+		}
+		$data["deluserdata"]=$userdata;
+		$data["delusersuccess"]=false;
+		$data["deldatasuccess"]=false;
+		$data["uname"]=$uname;
+		if(del_user($uname)==0){
+			$data["delusersuccess"]=true;
+			if($userdata){
+				if(rm("/home/$uname","root")==0){
+					$data["deldatasuccess"]=true;
+				}else{
+					$data["deldatasuccess"]=false;
+				}
+
+				try {
+					purge_horde( $uname );
+					$data["deldatasuccess"] |= true;
+				} catch( AdminException $e ) {
+					$data["deldatasuccess"] = false;
+				}
+			}
+		}else{
+			$data["delusersuccess"]=false;
+		}
+
+		if($strip){
+			$this->load->view(THEME.'/users/user_dodelete_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_dodelete_view',$data,true));
+		}
+	}	
+	
+	function chpwd($strip=""){
+		if(!$this->input->post("uname")){
+			redirect("users");
+			exit();
+		}
+		$data["uname"]=$this->input->post("uname");
+		if($strip){
+			$this->load->view(THEME.'/users/user_chpwd_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_chpwd_view',$data,true));
+		}
+	}
+
+	function dochpwd($strip=""){
+		$pass1 = $this->input->post("pass1");
+		$pass2 = $this->input->post("pass2");
+		$uname = $this->input->post("uname");
+		
+		$data["uname"]=$uname;
+		$data["mismatch"]=false;
+		$data["illegal"]=false;
+		$data["success"]=false;
+		$data["sambafail"]=false;
+		$data["passwdfail"]=false;
+
+		if (strcmp($pass1,$pass2)) {
+			// Passwords dont match
+			$data["mismatch"]=true;
+		}elseif( !preg_match('/^\w+$/',$pass1)){
+			// Password with illegal chars
+			$data["illegal"]=true;		
+		} else {
+			if(set_unix_password($uname,$pass1)==0){
+				if(set_samba_password($uname,$pass1,$pass2)==0){
+					// Success
+					$data["success"]=true;				
+				}else{
+					// Samba fail
+					$data["sambafail"]=true;		
+				}
+			}else{
+				// passwd fail
+				$data["passwdfail"]=true;
+			}
+		}
+		if($strip){
+			$this->load->view(THEME.'/users/user_dochpwd_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_dochpwd_view',$data,true));
+		}		
+	}
+
+	function update($strip=""){
+		$realname=$this->input->post("realname");
+		$shell=$this->input->post("shell")=="true"?"/bin/bash":"/sbin/nologin";
+		$uname=$this->input->post("uname");
+
+		if($uname=='admin') {
+			$remote = $this->input->post("remote");
+			if ($remote=="true") {
+				if($this->session->userdata("AllowRemote")) {
+					// do nothing already allowing remote access
+				} else {
+					update_bubbacfg("admin","AllowRemote","yes");
+					$this->session->set_userdata("AllowRemote", true);
+				}
+			} else {
+				if($this->session->userdata("AllowRemote")) {
+					update_bubbacfg("admin","AllowRemote","no");
+					$this->session->set_userdata("AllowRemote", false);
+				} else {
+					// do nothing already not allowing remote access
+				}
+			}				
+		}		
+		if( !update_user($realname,$shell,$uname)){
+			$data["result"]=true;
+		}else{
+			$data["result"]=false;
+		}
+		if($strip){
+			$this->load->view(THEME.'/users/user_update_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_update_view',$data,true));
+		}
+	}	
+	
+	function edit($strip=""){
+		require_once(APPPATH."/legacy/user_auth.php");
+		$uinfo=get_userinfo();
+
+		if(!isset($uinfo[$this->input->post("uname")])){
+			redirect("users");
+			exit();
+		}
+
+		$info=$uinfo[$this->input->post("uname")];
+		$info["uname"]=$this->input->post("uname");
+		if(trim($info["shell"])=="/bin/bash"){
+			$info["shell"]=true;
+		}else{
+			$info["shell"]=false;
+		}
+
+		if($strip){
+			$this->load->view(THEME.'/users/user_edit_view',$info);		
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_edit_view',$info,true));
+		}
+		
+	}	
+	
+	function index($strip=""){
+		require_once(APPPATH."/legacy/user_auth.php");
+		$userinfo=get_userinfo();
+
+		foreach($userinfo as $i => $value){
+			if($value["uid"]<1000 || $value["uid"]>60000){
+				unset($userinfo[$i]);
+				continue;
+			}
+			if($i=="admin"){
+				$userinfo[$i]["shell"]="";
+			}
+			
+			if(trim($value["shell"])=="/bin/bash"){
+				$userinfo[$i]["shell"]=true;;
+			}else{
+				$userinfo[$i]["shell"]=false;
+			}
+		}
+
+		$data["userinfo"]= $userinfo;
+		$data["uname"]=$this->input->post("uname")?$this->input->post("uname"):"";
+		$data["realname"]=$this->input->post("realname")?$this->input->post("realname"):"";
+		$data["shellyes"]=false;
+		$data["shellno"]=true;		
+		if($this->input->post("shell")){
+			if($this->input->post("shell")=="/bin/bash"){
+				$data["shellyes"]=true;
+				$data["shellno"]=false;
+			}
+		}
+		if($strip){
+			$this->load->view(THEME.'/users/user_list_view',$data);
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/users/user_list_view',$data,true));
+		}
+	}
+
+	function wizard($strip="") {
+	
+		require_once(APPPATH."/legacy/user_auth.php");
+
+
+		$data['wiz_data'] = $this->input->post('wiz_data');
+		if(isset($data['wiz_data']['back'])) {
+			redirect("/settings/wizard");
+		}
+
+		if(isset($data['wiz_data']['cancel'])) {
+			exit_wizard();
+		}
+		if(!$this->session->userdata("run_wizard")) {
+			redirect("/stat");
+		} else {
+			if(isset($data['wiz_data']['postingpage']) || isset($data['wiz_data']['adduser'])) {
+				// --- POSTPROCESSING USERS ----
+
+				//d_print_r("POSTPROCESS: users");
+				//d_print_r($data);
+				if( isset($data['wiz_data']['adduser']) ) {
+					// add user
+					$ret['info'] = $this->add(-1);
+					if(!$ret['info']['success']) {
+						//d_print_r($ret['info']);
+						$error = true;
+						$data['err']['uname'] = "";
+						$data['err']['pwd'] = "";
+						$data['uname'] = $ret['info']['uname'];
+						if($ret['info']['shell'] == "/bin/bash")
+							$data['shell'] = true;
+						$data['realname'] = $ret['info']['realname'];
+						if($ret['info']["usr_existerr"])
+							$data['err']['uname'] .= t("Error, user exists")."<br>";
+						if($ret['info']["usr_caseerr"])
+							$data['err']['uname'] .= t("Error, uppercase letters in username")."<br>";
+						if($ret['info']["usr_nonameerr"])
+							$data['err']['uname'] .= t("Error, no username")."<br>";
+						if($ret['info']["usr_spacerr"])
+							$data['err']['uname'] .= t("Error, space in username")."<br>";
+						if($ret['info']["usr_charerr"])
+							$data['err']['uname'] .= t("Error, illegal characters in username")."<br>";
+						if($ret['info']["usr_longerr"])
+							$data['err']['uname'] .= t("Error, username too long")."<br>";
+						if($ret['info']["pwd_charerr"])
+							$data['err']['pwd'] .= t("Error, illegal characters in password")."<br>";
+						if($ret['info']["pwd_mismatcherr"])
+							$data['err']['pwd'] .= t("Error, passwords do not match")."<br>";
+						if(!$data['err']['uname'])
+							unset($data['err']['uname']);
+						if(!$data['err']['pwd'])
+							unset($data['err']['pwd']);
+					}
+
+					// get userlist.
+					$data['wiz_data']['ulist'] = $this->_get_uinfo();
+
+				}
+			} else {
+				// --- PREPROCESSING USERS ----
+				//d_print_r("PREPROCESS: users");
+				// get userlist.
+				$data['wiz_data']['ulist'] = $this->_get_uinfo();
+			}
+			
+			if(  isset($error) ||
+			   (!isset($data['wiz_data']['postingpage'])) || 
+			   (isset($data['wiz_data']['adduser']))
+			  ) { // if error/add or called from "stat" controller load the same view again.
+				if($strip){
+					$this->load->view($this->load->view(THEME.'/users/user_wizard_view',$data));
+				}else{
+					$this->_renderfull($this->load->view(THEME.'/users/user_wizard_view',$data,true));
+				}
+			} else {
+				redirect("network/wizard");
+			}
+		}
+	}
+
+}
+?>

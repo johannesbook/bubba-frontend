@@ -1,0 +1,54 @@
+#!/bin/sh
+
+## ABSOLUTE path to the spawn-fcgi binary
+SPAWNFCGI="/usr/bin/spawn-fcgi"
+
+## ABSOLUTE path to the PHP binary
+FCGIPROGRAM="/usr/bin/php5-cgi"
+
+## bind to tcp-port on localhost
+FCGISOCKET="/var/lib/apache2/fastcgi/fcgi"
+
+## number of PHP childs to spawn in addition to the default. Minimum of 2.
+## Actual childs = PHP_FCGI_CHILDREN + 1
+PHP_FCGI_CHILDREN=2
+
+## number of request server by a single php-process until is will be restarted
+PHP_FCGI_MAX_REQUESTS=1000
+
+## IP adresses where PHP should access server connections from
+FCGI_WEB_SERVER_ADDRS="127.0.0.1"
+
+# allowed environment variables sperated by spaces
+ALLOWED_ENV="PATH USER"
+
+## if this script is run as root switch to the following user
+USERID=
+GROUPID=www-data
+
+################## no config below this line
+
+if test x$PHP_FCGI_CHILDREN = x; then
+  PHP_FCGI_CHILDREN=5
+fi
+
+export PHP_FCGI_MAX_REQUESTS
+export FCGI_WEB_SERVER_ADDRS
+export PHPRC
+
+ALLOWED_ENV="$ALLOWED_ENV PHP_FCGI_MAX_REQUESTS FCGI_WEB_SERVER_ADDRS PHPRC"
+
+# copy the allowed environment variables
+E=
+
+for i in $ALLOWED_ENV; do
+  E="$E $i=$(eval echo "\$$i")"
+done
+
+umask 0002
+# clean environment and set up a new one
+env - $E $SPAWNFCGI -s $FCGISOCKET -f $FCGIPROGRAM  -g $GROUPID -C $PHP_FCGI_CHILDREN -P /var/run/admin.pid
+umask 0022
+
+chmod 770 $FCGISOCKET
+
