@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.10) claire; urgency=low
+
+  * updating builddepends
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 27 Nov 2009 13:35:16 +0100
+
 bubba-frontend (1.2.4.9) claire; urgency=low
 
   * Use "native" get wlan interface method 
