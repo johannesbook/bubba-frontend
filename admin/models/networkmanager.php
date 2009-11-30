@@ -213,6 +213,14 @@ class NetworkManager extends Model {
 
 		_system( FIREWALL, 'set_lanif', $if );
 		_system( BACKEND, 'set_samba_interface', $if );
+
+		// TODO: Refactor into separate function
+		$dnsmasqcfg=get_dnsmasq_settings();
+		$dnsmasqcfg["interface"]=$if;
+		configure_dnsmasq($dnsmasqcfg);
+		stop_service("dnsmasq");
+		start_service("dnsmasq");
+		
 		$cfg = array(
 			'cmd'		=> 'setlanif',
 			'lanif'		=> $if
