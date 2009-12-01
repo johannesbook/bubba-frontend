@@ -197,6 +197,7 @@ class NetworkManager extends Model {
 		return $this->ifcfg[$interface];
 	}
 
+
 	public function exists_wlan_card() {
 		$cfg = array(
 			'cmd'		=> 'haswlan',
@@ -231,7 +232,19 @@ class NetworkManager extends Model {
 		return $data['status'];
 	}
 
+	private function _setapif($iface){
+		$cfg = array(
+			'cmd'		=> 'setapif',
+			'ifname'	=> $iface,
+		);
+		$data = query_network_manager( $cfg );
+		return $data['status'];
+	}
+
 	public function enable_wlan() {
+		// Make sure we use "right" wlan-if
+		$this->_setapif($this->get_wlan_interface());
+
 		$this->set_lanif('br0');
 		if( !query_service( 'hostapd' ) ) {
 			add_service( 'hostapd' );
