@@ -76,10 +76,10 @@ function validate_ip_range( $range_start, $range_end, $local_ip, $local_mask ) {
 
 	// check that start range is in correct network.
 	$wanted_network = array(
-		(int)$rstart[0] & (int)$local_mask[0],
-		(int)$rstart[1] & (int)$local_mask[1],
-		(int)$rstart[2] & (int)$local_mask[2],
-		(int)$rstart[3] & (int)$local_mask[3]
+		(int)$range_start[0] & (int)$local_mask[0],
+		(int)$range_start[1] & (int)$local_mask[1],
+		(int)$range_start[2] & (int)$local_mask[2],
+		(int)$range_start[3] & (int)$local_mask[3]
 	);
 	if(  
 		($local_network[0] != $wanted_network[0]) || 

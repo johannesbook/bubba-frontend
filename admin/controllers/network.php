@@ -50,14 +50,12 @@ class Network extends Controller{
 		$data["err_mask"] = false;
 		$data["err_dns"] = false;
 
-
-
-		$ifc=get_networkconfig();
+		$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
 		$data["dhcp"]=$ifc["dhcp"];
-		$oip = parse_ip( $ifc[0] );
-		$omask = parse_ip( $ifc[1] );		
-		$ogw = parse_ip( $ifc[2] );		
-		$odns = parse_ip( $ifc[3] );
+		$oip = parse_ip( $ifc["address"] );
+		$omask = parse_ip( $ifc["netmask"] );		
+		$ogw = parse_ip( $ifc["gateway"] );		
+		$odns = parse_ip( $ifc["dns"] );
 
 		// Has the user changed network configuration?	
 		if ( $netcfg=="static" ) {
@@ -70,10 +68,14 @@ class Network extends Controller{
 				// No change of ip
 				//Did they change from dhcp
 				if($data["dhcp"]){
-					set_static_netcfg($this->networkmanager->get_wan_interface(),"$ip[0].$ip[1].$ip[2].$ip[3]",
-						"$mask[0].$mask[1].$mask[2].$mask[3]",
-						"$gw[0].$gw[1].$gw[2].$gw[3]");
-					set_nameserver("$dns[0].$dns[1].$dns[2].$dns[3]");
+					$cfg=array(
+						"address"=>array("$ip[0].$ip[1].$ip[2].$ip[3]"),
+						"netmask"=>array("$mask[0].$mask[1].$mask[2].$mask[3]"),
+						"gateway"=>array("$gw[0].$gw[1].$gw[2].$gw[3]"));
+					$this->networkmanager->setstatic($this->networkmanager->get_wan_interface(),$cfg);
+						
+					$this->networkmanager->setns(array("servers"=>array("$dns[0].$dns[1].$dns[2].$dns[3]")));
+
 					$restart_network=true;
 					$data["dhcp"] = false;	
 				}
@@ -95,10 +97,14 @@ class Network extends Controller{
 					$data["err_mask"]=$err=true;
 				}
 				if(!$err){
-					set_static_netcfg($this->networkmanager->get_wan_interface(),"$ip[0].$ip[1].$ip[2].$ip[3]",
-						"$mask[0].$mask[1].$mask[2].$mask[3]",
-						"$gw[0].$gw[1].$gw[2].$gw[3]");
-					set_nameserver("$dns[0].$dns[1].$dns[2].$dns[3]");
+					$cfg=array(
+						"address"=>array("$ip[0].$ip[1].$ip[2].$ip[3]"),
+						"netmask"=>array("$mask[0].$mask[1].$mask[2].$mask[3]"),
+						"gateway"=>array("$gw[0].$gw[1].$gw[2].$gw[3]"));
+					$this->networkmanager->setstatic($this->networkmanager->get_wan_interface(),$cfg);
+						
+					$this->networkmanager->setns(array("servers"=>array("$dns[0].$dns[1].$dns[2].$dns[3]")));
+
 					$restart=true;
 				}else{
 					$data["success"]=false;
@@ -110,20 +116,21 @@ class Network extends Controller{
 			if($data["dhcp"]){
 			}else{
 				// User changed from static to dynamic ip
-
-				set_dynamic_netcfg($this->networkmanager->get_wan_interface());
+				$this->networkmanager->setdynamic($this->networkmanager->get_wan_interface());
 				$restart=true;
 			}
-			$ifc=get_networkconfig();
-			$data["oip"] = parse_ip( $ifc[0] );
-			$data["omask"] = parse_ip( $ifc[1] );		
-			$data["ogw"] = parse_ip( $ifc[2] );		
-			$data["odns"] = parse_ip( $ifc[3] );
+
+			$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
+
+			$data["oip"] = parse_ip( $ifc["address"] );
+			$data["omask"] = parse_ip( $ifc["netmask"] );		
+			$data["ogw"] = parse_ip( $ifc["gateway"] );		
+			$data["odns"] = parse_ip( $ifc["dns"] );
 			$data["dhcp"]=$ifc["dhcp"];	
 
 		}
 		if($restart) {
-			restart_network($this->networkmanager->get_wan_interface());
+			$this->networkmanager->ifrestart($this->networkmanager->get_wan_interface());
 		}
 		$this->_renderfull($this->load->view(THEME.'/network/network_wan_view.php',$data,true));
 
@@ -148,7 +155,7 @@ class Network extends Controller{
 		$data["jumbo"]=$this->input->post('jumbo');;
 
 		// Check mtu change
-		$mtu=get_mtu();
+		$mtu=$this->networkmanager->get_mtu($this->networkmanager->get_lan_interface());
 		if($mtu!=9000 && $data["jumbo"]){
 			// Turn jumbo on
 			set_mtu(9000);
@@ -158,12 +165,12 @@ class Network extends Controller{
 		}
 
 		// Get original config
-		$lifc=get_networkconfig($this->networkmanager->get_lan_interface());
+		$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
 
-		$ip = parse_ip( $lifc[0] );
-		$mask = parse_ip( $lifc[1] );
-		$gw = parse_ip( $lifc[2] );
-		$dns = parse_ip( $lifc[3] );
+		$ip = parse_ip( $lifc["address"] );
+		$mask = parse_ip( $lifc["netmask"] );
+		$gw = parse_ip( $lifc["gateway"] );
+		$dns = parse_ip( $lifc["dns"] );
 
 		// LAN IP settings
 		if(strcmp($this->input->post('netcfg'),"static")) {  // inverted match
@@ -172,7 +179,7 @@ class Network extends Controller{
 			if($lifc["dhcp"]){
 			}else{
 				// User changed from static to dynamic ip
-				set_dynamic_netcfg($this->networkmanager->get_lan_interface());
+				$this->networkmanager->setdynamic($this->networkmanager->get_lan_interface());
 				$restart = true;
 			}
 		} else {
@@ -203,10 +210,19 @@ class Network extends Controller{
 					d_print_r("Config changed");
 					// config changed
 					if($data["olgw"] && $data["oldns"]) {
-						set_static_netcfg($this->networkmanager->get_lan_interface(),implode(".",$data["olip"]),implode(".",$data["olmask"]),implode(".",$data["olgw"]));
-						set_nameserver(implode(".",$data["oldns"]));
+						$cfg=array(
+							"address"=>array(implode(".",$data["olip"])),
+							"netmask"=>array(implode(".",$data["olmask"])),
+							"gateway"=>array(implode(".",$data["olgw"])));
+						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
+						
+						$this->networkmanager->setns(array("servers"=>array(implode(".",$data["oldns"]))));
 					} else {
-						set_static_netcfg($this->networkmanager->get_lan_interface(),implode(".",$data["olip"]),implode(".",$data["olmask"]),"0.0.0.0");
+						$cfg=array(
+							"address"=>array(implode(".",$data["olip"])),
+							"netmask"=>array(implode(".",$data["olmask"])),
+							"gateway"=>array("0.0.0.0"));
+						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
 					}
 					$restart = true;
 				}
@@ -214,10 +230,10 @@ class Network extends Controller{
 		}
 		if($restart) {
 			//print "Restart called for.";
-			restart_network($this->networkmanager->get_lan_interface());
-			$lifc=get_networkconfig($this->networkmanager->get_lan_interface());
-			$data["olip"] = parse_ip( $lifc[0] );
-			$data["olmask"] = parse_ip( $lifc[1] );
+			$this->networkmanager->ifrestart($this->networkmanager->get_lan_interface());
+			$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
+			$data["olip"] = parse_ip( $lifc["address"] );
+			$data["olmask"] = parse_ip( $lifc["netmask"] );
 		}
 		// DNSMASQ settings
 		$dnsmasq = $this->input->post('dnsmasq');
@@ -243,8 +259,8 @@ class Network extends Controller{
 			}		
 		}	
 
-		$data["olgw"] = parse_ip( $lifc[2] );		
-		$data["oldns"] = parse_ip( $lifc[3] );
+		$data["olgw"] = parse_ip( $lifc["gateway"] );		
+		$data["oldns"] = parse_ip( $lifc["dns"] );
 
 		$data["dhcpd_leases"] = get_leases();
 
@@ -644,24 +660,18 @@ class Network extends Controller{
 	}
 
 	function wan($strip=""){
-		// get current network configuration
-		//		if($data["dhcp"]=$this->_check_dhcp($this->networkmanager->get_wan_interface())) { // dhcp, read from "ifconfig"
-		$ifc=get_networkconfig();
-		//		} else {		
-		//			$ifc=get_networkconfig($this->networkmanager->get_wan_interface(),"interfaces");
-		//		}
-		$data["oip"] = parse_ip( $ifc[0] );
-		$data["omask"] = parse_ip( $ifc[1] );		
-		$data["ogw"] = parse_ip( $ifc[2] );		
-		$data["odns"] = parse_ip( $ifc[3] );
+		$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
+
+		$data["oip"] = parse_ip( $ifc["address"] );
+		$data["omask"] = parse_ip( $ifc["netmask"] );		
+		$data["ogw"] = parse_ip( $ifc["gateway"] );		
+		$data["odns"] = parse_ip( $ifc["dns"] );
 		$data["dhcp"]=$ifc["dhcp"];	
-		//$data["dhcp"]=$this->_check_dhcp($this->networkmanager->get_wan_interface());
+
 		$data["err_ip"] = false;
 		$data["err_gw"] = false;
 		$data["err_mask"] = false;
 		$data["err_dns"] = false;
-
-
 
 		if($strip){
 			$this->load->view(THEME.'/network/network_wan_view.php',$data);
@@ -671,10 +681,10 @@ class Network extends Controller{
 	}
 
 	function lan($strip=""){
-		$lifc=get_networkconfig($this->networkmanager->get_lan_interface());
+		$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
 		$data["dhcp"] = $lifc["dhcp"];
 		$data["dhcp"]?$data["disabled"]="DISABLED":$data["disabled"]="";
-		$data["jumbo"]=get_mtu()==9000?true:false;
+		$data["jumbo"]=$this->networkmanager->get_mtu($this->networkmanager->get_lan_interface())==9000?true:false;
 
 		$data["dnsmasq_settings"]=get_dnsmasq_settings();
 		if($data["dhcp"]) {
@@ -683,10 +693,10 @@ class Network extends Controller{
 		$data["dhcpd_leases"] = get_leases();
 
 		if(count($lifc)>0){
-			$data["olip"] = parse_ip( $lifc[0] );
-			$data["olmask"] = parse_ip( $lifc[1] );
-			$data["olgw"] = parse_ip( $lifc[2] );		
-			$data["oldns"] = parse_ip( $lifc[3] );
+			$data["olip"] = parse_ip( $lifc["address"] );
+			$data["olmask"] = parse_ip( $lifc["netmask"] );
+			$data["olgw"] = parse_ip( $lifc["gateway"] );
+			$data["oldns"] = parse_ip( $lifc["dns"] );
 			$data["success"]=true;
 			$data["updated"]=false;
 		}else{

@@ -123,6 +123,7 @@ class NetworkManager extends Model {
 		return $a_ret;
 
 	}
+
 	function apply_profile($profile,$status) {
 
 		//d_print_r("Applying profile: $profile");
@@ -197,6 +198,110 @@ class NetworkManager extends Model {
 		return $this->ifcfg[$interface];
 	}
 
+	private function _getfirstnameserver(){
+		$data = query_network_manager( array("cmd" => "getnameservers") );
+		if($data["status"] && count($data["resolv"]["servers"])>0){
+			return $data["resolv"]["servers"][0];
+		}else{
+			return Null;
+		}
+	}
+
+	private function _getdefaultroute(){
+		$data = query_network_manager( array("cmd" => "getdefaultroute") );
+		if($data["status"]){
+			return $data["gateway"];
+		}else{
+			return Null;
+		}
+	}
+
+	public function get_networkconfig($interface){
+		$ret=array(
+			"gateway"=>"0.0.0.0",
+			"dns"=>"0.0.0.0",
+			"address"=>"0.0.0.0",
+			"netmask"=>"0.0.0.0",
+			"dhcp"=>false);
+
+		$iface=$this->_getifcfg($interface);
+
+		if($iface["config"]["ethernet"]["current"]["flags"]["up"]){
+			$ret["address"]=$iface["config"]["ethernet"]["current"]["address"];
+			$ret["netmask"]=$iface["config"]["ethernet"]["current"]["netmask"];
+		}elseif ($iface["config"]["ethernet"]["addressing"]=="static"){
+			$ret["address"]=$iface["config"]["ethernet"]["config"]["address"][0];
+			$ret["netmask"]=$iface["config"]["ethernet"]["config"]["netmask"][0];
+		}
+		$ns=$this->_getfirstnameserver();
+		if($ns!=Null){
+			$ret["dns"]=$ns;
+		}
+		$gw=$this->_getdefaultroute();
+		if($gw!=Null){
+			$ret["gateway"]=$gw;
+		}
+		$ret["dhcp"]=($iface["config"]["ethernet"]["addressing"]=="dhcp")?1:0;
+
+		return $ret;
+	}
+
+	public function get_mtu($interface){
+		$data = query_network_manager( array("cmd"=>"getmtu", "ifname"=>$interface));
+
+		if($data["status"]){
+			return $data["mtu"];
+		}else{
+			return Null;
+		}
+	}
+
+	public function ifrestart($interface){
+		$data = query_network_manager( array(
+			"cmd"=>"ifrestart", 
+			"ifname"=>$interface));
+
+		return $data["status"];
+	}
+
+	public function getns(){
+		$data = query_network_manager( array("cmd"=>"getnameservers"));
+
+		if($data["status"]){
+			return $data["resolv"];
+		}else{
+			return Null;
+		}
+	}
+
+	public function setns($config){
+		$data = query_network_manager( array(
+			"cmd"=>"setnameservers", 
+			"resolv"=>$config));
+		return $data["status"];
+	}
+
+	public function setdynamic($interface, $config=array()){
+		$config["#not"]="empty";
+		$cmd= array(
+			"cmd"=>"setdynamiccfg", 
+			"ifname"=>$interface,
+			"config"=>$config);
+		print_r($cmd);
+		$data = query_network_manager($cmd);
+
+		print_r($data);
+		return $data["status"];
+	}
+
+	public function setstatic($interface, $config){
+		$data = query_network_manager( array(
+			"cmd"=>"setstaticcfg", 
+			"ifname"=>$interface,
+			"config"=>$config));
+
+		return $data["status"];
+	}
 
 	public function exists_wlan_card() {
 		$cfg = array(

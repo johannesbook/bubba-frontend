@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.13) claire; urgency=low
+
+  * Network manager integration.
+
+ -- Tor Krill <tor@excito.com>  Wed, 09 Dec 2009 21:16:17 +0100
+
 bubba-frontend (1.2.4.12) claire; urgency=low
 
   * Preconfigure ap with right if. 
