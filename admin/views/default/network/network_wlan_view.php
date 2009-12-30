@@ -57,11 +57,16 @@
 
 <tr>
 	<td><label for="channel"><?=t("Channel")?></label></td>
-	<td><select id="channel" name="channel" title="<?=t("The channel to use")?>">
+    <td>
+    <select id="band<?=$band?>_channel" name="channel" title="<?=t("The channel to use")?>">
+<?foreach($bands as $band => $channels):?>
+    <optgroup label="Band <?=$band?>">
 <?foreach($channels as $channel):?>
-	<option value="<?=$channel?>" <?if($channel == $current_channel):?>selected="selected"<?endif?>><?=t("wlan_title_channel", $channel)?></option>
+	    <option value="<?=$channel?>" <?if($channel == $current_channel):?>selected="selected"<?endif?>><?=t("wlan_title_channel", $channel)?></option>
 <?endforeach?>
-	</select>
+    </optgroup>
+<?endforeach?>
+    </select>
 	</td>
 </tr>
 

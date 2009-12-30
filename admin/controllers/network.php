@@ -184,9 +184,6 @@ class Network extends Controller{
 			}
 		} else {
 			// static is selected
-			d_print_r("STATIC selected");
-			d_print_r($ip);
-			d_print_r($data["olip"]);
 			$data["dhcp"] = false;
 			if(!validate_ip($data["olip"])){
 				$data["err_ip"]=true;
@@ -207,7 +204,6 @@ class Network extends Controller{
 					($gw!=$data["olgw"]) ||
 					($dns!=$data["oldns"])
 				){
-					d_print_r("Config changed");
 					// config changed
 					if($data["olgw"] && $data["oldns"]) {
 						$cfg=array(
@@ -722,8 +718,12 @@ class Network extends Controller{
 		$data['encryptions'] = $this->networkmanager->get_available_wlan_encryptions();
 		$data['current_encryption'] = $this->networkmanager->get_current_wlan_encryption();
 		$data['encryption_key'] = $this->networkmanager->get_wlan_encryption_key();
-		$data['channels'] = $this->networkmanager->get_wlan_available_channels();
-		$data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
+        try {
+		$data['bands'] = $this->networkmanager->get_wlan_available_channels();
+        } catch( Exception $e ) {
+            $data['bands'] = array();
+        }
+        $data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
 		if($strip){
 			$this->load->view(THEME.'/network/network_wlan_view.php',$data);
 		}else{

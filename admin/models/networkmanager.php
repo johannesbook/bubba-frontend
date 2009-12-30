@@ -503,9 +503,25 @@ class NetworkManager extends Model {
 		return "";
 	}
 
-	public function get_wlan_available_channels( $country = null ) {
-		# TODO implement
-		return range(1,13);
+	public function get_wlan_available_channels( $phy = 'phy0' ) {
+		$cfg = array(
+			'cmd'			=> 'getphybands',
+			'phy'	    	=> $phy,
+		);
+		$data = query_network_manager( $cfg );
+        if( $data['status'] ) {
+            $bands = array();
+            foreach( $data['bands'] as $band => $channels ) {
+                foreach( $channels as $channel ) {
+                    if( ! isset($channel["disabled"]) || $channel["disabled"] != "true" ) {
+                        $bands[$band][] = $channel["channel"];
+                    }
+                }
+            }
+            return $bands;
+        } else {
+            throw new Exception($data["error"]); 
+        } 
 	}
 
 	public function get_wlan_current_channel() {
