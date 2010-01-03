@@ -525,7 +525,7 @@ class Filemanager extends Controller{
 		$data["files"]=array();
 		$data["dirs"]=array();
 		$data["user"]=$user;
-		$data["ftd_running"]=!query_service("filetransferdaemon");
+		$data["ftd_running"]=query_service("filetransferdaemon");
 		$data["pictures"] = $in_pic_dir && $user!="admin";
 
 		$out = ls($user,"$path");

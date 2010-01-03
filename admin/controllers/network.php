@@ -315,7 +315,7 @@ class Network extends Controller{
 				}
 
 				if ($restartsamba){
-					if(!query_service("samba")){
+					if(query_service("samba")){
 						restart_samba();
 					}
 				}

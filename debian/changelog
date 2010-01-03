@@ -1,8 +1,10 @@
 bubba-frontend (1.2.4.15) claire; urgency=low
 
   * Fixed read out network config when if was down. 
+  * Refactored all code to use query_service in the same way as 
+    service_running. It now returns true if service is enabled 
 
- -- Tor Krill <tor@excito.com>  Thu, 10 Dec 2009 23:19:53 +0100
+ -- Tor Krill <tor@excito.com>  Sun, 03 Jan 2010 15:38:04 +0100
 
 bubba-frontend (1.2.4.14) karmic; urgency=low
 

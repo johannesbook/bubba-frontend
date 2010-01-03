@@ -347,6 +347,11 @@ class NetworkManager extends Model {
 	}
 
 	public function enable_wlan() {
+		// Dont enable if up and running
+		if( query_service( 'hostapd' ) && service_running( 'hostapd' )){
+			return;
+		} 
+
 		// Make sure we use "right" wlan-if
 		$this->_setapif($this->get_wlan_interface());
 
