@@ -734,6 +734,7 @@ class Network extends Controller{
 		}
 	}
 
+	// TODO: should only act on changes. not blindly set values.
 	function wlanupdate($strip=""){
 
 		$enabled = $this->input->post('enabled');
@@ -768,19 +769,27 @@ class Network extends Controller{
 			redirect( 'network/wlan' );
 		}
 
-		if( $enabled ) {
-			$this->networkmanager->enable_wlan();
-		} else {
-			$this->networkmanager->disable_wlan();
-		}
-
-
 		$this->networkmanager->set_wlan_ssid( $this->networkmanager->get_wlan_interface(), $ssid );
 		$this->networkmanager->set_wlan_mode( $this->networkmanager->get_wlan_interface(), $mode );
 		$this->networkmanager->set_wlan_channel( $this->networkmanager->get_wlan_interface(), $channel );
 		
 		# TODO wep defaultkey
 		$this->networkmanager->set_wlan_encryption( $this->networkmanager->get_wlan_interface(), $encryption, array( $password ), 0 );
+
+		$restart = $enabled && service_running("hostapd");
+
+		if( $enabled ) {
+			$this->networkmanager->enable_wlan();
+		} else {
+			$this->networkmanager->disable_wlan();
+		}
+
+		// Restart hostapd to make sure we are in a consistent mode
+		if($restart){
+			stop_service("hostapd");
+			sleep(1);
+			start_service("hostapd");
+		} 
 
 		redirect( 'network/wlan' );
 

@@ -58,7 +58,7 @@
 <tr>
 	<td><label for="channel"><?=t("Channel")?></label></td>
     <td>
-    <select id="band<?=$band?>_channel" name="channel" title="<?=t("The channel to use")?>">
+    <select id="channel" name="channel" title="<?=t("The channel to use")?>">
 <?foreach($bands as $band => $channels):?>
     <optgroup label="Band <?=$band?>">
 <?foreach($channels as $channel):?>

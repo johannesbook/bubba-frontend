@@ -1,3 +1,10 @@
+bubba-frontend (1.2.4.16) claire; urgency=low
+
+  * Added a restart of hostapd when reconfiguring
+  * Fixed bug in wlan_view that rendered config useless 
+
+ -- Tor Krill <tor@excito.com>  Sun, 03 Jan 2010 23:12:59 +0100
+
 bubba-frontend (1.2.4.15) claire; urgency=low
 
   * Fixed read out network config when if was down. 

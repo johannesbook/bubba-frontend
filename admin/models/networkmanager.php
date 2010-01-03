@@ -355,7 +355,10 @@ class NetworkManager extends Model {
 		// Make sure we use "right" wlan-if
 		$this->_setapif($this->get_wlan_interface());
 
-		$this->set_lanif('br0');
+		if($this->get_lan_interface()!="br0"){
+			$this->set_lanif('br0');
+		}
+		
 		if( !query_service( 'hostapd' ) ) {
 			add_service( 'hostapd' );
 		}
@@ -365,7 +368,15 @@ class NetworkManager extends Model {
 	}
 
 	public function disable_wlan() {
-		$this->set_lanif('eth1');
+		// Dont disable if not up and running
+		if( !query_service("hostapd") && !service_running( "hostapd") ){
+			return;
+		}
+
+		if($this->get_lan_interface()!="eth1"){
+			$this->set_lanif('eth1');
+		}
+
 		if( service_running( 'hostapd' ) ) {
 			stop_service( 'hostapd' );
 		}
