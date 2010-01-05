@@ -191,10 +191,7 @@ class NetworkManager extends Model {
 	public function set_lanif( $if ) {
 
 		_system( FIREWALL, 'set_lanif', $if );
-		_system( BACKEND, 'set_samba_interface', $if );
-		_system( BACKEND, 'set_mediatomb_interface', $if );
-		_system( BACKEND, 'set_cups_interface', $if );
-		_system( BACKEND, 'set_dhclient_conf_interface', $if );
+		_system( BACKEND, 'set_interface', $if );
 
 		// TODO: Refactor into separate function
 		$dnsmasqcfg=get_dnsmasq_settings();
