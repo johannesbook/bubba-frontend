@@ -789,7 +789,7 @@ class Network extends Controller{
 			|| $channel <= 0
 			|| ( 
 				$encryption == 'wep' 
-				&& in_array( strlen( $password ), array( 5, 13, 16 ) ) 
+				&& !in_array( strlen( $password ), array( 5, 13, 16 ) ) 
 			)
 			|| (
 				in_array( $encryption , array( 'wpa1', 'wpa2', 'wpa12' ) )

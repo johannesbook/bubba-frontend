@@ -1,3 +1,25 @@
+bubba-frontend (1.2.4.19) claire estelle; urgency=low
+
+  [ Carl Fürstenberg ]
+  * adding calls to interface set functions 
+
+  [ PA Nilsson ]
+  * Updated network UI with "auto" profile.
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 05 Jan 2010 16:51:59 +0100
+
+bubba-frontend (1.2.4.18) karmic; urgency=low
+
+  * fix logic in WEP validation 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 04 Jan 2010 17:23:32 +0100
+
+bubba-frontend (1.2.4.17) claire estelle; urgency=low
+
+  * Testing multiple distributions 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 04 Jan 2010 11:30:24 +0100
+
 bubba-frontend (1.2.4.16) claire; urgency=low
 
   * Added a restart of hostapd when reconfiguring
