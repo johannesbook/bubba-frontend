@@ -132,10 +132,6 @@ fieldset.fld_settings {
 	width : 100%;
 }
 
-.cursor_wait {
-	cursor : wait;
-}
-
 div#backup_header {
 	background-color:#404040;
 	text-align:left;

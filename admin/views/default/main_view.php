@@ -21,7 +21,7 @@ if(isset($head)) {
 	
 $(document).ready(function(){
 	// Make a striped effect on tables in content
-	$('table').stripe();
+	$('table:not(.blank)').stripe();
 	<?
 	if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])) {
 		// run specific code for Opera here
@@ -61,9 +61,6 @@ $(document).ready(function(){
 			<div class="segment">
 				<div id="sub_nav">
 					<?=$subnav?>
-				</div>
-				<div id="breadcrumbs">
-					<img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba-two-logo.gif" alt="image" width="72" height="16" />
 				</div>
 				<div class="clear"></div>
 				<?

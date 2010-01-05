@@ -3,10 +3,14 @@
 function parse_ip( $ip ) {
 	if( !is_array( $ip ) ) {
 		$ip = explode( '.', $ip );
-		foreach( $ip as &$i ) {
-			$i = (int)$i;
+		if(sizeof($ip)==4) {
+			foreach( $ip as &$i ) {
+				$i = (int)$i;
+			}
+			unset( $i );
+		} else {
+		$ip = array(0,0,0,0);
 		}
-		unset( $i );
 	}
 
 	return $ip;

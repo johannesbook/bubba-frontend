@@ -34,6 +34,15 @@ class Network extends Controller{
 
 	function wanupdate($strip=""){
 
+		if ($this->session->userdata("network_profile") == "router") {
+			$data["disable_gw"] = 0;
+		} else {
+			if( $this->session->userdata("network_profile") != "server" ) {
+				$data['disable_network'] = true;
+			}
+			$data["disable_gw"] = 1;
+		}			
+
 		// treat any user-updates as "custom".
 		update_bubbacfg($this->session->userdata("user"),'network_profile','custom');
 		$this->session->set_userdata("network_profile", "custom");      
@@ -120,7 +129,7 @@ class Network extends Controller{
 				$restart=true;
 			}
 
-			$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
+			$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface(),true); // force reread network config
 
 			$data["oip"] = parse_ip( $ifc["address"] );
 			$data["omask"] = parse_ip( $ifc["netmask"] );		
@@ -138,14 +147,23 @@ class Network extends Controller{
 
 	function lanupdate($strip=""){
 
+		if ($this->session->userdata("network_profile") == "server") {
+			$data["disable_gw"] = 0;
+		} else {
+			if( $this->session->userdata("network_profile") != "router" ) {
+				$data['disable_network'] = true;
+			}
+			$data["disable_gw"] = 1;
+		}
+
 		$restart = false;		
-		$data["success"]=true;
+		$data["success"]="success";
 		$data["err_ip"]=false;
 		$data["err_netmask"]=false;
 		$data["err_dnsmasq"]["dns"]=false;
 		$data["err_dnsmasq"]["dhcpd"]=false;		
 		$data["err_dnsmasq"]["dhcpdrange"]=false;
-		$data["updated"]=true;
+		$data["update"]=true;
 
 		// Get post
 		$data["olip"]=$this->input->post("ip");
@@ -225,9 +243,8 @@ class Network extends Controller{
 			}
 		}
 		if($restart) {
-			//print "Restart called for.";
 			$this->networkmanager->ifrestart($this->networkmanager->get_lan_interface());
-			$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
+			$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface(),true);  // force reread network config
 			$data["olip"] = parse_ip( $lifc["address"] );
 			$data["olmask"] = parse_ip( $lifc["netmask"] );
 		}
@@ -262,13 +279,11 @@ class Network extends Controller{
 
 
 		$data["dhcp"]?$data["disabled"]="DISABLED":$data["disabled"]="";
-
-		if($data["success"]) {
-			// treat any user-updates as "custom".
-			update_bubbacfg($this->session->userdata("user"),'network_profile','custom');
-			$this->session->set_userdata("network_profile", "custom");
+		if(!$data["success"]) {
+			$data['update_msg'] = t("Error applying settings");
+		} else {
+			$data['update_msg'] = t("LAN configuration updated");
 		}
-		
 		if($strip){
 			$this->load->view(THEME.'/network/network_lan_view.php',$data);
 		}else{
@@ -657,6 +672,15 @@ class Network extends Controller{
 
 	function wan($strip=""){
 		$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
+		
+		if ($this->session->userdata("network_profile") == "router") {
+			$data["disable_gw"] = 0;
+		} else {
+			if( $this->session->userdata("network_profile") != "server" ) {
+				$data['disable_network'] = true;
+			}
+			$data["disable_gw"] = 1;
+		}			
 
 		$data["oip"] = parse_ip( $ifc["address"] );
 		$data["omask"] = parse_ip( $ifc["netmask"] );		
@@ -677,6 +701,16 @@ class Network extends Controller{
 	}
 
 	function lan($strip=""){
+		
+		if ($this->session->userdata("network_profile") == "server") {
+			$data["disable_gw"] = 0;
+		} else {
+			if( $this->session->userdata("network_profile") != "router" ) {
+				$data['disable_network'] = true;
+			}
+			$data["disable_gw"] = 1;
+		}
+		
 		$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
 		$data["dhcp"] = $lifc["dhcp"];
 		$data["dhcp"]?$data["disabled"]="DISABLED":$data["disabled"]="";
@@ -694,7 +728,6 @@ class Network extends Controller{
 			$data["olgw"] = parse_ip( $lifc["gateway"] );
 			$data["oldns"] = parse_ip( $lifc["dns"] );
 			$data["success"]=true;
-			$data["updated"]=false;
 		}else{
 			$data["success"]=false;
 			$data["err_iface"]=true;
@@ -703,6 +736,8 @@ class Network extends Controller{
 			$data["olgw"]="";		
 			$data["oldns"]="";
 		}
+
+		$data["update"]=0;
 		if($strip){
 			$this->load->view(THEME.'/network/network_lan_view.php',$data);
 		}else{
@@ -831,7 +866,7 @@ class Network extends Controller{
 
 		if( ($this->session->userdata("network_profile")=="router") ||
 			($this->session->userdata("network_profile")=="server") || 
-			($this->session->userdata("network_profile")=="custom") )  {
+			($this->session->userdata("network_profile")=="auto") )  {
 
 				$data[$this->session->userdata("network_profile")] = "CHECKED";
 
@@ -839,6 +874,8 @@ class Network extends Controller{
 				$data['err_profile'] = "No profile set";
 			}
 
+		$data['profile'] = $this->session->userdata("network_profile");
+		$data['update'] = 0;
 		if($strip){
 			$this->load->view(THEME.'/network/network_profile_view.php',$data);
 		}else{
@@ -849,39 +886,26 @@ class Network extends Controller{
 	function update_profile($strip=""){
 
 		$profile = $this->input->post('profile');
+		$data['profile'] = $profile;
+		$data['update'] = 1; // indicate that the user has pressed update with green status bar.
+		$data['success'] = "success";
+		$data['update_msg'] = "Network profile set to $profile";
 
-		if( $this->session->userdata("network_profile") == $profile || $profile == "custom") {
-			// Profile not updated or
-			// when changing to custom, only change the profile name.
-			if($profile == "custom") {
-				update_bubbacfg($this->session->userdata("user"),'network_profile',"custom");
-				$this->session->set_userdata("network_profile", "custom");      
-			}
-			$data[$this->session->userdata("network_profile")] = "CHECKED";
+		if( $this->session->userdata("network_profile") != $profile) {
+			// Profile updated
+				update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
+				$this->session->set_userdata("network_profile", $profile);
+				if($profile == "auto") {
+					// apply default settings
+					$this->networkmanager->apply_profile($profile);
+				}
+		}
+		$data[$this->session->userdata("network_profile")] = "CHECKED";
 
-			if($strip){
-				$this->load->view($this->load->view(THEME.'/network/network_profile_view',$data));
-			}else{
-				$this->_renderfull($this->load->view(THEME.'/network/network_profile_view',$data,true));
-			}
-		} else {
-
-			$data = $this->networkmanager->prepare_profile($profile);
-			$data['confirmed'] = true;			
-			// do not use CI output mechanism.
-			$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
-			$mdata["subnav"]=$this->load->view(THEME.'/network/network_submenu_view','',true);
-			$mdata["content"]=$this->load->view(THEME.'/network/network_profile_view',$data,true);
-			echo $this->load->view(THEME.'/main_view',$mdata,true);    
-
-			if($data['powerdown']) {
-				$this->session->set_userdata("profile",$profile);
-				$this->session->set_userdata("status",$data);
-				
-			} else {
-				$this->networkmanager->apply_profile($profile,$data);
-				// setup complete
-			}
+		if($strip){
+			$this->load->view($this->load->view(THEME.'/network/network_profile_view',$data));
+		}else{
+			$this->_renderfull($this->load->view(THEME.'/network/network_profile_view',$data,true));
 		}
 	}
 

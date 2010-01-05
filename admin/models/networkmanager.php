@@ -49,149 +49,22 @@ class NetworkManager extends Model {
 
 	}
 
-	function prepare_profile($profile)  {
-		// do not trust that everything is ok, set profiles regardless if SESSION profile is the same.
-
-		//d_print_r("Preparing profile");
-		$a_ret["hostname"]=php_uname('n');
-		$a_ret['powerdown'] = false;	
-		$a_ret['wanaccess'] = $this->is_wanaccess();
-		$a_ret['lan_ext_dhcpd'] = false;
-		$a_ret['lan_was_static'] = false;
-		$a_ret['wan_was_static'] = false;
-		$a_ret['restart_wan'] = true;
-		$a_ret['restart_lan'] = true;
-		$a_ret['profile'] = $profile;
-
-
-		//-----  general -------
-		$lifc=get_networkconfig($this->get_lan_interface());
-		$wifc=get_networkconfig($this->get_wan_interface()); 
-
-
-		// ################################
-		//-------------  LAN --------------
-		$ip_diff = strcmp($lifc[0],FALLBACKIP); // do we alreay have the fallback IP?				
-		if($lifc['dhcp'] && $ip_diff) {
-			// not using fallback ip, must mean that in IP has been acquired by dhcp.
-			$a_ret['lan_ext_dhcpd'] = true; 
-		}
-
-		if(!$lifc['dhcp']) {
-			// Prior static LAN config.
-			$a_ret['lan_was_static'] = true;
-		}
-
-		//-----  router (LAN) -------
-		// always restart LAN network if assigning router.
-
-		//------ server (LAN) -------
-		if(($profile=="server")) {
-			if($a_ret['lan_ext_dhcpd']) {
-				// no need to restart
-				$a_ret['restart_lan'] = false;
-			}
-		}
-
-		// #####################################
-		//------------  WAN	--------------------				
-		if(!$wifc['dhcp']) {
-			// Prior static WAN config.
-			$a_ret['wan_was_static'] = true;
-		}
-
-		//-----  router (WAN) -------
-		// do we have an IP, ie connected?
-		// if not and routermode selected, powerdown.
-		if(($profile=="router")) {
-			if(strcmp($wifc[0],"...") &&  $wifc['dhcp'] ) {
-				// if we have an IP from DHCP assume that it is correct WAN IP.
-				$a_ret['restart_wan'] = false;
-			} else {
-				$a_ret['powerdown'] = true;	
-			}
-		}
-
-
-		//------ server (WAN) -------
-		if(($profile=="server")) {
-			if($wifc['dhcp']) {
-				// no need to restart WAN
-				$a_ret['restart_wan'] = false;
-			}
-		}
-		return $a_ret;
-
-	}
-
-	function apply_profile($profile,$status) {
-
-		//d_print_r("Applying profile: $profile");
-		flush(); // output anything that is already in the output buffers.
-		$restart_wan = true;
-		$restart_lan = true;
-
-		switch ($profile) {
-		case "router":
-			// set WAN dhcp, LAN static.
-			// Turn on dns/dhcp servers
-			d_print_r("Set WAN dhcp, LAN static.");
-			set_dynamic_netcfg($this->get_wan_interface());
-			set_static_netcfg($this->get_lan_interface(),"192.168.10.1","255.255.255.0","0.0.0.0");
-
-			// make sure dns and dhcp starts.
-			$dnsmasq = get_dnsmasq_settings();
-			$dnsmasq['running'] = true;
-			$dnsmasq['dhcpd'] = true;
-			$dnsmasq['range_start'] = array("192","168","10","50");
-			$dnsmasq['range_end'] = array("192","168","10","100");
-			configure_dnsmasq($dnsmasq);
-
-			break;
-		case "server":
-			// set WAN dhcp, LAN dhcp (with fallback to 192.168.10.1).
+	function apply_profile($profile) {
+		if($profile == "auto") { // reset to default config
 			set_dynamic_netcfg($this->get_wan_interface());
 			set_dynamic_netcfg($this->get_lan_interface());
-			d_print_r("Set WAN dhcp, LAN dhcp.");
-
+	
 			// make sure to disable dns and dhcp.
 			$dnsmasq = get_dnsmasq_settings();
 			unset($dnsmasq['running']);
 			unset($dnsmasq["dhcpd"]);
 			configure_dnsmasq($dnsmasq);
-
-			break;
-		case "custom":
-			// keep current configuration.
-			d_print_r("Keep current configuration.");
-			break;
+			restart_network($this->get_wan_interface());
+			restart_network($this->get_lan_interface());
 		}
-
-		update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
-		$this->session->set_userdata("network_profile", $profile);      
-
-		if($status['powerdown']) {
-			d_print_r("Powerdown called for");
-			flush();
-			power_off();
-		} else {
-			if($status['restart_wan']) {
-				d_print_r("Restarting WAN");
-				flush();
-				restart_network($this->get_wan_interface());
-			}
-			if($status['restart_lan']) {
-				d_print_r("Restarting LAN");
-				flush();
-				restart_network($this->get_lan_interface());
-			}
-		}	
-		d_print_r("Done");
-
 	}
-
-	private function _getifcfg( $interface ) {
-		if( !isset( $this->ifcfg[$interface] ) ) {
+	private function _getifcfg( $interface,$dirty = false ) {
+		if( !isset( $this->ifcfg[$interface]) || $dirty ) {
 			$data = query_network_manager( array("cmd" => "getifcfg","ifname" => $interface) );
 			$this->ifcfg[$interface] = $data;
 		}
@@ -216,7 +89,7 @@ class NetworkManager extends Model {
 		}
 	}
 
-	public function get_networkconfig($interface){
+	public function get_networkconfig($interface, $dirty = false){
 		$ret=array(
 			"gateway"=>"0.0.0.0",
 			"dns"=>"0.0.0.0",
@@ -224,7 +97,7 @@ class NetworkManager extends Model {
 			"netmask"=>"0.0.0.0",
 			"dhcp"=>false);
 
-		$iface=$this->_getifcfg($interface);
+		$iface=$this->_getifcfg($interface,$dirty);
 
 		if($iface["config"]["ethernet"]["current"]["flags"]["running"]){
 			$ret["address"]=$iface["config"]["ethernet"]["current"]["address"];

@@ -356,3 +356,7 @@ table.blank {
 	padding: 0;
 	width: 100%;
 }
+
+.cursor_wait {
+	cursor : wait;
+}
