@@ -66,7 +66,7 @@ class Mail extends Controller{
 			if(service_running("fetchmail")){
 
 			}else{
-				if(query_service("fetchmail")==0){
+				if(query_service("fetchmail")){
 					start_service("fetchmail");
 				}
 			}
@@ -204,7 +204,7 @@ class Mail extends Controller{
 		
 		write_receive_mailcfg($domain);
 		
-		if(query_service("postfix")==0){
+		if(query_service("postfix")){
 			stop_service("postfix");
 			start_service("postfix");
 		}
@@ -247,7 +247,7 @@ class Mail extends Controller{
 		}
 
 		if($update_postfix){
-			if(query_service("postfix")==0){
+			if(query_service("postfix")){
 				stop_service("postfix");
 				start_service("postfix");
 			}
@@ -277,7 +277,7 @@ class Mail extends Controller{
 
 		require_once(APPPATH."/legacy/user_auth.php");
 
-		if(query_service("fetchmail")){
+		if(!query_service("fetchmail")){
 			$fetchmailstatus=false;
 		}else{
 			$fetchmailstatus=true;
@@ -319,7 +319,7 @@ class Mail extends Controller{
 		$smtp_plain_auth = strpos( $mc[4], 'noplaintext' ) === false;
 		$smtp_user=$mc[5];
 
-		if(query_service("postfix")){
+		if(!query_service("postfix")){
 			$smtpstatus=true;
 		}else{
 			$smtpstatus=false;
@@ -346,7 +346,7 @@ class Mail extends Controller{
 		$smtp_auth=$mc[3]=="yes";
 		$smtp_user=$mc[4];
 
-		if(query_service("postfix")){
+		if(!query_service("postfix")){
 			$smtpstatus=false;
 		}else{
 			$smtpstatus=true;

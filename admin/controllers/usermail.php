@@ -63,7 +63,7 @@ class Usermail extends Controller{
 			if(service_running("fetchmail")){
 
 			}else{
-				if(query_service("fetchmail")==0){
+				if(query_service("fetchmail")){
 					start_service("fetchmail");
 				}
 			}
@@ -195,7 +195,7 @@ class Usermail extends Controller{
 
 	function index($strip=""){
 
-		if(query_service("fetchmail")){
+		if(!query_service("fetchmail")){
 			$fetchmailstatus=false;
 		}else{
 			$fetchmailstatus=true;

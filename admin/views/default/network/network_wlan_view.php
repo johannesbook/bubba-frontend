@@ -1,6 +1,6 @@
 <fieldset><legend><i><?=t('wLAN')?></i></legend>
 <form id="wLANCFG" action="<?=FORMPREFIX?>/network/wlanupdate" method="post">
-<table class="networksettings">
+<table>
 <tr>
 	<td><label for="ssid"><?=t("SSID")?></label></td>
 	<td><input type="text" name="ssid" id="ssid" value="<?=$ssid?>"/></td>
@@ -57,11 +57,16 @@
 
 <tr>
 	<td><label for="channel"><?=t("Channel")?></label></td>
-	<td><select id="channel" name="channel" title="<?=t("The channel to use")?>">
+    <td>
+    <select id="channel" name="channel" title="<?=t("The channel to use")?>">
+<?foreach($bands as $band => $channels):?>
+    <optgroup label="Band <?=$band?>">
 <?foreach($channels as $channel):?>
-	<option value="<?=$channel?>" <?if($channel == $current_channel):?>selected="selected"<?endif?>><?=t("wlan_title_channel", $channel)?></option>
+	    <option value="<?=$channel?>" <?if($channel == $current_channel):?>selected="selected"<?endif?>><?=t("wlan_title_channel", $channel)?></option>
 <?endforeach?>
-	</select>
+    </optgroup>
+<?endforeach?>
+    </select>
 	</td>
 </tr>
 

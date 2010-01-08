@@ -162,13 +162,11 @@ background: #000;
 }
 div#header div#logo{
 float: left;
-background: url(../_img/bubba2_logo.png) center center no-repeat;
+background: url(../_img/excito_logo_bg_black.gif) center center no-repeat;
 margin-right: -300px;
 height: 50px;
 width: 130px;
 padding: 5px;
-padding-top : 2px;
-padding-left : 24px;
 }
 /*
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::	Footer

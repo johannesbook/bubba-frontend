@@ -218,7 +218,7 @@ class Settings extends Controller{
 		$data["err_srvunavail"]=false;
 		$data["err_setulfail"]=false;
 		$data["err_setdlfail"]=false;
-		$ftd_enabled=!query_service("filetransferdaemon");
+		$ftd_enabled=query_service("filetransferdaemon");
 		if($ftd_enabled){
 		
 			require_once(IPCFUNCS);
@@ -322,7 +322,7 @@ class Settings extends Controller{
 			}
 		}
 		
-		if(!query_service("dovecot") && !service_running("dovecot")) {
+		if(query_service("dovecot") && !service_running("dovecot")) {
 			// restart dovecot
 			d_print_r("Restart dovecot\n");
 			start_service("dovecot");
@@ -338,7 +338,7 @@ class Settings extends Controller{
 	}	
 	
 	function trafficsettings($strip=""){
-		$trafdata["ftd_enabled"]=!query_service("filetransferdaemon");
+		$trafdata["ftd_enabled"]=query_service("filetransferdaemon");
 		if($trafdata["ftd_enabled"]){
 			require_once(IPCFUNCS);
 			$dl=new Downloader;

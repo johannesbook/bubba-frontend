@@ -62,12 +62,6 @@ $(document).ready(function(){
 				<div id="sub_nav">
 					<?=$subnav?>
 				</div>
-				<?
-				/*<div id="breadcrumbs">
-					<img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba-two-logo.gif" alt="image" width="72" height="16" />
-				</div>
-				*/
-				?>
 				<div class="clear"></div>
 				<?
 				if($topic=$this->uri->segment(1)) {

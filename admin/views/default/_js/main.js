@@ -37,7 +37,7 @@ jQuery.fn.extend({
 		stripe: function() {
 
 			return this.each(function(i) {
-					if( !jQuery(this).is('table') || jQuery(this).attr('id') == "pie_data") {
+					if( !jQuery(this).is('table') ) {
 						return;
 					}
 					var rowClass = 'even';
