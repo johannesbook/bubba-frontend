@@ -74,9 +74,7 @@ class NetworkManager extends Model {
 	function set_router($restart_lan = true, $restart_wan = true) {
         $this->setdynamic($this->get_wan_interface());
         // XXX TODO FIXME should not be statically here
-        print_r("LAN IF: " . $this->get_lan_interface());
         if( strpos( $this->get_lan_interface(), 'br' ) === 0 ) {
-            print_r("{bridge}");
             // XXX FIXME
             $ugly_eth1_variable = "eth1";
             $ugly_wlan_variable = "wlan0";
@@ -87,13 +85,11 @@ class NetworkManager extends Model {
                 "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME
                 "bridge_maxwait" => array($ugly_timeout_variable), // FIXME
             )); 
-   print_r($ret);         
         } else {
             $this->setstatic($this->get_lan_interface(),array(
                 "address" => array("192.168.10.1"), // FIXME
                 "netmask" => array("255.255.255.0"), // FIXME
             ));
-   print_r($ret);         
 
 
         }

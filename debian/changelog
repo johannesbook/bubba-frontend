@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.24) claire estelle; urgency=low
+
+  * remove debug print_r 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 08 Jan 2010 17:31:43 +0100
+
 bubba-frontend (1.2.4.23) claire estelle; urgency=low
 
   * svn add

@@ -895,7 +895,6 @@ class Network extends Controller{
 		}
 		$data[$this->session->userdata("network_profile")] = "CHECKED";
 		
-		print_r($data);
 		if($strip){
 			$this->load->view($this->load->view(THEME.'/network/network_profile_view',$data));
 		}else{
