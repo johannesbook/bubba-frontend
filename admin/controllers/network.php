@@ -282,7 +282,7 @@ class Network extends Controller{
 		$data["dhcpd_leases"] = get_leases();
 
 
-		$data["dhcp"]?$data["disabled"]="DISABLED":$data["disabled"]="";
+		$data["dhcpd"]=!$data['dhcp'];
 		if(!$data["success"]) {
 			$data['update_msg'] = t("Error applying settings");
 		} else {
