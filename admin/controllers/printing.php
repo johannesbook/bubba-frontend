@@ -231,7 +231,7 @@ class Printing extends Controller{
 			$iprinters[$name]["State"]=trim($iprinters[$name]["State"]," \"");
 		}
 	
-		$data["printstatus"]=false;
+		$data["printstatus"]=false; //query_service("cupsys");;
 		$data["iprinters"]=$iprinters;
 
 		if($strip){

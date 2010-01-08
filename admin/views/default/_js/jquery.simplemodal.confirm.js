@@ -1,6 +1,6 @@
 (
 	function($) {
-		$.confirm = function jQuery_confirm(message, callback, button_ok, button_cancel, header, close) {
+		$.confirm = function jQuery_confirm(message, callback, button_ok, button_cancel, header, close, onClose ) {
 			if(!button_ok) {
 				button_ok = "Yes";
 			}
@@ -41,7 +41,8 @@
 
 			);
 			$.modal( div, {
-					close:false
+					close:false,
+                    onClose: onClose
 					//overlayId:'confirmModalOverlay',
 					//containerId:'confirmModalContainer'
 				}

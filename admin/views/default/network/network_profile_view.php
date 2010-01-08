@@ -4,31 +4,37 @@
 <form id="OTHCFG" action="<?=FORMPREFIX?>/network/update_profile" method="post">
 <fieldset><legend><?=t("Network Profile")?></legend>
 	<table class="networksettings">
-		<? if(isset($custom) || isset($err_profile)) { ?>
+		<? if($custom): ?>
 		<tr>
+			<td></td>
 			<td colspan="2"><span class="highlight"><?=t("Please select profile")?></td>
 		</tr>
 
 
-		<? } ?>
+		<? endif ?>
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="auto" <?=isset($auto)?$auto:""?>/></td><td><?=t("Automatic network settings")?></td>
-			<td></td>
+			<td><input class="checkbox_radio" type="radio" name="profile" value="auto" <?=isset($auto)?$auto:""?>/></td><td colspan="2"><?=t("Automatic network settings")?></td>
 		</tr>
 		
 
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="router" <?=isset($router)?$router:""?>/></td><td><?=t("Router / Firewall / Server mode")?></td>
-			<td></td>
+			<td><input class="checkbox_radio" type="radio" name="profile" value="router" <?=isset($router)?$router:""?>/></td><td colspan="2"><?=t("Router / Firewall / Server mode")?></td>
 		</tr>
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td><?=t("Server mode only")?></td>
-			<td></td>
+			<td><input class="checkbox_radio" type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td colspan="2"><?=t("Server mode only")?></td>
 		</tr>
 		
 		<tr>
 			<td></td>
-			<td><input type="submit" id="networkprofile_update" value='<?=t('Update')?>' name='profile_update'/></td>	
+            <td>
+            <input
+                <?if(isset($custom)):?>disabled="disabled"<?endif?>
+                type="submit"
+                id="networkprofile_update" 
+                value='<?=t('Update')?>' 
+                name='profile_update'
+            />
+            </td>	
 			<td></td>
 		</tr>
 

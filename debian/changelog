@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.21) claire estelle; urgency=low
+
+  * Rework profile logic code.
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 08 Jan 2010 17:15:02 +0100
+
 bubba-frontend (1.2.4.20) claire estelle; urgency=low
 
   * only use single call to set interface 

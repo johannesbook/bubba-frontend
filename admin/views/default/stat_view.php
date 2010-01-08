@@ -1,4 +1,6 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/notify.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/raphael-min.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/pie.js"></script>
 <script>
 $('form.ack').live( 'submit', function(e) {
 	uuid=$(this).find('input.uuid').val();
@@ -21,47 +23,63 @@ $('form.ack').live( 'submit', function(e) {
 	return false;
 });
 </script>
-<p style="font-size: large; text-align: center; "><?=t('Welcome to your BUBBA|TWO')?></p>
+<p style="font-size: large; text-align: center; "><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba2_logo.jpg" /></p>
 <table class="blank">
 <tr>
 <td>
+<table id="pie_data">
+	<tr class="pie">
+		<td class="pie"><?=100-($percentused)?>%</td>
+	</tr>
+	<tr class="pie">
+		<td class="pie"><?=$percentused?>%</td>
+	</tr>
+</table>
 <fieldset><legend><i><?=t('Info')?></i></legend>
-<table>
-<tr><td><?=t('Total disk size')?></td><td><?=$totalspace?> MB</td></tr>
-<tr><td><?=t('Free disk space')?></td><td><?=$freespace?> MB</td></tr>
-<tr>
-	<td></td>
-	<td>
-		<div class="space-indicator"><div style="width: <?=$percentused?>%"></div></div>
-	</td>
-</tr>
-<tr><td colspan="2"><hr/></td></tr>
-<tr><td><?=t('Uptime')?></td><td>
-<? if($uptime[0]>0) print($uptime[0]." ".t('days')." "); ?>
-<? printf("%02d",$uptime[1])?>:<? printf("%02d",$uptime[2])?>:<? printf("%02d",$uptime[3])?>
-</td></tr>
-<tr><td><?=t('Version')?></td><td>
-<?=$version?>
-</td></tr>
-</table>
 
-<?if($this->session->userdata('user')=="admin"):?>
-<br/>
-<form action="shutdown" method="post"><fieldset >
-<table>
-<tr><td><?=t('Press button to shut down Bubba Server now')?>.</td></tr>
-<tr><td><input class='submitbutton' type='submit' name='powerdown' value='<?=t('Power down')?>'/></td></tr>
-</table>
-</fieldset></form>
-<?endif?>
+	<div id="pie"></div>
+		
+	<table class="blank stat">
+		<tr>
+			<td><?=t('Total diskspace:')?>	</td>
+			<td><?printf("%2d",$totalspace)?> GB 	</td>
+		</tr>
+		<tr>
+			<td><?=t('Free diskspace:')?>	</td>
+			<td><?printf("%2d",$freespace)?> GB 	</td>
+		</tr>
+	
+		<tr>
+			<td>
+				<?=t('Version')?>
+			</td>
+			<td>
+				<?=$version?>
+			</td>
+		</tr>
 
+		<tr>
+			<td>
+				<?=t('Uptime')?>
+			</td>
+			<td>	
+			<? if($uptime[0]>0) print($uptime[0]." ".t('days')." "); ?>
+			<? printf("%02d",$uptime[1])?>:<? printf("%02d",$uptime[2])?>:<? printf("%02d",$uptime[3])?>
+			</td>
+		</tr>
+	</table>
 </fieldset>
 </td>
-<?if( !is_null($notifications) ):?>
+<? /*
+<? if( !is_null($notifications) ):?>
+*/ ?>
+<? if(1):?>
 <td style="width: 50%;">
 <fieldset><legend><i><?=t('System messages')?></i></legend>
 <table class="notifications">
-<?foreach( $notifications as $index => $notification ):?>
+<?
+if(sizeof($notifications)) {
+	foreach( $notifications as $index => $notification ):?>
 <tr class="notification notification-<?=$notification['Level']?>">
 	<td class="notification-type"><img src="<?=$notification['Image']?>"/></td>
 	<td class="notification-content">
@@ -80,6 +98,21 @@ $('form.ack').live( 'submit', function(e) {
 	</td>
 </tr>
 <?endforeach?>
+<?php } else {?>
+<tr >
+	<td class="notification-type"></td>
+	<td class="notification-content">
+		<div class="notification-desc"><?=t("No active system messages")?></div>
+<?if(isset($notification['Message'])):?>
+		<div class="notification-data">
+			<div class="notification-msg"</div>
+		</div>
+<?endif?>
+	</td>
+	<td class="notification-ack">
+</tr>
+<?php } ?>
+
 </table>
 </fieldset>
 
@@ -87,4 +120,5 @@ $('form.ack').live( 'submit', function(e) {
 <?endif?>
 </tr>
 </table>
+<div class="excito_link"><a href="http://www.excito.com"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/excito_logo_bg_gray.gif" alt="http://www.excito.com"/></a></div>
 

@@ -202,6 +202,9 @@ class Network extends Controller{
 			}
 		} else {
 			// static is selected
+			d_print_r("STATIC selected");
+			d_print_r($ip);
+			d_print_r($data["olip"]);
 			$data["dhcp"] = false;
 			if(!validate_ip($data["olip"])){
 				$data["err_ip"]=true;
@@ -222,6 +225,7 @@ class Network extends Controller{
 					($gw!=$data["olgw"]) ||
 					($dns!=$data["oldns"])
 				){
+					d_print_r("Config changed");
 					// config changed
 					if($data["olgw"] && $data["oldns"]) {
 						$cfg=array(
@@ -330,7 +334,7 @@ class Network extends Controller{
 				}
 
 				if ($restartsamba){
-					if(query_service("samba")){
+					if(!query_service("samba")){
 						restart_samba();
 					}
 				}
@@ -713,7 +717,7 @@ class Network extends Controller{
 		
 		$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
 		$data["dhcp"] = $lifc["dhcp"];
-		$data["dhcp"]?$data["disabled"]="DISABLED":$data["disabled"]="";
+		$data["dhcpd"]=!$data['dhcp'];
 		$data["jumbo"]=$this->networkmanager->get_mtu($this->networkmanager->get_lan_interface())==9000?true:false;
 
 		$data["dnsmasq_settings"]=get_dnsmasq_settings();
@@ -753,12 +757,8 @@ class Network extends Controller{
 		$data['encryptions'] = $this->networkmanager->get_available_wlan_encryptions();
 		$data['current_encryption'] = $this->networkmanager->get_current_wlan_encryption();
 		$data['encryption_key'] = $this->networkmanager->get_wlan_encryption_key();
-        try {
-		$data['bands'] = $this->networkmanager->get_wlan_available_channels();
-        } catch( Exception $e ) {
-            $data['bands'] = array();
-        }
-        $data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
+		$data['channels'] = $this->networkmanager->get_wlan_available_channels();
+		$data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
 		if($strip){
 			$this->load->view(THEME.'/network/network_wlan_view.php',$data);
 		}else{
@@ -769,7 +769,6 @@ class Network extends Controller{
 		}
 	}
 
-	// TODO: should only act on changes. not blindly set values.
 	function wlanupdate($strip=""){
 
 		$enabled = $this->input->post('enabled');
@@ -789,7 +788,7 @@ class Network extends Controller{
 			|| $channel <= 0
 			|| ( 
 				$encryption == 'wep' 
-				&& !in_array( strlen( $password ), array( 5, 13, 16 ) ) 
+				&& in_array( strlen( $password ), array( 5, 13, 16 ) ) 
 			)
 			|| (
 				in_array( $encryption , array( 'wpa1', 'wpa2', 'wpa12' ) )
@@ -804,27 +803,19 @@ class Network extends Controller{
 			redirect( 'network/wlan' );
 		}
 
-		$this->networkmanager->set_wlan_ssid( $this->networkmanager->get_wlan_interface(), $ssid );
-		$this->networkmanager->set_wlan_mode( $this->networkmanager->get_wlan_interface(), $mode );
-		$this->networkmanager->set_wlan_channel( $this->networkmanager->get_wlan_interface(), $channel );
-		
-		# TODO wep defaultkey
-		$this->networkmanager->set_wlan_encryption( $this->networkmanager->get_wlan_interface(), $encryption, array( $password ), 0 );
-
-		$restart = $enabled && service_running("hostapd");
-
 		if( $enabled ) {
 			$this->networkmanager->enable_wlan();
 		} else {
 			$this->networkmanager->disable_wlan();
 		}
 
-		// Restart hostapd to make sure we are in a consistent mode
-		if($restart){
-			stop_service("hostapd");
-			sleep(1);
-			start_service("hostapd");
-		} 
+
+		$this->networkmanager->set_wlan_ssid( $this->networkmanager->get_wlan_interface(), $ssid );
+		$this->networkmanager->set_wlan_mode( $this->networkmanager->get_wlan_interface(), $mode );
+		$this->networkmanager->set_wlan_channel( $this->networkmanager->get_wlan_interface(), $channel );
+		
+		# TODO wep defaultkey
+		$this->networkmanager->set_wlan_encryption( $this->networkmanager->get_wlan_interface(), $encryption, array( $password ), 0 );
 
 		redirect( 'network/wlan' );
 
@@ -870,8 +861,9 @@ class Network extends Controller{
 
 				$data[$this->session->userdata("network_profile")] = "CHECKED";
 
+				$data['custom'] = false;
 			} else {
-				$data['err_profile'] = "No profile set";
+				$data['custom'] = true;
 			}
 
 		$data['profile'] = $this->session->userdata("network_profile");
@@ -886,22 +878,24 @@ class Network extends Controller{
 	function update_profile($strip=""){
 
 		$profile = $this->input->post('profile');
+		$old_profile = $this->session->userdata("network_profile");
+
 		$data['profile'] = $profile;
 		$data['update'] = 1; // indicate that the user has pressed update with green status bar.
 		$data['success'] = "success";
 		$data['update_msg'] = "Network profile set to $profile";
+        $data['custom'] = false;
 
-		if( $this->session->userdata("network_profile") != $profile) {
+		if( $old_profile != $profile) {
 			// Profile updated
-				update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
-				$this->session->set_userdata("network_profile", $profile);
-				if($profile == "auto") {
-					// apply default settings
-					$this->networkmanager->apply_profile($profile);
-				}
+
+			update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
+			$this->session->set_userdata("network_profile", $profile);
+			$this->networkmanager->apply_profile($profile,$old_profile);
 		}
 		$data[$this->session->userdata("network_profile")] = "CHECKED";
-
+		
+		print_r($data);
 		if($strip){
 			$this->load->view($this->load->view(THEME.'/network/network_profile_view',$data));
 		}else{

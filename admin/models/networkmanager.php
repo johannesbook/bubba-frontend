@@ -12,7 +12,7 @@ class NetworkManager extends Model {
 	}
 
 	public function __destruct() {
-		BubbaSocket::dump();
+		//BubbaSocket::dump();
 	}
 
 	public function is_wanaccess() {
@@ -49,20 +49,131 @@ class NetworkManager extends Model {
 
 	}
 
-	function apply_profile($profile) {
-		if($profile == "auto") { // reset to default config
-			set_dynamic_netcfg($this->get_wan_interface());
-			set_dynamic_netcfg($this->get_lan_interface());
-	
-			// make sure to disable dns and dhcp.
-			$dnsmasq = get_dnsmasq_settings();
-			unset($dnsmasq['running']);
-			unset($dnsmasq["dhcpd"]);
-			configure_dnsmasq($dnsmasq);
-			restart_network($this->get_wan_interface());
-			restart_network($this->get_lan_interface());
-		}
+    function set_auto($restart_lan = true, $restart_wan = true) {
+        $this->setdynamic($this->get_wan_interface());
+        if( strpos( $this->get_lan_interface(), 'br' ) === 0 ) {
+            $ugly_eth1_variable = "eth1";
+            $ugly_wlan_variable = "wlan0";
+            $ugly_timeout_variable = "0";          
+            $this->setdynamic($this->get_lan_interface(), array(
+                "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME
+                "bridge_maxwait" => array($ugly_timeout_variable), // FIXME
+            ));
+        } else {
+            $this->setdynamic($this->get_lan_interface());
+        }    
+		// make sure to disable dns
+		$dnsmasq = get_dnsmasq_settings();
+		unset($dnsmasq['running']);
+		$dnsmasq["dhcpd"] = true; // make sure the fallback will activate dhcpd.
+		configure_dnsmasq($dnsmasq);
+		if($restart_lan) restart_network($this->get_lan_interface());
+		if($restart_wan) restart_network($this->get_wan_interface());
 	}
+
+	function set_router($restart_lan = true, $restart_wan = true) {
+        $this->setdynamic($this->get_wan_interface());
+        // XXX TODO FIXME should not be statically here
+        print_r("LAN IF: " . $this->get_lan_interface());
+        if( strpos( $this->get_lan_interface(), 'br' ) === 0 ) {
+            print_r("{bridge}");
+            // XXX FIXME
+            $ugly_eth1_variable = "eth1";
+            $ugly_wlan_variable = "wlan0";
+            $ugly_timeout_variable = "0";
+            $ret=$this->setstatic($this->get_lan_interface(),array(
+                "address" => array("192.168.10.1"), // FIXME
+                "netmask" => array("255.255.255.0"), // FIXME
+                "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME
+                "bridge_maxwait" => array($ugly_timeout_variable), // FIXME
+            )); 
+   print_r($ret);         
+        } else {
+            $this->setstatic($this->get_lan_interface(),array(
+                "address" => array("192.168.10.1"), // FIXME
+                "netmask" => array("255.255.255.0"), // FIXME
+            ));
+   print_r($ret);         
+
+
+        }
+
+		// make sure to enable dns
+		$dnsmasq = get_dnsmasq_settings();
+		$dnsmasq['running'] = true;
+		$dnsmasq["dhcpd"] = true;
+		$dnsmasq["range_start"] = array("192.168.10.50"); // FIXME
+		$dnsmasq["range_end"] = array("192.168.10.100"); // FIXME
+		configure_dnsmasq($dnsmasq);
+		
+		if($restart_lan) restart_network($this->get_lan_interface());
+		if($restart_wan) restart_network($this->get_wan_interface());
+	}
+
+	function set_server($restart_lan = true, $restart_wan = true) {
+		// server and auto is the same.
+		$this->set_auto($restart_lan,$restart_wan);
+	}
+
+    function apply_profile($profile,$old_profile) {
+        switch ($old_profile) {
+        case "router":
+            switch ($profile) {
+            case "server":
+                $this->set_server();
+                break;
+            case "auto":
+                $this->set_auto();
+                break;
+            default:
+                throw new Exception("$profile isn't valid and cant be handled");
+                break;
+            }
+            break;
+        case "server":
+            switch ($profile) {
+            case "router":
+                $this->set_router();
+                break;
+            case "auto":
+                $this->set_auto();
+                break;
+            default:
+                throw new Exception("$profile isn't valid and cant be handled");
+                break;
+            }
+            break;
+        case "auto":
+            switch ($profile) {
+            case "router":
+                $this->set_router();
+                break;
+            case "server":
+                $this->set_server(false,false);
+                break;
+            default:
+                throw new Exception("$profile isn't valid and cant be handled");
+                break;
+            }
+            break;
+        default:
+            // from "custom" or anything
+            switch ($profile) {
+            case "router":
+            case "server":
+                // we do nothing
+                break;
+            case "auto":
+                $this->set_auto();
+            default:
+                // if here, something has gone wrong, really wrong.
+                throw new Exception("$old_profile and $profile isn't valid and cant be handled");
+                break;
+            }            
+            break;
+        }
+    }
+
 	private function _getifcfg( $interface,$dirty = false ) {
 		if( !isset( $this->ifcfg[$interface]) || $dirty ) {
 			$data = query_network_manager( array("cmd" => "getifcfg","ifname" => $interface) );
@@ -99,7 +210,7 @@ class NetworkManager extends Model {
 
 		$iface=$this->_getifcfg($interface,$dirty);
 
-		if($iface["config"]["ethernet"]["current"]["flags"]["running"]){
+		if($iface["config"]["ethernet"]["current"]["flags"]["up"]){
 			$ret["address"]=$iface["config"]["ethernet"]["current"]["address"];
 			$ret["netmask"]=$iface["config"]["ethernet"]["current"]["netmask"];
 		}elseif ($iface["config"]["ethernet"]["addressing"]=="static"){
@@ -155,15 +266,11 @@ class NetworkManager extends Model {
 	}
 
 	public function setdynamic($interface, $config=array()){
-		$config["#not"]="empty";
 		$cmd= array(
 			"cmd"=>"setdynamiccfg", 
 			"ifname"=>$interface,
 			"config"=>$config);
-		print_r($cmd);
 		$data = query_network_manager($cmd);
-
-		print_r($data);
 		return $data["status"];
 	}
 
@@ -191,7 +298,7 @@ class NetworkManager extends Model {
 	public function set_lanif( $if ) {
 
 		_system( FIREWALL, 'set_lanif', $if );
-		_system( BACKEND, 'set_interface', $if );
+		_system( BACKEND, 'set_samba_interface', $if );
 
 		// TODO: Refactor into separate function
 		$dnsmasqcfg=get_dnsmasq_settings();
@@ -220,18 +327,10 @@ class NetworkManager extends Model {
 	}
 
 	public function enable_wlan() {
-		// Dont enable if up and running
-		if( query_service( 'hostapd' ) && service_running( 'hostapd' )){
-			return;
-		} 
-
 		// Make sure we use "right" wlan-if
 		$this->_setapif($this->get_wlan_interface());
 
-		if($this->get_lan_interface()!="br0"){
-			$this->set_lanif('br0');
-		}
-		
+		$this->set_lanif('br0');
 		if( !query_service( 'hostapd' ) ) {
 			add_service( 'hostapd' );
 		}
@@ -241,15 +340,7 @@ class NetworkManager extends Model {
 	}
 
 	public function disable_wlan() {
-		// Dont disable if not up and running
-		if( !query_service("hostapd") && !service_running( "hostapd") ){
-			return;
-		}
-
-		if($this->get_lan_interface()!="eth1"){
-			$this->set_lanif('eth1');
-		}
-
+		$this->set_lanif('eth1');
 		if( service_running( 'hostapd' ) ) {
 			stop_service( 'hostapd' );
 		}
@@ -349,8 +440,8 @@ class NetworkManager extends Model {
 				'cmd'		=> 'setapauthwep',
 				'ifname'	=>  $interface,
 				'config'	=> array(
-					'defaultkey'	=> "\"$defaultkey\"",
-					'keys'			=> array_map( create_funtion(), $keys ),
+					'defaultkey'	=> $defaultkey,
+					'keys'			=> $keys,
 					)
 			);
 			break;
@@ -392,25 +483,9 @@ class NetworkManager extends Model {
 		return "";
 	}
 
-	public function get_wlan_available_channels( $phy = 'phy0' ) {
-		$cfg = array(
-			'cmd'			=> 'getphybands',
-			'phy'	    	=> $phy,
-		);
-		$data = query_network_manager( $cfg );
-        if( $data['status'] ) {
-            $bands = array();
-            foreach( $data['bands'] as $band => $channels ) {
-                foreach( $channels as $channel ) {
-                    if( ! isset($channel["disabled"]) || $channel["disabled"] != "true" ) {
-                        $bands[$band][] = $channel["channel"];
-                    }
-                }
-            }
-            return $bands;
-        } else {
-            throw new Exception($data["error"]); 
-        } 
+	public function get_wlan_available_channels( $country = null ) {
+		# TODO implement
+		return range(1,13);
 	}
 
 	public function get_wlan_current_channel() {

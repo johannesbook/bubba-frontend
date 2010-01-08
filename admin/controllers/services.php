@@ -24,36 +24,36 @@ class Services extends Controller{
 	
 		$ftp_enabled = $this->input->post('ftp_enabled');
 		$anon_ftp = $this->input->post('anon_ftp');
-		$ftp_status=!query_service("proftpd");
+		$ftp_status=query_service("proftpd");
 		$anon_status=ftp_check_anonymous();
 
    		$afp_enabled = $this->input->post('afp_enabled');
-		$afp_status = query_service("netatalk");
+		$afp_status = !query_service("netatalk");
 
-		$daap_status=query_service("mt-daapd");
+		$daap_status=!query_service("mt-daapd");
 		$daap_enabled=$this->input->post('daap_enabled');
 
-		$upnp_status=query_service("mediatomb");
+		$upnp_status=!query_service("mediatomb");
 		$upnp_enabled=$this->input->post('upnp_enabled');   
    
 		$squeezecenter_packagename='squeezecenter';
-		$squeezecenter_status=query_service("squeezecenter");
+		$squeezecenter_status=!query_service("squeezecenter");
 		$squeezecenter_installed=is_installed($squeezecenter_packagename);
 		$squeezecenter_enabled=$this->input->post('squeezecenter_enabled');   
    
-		$print_status=query_service("cupsys");
+		$print_status=!query_service("cupsys");
 		$print_enabled=$this->input->post('print_enabled');
 
-		$download_status=query_service("filetransferdaemon");
+		$download_status=!query_service("filetransferdaemon");
 		$download_enabled=$this->input->post('download_enabled');
 
-		$imap_status=query_service("dovecot");
+		$imap_status=!query_service("dovecot");
 		$imap_enabled=$this->input->post('imap_enabled');
 
-		$fetchmail_status=query_service("fetchmail");
+		$fetchmail_status=!query_service("fetchmail");
 		$fetchmail_enabled=$this->input->post('fetchmail_enabled');
 
-		$smtp_status=query_service("postfix");
+		$smtp_status=!query_service("postfix");
 		$smtp_enabled=$this->input->post('smtp_enabled');
 
 		if($this->input->post('update')){

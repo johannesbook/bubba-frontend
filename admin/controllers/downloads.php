@@ -129,7 +129,7 @@ class Downloads extends Controller{
 			$uuid=$this->input->post('uuid');
 		}
 		
-		if(query_service("filetransferdaemon") && $uuid){
+		if(query_service("filetransferdaemon")==0 && $uuid){
 			if(!$this->dl){
 				$this->dl=new Downloader;
 			}
@@ -143,7 +143,7 @@ class Downloads extends Controller{
 	function dolist($strip=""){
 		$data["dls"]=array();
 
-		if(query_service("filetransferdaemon")){
+		if(query_service("filetransferdaemon")==0){
 			if(!$this->dl){
 				$this->dl=new Downloader;
 			}

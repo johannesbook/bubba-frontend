@@ -5,6 +5,7 @@
 	<li class="<?=$this->uri->segment(2) == 'datetime' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/settings/datetime"><?=t('Date and time')?></a></li>
 	<li class="<?=$this->uri->segment(2) == 'backup' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/settings/backuprestore"><?=t('Backup and restore')?></a></li>
 	<li class="<?=$this->uri->segment(2) == 'software' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/settings/software"><?=t('Update')?></a></li>
-	<li class="<?=$this->uri->segment(2) == 'logs' ? 'active': '';?> last"><a href="<?=FORMPREFIX?>/settings/logs"><?=t('Logs')?></a></li>
+	<li class="<?=$this->uri->segment(2) == 'logs' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/settings/logs"><?=t('Logs')?></a></li>
+	<li class="<?=$this->uri->segment(2) == 'logs' ? 'active': '';?> last"><a href="<?=FORMPREFIX?>/shutdown"><?=t('Shut Down')?></a></li>
 <? } ?>
 </ul>

@@ -339,8 +339,8 @@ function copy_fields(formid) {
 			<input type="hidden" name="removerule[protocol]" id="protocol" value="<?=$value["protocol"]?>" /><?=$value["protocol"]?>
 		</td>
 		<td class="edit">
-				<a href="javascript: copy_fields('RMPORT_<?=$i?>')"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/edit16.png" alt="<?=t("Edit")?>"</a>
-				<a href="javascript: document.RMPORT_<?=$i?>.submit()"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/x15.png" alt="<?=t("Delete")?>"</a>
+				<a href="javascript: copy_fields('RMPORT_<?=$i?>')"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/edit16.png" alt="<?=t("Edit")?>"></img></a>
+				<a href="javascript: document.RMPORT_<?=$i?>.submit()"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/x15.png" alt="<?=t("Delete")?>"></img></a>
 		</td>
 	</tr>
 </table>

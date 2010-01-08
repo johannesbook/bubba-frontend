@@ -1,6 +1,7 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/network.js"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.js"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.confirm.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.alert.js"></script>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css" />
 
 <script type="text/javascript">
@@ -15,22 +16,30 @@ $(document).ready(function(){
 		update_status("<?=isset($success)?$success:"fail"?>","<?=isset($update_msg)?t($update_msg):""?>");
 	}
 	
+    $("#OTHCFG input:radio").click(function(){$("#networkprofile_update").removeAttr("disabled")});
 	$("#networkprofile_update").click(function() {
-		show_confirm = 0;			
-		if("<?=isset($profile)?$profile:"no_profile"?>" != "auto" && $("input[name='profile']:checked").val() == "auto") {
-			show_confirm = 1;			
-			$.confirm("<?=t("This will restore default network configuration aswell as restarting the network on BUBBA|2.")."<br/>".t("Changing network parameters can requrie a restart of your computer.")."<br/><br/>".t("Please see the quickstart on how to connect your computer to Bubba.")?>",
-				function(){
-					cursor_wait();
-					alert("apply");
-					$("#OTHCFG").submit();
-				}
-				,"<?=("Continue")?>","<?=t("Cancel")?>","<?=t("Network configuration")?>");
-		}
-		if(show_confirm) {
-			return false;
-		}
-		cursor_wait();
+        cursor_wait();
+        $.post("<?=site_url("ajax_network/validate_profile_change")?>",{ profile: $("input[name='profile']:checked").val() }, function(data){
+            if( data.error ) {
+                $.alert(data.html);
+                cursor_ready();
+            } else if( data.change ) {
+                if( data.show_alert ) {
+                    $.confirm( data.alert_msg, function() {
+                        cursor_wait();
+                        $("#OTHCFG").submit();
+                    },"<?=("Continue")?>","<?=t("Cancel")?>","<?=t("Network configuration")?>", true, function(dialog) {
+                        cursor_ready();
+                        this.close();
+                    });
+                } else {
+                    $("#OTHCFG").submit();
+                }
+            } else {
+                cursor_ready();
+            }
+        }, 'json');
+        return false;
 	});
 
 	
