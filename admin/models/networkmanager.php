@@ -206,7 +206,7 @@ class NetworkManager extends Model {
 
 		$iface=$this->_getifcfg($interface,$dirty);
 
-		if($iface["config"]["ethernet"]["current"]["flags"]["up"]){
+		if($iface["config"]["ethernet"]["current"]["flags"]["running"]){
 			$ret["address"]=$iface["config"]["ethernet"]["current"]["address"];
 			$ret["netmask"]=$iface["config"]["ethernet"]["current"]["netmask"];
 		}elseif ($iface["config"]["ethernet"]["addressing"]=="static"){
@@ -323,6 +323,11 @@ class NetworkManager extends Model {
 	}
 
 	public function enable_wlan() {
+		// Dont enable if up and running
+		if( query_service( 'hostapd' ) && service_running( 'hostapd' )){
+			return;
+		}
+
 		// Make sure we use "right" wlan-if
 		$this->_setapif($this->get_wlan_interface());
 

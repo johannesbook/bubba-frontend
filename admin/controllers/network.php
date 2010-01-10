@@ -227,19 +227,22 @@ class Network extends Controller{
 				){
 					d_print_r("Config changed");
 					// config changed
+					
+					$cfg=array(
+						"address"=>array(implode(".",$data["olip"])),
+						"netmask"=>array(implode(".",$data["olmask"]))
+						);
+
 					if($data["olgw"] && $data["oldns"]) {
-						$cfg=array(
-							"address"=>array(implode(".",$data["olip"])),
-							"netmask"=>array(implode(".",$data["olmask"])),
-							"gateway"=>array(implode(".",$data["olgw"])));
+
+						if(intval($data["olgw"][0])!=0){
+							$cfg["gateway"]=implode(".",$data["olgw"]);
+						}
+
 						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
 						
 						$this->networkmanager->setns(array("servers"=>array(implode(".",$data["oldns"]))));
 					} else {
-						$cfg=array(
-							"address"=>array(implode(".",$data["olip"])),
-							"netmask"=>array(implode(".",$data["olmask"])),
-							"gateway"=>array("0.0.0.0"));
 						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
 					}
 					$restart = true;

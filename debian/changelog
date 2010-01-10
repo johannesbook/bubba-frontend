@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.30) claire estelle; urgency=low
+
+  * Only add gateway to IF config if non zero 
+
+ -- Tor Krill <tor@excito.com>  Sun, 10 Jan 2010 23:00:19 +0100
+
 bubba-frontend (1.2.4.29) claire estelle; urgency=low
 
   * adding versioned dependice to libxml-libxml-perl (>= 1.66-1) 
