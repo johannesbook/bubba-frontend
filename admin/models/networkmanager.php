@@ -494,7 +494,9 @@ class NetworkManager extends Model {
             $bands = array();
             foreach( $data['bands'] as $band => $channels ) {
                 foreach( $channels as $channel ) {
-                    if( ! isset($channel["disabled"]) || $channel["disabled"] != "true" ) {
+                    if( (!isset($channel["disabled"]) || $channel["disabled"] != "true" )
+                        && (!isset($channel["passive_scanning"]) || $channel["passive_scanning"] != "true")
+                    ) {
                         $bands[$band][] = $channel["channel"];
                     }
                 }
