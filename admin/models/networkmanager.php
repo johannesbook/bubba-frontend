@@ -206,7 +206,7 @@ class NetworkManager extends Model {
 
 		$iface=$this->_getifcfg($interface,$dirty);
 
-		if($iface["config"]["ethernet"]["current"]["flags"]["running"]){
+		if($iface["config"]["ethernet"]["current"]["address"]!=""){
 			$ret["address"]=$iface["config"]["ethernet"]["current"]["address"];
 			$ret["netmask"]=$iface["config"]["ethernet"]["current"]["netmask"];
 		}elseif ($iface["config"]["ethernet"]["addressing"]=="static"){
