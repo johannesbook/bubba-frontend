@@ -483,7 +483,49 @@ class NetworkManager extends Model {
 		// TODO implement
 		return "";
 	}
+	public function get_wlan_frequency_rules() {
+		// XXX should this be implemented at all?
+		return array(
+			"standard" => array( 
+				"2.4GHz" => array(
+					"band" => 1,
+					"standard" => array( "b", "g", "n" )
+				), 
+				"5GHz" => array(
+					"band" => 2,
+					"standard" => array( "a", "n" )
+				), 
+			),
+			"frequency" => array (
+				"a" => array("5GHz"),
+				"n" => array("2.4GHz", "5GHz"),
+				"b" => array("2.4GHz"),
+				"g" => array("2.4GHz"),
+			),
+			"band" => array (
+				"a" => array("2"),
+				"n" => array("1","2"),
+				"b" => array("1"),
+				"g" => array("1"),
+			)
 
+		);
+	}
+
+	public function get_wlan_bands( $phy = 'phy0' ) {
+		$cfg = array(
+			'cmd'			=> 'getphybands',
+			'phy'	    	=> $phy,
+		);
+		$data = query_network_manager( $cfg );
+		if( $data['status'] ) {
+			return $data['bands'];
+        } else {
+            throw new Exception($data["error"]); 
+        } 
+	}
+
+	# XXX obsolete
 	public function get_wlan_available_channels( $phy = 'phy0' ) {
 		$cfg = array(
 			'cmd'			=> 'getphybands',

@@ -23,7 +23,6 @@ class Network extends Controller{
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
-			$data['exists_wlan_card'] = $this->networkmanager->exists_wlan_card();
 			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["subnav"]=$this->load->view(THEME.'/network/network_submenu_view',$data,true);
 			$mdata["content"]=$content;
@@ -760,8 +759,10 @@ class Network extends Controller{
 		$data['encryptions'] = $this->networkmanager->get_available_wlan_encryptions();
 		$data['current_encryption'] = $this->networkmanager->get_current_wlan_encryption();
 		$data['encryption_key'] = $this->networkmanager->get_wlan_encryption_key();
+		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card();
+		$data['frequency_rules'] = $this->networkmanager->get_wlan_frequency_rules();
         try {
-		$data['bands'] = $this->networkmanager->get_wlan_available_channels();
+		$data['bands'] = $this->networkmanager->get_wlan_bands();
         } catch( Exception $e ) {
             $data['bands'] = array();
         }

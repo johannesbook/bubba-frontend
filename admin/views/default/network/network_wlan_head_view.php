@@ -1,7 +1,21 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.validate.js"></script>
 
 <script  type="text/javascript">
+
+wlan_configurable=<?=$wlan_configurable?"true":"false"?>;
+bands=<?=json_encode($bands)?>;
+rules=<?=json_encode($frequency_rules)?>;
+current_mode=<?=json_encode($current_mode)?>;
+current_channel=<?=json_encode($current_channel)?>;
+
+</script>
+
+<script  type="text/javascript">
 $(document).ready( function() {
+    if( wlan_configurable ) {
+        $("#wLANCFG :disabled").removeAttr("disabled");
+    }
+
 	$.validator.addMethod('wep', function(value, element, params) {
 		return value.length == 5 || value.length == 13 || value.length == 16;
 	});
@@ -19,6 +33,39 @@ $(document).ready( function() {
 			}
 		}
 	});
+
+	$('select#mode').change(function() {
+		mode=$(this).val();
+		current_selected_channel=$("select#channel :selected").val() || current_channel;
+		has_set_current_selected_channel = false;
+		sel=$("select#channel");
+		sel.empty();
+		band=rules["band"][mode];
+
+		for( j = 0; j < band.length; ++j ) {
+			for( i = 0; i < bands[band[j]].length; ++i ) {
+				cur = bands[band[j]][i];
+				if( cur["disabled"] == "true" || cur["radar_detection"] == "true" ) {
+					continue;
+				}
+				opt = $("<option/>");
+				opt.val(cur["channel"]);
+				opt.html("<?=t("Channel")?> " + cur["channel"] + " (" + cur["freq"] + " MHz)");
+				if( cur["channel"] == current_selected_channel ) {
+					if( ! has_set_current_selected_channel ) {
+						has_set_current_selected_channel = true;
+						opt.attr("selected", "selected");
+					}
+				}
+				if( !has_set_current_selected_channel && cur["channel"] == current_channel ) {
+					opt.attr("selected", "selected");
+				}
+				sel.append(opt);
+			}
+		}
+	});
+	$('select#mode').change();
+
 	$('select#encryption').change(function() {
 		$('#password').rules("remove");
 		if($(this).val() == 'none') {

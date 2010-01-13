@@ -1,3 +1,15 @@
+bubba-frontend (1.2.4.35) claire estelle; urgency=low
+
+  * Only show 5GHz channels for a/n and 2.4GHz channels for b,g, and n. 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 13 Jan 2010 18:20:44 +0100
+
+bubba-frontend (1.2.4.34) claire estelle; urgency=low
+
+  * remake wlan UI disabled mode to match generic 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 13 Jan 2010 16:05:39 +0100
+
 bubba-frontend (1.2.4.33) claire estelle; urgency=low
 
   * Enable/Disable wlan last in config sequence to make sure we have a 
