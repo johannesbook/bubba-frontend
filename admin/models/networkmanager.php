@@ -56,6 +56,7 @@ class NetworkManager extends Model {
             $ugly_wlan_variable = "wlan0";
             $ugly_timeout_variable = "0";          
             $this->setdynamic($this->get_lan_interface(), array(
+				"auto" => true,
                 "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME
                 "bridge_maxwait" => array($ugly_timeout_variable), // FIXME
             ));
@@ -80,6 +81,7 @@ class NetworkManager extends Model {
             $ugly_wlan_variable = "wlan0";
             $ugly_timeout_variable = "0";
             $ret=$this->setstatic($this->get_lan_interface(),array(
+				"auto" => true,
                 "address" => array("192.168.10.1"), // FIXME
                 "netmask" => array("255.255.255.0"), // FIXME
                 "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME

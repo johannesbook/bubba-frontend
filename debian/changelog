@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.36) claire estelle; urgency=low
+
+  * set auto (closes: #1088) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 15 Jan 2010 13:44:22 +0100
+
 bubba-frontend (1.2.4.35) claire estelle; urgency=low
 
   * Only show 5GHz channels for a/n and 2.4GHz channels for b,g, and n. 
