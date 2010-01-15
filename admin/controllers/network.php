@@ -42,9 +42,6 @@ class Network extends Controller{
 			$data["disable_gw"] = 1;
 		}			
 
-		// treat any user-updates as "custom".
-		update_bubbacfg($this->session->userdata("user"),'network_profile','custom');
-		$this->session->set_userdata("network_profile", "custom");      
 
 		$ip=$this->input->post("IP");
 		$mask=$this->input->post('mask');
