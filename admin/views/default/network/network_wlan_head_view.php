@@ -4,9 +4,16 @@
 
 wlan_configurable=<?=$wlan_configurable?"true":"false"?>;
 bands=<?=json_encode($bands)?>;
-rules=<?=json_encode($frequency_rules)?>;
 current_mode=<?=json_encode($current_mode)?>;
+current_band=<?=json_encode($current_band)?>;
 current_channel=<?=json_encode($current_channel)?>;
+labels = {
+	legacy_2: <?=json_encode(t("wlan_title_legacy_mode_2"))?>,
+	legacy_1: <?=json_encode(t("wlan_title_legacy_mode_1"))?>,
+	mixed_2: <?=json_encode(t("wlan_title_mixed_mode_2"))?>,
+	mixed_1: <?=json_encode(t("wlan_title_mixed_mode_1"))?>
+
+};
 
 </script>
 
@@ -34,37 +41,33 @@ $(document).ready( function() {
 		}
 	});
 
-	$('select#mode').change(function() {
-		mode=$(this).val();
-		current_selected_channel=$("select#channel :selected").val() || current_channel;
-		has_set_current_selected_channel = false;
+    $("select#channel").change(function() {
+        current_channel = $(this).val();
+    });
+
+	$("input[name='band']").change(function() {
+        band = $(this).val();
+        $("option#mode_legacy").empty().html(labels["legacy_" + band])
+        $("option#mode_mixed").empty().html(labels["mixed_" + band])
+		current_selected_channel = current_channel;
 		sel=$("select#channel");
 		sel.empty();
-		band=rules["band"][mode];
 
-		for( j = 0; j < band.length; ++j ) {
-			for( i = 0; i < bands[band[j]].length; ++i ) {
-				cur = bands[band[j]][i];
-				if( cur["disabled"] == "true" || cur["radar_detection"] == "true" ) {
-					continue;
-				}
-				opt = $("<option/>");
-				opt.val(cur["channel"]);
-				opt.html("<?=t("Channel")?> " + cur["channel"] + " (" + cur["freq"] + " MHz)");
-				if( cur["channel"] == current_selected_channel ) {
-					if( ! has_set_current_selected_channel ) {
-						has_set_current_selected_channel = true;
-						opt.attr("selected", "selected");
-					}
-				}
-				if( !has_set_current_selected_channel && cur["channel"] == current_channel ) {
-					opt.attr("selected", "selected");
-				}
-				sel.append(opt);
-			}
-		}
+        for( i = 0; i < bands[band].length; ++i ) {
+            cur = bands[band][i];
+            if( cur["disabled"] == "true" || cur["radar_detection"] == "true" ) {
+                continue;
+            }
+            opt = $("<option/>");
+            opt.val(cur["channel"]);
+            opt.html("<?=t("Channel")?> " + cur["channel"] + " (" + cur["freq"] + " MHz)");
+            if( cur["channel"] == current_channel ) {
+                opt.attr("selected", "selected");
+            }
+            sel.append(opt);
+        }
 	});
-	$('select#mode').change();
+	$("input#band"+current_band+"").change();
 
 	$('select#encryption').change(function() {
 		$('#password').rules("remove");

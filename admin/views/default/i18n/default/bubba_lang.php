@@ -86,17 +86,23 @@ $lang['clean'] = 'Clean';
 $lang['disk_action_title_idle'] = "Recovering RAID array";
 
 // Network
-$lang['wlan_title_mode_n'] = '802.11n';
-$lang['wlan_title_mode_g'] = '802.11g';
-$lang['wlan_title_mode_b'] = '802.11b';
-$lang['wlan_title_mode_a'] = '802.11a';
+$lang['wlan_title_band_1'] = '2.4GHz band used by 802.11g';
+$lang['wlan_title_band_2'] = '5GHz band used by 802.11a';
 
-$lang['wlan_title_encryption_wpa2-psk'] = 'WPA2-PSK';
+$lang['wlan_title_legacy_mode_2'] = 'Legacy mode (802.11a)';
+$lang['wlan_title_legacy_mode_1'] = 'Legacy mode (802.11g)';
+$lang['wlan_title_mixed_mode_2'] = 'Mixed mode (802.11n + 802.11a)';
+$lang['wlan_title_mixed_mode_1'] = 'Mixed mode (802.11n + 802.11g)';
+$lang['wlan_title_greenfield_mode'] = 'Greenfield mode (802.11n only)';
+
 $lang['wlan_title_encryption_wpa2'] = 'WPA2';
-$lang['wlan_title_encryption_wpa12'] = 'WPA12';
+$lang['wlan_title_encryption_wpa12'] = 'WPA1 or WPA2';
 $lang['wlan_title_encryption_wpa1'] = 'WPA1';
 $lang['wlan_title_encryption_wep'] = 'WEP';
 $lang['wlan_title_encryption_none'] = 'None';
+
+$lang['wlan_title_width_20MHz'] = '20MHz';
+$lang['wlan_title_width_40MHz'] = '40MHz';
 
 $lang['wlan_pw_label_encryption'] = 'Passphrase';
 

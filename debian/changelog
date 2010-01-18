@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.37) claire estelle; urgency=low
+
+  * new wlan interface focusin on band instead of standard 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 18 Jan 2010 18:56:18 +0100
+
 bubba-frontend (1.2.4.36) claire estelle; urgency=low
 
   * set auto (closes: #1088) 

@@ -42,6 +42,9 @@ class Network extends Controller{
 			$data["disable_gw"] = 1;
 		}			
 
+		// treat any user-updates as "custom".
+		update_bubbacfg($this->session->userdata("user"),'network_profile','custom');
+		$this->session->set_userdata("network_profile", "custom");      
 
 		$ip=$this->input->post("IP");
 		$mask=$this->input->post('mask');
@@ -78,7 +81,7 @@ class Network extends Controller{
 						"netmask"=>array("$mask[0].$mask[1].$mask[2].$mask[3]"),
 						"gateway"=>array("$gw[0].$gw[1].$gw[2].$gw[3]"));
 					$this->networkmanager->setstatic($this->networkmanager->get_wan_interface(),$cfg);
-						
+
 					$this->networkmanager->setns(array("servers"=>array("$dns[0].$dns[1].$dns[2].$dns[3]")));
 
 					$restart_network=true;
@@ -107,7 +110,7 @@ class Network extends Controller{
 						"netmask"=>array("$mask[0].$mask[1].$mask[2].$mask[3]"),
 						"gateway"=>array("$gw[0].$gw[1].$gw[2].$gw[3]"));
 					$this->networkmanager->setstatic($this->networkmanager->get_wan_interface(),$cfg);
-						
+
 					$this->networkmanager->setns(array("servers"=>array("$dns[0].$dns[1].$dns[2].$dns[3]")));
 
 					$restart=true;
@@ -223,11 +226,11 @@ class Network extends Controller{
 				){
 					d_print_r("Config changed");
 					// config changed
-					
+
 					$cfg=array(
 						"address"=>array(implode(".",$data["olip"])),
 						"netmask"=>array(implode(".",$data["olmask"]))
-						);
+					);
 
 					if($data["olgw"] && $data["oldns"]) {
 
@@ -236,7 +239,7 @@ class Network extends Controller{
 						}
 
 						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
-						
+
 						$this->networkmanager->setns(array("servers"=>array(implode(".",$data["oldns"]))));
 					} else {
 						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
@@ -675,7 +678,7 @@ class Network extends Controller{
 
 	function wan($strip=""){
 		$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
-		
+
 		if ($this->session->userdata("network_profile") == "router") {
 			$data["disable_gw"] = 0;
 		} else {
@@ -704,7 +707,7 @@ class Network extends Controller{
 	}
 
 	function lan($strip=""){
-		
+
 		if ($this->session->userdata("network_profile") == "server") {
 			$data["disable_gw"] = 0;
 		} else {
@@ -713,7 +716,7 @@ class Network extends Controller{
 			}
 			$data["disable_gw"] = 1;
 		}
-		
+
 		$lifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_lan_interface());
 		$data["dhcp"] = $lifc["dhcp"];
 		$data["dhcpd"]=!$data['dhcp'];
@@ -751,19 +754,41 @@ class Network extends Controller{
 	function wlan($strip=""){
 		$data['ssid'] = $this->networkmanager->get_current_wlan_ssid();
 		$data['enabled'] = $this->networkmanager->wlan_enabled();
-		$data['modes'] = $this->networkmanager->get_available_wlan_modes();
-		$data['current_mode'] = $this->networkmanager->get_current_wlan_mode();
+		$ieee80211_mode =  $this->networkmanager->get_wlan_current_mode();
+		switch( $ieee80211_mode ) {
+		case 'b':
+		case 'g':
+			$band = 1;
+			break;
+		case 'a':
+			$band = 2;
+		}
+		$data['current_band'] = $band;
+		$ieee80211n = $this->networkmanager->is_802_11n_activated();
+		$greenfield = $this->networkmanager->wlan_greenfield_active();
+
+		if( $greenfield && $ieee80211n ) {
+			$mode = 'greenfield';
+		} elseif ( $ieee80211n ) {
+			$mode = 'mixed';
+		} else {
+			$mode = 'legacy';
+		}
+
+		$data['ieee80211n'] = $ieee80211n;
+		$data['current_mode'] = $mode;
+		$data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
 		$data['encryptions'] = $this->networkmanager->get_available_wlan_encryptions();
 		$data['current_encryption'] = $this->networkmanager->get_current_wlan_encryption();
 		$data['encryption_key'] = $this->networkmanager->get_wlan_encryption_key();
 		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card();
-		$data['frequency_rules'] = $this->networkmanager->get_wlan_frequency_rules();
-        try {
-		$data['bands'] = $this->networkmanager->get_wlan_bands();
-        } catch( Exception $e ) {
-            $data['bands'] = array();
-        }
-        $data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
+		$data['broadcast_ssid'] = $this->networkmanager->get_wlan_broadcast_ssid();
+		$data['current_width'] = $this->networkmanager->wlan_ht40_active() ? 40 : 20;
+		try {
+			$data['bands'] = $this->networkmanager->get_wlan_bands();
+		} catch( Exception $e ) {
+			$data['bands'] = array();
+		}
 		if($strip){
 			$this->load->view(THEME.'/network/network_wlan_view.php',$data);
 		}else{
@@ -779,7 +804,10 @@ class Network extends Controller{
 		$enabled = $this->input->post('enabled');
 		$encryption = $this->input->post('encryption');
 		$ssid = $this->input->post('ssid');
+		$broadcast_ssid = $this->input->post('broadcast_ssid');
+		$width = $this->input->post('width');
 		$mode = $this->input->post('mode');
+		$band = (int) $this->input->post('band');
 		$channel = (int) $this->input->post('channel');
 		$password =  $this->input->post("password");
 
@@ -809,11 +837,79 @@ class Network extends Controller{
 		}
 
 		$this->networkmanager->set_wlan_ssid( $this->networkmanager->get_wlan_interface(), $ssid );
-		$this->networkmanager->set_wlan_mode( $this->networkmanager->get_wlan_interface(), $mode );
-		$this->networkmanager->set_wlan_channel( $this->networkmanager->get_wlan_interface(), $channel );
 		
+		if( $broadcast_ssid ) {
+			$this->networkmanager->enable_wlan_broadcast_ssid();
+		} else {
+			$this->networkmanager->disable_wlan_broadcast_ssid();
+		}
+
+		if( $band == 2 ) {
+			$this->networkmanager->set_wlan_mode( $this->networkmanager->get_wlan_interface(), 'a' );
+		} else {
+			$this->networkmanager->set_wlan_mode( $this->networkmanager->get_wlan_interface(), 'g' );
+		}
+
+		$this->networkmanager->set_wlan_channel( $this->networkmanager->get_wlan_interface(), $channel );
+
+		if( $mode == "greenfield" ) {
+			$this->networkmanager->enable_wlan_802_11n();
+			$this->networkmanager->enable_wlan_ht_capab(  "GF" );
+			$width = 40; // XXX driver problem?
+
+		} elseif( $mode == "mixed" ) {
+			$this->networkmanager->enable_wlan_802_11n();
+			$this->networkmanager->disable_wlan_ht_capab(  "GF" );
+		} else { // legacy
+			$this->networkmanager->disable_wlan_802_11n();
+			$this->networkmanager->disable_wlan_ht_capab(  "GF" );
+		}
+
+
+		if( $width == 40 ) {
+			switch( $channel ) {
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 36:
+			case 44:
+			case 52:
+			case 60:
+				$this->networkmanager->disable_wlan_ht_capab("HT40-");
+				$this->networkmanager->enable_wlan_ht_capab("HT40+");
+				break;
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 40:
+			case 48:
+			case 56:
+			case 64:
+			default:
+				$this->networkmanager->disable_wlan_ht_capab("HT40+");
+				$this->networkmanager->enable_wlan_ht_capab("HT40-");
+				break;
+			}
+		} else {
+			// 20MHz
+			$this->networkmanager->disable_wlan_ht_capab(array( "HT40+", "HT40-" ) );
+		}
+
 		# TODO wep defaultkey
-		$this->networkmanager->set_wlan_encryption( $this->networkmanager->get_wlan_interface(), $encryption, array( $password ), 0 );
+		$this->networkmanager->set_wlan_encryption(
+			$this->networkmanager->get_wlan_interface(), 
+			$encryption, 
+			array( $password ), 
+			0 
+		);
 
 		$restart = $enabled && service_running("hostapd");
 
@@ -825,9 +921,8 @@ class Network extends Controller{
 
 		// Restart hostapd to make sure we are in a consistent mode
 		if($restart){
-			stop_service("hostapd");
-			sleep(1);
-			start_service("hostapd");
+			invoke_rc_d( "hostapd", "restart" );
+			invoke_rc_d( "dnsmasq", "restart" );
 		} 
 
 		redirect( 'network/wlan' );
@@ -864,8 +959,8 @@ class Network extends Controller{
 	function profile($strip=""){
 
 		if(!$this->session->userdata("network_profile")) {
-				// this will happen on "old" systems that has no profile
-				$this->session->set_userdata("network_profile", "custom");      
+			// this will happen on "old" systems that has no profile
+			$this->session->set_userdata("network_profile", "custom");      
 		}
 
 		if( ($this->session->userdata("network_profile")=="router") ||
@@ -897,7 +992,7 @@ class Network extends Controller{
 		$data['update'] = 1; // indicate that the user has pressed update with green status bar.
 		$data['success'] = "success";
 		$data['update_msg'] = "Network profile set to $profile";
-        $data['custom'] = false;
+		$data['custom'] = false;
 
 		if( $old_profile != $profile) {
 			// Profile updated
@@ -907,7 +1002,7 @@ class Network extends Controller{
 			$this->networkmanager->apply_profile($profile,$old_profile);
 		}
 		$data[$this->session->userdata("network_profile")] = "CHECKED";
-		
+
 		if($strip){
 			$this->load->view($this->load->view(THEME.'/network/network_profile_view',$data));
 		}else{
@@ -998,7 +1093,7 @@ class Network extends Controller{
 					if($status['powerdown']) {
 						$this->session->set_userdata("profile",$data['wiz_data']['profile']);
 						$this->session->set_userdata("status",$status);
-						
+
 					} else {
 						$this->networkmanager->apply_profile($data['wiz_data']['profile'],$status);
 						// setup complete

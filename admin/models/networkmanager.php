@@ -1,5 +1,6 @@
 <?php
 class NetworkManager extends Model {
+	private $htcap;
 	private $ifcfg;
 	private $lanif;
 	private $wanif;
@@ -49,20 +50,9 @@ class NetworkManager extends Model {
 
 	}
 
-    function set_auto($restart_lan = true, $restart_wan = true) {
-        $this->setdynamic($this->get_wan_interface());
-        if( strpos( $this->get_lan_interface(), 'br' ) === 0 ) {
-            $ugly_eth1_variable = "eth1";
-            $ugly_wlan_variable = "wlan0";
-            $ugly_timeout_variable = "0";          
-            $this->setdynamic($this->get_lan_interface(), array(
-				"auto" => true,
-                "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME
-                "bridge_maxwait" => array($ugly_timeout_variable), // FIXME
-            ));
-        } else {
-            $this->setdynamic($this->get_lan_interface());
-        }    
+	function set_auto($restart_lan = true, $restart_wan = true) {
+		$this->setdynamic($this->get_wan_interface());
+		$this->setdynamic($this->get_lan_interface());
 		// make sure to disable dns
 		$dnsmasq = get_dnsmasq_settings();
 		unset($dnsmasq['running']);
@@ -73,28 +63,13 @@ class NetworkManager extends Model {
 	}
 
 	function set_router($restart_lan = true, $restart_wan = true) {
-        $this->setdynamic($this->get_wan_interface());
-        // XXX TODO FIXME should not be statically here
-        if( strpos( $this->get_lan_interface(), 'br' ) === 0 ) {
-            // XXX FIXME
-            $ugly_eth1_variable = "eth1";
-            $ugly_wlan_variable = "wlan0";
-            $ugly_timeout_variable = "0";
-            $ret=$this->setstatic($this->get_lan_interface(),array(
-				"auto" => true,
-                "address" => array("192.168.10.1"), // FIXME
-                "netmask" => array("255.255.255.0"), // FIXME
-                "bridge_ports" => array( $ugly_eth1_variable, $ugly_wlan_variable ), // FIXME
-                "bridge_maxwait" => array($ugly_timeout_variable), // FIXME
-            )); 
-        } else {
-            $this->setstatic($this->get_lan_interface(),array(
-                "address" => array("192.168.10.1"), // FIXME
-                "netmask" => array("255.255.255.0"), // FIXME
-            ));
+		$this->setdynamic($this->get_wan_interface());
+		// XXX TODO FIXME should not be statically here
 
-
-        }
+		$this->setstatic($this->get_lan_interface(),array(
+			"address" => array("192.168.10.1"), // FIXME
+			"netmask" => array("255.255.255.0"), // FIXME
+		));
 
 		// make sure to enable dns
 		$dnsmasq = get_dnsmasq_settings();
@@ -103,7 +78,7 @@ class NetworkManager extends Model {
 		$dnsmasq["range_start"] = array("192.168.10.50"); // FIXME
 		$dnsmasq["range_end"] = array("192.168.10.100"); // FIXME
 		configure_dnsmasq($dnsmasq);
-		
+
 		if($restart_lan) restart_network($this->get_lan_interface());
 		if($restart_wan) restart_network($this->get_wan_interface());
 	}
@@ -113,64 +88,64 @@ class NetworkManager extends Model {
 		$this->set_auto($restart_lan,$restart_wan);
 	}
 
-    function apply_profile($profile,$old_profile) {
-        switch ($old_profile) {
-        case "router":
-            switch ($profile) {
-            case "server":
-                $this->set_server();
-                break;
-            case "auto":
-                $this->set_auto();
-                break;
-            default:
-                throw new Exception("$profile isn't valid and cant be handled");
-                break;
-            }
-            break;
-        case "server":
-            switch ($profile) {
-            case "router":
-                $this->set_router();
-                break;
-            case "auto":
-                $this->set_auto();
-                break;
-            default:
-                throw new Exception("$profile isn't valid and cant be handled");
-                break;
-            }
-            break;
-        case "auto":
-            switch ($profile) {
-            case "router":
-                $this->set_router();
-                break;
-            case "server":
-                $this->set_server(false,false);
-                break;
-            default:
-                throw new Exception("$profile isn't valid and cant be handled");
-                break;
-            }
-            break;
-        default:
-            // from "custom" or anything
-            switch ($profile) {
-            case "router":
-            case "server":
-                // we do nothing
-                break;
-            case "auto":
-                $this->set_auto();
-            default:
-                // if here, something has gone wrong, really wrong.
-                throw new Exception("$old_profile and $profile isn't valid and cant be handled");
-                break;
-            }            
-            break;
-        }
-    }
+	function apply_profile($profile,$old_profile) {
+		switch ($old_profile) {
+		case "router":
+			switch ($profile) {
+			case "server":
+				$this->set_server();
+				break;
+			case "auto":
+				$this->set_auto();
+				break;
+			default:
+				throw new Exception("$profile isn't valid and cant be handled");
+				break;
+			}
+			break;
+		case "server":
+			switch ($profile) {
+			case "router":
+				$this->set_router();
+				break;
+			case "auto":
+				$this->set_auto();
+				break;
+			default:
+				throw new Exception("$profile isn't valid and cant be handled");
+				break;
+			}
+			break;
+		case "auto":
+			switch ($profile) {
+			case "router":
+				$this->set_router();
+				break;
+			case "server":
+				$this->set_server(false,false);
+				break;
+			default:
+				throw new Exception("$profile isn't valid and cant be handled");
+				break;
+			}
+			break;
+		default:
+			// from "custom" or anything
+			switch ($profile) {
+			case "router":
+			case "server":
+				// we do nothing
+				break;
+			case "auto":
+				$this->set_auto();
+			default:
+				// if here, something has gone wrong, really wrong.
+				throw new Exception("$old_profile and $profile isn't valid and cant be handled");
+				break;
+			}            
+			break;
+		}
+	}
 
 	private function _getifcfg( $interface,$dirty = false ) {
 		if( !isset( $this->ifcfg[$interface]) || $dirty ) {
@@ -178,6 +153,11 @@ class NetworkManager extends Model {
 			$this->ifcfg[$interface] = $data;
 		}
 		return $this->ifcfg[$interface];
+	}
+
+	private function _dirty_cache( $interface ) {
+		unset($this->ifcfg[$interface]);
+		unset($this->htcap[$interface]);
 	}
 
 	private function _getfirstnameserver(){
@@ -304,7 +284,7 @@ class NetworkManager extends Model {
 		configure_dnsmasq($dnsmasqcfg);
 		stop_service("dnsmasq");
 		start_service("dnsmasq");
-		
+
 		$cfg = array(
 			'cmd'		=> 'setlanif',
 			'lanif'		=> $if
@@ -351,6 +331,13 @@ class NetworkManager extends Model {
 			remove_service( 'hostapd' );
 		}
 	}
+	public function get_wlan_broadcast_ssid() {
+		$data = $this->_getifcfg( $this->get_wlan_interface() );
+		if( isset( $data['config']['wlan']['config']['ssidbroadcast'] ) ) {
+			return $data['config']['wlan']['config']['ssidbroadcast'];
+		}        
+		return true;
+	}
 
 	public function get_current_wlan_ssid() {
 		$data = $this->_getifcfg( $this->get_wlan_interface() );
@@ -358,6 +345,26 @@ class NetworkManager extends Model {
 			return $data['config']['wlan']['config']['ssid'];
 		}
 		return 'bubba';
+	}
+
+	public function enable_wlan_broadcast_ssid() {
+		$cfg = array(
+			'cmd'		=> 'enableapssidbroadcast',
+			'ifname'	=> $this->get_wlan_interface(),
+			'enable'	=> true
+		);
+		$data = query_network_manager( $cfg );
+		return $data['status'];
+	}
+
+	public function disable_wlan_broadcast_ssid() {
+		$cfg = array(
+			'cmd'		=> 'enableapssidbroadcast',
+			'ifname'	=> $this->get_wlan_interface(),
+			'enable'	=> false
+		);
+		$data = query_network_manager( $cfg );
+		return $data['status'];
 	}
 
 	public function set_wlan_ssid( $interface, $ssid  ) {
@@ -368,21 +375,47 @@ class NetworkManager extends Model {
 		);
 		$data = query_network_manager( $cfg );
 		return $data['status'];
+	}
+
+	public function is_802_11n_activated() {
+
+		$data = $this->_getifcfg( $this->get_wlan_interface() );
+		if( isset( $data['config']['wlan']['config']['80211n'] ) ) {
+			return $data['config']['wlan']['config']['80211n'] != 0;
+		}
+		return false;
+	}
+
+	public function enable_wlan_802_11n() {
+		$cfg = array(
+			'cmd'		=> 'enable80211n',
+			'ifname'	=> $this->get_wlan_interface(),
+			'enable'	=> true
+		);
+		$data = query_network_manager( $cfg );
+		return $data['status'];
 
 	}
 
-	public function get_available_wlan_modes() {
-		// TODO implement
-		return array( 'n', 'g', 'b', 'a' );
-	}
+	public function disable_wlan_802_11n() {
+		$cfg = array(
+			'cmd'		=> 'enable80211n',
+			'ifname'	=> $this->get_wlan_interface(),
+			'enable'	=> false
+		);
+		$data = query_network_manager( $cfg );
+		return $data['status'];
 
-	public function get_current_wlan_mode() {
+	}
+	public function get_wlan_current_mode() {
+
 		$data = $this->_getifcfg( $this->get_wlan_interface() );
 		if( isset( $data['config']['wlan']['config']['mode'] ) ) {
 			return $data['config']['wlan']['config']['mode'];
 		}
 		return 'n';
 	}
+
 	public function set_wlan_mode( $interface, $mode  ) {
 		$cfg = array(
 			'cmd'			=> 'setapmode',
@@ -392,6 +425,72 @@ class NetworkManager extends Model {
 		$data = query_network_manager( $cfg );
 		return $data['status'];
 
+	}
+
+	private function _get_ht_capab( $interface ) {
+		if( isset( $this->htcap[$interface] ) && is_array( $this->htcap[$interface] ) ) {
+			return $this->htcap[$interface];
+		}
+
+		$data = $this->_getifcfg( $interface );
+		$out = array();
+		if( isset( $data['config']['wlan']['config']['ht_capab'] ) ) {
+			$in = $data['config']['wlan']['config']['ht_capab'];
+			foreach( $in as $i ) {
+				$out[$i] = true;
+			}
+		}
+		$this->htcap[$interface] = $out;
+		return $out;
+	}
+
+	public function set_wlan_ht_capab( $capab ) {
+		$cmd = array(
+			"cmd" => "setaphtcapab", 
+			"capab" => $capab,
+			"ifname" => $this->get_wlan_interface()
+		);
+		$idata = query_network_manager( $cmd );
+		$this->_dirty_cache( $this->get_wlan_interface() );
+		return $idata["status"];
+	}
+
+
+	public function enable_wlan_ht_capab( $capab ) {
+		if( ! is_array( $capab ) ) $capab = array( $capab );
+		$data = $this->_get_ht_capab($this->get_wlan_interface());
+		foreach( $capab as $c ) {
+			if( !isset($data[$c]) ) {
+				$data[$c] = true;
+			}
+		}
+		return $this->set_wlan_ht_capab( array_keys($data) );
+	}
+
+	public function disable_wlan_ht_capab( $capab ) {
+		if( ! is_array( $capab ) ) $capab = array( $capab );
+		$data = $this->_get_ht_capab($this->get_wlan_interface());
+		foreach( $capab as $c ) {
+			if( isset($data[$c]) ) {
+				unset($data[$c]);
+			}
+		}
+		return $this->set_wlan_ht_capab( array_keys($data) );
+	}
+
+	public function wlan_ht40_active() {
+		$data = $this->_get_ht_capab($this->get_wlan_interface());
+		if( $data ) {
+			return isset($data["HT40+"]) || isset($data["HT40-"]);
+		}
+		return false;		
+	}
+	public function wlan_greenfield_active() {
+		$data = $this->_get_ht_capab($this->get_wlan_interface());
+		if( $data ) {
+			return isset($data["GF"]);
+		}
+		return false;
 	}
 
 
@@ -445,7 +544,7 @@ class NetworkManager extends Model {
 				'config'	=> array(
 					'defaultkey'	=> "\"$defaultkey\"",
 					'keys'			=> array_map( create_funtion( '$a', 'return "\"$a\""' ), $keys ),
-					)
+				)
 			);
 			break;
 		case 'none':
@@ -485,34 +584,7 @@ class NetworkManager extends Model {
 		// TODO implement
 		return "";
 	}
-	public function get_wlan_frequency_rules() {
-		// XXX should this be implemented at all?
-		return array(
-			"standard" => array( 
-				"2.4GHz" => array(
-					"band" => 1,
-					"standard" => array( "b", "g", "n" )
-				), 
-				"5GHz" => array(
-					"band" => 2,
-					"standard" => array( "a", "n" )
-				), 
-			),
-			"frequency" => array (
-				"a" => array("5GHz"),
-				"n" => array("2.4GHz", "5GHz"),
-				"b" => array("2.4GHz"),
-				"g" => array("2.4GHz"),
-			),
-			"band" => array (
-				"a" => array("2"),
-				"n" => array("1","2"),
-				"b" => array("1"),
-				"g" => array("1"),
-			)
 
-		);
-	}
 
 	public function get_wlan_bands( $phy = 'phy0' ) {
 		$cfg = array(
@@ -522,9 +594,9 @@ class NetworkManager extends Model {
 		$data = query_network_manager( $cfg );
 		if( $data['status'] ) {
 			return $data['bands'];
-        } else {
-            throw new Exception($data["error"]); 
-        } 
+		} else {
+			throw new Exception($data["error"]); 
+		} 
 	}
 
 	# XXX obsolete
@@ -534,23 +606,23 @@ class NetworkManager extends Model {
 			'phy'	    	=> $phy,
 		);
 		$data = query_network_manager( $cfg );
-        if( $data['status'] ) {
-            $bands = array();
-            foreach( $data['bands'] as $band => $channels ) {
-                foreach( $channels as $channel ) {
-                    if(
-                        isset($channel["disabled"]) && $channel["disabled"] == "true"
-                        || isset($channel["passive_scanning"]) && $channel["passive_scanning"] == "true"
-                    ) {
-                        continue;
-                    }
-                    $bands[$band][] = $channel["channel"];
-                }
-            }
-            return $bands;
-        } else {
-            throw new Exception($data["error"]); 
-        } 
+		if( $data['status'] ) {
+			$bands = array();
+			foreach( $data['bands'] as $band => $channels ) {
+				foreach( $channels as $channel ) {
+					if(
+						isset($channel["disabled"]) && $channel["disabled"] == "true"
+						|| isset($channel["passive_scanning"]) && $channel["passive_scanning"] == "true"
+					) {
+						continue;
+					}
+					$bands[$band][] = $channel["channel"];
+				}
+			}
+			return $bands;
+		} else {
+			throw new Exception($data["error"]); 
+		} 
 	}
 
 	public function get_wlan_current_channel() {
