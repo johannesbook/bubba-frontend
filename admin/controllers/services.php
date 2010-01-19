@@ -41,7 +41,7 @@ class Services extends Controller{
 		$squeezecenter_installed=is_installed($squeezecenter_packagename);
 		$squeezecenter_enabled=$this->input->post('squeezecenter_enabled');   
    
-		$print_status=query_service("cupsys");
+		$print_status=query_service("cups");
 		$print_enabled=$this->input->post('print_enabled');
 
 		$download_status=query_service("filetransferdaemon");
@@ -129,12 +129,12 @@ class Services extends Controller{
 			}       
 
 			if($print_status && !$print_enabled){
-				remove_service("cupsys");
-				stop_service("cupsys");
+				remove_service("cups");
+				stop_service("cups");
 				$print_status=0;
 			}else if(!$print_status && $print_enabled){
-				add_service("cupsys");
-				start_service("cupsys");
+				add_service("cups");
+				start_service("cups");
 				$print_status=1;        
 			}
 
