@@ -243,7 +243,7 @@ class NetworkManager extends Model {
 		return $data["status"];
 	}
 
-	public function setdynamic($interface, $config=array()){
+	public function setdynamic($interface, $config=null){
 		$cmd= array(
 			"cmd"=>"setdynamiccfg", 
 			"ifname"=>$interface,
