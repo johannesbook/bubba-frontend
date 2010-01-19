@@ -723,7 +723,7 @@ class Network extends Controller{
 		$data["jumbo"]=$this->networkmanager->get_mtu($this->networkmanager->get_lan_interface())==9000?true:false;
 
 		$data["dnsmasq_settings"]=get_dnsmasq_settings();
-		if($data["dhcp"]) {
+		if(!$data['dnsmasq_settings']['running']) {
 			$data["dnsmasq_settings"]["dhcpd"]=0;
 		}
 		$data["dhcpd_leases"] = get_leases();

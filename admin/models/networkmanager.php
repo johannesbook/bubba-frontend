@@ -57,6 +57,8 @@ class NetworkManager extends Model {
 		$dnsmasq = get_dnsmasq_settings();
 		unset($dnsmasq['running']);
 		$dnsmasq["dhcpd"] = true; // make sure the fallback will activate dhcpd.
+		$dnsmasq["range_start"] = array("192.168.10.50"); // FIXME
+		$dnsmasq["range_end"] = array("192.168.10.100"); // FIXME
 		configure_dnsmasq($dnsmasq);
 		if($restart_lan) restart_network($this->get_lan_interface());
 		if($restart_wan) restart_network($this->get_wan_interface());
