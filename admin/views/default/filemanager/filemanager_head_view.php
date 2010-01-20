@@ -206,6 +206,7 @@
 		$("#target_protocol option[value='file']").attr("selected",true);
 		$("#backupsettings input[type='text']").val("");
 		$("#backupsettings input[type='password']").val("");
+		$("#backupsettings select[name='nbr_fullbackups'] option[value='2']").attr('selected','selected');
 		update_disklist();
 		enablefields();
 	}
