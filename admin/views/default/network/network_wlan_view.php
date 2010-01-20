@@ -21,7 +21,7 @@
 		class="password"
 		name="password" 
 		id="password" 
-		value="<?=$encryption_key?>"
+		value="<?=htmlentities($encryption_key)?>"
 	/>
 	</td>
 </tr>

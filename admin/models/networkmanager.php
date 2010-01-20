@@ -544,8 +544,8 @@ class NetworkManager extends Model {
 				'cmd'		=> 'setapauthwep',
 				'ifname'	=>  $interface,
 				'config'	=> array(
-					'defaultkey'	=> "\"$defaultkey\"",
-					'keys'			=> array_map( create_funtion( '$a', 'return "\"$a\""' ), $keys ),
+					'defaultkey'	=> $defaultkey,
+					'keys'			=> array_map( create_function( '$a', 'return "\"$a\"";' ), $keys ),
 				)
 			);
 			break;
@@ -577,7 +577,9 @@ class NetworkManager extends Model {
 				break;
 			case 'wep':
 				if( is_array( $auth['wep']['keys'] ) && isset($auth['wep']['defaultkey'] ) ) {
-					return $auth['wep']['keys'][$auth['wep']['defaultkey']];
+					$key = $auth['wep']['keys'][$auth['wep']['defaultkey']];
+					$key = preg_replace('#"?(.*?)"?$#', '\\1', $key );
+					return $key;
 				}
 				break;
 

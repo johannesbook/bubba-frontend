@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.39) claire estelle; urgency=low
+
+  * fix WEP password validation 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 20 Jan 2010 15:48:11 +0100
+
 bubba-frontend (1.2.4.38) claire estelle; urgency=low
 
   * networkmanager complains "Missing parameter" if empty array for config for
