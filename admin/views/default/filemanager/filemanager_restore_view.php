@@ -362,6 +362,7 @@ function progressReport() {
 			return false;
 		} else {
 			$.alert("<?=t("Please select files to restore from the list of included files.")?><br><?=t("Selecting a directory will also select all files within the directory.")?>","","<?=t("No files selected")?>");
+			$("#backup_restore").removeAttr("disabled");
 		}
 	}
 	 
