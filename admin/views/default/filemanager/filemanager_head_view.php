@@ -186,7 +186,6 @@
 						$("#schedule input[value='week']").closest('tr').children('td').children('input[type=checkbox]').removeAttr("disabled");
 						$("#schedule select[name='timeofday']").removeAttr("disabled");
 						$("#schedule select[name='timeofday'] option[value='4']").attr("selected","selected");
-						$("#schedule input[name='sun']").attr("checked","checked");
 						break;
 					case "month":
 						$("#schedule select[name='timeofday']").removeAttr("disabled");
@@ -374,6 +373,10 @@
 	$(document).ready(function(){
 				
 		$("#schedule input[name='monthweek']").click(function() {
+			if(!$(".weekday:checked").length) {
+				// set a default setting
+				$("input[name='sun']").attr('checked','checked');
+			}
 			enablefields($(this).val());	
 		});
 

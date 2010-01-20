@@ -128,13 +128,13 @@
 								<td class="size1"><?=t('Run every week')?></td>
 								<td class="tight"><input type="radio" class="checkbox_radio" name="monthweek" value="week" /></td>
 								<td class="size_rest" colspan="2">	
-									<input type="checkbox" value="mon" name="mon" class="checkbox_radio" /> <?=t('Mo')?>
-									<input type="checkbox" value="tue" name="tue" class="checkbox_radio" /> <?=t('Tu')?>
-									<input type="checkbox" value="wed" name="wed" class="checkbox_radio" /> <?=t('We')?>
-									<input type="checkbox" value="thu" name="thu" class="checkbox_radio" /> <?=t('Th')?>
-									<input type="checkbox" value="fri" name="fri" class="checkbox_radio" /> <?=t('Fr')?>
-									<input type="checkbox" value="sat" name="sat" class="checkbox_radio" /> <?=t('Sa')?>
-									<input type="checkbox" value="sun" name="sun" class="checkbox_radio" /> <?=t('Su')?>
+									<input type="checkbox" value="mon" name="mon" class="checkbox_radio weekday" /> <?=t('Mo')?>
+									<input type="checkbox" value="tue" name="tue" class="checkbox_radio weekday" /> <?=t('Tu')?>
+									<input type="checkbox" value="wed" name="wed" class="checkbox_radio weekday" /> <?=t('We')?>
+									<input type="checkbox" value="thu" name="thu" class="checkbox_radio weekday" /> <?=t('Th')?>
+									<input type="checkbox" value="fri" name="fri" class="checkbox_radio weekday" /> <?=t('Fr')?>
+									<input type="checkbox" value="sat" name="sat" class="checkbox_radio weekday" /> <?=t('Sa')?>
+									<input type="checkbox" value="sun" name="sun" class="checkbox_radio weekday" /> <?=t('Su')?>
 								</td>
 							</tr>
 							<tr>
