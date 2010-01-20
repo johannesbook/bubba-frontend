@@ -85,9 +85,9 @@
 							</tr>
 							<tr>
 								<td class="size1"><?=t('Remote user')?></td>
-								<td class="size1"><input type="text" name="target_user" id="target_user" value="" /></td>
+								<td class="size1"><input type="text" name="target_user" id="target_user" value="" disabled="disabled"/></td>
 								<td class="size1"><?=t('Remote password')?></td>
-								<td class="size_rest"><input type="password" name="target_FTPpasswd" id="target_FTPpasswd" value="" /></td>
+								<td class="size_rest"><input type="password" name="target_FTPpasswd" id="target_FTPpasswd" value="" disabled="disabled"/></td>
 							</tr>
 						</table> <!-- end target section -->
 						</div>
