@@ -415,7 +415,7 @@ class NetworkManager extends Model {
 		if( isset( $data['config']['wlan']['config']['mode'] ) ) {
 			return $data['config']['wlan']['config']['mode'];
 		}
-		return 'n';
+		return 'g';
 	}
 
 	public function set_wlan_mode( $interface, $mode  ) {
@@ -603,32 +603,6 @@ class NetworkManager extends Model {
 		} 
 	}
 
-	# XXX obsolete
-	public function get_wlan_available_channels( $phy = 'phy0' ) {
-		$cfg = array(
-			'cmd'			=> 'getphybands',
-			'phy'	    	=> $phy,
-		);
-		$data = query_network_manager( $cfg );
-		if( $data['status'] ) {
-			$bands = array();
-			foreach( $data['bands'] as $band => $channels ) {
-				foreach( $channels as $channel ) {
-					if(
-						isset($channel["disabled"]) && $channel["disabled"] == "true"
-						|| isset($channel["passive_scanning"]) && $channel["passive_scanning"] == "true"
-					) {
-						continue;
-					}
-					$bands[$band][] = $channel["channel"];
-				}
-			}
-			return $bands;
-		} else {
-			throw new Exception($data["error"]); 
-		} 
-	}
-
 	public function get_wlan_current_channel() {
 		$data = $this->_getifcfg( $this->get_wlan_interface() );
 		if( isset( $data['config']['wlan']['config']['channel'] ) ) {
@@ -637,6 +611,7 @@ class NetworkManager extends Model {
 
 		return 6;
 	}
+
 	public function set_wlan_channel( $interface, $channel  ) {
 		$cfg = array(
 			'cmd'			=> 'setapchannel',
@@ -658,6 +633,8 @@ class NetworkManager extends Model {
 		$data = query_network_manager( $cfg );
 		if($data["status"]){
 			$this->wlanif = $data["wlanif"];
+		} else {
+			return "";
 		}
 		return $this->wlanif;
 	}

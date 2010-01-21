@@ -752,8 +752,11 @@ class Network extends Controller{
 	}
 
 	function wlan($strip=""){
+
+		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card();
 		$data['ssid'] = $this->networkmanager->get_current_wlan_ssid();
 		$data['enabled'] = $this->networkmanager->wlan_enabled();
+
 		$ieee80211_mode =  $this->networkmanager->get_wlan_current_mode();
 		switch( $ieee80211_mode ) {
 		case 'b':
@@ -762,11 +765,12 @@ class Network extends Controller{
 			break;
 		case 'a':
 			$band = 2;
+			break;
 		}
 		$data['current_band'] = $band;
+
 		$ieee80211n = $this->networkmanager->is_802_11n_activated();
 		$greenfield = $this->networkmanager->wlan_greenfield_active();
-
 		if( $greenfield && $ieee80211n ) {
 			$mode = 'greenfield';
 		} elseif ( $ieee80211n ) {
@@ -774,21 +778,25 @@ class Network extends Controller{
 		} else {
 			$mode = 'legacy';
 		}
-
 		$data['ieee80211n'] = $ieee80211n;
 		$data['current_mode'] = $mode;
+
 		$data['current_channel'] = $this->networkmanager->get_wlan_current_channel();
+
 		$data['encryptions'] = $this->networkmanager->get_available_wlan_encryptions();
 		$data['current_encryption'] = $this->networkmanager->get_current_wlan_encryption();
 		$data['encryption_key'] = $this->networkmanager->get_wlan_encryption_key();
-		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card();
+
 		$data['broadcast_ssid'] = $this->networkmanager->get_wlan_broadcast_ssid();
+
 		$data['current_width'] = $this->networkmanager->wlan_ht40_active() ? 40 : 20;
+
 		try {
 			$data['bands'] = $this->networkmanager->get_wlan_bands();
 		} catch( Exception $e ) {
 			$data['bands'] = array();
 		}
+
 		if($strip){
 			$this->load->view(THEME.'/network/network_wlan_view.php',$data);
 		}else{
