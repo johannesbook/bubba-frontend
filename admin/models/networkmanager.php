@@ -286,7 +286,7 @@ class NetworkManager extends Model {
 		configure_dnsmasq($dnsmasqcfg);
 		stop_service("dnsmasq");
 		start_service("dnsmasq");
-
+		
 		$cfg = array(
 			'cmd'		=> 'setlanif',
 			'lanif'		=> $if

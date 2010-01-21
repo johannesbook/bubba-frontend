@@ -11,7 +11,7 @@
 		<a href="<?=FORMPREFIX?>/network/lan"><?=t('LAN')?></a>
 	</li>
 	<li class="<?if($current == 'wlan'):?>active<?endif?>">
-		<a href="<?=FORMPREFIX?>/network/wlan"><?=t('wLAN')?></a>
+		<a href="<?=FORMPREFIX?>/network/wlan"><?=t('wlan_title')?></a>
 	</li>
 	<li class="<?if($current == 'other'):?>active<?endif?>">
 		<a href="<?=FORMPREFIX?>/network/other"><?=t('Identity')?></a>

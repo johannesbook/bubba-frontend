@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.40) claire estelle; urgency=low
+
+  * update wlan strings 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 21 Jan 2010 17:57:37 +0100
+
 bubba-frontend (1.2.4.39) claire estelle; urgency=low
 
   * fix WEP password validation 
