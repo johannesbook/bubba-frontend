@@ -59,6 +59,30 @@ jQuery.fn.extend({
 
 
 $(document).ready( function() {
+
+		$(".expansion").click(function() {
+			var $thisid = $(this).attr('id');
+			$(".expansion").each(function() {
+				if($(this).attr('id') == $thisid) {
+					if($(this).closest('fieldset').children('div').css('display') == "none") {
+						// change '+' sign to '-'
+						$(this).children('span').html("-");
+					} else {
+						// change '-' sign to '+'
+						$(this).children('span').html("+");
+					}
+					$(this).closest('fieldset').children('div').slideToggle(500);
+					
+				} else {
+					// change '-' sign to '+'
+					$(this).children('span').html("+");
+					$(this).closest('fieldset').children('div').slideUp(500);
+				}
+				
+			});
+		});
+
+		/*
 		$('fieldset.expandable.collapsed').children(':last-child').hide();
 		$('fieldset.expandable > legend').prepend($('<span/>').addClass('expander'));
 		$('fieldset.expandable > legend').click(function() {
@@ -71,4 +95,6 @@ $(document).ready( function() {
 				}
 			}
 		);
+		*/
+		
 	});

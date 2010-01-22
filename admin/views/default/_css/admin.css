@@ -94,6 +94,10 @@ table.networksettings tr td:nth-child(2){
 	width : 125px;
 }
 
+table.networksettings tr td.col2{
+	width : 125px;
+}
+
 fieldset#firewall {
 	margin-top: 1em;
 	margin-bottom: 1em;
@@ -489,17 +493,6 @@ input.printer_button {
 	padding: 0;
 }
 
-fieldset.expandable > legend span.expander {
-	width: 16px;
-	height: 16px;
-	float: left;
-	display: block;
-	padding: 0;
-	margin: 0;
-}
-fieldset.expandable.expanded > legend span.expander {
-	background: url(../_img/collapse16.png) center no-repeat;
-}
-fieldset.expandable.collapsed > legend span.expander {
-	background: url(../_img/expand16.png) center no-repeat;
-}
+span.expansion:hover {
+	cursor : pointer;
+}	

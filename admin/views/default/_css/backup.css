@@ -122,10 +122,6 @@ div.files:hover{
 	cursor : pointer;
 }
 
-span.expansion:hover {
-	cursor : pointer;
-}	
-
 fieldset.fld_settings {
 	margin : 2px;
 	padding : 0px;

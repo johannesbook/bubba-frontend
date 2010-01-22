@@ -1,16 +1,18 @@
-<fieldset><legend><i><?=t('wlan_title')?></i></legend>
 <form 
 	id="wLANCFG" 
 	action="<?=FORMPREFIX?>/network/wlanupdate" 
 	method="post"
 >
+<fieldset><legend><i><?=t('wlan_title')?></i></legend>
 <table class="networksettings">
 <tr>
-	<td><label for="enabled"><?=t("wlan_title_enable")?></label></td>
+	<td></td>
+	<td class="col2"><label for="enabled"><?=t("wlan_title_enable")?></label></td>
 	<td>
 		<input 
 			disabled="disabled" 
 			type="checkbox" 
+			class="checkbox_radio"
 			name="enabled" 
 			id="enabled" 
 			title="<?=t("wlan_title_enable_popup")?>"
@@ -20,7 +22,8 @@
 </tr>
 
 <tr>
-	<td><label for="ssid"><?=t("wlan_title_ssid")?></label></td>
+	<td></td>
+	<td class="col2"><label for="ssid"><?=t("wlan_title_ssid")?></label></td>
 	<td>
 		<input 
 			disabled="disabled" 
@@ -34,7 +37,8 @@
 </tr>
 
 <tr>
-	<td>
+	<td></td>
+	<td class="col2">
 	<label 
 		for="password" 
 		class="passwordlabel" 
@@ -56,18 +60,21 @@
 </tr>
 
 </table>
+</fieldset>
 
-<fieldset class="expandable collapsed">
-<legend><i><?=t("wlan_title_advanced")?></i></legend>
-<div>
+<fieldset class="expandable">
+<legend><span class="expansion"><i><span id="wlan_adv_mark">-</span>&nbsp;&nbsp;<?=t('wlan_title_advanced')?></span></i></legend>
+<div id="wlan_adv">
 
 <table class="networksettings">
 
 <tr>
-	<td><label for="band"><?=t("wlan_title_band")?></label></td>
+	<td></td>
+	<td class="col2"><label for="band"><?=t("wlan_title_band")?></label></td>
 	<td>
 	<input 
 		type="radio" 
+		class="checkbox_radio"
 		name="band" 
 		id="band1" 
 		disabled="disabled"
@@ -79,6 +86,7 @@
 >2.4GHz</label>
 	<input 
 		type="radio" 
+		class="checkbox_radio"
 		name="band" 
 		id="band2" 
 		disabled="disabled"
@@ -91,7 +99,8 @@
 </tr>
 
 <tr>
-	<td><label for="mode"><?=t("wlan_title_mode")?></label></td>
+	<td></td>
+	<td class="col2"><label for="mode"><?=t("wlan_title_mode")?></label></td>
 	<td>
 	<select
 		disabled="disabled"
@@ -125,7 +134,8 @@
 </tr>
 
 <tr>
-	<td><label for="width"><?=t("wlan_title_width")?></label></td>
+	<td></td>
+	<td class="col2"><label for="width"><?=t("wlan_title_width")?></label></td>
 	<td>
 	<select
 		disabled="disabled"
@@ -144,7 +154,8 @@
 </tr>
 
 <tr>
-	<td><label for="encryption"><?=t("wlan_title_encryption")?></label></td>
+	<td></td>
+	<td class="col2"><label for="encryption"><?=t("wlan_title_encryption")?></label></td>
 	<td><select disabled="disabled" id="encryption" name="encryption" title="<?=t("wlan_title_encryption_popup")?>">
 <?foreach($encryptions as $encryption):?>
 	<option value="<?=$encryption?>" <?if($encryption == $current_encryption):?>selected="selected"<?endif?>><?=t("wlan_title_encryption_$encryption")?></option>
@@ -154,7 +165,8 @@
 </tr>
 
 <tr>
-	<td><label for="channel"><?=t("wlan_title_channel")?></label></td>
+	<td></td>
+	<td class="col2"><label for="channel"><?=t("wlan_title_channel")?></label></td>
     <td>
 	<select disabled="disabled" id="channel" name="channel" title="<?=t("wlan_title_channel_popup")?>">
     </select>
@@ -162,7 +174,8 @@
 </tr>
 
 <tr>
-	<td><label for="broadcast_ssid"><?=t("wlan_title_broadcast")?></label></td>
+	<td></td>
+	<td class="col2"><label for="broadcast_ssid"><?=t("wlan_title_broadcast")?></label></td>
     <td>
     <input
         disabled="disabled"
@@ -170,6 +183,7 @@
         name="broadcast_ssid"
         title="<?=t("wlan_title_broadcast_popup")?>"
         type="checkbox"
+        class="checkbox_radio"
         <?if($broadcast_ssid):?>checked="checked"<?endif?>
     />
 	</td>
@@ -188,5 +202,4 @@
 />
 
 </form>
-</fieldset>
 

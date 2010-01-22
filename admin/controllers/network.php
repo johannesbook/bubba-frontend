@@ -751,12 +751,21 @@ class Network extends Controller{
 		}
 	}
 
-	function wlan($strip=""){
-
-		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card();
+	function wlan($strip="",$msg=""){
+	
+		
+		if($msg == "update") {
+			$data['update'] = 1; // indicate that the user has pressed update with green status bar.
+			$data['success'] = "success";
+			$data['update_msg'] = "wLAN configuration updated.";
+		} elseif ($msg == "error") {
+			$data['update'] = 1; // indicate that the user has pressed update with green status bar.
+			$data['success'] = "fail";
+			$data['update_msg'] = "Error in wLAN configuration.";
+		}			
+	
 		$data['ssid'] = $this->networkmanager->get_current_wlan_ssid();
 		$data['enabled'] = $this->networkmanager->wlan_enabled();
-
 		$ieee80211_mode =  $this->networkmanager->get_wlan_current_mode();
 		switch( $ieee80211_mode ) {
 		case 'b':
@@ -841,7 +850,16 @@ class Network extends Controller{
 
 		)
 		{
-			redirect( 'network/wlan' );
+			//redirect( 'network/wlan/0/error' );
+			if($strip){
+				redirect("/network/wlan");
+			}else{
+				$this->_renderfull(
+					$this->wlan(0,"error"),
+					'/network/network_wlan_head_view.php'
+				);
+			}
+
 		}
 
 		$this->networkmanager->set_wlan_ssid( $this->networkmanager->get_wlan_interface(), $ssid );
@@ -933,7 +951,12 @@ class Network extends Controller{
 			invoke_rc_d( "dnsmasq", "restart" );
 		} 
 
-		redirect( 'network/wlan' );
+		if($strip){
+			redirect("/network/wlan");
+		}else{
+			$this->wlan(0,"update");
+		}
+
 
 	}
 

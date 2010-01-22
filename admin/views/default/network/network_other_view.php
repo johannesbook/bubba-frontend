@@ -13,10 +13,9 @@ function easyfind_onclick() {
 // -->
 </script>
 
-<fieldset><legend>Identity</legend>
 	<fieldset><legend><?=t("Windows share options")?></legend>
 	<form id="OTHCFG" action="<?=FORMPREFIX?>/network/othupdate" method="post">
-	<table border="0" cellpadding="0" cellspacing="0">
+	<table class="networksettings">
 		<tr>
 			<td></td>
 			<td><?=t('Hostname')?>:</td>
@@ -31,7 +30,7 @@ function easyfind_onclick() {
 		<tr>
 			<td></td>
 			<td><?=t('Workgroup')?>:</td>
-			<td><input type="text" name="workgroup" size="10" value="<?=$workgroup?>"/><br>&nbsp;</td>
+			<td><input type="text" name="workgroup" size="10" value="<?=$workgroup?>"/></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -43,7 +42,7 @@ function easyfind_onclick() {
 	</fieldset>
 	<fieldset><legend><?=t("Easyfind options")?></legend>
 	<form id="OTHCFG" action="<?=FORMPREFIX?>/network/othupdate" method="post">
-	<table border="0" cellpadding="0" cellspacing="0">
+	<table class="networksettings">
 		<tr>
 			<td></td>
 			<td><?=t('Use \'Easyfind\' to locate your Bubba')?>:</td>
@@ -71,6 +70,5 @@ function easyfind_onclick() {
 		</tr>
 	</table>
 	</form>
-</fieldset>
 </fieldset>
 

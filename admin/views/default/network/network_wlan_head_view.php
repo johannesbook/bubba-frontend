@@ -19,9 +19,23 @@ labels = {
 
 <script  type="text/javascript">
 $(document).ready( function() {
-    if( wlan_configurable ) {
-        $("#wLANCFG :disabled").removeAttr("disabled");
-    }
+
+	$("input[type='submit']").click(function() {
+		cursor_wait();
+	});
+	
+	if(<?=isset($update)?"$update":"'0'"?>) {
+		update_status("<?=isset($success)?$success:"fail"?>","<?=isset($update_msg)?t($update_msg):""?>");
+	}
+
+  if( wlan_configurable ) {
+      $("#wLANCFG :disabled").removeAttr("disabled");
+  }
+
+	// hide advanced settings
+	$("#wlan_adv_mark").html("+");
+	$("#wlan_adv").css("display","none");
+	
 
 	$.validator.addMethod('wep', function(value, element, params) {
 		return value.length == 5 || value.length == 13 || value.length == 16;
@@ -107,6 +121,23 @@ label.error {
   padding-left: 16px;
   padding-bottom: 2px;
   color: #ea5200;
+}
+
+input[type='submit'] {
+	margin-left : 76px;
+	margin-top : 15px;
+}
+
+input[type='text'] {
+	width : 150px;
+	padding : 2px;
+}
+
+select {
+	width : 155px;
+}
+select#mode {
+	width : 225px;
 }
 
 </style>
