@@ -1,8 +1,8 @@
-bubba-frontend (1.2.4.42) claire; urgency=low
+bubba-frontend (1.2.4.42) claire estelle; urgency=low
 
   * readding missing wlan-configurable init 
 
- -- Carl Fürstenberg <carl@excito.com>  Tue, 26 Jan 2010 16:20:54 +0100
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 26 Jan 2010 16:32:04 +0100
 
 bubba-frontend (1.2.4.41) claire estelle; urgency=low
 
