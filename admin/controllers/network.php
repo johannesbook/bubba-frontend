@@ -753,6 +753,7 @@ class Network extends Controller{
 
 	function wlan($strip="",$msg=""){
 	
+		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card() && $this->session->userdata("network_profile") != "custom";
 		
 		if($msg == "update") {
 			$data['update'] = 1; // indicate that the user has pressed update with green status bar.

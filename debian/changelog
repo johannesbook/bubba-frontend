@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.42) claire; urgency=low
+
+  * readding missing wlan-configurable init 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 26 Jan 2010 16:20:54 +0100
+
 bubba-frontend (1.2.4.41) claire estelle; urgency=low
 
   * cleanup bands in networkmanager so it wont make havock if no card exists
