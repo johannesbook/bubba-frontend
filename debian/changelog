@@ -1,3 +1,13 @@
+bubba-frontend (1.2.4.43) claire estelle; urgency=low
+
+  * Enabling ht_capab flags:
+    - LSIG-TXOP-PROT in mixed mode
+    - TX-STBC, RX-STBC12, and LDPC in greenfield and mixed mode
+  * Force 20MHz window in legacy mode
+
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 28 Jan 2010 17:10:53 +0100
+
 bubba-frontend (1.2.4.42ubuntu2) claire estelle; urgency=low
 
   * Changed "Greenfield mode" to "N only mode" 

@@ -881,15 +881,18 @@ class Network extends Controller{
 
 		if( $mode == "greenfield" ) {
 			$this->networkmanager->enable_wlan_802_11n();
-			$this->networkmanager->enable_wlan_ht_capab(  "GF" );
+			$this->networkmanager->enable_wlan_ht_capab( array( "GF", "TX-STBC", "RX-STBC12" ) );
+			$this->networkmanager->disable_wlan_ht_capab( "LSIG-TXOP-PROT" );
 			$width = 40; // XXX driver problem?
 
 		} elseif( $mode == "mixed" ) {
 			$this->networkmanager->enable_wlan_802_11n();
 			$this->networkmanager->disable_wlan_ht_capab(  "GF" );
+			$this->networkmanager->enable_wlan_ht_capab( array( "LSIG-TXOP-PROT", "TX-STBC", "RX-STBC12" ) );
 		} else { // legacy
 			$this->networkmanager->disable_wlan_802_11n();
-			$this->networkmanager->disable_wlan_ht_capab(  "GF" );
+			$this->networkmanager->disable_wlan_ht_capab( array( "GF", "LSIG-TXOP-PROT", "TX-STBC", "RX-STBC12" ) );
+			$width = 20;
 		}
 
 
