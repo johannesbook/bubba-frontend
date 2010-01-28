@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.42ubuntu2) claire estelle; urgency=low
+
+  * Changed "Greenfield mode" to "N only mode" 
+
+ -- Tor Krill <tor@excito.com>  Thu, 28 Jan 2010 16:46:38 +0100
+
 bubba-frontend (1.2.4.42ubuntu1) karmic; urgency=low
 
   * Added functions to start bridge during boot 

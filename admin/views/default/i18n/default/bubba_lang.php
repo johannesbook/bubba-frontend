@@ -104,7 +104,7 @@ $lang['wlan_title_legacy_mode_2'] = 'Legacy mode (802.11a)';
 $lang['wlan_title_legacy_mode_1'] = 'Legacy mode (802.11g)';
 $lang['wlan_title_mixed_mode_2'] = 'Mixed mode (802.11n + 802.11a)';
 $lang['wlan_title_mixed_mode_1'] = 'Mixed mode (802.11n + 802.11g)';
-$lang['wlan_title_greenfield_mode'] = 'Greenfield mode (802.11n only)';
+$lang['wlan_title_greenfield_mode'] = 'N only mode (802.11n only)';
 
 $lang['wlan_title_encryption'] = 'Encryption';
 $lang['wlan_title_encryption_popup'] = 'The encryption to use';
