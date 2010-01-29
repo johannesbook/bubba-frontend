@@ -1,3 +1,10 @@
+bubba-frontend (1.2.4.46) claire estelle; urgency=low
+
+  [ PA Nilsson ]
+  * * Using ifrestart to restart network interfaces. (Closes: #1085)
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 29 Jan 2010 16:28:11 +0100
+
 bubba-frontend (1.2.4.45) claire estelle; urgency=low
 
   * any ht_capab requires either HT40+ or HT40-
