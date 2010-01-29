@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.45) claire estelle; urgency=low
+
+  * any ht_capab requires either HT40+ or HT40-
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 29 Jan 2010 01:00:51 +0100
+
 bubba-frontend (1.2.4.44) claire estelle; urgency=low
 
   * forgot LDPC 

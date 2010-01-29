@@ -879,20 +879,26 @@ class Network extends Controller{
 
 		$this->networkmanager->set_wlan_channel( $this->networkmanager->get_wlan_interface(), $channel );
 
+		$ht_capab = array();
+
 		if( $mode == "greenfield" ) {
 			$this->networkmanager->enable_wlan_802_11n();
-			$this->networkmanager->enable_wlan_ht_capab( array( "GF", "TX-STBC", "RX-STBC12", "LDPC" ) );
-			$this->networkmanager->disable_wlan_ht_capab( "LSIG-TXOP-PROT" );
-			$width = 40; // XXX driver problem?
-
+			$width = 40; // Greenfield mode requires 40MHz
+			$ht_capab[] = "GF";
+			$ht_capab[] = "TX-STBC";
+			$ht_capab[] = "RX-STBC12";
+			$ht_capab[] = "LDPC";
 		} elseif( $mode == "mixed" ) {
 			$this->networkmanager->enable_wlan_802_11n();
-			$this->networkmanager->disable_wlan_ht_capab(  "GF" );
-			$this->networkmanager->enable_wlan_ht_capab( array( "LSIG-TXOP-PROT", "TX-STBC", "RX-STBC12", "LDPC" ) );
+			if( $width == 40 ) {
+				$ht_capab[] = "LSIG-TXOP-PROT";
+				$ht_capab[] = "TX-STBC";
+				$ht_capab[] = "RX-STBC12";
+				$ht_capab[] = "LDPC";
+			}
 		} else { // legacy
 			$this->networkmanager->disable_wlan_802_11n();
-			$this->networkmanager->disable_wlan_ht_capab( array( "GF", "LSIG-TXOP-PROT", "TX-STBC", "RX-STBC12", "LDPC" ) );
-			$width = 20;
+			$width = 20; //override, as we don't need it
 		}
 
 
@@ -909,8 +915,7 @@ class Network extends Controller{
 			case 44:
 			case 52:
 			case 60:
-				$this->networkmanager->disable_wlan_ht_capab("HT40-");
-				$this->networkmanager->enable_wlan_ht_capab("HT40+");
+				$ht_capab[] = "HT40+";
 				break;
 			case 8:
 			case 9:
@@ -924,14 +929,12 @@ class Network extends Controller{
 			case 56:
 			case 64:
 			default:
-				$this->networkmanager->disable_wlan_ht_capab("HT40+");
-				$this->networkmanager->enable_wlan_ht_capab("HT40-");
+				$ht_capab[] = "HT40-";
 				break;
 			}
-		} else {
-			// 20MHz
-			$this->networkmanager->disable_wlan_ht_capab(array( "HT40+", "HT40-" ) );
 		}
+
+		$this->networkmanager->set_wlan_ht_capab( $ht_capab );
 
 		# TODO wep defaultkey
 		$this->networkmanager->set_wlan_encryption(

@@ -111,7 +111,24 @@ $(document).ready( function() {
 			}
 		}
 	});
+	$('select#mode').change(function() {
+		switch( $(this).val() ) {
+		case "legacy":
+			$("select#width").val("20");
+			$("select#width").attr("disabled", "disabled");
+			break;
+		case "mixed":
+			$("select#width").removeAttr("disabled");
+			break;
+		case "greenfield":
+			$("select#width").val("40");
+			$("select#width").removeAttr("disabled");
+			break;
+		}
+	});
+	
 	$('select#encryption').trigger('change');
+	$('select#mode').trigger('change');
 });
 </script>
 
