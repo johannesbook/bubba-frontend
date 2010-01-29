@@ -122,7 +122,7 @@ $(document).ready( function() {
 			break;
 		case "greenfield":
 			$("select#width").val("40");
-			$("select#width").removeAttr("disabled");
+			$("select#width").attr("disabled", "disabled");
 			break;
 		}
 	});
