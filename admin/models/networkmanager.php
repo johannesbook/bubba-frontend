@@ -60,8 +60,8 @@ class NetworkManager extends Model {
 		$dnsmasq["range_start"] = array("192.168.10.50"); // FIXME
 		$dnsmasq["range_end"] = array("192.168.10.100"); // FIXME
 		configure_dnsmasq($dnsmasq);
-		if($restart_lan) restart_network($this->get_lan_interface());
-		if($restart_wan) restart_network($this->get_wan_interface());
+		if($restart_lan) $this->ifrestart($this->get_lan_interface());
+		if($restart_wan) $this->ifrestart($this->get_wan_interface());
 	}
 
 	function set_router($restart_lan = true, $restart_wan = true) {
@@ -81,8 +81,8 @@ class NetworkManager extends Model {
 		$dnsmasq["range_end"] = array("192.168.10.100"); // FIXME
 		configure_dnsmasq($dnsmasq);
 
-		if($restart_lan) restart_network($this->get_lan_interface());
-		if($restart_wan) restart_network($this->get_wan_interface());
+		if($restart_lan) $this->ifrestart($this->get_lan_interface());
+		if($restart_wan) $this->ifrestart($this->get_wan_interface());
 	}
 
 	function set_server($restart_lan = true, $restart_wan = true) {
