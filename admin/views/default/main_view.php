@@ -9,9 +9,6 @@
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/screen.css" />
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js"></script>
-<?if($DEBUG):?>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.lint.js"></script>
-<?endif?>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/main.js"></script>
 <?
 if(isset($head)) {
