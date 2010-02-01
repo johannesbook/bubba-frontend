@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/notify.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/notify.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script>
 $('form.ack').live( 'submit', function(e) {
 	uuid=$(this).find('input.uuid').val();

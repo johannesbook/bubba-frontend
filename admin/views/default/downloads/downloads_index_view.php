@@ -1,5 +1,5 @@
 
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 		$("#downloadcontent").PeriodicalUpdate(
