@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 
 <fieldset><legend><i><?=t('WAN')?></i></legend>
 <form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">

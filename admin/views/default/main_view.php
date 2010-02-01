@@ -6,10 +6,10 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Bubba|TWO - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/screen.css" />
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css" />
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/screen.css?v='<?=$this->session->userdata('version')?>'" />
+<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/main.js?v='<?=$this->session->userdata('version')?>'"></script>
 <?
 if(isset($head)) {
 	echo $head;

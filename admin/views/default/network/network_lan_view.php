@@ -1,4 +1,4 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 <fieldset><legend><i><?=t('LAN')?></i></legend>
 <form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
 <table class="networksettings">
