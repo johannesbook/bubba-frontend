@@ -224,7 +224,7 @@ class NetworkManager extends Model {
 		$data = query_network_manager( array(
 			"cmd"=>"ifrestart", 
 			"ifname"=>$interface));
-		if( query_service("hostapd") && service_running("hostapd") && ( $interface == get_lan_interface() ) ) {
+		if( query_service("hostapd") && service_running("hostapd") && ( $interface == $this->get_lan_interface() ) ) {
 			invoke_rc_d("hostapd","restart");  // check return value?
 		}
 		return $data["status"];
