@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.57) estelle claire; urgency=low
+
+  * upgrading simplemodal
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 21:07:50 +0100
+
 bubba-frontend (1.2.4.56) estelle claire; urgency=low
 
   * same for RAID 
