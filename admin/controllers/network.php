@@ -800,6 +800,7 @@ class Network extends Controller{
 		$data['broadcast_ssid'] = $this->networkmanager->get_wlan_broadcast_ssid();
 
 		$data['current_width'] = $this->networkmanager->wlan_ht40_active() ? 40 : 20;
+		$data['capabilities'] = $this->networkmanager->get_wlan_capabilities();
 
 		try {
 			$data['bands'] = $this->networkmanager->get_wlan_bands();
@@ -828,6 +829,7 @@ class Network extends Controller{
 		$band = (int) $this->input->post('band');
 		$channel = (int) $this->input->post('channel');
 		$password =  $this->input->post("password");
+		$capabilities = $this->networkmanager->get_wlan_capabilities();
 
 		# Simple validation to prevent destruction
 		if( 
@@ -848,6 +850,7 @@ class Network extends Controller{
 					|| strlen ( $password ) > 63
 				)
 			)
+			|| ( $mode == 'greenfield' && ! $capabilities['RX_GF'] )
 
 		)
 		{
@@ -881,21 +884,51 @@ class Network extends Controller{
 
 		$ht_capab = array();
 
+
 		if( $mode == "greenfield" ) {
 			$this->networkmanager->enable_wlan_802_11n();
 			$width = 40; // Greenfield mode requires 40MHz
 			$ht_capab[] = "GF";
-			$ht_capab[] = "TX-STBC";
-			$ht_capab[] = "RX-STBC12";
-			$ht_capab[] = "LDPC";
-		} elseif( $mode == "mixed" ) {
-			$this->networkmanager->enable_wlan_802_11n();
-			if( $width == 40 ) {
-				$ht_capab[] = "LSIG-TXOP-PROT";
+			if($capabilities['TX_STBC']) {
 				$ht_capab[] = "TX-STBC";
+			}
+			switch($capabilities['RX_STBC']) {
+			case 1:
+				$ht_capab[] = "RX-STBC1";
+				break;
+			case 2:
 				$ht_capab[] = "RX-STBC12";
+				break;
+			case 3:
+				$ht_capab[] = "RX-STBC123";
+				break;
+			}
+			if($capabilities['RX_LDPC']) {
 				$ht_capab[] = "LDPC";
 			}
+		} elseif( $mode == "mixed" ) {
+			$this->networkmanager->enable_wlan_802_11n();
+			if($capabilities['L_SIG_TXOP']) {
+				$ht_capab[] = "LSIG-TXOP-PROT";
+			}
+			if($capabilities['TX_STBC']) {
+				$ht_capab[] = "TX-STBC";
+			}
+			switch($capabilities['RX_STBC']) {
+			case 1:
+				$ht_capab[] = "RX-STBC1";
+				break;
+			case 2:
+				$ht_capab[] = "RX-STBC12";
+				break;
+			case 3:
+				$ht_capab[] = "RX-STBC123";
+				break;
+			}
+			if($capabilities['RX_LDPC']) {
+				$ht_capab[] = "LDPC";
+			}
+
 		} else { // legacy
 			$this->networkmanager->disable_wlan_802_11n();
 			$width = 20; //override, as we don't need it

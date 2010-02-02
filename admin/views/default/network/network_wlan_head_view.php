@@ -7,6 +7,7 @@ bands=<?=json_encode($bands)?>;
 current_mode=<?=json_encode($current_mode)?>;
 current_band=<?=json_encode($current_band)?>;
 current_channel=<?=json_encode($current_channel)?>;
+capabilities=<?=json_encode($capabilities)?>;
 labels = {
 	legacy_2: <?=json_encode(t("wlan_title_legacy_mode_2"))?>,
 	legacy_1: <?=json_encode(t("wlan_title_legacy_mode_1"))?>,
@@ -30,6 +31,9 @@ $(document).ready( function() {
 
   if( wlan_configurable ) {
       $("#wLANCFG :disabled").removeAttr("disabled");
+	  if( ! capabilities["RX_GF"] ) {
+		  $("#mode_greenfield").attr("disabled","disabled");
+	  }
   }
 
 	// hide advanced settings
@@ -40,17 +44,30 @@ $(document).ready( function() {
 	$.validator.addMethod('wep', function(value, element, params) {
 		return value.length == 5 || value.length == 13 || value.length == 16;
 	});
+	$.validator.addMethod('gf_mode', function(value, element) {
+		if( value == "greenfield" && ! capabilities["RX_GF"] ) {
+			return false;
+		}
+		return true;
+	}, "Current hardware doesn't support Greenfield mode");	
+
 	validator = $('#wLANCFG').validate({
 		rules: {
 			'ssid' : {
 				required: true,
 				maxlength: 32
+			},
+			'mode' : {
+				gf_mode: true
 			}
 		},
 		messages: {
 			'ssid': {
 				required: "Please enter an SSID (Service Set Identifier)",
 				maxlength: jQuery.format("SSID has a maximum length of 32 characters")
+			},
+			'mode': {
+				gf_mode: jQuery.format("Current hardware doesn't support Greenfield mode")
 			}
 		}
 	});

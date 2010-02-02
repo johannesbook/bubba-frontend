@@ -593,7 +593,52 @@ class NetworkManager extends Model {
 		return "";
 	}
 
+	private function _bit( $int ) {
+		return 0x1 << $int;
+	}
 
+	public function get_wlan_capabilities( $phy = 'phy0' ) {
+		$cfg = array(
+			'cmd'			=> 'getphycap',
+			'phy'	    	=> $phy,
+		);
+		$data = query_network_manager( $cfg );
+		if( $data['status'] ) {
+			$cap = $data['cap'];
+			$result = array();
+			$result['RX_LDPC'] = (bool)($cap & $this->_bit(0));
+			
+			$result['HT40'] =  (bool)($cap & $this->_bit(1));
+			
+			$result['SMPC'] = ($cap >> 2) & 0x3; // bit 2 and 3
+			
+			$result['RX_GF'] =  (bool)($cap & $this->_bit(4));
+			
+			$result['HT20_CGI'] =  (bool)($cap & $this->_bit(5));
+			$result['HT40_CGI'] =  (bool)($cap & $this->_bit(6));
+			
+			$result['TX_STBC'] =  (bool)($cap & $this->_bit(7));
+
+			$result['RX_STBC'] = ($cap >> 8) & 0x3; // bit 8 and 9
+			
+			$result['HT_DELAYED_BA'] =  (bool)($cap & $this->_bit(10));
+			
+			$result['AMSDU_LENGTH'] =  $cap & $this->_bit(11) ? 3839 : 7935;
+
+			$result['DSSS_CCK_HT40'] =  (bool)($cap & $this->_bit(12));
+
+			// bit 13 reserved
+			
+			$result['INTOLERANT_40MHZ'] =  (bool)($cap & $this->_bit(14));
+
+			$result['L_SIG_TXOP'] =  (bool)($cap & $this->_bit(15));
+
+			return $result;
+		} else {
+			throw new Exception($data["error"]); 
+		} 
+
+	}
 	public function get_wlan_bands( $phy = 'phy0' ) {
 		$cfg = array(
 			'cmd'			=> 'getphybands',

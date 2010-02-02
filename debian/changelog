@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.54) estelle claire; urgency=low
+
+  * adding capabilities 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 15:39:26 +0100
+
 bubba-frontend (1.2.4.53) estelle claire; urgency=low
 
   * Added missing disk_model code.
