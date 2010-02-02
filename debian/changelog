@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.51) karmic; urgency=low
+
+  * Removed forgotten context menu div in backup.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 02 Feb 2010 13:44:07 +0100
+
 bubba-frontend (1.2.4.50) estelle claire; urgency=low
 
   * Stopping dnsmasq when setting auto/server profile.

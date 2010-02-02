@@ -266,7 +266,3 @@
 		<div id="lock_error" class="highlight"></div>
 </fieldset>
 
-<ul id="myMenu" class="contextMenu">
-	<li class="delete"><a href="#delete"><?=t("Delete")?></a></li>
-</ul>
-
