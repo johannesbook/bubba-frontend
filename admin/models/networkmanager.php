@@ -56,6 +56,8 @@ class NetworkManager extends Model {
 		// make sure to disable dns
 		$dnsmasq = get_dnsmasq_settings();
 		unset($dnsmasq['running']);
+		// stop dnsmasq, it will be stated when necessary from fallback.
+		stop_service("dnsmasq");
 		$dnsmasq["dhcpd"] = true; // make sure the fallback will activate dhcpd.
 		$dnsmasq["range_start"] = array("192.168.10.50"); // FIXME
 		$dnsmasq["range_end"] = array("192.168.10.100"); // FIXME
