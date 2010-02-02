@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.50) estelle claire; urgency=low
+
+  * Stopping dnsmasq when setting auto/server profile.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 02 Feb 2010 11:16:05 +0100
+
 bubba-frontend (1.2.4.49) claire estelle; urgency=low
 
   * Fixed reported "get_lan_interface" bugg.
