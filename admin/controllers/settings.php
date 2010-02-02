@@ -391,14 +391,16 @@ class Settings extends Controller{
 	function backuprestore($strip=""){
 
 		$this->load->model('disk_model');
+		$data['disks'] = array();
 		$disks=$this->disk_model->list_external_disks(false,true,false,true); // allow removable, not RAID, allow USB, list partitions
-		foreach($disks as $disk) {
-			foreach($disk["partitions"] as $part) {
-				$data["disks"][] = $part;
+		if(sizeof($disks)) {
+			foreach($disks as $disk) {
+				foreach($disk as $part) {
+					$data["disks"][] = $part;
+				}
 			}
+			sort($data["disks"]);
 		}
-		sort($data["disks"]);
-
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_backuprestore_view',$data);		
 		}else{

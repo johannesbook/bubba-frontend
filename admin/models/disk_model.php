@@ -50,7 +50,7 @@ class Disk_model extends Model {
 		return $array;
 	}
 
-	function list_external_disks($prohibit_removable = false, $prohibit_raid = false, $prohibit_usb = false) {
+	function list_external_disks($prohibit_removable = false, $prohibit_raid = false, $prohibit_usb = false, $list_partitions = false) {
 		$disks = $this->list_disks();
 		$ret = array();
 		foreach( $disks as $disk ) {
@@ -75,9 +75,15 @@ class Disk_model extends Model {
 					}
 				}
 			}
-
-			$ret[] = $disk['dev'];
+			if($list_partitions) {
+				foreach( $disk['partitions'] as $part ) {
+					$ret[$disk['dev']][] = $part['dev'];
+				}
+			} else {
+				$ret[] = $disk['dev'];
+			}
 		}
+		//print_r($ret);
 		return $ret;
 	}
 
