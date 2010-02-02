@@ -188,9 +188,6 @@ $(document).ready( function() {
 					)
 				);
 			}
-
-			$.modal.close();
-			$.modal( form );
 		}, 'json' );
 
 		$.modal( form );
@@ -201,7 +198,6 @@ $(document).ready( function() {
 		form.append( $('<div />').addClass("header").text("<?=t("Create RAID array")?>"));
 
 		$.post(	'<?=site_url("ajax_disk/get_external_disks")?>', { removable: false, raid: false, usb: false }, function(data) {
-			$.modal.close();
 			if( data.internal_got_mounts ) {
 				form.append( $('<div />').addClass("text").text("<?=t("There seems to be disks mounted, please unmount these and try again.")?>" ) );
 				text_box = $('<div />').addClass("text");
@@ -267,7 +263,6 @@ $(document).ready( function() {
 				}
 			}
 
-			$.modal( form );
 		}, 'json' );
 		$.modal( form );
 

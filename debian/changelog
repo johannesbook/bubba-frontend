@@ -1,20 +1,8 @@
-bubba-frontend (1.2.4.57) estelle claire; urgency=low
+bubba-frontend (1.2.4.58) estelle claire; urgency=low
 
-  * upgrading simplemodal
+  * undo the model test, the reason seems to be deeper that this
 
- -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 21:07:50 +0100
-
-bubba-frontend (1.2.4.56) estelle claire; urgency=low
-
-  * same for RAID 
-
- -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 17:50:29 +0100
-
-bubba-frontend (1.2.4.55) estelle claire; urgency=low
-
-  * call modal.close before modal to enable cancel
-
- -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 17:39:39 +0100
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 22:28:06 +0100
 
 bubba-frontend (1.2.4.54) estelle claire; urgency=low
 
