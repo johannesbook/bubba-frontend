@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.56) estelle claire; urgency=low
+
+  * same for RAID 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 17:50:29 +0100
+
 bubba-frontend (1.2.4.55) estelle claire; urgency=low
 
   * call modal.close before modal to enable cancel

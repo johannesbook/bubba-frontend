@@ -188,6 +188,9 @@ $(document).ready( function() {
 					)
 				);
 			}
+
+			$.modal.close();
+			$.modal( form );
 		}, 'json' );
 
 		$.modal( form );
@@ -263,6 +266,8 @@ $(document).ready( function() {
 				}
 			}
 
+			$.modal.close();
+			$.modal( form );
 		}, 'json' );
 		$.modal( form );
 
