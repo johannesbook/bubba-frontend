@@ -388,26 +388,16 @@ class Settings extends Controller{
 		}
 	}
 
-	function _finddisks(){
-		$res=array();
-		$disks=glob("/sys/block/sd?");
-		foreach($disks as $disk){
-			$cnt=file("$disk/removable");
-			if($cnt[0]==1){ // Disk is removable
-				$parts=glob("$disk/sd??");
-				if(count($parts)>0){
-					$res[]="/dev/".array_pop(split("/",$parts[0]));
-				}else{
-					$res[]="/dev/".array_pop(split("/",$disk));
-				}
-			}
-		}
-		return $res;
-	}
-
 	function backuprestore($strip=""){
 
-		$data["disks"]=$this->_finddisks();
+		$this->load->model('disk_model');
+		$disks=$this->disk_model->list_external_disks(false,true,false,true); // allow removable, not RAID, allow USB, list partitions
+		foreach($disks as $disk) {
+			foreach($disk["partitions"] as $part) {
+				$data["disks"][] = $part;
+			}
+		}
+		sort($data["disks"]);
 
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_backuprestore_view',$data);		
