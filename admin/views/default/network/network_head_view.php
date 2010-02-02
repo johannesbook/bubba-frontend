@@ -12,7 +12,7 @@ $(document).ready(function(){
 			$('input').attr("disabled","true");
 	<? } ?>
 			
-	if(<?=isset($update)?"$update":"'0'"?>) {
+	if(<?=isset($update)?"$update":"0"?>) {
 		update_status("<?=isset($success)?$success:"fail"?>","<?=isset($update_msg)?t($update_msg):""?>");
 	}
 	

@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.59) karmic; urgency=low
+
+  * Fixed red status bar, closes #1118 
+
+ -- PA Nilsson <pa@excito.com>  Tue, 02 Feb 2010 23:40:11 +0100
+
 bubba-frontend (1.2.4.58) estelle claire; urgency=low
 
   * undo the model test, the reason seems to be deeper that this
