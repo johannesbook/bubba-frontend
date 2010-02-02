@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.55) estelle claire; urgency=low
+
+  * call modal.close before modal to enable cancel
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 02 Feb 2010 17:39:39 +0100
+
 bubba-frontend (1.2.4.54) estelle claire; urgency=low
 
   * adding capabilities 

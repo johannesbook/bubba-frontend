@@ -210,6 +210,8 @@ $(document).ready( function() {
 						$("<input type='button' class='no simplemodal-close' value='<?=t("Close")?>' />")
 					)
 				);
+				$.modal.close();
+				$.modal( form );
 			} else {
 				text_box = $('<div />').addClass("text").addClass("div_align_middle");
 				input_label = $('<label />').attr({'for': 'label'}).text('<?=t("Disk label")?>:');
@@ -245,6 +247,8 @@ $(document).ready( function() {
 						)
 					)
 				);
+				$.modal.close();
+				$.modal( form );
 			}
 		}, 'json');
 		$.modal( form );
