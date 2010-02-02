@@ -111,24 +111,28 @@ class Settings extends Controller{
 
 	function backup($strip=""){
 	
+		$this->load->model('disk_model');
+
 		$data["success"]=false;	
 		$data["err_nomedia"]=false;
 		$data["err_opfailed"]=false;
 
 		$part=$this->input->post("unit");
-		if($part){
-			if(mount($part,"/mnt","")){
-				umount($part);
-				$data["err_nomedia"]=true;
-			}else{
-				$data["success"]=!backup_config("/mnt");
-				if(!$data["success"]){
-					$data["err_opfailed"]=true;
-				}
-				umount("/mnt");
-			}
+		if($part && $this->disk_model->is_mounted($part)){
+			$info = $this->disk_model->partition_info(substr($part,5));
+			$path = $info['mountpath'];
+			$mounted = true;
 		}else{
+			$path = $this->disk_model->mount_partition( $part );
+		}
+		if(!$path) {
 			$data["err_opfailed"]=true;
+		} else {
+			$data["success"]=!backup_config($path);
+			if(!isset($mounted)) {
+				// only unmount if not mounted to start with.
+				$this->disk_model->umount_partition( $part );
+			}
 		}
 
 		if($strip){
@@ -140,23 +144,31 @@ class Settings extends Controller{
 
 	function restore($strip=""){
 
+		$this->load->model('disk_model');
+
 		$data["success"]=false;	
 		$data["err_nomedia"]=false;
 		$data["err_opfailed"]=false;
 
 		$part=$this->input->post("unit");
 
-		if($part && mount($part,"/mnt","")){
-			umount("$part");
-			$data["err_nomedia"]=true;
+		if($part && $this->disk_model->is_mounted($part)){
+			$info = $this->disk_model->partition_info(substr($part,5));
+			$path = $info['mountpath'];
+			$mounted = true;
 		}else{
-			$data["success"]=!restore_config("/mnt");
-			if(!$data["success"]){
-				$data["err_opfailed"]=true;
-			}			
-			umount("/mnt");
+			$path = $this->disk_model->mount_partition( $part );
 		}
 
+		$data["success"]=!restore_config($path);
+		if(!$data["success"]){
+			$data["err_opfailed"]=true;
+		}			
+
+		if(!isset($mounted)) {
+			$this->disk_model->umount_partition($part);
+		}
+		
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_restore_view',$data);
 		}else{
