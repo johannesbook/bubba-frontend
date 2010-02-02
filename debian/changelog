@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.53) estelle claire; urgency=low
+
+  * Added missing disk_model code.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 02 Feb 2010 15:34:46 +0100
+
 bubba-frontend (1.2.4.52) estelle claire; urgency=low
 
   * Fixed uninitiated variable in WAN page with no cable. 
