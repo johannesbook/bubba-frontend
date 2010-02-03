@@ -4,10 +4,6 @@
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css?v='<?=$this->session->userdata('version')?>'" />
 <style>
 
-span.expansion:hover {
-	cursor : pointer;
-}	
-
 .raid_text {
 	font-size : 1.2em;
 }
@@ -35,29 +31,7 @@ table.disks td {
 	<script  type="text/javascript">
 $(document).ready( function() {
 
-		$("div#adv_status").css("display","none");
-
-		$(".expansion").click(function() {
-			var $thisid = $(this).attr('id');
-			$(".expansion").each(function() {
-				if($(this).attr('id') == $thisid) {
-					if($(this).closest('fieldset').children('div').css('display') == "none") {
-						// change '+' sign to '-'
-						$(this).children('span').html("-");
-					} else {
-						// change '-' sign to '+'
-						$(this).children('span').html("+");
-					}
-					$(this).closest('fieldset').children('div').slideToggle(500);
-					
-				} else {
-					// change '-' sign to '+'
-					$(this).children('span').html("+");
-					$(this).closest('fieldset').children('div').slideUp(500);
-				}
-				
-			});
-		});
+	$("div#adv_status").css("display","none");
 
 	$('.remove_raid_disk').click(function(e) {
 		$.post(	'<?=site_url("ajax_disk/remove_raid_disk")?>', { disk: $(e.target).attr('rel') }, function(data) {
