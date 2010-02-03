@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.63) karmic; urgency=low
+
+  * Fixed "close" buttons in dialogs again. 
+
+ -- PA Nilsson <pa@excito.com>  Wed, 03 Feb 2010 14:19:16 +0100
+
 bubba-frontend (1.2.4.62) claire estelle; urgency=low
 
   * Fixed "close" buttons in dialogs.

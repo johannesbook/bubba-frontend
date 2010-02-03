@@ -275,7 +275,7 @@
 			var self = this;
 
 			// bind the close event to any element with the closeClass class
-			$('.' + this.opts.closeClass).live('click.simplemodal','', function (e) {
+			$('.' + this.opts.closeClass).live('click','', function (e) {
 				e.preventDefault();
 				self.close();
 			});
@@ -302,7 +302,7 @@
 		 * Unbind events
 		 */
 		unbindEvents: function () {
-			$('.' + this.opts.closeClass).die('click.simplemodal');
+			$('.' + this.opts.closeClass).die('click');
 			$(window).unbind('resize.simplemodal');
 		},
 		/*
