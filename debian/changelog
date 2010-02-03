@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.65) claire estelle; urgency=low
+
+  * Updated profile texts.
+
+ -- PA Nilsson <pa@excito.com>  Wed, 03 Feb 2010 20:38:30 +0100
+
 bubba-frontend (1.2.4.64) claire estelle; urgency=low
 
   * Fixed PHP error when using static IP config on WAN interface. Closes #1092.

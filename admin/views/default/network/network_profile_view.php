@@ -18,10 +18,10 @@
 		
 
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="router" <?=isset($router)?$router:""?>/></td><td colspan="2"><?=t("Router / Firewall / Server mode")?></td>
+			<td><input class="checkbox_radio" type="radio" name="profile" value="router" <?=isset($router)?$router:""?>/></td><td colspan="2"><?=t("Router + Firewall + Server")?></td>
 		</tr>
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td colspan="2"><?=t("Server mode only")?></td>
+			<td><input class="checkbox_radio" type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td colspan="2"><?=t("Server only")?></td>
 		</tr>
 		
 		<tr>
@@ -54,7 +54,7 @@
 
       <tr>
         <td>
-      	  <div class="profile_legend_h"><?=t("Router / Firewall / Server mode")?></div>
+      	  <div class="profile_legend_h"><?=t("Router + Firewall + Server")?></div>
       	  <div class="profile_legend"><?=t("Bubba will automatically try to retreive network settings on WAN (internet),")?><br>
       	  <?=t("and use fixed network settings on the local network providing other computers with network information.")?><br>
       	  &nbsp;<br>
@@ -68,7 +68,7 @@
       </tr>	  
       <tr>
         <td>
-          <div class="profile_legend_h"><?=t("Server mode only")?></div>
+          <div class="profile_legend_h"><?=t("Server only")?></div>
       	  <div class="profile_legend"><?=t("Bubba will automatically try to retreive network settings on LAN (local network) and the WAN port should be left unconnected")?></div>
         </td>
         <td>
