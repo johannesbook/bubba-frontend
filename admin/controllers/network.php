@@ -91,14 +91,14 @@ class Network extends Controller{
 				if(!validate_ip($ip)){
 					$data["err_ip"]=$err=true;
 				}
-				if(!validate_ip($gw)){
-					$data["err_gw"]=$err=true;
-				}
-				if(!validate_ip($dns)){
-					$data["err_dns"]=$err=true;
-				}
 				if(!validate_ip($mask)){
 					$data["err_mask"]=$err=true;
+				}
+				if($gw && !validate_ip($gw)){
+					$data["err_gw"]=$err=true;
+				}
+				if($dns && !validate_ip($dns)){
+					$data["err_dns"]=$err=true;
 				}
 				if(!$err){
 					$cfg=array(
@@ -123,19 +123,19 @@ class Network extends Controller{
 				$this->networkmanager->setdynamic($this->networkmanager->get_wan_interface());
 				$restart=true;
 			}
-
-			$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface(),true); // force reread network config
-
-			$data["oip"] = parse_ip( $ifc["address"] );
-			$data["omask"] = parse_ip( $ifc["netmask"] );		
-			$data["ogw"] = parse_ip( $ifc["gateway"] );		
-			$data["odns"] = parse_ip( $ifc["dns"] );
-			$data["dhcp"]=$ifc["dhcp"];	
-
 		}
 		if($restart) {
 			$this->networkmanager->ifrestart($this->networkmanager->get_wan_interface());
 		}
+
+		$ifc=$this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface(),true); // force reread network config
+
+		$data["oip"] = parse_ip( $ifc["address"] );
+		$data["omask"] = parse_ip( $ifc["netmask"] );		
+		$data["ogw"] = parse_ip( $ifc["gateway"] );		
+		$data["odns"] = parse_ip( $ifc["dns"] );
+		$data["dhcp"]=$ifc["dhcp"];	
+
 		$this->_renderfull($this->load->view(THEME.'/network/network_wan_view.php',$data,true));
 
 	}
