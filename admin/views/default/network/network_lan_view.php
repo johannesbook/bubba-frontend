@@ -142,7 +142,7 @@
 		<td><?=t('Default gateway')?>:&nbsp;&nbsp;</td>	
         <td>
             <input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[0]?>' 
                 class='ip' 
                 name='gw[0]' 
@@ -150,7 +150,7 @@
                 size='3' 
                 maxlength='3'
             />.<input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[1]?>' 
                 class='ip' 
                 name='gw[1]' 
@@ -158,7 +158,7 @@
                 size='3' 
                 maxlength='3'
             />.<input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[2]?>' 
                 class='ip' 
                 name='gw[2]' 
@@ -166,7 +166,7 @@
                 size='3' 
                 maxlength='3'
             />.<input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[3]?>' 
                 class='ip' 
                 name='gw[3]' 
@@ -182,7 +182,7 @@
 		<td><?=t('Primary DNS')?>:&nbsp;&nbsp;</td>	
         <td>
             <input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[0]?>' 
                 class='ip' 
                 name='dns[0]' 
@@ -190,7 +190,7 @@
                 size='3' 
                 maxlength='3'
             />.<input 
-                disabled="disabled"
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[1]?>'
                 class='ip' 
                 name='dns[1]' 
@@ -198,7 +198,7 @@
                 size='3' 
                 maxlength='3'
             />.<input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[2]?>' 
                 class='ip' 
                 name='dns[2]' 
@@ -206,7 +206,7 @@
                 size='3' 
                 maxlength='3'
             />.<input 
-                disabled="disabled" 
+                <?if($disable_gw):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[3]?>' 
                 class='ip' 
                 name='dns[3]' 
