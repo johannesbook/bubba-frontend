@@ -231,7 +231,7 @@ class Network extends Controller{
 					if($data["olgw"] && $data["oldns"]) {
 
 						if(intval($data["olgw"][0])!=0){
-							$cfg["gateway"]=implode(".",$data["olgw"]);
+							$cfg["gateway"]=array(implode(".",$data["olgw"]));
 						}
 
 						$this->networkmanager->setstatic($this->networkmanager->get_lan_interface(),$cfg);
