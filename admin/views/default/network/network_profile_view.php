@@ -28,7 +28,6 @@
 			<td></td>
             <td>
             <input
-                <?if(isset($custom)):?>disabled="disabled"<?endif?>
                 type="submit"
                 id="networkprofile_update" 
                 value='<?=t('Update')?>' 
