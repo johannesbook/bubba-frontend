@@ -984,7 +984,6 @@ class Network extends Controller{
 		// Restart hostapd to make sure we are in a consistent mode
 		if($restart){
 			invoke_rc_d( "hostapd", "restart" );
-			invoke_rc_d( "dnsmasq", "restart" );
 		} 
 
 		if($strip){
