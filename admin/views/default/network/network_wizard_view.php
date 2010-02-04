@@ -137,17 +137,17 @@ $(document).ready(function(){
 			  <td rowspan="3"><img id="img_server" class="wizard_img" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/scenario6_small.png" /></td>   
 			</tr>
 			<tr>
-			  <td><input name="wiz_data[profile]" type="radio" class="checkbox_radio" value="router" <?=isset($wiz_data['router'])?"CHECKED":""?> ></td><td><?=t('Router / Firewall / Server mode')?></td>
+			  <td><input name="wiz_data[profile]" type="radio" class="checkbox_radio" value="router" <?=isset($wiz_data['router'])?"CHECKED":""?> ></td><td><?=t('Router + Firewall + Server')?></td>
 			</tr>
 			<tr>
-			  <td><input name="wiz_data[profile]" type="radio" class="checkbox_radio" value="server" <?=isset($wiz_data['server'])?"CHECKED":""?> ></td><td><?=t('Server mode only')?></td>
+			  <td><input name="wiz_data[profile]" type="radio" class="checkbox_radio" value="server" <?=isset($wiz_data['server'])?"CHECKED":""?> ></td><td><?=t('Server only')?></td>
 		  </tr>
 		  <tr>
 			<?=isset($wiz_data['custom'])?
 			"<td><input name=\"wiz_data[profile]\" type=\"radio\" class=\"checkbox_radio\" value=\"custom\" CHECKED></td><td>".t('Custom settings')."</td>":"<td></td><td></td>"
 			?>
-		  <td><?=t("Router mode")?><br><span style="font-size:0.8em"><?=t("Click to enlarge")?></span></td>
-		  <td><?=t("Server mode")?></td>
+		  <td><?=t("Router")?><br><span style="font-size:0.8em"><?=t("Click to enlarge")?></span></td>
+		  <td><?=t("Server")?></td>
 		</tr>
 		</table>
 	</fieldset>
