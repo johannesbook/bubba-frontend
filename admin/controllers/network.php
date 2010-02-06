@@ -797,7 +797,11 @@ class Network extends Controller{
 		$data['broadcast_ssid'] = $this->networkmanager->get_wlan_broadcast_ssid();
 
 		$data['current_width'] = $this->networkmanager->wlan_ht40_active() ? 40 : 20;
-		$data['capabilities'] = $this->networkmanager->get_wlan_capabilities();
+		try {
+			$data['capabilities'] = $this->networkmanager->get_wlan_capabilities();
+		} catch( Exception $e ) {
+			$data['capabilities'] = array();
+		}
 
 		try {
 			$data['bands'] = $this->networkmanager->get_wlan_bands();

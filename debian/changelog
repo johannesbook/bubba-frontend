@@ -1,3 +1,12 @@
+bubba-frontend (1.2.4.70) estelle claire; urgency=low
+
+  * Handle exception from networkmanager::get_wlan_capabilities when an phy
+    isn't found; Generally wlan should be disabled at this point, as this
+    either is dues to a networking card isn't found at all, or that the
+    running kernel is too old. (Closes: #1155)
+
+ -- Carl Fürstenberg <carl@excito.com>  Sat, 06 Feb 2010 20:12:38 +0100
+
 bubba-frontend (1.2.4.69) estelle claire; urgency=low
 
   * Change variable name "top" to "o_top". (Closes: #1039) 
