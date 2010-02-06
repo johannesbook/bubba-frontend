@@ -38,7 +38,6 @@ class Login extends Controller{
 						}
 					}
 					if (!$data['authfail']) {
-						$this->session->set_userdata("version",get_package_version("bubba-frontend"));
 						if(is_array($conf)){
 							if(array_key_exists("theme",$conf)){
 								if(file_exists(APPPATH.'views/'.$conf["theme"])){
@@ -67,6 +66,8 @@ class Login extends Controller{
 					$data['authfail']=true;
 					$data['authill'] = true;
 				}
+
+				$this->session->set_userdata("version",get_package_version("bubba-frontend"));
 
 				if ($data['authfail']) {
 					$this->Auth_model->Logout();
