@@ -1,3 +1,10 @@
+bubba-frontend (1.2.4.68) estelle claire; urgency=low
+
+  [ PA Nilsson ]
+  * Fixed wizard profiles. (Closes: #1152)
+
+ -- Carl Fürstenberg <carl@excito.com>  Sat, 06 Feb 2010 19:25:48 +0100
+
 bubba-frontend (1.2.4.67) estelle; urgency=low
 
   * updating jquery.event.drag and jquery.event.drop (Closes: #1039) 
