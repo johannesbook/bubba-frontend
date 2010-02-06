@@ -38,9 +38,11 @@ $(document).ready(function(){
   	}
 	})
 
+	/*
 	$(".wizard_imglarge").click(function() {
   	$(".wizard_imglarge").hide('slow');
 	})
+	*/
 	
 });
 
