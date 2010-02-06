@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.66) estelle claire; urgency=low
+
+  * adding link debug option 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 03 Feb 2010 14:31:09 +0100
+
 bubba-frontend (1.2.4.65) claire estelle; urgency=low
 
   * Updated profile texts.
