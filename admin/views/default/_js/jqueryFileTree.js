@@ -179,8 +179,8 @@ if(jQuery) (function($){
 											height = $('.jqueryFileTree').innerHeight();
 											innerHeight = $(that).innerHeight();
 											mid = innerHeight / 2 ;
-											top = $(that).offset().top;
-											offset = mid - (event.offsetY - top);
+											o_top = $(that).offset().top;
+											offset = mid - (event.offsetY - o_top);
 
 											if( 
 												event.offsetX < $(that).offset().left ||
@@ -191,11 +191,11 @@ if(jQuery) (function($){
 												$(that).stop();
 												$.dropManage(); 
 											} else if( 
-												event.offsetY < ( top + innerHeight * .2 ) ||  
-												event.offsetY > ( top + innerHeight * .8 )  
+												event.offsetY < ( o_top + innerHeight * .2 ) ||  
+												event.offsetY > ( o_top + innerHeight * .8 )  
 											) {
 												$(that).stop(),
-												time = height / ( Math.abs(innerHeight/2 + top - event.offsetY) * speed_modifier );
+												time = height / ( Math.abs(innerHeight/2 + o_top - event.offsetY) * speed_modifier );
 												$(that).animate({scrollTop: (offset < 0 ? height : 0) + 'px'}, time );
 												$.dropManage(); 
 											} else {
