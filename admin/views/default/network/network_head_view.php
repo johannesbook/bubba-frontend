@@ -16,7 +16,7 @@ $(document).ready(function(){
 		update_status("<?=isset($success)?$success:"fail"?>","<?=isset($update_msg)?t($update_msg):""?>");
 	}
 	
-    $("#OTHCFG input:radio").click(function(){$("#networkprofile_update").removeAttr("disabled")});
+  $("#OTHCFG input:radio").click(function(){$("#networkprofile_update").removeAttr("disabled")});
 	$("#networkprofile_update").click(function() {
         cursor_wait();
         $.post("<?=site_url("ajax_network/validate_profile_change")?>",{ profile: $("input[name='profile']:checked").val() }, function(data){
@@ -37,6 +37,10 @@ $(document).ready(function(){
                 }
             } else {
                 cursor_ready();
+                if($("#post_value").length) {
+                	$("#post_value").val(1);
+                  $("#OTHCFG").submit();
+								}
             }
         }, 'json');
         return false;

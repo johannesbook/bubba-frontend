@@ -61,23 +61,9 @@ $(document).ready(function(){
 	<? } ?>
 	<fieldset id="wizard"><legend><?=t("Bubba|Two")?></legend>
 		<table id="wizard">
-			<? if(isset($wiz_data['powerdown']) && $wiz_data['powerdown']) {
-			  ?>
-				<tr><td colspan="2"><?=t('Setup is now complete.')?></td></tr>
-				<tr><td colspan="2">
-					<?=t('A change in network settings that require a system shutdown has been detected.')?><br>
-					<?=t('Press "Continue" to apply the new settings and shut down.')?><br>
-					<?=t('Reconnect cables if needed, then press the button on Bubba|Two to restart.')?>
-				</td></tr>
 
-				<?
-				if(isset($wiz_data['lan_ext_dhcpd']) && $wiz_data['lan_ext_dhcpd']) { ?>
-					<tr><td colspan=\"2\">
-						<?=t('An external dhcp-server has been detected, please take actions to disable this function in order for your network to function correctly.')?>
-					</td></tr>
-				<? } ?>
 
-			<? } elseif (isset($wiz_data['lan_was_static']) && $wiz_data['lan_was_static'] && $wiz_data['profile']=="server") { ?>
+			<? if (isset($wiz_data['lan_was_static']) && $wiz_data['lan_was_static'] && $wiz_data['profile']=="server") { ?>
 				<tr><td colspan="2"><?=t('Setup is now complete.')?></td></tr>
 				<tr><td colspan="2"><?=t('A change to automatic network settings has been detected.')?><br>
 					<?=t('Please check you existing router/dhcp server for the new Bubba|Two network settings.')?><br>
@@ -129,7 +115,7 @@ $(document).ready(function(){
 		<tr><td class="wiz_head" colspan="2"><?=t('Step 3/3: Network setup')?></td></tr>
 	</table>
 
-	<form action="<?=FORMPREFIX?>/network/wizard"" method="post">
+	<form action="<?=FORMPREFIX?>/network/wizard"" method="post" id="OTHCFG">
 	<fieldset id="wizard"><legend><?=t("Network profile")?></legend>
 		<table id="wizard">
 			<tr><td colspan="2"><?=t('Please select Bubba|Two network scenario.')?></td>
@@ -137,17 +123,20 @@ $(document).ready(function(){
 			  <td rowspan="3"><img id="img_server" class="wizard_img" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/scenario6_small.png" /></td>   
 			</tr>
 			<tr>
-			  <td><input name="wiz_data[profile]" type="radio" class="checkbox_radio" value="router" <?=isset($wiz_data['router'])?"CHECKED":""?> ></td><td><?=t('Router + Firewall + Server')?></td>
+			  <td><input name="profile" type="radio" class="checkbox_radio" value="auto" <?=isset($wiz_data['auto'])?"CHECKED":""?> ></td><td><?=t('Automatic network settings')?></td>
 			</tr>
 			<tr>
-			  <td><input name="wiz_data[profile]" type="radio" class="checkbox_radio" value="server" <?=isset($wiz_data['server'])?"CHECKED":""?> ></td><td><?=t('Server only')?></td>
+			  <td><input name="profile" type="radio" class="checkbox_radio" value="router" <?=isset($wiz_data['router'])?"CHECKED":""?> ></td><td><?=t('Router + Firewall + Server')?></td>
+			</tr>
+			<tr>
+			  <td><input name="profile" type="radio" class="checkbox_radio" value="server" <?=isset($wiz_data['server'])?"CHECKED":""?> ></td><td><?=t('Server only')?></td>
+			  <td><?=t("Router")?><br><span style="font-size:0.8em"><?=t("Click to enlarge")?></span></td>
+			  <td><?=t("Server")?></td>
 		  </tr>
 		  <tr>
 			<?=isset($wiz_data['custom'])?
-			"<td><input name=\"wiz_data[profile]\" type=\"radio\" class=\"checkbox_radio\" value=\"custom\" CHECKED></td><td>".t('Custom settings')."</td>":"<td></td><td></td>"
+			"<td><input name=\"profile\" type=\"radio\" class=\"checkbox_radio\" value=\"custom\" CHECKED></td><td>".t('Custom settings')."</td>":"<td></td><td></td>"
 			?>
-		  <td><?=t("Router")?><br><span style="font-size:0.8em"><?=t("Click to enlarge")?></span></td>
-		  <td><?=t("Server")?></td>
 		</tr>
 		</table>
 	</fieldset>
@@ -156,7 +145,14 @@ $(document).ready(function(){
 			<tr><td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="checkbox_radio" <?=isset($wiz_data['en_easyfind'])?"CHECKED":""?>/>&nbsp;&nbsp;<?=t('Use "Easyfind" to locate Bubba|Two from the internet')?></td></tr>
 			<tr><td><input <?=isset($wiz_data['err_easyfind'])?"class='highlight'":""?> id="easyfind_name" name="wiz_data[easyfind_name]" type="text" value="<?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("Set easyfind name")?>" <?=isset($wiz_data['en_easyfind'])?"":"DISABLED"?>/> (http://<span id="mybubba"><?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("mybubba")?></span>.bubbaserver.com)<?=isset($wiz_data['err_easyfind'])?"<br><span class='highlight'>".$wiz_data['err_easyfind']."</span>":""?></td></tr>
 		
-			<tr><td colspan="2"><input class='submitbutton' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
+			<tr>
+				<td colspan="2">
+					<input class='submitbutton' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/>
+					<input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/><span class="wiz_spacer">&nbsp;</span>
+					<input class='submitbutton' type='submit' id="networkprofile_update" value='<?=t('Next')?>'/>
+					<input type="hidden" value="0" name="wiz_data[postingpage]" id="post_value"/>
+				</td>
+			</tr>
 		</table>
 	</fieldset>
 	</form>

@@ -19,6 +19,7 @@ class Network extends Controller{
 
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		if($this->session->userdata("run_wizard")) {
+			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["subnav"]="";
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
@@ -1119,15 +1120,17 @@ class Network extends Controller{
 					$data['wiz_data']['err_easyfind'] = $this->networkmanager->set_easyfind(0,"");
 				}
 
-
-				if( isset($data['wiz_data']['err_easyfind']) || ($this->session->userdata("network_profile") == $data['wiz_data']['profile']) ) {
+				$profile = $this->input->post("profile");
+				if( isset($data['wiz_data']['err_easyfind']) || ($this->session->userdata("network_profile") == $profile) ) {
 
 					if(isset($data['wiz_data']['err_easyfind']) ) {
 						unset($data['confirmed']);
 					}					// setup complete
 
-					// Profile not updated.
-					switch($data['wiz_data']['profile']) {
+					switch($profile) {
+					case "auto":
+						$data['wiz_data']['auto'] = true;
+						break;
 					case "router":
 						$data['wiz_data']['router'] = true;
 						break;
@@ -1146,9 +1149,6 @@ class Network extends Controller{
 					}
 				} else {
 
-					$status = $this->networkmanager->prepare_profile($data['wiz_data']['profile']);
-					$data['wiz_data'] = array_merge($data['wiz_data'],$status);	// the view needs the status
-
 					// do not use CI output mechanism.
 					$mdata["navbar"]="";
 					$mdata["subnav"]="";
@@ -1156,15 +1156,15 @@ class Network extends Controller{
 					$mdata["wizard"] = $this->load->view(THEME.'/network/network_wizard_view',$data,true);
 					echo $this->load->view(THEME.'/main_view',$mdata,true);    
 
-					if($status['powerdown']) {
-						$this->session->set_userdata("profile",$data['wiz_data']['profile']);
-						$this->session->set_userdata("status",$status);
+					$old_profile = $this->session->userdata("network_profile");
 
-					} else {
-						$this->networkmanager->apply_profile($data['wiz_data']['profile'],$status);
-						// setup complete
-						exit_wizard();
+					if( $old_profile != $profile) {
+						update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
+						$this->session->set_userdata("network_profile", $profile);
+						$this->networkmanager->apply_profile($profile,$old_profile);
 					}
+					// setup complete
+					exit_wizard();
 
 				}
 
@@ -1174,6 +1174,9 @@ class Network extends Controller{
 				//d_print_r("PREPROCESS: NETWORK");
 				$this->session->userdata("network_profile")?"":$this->session->set_userdata("network_profile", "custom");
 				switch($this->session->userdata("network_profile")) {
+				case "auto":
+					$data['wiz_data']['auto'] = true;
+					break;
 				case "router":
 					$data['wiz_data']['router'] = true;
 					break;
