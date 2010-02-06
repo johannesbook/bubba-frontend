@@ -1,9 +1,8 @@
-/*! 
-jquery.event.drop.js ~ v1.1 ~ Copyright (c) 2008, Three Dub Media (http://threedubmedia.com)  
-Liscensed under the MIT License ~ http://threedubmedia.googlecode.com/files/MIT-LICENSE.txt
-*/
-;(function($){ // secure $ jQuery alias
-// Created: 2008-06-04 | Updated: 2009-01-26
+/*! jquery.event.drop.js * v1.2
+Copyright (c) 2008-2009, Three Dub Media (http://threedubmedia.com)  
+Liscensed under the MIT License (http://threedubmedia.googlecode.com/files/MIT-LICENSE.txt)
+*/;(function($){ // secure $ jQuery alias
+// Created: 2008-06-04 | Updated: 2009-03-16
 /*******************************************************************************************/
 // Events: drop, dropstart, dropend
 /*******************************************************************************************/
@@ -127,7 +126,8 @@ drop = $special.drop = {
 // set event type to custom value, and handle it
 function hijack ( event, type, elem ){
 	event.type = type; // force the event type
-	var result = $event.handle.call( elem, event );
+	try { var result = $event.handle.call( elem, event );
+		} catch ( ex ){ /* catch IE error with async event handling */ }	 
 	return result===false ? false : result || event.result;
 	};
 	
