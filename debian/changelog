@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.71) karmic; urgency=low
+
+  * change init of mediatromb to 26 from 20 (Closes: #1141) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Sun, 07 Feb 2010 12:37:50 +0100
+
 bubba-frontend (1.2.4.70) estelle claire; urgency=low
 
   [ Carl Fürstenberg ]

@@ -114,7 +114,7 @@ class Services extends Controller{
 				stop_service("mediatomb");
 				$upnp_status=0;
 			}else if(!$upnp_status && $upnp_enabled){
-				add_service("mediatomb");
+				add_service("mediatomb", 26);
 				start_service("mediatomb");
 				$upnp_status=1;        
 			}           
