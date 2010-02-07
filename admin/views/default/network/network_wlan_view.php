@@ -68,6 +68,7 @@
 
 <table class="networksettings">
 
+<?if($allow_change):?>
 <tr>
 	<td></td>
 	<td class="col2"><label for="band"><?=t("wlan_title_band")?></label></td>
@@ -98,9 +99,7 @@
 	</td>
 </tr>
 
-<input type="hidden" name="mode" id="mode" value="legacy" />
-<input type="hidden" name="width" id="width" value="20" />
-<!--tr>
+<tr>
 	<td></td>
 	<td class="col2"><label for="mode"><?=t("wlan_title_mode")?></label></td>
 	<td>
@@ -133,9 +132,9 @@
 		</option>
 	</select>
 	</td>
-</tr-->
+</tr>
 
-<!--tr>
+<tr>
 	<td></td>
 	<td class="col2"><label for="width"><?=t("wlan_title_width")?></label></td>
 	<td>
@@ -153,7 +152,15 @@
 		</option>
 	</select>
 	</td>
-</tr-->
+</tr>
+
+<?else:?>
+
+<input type="hidden" name="band" id="band" value="1" />
+<input type="hidden" name="mode" id="mode" value="legacy" />
+<input type="hidden" name="width" id="width" value="20" />
+
+<?endif?>
 
 <tr>
 	<td></td>

@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.74) claire estelle; urgency=low
+
+  * disabling N and A 
+
+ -- Carl Fürstenberg <carl@excito.com>  Sun, 07 Feb 2010 18:33:06 +0100
+
 bubba-frontend (1.2.4.73) claire estelle; urgency=emergency
 
   * disabling N 
