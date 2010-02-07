@@ -98,7 +98,9 @@
 	</td>
 </tr>
 
-<tr>
+<input type="hidden" name="mode" id="mode" value="legacy" />
+<input type="hidden" name="width" id="width" value="20" />
+<!--tr>
 	<td></td>
 	<td class="col2"><label for="mode"><?=t("wlan_title_mode")?></label></td>
 	<td>
@@ -131,9 +133,9 @@
 		</option>
 	</select>
 	</td>
-</tr>
+</tr-->
 
-<tr>
+<!--tr>
 	<td></td>
 	<td class="col2"><label for="width"><?=t("wlan_title_width")?></label></td>
 	<td>
@@ -151,7 +153,7 @@
 		</option>
 	</select>
 	</td>
-</tr>
+</tr-->
 
 <tr>
 	<td></td>
