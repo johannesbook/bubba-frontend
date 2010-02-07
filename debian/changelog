@@ -1,3 +1,9 @@
+bubba-frontend (1.2.4.72) estelle claire; urgency=low
+
+  * prevent usage on passive scanning channel as well 
+
+ -- Carl Fürstenberg <carl@excito.com>  Sun, 07 Feb 2010 16:31:37 +0100
+
 bubba-frontend (1.2.4.71) estelle claire; urgency=low
 
   * change init of mediatromb to 26 from 20 (Closes: #1141) 

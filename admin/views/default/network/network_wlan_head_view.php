@@ -86,7 +86,7 @@ $(document).ready( function() {
 
         for( i = 0; i < bands[band].length; ++i ) {
             cur = bands[band][i];
-            if( cur["disabled"] == "true" || cur["radar_detection"] == "true" ) {
+            if( cur["disabled"] == "true" || cur["radar_detection"] == "true" || cur["passive_scanning"] == "true" ) {
                 continue;
             }
             opt = $("<option/>");
