@@ -180,6 +180,29 @@ class NetworkManager extends Model {
 		}
 	}
 
+	private function _getpromisc($interface){
+		$data = query_network_manager( array("cmd" => "getpromisc", "ifname" => $interface ) );
+		if($data["status"]){
+			return $data["promisc"];
+		}else{
+			return Null;
+		}
+	}
+
+
+	private function _setpromisc($interface, $promisc){
+		$data = query_network_manager( array(
+			"cmd" => "setpromisc", 
+			"ifname" => $interface, 
+			"promisc"=>$promisc ) );
+
+		if($data["status"]){
+			return $data["status"];
+		}else{
+			return Fales;
+		}
+	}
+
 	public function get_networkconfig($interface, $dirty = false){
 		$ret=array(
 			"gateway"=>"0.0.0.0",
@@ -324,6 +347,9 @@ class NetworkManager extends Model {
 		if( !service_running( 'hostapd' ) ) {
 			start_service( 'hostapd' );
 		}
+
+		# TODO: This is a cludge because of problems in lower levels
+		$this->_setpromisc("eth1",True);
 	}
 
 	public function disable_wlan() {
@@ -334,7 +360,10 @@ class NetworkManager extends Model {
 		if( query_service( 'hostapd' ) ) {
 			remove_service( 'hostapd' );
 		}
+		# TODO: This is a cludge because of problems in lower levels
+		$this->_setpromisc("eth1",False);
 	}
+
 	public function get_wlan_broadcast_ssid() {
 		$data = $this->_getifcfg( $this->get_wlan_interface() );
 		if( isset( $data['config']['wlan']['config']['ssidbroadcast'] ) ) {

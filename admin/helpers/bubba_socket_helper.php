@@ -17,6 +17,7 @@ class BubbaSocket {
 	const READ_MAX = 4096;
 
 	public function __construct( $cmd, $args, $socket ) {
+		set_time_limit(120);
 		BubbaSocket::$count++;
 		BubbaSocket::$cout[] = &$this->_OUTPUT;
 
