@@ -711,19 +711,14 @@ class Network extends Controller{
 		$data["dhcpd"]=!$data['dhcp'];
 		$data["jumbo"]=$this->networkmanager->get_mtu($this->networkmanager->get_lan_interface())==9000?true:false;
 
-		if(!$lifc["dhcp"]) {
-			if ($this->session->userdata("network_profile") == "server") {
-				$data["disable_gw"] = 0;
-			} else {
-				if( $this->session->userdata("network_profile") != "router" ) {
-					$data['disable_network'] = true;
-				}
-				$data["disable_gw"] = 1;
-			}
+		if ($this->session->userdata("network_profile") == "server") {
+			$data["disable_gw"] = 0;
 		} else {
+			if( $this->session->userdata("network_profile") != "router" ) {
+				$data['disable_network'] = true;
+			}
 			$data["disable_gw"] = 1;
 		}
-
 
 		$data["dnsmasq_settings"]=get_dnsmasq_settings();
 		if(!$data['dnsmasq_settings']['running']) {
