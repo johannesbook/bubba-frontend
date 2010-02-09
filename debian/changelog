@@ -1,4 +1,4 @@
-bubba-frontend (1.2.4.79) claire estelle; urgency=low
+bubba-frontend (1.2.4.80) claire estelle; urgency=low
 
   * Disable dhcp checkbox when dns-checkbox deactivated.
 
