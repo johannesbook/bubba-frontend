@@ -45,7 +45,7 @@
 		<td><?=t('Default gateway')?>:</td>	
 		<td>
 			<input
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$ogw[0]?>'
 				class='ip'
 				name='gw[0]'
@@ -53,7 +53,7 @@
 				size='3' 
 				maxlength='3'
 				/>.<input
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$ogw[1]?>' 
 				class='ip' 
 				name='gw[1]' 
@@ -61,7 +61,7 @@
 				size='3' 
 				maxlength='3'
 			/>.<input 
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$ogw[2]?>' 
 				class='ip' 
 				name='gw[2]' 
@@ -69,7 +69,7 @@
 				size='3' 
 				maxlength='3'
 			/>.<input 
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$ogw[3]?>' 
 				class='ip' 
 				name='gw[3]' 
@@ -85,7 +85,7 @@
 		<td><?=t('Primary DNS')?>:</td>	
 		<td>
 			<input 
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$odns[0]?>' 
 				class='ip' 
 				name='dns[0]' 
@@ -93,7 +93,7 @@
 				size='3' 
 				maxlength='3'
 			/>.<input 
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$odns[1]?>' 
 				class='ip' 
 				name='dns[1]' 
@@ -101,7 +101,7 @@
 				size='3' 
 				maxlength='3'
 			/>.<input
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$odns[2]?>' 
 				class='ip' 
 				name='dns[2]' 
@@ -109,7 +109,7 @@
 				size='3'
 				maxlength='3'
 			/>.<input 
-        <?if($disable_gw):?>disabled="disabled"<?endif?> 
+        <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
 				value='<?=$odns[3]?>' 
 				class='ip' 
 				name='dns[3]' 
