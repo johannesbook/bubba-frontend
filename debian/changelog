@@ -1,3 +1,10 @@
+bubba-frontend (1.2.4.81) claire estelle; urgency=low
+
+  * Remove option to have 16 characters in WEP (Closes: #1171) 
+  * removing cursor_wait on submit for wlan (Closes: #1170) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 09 Feb 2010 15:05:43 +0100
+
 bubba-frontend (1.2.4.80) claire estelle; urgency=low
 
   * Disable dhcp checkbox when dns-checkbox deactivated.

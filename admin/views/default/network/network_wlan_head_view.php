@@ -20,10 +20,6 @@ labels = {
 
 <script  type="text/javascript">
 $(document).ready( function() {
-
-	$("input[type='submit']").click(function() {
-		cursor_wait();
-	});
 	
 	if(<?=isset($update)?"$update":"'0'"?>) {
 		update_status("<?=isset($success)?$success:"fail"?>","<?=isset($update_msg)?t($update_msg):""?>");
@@ -42,7 +38,7 @@ $(document).ready( function() {
 	
 
 	$.validator.addMethod('wep', function(value, element, params) {
-		return value.length == 5 || value.length == 13 || value.length == 16;
+		return value.length == 5 || value.length == 13;
 	});
 	$.validator.addMethod('gf_mode', function(value, element) {
 		if( value == "greenfield" && ! capabilities["RX_GF"] ) {
@@ -133,7 +129,7 @@ $(document).ready( function() {
 					wep: true,
 					messages: {
 						required: "Please enter an WEP key",
-						wep: jQuery.format("WEP key need to be between 5, 13, or 16 characters of length")
+						wep: jQuery.format("WEP key need to be 5 or 13 characters of length")
 					}
 
 				});
