@@ -53,9 +53,11 @@ $(document).ready(function(){
 	$("#cb_dns").click(function() {
 		if($("#cb_dns").attr('checked')) {
 			$("#dhcpd").attr('checked','true');
+			$("#dhcpd").removeAttr('disabled');
 			update_leasefields();
 		} else {
 			$("#dhcpd").removeAttr('checked');
+			$("#dhcpd").attr('disabled','disabled');
 			update_leasefields();
 		}
 	});
