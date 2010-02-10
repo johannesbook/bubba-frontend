@@ -1,3 +1,9 @@
+bubba-frontend (1.3.0) claire estelle; urgency=low
+
+  * Updated version number.
+
+ -- PA Nilsson <pa@excito.com>  Wed, 10 Feb 2010 15:26:01 +0100
+
 bubba-frontend (1.2.4.81) claire estelle; urgency=low
 
   * Remove option to have 16 characters in WEP (Closes: #1171) 
