@@ -55,6 +55,10 @@ class Stat extends Controller{
 	function index($strip=""){
 
 		$this->load->model( 'notify' );
+		$this->load->model('menu');
+		$menus = $this->menu->retrieve( 'admin', 'settings/datetime' );
+		print_r( $menus );
+
 
 		if($strip=="json"){
 			$this->info();

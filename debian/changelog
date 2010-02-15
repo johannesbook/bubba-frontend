@@ -1,3 +1,9 @@
+bubba-frontend (1.3.1) karmic; urgency=low
+
+  * menu model 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 12 Feb 2010 17:37:47 +0100
+
 bubba-frontend (1.3.0) claire estelle; urgency=low
 
   * Updated version number.
