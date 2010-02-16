@@ -112,11 +112,13 @@ class Printing extends Controller{
 		}
 	}
 
-	function askadd($strip=""){
-		$data["url"]=$this->input->post("url");
-		$data["name"]=$this->input->post("name");
-		$data["loc"]=$this->input->post("loc");
-		$data["info"]=$this->input->post("info");
+	function askadd($strip="", $data=array()){
+		if( empty( $data ) ) { // no need to reget those
+			$data["url"]=$this->input->post("url");
+			$data["name"]=$this->input->post("name");
+			$data["loc"]=$this->input->post("loc");
+			$data["info"]=$this->input->post("info");
+		}
       
 		if($strip){
 			$this->load->view(THEME.'/printing/print_askadd_view',$data);
@@ -125,51 +127,58 @@ class Printing extends Controller{
 		}
 	}
 
-	function doadd($strip=""){
+	function doadd( $strip = false ){
+
 		$data["name"]=$name=trim($this->input->post('name'));
 		$data["info"]=$info=trim($this->input->post('info'));
 		$data["url"]=$url=trim($this->input->post('url'));
 		$data["loc"]=$loc=$this->input->post('loc');
 	
-		$data["name"]=$name;
-		$data["success"]=true;
-		$data["err_illegalchar"]=false;
-		$data["err_noname"]=false;
-		$data["err_noprintname"]=false;
-		$data["err_nopath"]=false;
-		$data["err_opfailed"]=false;
-		
-//		if($name && !preg_match('/^\w+$/',$name)){
 		if($name && !preg_match('/^[a-z,A-Z,\_]+$/',$name)){
-			$data["err_illegalchar"]=true;
-			$data["success"]=false;
+			$data['update'] = array(
+				'success' => false,
+				'message' => t("printing_add_error_invalid_characters"),
+			);
+			$this->askadd( false, $data );
+			return;
 		}
 		if(!$name){
-			$data["err_noname"]=true;
-			$data["success"]=false;
+			$data['update'] = array(
+				'success' => false,
+				'message' => t("printing_add_error_no_name"),
+			);			
+			$this->askadd( false, $data );
+			return;
 		}
 		if(!$info){
-			$data["err_noprintname"]=true;
-			$data["success"]=false;
+			$data['update'] = array(
+				'success' => false,
+				'message' => t("printing_add_error_no_printer_name"),
+			);					
+			$this->askadd( false, $data );
+			return;
 		}
 		if(!$url){
-			$data["err_nopath"]=true;
-			$data["success"]=false;
+			$data['update'] = array(
+				'success' => false,
+				'message' => t("printing_add_error_no_printer_path"),
+			);					
+			$this->askadd( false, $data );
+			return;
 		}
 
-		if($data["success"]){
-			if(!add_printer($name,$url,$info,$loc)){ 
-			}else{
-				$data["err_opfailed"]=true;
-				$data["success"]=false;
-			}
-		}
-
-		if($strip){
-			$this->load->view(THEME.'/printing/print_doadd_view',$data);
+		if(!add_printer($name,$url,$info,$loc)){ 
+			$data['update'] = array(
+				'success' => true,
+				'message' => t("printing_add_success", $name),
+			);				
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/printing/print_doadd_view',$data,true));
+			$data['update'] = array(
+				'success' => false,
+				'message' => t("printing_add_error_operation_failed"),
+			);					
 		}
+		$this->index($strip, $data);
 	}
 	
 	function add($strip=""){
@@ -190,25 +199,27 @@ class Printing extends Controller{
 		}
 	}	
 
-	function dodelete($strip=""){
+	function dodelete( $strip = false ){
 		if($this->input->post('cancel')){
-			$this->index();
+			$this->index( $strip );
 			return;
 		}
 
-		$data["name"]=$name=$_POST['name'];	
-		$data["success"]=false;
+		$data["name"]=$name=$this->input->post('name');	
 
-		if(delete_printer($name)){
+		if(!delete_printer($name)){
+			$data['update'] = array(
+				'success' => true,
+				'message' => t("printing_delete_success", $name),
+			);				
 		}else{
-			$data["success"]=true;
+			$data['update'] = array(
+				'success' => false,
+				'message' => t("printing_delete_error_operation_failed"),
+			);					
 		}		
-		
-		if($strip){
-			$this->load->view(THEME.'/printing/print_dodelete_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/printing/print_dodelete_view',$data,true));
-		}
+		$this->index($strip, $data);
+
 	}
 
 	function delete($strip=""){
@@ -222,7 +233,7 @@ class Printing extends Controller{
 	}	
 
 	
-	function index($strip=""){
+	function index($strip="", $data=array()){
 
 		$iprinters=get_installed_printers();
 
@@ -231,8 +242,8 @@ class Printing extends Controller{
 			$iprinters[$name]["State"]=trim($iprinters[$name]["State"]," \"");
 		}
 	
-		$data["printstatus"]=false;
-		$data["iprinters"]=$iprinters;
+		$data["printing_enabled"]=true;
+		$data["installed_printers"]=$iprinters;
 
 		if($strip){
 			$this->load->view(THEME.'/printing/print_list_view',$data);

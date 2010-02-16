@@ -1,3 +1,10 @@
+bubba-frontend (1.3.2) claire; urgency=low
+
+  * Generic cleanup and removal of middle-pages
+   - Printing
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 16 Feb 2010 17:49:34 +0100
+
 bubba-frontend (1.3.1) karmic; urgency=low
 
   * menu model 

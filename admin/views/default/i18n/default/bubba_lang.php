@@ -127,4 +127,13 @@ $lang['wlan_title_channel_popup'] = 'The main channel to use';
 
 $lang['wlan_title_broadcast'] = 'Broadcast SSID';
 $lang['wlan_title_broadcast_popup'] = 'Whenever to broadcast the SSID';
+
+# Printing
+$lang['printing_add_error_invalid_characters'] = "Invalid characters in share name, only <strong>A-Z</strong>,<strong>a-z</strong> and <strong>_</strong> is allowed";
+$lang['printing_add_error_no_name'] = "No name was provided";
+$lang['printing_add_error_no_printer_name'] = "No printer name was provided";
+$lang['printing_add_error_no_printer_path'] = "No printer path was provided";
+$lang['printing_add_operation_fail'] = "Adding printer failed";
+$lang['printing_add_success'] = "Printer <strong>%s</strong> was added successfully";
+$lang['printing_delete_success'] = "Printer <strong>%s</strong> was deleted successfully";
 ?>

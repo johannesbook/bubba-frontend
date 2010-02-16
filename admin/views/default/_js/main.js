@@ -88,7 +88,6 @@ $(document).ready( function() {
 			});
 		});
 
-
 		/*
 		$('fieldset.expandable.collapsed').children(':last-child').hide();
 		$('fieldset.expandable > legend').prepend($('<span/>').addClass('expander'));

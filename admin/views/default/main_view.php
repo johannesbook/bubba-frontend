@@ -27,18 +27,22 @@ if(isset($head)) {
 $(document).ready(function(){
 	// Make a striped effect on tables in content
 	$('table:not(.blank)').stripe();
-	<?
-	if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])) {
-		// run specific code for Opera here
-		print "$(\"input[type='checkbox']\").removeClass(\"checkbox_radio\");\n";
-		print "$(\"input [type='radio']\").removeClass(\"checkbox_radio\");\n";
-	}
-	?>
 
-	if(<?=is_array($update)?"true":"false"?>) {
-		update_status("<?=( isset($update['success']) && $update['success'] ) ? "true" : "false"?>",
-									"<?=isset($update['message'])?t($update['message']):""?>");
-	}
+<?if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])):?>
+	
+	$("input[type='checkbox']").removeClass("checkbox_radio");
+	$("input[type='radio']").removeClass("checkbox_radio");
+
+<?endif?>
+
+<?if(isset($update) && is_array($update)):?>
+
+	update_status(
+		<?=( isset($update['success']) && $update['success'] ) ? "true" : "false"?>,
+		"<?=isset($update['message']) ? t($update['message']) : ""?>"
+	);
+
+<?endif?>
 
 });
 </script>
