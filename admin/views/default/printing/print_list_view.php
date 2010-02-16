@@ -17,19 +17,19 @@
 	<td colspan="4"><?=t('No printers installed')?></td>
 </tr>
 <?else:?>   
-<?foreach($installed_printers as $name=>$cfg):?>
+<?foreach($installed_printers as $printer_name=>$printer_configuration):?>
 <tr>
-	<td><b><?=$name?></b></td>
-	<td><?=$cfg["Info"]?></td>
-	<td><?=$cfg["State"]?></td>
+	<td><b><?=$printer_name?></b></td>
+	<td><?=$printer_configuration["Info"]?></td>
+	<td><?=$printer_configuration["State"]?></td>
 	<td>
 		<form class="printer_edit" action="<?=FORMPREFIX?>/printing/edit" method="post">
-			<input type="hidden" value="<?=$name?>" name="name"/>
+			<input type="hidden" value="<?=$printer_name?>" name="name"/>
 			<input type="submit" value="<?=t("Edit")?>" name="edit" class="printer_button"/>
 		</form>
 		<form class="printer_edit" action="<?=FORMPREFIX?>/printing/state" method="post">
-			<input type="hidden" value="<?=$name?>" name="name"/>
-	<?if($cfg["State"]!="Idle"):?>
+			<input type="hidden" value="<?=$printer_name?>" name="name"/>
+	<?if($printer_configuration["State"]!="Idle"):?>
 			<input type="hidden" value="start" name="state"/>
 			<input type="submit" <?if(!$printing_enabled):?>disabled="disabled"<?endif?> value="<?=t("Start")?>"  class="printer_button"/>
 	<?else:?>
