@@ -6,6 +6,12 @@ function hide_status() {
 
 function update_status($success,$msg) {
 	if($success=="success") {
+		alert("call has changed - do not use string");
+	}
+	if($success=="fail") {
+		alert("call has changed - do not use string");
+	}
+	if($success > 0) {
 		$("#update_status").removeClass("error");
 		$("#update_status").html($msg)
 		$("#update_status").slideDown(200);
@@ -81,6 +87,7 @@ $(document).ready( function() {
 				
 			});
 		});
+
 
 		/*
 		$('fieldset.expandable.collapsed').children(':last-child').hide();

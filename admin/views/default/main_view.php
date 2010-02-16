@@ -34,6 +34,12 @@ $(document).ready(function(){
 		print "$(\"input [type='radio']\").removeClass(\"checkbox_radio\");\n";
 	}
 	?>
+
+	if(<?=is_array($update)?"true":"false"?>) {
+		update_status("<?=( isset($update['success']) && $update['success'] ) ? "true" : "false"?>",
+									"<?=isset($update['message'])?t($update['message']):""?>");
+	}
+
 });
 </script>
 </head>
