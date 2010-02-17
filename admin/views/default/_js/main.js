@@ -87,7 +87,6 @@ $(document).ready( function() {
 				
 			});
 		});
-
 		/*
 		$('fieldset.expandable.collapsed').children(':last-child').hide();
 		$('fieldset.expandable > legend').prepend($('<span/>').addClass('expander'));
@@ -104,3 +103,57 @@ $(document).ready( function() {
 		*/
 		
 	});
+(
+	function($) {
+		$.dialog = function jQuery_ui_confirm(message, header, buttons, class ) {
+			if(!class) {
+				class="";
+			}
+			if(!buttons) {
+				buttons = {};
+			}
+			div = $('<div/>');
+			div.attr('title', header);
+			div.html(message);
+			div.dialog({
+					bgiframe: true,
+					resizable: false,
+					modal: true,
+					buttons: buttons,
+					dialogClass: class,
+					beforeclose: function(event, ui) { cursor_ready(); }
+
+				}
+			);
+		};
+
+		$.confirm = function jQuery_ui_alert( message, header, buttons ) {
+			if(!buttons) {
+				buttons = {
+					'Continue': function() {
+						$(this).dialog('close');
+					},
+					'Cancel': function() {
+						$(this).dialog('close');
+					}
+				}
+			}
+			$.dialog( message, header, buttons, 'ui_dialog_confirm' );
+		};
+
+		$.alert = function jQuery_ui_alert( message, header, button_label, callback ) {
+			if(!button_label) {
+				button_label = "Ok";
+			}
+			buttons = {};
+			buttons[button_label] = function() {
+				$(this).dialog('close');
+				if( $.isFunction( callback ) ) {
+					callback.apply( this, [] );
+				}
+			};
+			$.dialog( message, header, buttons, 'ui_dialog_alert' );
+		};
+
+	}
+)(jQuery);
