@@ -32,7 +32,7 @@ class Settings extends Controller{
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	
 
-	function _datetime() {
+	function _datetime($data = array()) {
 
 		if(service_running("ntpd")) {
 			$data['use_ntp']= true;
@@ -302,9 +302,9 @@ class Settings extends Controller{
 	
 	function setdate($strip=""){
 		// $strip = -1 will not load any view, instead return "$data"
-		$data['success'] = true;
 		$uri = THEME.'/settings/settings_setdate_view';
 
+		$error = false;
 		// -- Get input data
 		if($strip == "-1") {
 			$wiz_data = $this->input->post('wiz_data');
@@ -326,13 +326,15 @@ class Settings extends Controller{
 			$ret = set_timezone($user_tz);
 			if($ret != 0) {
 				$error = true;
-				$data['success'] = false;
-				$data['err']['timezone'] = "Failed to set timezone";
+				$data['update'] = array(
+					'success' => false,
+					'message' => t("settings_datetime_error_set_timezone", $user_tz),
+				);
 			}
 		}
 		
 		//  -- date and time --
-		if(!$ntp) {
+		if(!$error && !$ntp) {
 			if(service_running("ntpd")) {
 				// turn off ntp
 				stop_service("ntp");
@@ -343,14 +345,15 @@ class Settings extends Controller{
 			$res = set_time($time,$date,$ntp);
 			if($res <> 0) {
 				$error = true;
+				$data['update'] = array(
+					'success' => false,
+					'message' => t("settings_datetime_error_set_date_time", $date, $time),
+				);				
 				$data['date'] = $date;
 				$data['time'] = $time;
 				$data['t_zone'] = get_current_tz();
 				if($ntp) $data['use_ntp'] = true;
 				
-				$data['success'] = false;
-				$data['err']['timedate'] = "Failed to set date/time";
-				$uri = THEME.'/settings/settings_datetime_view';
 				unset($data['wiz_data']['postingpage']); // unset to run wizard PREPROCESSING again.
 			}
 		} else { // use ntp
@@ -366,13 +369,17 @@ class Settings extends Controller{
 			d_print_r("Restart dovecot\n");
 			start_service("dovecot");
 		}
+		if(!$error) {
+			$data['update'] = array(
+				'success' => true,
+				'message' => t("settings_datetime_success"),
+			);
+		}
 
 		if($strip == -1) {
 			return $data;
-		} else if($strip){
-			$this->load->view($uri,$data);
 		}else{
-			$this->_renderfull($this->load->view($uri,$data,true));
+			$this->datetime( $strip, $data );
 		}
 	}	
 	
@@ -402,14 +409,18 @@ class Settings extends Controller{
 		}
 	}
 	
-	function datetime($strip=""){
+	function datetime($strip="", $data = array()){
+
 	
-		$data = $this->_datetime();
+		$data = $this->_datetime($data);
 		
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_datetime_view');		
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/settings/settings_datetime_view',$data,true));
+			$this->_renderfull(
+				$this->load->view(THEME.'/settings/settings_datetime_view',$data,true),
+				$this->load->view(THEME.'/settings/settings_datetime_head_view',$data,true)
+			);
 		}
 	}
 
@@ -601,4 +612,3 @@ class Settings extends Controller{
 
 }
 
-?>

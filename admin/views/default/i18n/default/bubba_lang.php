@@ -153,4 +153,7 @@ $lang['settings_backup_success'] = "System backup was sucessfully created";
 $lang['settings_restore_error_no_path'] = "Failed to set up mount point for restore";
 $lang['settings_restore_error_failed'] = "The system was unable to restore the system from an backup";
 $lang['settings_restore_success'] = "System was sucessfully restored";
-?>
+
+$lang['settings_datetime_success'] = "Timezone, date and/or time was successfully updated";
+$lang['settings_datetime_error_set_timezone'] = "Failed to set timezone <strong>%s</strong>";
+$lang['settings_datetime_error_set_date_time'] = "Failed to set date <strong>%s</strong> and time <strong>%s</strong>";

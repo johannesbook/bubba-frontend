@@ -4,10 +4,11 @@ bubba-frontend (1.3.2) claire; urgency=low
    - Printing
    - Services
    - System Backup/Restore
+   - Date/Time
   * Added FirePHP (default enabled at the moment) 
   * added initial jQuery-UI support 
 
- -- Carl Fürstenberg <carl@excito.com>  Wed, 17 Feb 2010 17:44:06 +0100
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 17 Feb 2010 18:24:19 +0100
 
 bubba-frontend (1.3.1) karmic; urgency=low
 
