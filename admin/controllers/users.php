@@ -13,13 +13,15 @@ class Users extends Controller{
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
-	function _renderfull($content){
+	function _renderfull($content, $head = '/users/users_head_view', $data = ''){
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		if($this->session->userdata('run_wizard')) {
+			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["subnav"]="";
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
+			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["subnav"]="";
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";
@@ -68,8 +70,10 @@ class Users extends Controller{
 		$data["uname"]=$uname;
 		$data["realname"]=$realname;
 		$data["shell"]=$shell;
-		
-		$data["success"]=false;
+
+		$data["update"]=array();
+		$data['update']['success'] = false;
+
 		$data["usr_caseerr"]=false;
 		$data["usr_existerr"]=false;
 		$data["usr_nonameerr"]=false;
@@ -81,48 +85,61 @@ class Users extends Controller{
 		
 		if ($lc_uname != $uname) {	
 			// Uppercase letters in username
-			$data["usr_caseerr"]=true;
+			$data['update']['message'] = "usr_caseerr";
 		}elseif (isset($uinfo[$uname])||$uname=="root"||$uname=="storage"||$uname=="web") {
 			// user already exists or is admin account
-			$data["usr_existerr"]=true;
+			$data['update']['message'] = "usr_existerr";
 		}elseif ($uname == "") {
 			// No username given
-			$data["usr_nonameerr"]=true;
+			$data['update']['message'] = "usr_nonameerr";
 		}elseif (count(explode(" ",$uname))!=1) {
 			// Username contains spaces
-			$data["usr_spacerr"]=true;		
+			$data['update']['message'] = "usr_spacerr";
 		}elseif (!preg_match('/^\w+$/',$pass1)){
 			// Illegal chars in passwd
-			$data["pwd_charerr"]=true;		
+			$data['update']['message'] = "pwd_charerr";
 		}elseif (!preg_match('/^[a-z0-9 _-]+$/',$uname)){
 			// Illegal chars in username
-			$data["usr_charerr"]=true;		
+			$data['update']['message'] = "usr_charerr";
 		}elseif ( strlen($uname)>32){
 			// Username to long
-			$data["usr_longerr"]=true;
+			$data['update']['message'] = "usr_longerr";
 		}elseif ($uname[0]=='-'){
 			// Illegal chars in username cant start with -
-			$data["usr_charerr"]=true;		
+			$data['update']['message'] = "usr_charerr";
 		}else{
 			// data valid
 			if ((trim($pass1) == trim($pass2)) && (trim($pass1)!="" ||trim($pass2)!="")) {
 				$group="users";
 				if(add_user($realname,$group,$shell,$pass1,$uname)){
+					$data['update']['message'] = "usr_createerr";
 				}else{
-					$data["success"]=true;
+					$data['update']["success"]=true;
+					$data['update']['message'] = "usr_addok";
 				}
 			}else{
 				// Passwords dont match or passwd empty
-				$data["pwd_mismatcherr"]=true;
+				$data['update']['message'] = "pwd_mismatcherr";
 			}
 		}
-		if($strip == -1) {
-			return $data;
-		} elseif($strip){		
-			$this->load->view(THEME.'/users/user_add_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_add_view',$data,true));
+		
+
+		if(!$data["update"]["success"]) {
+
+			// enter the input data again
+			$data["shellyes"]=false;
+			$data["shellno"]=true;
+			$data["uname"]=$this->input->post("uname")?$this->input->post("uname"):"";
+			$data["realname"]=$this->input->post("realname")?$this->input->post("realname"):"";
+			if($this->input->post("shell")){
+				if($this->input->post("shell")=="/bin/bash"){
+					$data["shellyes"]=true;
+					$data["shellno"]=false;
+				}
+			}
 		}
+
+		$this->index(false, $data);
 	}	
 
 	function askdelete($strip=""){
@@ -193,77 +210,106 @@ class Users extends Controller{
 		}
 	}
 
-	function dochpwd($strip=""){
-		$pass1 = $this->input->post("pass1");
-		$pass2 = $this->input->post("pass2");
-		$uname = $this->input->post("uname");
+	function _dochpwd($uname,$pass1,$pass2){
 		
-		$data["uname"]=$uname;
-		$data["mismatch"]=false;
-		$data["illegal"]=false;
-		$data["success"]=false;
-		$data["sambafail"]=false;
-		$data["passwdfail"]=false;
+		$result["mismatch"]=false;
+		$result["illegal"]=false;
+		$result["success"]=false;
+		$result["sambafail"]=false;
+		$result["passwdfail"]=false;
 
 		if (strcmp($pass1,$pass2)) {
 			// Passwords dont match
-			$data["mismatch"]=true;
+			$result["mismatch"]=true;
 		}elseif( !preg_match('/^\w+$/',$pass1)){
 			// Password with illegal chars
-			$data["illegal"]=true;		
+			$result["illegal"]=true;		
 		} else {
 			if(set_unix_password($uname,$pass1)==0){
 				if(set_samba_password($uname,$pass1,$pass2)==0){
 					// Success
-					$data["success"]=true;				
+					$result["success"]=true;				
 				}else{
 					// Samba fail
-					$data["sambafail"]=true;		
+					$result["sambafail"]=true;		
 				}
 			}else{
 				// passwd fail
-				$data["passwdfail"]=true;
+				$result["passwdfail"]=true;
 			}
 		}
-		if($strip){
-			$this->load->view(THEME.'/users/user_dochpwd_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_dochpwd_view',$data,true));
-		}		
+		return $result;
 	}
 
 	function update($strip=""){
+		
+		if($this->input->post("cancel")) {
+			redirect("users");
+			exit();
+		}
+		$data["update"]["success"] = false;
+
 		$realname=$this->input->post("realname");
 		$shell=$this->input->post("shell")=="true"?"/bin/bash":"/sbin/nologin";
 		$uname=$this->input->post("uname");
+		$remote = $this->input->post("remote");
 
-		if($uname=='admin') {
-			$remote = $this->input->post("remote");
-			if ($remote=="true") {
-				if($this->session->userdata("AllowRemote")) {
-					// do nothing already allowing remote access
-				} else {
-					update_bubbacfg("admin","AllowRemote","yes");
-					$this->session->set_userdata("AllowRemote", true);
-				}
-			} else {
-				if($this->session->userdata("AllowRemote")) {
-					update_bubbacfg("admin","AllowRemote","no");
-					$this->session->set_userdata("AllowRemote", false);
-				} else {
-					// do nothing already not allowing remote access
-				}
-			}				
-		}		
-		if( !update_user($realname,$shell,$uname)){
-			$data["result"]=true;
-		}else{
-			$data["result"]=false;
+		if($this->input->post('pwd1') && $this->input->post('pwd2')) {
+			$change_pwdres = $this->_dochpwd($uname,$this->input->post('pwd1'),$this->input->post('pwd2'));
 		}
-		if($strip){
-			$this->load->view(THEME.'/users/user_update_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_update_view',$data,true));
+		
+		if( isset($change_pwdres["success"]) && !$change_pwdres["success"] ) {
+			// password errors, do not try to change anything else
+			$data["update"]["message"] = "";
+			foreach($change_pwdres as $key => $error) {
+				if($error) {
+					$data["update"]["message"] .= " " . t($key);
+				}
+			}
+			// load posted data.
+			if($uname=='admin') {
+				$data["remote"] = $remote;
+			} else {
+				$data["shell"] = $shell;
+			}
+			$data["realname"] = $realname;
+			$data["uname"] = $uname;
+			
+		} else {
+			if($uname=='admin') {
+				if ($remote=="true") {
+					if($this->session->userdata("AllowRemote")) {
+						// do nothing already allowing remote access
+					} else {
+						update_bubbacfg("admin","AllowRemote","yes");
+						$this->session->set_userdata("AllowRemote", true);
+					}
+				} else {
+					if($this->session->userdata("AllowRemote")) {
+						update_bubbacfg("admin","AllowRemote","no");
+						$this->session->set_userdata("AllowRemote", false);
+					} else {
+						// do nothing already not allowing remote access
+					}
+				}				
+			}		
+					
+			if( !update_user($realname,$shell,$uname)){
+				$data["update"]["success"] = true;
+				$data["update"]["message"] = "user_update_ok";
+			}else{
+				$data["update"]["message"] = "user_update_error";
+			}
+		}		
+
+		if($data["update"]["success"]) { // return to main page.
+			$this->index(false,$data);
+		} else {
+			if($strip){
+				$this->load->view(THEME.'/users/user_edit_view',$data);
+			}else{
+				$this->_renderfull($this->load->view(THEME.'/users/user_edit_view',$data,true));
+			}
 		}
 	}	
 	
@@ -278,6 +324,9 @@ class Users extends Controller{
 
 		$info=$uinfo[$this->input->post("uname")];
 		$info["uname"]=$this->input->post("uname");
+		if($info["uname"] == "admin") {
+			$info["user_is_admin"] = true;
+		}
 		if(trim($info["shell"])=="/bin/bash"){
 			$info["shell"]=true;
 		}else{
@@ -292,10 +341,11 @@ class Users extends Controller{
 		
 	}	
 	
-	function index($strip=""){
+	function index($strip="", $data = array()){
 		require_once(APPPATH."/legacy/user_auth.php");
+		
+		
 		$userinfo=get_userinfo();
-
 		foreach($userinfo as $i => $value){
 			if($value["uid"]<1000 || $value["uid"]>60000){
 				unset($userinfo[$i]);
@@ -303,6 +353,7 @@ class Users extends Controller{
 			}
 			if($i=="admin"){
 				$userinfo[$i]["shell"]="";
+				$data["remote"] = $this->session->userdata("AllowRemote");
 			}
 			
 			if(trim($value["shell"])=="/bin/bash"){
@@ -313,16 +364,12 @@ class Users extends Controller{
 		}
 
 		$data["userinfo"]= $userinfo;
-		$data["uname"]=$this->input->post("uname")?$this->input->post("uname"):"";
-		$data["realname"]=$this->input->post("realname")?$this->input->post("realname"):"";
-		$data["shellyes"]=false;
-		$data["shellno"]=true;		
-		if($this->input->post("shell")){
-			if($this->input->post("shell")=="/bin/bash"){
-				$data["shellyes"]=true;
-				$data["shellno"]=false;
-			}
-		}
+		
+		// userinfo can be set and called from by "add" function.
+		if(!isset($data["shellyes"])) $data["shellyes"]=false;
+		if(!isset($data["shellno"])) $data["shellno"]=true;
+		if(!isset($data["uname"])) $data["uname"]="";
+		if(!isset($data["realname"])) $data["realname"]="";
 		if($strip){
 			$this->load->view(THEME.'/users/user_list_view',$data);
 		}else{
