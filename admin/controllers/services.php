@@ -57,6 +57,10 @@ class Services extends Controller{
 		$smtp_enabled=$this->input->post('smtp_enabled');
 
 		if($this->input->post('update')){
+			$data['update'] = array(
+				'success' => true,
+				'message' => "service_update_success",
+			);
 			$reload_ftp=false;
 			
 			if($anon_ftp && !$anon_status){

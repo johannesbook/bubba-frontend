@@ -207,7 +207,7 @@ class Disk_model extends Model {
 				break;
 			}
 		}
-		if( ! $devinfo ) {
+		if( ! isset($devinfo) ) {
 			throw new Exception( "Failed to get deviceinfo" );
 		}
 		$mountpath = "";

@@ -13,7 +13,7 @@ class Settings extends Controller{
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
-	function _renderfull($content){
+	function _renderfull($content,$head=null){
 
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		if($this->session->userdata("run_wizard")) {
@@ -24,6 +24,9 @@ class Settings extends Controller{
 				$mdata["subnav"]=$this->load->view(THEME.'/settings/settings_submenu_view','',true);
 				$mdata["content"]=$content;
 				$mdata["wizard"]="";
+		}
+		if(!is_null($head)) {
+			$mdata['head'] = $head;
 		}
 
 		$this->load->view(THEME.'/main_view',$mdata);
@@ -109,37 +112,41 @@ class Settings extends Controller{
 		}
 	}	
 
-	function backup($strip=""){
+	function backup($strip = false){
 	
 		$this->load->model('disk_model');
-
-		$data["success"]=false;	
-		$data["err_nomedia"]=false;
-		$data["err_opfailed"]=false;
 
 		$part=$this->input->post("unit");
 		if($part && $this->disk_model->is_mounted($part)){
 			$info = $this->disk_model->partition_info(substr($part,5));
 			$path = $info['mountpath'];
-			$mounted = true;
+			$allready_mounted = true;
 		}else{
 			$path = $this->disk_model->mount_partition( $part );
 		}
-		if(!$path) {
-			$data["err_opfailed"]=true;
+		if(!isset($path) || !$path) {
+			$data['update'] = array(
+				'success' => false,
+				'message' => t('settings_backup_error_no_path'),
+			);
 		} else {
-			$data["success"]=!backup_config($path);
-			if(!isset($mounted)) {
+			if(!backup_config($path)) {
+				$data['update'] = array(
+					'success' => true,
+					'message' => t('settings_backup_success'),
+				);
+			} else {
+				$data['update'] = array(
+					'success' => false,
+					'message' => t('settings_backup_error_failed'),
+				);
+			}
+			if(!isset($allready_mounted) || !$allready_mounted) {
 				// only unmount if not mounted to start with.
 				$this->disk_model->umount_partition( $part );
 			}
 		}
-
-		if($strip){
-			$this->load->view(THEME.'/settings/settings_backup_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/settings/settings_backup_view',$data,true));
-		}
+		$this->backuprestore($strip, $data);
 	}	
 
 	function restore($strip=""){
@@ -159,21 +166,32 @@ class Settings extends Controller{
 		}else{
 			$path = $this->disk_model->mount_partition( $part );
 		}
-
-		$data["success"]=!restore_config($path);
-		if(!$data["success"]){
-			$data["err_opfailed"]=true;
-		}			
+		if(!isset($path) || !$path) {
+			$data['update'] = array(
+				'success' => false,
+				'message' => t('settings_restore_error_no_path'),
+			);
+		} else {
+			if(!restore_config($path)) {
+				$data['update'] = array(
+					'success' => true,
+					'message' => t('settings_restore_success'),
+				);
+			} else {
+				$data['update'] = array(
+					'success' => false,
+					'message' => t('settings_restore_error_failed'),
+				);
+			}
+			
+		}
 
 		if(!isset($mounted)) {
 			$this->disk_model->umount_partition($part);
 		}
 		
-		if($strip){
-			$this->load->view(THEME.'/settings/settings_restore_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/settings/settings_restore_view',$data,true));
-		}
+		$this->backuprestore($strip, $data);
+
 	}	
 
 	function fwupdate(){
@@ -227,10 +245,6 @@ class Settings extends Controller{
 		
 	function settraffic($strip=""){
 	
-		$data["success"]=true;	
-		$data["err_srvunavail"]=false;
-		$data["err_setulfail"]=false;
-		$data["err_setdlfail"]=false;
 		$ftd_enabled=query_service("filetransferdaemon");
 		if($ftd_enabled){
 		
@@ -247,25 +261,37 @@ class Settings extends Controller{
 				$btul_throttle=-1;
 			}
 
+			$data['update'] = array(
+				'success' => true,
+				'message' => 'settings_traffic_success'
+			);			
 			$dl=new Downloader;
 			if(!$dl->set_download_throttle("torrent",$btdl_throttle==-1?-1:$btdl_throttle*1024)){
 				/* Failed */
-				$data["err_setdlfail"]=true;			
+				$data['update'] = array(
+					'success' => false,
+					'message' => 'settings_traffic_error_set_dl_throttle'
+				);
 			}
 			if(!$dl->set_upload_throttle("torrent",$btul_throttle==-1?-1:$btul_throttle*1024)){
 				/* Failed */
-				$data["err_setulfail"]=true;			
+				$data['update'] = array(
+					'success' => false,
+					'message' => 'settings_traffic_error_set_ul_throttle'
+				);
 			}
+
 
 		}else{
 			//Service not running
-			$data["success"]=false;
-			$data["err_srvunavail"]=true;		
+			$data['update'] = array(
+				'success' => false,
+				'message' => 'settings_traffic_error_service_unavailable'
+			);
 		}
 		$data["btul_throttle"]=$btul_throttle;
 		$data["btdl_throttle"]=$btdl_throttle;
 		$data["ftd_enabled"]=$ftd_enabled;
-		$data["completed"] = true;
 		
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_traffic_view',$data);
@@ -369,7 +395,6 @@ class Settings extends Controller{
 			$trafdata["btdl_throttle"]=t('n/a');
 		}
 		
-		$trafdata["completed"] = false;
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_traffic_view',$trafdata);
 		}else{
@@ -388,7 +413,7 @@ class Settings extends Controller{
 		}
 	}
 
-	function backuprestore($strip=""){
+	function backuprestore($strip="",$data=array()){
 
 		$this->load->model('disk_model');
 		$data['disks'] = array();
@@ -404,7 +429,10 @@ class Settings extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_backuprestore_view',$data);		
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/settings/settings_backuprestore_view',$data,true));
+			$this->_renderfull(
+				$this->load->view(THEME.'/settings/settings_backuprestore_view',$data,true),
+				$this->load->view(THEME.'/settings/settings_backuprestore_head_view',$data,true)
+			);
 		}
 	}
 	

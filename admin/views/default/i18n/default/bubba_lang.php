@@ -136,4 +136,21 @@ $lang['printing_add_error_no_printer_path'] = "No printer path was provided";
 $lang['printing_add_operation_fail'] = "Adding printer failed";
 $lang['printing_add_success'] = "Printer <strong>%s</strong> was added successfully";
 $lang['printing_delete_success'] = "Printer <strong>%s</strong> was deleted successfully";
+
+# Services
+$lang['service_update_success'] = "Services updated";
+
+# Settings
+$lang['settings_traffic_success'] = "Traffic limit updated";
+$lang['settings_traffic_error_service_unavailable'] = "Traffic service is unavailable";
+$lang['settings_traffic_error_set_dl_throttle'] = "Failed to set download throttle";
+$lang['settings_traffic_error_set_ul_throttle'] = "Failed to set upload throttle";
+
+$lang['settings_backup_error_no_path'] = "Failed to set up mount point for backup";
+$lang['settings_backup_error_failed'] = "The system was unable to create an backup";
+$lang['settings_backup_success'] = "System backup was sucessfully created";
+
+$lang['settings_restore_error_no_path'] = "Failed to set up mount point for restore";
+$lang['settings_restore_error_failed'] = "The system was unable to restore the system from an backup";
+$lang['settings_restore_success'] = "System was sucessfully restored";
 ?>
