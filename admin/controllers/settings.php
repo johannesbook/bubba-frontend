@@ -194,6 +194,7 @@ class Settings extends Controller{
 
 	}	
 
+	/* XXX This function can't utilize a format parameter due to clients might use current setting still during update */
 	function fwupdate(){
 		$this->load->helper('bubba_socket');
 		$output = '';
@@ -455,7 +456,10 @@ class Settings extends Controller{
 			$hotfix_enabled = true;
 		}
 		$data['hotfix_enabled'] = $hotfix_enabled;
-		$this->_renderfull($this->load->view(THEME.'/settings/settings_software_view',$data,true));
+		$this->_renderfull(
+			$this->load->view(THEME.'/settings/settings_software_view',$data,true),
+			$this->load->view(THEME.'/settings/settings_software_head_view',$data,true)
+		);
 	}
 
 	function logs($strip=""){

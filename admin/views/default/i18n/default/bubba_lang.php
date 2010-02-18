@@ -124,6 +124,11 @@ $lang['settings_datetime_success'] = "Timezone, date and/or time was successfull
 $lang['settings_datetime_error_set_timezone'] = "Failed to set timezone <strong>%s</strong>";
 $lang['settings_datetime_error_set_date_time'] = "Failed to set date <strong>%s</strong> and time <strong>%s</strong>";
 
+$lang['settings_software_install_package'] = "Install %s";
+$lang['settings_software_update_software'] = "Update software";
+$lang['settings_software_update_system'] = "Update system";
+$lang['settings_software_include_hotfixes'] = "Include hotfixes and system specific updates";
+
 //  ---------- Users  -----
 $lang['realname'] = 'Real name';
 $lang['username'] = 'User name';
