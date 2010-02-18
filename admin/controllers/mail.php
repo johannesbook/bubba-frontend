@@ -8,8 +8,8 @@ class Mail extends Controller{
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		$this->Auth_model->RequireUser('admin');
 		$this->load->helper('update_msg');
+		$this->Auth_model->EnforceAuth();
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
@@ -25,7 +25,9 @@ class Mail extends Controller{
 	}	
 
 	function _parse_mailcfg($mc) {
-		
+
+		$this->Auth_model->RequireUser('admin');
+
 		if(!query_service("postfix")){
 			$smtp["smtpstatus"]=true;
 		}else{
@@ -42,6 +44,8 @@ class Mail extends Controller{
 
 	}
 	function _get_receivesettings() {
+
+		$this->Auth_model->RequireUser('admin');
 
 		$mc=get_mailcfg();
 		$domain=$mc[0];
@@ -63,6 +67,9 @@ class Mail extends Controller{
 	}
 
 	function _getUsers(){
+		
+		require_once(APPPATH."/legacy/user_auth.php");
+
 		$userlist=array();		
 		$userinfo = get_userinfo();
 		foreach($userinfo as $user=>$info){
@@ -125,14 +132,12 @@ class Mail extends Controller{
 		if(sizeof($errors) == 0) {
 			$data = array();
 		}
-		$data["update"] = create_msg($errors,"mail_addok");
+		$data["update"] = create_updatemsg($errors,"mail_addok");
 
 		$this->viewfetchmail("",$data);	
 	}	
 
 	function editfac($strip="",$data = array()){
-
-		require_once(APPPATH."/legacy/user_auth.php");
 
 		if(sizeof($data) == 0) {
 			// no data is passed, get the posts.
@@ -240,7 +245,8 @@ class Mail extends Controller{
 		
 	function server_update($strip=""){
 
-			
+		$this->Auth_model->RequireUser('admin');
+	
 		$smarthost=$this->input->post('smarthost');
 		$useauth=$this->input->post('useauth');
 		$use_plain_auth=$this->input->post('useunsecure');
@@ -328,12 +334,14 @@ class Mail extends Controller{
 
 		if($strip){
 			$this->load->view(THEME.'/mail/mail_retrieve_view',$retdata);
-		}else{
+		}else{	
 			$this->_renderfull($this->load->view(THEME.'/mail/mail_retrieve_view',$retdata,true));
 		}
 	}
 	
 	function server_settings($strip="",$data = array()){
+
+		$this->Auth_model->RequireUser('admin');
 
 		$mc=get_mailcfg();
 		$data = array_merge($data,$this->_parse_mailcfg($mc));

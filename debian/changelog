@@ -1,6 +1,7 @@
 bubba-frontend (1.3.2) claire; urgency=low
 
-  * Generic cleanup and removal of middle-pages
+  [ Carl Fürstenberg ]
+	* Generic cleanup and removal of middle-pages
    - Printing
    - Services
    - System Backup/Restore
@@ -9,6 +10,9 @@ bubba-frontend (1.3.2) claire; urgency=low
   * Added FirePHP (default enabled at the moment) 
   * added initial jQuery-UI support 
   * removing old fwupdate view which hasn't been used for ages 
+
+  [ PA Nilsson ]
+  * Removed usermail files, integrated to regular mail controller/views.
 
  -- Carl Fürstenberg <carl@excito.com>  Thu, 18 Feb 2010 13:33:23 +0100
 
