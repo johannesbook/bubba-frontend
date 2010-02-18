@@ -33,40 +33,6 @@ $lang['title_downloads']=$lang['Downloads'];
 $lang['title_disk']=$lang['Disk'];
 $lang['title_userinfo']=$lang['Userinfo'];
 $lang['title_shutdown']=$lang['Shutdown'];
-//
-//texts to locate help pages.
-//General pages
-$lang['help_stat']="";
-$lang['help_login']="?page=quickstart.html";
-$lang['help_filemanager']="?page=fileserver.html#WEB_BASED";
-// Administrator pages
-$lang['help_users']="?page=administrator.html#USERS";
-$lang['help_services']="?page=administrator.html#SERVICES";
-$lang['help_mail']="?page=administrator.html#MAIL";
-$lang['help_network']="?page=administrator.html#NETWORK";
-$lang['help_wan']="?page=administrator.html#NETWORK_WAN";
-$lang['help_lan']="?page=administrator.html#NETWORK_LAN";
-$lang['help_other']="?page=administrator.html#NETWORK_identity";
-$lang['help_fw']="?page=administrator.html#NETWORK_Firewall";
-$lang['help_disk']="?page=administrator.html#DISK";
-$lang['help_lvm']="?page=administrator.html#DISK_LVM";
-$lang['help_raid']="?page=administrator.html#DISK_RAID";
-$lang['help_printing']="?page=administrator.html#PRINTING";
-$lang['help_settings']="?page=administrator.html#SETTINGS";
-$lang['help_backup']="?page=backup.html";
-$lang['help_restore']="?page=backup.html#RESTORE";
-$lang['help_trafficsettings']="?page=administrator.html#traffic";
-$lang['help_datetime']="?page=administrator.html#dateandtime";
-$lang['help_backuprestore']="?page=administrator.html#backuprestore";
-$lang['help_software']="?page=sw_upgrade.html";
-$lang['help_hotfix']="?page=sw_upgrade.html#hotfix";
-$lang['help_logs']="?page=administrator.html#logs";
-
-// User pages
-$lang['help_usermail']="?page=users.html#MAIL";
-$lang['help_downloads']="?page=users.html#DOWNLOADS";
-$lang['help_userinfo']="?page=users.html#USERINFO";
-$lang['help_album']="?page=users.html#PHOTOALBUM";
 
 
 // backup field translations
@@ -157,3 +123,71 @@ $lang['settings_restore_success'] = "System was sucessfully restored";
 $lang['settings_datetime_success'] = "Timezone, date and/or time was successfully updated";
 $lang['settings_datetime_error_set_timezone'] = "Failed to set timezone <strong>%s</strong>";
 $lang['settings_datetime_error_set_date_time'] = "Failed to set date <strong>%s</strong> and time <strong>%s</strong>";
+
+//  ---------- Users  -----
+$lang['realname'] = 'Real name';
+$lang['username'] = 'User name';
+$lang['shell_login'] = 'Shell login';
+$lang['allow_ssh'] = 'Allow SSH login';
+$lang['allow_remote'] = 'Allow remote access to config interface';
+$lang['users_pwd1'] = 'New password';
+$lang['users_pwd2'] = 'Verify password';
+$lang['illegal'] = 'Illegal characters in password';
+$lang["mismatch"]='Password do not match';
+$lang["sambafail"]='Failed to update password';
+$lang["passwdfail"]=$lang["sambafail"];
+
+$lang["usr_caseerr"] = "No uppercase letters allowed in username";
+$lang["usr_existerr"] = "User already exists or is an administrational account";
+$lang["usr_nonameerr"] = "No username entered";
+$lang["usr_spacerr"] = "White space not allowed in username";
+$lang["pwd_charerr"] = "Illegal characters in password";
+$lang["usr_charerr"] = "Illegal characters in username"; 
+$lang["usr_longerr"] = "Username to long. Max 32 characters";
+$lang["usr_createerr"] = "Error creating user";
+$lang["usr_addok"] = "User added";
+$lang["pwd_mismatcherr"] = "Passwords do not match or password empty";
+
+//  ---------- Admin Mail-----
+$lang["usrinvalid"] = "Not authorized to add accounts for selected user.";
+$lang["infoincomp"] = "Account information incomplete. Account not added.";
+$lang["mail_addok"] = "Account added.";
+$lang["mail_err_usrinvalid"] = "User not allowed to update account";
+$lang["mail_editok"] = "Account updated.";
+
+/*  ------------------- Texts to locate help pages.  -------------------*/
+//General pages
+$lang['help_stat']="";
+$lang['help_login']="?page=quickstart.html";
+$lang['help_filemanager']="?page=fileserver.html#WEB_BASED";
+
+
+// Administrator pages
+$lang['help_users']="?page=administrator.html#USERS";
+$lang['help_services']="?page=administrator.html#SERVICES";
+$lang['help_mail']="?page=administrator.html#MAIL";
+$lang['help_network']="?page=administrator.html#NETWORK";
+$lang['help_wan']="?page=administrator.html#NETWORK_WAN";
+$lang['help_lan']="?page=administrator.html#NETWORK_LAN";
+$lang['help_other']="?page=administrator.html#NETWORK_identity";
+$lang['help_fw']="?page=administrator.html#NETWORK_Firewall";
+$lang['help_disk']="?page=administrator.html#DISK";
+$lang['help_lvm']="?page=administrator.html#DISK_LVM";
+$lang['help_raid']="?page=administrator.html#DISK_RAID";
+$lang['help_printing']="?page=administrator.html#PRINTING";
+$lang['help_settings']="?page=administrator.html#SETTINGS";
+$lang['help_backup']="?page=backup.html";
+$lang['help_restore']="?page=backup.html#RESTORE";
+$lang['help_trafficsettings']="?page=administrator.html#traffic";
+$lang['help_datetime']="?page=administrator.html#dateandtime";
+$lang['help_backuprestore']="?page=administrator.html#backuprestore";
+$lang['help_software']="?page=sw_upgrade.html";
+$lang['help_hotfix']="?page=sw_upgrade.html#hotfix";
+$lang['help_logs']="?page=administrator.html#logs";
+
+
+// User pages
+$lang['help_usermail']="?page=users.html#MAIL";
+$lang['help_downloads']="?page=users.html#DOWNLOADS";
+$lang['help_userinfo']="?page=users.html#USERINFO";
+$lang['help_album']="?page=users.html#PHOTOALBUM";
