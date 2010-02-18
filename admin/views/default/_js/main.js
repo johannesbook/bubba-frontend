@@ -126,7 +126,25 @@ $(document).ready( function() {
 				}
 			);
 		};
-
+/*
+ * Usage:
+ * $.confirm( 
+ * 		message, // html message to be shown
+ *		"<?=t("Title")?>", {
+ *		 // button label : callback,
+ *			<?=t('button_label_continue')?>: function() { // continue button
+ *				$(this).dialog('close');
+ *				// continue execution here
+ *			},
+ *			<?=t('button_label_cancel')?>: function() { // cancel button
+ *				$(this).dialog('close');
+ * 				// eventual cancel logic here
+ *			}
+ *			 // , ... more buttons if wanted
+ *		}
+ *	);
+ *
+ */
 		$.confirm = function jQuery_ui_alert( message, header, buttons ) {
 			if(!buttons) {
 				buttons = {
