@@ -16,18 +16,17 @@ $(document).ready(function(){
 				$.alert(data.html);
 				cursor_ready();
 			} else if( data.change ) {
-				$.alert("foo", "bar", "baz" );
 				if( data.show_alert ) {
 					$.confirm( 
 						data.alert_msg, 
 						"<?=t("Network configuration")?>", {
 
-							'Continue': function() {
+						<?=t('button_label_continue')?>: function() {
 								$(this).dialog('close');
 								cursor_wait();
 								$("#OTHCFG").submit(); 
 							},
-							'Cancel': function() {
+						<?=t('button_label_cancel')?>: function() {
 								$(this).dialog('close');
 							}
 						}

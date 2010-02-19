@@ -16,7 +16,7 @@ $lang['Downloads']="Downloads";
 $lang['Disk']="Disk";
 $lang['Userinfo']="User info";
 $lang['Shutdown']="Confirm Shutdown";
-//
+
 $lang['title_']=$lang['Home'];
 $lang['title_login']=$lang['Login'];
 $lang['title_users']=$lang['Users'];
@@ -35,6 +35,15 @@ $lang['title_userinfo']=$lang['Userinfo'];
 $lang['title_shutdown']=$lang['Shutdown'];
 
 
+/* Generic button labels and texts */
+
+$lang['button_label_continue']='Continue';
+$lang['button_label_delete']='Delete';
+$lang['button_label_cancel']='Cancel';
+$lang['generic_dialog_text_please_wait'] = "Please wait...";
+$lang['generic_dialog_text_warning'] = "Warning";
+
+
 // backup field translations
 $lang['current_job'] = "Job name";
 $lang['target_protocol'] = "Target";
@@ -49,7 +58,70 @@ $lang['faulty'] = 'Disk error';
 $lang['active'] = 'Active';
 $lang['clean'] = 'Clean';
 
-$lang['disk_action_title_idle'] = "Recovering RAID array";
+$lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the data on the external device. Continue?</p> <p>Note: Removal of the new disk from the system will require a full reinstall.</p>";
+$lang['disk_lvm_extend_dialog_warning_title'] = "Extend default data partition";
+$lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
+$lang['disk_lvm_extend_dialog_title'] = "Extending disk";
+
+/* RAID */
+$lang['disk_raid_setup_title'] = "Setup RAID array";
+$lang['disk_raid_create_label'] = "Create RAID array";
+$lang['disk_raid_create_message'] = "Set up internal disk and one external disk into a RAID mirror solution (RAID 1)";
+$lang['disk_raid_recover_label'] = "Recover RAID array";
+$lang['disk_raid_recover_message'] = "Recover internal disk or add a new external disk to existing RAID array";
+$lang['disk_raid_status_title'] = "RAID Status";
+$lang['disk_raid_degraded_recover_status_message'] = "Recovering RAID array '%s'";
+$lang['disk_raid_degraded_recover_status_message_eta_hours'] = "Current recover progress is %d%% and is estimated to finish in %d hours %d minutes";
+$lang['disk_raid_degraded_recover_status_message_eta_minutes'] = "Current recover progress is %d%% and is estimated to finish in %d minutes";
+$lang['disk_raid_degraded_message'] = "RAID array degraded";
+$lang['disk_raid_degraded_missing_disk_message'] = "Disk missing in RAID array '%s'";
+$lang['disk_raid_external_failure_title'] = "Error: External disk has malfunctioned";
+$lang['disk_raid_external_failure_message_1'] = "The external RAID disk (<strong>%s</strong>) in the RAID array has malfunctioned";
+$lang['disk_raid_external_failure_message_2'] = "Please replace the disk (also press \"Remove\" below to acknowledge the removal of the disk)";
+$lang['disk_raid_external_failure_message_3'] = "When the disk has been replaced, press \"Recover RAID array\" to add the new disk to the array";
+$lang['disk_raid_normal_op_message'] = "Normal operation";
+$lang['disk_raid_not_activated_message'] = "RAID not activated";
+$lang['disk_raid_detailed_info_title'] = "Detailed information";
+$lang['disk_raid_list_of_arrays_title'] = "List of RAID arrays";
+$lang['disk_raid_table_list_of_arrays_array_name_title'] = "Array name";
+$lang['disk_raid_table_list_of_arrays_level_title'] = "Level";
+$lang['disk_raid_table_list_of_arrays_state_title'] = "State";
+$lang['disk_raid_table_list_of_arrays_label_title'] = "Label";
+$lang['disk_raid_table_list_of_arrays_size_title'] = "Size";
+$lang['disk_raid_list_of_disks_title'] = "List of RAID disks";
+$lang['disk_raid_table_list_of_disks_disk_title'] = "Disk";
+$lang['disk_raid_table_list_of_disks_parent_title'] = "Parent";
+$lang['disk_raid_table_list_of_disks_state_title'] = "State";
+$lang['disk_raid_table_list_of_disks_size_title'] = "Size";
+$lang['disk_raid_disk_faulty_remove_button_label'] = "Remove";
+
+# Create
+$lang['disk_raid_create_progress_title'] = "Recovering RAID array";
+$lang['disk_raid_create_title'] = "Create RAID array";
+$lang['disk_raid_create_error_mounts_exists_message'] = "There seems to be disks mounted, please unmount these and try again";
+$lang['disk_raid_create_select_disk_message'] = "Select which external disk to include in the array. For best usage an external disk with the same size is recommended";
+$lang['disk_raid_create_warning_1'] = "Creating the RAID array will <strong>destroy all content</strong> on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage') and erase the selected external disk";
+$lang['disk_raid_create_warning_2'] = "Please make certain that you have a backup of all files";
+$lang['disk_raid_create_warning_3'] = "Continue to create RAID?";
+$lang['disk_raid_create_error_no_disks_found_message'] = "No usable disk found";
+$lang['disk_raid_create_button_label'] = "Create RAID";
+
+# Recover
+$lang['disk_raid_recover_title'] = "Recover RAID array";
+$lang['disk_raid_recover_broken_external_progress_title'] = "Recovering external disk in RAID array";
+$lang['disk_raid_recover_broken_external_message'] = "Select external disk to add to RAID array";
+$lang['disk_raid_recover_broken_external_warning_1'] = "Recovering the RAID array will <strong>destroy all content</strong> on the selected extenal disk";
+$lang['disk_raid_recover_broken_external_warning_2'] = "Continue to recover RAID?";
+$lang['disk_raid_recover_broken_external_button_label'] = "Add disk to RAID array";
+$lang['disk_raid_recover_broken_external_no_disks_message'] = "There are no usable external disks attached, please add an external e-SATA disk and try again";
+$lang['disk_raid_recover_broken_internal_progress_title'] = "Recovering internal disk in RAID array";
+$lang['disk_raid_recover_broken_internal_mount_exists_message'] = "There seems to be disks mounted, please unmount these and try again";
+$lang['disk_raid_recover_broken_internal_message'] = "Select which external disk to recover RAID data from";
+$lang['disk_raid_recover_broken_internal_button_label'] = "Recover internal disk";
+$lang['disk_raid_recover_broken_internal_warning_1'] = "Recovering the RAID array will <strong>destroy all content</strong> on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')";
+$lang['disk_raid_recover_broken_internal_warning_2'] = "Continue to recover RAID?";
+$lang['disk_raid_recover_broken_internal_button_label'] = "Recover internal disk";
+$lang['disk_raid_recover_broken_internal_no_raid_message'] = "No disks with RAID data found";
 
 // Network
 $lang['wlan_title'] = 'Wireless';

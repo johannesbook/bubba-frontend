@@ -1,15 +1,14 @@
-<div id="a"></div>
-<fieldset><legend><i><?=t('Setup RAID array')?></i></legend>
+<fieldset><legend><i><?=t('disk_raid_setup_title')?></i></legend>
 	
 	<div id="raid_text">
-		<input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("Create RAID array")?>" <?=$disable_create?> />
-		<?=t("Set up internal disk and one external disk into a RAID mirror solution (RAID 1)")?><br>
-		<input type="button" class="button" id="recover_md" value="<?=t("Recover RAID array")?>" />
-		<?=t("Recover internal disk or add a new external disk to existing RAID array.")?>
+		<div><input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
+		<?=t("disk_raid_create_message")?>.</div>
+		<div><input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
+		<?=t("disk_raid_recover_message")?>.</div>
 	</div>
 </fieldset>
 
-<fieldset><legend><i><?=t('RAID Status')?></i></legend>
+<fieldset><legend><i><?=t('disk_raid_status_title')?></i></legend>
 <?if(sizeof($status)) { ?>
 	<?
 	$faulty = false;
@@ -23,34 +22,34 @@
 	<div class="raid_status <?=$stat['type']?>">
 	<?if($stat['type'] == 'degraded'):?>
 		<?if($stat['sync'] == 'recover'):?>
-			<div class="raid_text"><strong><?=t("Recovering RAID array '%s'.",$stat['dev'])?></strong></div><br>
+			<div class="raid_text"><strong><?=t("disk_raid_degraded_recover_status_message",$stat['dev'])?>.</strong></div><br>
 			<div class="raid_text">
 				<? if ($stat['eta'][0]) { ?>
-					<?=t("Current recover progress is %d%% and is estimated to finish in %d hours %d minutes.",
+					<?=t("disk_raid_degraded_recover_status_message_eta_hours",
 					round($stat['progress'],0),
 					$stat['eta'][0],
-					$stat['eta'][1])?>
+					$stat['eta'][1])?>.
 				<? } else { ?>
-					<?=t("Current recover progress is %d%% and is estimated to finish in %d minutes.",
+					<?=t("disk_raid_degraded_recover_status_message_eta_minutes",
 					round($stat['progress'],0),
-					$stat['eta'][1])?>
+					$stat['eta'][1])?>.
 				<? } ?>
 			</div>
 		<?elseif (!$faulty):?>
-			<div class="highlight raid_text"><strong><?=t("RAID array degraded")?></strong></div>
+			<div class="highlight raid_text"><strong><?=t("disk_raid_degraded_message")?></strong></div>
 			<div class="raid_text">
 				<br>
-				<?=t("Disk missing in RAID array '%s'.",$stat['dev'])?>
+				<?=t("disk_raid_degraded_missing_disk_message",$stat['dev'])?>.
 			</div>
 		<?endif?>
 	<?elseif($stat['type'] == 'faulty'):?>
-		<div class="highlight raid_text"><strong><?=t("Error: External disk has malfunctioned")?></strong></div><br>
+		<div class="highlight raid_text"><strong><?=t("disk_raid_external_failure_title")?></strong></div><br>
 		<div class="raid_text">
-			<?=t("The external RAID disk (<strong>%s</strong>) in the RAID array has malfunctioned.", $stat['device'])?>
+			<?=t("disk_raid_external_failure_message_1", $stat['device'])?>.
 			<br><br>
-			<?=t("Please replace the disk (also press \"Remove\" below to acknowledge the removal of the disk).")?>
+			<?=t("disk_raid_external_failure_message_2")?>.
 			<br>
-			<?=t("When the disk has been replaced, press \"Recover RAID array\" to add the new disk to the array.")?>
+			<?=t("disk_raid_external_failure_message_3")?>.
 		</div>
 	<?endif?>
 	</div>
@@ -58,27 +57,27 @@
 <? } else {
 		if(sizeof($raids)) {
 			print "<div class='raid_text'>";
-			print t("Normal operation.");
+			print t("disk_raid_normal_op_message");
 			print "</div>";
 		} else {
 			print "<div class='raid_text'>";
-			print t("RAID not activated.");
+			print t("disk_raid_not_activated_message");
 			print "</div>";
 		}
  	 } ?>
 </fieldset>
 
-<fieldset class="adv_status"><legend><span id="raid_status" class="expansion"><span id="status_mark">+</span>&nbsp;&nbsp;<?=t('Detailed information')?></span></legend>
+<fieldset class="adv_status"><legend><span id="raid_status" class="expansion"><span id="status_mark">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?></span></legend>
 	<div id="adv_status">
 	
-		<fieldset><legend><i><?=t('List of RAID arrays')?></i></legend>
+		<fieldset><legend><i><?=t('disk_raid_list_of_arrays_title')?></i></legend>
 		<table class="disks">
 		<tr>
-			<th><i><?=t('Array name')?></i></th>
-			<th><i><?=t('Level')?></i></th>
-			<th><i><?=t('State')?></i></th>
-			<? /*<th><i><?=t('Label')?></i></th> */?>
-			<th><i><?=t('Size')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_arrays_array_name_title')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_arrays_level_title')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_arrays_state_title')?></i></th>
+			<? /*<th><i><?=t('disk_raid_table_list_of_arrays_label_title')?></i></th> */?>
+			<th><i><?=t('disk_raid_table_list_of_arrays_size_title')?></i></th>
 			<th></th>
 		</tr>
 		<?foreach($raids as $raid):?>
@@ -94,13 +93,13 @@
 		</table>
 		
 		</fieldset>
-		<fieldset><legend><i><?=t('List of RAID disks')?></i></legend>
+		<fieldset><legend><i><?=t('disk_raid_list_of_disks_title')?></i></legend>
 		<table class="disks">
 		<tr>
-			<th><i><?=t('Disk')?></i></th>
-			<th><i><?=t('Parent')?></i></th>
-			<th><i><?=t('State')?></i></th>
-			<th><i><?=t('Size')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_disks_disk_title')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_disks_parent_title')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_disks_state_title')?></i></th>
+			<th><i><?=t('disk_raid_table_list_of_disks_size_title')?></i></th>
 			<th></th>
 		</tr>
 		<?foreach($disks as $disk):?>
@@ -111,7 +110,7 @@
 			<td><?=sizetohuman($disk['size'],1000)?></td>
 			<td>
 		<?if($disk['state'] == 'faulty'):?>
-		<input type="button" class="remove_raid_disk" value="<?=t("Remove")?>" rel="<?=$disk['device']?>" />
+		<input type="button" class="remove_raid_disk" value="<?=t("disk_raid_disk_faulty_remove_button_label")?>" rel="<?=$disk['device']?>" />
 		<?endif?>
 			</td>
 		</tr>

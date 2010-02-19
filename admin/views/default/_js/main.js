@@ -1,3 +1,30 @@
+//define a single reference for an empty function
+if (typeof Function.empty == 'undefined')
+    Function.empty = function(){};
+
+//stub out firebug console object
+//        will allow console statements to be left in place
+if (typeof console == 'undefined')
+    console = {
+        "log": Function.empty,
+        "debug": Function.empty,
+        "info": Function.empty,
+        "warn": Function.empty,
+        "error": Function.empty,
+        "assert": Function.empty,
+        "dir": Function.empty,
+        "dirxml": Function.empty,
+        "trace": Function.empty,
+        "group": Function.empty,
+        "groupCollapsed": Function.empty,
+        "groupEnd": Function.empty,
+        "time": Function.empty,
+        "timeEnd": Function.empty,
+        "profile": Function.empty,
+        "profileEnd": Function.empty,
+        "count": Function.empty
+    };
+
 var statustimer;
 
 function hide_status() {
@@ -5,12 +32,13 @@ function hide_status() {
 }
 
 function update_status($success,$msg) {
-	if($success=="success") {
-		alert("call has changed - do not use string");
+	if( typeof $success == 'string' ) {
+		console.group( "update_status call has changed" );
+		console.warn( "update_status call has changed, $success was '%s'; $msg was '%s'", $success, $msg );
+		console.trace();
+		console.groupEnd();
 	}
-	if($success=="fail") {
-		alert("call has changed - do not use string");
-	}
+
 	if($success > 0) {
 		$("#update_status").removeClass("error");
 		$("#update_status").html($msg)
@@ -105,26 +133,28 @@ $(document).ready( function() {
 	});
 (
 	function($) {
-		$.dialog = function jQuery_ui_confirm(message, header, buttons, class ) {
-			if(!class) {
-				class="";
-			}
+		$.dialog = function jQuery_ui_confirm(message, header, buttons, override_options ) {
+
 			if(!buttons) {
 				buttons = {};
 			}
+
+			options = {
+				bgiframe: true,
+				resizable: false,
+				modal: true,
+				buttons: buttons,
+				beforeclose: function(event, ui) { cursor_ready(); }
+			}
+			if( override_options != undefined ) {
+				$.extend( options, override_options );
+			}
+
 			div = $('<div/>');
 			div.attr('title', header);
 			div.html(message);
-			div.dialog({
-					bgiframe: true,
-					resizable: false,
-					modal: true,
-					buttons: buttons,
-					dialogClass: class,
-					beforeclose: function(event, ui) { cursor_ready(); }
-
-				}
-			);
+			div.dialog( options );
+			return div;
 		};
 /*
  * Usage:
@@ -138,14 +168,14 @@ $(document).ready( function() {
  *			},
  *			<?=t('button_label_cancel')?>: function() { // cancel button
  *				$(this).dialog('close');
- * 				// eventual cancel logic here
+ * 				// eventual cancel logic heoverride_re
  *			}
  *			 // , ... more buttons if wanted
  *		}
  *	);
  *
  */
-		$.confirm = function jQuery_ui_alert( message, header, buttons ) {
+		$.confirm = function jQuery_ui_confirm( message, header, buttons, override_options ) {
 			if(!buttons) {
 				buttons = {
 					'Continue': function() {
@@ -156,10 +186,13 @@ $(document).ready( function() {
 					}
 				}
 			}
-			$.dialog( message, header, buttons, 'ui_dialog_confirm' );
+			options = {dialogClass:'ui_dialog_confirm'};
+			$.extend( options, override_options );
+			
+			return $.dialog( message, header, buttons, options );
 		};
 
-		$.alert = function jQuery_ui_alert( message, header, button_label, callback ) {
+		$.alert = function jQuery_ui_alert( message, header, button_label, callback, override_options ) {
 			if(!button_label) {
 				button_label = "Ok";
 			}
@@ -170,7 +203,10 @@ $(document).ready( function() {
 					callback.apply( this, [] );
 				}
 			};
-			$.dialog( message, header, buttons, 'ui_dialog_alert' );
+			options = {dialogClass:'ui_dialog_alert'};
+			$.extend( options, override_options );
+
+			return $.dialog( message, header, buttons, options );
 		};
 
 	}
