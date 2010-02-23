@@ -13,9 +13,6 @@
 	<li class="<?if($current == 'wlan'):?>active<?endif?>">
 		<a href="<?=FORMPREFIX?>/network/wlan"><?=t('wlan_title')?></a>
 	</li>
-	<li class="<?if($current == 'other'):?>active<?endif?>">
-		<a href="<?=FORMPREFIX?>/network/other"><?=t('Identity')?></a>
-	</li>
 	<li class="<?if($current == 'fw'):?>active<?endif?> last">
 		<a href="<?=FORMPREFIX?>/network/fw"><?=t('Firewall')?></a>
 	</li>

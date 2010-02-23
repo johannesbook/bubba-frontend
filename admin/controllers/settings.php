@@ -614,5 +614,126 @@ class Settings extends Controller{
 		}
 	}
 
+	function identity( $strip = "" ) {
+		$this->load->model('networkmanager');
+		$this->load->helper('update_msg');
+
+		$errors = array();
+		$update = false;
+		$data['workgroup'] = $current_workgroup = get_workgroup();
+		$data['easyfind'] = $current_easyfind = $this->networkmanager->easyfind_get_name();
+		$data['hostname'] = $current_hostname = php_uname('n');
+
+		if( $this->input->post("samba_update") ) {
+			$update = true;
+			# we update samba
+
+			# Get input hostname and workgroup
+			$hostname=$this->input->post("hostname");
+			$workgroup=$this->input->post('workgroup');
+
+			$restart_samba = false;
+
+			if( $hostname != $current_hostname ) {
+				# Hostname is updated
+				if(preg_match("/^[A-Za-z0-9-]+$/",$hostname)){
+					# Valid hostname given
+					if(change_hostname($hostname)){
+						# we failed to update hostname
+						$errors["settings_identity_error_change_hostname"]=true;
+					}else{
+						$restartsamba=true;
+						$data['hostname'] = $hostname;
+					}
+				}else{
+					# invalid hostname
+					$errors["settings_identity_error_invalid_hostname"]=array($hostname);
+				}
+			}
+
+			if( $workgroup != $current_workgroup ) {
+				// TODO : Add errorchecking
+				set_workgroup($workgroup);
+				$restartsamba=true;
+				$data['workgroup'] = $workgroup;
+
+			}
+
+			if ($restartsamba){
+				if(!query_service("smb")){
+					restart_samba();
+				}
+			} else {
+				# We just clicked on the update button
+				$update = false;
+			}
+
+		} elseif( $this->input->post("easyfind_update") ) {
+			$update = true;
+
+			# we update easyfind
+
+			$easyfind = $this->input->post('easyfind_name');
+			$easyfind_enable = $this->input->post('easyfind_enabled');
+			if( $easyfind_enable ) {
+				# easyfind selected to be enabled
+				if( $easyfind != $current_easyfind ) {
+					# we have new easyfind name
+					if( $this->networkmanager->easyfind_validate( $easyfind ) ) {
+						# name is valid
+						if( $this->networkmanager->easyfind_set_name( $easyfind ) ) {
+							$data["easyfind"] = $easyfind;
+						} else {
+							# we failed to set the valid name
+							$errors["settings_identity_easyfind_error_fail_set_name"]=array($easyfind);
+						}
+					} else {
+						# name isn't valid
+						$errors["settings_identity_easyfind_error_invalid_name"]=array($easyfind);
+
+					}
+				} elseif( ! $this->networkmanager->easyfind_is_enabled() ) {
+					# we havn't updated name, but easyfind wasn't enabled before
+					if( $this->networkmanager->easyfind_set_enable(true) ) {
+						$data["easyfind"] = $easyfind;
+					} else {
+						# we couldn't enable easyfind
+						$errors["settings_identity_easyfind_error_fail_enable"]=true;
+					}
+				} else {
+					# We just clicked on the update button
+					$update = false;
+				}
+			} elseif( $this->networkmanager->easyfind_is_enabled() ) {
+				# easyfind is enabled, and we want to disable it
+				if( $this->networkmanager->easyfind_set_enable(false) ) {
+					$data["easyfind"] = $easyfind;
+				} else {
+					# we failed to disable easyfind (how???)
+					$errors["settings_identity_easyfind_error_fail_disable"]=true;
+				}
+			} else {
+				# We just clicked on the update button
+				$update = false;
+			}
+		}
+
+		$data['easyfind_enabled'] = $this->networkmanager->easyfind_is_enabled();
+
+		if( $update ) {
+			$data["update"] = create_updatemsg( $errors );
+		}
+	
+		if($strip){
+			$this->load->view(THEME.'/settings/settings_identity_view',$data);		
+		}else{
+			$this->_renderfull(
+				$this->load->view(THEME.'/settings/settings_identity_view',$data,true),
+				$this->load->view(THEME.'/settings/settings_identity_head_view',$data,true)
+			);
+		}
+		
+	}
+
 }
 

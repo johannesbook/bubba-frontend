@@ -295,75 +295,6 @@ class Network extends Controller{
 
 	}
 
-	function othupdate($strip=""){
-		if(count($_POST)) {
-			$data["success"]=false;
-			$data["updated"]=true;
-			$data["err_easyfind"] = false;
-			$data["err_hostname"] = false;
-			$data["err_changehostname"] = false;
-
-			if($this->input->post("samba_update")) {
-				// Get post
-				$data["hostname"]=$this->input->post("hostname");
-				$data["workgroup"]=$this->input->post('workgroup');
-				// get easyfind config to present to user since this is not updated.
-				$data["easyfind"] = get_easyfind();
-
-				// Get old host/workgroup
-				$workgroup=get_workgroup();
-				$hostname=php_uname('n');
-				$restartsamba=false;
-				if($hostname!=$data["hostname"]){
-					if(preg_match("/^[A-Za-z0-9-]+$/",$data["hostname"])){
-						if(change_hostname($data["hostname"])){
-							$date["err_changehostname"]=true;
-						}else{
-							$restartsamba=true;
-						}
-					}else{
-						$data["err_hostname"]=true;
-					}
-				}
-
-				if($data["workgroup"]!=$workgroup){
-					// TODO: Add errorchecking
-					set_workgroup($data["workgroup"]);
-					$restartsamba=true;
-				}
-
-				if ($restartsamba){
-					if(!query_service("smb")){
-						restart_samba();
-					}
-				}
-			}
-
-
-			if($this->input->post("easyfind_update")) {
-				$newname = $this->input->post('easyfind_name');
-				$data["err_easyfind"] = $this->networkmanager->set_easyfind($this->input->post('easyfind'),$newname);
-
-
-				$data["easyfind"] = get_easyfind();
-				$data["workgroup"]=get_workgroup(); // these are not set otherwise.
-				$data["hostname"]=php_uname('n');
-
-				if($data["err_easyfind"]) {
-					$data["easyfind"][2]= $newname;
-				}
-			}
-
-			if($strip){
-				$this->load->view(THEME.'/network/network_other_view.php',$data);
-			}else{
-				$this->_renderfull($this->load->view(THEME.'/network/network_other_view.php',$data,true));
-			}
-		} else {
-			$this->other();
-		}
-	}
-
 	function fwupdate($strip="") {
 
 		d_print_r($_POST);
@@ -1013,21 +944,6 @@ class Network extends Controller{
 		}else{
 			$this->_renderfull($this->load->view(THEME.'/network/network_fw_view.php',$data,true));
 		}	
-	}
-
-	function other($strip=""){
-		$data["workgroup"]=get_workgroup();
-		$data["easyfind"] = get_easyfind();
-		$data["hostname"]=php_uname('n');
-		$data["err_easyfind"] = false;
-		$data["err_hostname"] = false;
-		$data["err_changehostname"] = false;
-
-		if($strip){
-			$this->load->view(THEME.'/network/network_other_view.php',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/network/network_other_view.php',$data,true));
-		}
 	}
 
 	function profile($strip=""){

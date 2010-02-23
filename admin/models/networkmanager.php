@@ -25,29 +25,29 @@ class NetworkManager extends Model {
 		}		
 	}
 
-	public function set_easyfind( $enabled, $name ) {
+	public function easyfind_validate( $name ) {
+		return preg_match( '#^[A-Za-z0-9-]+$#', $name );
+	}
 
+	public function easyfind_set_name( $name ) {
+		return setname_easyfind($name);
+	}
 
-		if ( $enabled ) {
-			// get old easyfind config
-			$old_easyfind = get_easyfind();
-			if(!preg_match("/\W/",$name) && $name) {
-				if(strcmp($old_easyfind[2],$name) ) {
-					//new name entered.
-					//successful "setname" also enables easyfind.
-					if (!setname_easyfind($name)) {
-						return t("Name \"$name\" (or network) not available");
-					}
-				} elseif (!$old_easyfind[0]) { // name not changed, just enable
-					enable_easyfind(true);
-				}
-			} else {
-				return "\"$name\" " .t("is an illegal string (a-z,0-9 allowed)");
-			}
-		} else {
-			enable_easyfind(false);
-		}
+	public function easyfind_set_enable( $enable = true ) {
+		return enable_easyfind( $enable );
+	}
 
+	public function easyfind_is_enabled() {
+		list($enabled, $ip, $name) = get_easyfind();
+		return $enabled == 'checked';
+	}
+	public function easyfind_get_ip() {
+		list($enabled, $ip, $name) = get_easyfind();
+		return $ip;
+	}
+	public function easyfind_get_name() {
+		list($enabled, $ip, $name) = get_easyfind();
+		return $name;
 	}
 
 	function set_auto($restart_lan = true, $restart_wan = true) {

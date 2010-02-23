@@ -25,8 +25,7 @@ $(document).ready(function(){
 								$(this).dialog('close');
 								cursor_wait();
 								$("#OTHCFG").submit(); 
-							},
-						<?=t('button_label_cancel')?>: function() {
+							},<?=t('button_label_cancel')?>: function() {
 								$(this).dialog('close');
 							}
 						}

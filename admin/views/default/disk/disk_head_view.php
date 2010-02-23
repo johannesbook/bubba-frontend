@@ -1,8 +1,3 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.js?v='<?=$this->session->userdata('version')?>'"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.confirm.js?v='<?=$this->session->userdata('version')?>'"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.progress.js?v='<?=$this->session->userdata('version')?>'"></script>
-
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css?v='<?=$this->session->userdata('version')?>'" />
 <style>
 
 table.typetable > tbody > tr > td {
@@ -121,134 +116,62 @@ input.mount {
 
 	<script type="text/javascript">
 $(document).ready( function() {
-/*	$('td.partition').click( function() {
-	$.post(
-			'<?=site_url("ajax_disk/partition_get_info")?>',
-			{ partition: $(this).attr( 'rel' ) },
-			function(data) {
-				form = $('<form />');
-				infotable = $('<table />');
-				form.append( infotable );
-				switch( data.data.usage ) {
-				case 'pv':
-					if( data.vgdata ) {
-						current_lv =  data.vgdata.name + "-" + data.vgdata.lvs[0].name;
-						infotable.append(
-							$('<tr />')
-							.append(
-								$('<th />').text('<?=t("Name")?>: ')
-							)
-							.append(
-								$('<td />').text( current_lv )
-							)
-						);
-						pvs =  data.vgdata.pvs;
-						pvs_names = [];
-						for(i=0;i<pvs.length;++i) {
-							pvs_names.push( pvs[i].dev );
-						}
 
-						infotable.append(
-							$('<tr />')
-							.append(
-								$('<th />').text('<?=t("Physical devices")?>: ')
-							)
-							.append(
-								$('<td />').text( pvs_names.join(', ') )
-							)
-						);
-					}
-					break;
-				default:
-					infotable.append(
-						$('<tr />')
-						.append(
-							$('<th />').text('<?=t("Label")?>: ')
-						)
-						.append(
-							$('<td />').text( data.data.label )
-						)
-					);
-					infotable.append(
-						$('<tr />')
-						.append(
-							$('<th />').text('<?=t("UUID")?>: ')
-						)
-						.append(
-							$('<td />').text( data.data.uuid )
-						)
-					);
-
-				}
-
-				form.append(
-					$('<div class="buttons" />')
-					.append(
-						$("<div class='no simplemodal-close'>Close</div>")
-					)
-				);
-
-
-				$.modal( form );
-			}, 'json' 
-			)
-	});
- */
 	$('input.format').click(function(e) {
 		disk = $(this).attr( 'rel' );
 		disk_model = $(this).attr( 'name' );
-		form = $('<form />');
-		form.append( $('<div />').addClass("header").text("<?=t("Format disk")?>"));
+		dialog_element = $.dialog("", "<?=t("disk_format_title")?>", {});
 		$.post(	'<?=site_url("ajax_disk/disk_got_mounts")?>', { disk: disk }, function(data) {
+
 			if( data.disk_got_mounts ) {
-				form.append( $('<div />').addClass("text").text("<?=t("There seems to be disks mounted, please unmount these and try again.")?>" ) );
-				text_box = $('<div />').addClass("text");
-				form.append( text_box );
-				text_box.append(
-					$('<div class="buttons" />')
-					.append(
-						$("<input type='button' class='no simplemodal-close' value='<?=t("Close")?>' />")
-					)
-				);
+				// The disk is mounted
+				dialog_element.html($("<p/>",{html:"<?=t("disk_format_error_mounts_exists_message")?>."}) );
+				dialog_element.dialog('option','buttons', {"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}});
 			} else {
-				text_box = $('<div />').addClass("text").addClass("div_align_middle");
-				input_label = $('<label />').attr({'for': 'label'}).text('<?=t("Disk label")?>:');
-				//text_box.text("<?=t("Label")?>:");
-				input = $('<input />').attr({'id': 'label_input','name': 'label', 'type': 'text', 'value': 'Bubba Disk'});
-				text_box.append( input_label );
-				text_box.append( input );
-				form.append( text_box );
+				dialog_element.html($('<p/>',{html:"<?=t("disk_format_message")?>."}) );
 
-				form.append(
-					$('<div class="buttons" />')
-					.append(
-						$("<input type='button' class='no simplemodal-close' value='<?=t("Cancel")?>' />")
-					)
-					.append(
-						$("<input type='button' id='do_create' class='yes disabled' value='<?=t("Format")?>' />").click(
-							function(e) {
-								label = input.val();
-								$.modal.close();
-								$.confirm(
-									"<strong><span class='highlight'><?=t("Warning")?>!</span></strong><br><?=t("Formating disk will destroy all data on disk")?> " + disk + "<?=t(". Continue?")?>",
-									function() {
-										prog = $('<div />');
-										prog.append($("<div class='header'><?=t("Formating disk")?></div>"));
-										prog.append($("<div class='text'><?=t("Starting format process, please wait...")?></div>"));
-										$.modal(prog);
-										$.post('<?=site_url("ajax_disk/format_disk")?>',{ disk: disk, label: label }, function( data ) {		
-											location.assign("/admin/disk/progress");
-										}, 'json');
+				// the input for label
+				input_label = $('<label />',{for: 'label', html: '<?=t("disk_format_label_label")?>'});
+				input = $('<input />',{id: 'label_input', name: 'label', type: 'text', value: disk_model});
+				dialog_element.append($('<div/>').append(input_label).append(input));
 
-									}, '<?=t("Format disk")?>','<?=t("Cancel")?>','<?=t("Format disk")?>');		
-							}
-						)
-					)
+				dialog_element.dialog(
+					'option','buttons', {
+						"<?=t('disk_format_format_button_label')?>": function() {
+							// Callback when choosing to create RAID
+
+							// The warning that now we are going to destroy any data on external disk
+							dialog_element.html($("<h2/>",{class:"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+							dialog_element
+								.append($('<p/>',{html:"<?=t("disk_format_warning_1")?>"}))
+								.append($('<p/>',{html:"<?=t("disk_format_warning_2")?>"}));
+
+							// Updating the buttons in the dialog
+							dialog_element.dialog(
+								'option','buttons', {
+									"<?=t('disk_format_format_button_label')?>": function() {
+										// Callback when confirming creation of RAID
+										dialog_element.dialog('option', 'title', '<?=t("disk_format_format_progress_title")?>');
+										dialog_element.dialog('option', 'buttons', {}); // remove buttons
+										dialog_element.dialog('option', 'beforeclose', function(){return false;}); // prevent closing of dialog
+										dialog_element.html($("<p/>",{html:'<?=t("generic_dialog_text_please_wait")?>'}));
+
+										// calling the actual RAID creation, point of no return
+										$.post('<?=site_url("ajax_disk/format_disk")?>',{ disk: disk, label: input.val() },
+											function(data) {
+												location.assign("/admin/disk/progress");
+											}, 'json' );
+									},
+										"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+								});
+						},
+							"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+					}
 				);
+
+
 			}
 		}, 'json');
-		$.modal( form );
-
 	});
 
 	$('input.mount').click(function(e) {

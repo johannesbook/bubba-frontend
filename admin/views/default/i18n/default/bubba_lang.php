@@ -58,6 +58,16 @@ $lang['faulty'] = 'Disk error';
 $lang['active'] = 'Active';
 $lang['clean'] = 'Clean';
 
+$lang['disk_format_title'] = "Format disk";
+$lang['disk_format_error_mounts_exists_message'] = "There seems to be disks mounted, please unmount these and try again";
+$lang['disk_format_message'] = "Please specify label for your new partition";
+$lang['disk_format_format_button_label'] = "Format disk";
+$lang['disk_format_label_label'] = "Label";
+$lang['disk_format_warning_1'] = "Formating disk will destroy all data on disk";
+$lang['disk_format_warning_2'] = "Continue with formatting the disk?";
+$lang['disk_format_format_progress_title'] = "Formating disk";
+$lang['disk_format'] = "";
+
 $lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the data on the external device. Continue?</p> <p>Note: Removal of the new disk from the system will require a full reinstall.</p>";
 $lang['disk_lvm_extend_dialog_warning_title'] = "Extend default data partition";
 $lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
@@ -200,6 +210,20 @@ $lang['settings_software_install_package'] = "Install %s";
 $lang['settings_software_update_software'] = "Update software";
 $lang['settings_software_update_system'] = "Update system";
 $lang['settings_software_include_hotfixes'] = "Include hotfixes and system specific updates";
+
+$lang['settings_identity_error_change_hostname'] = "Failed to change hostname";
+$lang['settings_identity_error_invalid_hostname'] = "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
+$lang['settings_identity_easyfind_error_fail_set_name'] = "Failed to set easyfind name <strong>%s</strong>, probably this name is taken allready. Please try an other one";
+$lang['settings_identity_easyfind_error_invalid_name'] = "Easyfind name <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
+$lang['settings_identity_easyfind_error_fail_enable'] = "Failed to enable easyfind";
+$lang['settings_identity_easyfind_error_fail_disable'] = "Failed to disable easyfind";
+$lang['settings_identity_title'] = "Windows share options"; # XXX Erm? WTF???
+$lang['settings_identity_hostname_label'] = "Hostname";
+$lang['settings_identity_workgroup_label'] = "Workgroup";
+$lang['settings_identity_update_hostname_workgroup_label'] = "Update hostname and workgroup";
+$lang['settings_identity_easyfind_title'] = "Easyfind options";
+$lang['settings_identity_easyfind_message'] = "Use 'Easyfind' to locate your Bubba";
+$lang['settings_identity_update_easyfind_label'] = "Update easyfind";
 
 //  ---------- Users  -----
 $lang['realname'] = 'Real name';
