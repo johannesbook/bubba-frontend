@@ -86,8 +86,17 @@ class NetworkManager extends Model {
 	}
 
 	function set_server($restart_lan = true, $restart_wan = true) {
-		// server and auto is the same.
-		$this->set_auto($restart_lan,$restart_wan);
+		$this->setdynamic($this->get_wan_interface());
+		$this->setdynamic($this->get_lan_interface());
+		// make sure to disable dns
+		$dnsmasq = get_dnsmasq_settings();
+
+		unset($dnsmasq['running']);
+		$dnsmasq["dhcpd"] = false; // make sure the fallback does not activate dhcpd.
+		configure_dnsmasq($dnsmasq);
+
+		if($restart_lan) $this->ifrestart($this->get_lan_interface());
+		if($restart_wan) $this->ifrestart($this->get_wan_interface());
 	}
 
 	function apply_profile($profile,$old_profile) {
@@ -309,8 +318,6 @@ class NetworkManager extends Model {
 		$dnsmasqcfg=get_dnsmasq_settings();
 		$dnsmasqcfg["interface"]=$if;
 		configure_dnsmasq($dnsmasqcfg);
-		stop_service("dnsmasq");
-		start_service("dnsmasq");
 		
 		$cfg = array(
 			'cmd'		=> 'setlanif',
