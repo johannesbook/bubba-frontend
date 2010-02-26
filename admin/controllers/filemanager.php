@@ -29,11 +29,13 @@ class Filemanager extends Controller{
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
-	function _renderfull($content, $usehead=true){
-		if($usehead){
-			$mdata["head"] = $this->load->view(THEME.'/filemanager/filemanager_head_view','',true);
-		}else{
-			$mdata["head"] = "";
+	function _renderfull($content, $head=true){
+		if(!is_null($head)) {
+			if( $head === true ) {
+				$mdata["head"] = $this->load->view(THEME.'/filemanager/filemanager_head_view','',true);
+			} else {
+				$mdata['head'] = $head;
+			}
 		}
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		$mdata["subnav"]=$this->load->view(THEME.'/filemanager/filemanager_submenu_view','',true);;
@@ -464,6 +466,50 @@ class Filemanager extends Controller{
 	}	
 	
 	function index($strip=""){
+		if( $strip == 'test' ) {
+
+			$path=$this->input->post('path');
+			$user=$this->session->userdata("user");
+
+			$pos=strpos($path,"/home");
+
+			if(($pos===false) || ($pos!=0)){
+				$path="/home/$user";
+			}
+			$out = ls($user,"$path");
+			$data['aaData'] = array();
+
+			if($out=="\0\0") {
+				// error
+				$data["err_perm"]=true;
+			}else{
+				$typemap = array(
+					'F' => 'file',
+					'D' => 'dir',
+					'L' => 'link',
+				);
+				foreach($out as $line) {
+					if($line[0]=="P"){
+						// Permission Hack to avoid more calls than needed to backend
+						$perms=explode("\t",$line);
+						$data["meta"]["writable"]=$perms[1]=="1";
+					}else {
+						list( $type, $size, $date, $name ) = explode("\t",$line);
+						$data['aaData'][] = array(
+							$typemap[$type],
+							$name,
+							$date,
+							$size,
+						);
+					}
+				}
+			}
+			$data['root'] = $path;
+
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
+		}
 
 		// Multiplex requests :(
 		if($this->input->post("action")){
@@ -562,7 +608,10 @@ class Filemanager extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/filemanager/filemanager_index_view',$data);
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_index_view',$data,true),false);
+			$this->_renderfull(
+				$this->load->view(THEME.'/filemanager/filemanager_index_view',$data,true),
+				$this->load->view(THEME.'/filemanager/filemanager_index_head_view',$data,true)
+			);
 		}
 	}
 
