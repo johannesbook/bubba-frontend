@@ -111,7 +111,6 @@ jQuery.fn.extend({
 
 
 					if( o.insertintodom ) {
-						clone.appendTo( element.parent() );
 
 					// disable any possible default event
 					var possibleEvents = 
@@ -126,8 +125,11 @@ jQuery.fn.extend({
 
 					clone.addClass( o.className );
 					if( o.wrap ) {
-						clone.wrapAll( $(o.wrap) );
+						wrap = $(o.wrap);
+						wrap.append(clone);
+						clone=wrap;
 					}
+						clone.appendTo( element.parent() );
 					}
 					clone.css({
 							position: 'absolute',

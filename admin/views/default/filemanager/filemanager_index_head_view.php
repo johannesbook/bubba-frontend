@@ -26,8 +26,18 @@ background: #881212;
 
 .ui-path-link {
 	cursor: pointer;
-	color: blue;
+	color: blue !important;
 }
+
+.ui-filetable-prev-arrow, .ui-filetable-next-arrow {
+font-size: larger;
+font-weight: bolder;
+}
+
+#filetable .ui-icon {
+float: right;
+}
+
 </style>
 <script>
 
@@ -68,9 +78,11 @@ dir_opening_callback = function( dataTable, filetable, options ){
 	options = $.extend({direction: "left", path: "/", speed: 750},options);
 	fake_overlay = fileTable.fake();
 	dataTable.fnClearTable();
+	clean_fake_overlay = fileTable.fake();
+	fileTable.hide();
 	done_animate = false;
-	fileTable.hide().show('slide', {direction: options.direction == "left" ? 'right' : 'left'}, options.speed, function() { dataTable.fnDraw(); done_animate = true });
-	fake_overlay.hide('slide', {direction: options.direction == "left" ? 'left' : 'right' }, options.speed, function() {fake_overlay.remove() });
+	clean_fake_overlay.hide().show('slide', {direction: options.direction == "left" ? 'right' : 'left'}, options.speed, function() { fileTable.show(); dataTable.fnDraw(); done_animate = true, clean_fake_overlay.remove(); delete clean_fake_overlay; });
+	fake_overlay.hide('slide', {direction: options.direction == "left" ? 'left' : 'right' }, options.speed, function() {  fake_overlay.remove(); delete fake_overlay; });
 	dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: options.path }, false, function() {
 		if( done_animate ) {
 			// if we lag, and animation is done befoer ajax load, then we redraw
@@ -91,6 +103,11 @@ $(document).ready(function() {
 	fileTable = $("#filetable");
 
 	dataTable = fileTable.dataTable({
+		'oClasses': {
+			'sSortJUIAsc': 'ui-icon ui-icon-triangle-1-n',
+			'sSortJUIDesc': 'ui-icon ui-icon-triangle-1-s',
+			'sSortJUI': 'ui-icon ui-icon-carat-2-n-s'
+		},
 		"oLanguage": {
 			'sZeroRecords': ''
 		},
@@ -107,8 +124,9 @@ $(document).ready(function() {
 		"aoColumns": [
 			{ "sWidth": "5%", "bSortable": false, "aaSorting": [ "asc" ] },
 			{ "sWidth": "60%", "aaSorting": [ "asc" ] },
-			{ "sWidth": "25%" },
+			{ "sWidth": "20%" },
 			{ "sWidth": "10%" },
+			{ "sWidth": "5%", "bSortable": false }
 		],
 		"fnServerData": function ( sSource, aoData, fnCallback ) {
 			$.ajax( {
@@ -118,6 +136,9 @@ $(document).ready(function() {
 				"data": aoData, 
 				"success": function(data){
 					fileTable.data('root', data.root);
+					$.each(data.aaData, function( index, value ) {
+						data.aaData[index].push( '' );
+					});
 					fnCallback.apply(this, [data]);
 
 					current = '/';
@@ -129,7 +150,7 @@ $(document).ready(function() {
 							return;
 						}
 						current += value;
-						a = $('<span/>', {data: {path:current}, html: value, 'class': "ui-path-link"}).click(function(){
+						a = $('<a/>', {data: {path:current}, html: value, 'class': "ui-path-link"}).click(function(){
 							dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: $(this).data('path') } );
 						});
 						current += '/';
@@ -140,7 +161,8 @@ $(document).ready(function() {
 					arr.pop();
 					updir = arr.join('/');
 					$('.ui-fake-updir', fileTable).html($('<a/>',{
-						text: '..',
+						text: '←',
+						'class': 'ui-filetable-prev-arrow',
 						click: function() {
 							dir_opening_callback.apply( this, [dataTable, fileTable, {path:updir, direction: 'right'}  ] );
 						} 
@@ -158,8 +180,9 @@ $(document).ready(function() {
 			if( aData[0] == "dir" ) {
 				$(nRow).addClass("type-dir");
 				$("td:eq(3)",nRow).html(""); // size irrelevant
-				$("td:eq(0)",nRow).html($("<a/>",{
-					text: "dir", 
+				$("td:eq(4)",nRow).html($("<a/>",{
+					text: "→", 
+					'class': 'ui-filetable-next-arrow',
 					click: function() {
 						dir_opening_callback.apply( this, [dataTable, fileTable, {path:$(nRow).data('path')} ] );
 					} 
