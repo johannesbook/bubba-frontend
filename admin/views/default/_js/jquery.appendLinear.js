@@ -1,5 +1,5 @@
 /*
- * jQuery fake - Creates a fake copy of a jQuery object
+ * jQuery appendLinerar - Appends objects to an object in a visual linerar fashion
  *
  * Copyright © 2010 Carl Fürstenberg
  *
@@ -73,82 +73,59 @@
  *
  * ---------------------------------------------------------------------------
  *
- *  Version: 0.2
+ *  Version: 0.1
  */
 jQuery.fn.extend({
-		/*
-		 * fake - creates a fake clone
-		 *
-		 */
-		"fake": function( options ) {
-			// we need to save our clones
-			var clones = jQuery();
+		"appendLinear": function( objects, options ) {
+
 
 			options = jQuery.extend({
-					"visible": true,
-					"insertintodom": true,
-					"className": "clone",
-					"wrap": "<div/>",
-					"positionate": true
+					"direction": "right",
+					"offset": 0,
+					"updateSize": true
 				}, options
 			);
 
-			jQuery(this).each(function() {
-					var element = jQuery(this);
-					var orig_offset = element.offset();
-					var orig_width = element.outerWidth();
-					var orig_height = element.outerHeight();
-					var clone = element.clone();
+			var total_offset = {
+				top: 0,
+				left: 0
+			};
 
-					clone.removeAttr("id"); // shouldn"t have two objects with same ID
+			var result = jQuery(this);
 
-					// disable any possible default event
-					var possibleEvents =
-						"blur focus focusin focusout load resize scroll unload click dblclick "    +
-						"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
-						"change select submit keydown keypress keyup error";
+			jQuery(objects).each(function() {
+					var current = jQuery(this);
 
-					clone.bind( possibleEvents, function(event) {
-							event.preventDefault();
-							return false;
-						}
-					);
 
-					clone.addClass( options.className );
+					current.offset(total_offset);
 
-					if( options.wrap ) {
-						var wrap = jQuery(options.wrap);
-						wrap.append(clone);
-						clone.css({margin: 0});
-						clone=wrap;
-						wrap.css({padding: 0});
+					switch( options.direction ) {
+					case "right":
+						total_offset.left += (current.outerWidth(true) + options.offset);
+						break;
+					case "left":
+						total_offset.left -= (current.outerWidth(true) + options.offset);
+						break;
+					case "down":
+						total_offset.top += (current.outerHeight(true) + options.offset);
+						break;
+					case "up":
+						total_offset.top -= (current.outerHeight(true) + options.offset);
+						break;
 					}
 
-					if( options.insertintodom ) {
-						clone.appendTo( "body" );
-					}
-					clone.css({margin: 0, position: "absolute"});
-					clone.find("a").css({cursor: "default"});
-					if(options.positionate) {
-						clone.css({
-								left: orig_offset.left,
-								top: orig_offset.top,
-								width: orig_width,
-								height: orig_height
-							}
-						);
-					}
-					if( options.visible ) {
-						clone.show();
-					} else {
-						clone.hide();
-					}
 
-					clones = clones.add(clone);
+					result.append( current );
+
 				}
 			);
-
-			return clones;
+			if( options.updateSize ) {
+				result.width(total_offset.left);
+				result.height(total_offset.top);
+			}
+			return result;
 		}
 	}
 );
+
+

@@ -8,7 +8,9 @@
 <title>Bubba|TWO - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery-ui-default.css?v='<?=$this->session->userdata('version')?>'" />
+<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.all.css?v='<?=$this->session->userdata('version')?>'" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery-ui.js?v='<?=$this->session->userdata('version')?>'"></script>
 
 <?if(false):?>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.lint.js?v='<?=$this->session->userdata('version')?>'"></script>
@@ -27,13 +29,23 @@ if(isset($head)) {
 $(document).ready(function(){
 	// Make a striped effect on tables in content
 	$('table:not(.blank)').stripe();
-	<?
-	if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])) {
-		// run specific code for Opera here
-		print "$(\"input[type='checkbox']\").removeClass(\"checkbox_radio\");\n";
-		print "$(\"input [type='radio']\").removeClass(\"checkbox_radio\");\n";
-	}
-	?>
+
+<?if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])):?>
+	
+	$("input[type='checkbox']").removeClass("checkbox_radio");
+	$("input[type='radio']").removeClass("checkbox_radio");
+
+<?endif?>
+
+<?if(isset($update) && is_array($update)):?>
+
+	update_status(
+		<?=( isset($update['success']) && $update['success'] ) ? "true" : "false"?>,
+		"<?=isset($update['message']) ? t($update['message']) : ""?>"
+	);
+
+<?endif?>
+
 });
 </script>
 </head>

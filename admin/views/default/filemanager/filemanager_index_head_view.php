@@ -1,5 +1,6 @@
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.dataTables.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.fake.js" type="text/javascript"></script>
+<script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.appendLinear.js" type="text/javascript"></script>
 <style>
 .type-file {
 border-left: 2px solid #3232aa;
@@ -34,8 +35,30 @@ font-size: larger;
 font-weight: bolder;
 }
 
-#filetable .ui-icon {
+ul.ui-buttonbar li {
+cursor:pointer;
+float:left;
+list-style:none outside none;
+margin:2px;
+padding:4px 4px;
+position:relative;
+}
+
+.ui-buttonbar {
 float: right;
+margin: 0 4px;
+}
+
+.ui-datatables-paths {
+float: left;
+}
+
+ul.ui-buttonbar {
+margin:0;
+padding:0;
+}
+.fg-toolbar {
+position: relative;
 }
 
 </style>
@@ -74,20 +97,66 @@ $.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, aoData, 
 		}
 	} );
 }
-dir_opening_callback = function( dataTable, filetable, options ){
-	options = $.extend({direction: "left", path: "/", speed: 750},options);
-	fake_overlay = fileTable.fake();
-	dataTable.fnClearTable();
-	clean_fake_overlay = fileTable.fake();
-	fileTable.hide();
-	done_animate = false;
-	clean_fake_overlay.hide().show('slide', {direction: options.direction == "left" ? 'right' : 'left'}, options.speed, function() { fileTable.show(); dataTable.fnDraw(); done_animate = true, clean_fake_overlay.remove(); delete clean_fake_overlay; });
-	fake_overlay.hide('slide', {direction: options.direction == "left" ? 'left' : 'right' }, options.speed, function() {  fake_overlay.remove(); delete fake_overlay; });
-	dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: options.path }, false, function() {
-		if( done_animate ) {
-			// if we lag, and animation is done befoer ajax load, then we redraw
-			dataTable.fnDraw();
+
+file_download_callback = function( dataTable, filetable, options ){
+	$("<form/>", {
+		'action': "<?=(FORMPREFIX)?>/filemanager/download",
+		'method': 'POST',
+		'html': $('<input/>', { type: 'text', 'name': 'path', value: options.path }) 
 		}
+	).appendTo("body").submit().remove();
+}
+dir_opening_callback = function( dataTable, filetable, options ){
+	options = $.extend({direction: "left", path: "/", speed: 1000},options);
+	orig_width = filetable.outerWidth();
+	orig_height = filetable.outerHeight();
+
+	fake_out = filetable.fake({insertIntoDOM: false});
+	dataTable.fnClearTable();
+	fake_in = filetable.fake({insertIntoDOM: false});
+
+	wrapper = $("<div/>", {
+		css: {"position": "absolute", "margin": 0, "padding": 0, top: 0, left: 0 }
+	});
+	
+	wrapper.appendLinear([fake_in,fake_out], {offset:0, direction: options.direction == "left" ? 'left' : "right" });
+	wrapper.width(orig_width);
+	wrapper.height(orig_height);
+
+	outer_wrapper = $("<div/>",{
+		css: {
+			position: 'absolute',
+				margin: 0,
+				padding: 0,
+			width: orig_width,
+			height: orig_height,
+			overflow: "hidden"
+		}
+	});
+	outer_wrapper.offset(filetable.offset());
+	outer_wrapper.append( wrapper );
+
+	outer_wrapper.appendTo("body");
+	filetable.hide();
+	reloaded = false;
+	wrapper.effect("slide",
+		{
+			direction: options.direction == "left" ? 'right' : "left", 
+			easing: "easeOutExpo"
+		},
+		options.speed,
+		function() {
+			filetable.show();
+			if( reloaded ) {
+				dataTable.fnDraw();
+			}
+			$(this).remove();
+			outer_wrapper.remove();
+		}
+	);
+
+	dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: options.path }, false, function() {
+			dataTable.fnDraw();
 	} );
 }
 
@@ -97,6 +166,94 @@ $.fn.dataTableExt.aoFeatures.push( {
 	},
 	"cFeature": "P",
 	"sFeature": "Paths"
+} );
+
+$.fn.dataTableExt.aoFeatures.push( {
+	"fnInit": function( oSettings ) {
+		var buttons = [
+			{
+				'disabled': false,
+				'type': 'ui-icon-arrowthickstop-1-s',
+				'alt': 'Upload File',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': false,
+				'type': 'ui-icon-plusthick',
+				'alt': 'Create Folder',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': false,
+				'type': 'ui-icon-cart',
+				'alt': 'Download as ZIP',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': false,
+				'type': 'ui-icon-transferthick-e-w',
+				'alt': 'Move files',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': true,
+				'type': 'ui-icon-copy',
+				'alt': 'Copy files',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': false,
+				'type': 'ui-icon-pencil',
+				'alt': 'Rename',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': false,
+				'type': 'ui-icon-unlocked',
+				'alt': 'Change permissions',
+				'info': '',
+				'callback': function() {
+				}
+			},
+			{
+				'disabled': false,
+				'type': 'ui-icon-trash',
+				'alt': 'Delete',
+				'info': '',
+				'callback': function() {
+				}
+			}
+		];
+		var bar = $("<div/>", {'class': 'ui-buttonbar'}).buttonset();
+		$.each(buttons, function(index, value) {
+			$("<button/>", {html: value.alt })
+				.button( { 
+					text: false, 
+						icons: { 
+							primary: value.type 
+						}
+				} )
+				.button( value.disabled ? 'disable': 'enable' )
+				.click(function(e){$(this).blur()})
+				.click(value.callback)
+				.appendTo(bar);
+		});
+		return bar.get(0);
+	},
+	"cFeature": "C",
+	"sFeature": "Controlls"
 } );
 
 $(document).ready(function() {
@@ -111,7 +268,7 @@ $(document).ready(function() {
 		"oLanguage": {
 			'sZeroRecords': ''
 		},
-		"sDom": '<"H"Pr>t',
+		"sDom": '<"H"PCr>t',
 		"bJQueryUI": true,
 		"bFilter": false,
 		"bInfo": false,
@@ -169,7 +326,7 @@ $(document).ready(function() {
 					}));
 				}
 			} );
-		},		
+		},
 		"fnRowCallback": function( nRow, aData, iDisplayIndex ) {
 			$(nRow).data({
 				'foo': 'bar',
@@ -237,6 +394,8 @@ $(document).ready(function() {
 		$(this).addClass("ui-action-dblclick");
 		if( $(this).data('type') == 'dir' ) {
 			dir_opening_callback.apply( this, [dataTable, fileTable, {path:$(this).data('path')} ] );
+		} else if($(this).data('type') == 'file' ) {
+			file_download_callback.apply( this, [dataTable, fileTable, {path:$(this).data('path')} ] );
 		}
 		return false;
 	});
