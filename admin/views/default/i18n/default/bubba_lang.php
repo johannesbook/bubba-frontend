@@ -292,3 +292,9 @@ $lang['help_usermail']="?page=users.html#MAIL";
 $lang['help_downloads']="?page=users.html#DOWNLOADS";
 $lang['help_userinfo']="?page=users.html#USERINFO";
 $lang['help_album']="?page=users.html#PHOTOALBUM";
+
+// Help pages
+$lang['help_network']=$lang['help_network_profile']="
+this is the helptext
+";
+$lang['help_network_wan']="this is the helptext for wan";
