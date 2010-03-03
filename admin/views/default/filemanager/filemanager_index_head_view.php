@@ -2,64 +2,7 @@
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.fake.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.appendLinear.js" type="text/javascript"></script>
 <style>
-.type-file {
-border-left: 2px solid #3232aa;
-}
-.type-dir {
-border-left: 2px solid #aa3232;
-}
-#filetable tbody .row-selected * {
-background: #881212;
-}
-#filetable:not(.clone) { 
-	cursor: pointer
-}
-#filetable:not(.clone) tbody tr:hover * {
-	background: #aa7676
-}
-#filetable:not(.clone) tbody tr.row-selected:hover * {
-	background: #a25656 !important
-}
 
-.ui-action-dblclick {
-	background: #ee6622 !important; 
-}
-
-.ui-path-link {
-	cursor: pointer;
-	color: blue !important;
-}
-
-.ui-filetable-prev-arrow, .ui-filetable-next-arrow {
-font-size: larger;
-font-weight: bolder;
-}
-
-ul.ui-buttonbar li {
-cursor:pointer;
-float:left;
-list-style:none outside none;
-margin:2px;
-padding:4px 4px;
-position:relative;
-}
-
-.ui-buttonbar {
-float: right;
-margin: 0 4px;
-}
-
-.ui-datatables-paths {
-float: left;
-}
-
-ul.ui-buttonbar {
-margin:0;
-padding:0;
-}
-.fg-toolbar {
-position: relative;
-}
 
 </style>
 <script>
@@ -162,7 +105,7 @@ dir_opening_callback = function( dataTable, filetable, options ){
 
 $.fn.dataTableExt.aoFeatures.push( {
 	"fnInit": function( oSettings ) {
-		return $('<div/>', {'class': 'ui-datatables-paths', id: oSettings.sTableId + "_paths" }).get(0);
+		return $('<div/>', {'class': 'ui-filemanager-path-widget', id: oSettings.sTableId + "_paths" }).get(0);
 	},
 	"cFeature": "P",
 	"sFeature": "Paths"
@@ -269,6 +212,7 @@ $(document).ready(function() {
 			'sZeroRecords': ''
 		},
 		"sDom": '<"H"PCr>t',
+		"asStripClasses": [ "ui-filemanager-row-odd", "ui-filemanager-row-even" ],
 		"bJQueryUI": true,
 		"bFilter": false,
 		"bInfo": false,
@@ -279,11 +223,11 @@ $(document).ready(function() {
 		"aaSortingFixed": [[0, "asc"]],
 		"bAutoWidth": false,
 		"aoColumns": [
-			{ "sWidth": "5%", "bSortable": false, "aaSorting": [ "asc" ] },
-			{ "sWidth": "60%", "aaSorting": [ "asc" ] },
-			{ "sWidth": "20%" },
-			{ "sWidth": "10%" },
-			{ "sWidth": "5%", "bSortable": false }
+			{ "sWidth": "5%", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
+			{ "sWidth": "60%", "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-name" },
+			{ "sWidth": "20%", "sClass": "ui-filemanager-column-date" },
+			{ "sWidth": "10%", "sClass": "ui-filemanager-column-size" },
+			{ "sWidth": "5%", "bSortable": false, "sClass": "ui-filemanager-column-next" }
 		],
 		"fnServerData": function ( sSource, aoData, fnCallback ) {
 			$.ajax( {
@@ -300,14 +244,14 @@ $(document).ready(function() {
 
 					current = '/';
 					$("#filetable_paths").html("");
-					divider = $('<span/>', {text: '/', 'class': 'ui-path-divider'});
+					divider = $('<span/>', {text: '/', 'class': 'ui-filemanager-path-divider'});
 					$.each( $.trim(data.root).split('/'), function(index, value) {
 						if(!value){
 						$("#filetable_paths").append( divider.clone() );
 							return;
 						}
 						current += value;
-						a = $('<a/>', {data: {path:current}, html: value, 'class': "ui-path-link"}).click(function(){
+						a = $('<a/>', {data: {path:current}, html: value, 'class': "ui-filemanager-path-link"}).click(function(){
 							dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: $(this).data('path') } );
 						});
 						current += '/';
@@ -319,7 +263,7 @@ $(document).ready(function() {
 					updir = arr.join('/');
 					$('.ui-fake-updir', fileTable).html($('<a/>',{
 						text: '←',
-						'class': 'ui-filetable-prev-arrow',
+						'class': 'ui-filemanager-prev-arrow',
 						click: function() {
 							dir_opening_callback.apply( this, [dataTable, fileTable, {path:updir, direction: 'right'}  ] );
 						} 
@@ -337,9 +281,9 @@ $(document).ready(function() {
 			if( aData[0] == "dir" ) {
 				$(nRow).addClass("type-dir");
 				$("td:eq(3)",nRow).html(""); // size irrelevant
-				$("td:eq(4)",nRow).html($("<a/>",{
+				$("td:eq(4)",nRow).html($("<span/>",{
 					text: "→", 
-					'class': 'ui-filetable-next-arrow',
+					'class': 'ui-filemanager-next-arrow',
 					click: function() {
 						dir_opening_callback.apply( this, [dataTable, fileTable, {path:$(nRow).data('path')} ] );
 					} 
@@ -347,6 +291,7 @@ $(document).ready(function() {
 			} else if( aData[0] == "file" ) {
 				$(nRow).addClass("type-file");
 			}
+			$(nRow).addClass("ui-filemanager-state-hover ui-filemanager-type-" + aData[0] );
 			
 			return nRow;
 		}
@@ -355,10 +300,10 @@ $(document).ready(function() {
 	});
 
 	$("tbody", fileTable).delegate( 'tr', 'mousedown', function(event) {
-		$(this).siblings().andSelf().removeClass("ui-action-dblclick");
+		$(this).siblings().andSelf().removeClass("ui-filemanager-state-dblckick");
 		if( event.ctrlKey ) {
 			fileTable.data('multiselect', true);
-			$(this).toggleClass('row-selected');
+			$(this).toggleClass('fn-filemanager-selected ui-filemanager-state-selected');
 			fileTable.data('last_selected', this);
 		} else {
 			if( fileTable.data('multiselect') ) {
@@ -366,20 +311,20 @@ $(document).ready(function() {
 				// thus we should act as there wasn't anything selected in the first place
 				fileTable.data('multiselect', false);
 				fileTable.data('last_selected', this);
-				$("#filetable tr").removeClass('row-selected');
-				$(this).addClass('row-selected');
+				$("#filetable tr").removeClass('fn-filemanager-selected ui-filemanager-state-selected');
+				$(this).addClass('fn-filemanager-selected ui-filemanager-state-selected');
 			} else {
 				last = fileTable.data('last_selected');
 				if( last ) {
 					if( last == this ) {
-						$(this).toggleClass('row-selected');
+						$(this).toggleClass('fn-filemanager-selected ui-filemanager-state-selected');
 					} else {
-						$(last).removeClass('row-selected');
-						$(this).addClass('row-selected');
+						$(last).removeClass('fn-filemanager-selected ui-filemanager-state-selected');
+						$(this).addClass('fn-filemanager-selected ui-filemanager-state-selected');
 						fileTable.data('last_selected', this);
 					}
 				} else {
-					$(this).addClass('row-selected');
+					$(this).addClass('fn-filemanager-selected ui-filemanager-state-selected');
 					fileTable.data('last_selected', this);
 				}
 			}
@@ -391,7 +336,7 @@ $(document).ready(function() {
 
 
 	$("tbody", fileTable).delegate( 'tr', 'dblclick', function() {
-		$(this).addClass("ui-action-dblclick");
+		$(this).addClass("ui-filemanager-state-dblckick");
 		if( $(this).data('type') == 'dir' ) {
 			dir_opening_callback.apply( this, [dataTable, fileTable, {path:$(this).data('path')} ] );
 		} else if($(this).data('type') == 'file' ) {

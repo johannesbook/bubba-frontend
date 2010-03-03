@@ -52,3 +52,60 @@ div#subnav ul li a:hover {color: #999;}
 /* SIDE BOARD */
 #sideboard {float:right;width:25%;display:none;}
 #sideboard_switch {margin:left:8%;background:#000;float:right:}
+
+
+.ui-filemanager-state-dblckick {
+	background: #ee6622 !important; 
+}
+
+*:not(.ui-fake) .ui-filemanager-state-hover:hover {
+	background: #aa7676;
+}
+
+.ui-filemanager-state-selected {
+	background: #881212;
+}
+
+*:not(.ui-fake) .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {
+	background: #a25656 !important;
+}
+
+.ui-filemanager-prev-arrow, .ui-filemanager-next-arrow {
+	font-size: larger;
+	font-weight: bold;
+	color: blue;
+}
+.ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover {
+	cursor: pointer;
+}
+
+.ui-filemanager-path-widget .ui-filemanager-path-divider {
+	margin: 1em;
+}
+
+.ui-filemanager-path-widget .ui-filemanager-path-link {
+	cursor: pointer;
+	color: blue !important;
+}
+
+.ui-filemanager-path-widget {
+	float: left;
+	font-size: larger;
+}
+
+.ui-filemanager-type-file {
+border-left: 2px solid #3232aa;
+}
+
+.ui-filemanager-type-dir {
+border-left: 2px solid #aa3232;
+}
+
+.ui-filemanager-type-row {
+	cursor: pointer;
+}
+
+.ui-buttonbar {
+	float: right;
+	margin: 0 4px;
+}
