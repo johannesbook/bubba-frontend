@@ -18,8 +18,11 @@ class Auth_model extends Model{
 			$this->session->set_userdata('user', $username);
 			return true;
 		}else{
+			/* Do nothing on a failed login */
+			/*
 			$this->session->set_userdata('valid', false);
 			$this->session->unset_userdata('user');
+			*/
 			return false;
 		}
 	}
@@ -37,7 +40,18 @@ class Auth_model extends Model{
 		if( $this->session->userdata('user') == $user ){
 			return;
 		}
-		redirect('');
+		$this->session->set_userdata('caller', $this->uri->uri_string());
+		$this->session->set_userdata('required_user', $user);
+		redirect('login');
+		exit();	
+	}
+	function DenyUser($user){
+		
+		if( $this->session->userdata('user') != $user ){
+			return;
+		}
+		$this->session->set_userdata('caller', $this->uri->uri_string());
+		redirect('login');
 		exit();	
 	}
 	

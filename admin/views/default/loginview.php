@@ -1,23 +1,81 @@
-<div id="login">
-<form method="post" action="login">
-<fieldset>
-<legend><?=t('Login')?></legend>
-<table>
-<tr>
-	<td><?= t('Username')?></td>
-	<td><input class="login" type="text" name="username" size="20" <?=isset($authfail)?'value="'.$username.'"':''?>/></td>
-</tr>
-<tr>
-	<td><?= t('Password')?></td>
-	<td><input class="login" type="password" name="password" size="20"/></td>
-</tr>
-<? if(isset($authfail) && !isset($authill)){?>
-<tr><td colspan="2"><strong><?=t('Invalid user/password combination.')?></strong></td></tr>
-<?}elseif(isset($authill)){?>
-<tr><td colspan="2"><strong><?=t('Admin user not allowed to login on wan interface.')?></strong><br/><?=t('Please read quickstart guide for advice.')?></td></tr>
-<?}?>
-<tr><td colspan="2"><input type="submit" value="<?=t('Login')?>"/></td></tr>
-</table>
-</fieldset>
+<div id="login_menubar">
+	<ul>
+		<li><a href="/pim"><?=t("menubar_pim")?></a></li>
+		<li>
+			<a href="/music"><?=t("menubar_music")?>
+			</a>
+		</li>
+		<li>
+			<a href="/album"><?=t("menubar_photos")?></a>
+		</li>
+		<li>
+			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/">
+				<?=t("menubar_usersettings")?>
+			</a>
+		</li>
+		<li>
+			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/filemanager/">
+				<?=t("menubar_filemanager")?>
+			</a>
+		</li>
+		<li>
+			<a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/filemanger/backup">
+				<?=t("menubar_backup")?>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<div id="login_settings">
+	<ul>
+		<li><a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><?=t("menubar_settings")?></a></li>
+	</ul>
+</div>
+
+<div id="div-login-dialog">
+<form method="post" action="login" class="ui-form-login-dialog" id="fn-login-dialog-form">
+	<table>
+		<tr>
+			<td><label for="username"><?= t('Username')?></label></td>
+			<td>
+				<input
+					id="username"
+					type="text" 
+					name="username"
+					class="ui-input-text"
+					<?=isset($authfail)?'value="'.$username.'"':''?>
+				/>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="password"><?= t('Password')?></label></td>
+			<td>
+				<input
+					id="password"
+					type="password" 
+					name="password"
+					class="ui-input-text"
+				/>
+			</td>
+		</tr>
+	</table>
+	<div id="fn-login-error">
+		<div id="fn-login-error-pwd" class="ui-login-error ui-helper-hidden">
+			<?=t('Invalid user/password combination.')?>
+		</div>
+		<div id="fn-login-error-wanaccess" class="ui-login-error ui-helper-hidden">
+			<?=t('Admin user not allowed to login on wan interface.')?><br/><?=t('Please read quickstart guide for advice.')?>
+		</div>
+		<?if(isset($redirect_user) && $redirect_user):?>
+			<div id="fn-login-error-redirect" class="ui-login-error">
+				<?=t('login_error_grantaccess',$redirect_user)?>
+			</div>
+		<?endif?>
+		<div id="fn-login-error-grantaccess" class="ui-login-error ui-helper-hidden">
+			<?if(isset($valid_user) && $valid_user):?>
+				<?=t('login_error_grantaccess',$valid_user)?>
+			<?endif?>
+		</div>
+	</div>
 </form>
 </div>

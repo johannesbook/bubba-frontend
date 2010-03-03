@@ -1,5 +1,5 @@
 <ul>
-	<li class="<?=$this->uri->segment(1) == 'stat' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/stat"><span><?=t('Home')?></span></a></li>
+	<li class="<?=$this->uri->segment(1) == '' ? 'active': '';?>"><a href="<?=FORMPREFIX?>"><span><?=t('Home')?></span></a></li>
 	<li class="<?=$this->uri->segment(1) == 'filemanager' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/filemanager"><span><?=t('Filemanager')?></span></a></li>
 <? if(USER=="admin") { ?>
 	<!-- li class="<?=$this->uri->segment(1) == 'administration' ? 'active': '';?>"><a href="<?=FORMPREFIX?>/administration"><span><?=t('Administration')?></span></a></li -->
