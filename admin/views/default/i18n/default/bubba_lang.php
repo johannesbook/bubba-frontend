@@ -293,8 +293,79 @@ $lang['help_downloads']="?page=users.html#DOWNLOADS";
 $lang['help_userinfo']="?page=users.html#USERINFO";
 $lang['help_album']="?page=users.html#PHOTOALBUM";
 
-// Help pages
-$lang['help_network']=$lang['help_network_profile']="
-this is the helptext
-";
-$lang['help_network_wan']="this is the helptext for wan";
+
+// Help box - Admin
+$lang['help_box_stat']="helpme";
+
+$lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="The Browse page shows files stored on Bubba|Two. Here you are able to reach your files on Bubba|Two if you are away from home.";
+	$lang['help_box_filemanager_backup']="
+	<ol>
+    <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click &quot;Create job&quot;. The new backup job gets automatically highlighted in the &quot;Excising jobs&quot; column.</li>
+    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the &quot;Browse&quot; button under the &quot;Included directories&quot; menu. Subdirectories will automatically be included.<br />
+    </li>
+    <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the &quot;Browse&quot; button under the &quot;Excluded directories&quot; menu and select the non wanted directories.<br />
+    </li>
+    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of &quot;Target&quot;. If the destination directory will be created if it does not exist already.<br />
+    </li>
+  </ol>
+  <ul>
+    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the &quot;Disk&quot; drop down list. Fill in the &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder\important\&quot;) or leave it blank for saving backup in the root directory.</li>
+    <li>If choosing remote SSH / FTP you have to fill in &quot;Host&quot; (i.e. an IP-address), &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder/important/&quot;) or leave it blank for saving backup in the remote root directory, &quot;Remote user&quot; and &quot;Remote password&quot;.<br />
+  <br />
+  </li>
+  </ul>
+  <ol start="5">
+    <li>Click &quot;<strong>Backup schedule</strong>&quot; to set the time and intensity to run the backup job. Also select how many full backups that should be saved.<br />
+    </li>
+    <li>To increase security you have the option to<strong> encrypt the backup job</strong>. Click &quot;Data security&quot;, click &quot;Encrypt data&quot; and select an encryption key.</li>
+    <li>Click &quot;Update job&quot; to save the settings.</li>
+    <li>To run the job immediately, click &quot;Run now&quot;.</li>
+  </ol>";
+	$lang['help_box_filemanager_restore']=" 
+	<ol>
+    <li>Select the backup job under &quot;Existing jobs&quot; you need to restore. </li>
+    <li>Select the &quot;Backup date&quot; to restore from.</li>
+    <li>Select the files or folders (with automatically included files) you need to restore. The files that will be restored will be highlighted in blue.    </li>
+    <li>Choose in what way you want to restore the files: 'Restore missing files', 'Overwrite files' or 'Restore to directory'.</li>
+    <li>Click 'Restore selection'</li>
+  </ol>";
+
+$lang['help_box_users']="helpme";
+
+$lang['help_box_services']="helpme";
+
+$lang['help_box_mail']=$lang['help_box_mail_viewfetchmail']="helpme";
+	$lang['help_box_mail_viewmailsend']="helpme";
+	$lang['help_box_mail_viewreceivemail']="helpme";
+
+$lang['help_box_network']=$lang['help_box_network_profile']="this is the default help text and help text for profile";
+	$lang['help_box_network_wan']="this is the helptext for wan";
+	$lang['help_box_network_lan']="helpme";
+	$lang['help_box_network_wlan']="helpme";
+	$lang['help_box_network_fw']="helpme";
+
+$lang['help_box_disk']="helpme";
+	$lang['help_box_disk_lvm']="helpme";
+	$lang['help_box_disk_raid']="helpme";
+
+$lang['help_box_printing']="helpme";
+
+$lang['help_box_settings']=$lang['help_box_settings_startwizard']="helpme";
+	$lang['help_box_settings_trafficsettings']="helpme";
+	$lang['help_box_settings_identity']="helpme";
+	$lang['help_box_settings_datetime']="helpme";
+	$lang['help_box_settings_backuprestore']="helpme";
+	$lang['help_box_settings_software']="helpme";
+	$lang['help_box_settings_logs']="helpme";
+	
+
+// Help box - User
+$lang['help_box_usermail']="helpme";
+
+$lang['help_box_downloads']="helpme";
+
+$lang['help_box_userinfo']="helpme";
+
+$lang['help_box_album_albums']="helpme";
+	$lang['help_box_album_users']="helpme";
+
