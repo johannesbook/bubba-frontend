@@ -36,7 +36,7 @@
 <form method="post" action="login" class="ui-form-login-dialog" id="fn-login-dialog-form">
 	<table>
 		<tr>
-			<td><label for="username"><?= t('Username')?></label></td>
+			<td><label for="username"><?= t('login-dialog-username')?></label></td>
 			<td>
 				<input
 					id="username"
@@ -48,7 +48,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><label for="password"><?= t('Password')?></label></td>
+			<td><label for="password"><?= t('login-dialog-password')?></label></td>
 			<td>
 				<input
 					id="password"
@@ -61,19 +61,19 @@
 	</table>
 	<div id="fn-login-error">
 		<div id="fn-login-error-pwd" class="ui-login-error ui-helper-hidden">
-			<?=t('Invalid user/password combination.')?>
+			<?=t('login-error-pwd')?>
 		</div>
 		<div id="fn-login-error-wanaccess" class="ui-login-error ui-helper-hidden">
-			<?=t('Admin user not allowed to login on wan interface.')?><br/><?=t('Please read quickstart guide for advice.')?>
+			<?=t('login-error-wanaccess')?><br/><?=t('login-error-wanaccess-quickstart')?>
 		</div>
 		<?if(isset($redirect_user) && $redirect_user):?>
 			<div id="fn-login-error-redirect" class="ui-login-error">
-				<?=t('login_error_grantaccess',$redirect_user)?>
+				<?=t('login-error-grantaccess',$redirect_user)?>
 			</div>
 		<?endif?>
 		<div id="fn-login-error-grantaccess" class="ui-login-error ui-helper-hidden">
 			<?if(isset($valid_user) && $valid_user):?>
-				<?=t('login_error_grantaccess',$valid_user)?>
+				<?=t('login-error-grantaccess',$valid_user)?>
 			<?endif?>
 		</div>
 	</div>

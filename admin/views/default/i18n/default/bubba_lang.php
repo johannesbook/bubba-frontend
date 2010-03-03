@@ -43,6 +43,27 @@ $lang['button_label_cancel']='Cancel';
 $lang['generic_dialog_text_please_wait'] = "Please wait...";
 $lang['generic_dialog_text_warning'] = "Warning";
 
+/* Login texts  */
+$lang["login-dialog-header"] = "Login";
+$lang["login-dialog-username"] = "Username";
+$lang["login-dialog-password"] = "Password";
+$lang["login-dialog-cancel"] = "Cancel";
+$lang["login-dialog-continue"] = "Log in";
+$lang['login-error-grantaccess'] = "Access not granted for user '%s'.";
+$lang['login-error-wanaccess'] = "Admin user not allowed to login on wan interface.";
+$lang['login-error-wanaccess-quickstart'] = "Please read quickstart guide for advice.";
+$lang['login-error-pwd'] = "Invalid user/password combination.";
+
+/* Menu bar texts */
+
+$lang['menubar_pim'] = "Webmail";
+$lang['menubar_music'] = "Music";
+$lang['menubar_photos'] = "Photos";
+$lang['menubar_usersettings'] = "User settings";
+$lang['menubar_filemanager'] = "File manager";
+$lang['menubar_backup'] = "File backup";
+$lang['menubar_settings'] = "System settings";
+
 
 // backup field translations
 $lang['current_job'] = "Job name";

@@ -16,9 +16,9 @@ function dialog_login(e) {
    		*/
 			$.confirm(
 				$("#div-login-dialog").show(),
-				'<?=t('login_dialog_header')?>',
+				"<?=t('login-dialog-header')?>",
 				{
-					<?=t('login_dialog_continue')?>: function() { // continue button
+					"<?=t('login-dialog-continue')?>": function() { // continue button
 					
 						$.post("<?=FORMPREFIX.'/login/index/json'?>",
 						$("#fn-login-dialog-form").serialize(),
@@ -27,9 +27,10 @@ function dialog_login(e) {
 							$("#fn-login-error").children().hide();
 							if(data.authfail) {
 								if(data.auth_err_remote) {
-									$("#fn-login_error_wanaccess").show();
+									$("#fn-login-error-wanaccess").show();
 								} else {
 									$("#fn-login-error-pwd").show();
+									$("#password").select();
 								}
 							} else {
 								$(this).dialog('close');
@@ -41,7 +42,10 @@ function dialog_login(e) {
 							}
 						},"json");
 					},
-					<?=t('login_dialog_cancel')?>: function() { // cancel button
+					"<?=t('login-dialog-cancel')?>": function() { // cancel button
+						// make sure to hide error messages								
+						$("#fn-login-error").children().hide();
+						$("#password").val("");
 						$(this).dialog('close');
 					}
 				}
