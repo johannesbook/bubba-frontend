@@ -1,13 +1,15 @@
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.dataTables.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.fake.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.appendLinear.js" type="text/javascript"></script>
+<script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ba-serializeobject.js" type="text/javascript"></script>
 <style>
 
 
 </style>
 <script>
 
-
+dialogs = {};
+fileTable = null;
 $.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, aoData, bRedraw, fnCallback )
 {
 	if ( typeof sNewSource != 'undefined' )
@@ -98,7 +100,7 @@ dir_opening_callback = function( dataTable, filetable, options ){
 		}
 	);
 
-	dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: options.path }, false, function() {
+	dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: options.path }, false, function() {
 			dataTable.fnDraw();
 	} );
 }
@@ -128,6 +130,7 @@ $.fn.dataTableExt.aoFeatures.push( {
 				'alt': 'Create Folder',
 				'info': '',
 				'callback': function() {
+					dialogs["mkdir"].dialog("open");
 				}
 			},
 			{
@@ -202,6 +205,42 @@ $.fn.dataTableExt.aoFeatures.push( {
 $(document).ready(function() {
 	fileTable = $("#filetable");
 
+	// disable all submits on all forms
+	$("form").submit(function(){return false});
+
+	// buttonize all buttons
+//	$(".fn-button").button();
+//	$(".fn-buttonset").buttonset();
+
+	// Mkdir
+
+	dialogs["mkdir"] = $.dialog( 
+		$("#fn-filemanager-mkdir-dialog"),
+		"hello",
+		{
+			"<?=t('filemanager-button_label_mkdir')?>": function() {
+				var params = $("#fn-filemanager-mkdir").serializeObject();
+				params.root = $("#filetable").data('root');
+				$.post("<?=FORMPREFIX?>/filemanager/mkdir/json", params, function(data){
+					update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-mkdir")?>");
+					if( ! data.error ) {
+						dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+					}
+				}, 'json');
+				$(this).dialog('close');
+			},
+			"<?=t('button_label_cancel')?>": function() {$(this).dialog('close');}
+		},{
+			"autoOpen": false,
+				"open": function(event,ui) {
+					$("#fn-filemanager-mkdir").trigger("reset");
+					$(".fn-button").button("destroy").button();
+					$(".fn-buttonset").buttonset("destroy").buttonset();
+				$("#fn-filemanager-mkdir-name").focus();
+			}
+		} 
+	);
+
 	dataTable = fileTable.dataTable({
 		'oClasses': {
 			'sSortJUIAsc': 'ui-icon ui-icon-triangle-1-n',
@@ -218,7 +257,7 @@ $(document).ready(function() {
 		"bInfo": false,
 		"bPaginate": false,
 		"bProcessing": true,
-		"sAjaxSource": "<?=(FORMPREFIX)?>/filemanager/index/test",
+		"sAjaxSource": "<?=(FORMPREFIX)?>/filemanager/index/json",
 		"aaSorting": [[0, "asc"],[1,"asc"]],
 		"aaSortingFixed": [[0, "asc"]],
 		"bAutoWidth": false,
@@ -252,7 +291,7 @@ $(document).ready(function() {
 						}
 						current += value;
 						a = $('<a/>', {data: {path:current}, html: value, 'class': "ui-filemanager-path-link"}).click(function(){
-							dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/test", { path: $(this).data('path') } );
+							dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: $(this).data('path') } );
 						});
 						current += '/';
 						$("#filetable_paths").append( a ).append( divider.clone() );

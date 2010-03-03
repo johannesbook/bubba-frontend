@@ -277,6 +277,20 @@ $lang["mail_addok"] = "Account added.";
 $lang["mail_err_usrinvalid"] = "User not allowed to update account";
 $lang["mail_editok"] = "Account updated.";
 
+//  ----------- Filemanager --------
+
+$lang["filemanager-label-name"] = "Name";
+$lang["filemanager-title-permissions"] = "Permissions";
+$lang["filemanager-label-permission-owner"] = "Owner";
+$lang["filemanager-label-permission-owner-read"] = "read";
+$lang["filemanager-label-permission-owner-write"] = "write";
+$lang["filemanager-label-permission-group"] = "Group";
+$lang["filemanager-label-permission-group-read"] = "read";
+$lang["filemanager-label-permission-group-write"] = "write";
+$lang["filemanager-label-permission-other"] = "Other";
+$lang["filemanager-label-permission-other-read"] = "read";
+$lang["filemanager-label-permission-other-write"] = "write";
+$lang["filemanager-button_label_mkdir"] = "Create directory";
 /*  ------------------- Texts to locate help pages.  -------------------*/
 //General pages
 $lang['help_stat']="";
@@ -396,8 +410,8 @@ $lang['help_box_mail']=$lang['help_box_mail_viewfetchmail']="
 	";
 
 $lang['help_box_network']=$lang['help_box_network_profile']="
-<p><strong>Automatic network settings</strong> - Bubba|2 will by default automatically identify your network structure. First Bubba|2 tires to locate a DHCP server in your LAN. If no DHCP server is found Bubba|2 will use a fixed  IP address (<a href="192.168.10.1">192.168.10.1</a>) on the LAN port and start a DHCP server to provide other computers in the LAN with network information. If a DHCP server is found in the LAN, Bubba|2 will obtain IP-address automatically on the LAN port. Bubba|Two will also try to retrieve network settings on WAN port (internet). Editing  the WAN and LAN sections is <strong>not</strong> possible in this profile.</p>
-<p><strong>Router / Firewall / Server mode </strong>- Bubba|2 will use a fixed  IP address (<a href="192.168.10.1">192.168.10.1</a>) on the LAN port and start a DHCP server to provide other computers in the LAN with network information. Bubba|Two will also try to retrieve network settings on WAN port (internet). It is possible to manually edit the network settings in this profile.</p>
+<p><strong>Automatic network settings</strong> - Bubba|2 will by default automatically identify your network structure. First Bubba|2 tires to locate a DHCP server in your LAN. If no DHCP server is found Bubba|2 will use a fixed  IP address (<a href=\"192.168.10.1\">192.168.10.1</a>) on the LAN port and start a DHCP server to provide other computers in the LAN with network information. If a DHCP server is found in the LAN, Bubba|2 will obtain IP-address automatically on the LAN port. Bubba|Two will also try to retrieve network settings on WAN port (internet). Editing  the WAN and LAN sections is <strong>not</strong> possible in this profile.</p>
+<p><strong>Router / Firewall / Server mode </strong>- Bubba|2 will use a fixed  IP address (<a href=\"192.168.10.1\">192.168.10.1</a>) on the LAN port and start a DHCP server to provide other computers in the LAN with network information. Bubba|Two will also try to retrieve network settings on WAN port (internet). It is possible to manually edit the network settings in this profile.</p>
 <p><strong>Server mode only</strong> - Bubba will automatically try to retrieve network settings on LAN.  The WAN port should be left unconnected. It is possible to manually edit the network settings in this profile.</p>
 <p>After editing the network settings you might need to reboot your computers and other network devices in your LAN.</p>
 <p><i>Update</i> saves your changes.</p>
@@ -547,5 +561,5 @@ $lang['help_box_downloads']="helpme";
 $lang['help_box_userinfo']="helpme";
 
 $lang['help_box_album_albums']="helpme";
-	$lang['help_box_album_users']="helpme";
+$lang['help_box_album_users']="helpme";
 

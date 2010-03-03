@@ -109,3 +109,6 @@ border-left: 2px solid #aa3232;
 	float: right;
 	margin: 0 4px;
 }
+.ui-input-text {
+	width: 100%;
+}

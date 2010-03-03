@@ -175,63 +175,58 @@ class Filemanager extends Controller{
 	}
 	function mkdir($strip=""){
 
-		$data["path"]=$this->input->post("path");	
-	
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_mkdir_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_mkdir_view',$data,true),false);
-		}
-	}
-	
-	function domkdir($strip=""){
-		if($this->input->post("md_cancel")){
-			$this->index();
-			return;
-		}
-		
-		$directory=trim($this->input->post("directory"));
-		$user=$this->session->userdata("user");
+		if( $strip == 'json' ) {
+			$error = false;
+			$directory=trim($this->input->post("name"));
+			$root=trim($this->input->post("root"));
+			$user=$this->session->userdata("user");
 
-		$data["err_path"]=false;
-		$data["err_opfail"]=false;
-		$data["success"]=true;		
-		$data["path"]=$path=$this->input->post("path");
-				
-		if($directory==""){
-			$data["err_path"]=true;
-			$data["success"]=false;		
-		}		
-		
-		if($data["success"]){
-			$mask=0700;
-			if($this->input->post('u_read')){
-				$mask|=050;
-			}
-			if($this->input->post('u_write')){
-				$mask|=030;
-			}
-			if($this->input->post('o_read')){
-				$mask|=005;
-			}
-			if($this->input->post('o_write')){
-				$mask|=003;
-			}
-			
-			$data["dpath"]=$dpath=b_dec($path."/".$directory);
-			if(md($dpath,$mask,$user)){
-				$data["success"]=true;
-			}else{
-				$data["success"]=false;
-				$data["err_opfail"]=true;
+			if( ! $directory ) {
+				$error = t("filemanager_mkdir_error_nodir");
 			}
 
-		}
+			$realpath = "$root/$directory";
+			if( !$error && file_exists( $realpath ) ) {
+				$error = t("filemanager_mkdir_error_file_exists");
+			}
 
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_domkdir_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_domkdir_view',$data,true),false);
+			if( ! $error ) {
+				$mask = 0000;
+
+				if($this->input->post("permission-user-read")) {
+					$mask |= 0500;
+				}
+				if($this->input->post("permission-user-write")) {
+					$mask |= 0300;
+				}
+
+				if($this->input->post("permission-group-read")) {
+					$mask |= 0050;
+				}
+				if($this->input->post("permission-group-write")) {
+					$mask |= 0030;
+				}
+
+				if($this->input->post("permission-other-read")) {
+					$mask |= 0005;
+				}
+				if($this->input->post("permission-other-write")) {
+					$mask |= 0003;
+				}
+
+				if( !md($root."/".$directory,$mask,$user) ) {
+					$error = t("filemanager_mkdir_error_create");
+				}
+
+			}
+			$data["success"]=!$error;
+
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
 		}
 	}
 	
@@ -466,7 +461,7 @@ class Filemanager extends Controller{
 	}	
 	
 	function index($strip=""){
-		if( $strip == 'test' ) {
+		if( $strip == 'json' ) {
 
 			$path=$this->input->post('path');
 			$user=$this->session->userdata("user");
