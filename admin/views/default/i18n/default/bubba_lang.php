@@ -313,9 +313,8 @@ The Browse page shows files stored on Bubba|Two. Here you are able to reach your
   </ol>
   <ul>
     <li>If choosing local USB / eSATA disk you have to select the disk by pressing the &quot;Disk&quot; drop down list. Fill in the &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder\important\&quot;) or leave it blank for saving backup in the root directory.</li>
-    <li>If choosing remote SSH / FTP you have to fill in &quot;Host&quot; (i.e. an IP-address), &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder/important/&quot;) or leave it blank for saving backup in the remote root directory, &quot;Remote user&quot; and &quot;Remote password&quot;.<br />
-  <br />
-  </li>
+    <li>If choosing remote SSH / FTP you have to fill in &quot;Host&quot; (i.e. an IP-address), &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder/important/&quot;) or leave it blank for saving backup in the remote root directory, &quot;Remote user&quot; and &quot;Remote password&quot;.</li>
+   </li>
   </ul>
   <ol start='5'>
     <li>Click &quot;<strong>Backup schedule</strong>&quot; to set the time and intensity to run the backup job. Also select how many full backups that should be saved.<br />
