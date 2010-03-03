@@ -297,7 +297,10 @@ $lang['help_album']="?page=users.html#PHOTOALBUM";
 // Help box - Admin
 $lang['help_box_stat']="helpme";
 
-$lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="The Browse page shows files stored on Bubba|Two. Here you are able to reach your files on Bubba|Two if you are away from home.";
+$lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
+The Browse page shows files stored on Bubba|Two. Here you are able to reach your files on Bubba|Two if you are away from home.
+";
+
 	$lang['help_box_filemanager_backup']="
 	<ol>
     <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click &quot;Create job&quot;. The new backup job gets automatically highlighted in the &quot;Excising jobs&quot; column.</li>
@@ -314,28 +317,64 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="The Browse page 
   <br />
   </li>
   </ul>
-  <ol start="5">
+  <ol start='5'>
     <li>Click &quot;<strong>Backup schedule</strong>&quot; to set the time and intensity to run the backup job. Also select how many full backups that should be saved.<br />
     </li>
     <li>To increase security you have the option to<strong> encrypt the backup job</strong>. Click &quot;Data security&quot;, click &quot;Encrypt data&quot; and select an encryption key.</li>
     <li>Click &quot;Update job&quot; to save the settings.</li>
     <li>To run the job immediately, click &quot;Run now&quot;.</li>
-  </ol>";
+  </ol>
+  ";
+  
 	$lang['help_box_filemanager_restore']=" 
 	<ol>
     <li>Select the backup job under &quot;Existing jobs&quot; you need to restore. </li>
     <li>Select the &quot;Backup date&quot; to restore from.</li>
-    <li>Select the files or folders (with automatically included files) you need to restore. The files that will be restored will be highlighted in blue.    </li>
+    <li>Select the files or folders (with automatically included files) you need to restore. The files that will be restored will be highlighted in blue.</li>
     <li>Choose in what way you want to restore the files: 'Restore missing files', 'Overwrite files' or 'Restore to directory'.</li>
     <li>Click 'Restore selection'</li>
-  </ol>";
+  </ol>
+  ";
 
-$lang['help_box_users']="helpme";
+$lang['help_box_users']="
+<h3>Add user</h3>
+  <p><strong>Users</strong> - Here you find all the registered users on your Bubba|Two. Click on 'Edit user' to change user information.</p>
+  <p><strong>Add new user</strong> - To add a new user; fill in the information and click 'Add user'.</p>
+<h3>Edit user</h3>
+  <p><strong>Username</strong> - Changing the user name (login name) is not possible. To achieve this you  will have to delete the user via the administrator login and add a new  user with the correct name.</p>
+  <p><strong>Real name</strong> - To add the user's 'Real name'; fill in the information here.</p>
+  <p><strong>Allow remote access to config interface</strong> - The default setting is to block remote access (from the WAN port) for the 'admin' account. To be able to administrate your Bubba from outside (Internet) your network choose 'Yes' here.</p>
+  <p><strong>Change password</strong> - The administrator can change every users password. Every user has the possibility to change their own password via their own log in. It is strongly suggested that the <strong>admin password is changed</strong> from the default password.</p>
+";
 
-$lang['help_box_services']="helpme";
+$lang['help_box_services']="
+<h3>Streaming</h3>
+<p><strong>UPnP streaming</strong> -  Universal Plug and Play (UPnP) server. The server shares/streams media data  like audio/video/picture/files to UPnP-clients on the network. Please notice that if  you are located in a unsecure network; disable UPnP because otherwise you are able to  browse the whole file system via Mediatomb's web interface which could be a security risk. </p>
+<p><strong>DAAP streaming</strong> -  Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes. </p>
+<p><strong>Squeezebox Server </strong>-  is a streaming audio server supported by Logitech that streams music to The Squeezebox product line.</p>
+<h3>Mail</h3>
+<p><strong>Send and receive</strong> -  This is for postfix the smtp server: Sending and receiving eMails.</p>
+<p><strong>Imap (Required for  webmail access)</strong> - This is for dovecot the IMAP server. This service is required  for the webmail access to be functional.</p>
+<p><strong>Mail retrieval </strong>- This  is for fetchmail, a daemon that collects eMails to Bubba|Two</p>
+<h3>Other</h3>
+<p><strong>Printing</strong> - Bubba|Two  print server.</p>
+<p><strong>Up and downloads</strong> -  possibility to up / download files on Bubba|Two, i.e. filemanager and torrents.</p>
+";
 
-$lang['help_box_mail']=$lang['help_box_mail_viewfetchmail']="helpme";
-	$lang['help_box_mail_viewmailsend']="helpme";
+$lang['help_box_mail']=$lang['help_box_mail_viewfetchmail']="
+<p>If you set up Bubba|Two to fetch your eMail from other external eMail accounts you may have, they will be stored on Bubba|Two and available via IMAP or web mail, wherever you are. Logged in as administrator you must select to which user the retrieved mail should be directed, this must be done for every retrieved mail account added. Prior to this you must have added a user.</p>
+<p><strong>Retrieve mail from individual accounts</strong> - Shows your current accounts for mail retrieval.</p>
+<p><strong>Add account</strong> - To fetch mail from an external accout, fill in the information given to you by your mail account provider.</p>
+</ul>
+";
+	
+	$lang['help_box_mail_viewmailsend']="
+	<p>If your Internet Service Provider (ISP) blocks outgoing traffic on port 25 you must use an alternative SMTP server than Bubba|Two.</p>
+	<br/>
+  <p><strong>Sending eMail</strong> - Leave fields empty to let Bubba|Two handle your outgoing eMails. If your ISP blocks your outgoing traffic on port 25, fill in the information provided to you by your ISP.</p>
+	
+
+	";
 	$lang['help_box_mail_viewreceivemail']="helpme";
 
 $lang['help_box_network']=$lang['help_box_network_profile']="this is the default help text and help text for profile";
