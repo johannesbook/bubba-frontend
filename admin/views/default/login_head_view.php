@@ -71,6 +71,14 @@ $(document).ready(function(){
 		dialog_login.apply(this,[e]);
 		return false;
 	});
+	
+	$(".ui-login-menubar-a").mouseover(function(e) {	
+		$(this).find("span").show();
+	});
+	
+	$(".ui-login-menubar-a").mouseout(function(e) {
+		$(this).find("span").hide();
+	});
 
 	<?if(isset($show_login) && $show_login):?>
 		//show dialog_login

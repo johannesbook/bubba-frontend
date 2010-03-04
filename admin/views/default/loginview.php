@@ -1,37 +1,15 @@
 <h1>This is the heart in you digital lifd.</h1>
 <div id="login_menubar">
-	<ul>
-		<li class="default-icon default-icon-mail">
-		    <a href="/pim"><?=t("menubar_pim")?></a>
-        </li>
-		<li class="default-icon default-icon-music">
-			<a href="/music"><?=t("menubar_music")?></a>
-		</li>
-		<li class="default-icon default-icon-album">
-			<a href="/album"><?=t("menubar_photos")?></a>
-		</li>
-		<li class="default-icon default-icon-settings">
-			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/">
-				<?=t("menubar_usersettings")?>
-			</a>
-		</li >
-		<li class="default-icon default-icon-filemanager">
-			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/filemanager/">
-				<?=t("menubar_filemanager")?>
-			</a>
-		</li>
-		<li class="default-icon default-icon-music">
-			<a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/filemanger/backup">
-				<?=t("menubar_backup")?>
-			</a>
-		</li>
-	</ul>
+    <a href="/pim" class="ui-login-menubar-a default-icon default-icon-mail"><span><?=t("menubar_pim")?></span></a>
+    <a href="/music"  class="ui-login-menubar-a default-icon default-icon-music"><span><?=t("menubar_music")?></span></a>
+    <a href="/album" class="ui-login-menubar-a default-icon default-icon-album"><span><?=t("menubar_photos")?></span></a>
+    <a class="ui-login-menubar-a default-icon default-icon-settings fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/"><span><?=t("menubar_usersettings")?></span></a>
+    <a class="ui-login-menubar-a default-icon default-icon-filemanager fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/filemanager/"><span><?=t("menubar_filemanager")?></span></a>
+    <a class="ui-login-menubar-a default-icon default-icon-printing fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/filemanger/backup"><span><?=t("menubar_backup")?></span></a>	
 </div>
 
 <div id="login_settings">
-	<ul>
-		<li class="default-icon default-icon-logout"><a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><?=t("menubar_settings")?></a></li>
-	</ul>
+    <a class="ui-login-menubar-a default-icon default-icon-logout fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><span><?=t("menubar_settings")?></span></a>	
 </div>
 
 <div id="login_more_info">

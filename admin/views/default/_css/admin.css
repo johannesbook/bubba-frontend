@@ -54,11 +54,12 @@ div#subnav ul li a:hover {color: #999;}
 #login h1 {font-size:120%;margin-bottom:2em;}
 #login_more_info {display:block;margin-top:25em;font-size:115%;}
 #login_more_info span{display:block;}
-#login_more_info a {font-size:130%;text-decoration:none;margin-right:0.3em;}
+#login_more_info a {font-size:130%;text-decoration:none;margin-right:0.3em;font-weight:bold;}
 #login_more_info a:hover {color:#999;}
 #login_more_info img{display:block;margin-top:1.5em;}
 #login_menubar {margin-top:3em;}
-#login_menubar li  {margin-right:16px;}
+.ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:20px;padding-top:75px;font-weight:bold;text-align:center;}
+.ui-login-menubar-a span  {display:none;font-size:150%;}
 /* CONTENT */
 #content {margin-bottom:3em;width:70%;}
 /* SIDE BOARD */
@@ -70,7 +71,7 @@ div#subnav ul li a:hover {color: #999;}
 #home li a{margin-right:16px;}
 #home li a span{float:right;}
 #home li div {display:inline;width:74px;}
-.default-icon {width:74px; height:74px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;text-indent:-99999px;float:left;}
+.default-icon {width:74px; height:74px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .default-icon-mail {background-position: 0 0;}
 .default-icon-settings {background-position: -90px 0;}
 .default-icon-clock {background-position: -180px 0;}
