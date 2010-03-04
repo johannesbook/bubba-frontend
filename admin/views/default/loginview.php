@@ -1,15 +1,16 @@
+<h1>This is the heart in you digital lifd.</h1>
 <div id="login_menubar">
 	<ul>
-		<li class="default-icon default-icon-music">
+		<li class="default-icon default-icon-mail">
 		    <a href="/pim"><?=t("menubar_pim")?></a>
         </li>
 		<li class="default-icon default-icon-music">
 			<a href="/music"><?=t("menubar_music")?></a>
 		</li>
-		<li class="default-icon default-icon-photos">
+		<li class="default-icon default-icon-album">
 			<a href="/album"><?=t("menubar_photos")?></a>
 		</li>
-		<li class="default-icon default-icon-music">
+		<li class="default-icon default-icon-settings">
 			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/">
 				<?=t("menubar_usersettings")?>
 			</a>
@@ -31,6 +32,14 @@
 	<ul>
 		<li class="default-icon default-icon-logout"><a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><?=t("menubar_settings")?></a></li>
 	</ul>
+</div>
+
+<div id="login_more_info">
+    <span>For more information:</span>
+    <a href="" target="_blank">Bubba forum</a>/
+    <a href="" target="_blank">Support</a>/
+    <a href="" target="_blank">Contact</a>
+    <img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png" alt="Bubba, The heart in your digital life" title="Bubba, The heart in your digital life" />
 </div>
 
 <div id="div-login-dialog">
