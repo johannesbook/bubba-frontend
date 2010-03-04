@@ -426,46 +426,29 @@ class Filemanager extends Controller{
 	}
 
 	function downloadzip(){
-		$file_id = $this->input->post('file_id') ? $this->input->post('file_id') : array();
-		$file_name = $this->input->post('file_name') ? $this->input->post('file_name') : array();
-		$cnt=count($file_id);
-		
-		if($cnt==0){
-			// Uggly hack to allow index to be loaded
-			unset($_POST["action"]);
-			$this->index();
-			return;
-		}		
-		
+		$files = $this->input->post('files');
 		$user=$this->session->userdata("user");		
-		
-		$dl_item=array();
-		for($i=0; $i<$cnt; $i++){
-			$dl_item[]=$file_name[$file_id[$i]];
-		}		
-		array_walk($dl_item,array($this,'_alter'));
+		$prefix=$this->input->post('path')?$this->input->post('path'):"/"; 		
 
-		if($this->input->post('dl_name')){
-			$dl_name= $this->input->post('dl_name');
-		}else{
-			if($cnt==1){
-				$dl_name=basename(b_dec($file_name[$file_id[0]]));
-			}else{
-				$dl_name="download.zip";
-			}
+		$zipname = "download.zip";
+
+		if( $this->input->post('zipname') ){
+			$zipname = $this->input->post('zipname');
+		}else if( count($files) == 1 ){
+			$zipname = basename($files[0]);
 		}
 
-		if(strcasecmp(substr($dl_name,-4),".zip")){
-			$dl_name.=".zip";
-		}	
+		if( substr_compare($zipname, '.zip', -4, 4, true ) != 0 ) {
+			$zipname .= '.zip';
+		}
 		
-		$prefix=$this->input->post('path')?$this->input->post('path'):"/"; 		
 		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 		header("Pragma: public");
-		header("Content-Disposition: attachment; filename=\"$dl_name\"");
+		mb_internal_encoding('UTF-8');
+		header("Content-Disposition: attachment; filename=\"".mb_encode_mimeheader($zipname, "utf8", "Q")."\"");
 		header("Content-type: application/x-zip");
 		set_time_limit(3600);
-		zip_files($dl_item,b_dec($prefix),$user);
+		zip_files($files,$prefix,$user);
 	}
 	
 	function download(){

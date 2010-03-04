@@ -24,6 +24,7 @@ i18n = function(str){
 <script>
 buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
+
 dialog_pre_open_callbacks = {
 	'perm': function() {
 		var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
@@ -114,6 +115,96 @@ dialog_callbacks = {
 };
 
 dialogs = {};
+buttons = [
+	{
+		'id': 'fn-filemanager-button-upload',
+		'disabled': false,
+		'type': 'ui-icon-arrowthickstop-1-s',
+		'alt': 'Upload File',
+		'info': '',
+		'callback': function() {
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-create',
+		'disabled': false,
+		'type': 'ui-icon-plusthick',
+		'alt': 'Create Folder',
+		'info': '',
+		'callback': function() {
+			dialogs["mkdir"].dialog("open");
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-download',
+		'disabled': true,
+		'type': 'ui-icon-cart',
+		'alt': 'Download as ZIP',
+		'info': '',
+		'callback': function() {
+			var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
+			var input = $("<input/>", { type: 'text', 'name': 'files[]' });
+				var form = $("<form/>", {
+				'action': "<?=(FORMPREFIX)?>/filemanager/downloadzip",
+				'method': 'POST'
+			});
+			$.each(files, function(index,value) {
+				var e = input.clone();
+				e.attr('value',value);
+				form.append(e);
+			});
+			form.appendTo("body").submit().remove();
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-move',
+		'disabled': true,
+		'type': 'ui-icon-transferthick-e-w',
+		'alt': 'Move files',
+		'info': '',
+		'callback': function() {
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-copy',
+		'disabled': true,
+		'type': 'ui-icon-copy',
+		'alt': 'Copy files',
+		'info': '',
+		'callback': function() {
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-rename',
+		'disabled': true,
+		'type': 'ui-icon-pencil',
+		'alt': 'Rename',
+		'info': '',
+		'callback': function() {
+			dialogs["rename"].dialog("open");
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-perm',
+		'disabled': true,
+		'type': 'ui-icon-unlocked',
+		'alt': 'Change permissions',
+		'info': '',
+		'callback': function() {
+			dialogs["perm"].dialog("open");
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-delete',
+		'disabled': true,
+		'type': 'ui-icon-trash',
+		'alt': 'Delete',
+		'info': '',
+		'callback': function() {
+			dialogs["delete"].dialog("open");
+		}
+	}
+];
 
 update_toolbar_buttons = function() {
 	var length = $(".fn-filemanager-selected").length;
@@ -128,6 +219,7 @@ update_toolbar_buttons = function() {
 		$(buttons_requiring_selected_files_selectors).button("enable");
 	}
 }
+
 fileTable = null;
 $.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, aoData, bRedraw, fnCallback )
 {
@@ -171,7 +263,7 @@ file_download_callback = function( dataTable, filetable, options ){
 	).appendTo("body").submit().remove();
 }
 dir_opening_callback = function( dataTable, filetable, options ){
-	options = $.extend({direction: "left", path: "/", speed: 3000},options);
+	options = $.extend({direction: "left", path: "/", speed: 600},options);
 	orig_width = filetable.outerWidth();
 	orig_height = filetable.outerHeight();
 
@@ -224,118 +316,6 @@ dir_opening_callback = function( dataTable, filetable, options ){
 	} );
 }
 
-$.fn.dataTableExt.aoFeatures.push( {
-	"fnInit": function( oSettings ) {
-		return $('<div/>', {'class': 'ui-filemanager-path-widget', id: oSettings.sTableId + "_paths" }).get(0);
-	},
-	"cFeature": "P",
-	"sFeature": "Paths"
-} );
-
-$.fn.dataTableExt.aoFeatures.push( {
-	"fnInit": function( oSettings ) {
-		var buttons = [
-			{
-				'id': 'fn-filemanager-button-upload',
-				'disabled': false,
-				'type': 'ui-icon-arrowthickstop-1-s',
-				'alt': 'Upload File',
-				'info': '',
-				'callback': function() {
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-create',
-				'disabled': false,
-				'type': 'ui-icon-plusthick',
-				'alt': 'Create Folder',
-				'info': '',
-				'callback': function() {
-					dialogs["mkdir"].dialog("open");
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-download',
-				'disabled': true,
-				'type': 'ui-icon-cart',
-				'alt': 'Download as ZIP',
-				'info': '',
-				'callback': function() {
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-move',
-				'disabled': true,
-				'type': 'ui-icon-transferthick-e-w',
-				'alt': 'Move files',
-				'info': '',
-				'callback': function() {
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-copy',
-				'disabled': true,
-				'type': 'ui-icon-copy',
-				'alt': 'Copy files',
-				'info': '',
-				'callback': function() {
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-rename',
-				'disabled': true,
-				'type': 'ui-icon-pencil',
-				'alt': 'Rename',
-				'info': '',
-				'callback': function() {
-					dialogs["rename"].dialog("open");
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-perm',
-				'disabled': true,
-				'type': 'ui-icon-unlocked',
-				'alt': 'Change permissions',
-				'info': '',
-				'callback': function() {
-					dialogs["perm"].dialog("open");
-				}
-			},
-			{
-				'id': 'fn-filemanager-button-delete',
-				'disabled': true,
-				'type': 'ui-icon-trash',
-				'alt': 'Delete',
-				'info': '',
-				'callback': function() {
-					dialogs["delete"].dialog("open");
-				}
-			}
-		];
-		var bar = $("<div/>", {'class': 'ui-buttonbar'}).buttonset();
-		$.each(buttons, function(index, value) {
-			$("<button/>", {html: value.alt, id: value.id })
-				.button( { 
-					text: false, 
-						icons: { 
-							primary: value.type 
-						}
-				} )
-				.button( value.disabled ? 'disable': 'enable' )
-				.click(function(e){$(this).blur()})
-				.click(function(){
-					if(! $(this).hasClass("ui-state-disabled") ) {
-						value.callback.apply(this);
-					}
-				})
-				.appendTo(bar);
-		});
-		return bar.get(0);
-	},
-	"cFeature": "C",
-	"sFeature": "Controlls"
-} );
-
 $(document).ready(function() {
 	fileTable = $("#filetable");
 
@@ -382,7 +362,7 @@ $(document).ready(function() {
 		"oLanguage": {
 			'sZeroRecords': ''
 		},
-		"sDom": '<"H"PCr>t',
+		"sDom": '<"H"r>t',
 		"asStripClasses": [ "ui-filemanager-row-odd", "ui-filemanager-row-even" ],
 		"bJQueryUI": true,
 		"bFilter": false,
@@ -472,6 +452,26 @@ $(document).ready(function() {
 
 
 	});
+
+	var bar = $("<div/>", {'class': 'ui-buttonbar'}).buttonset();
+
+	$.each(buttons, function(index, value) {
+		$("<button/>", {html: value.alt, id: value.id }).button( { 
+			text: false, 
+			icons: { 
+				primary: value.type 
+			}
+		} ).button( value.disabled ? 'disable': 'enable' )
+			.click(function(e){$(this).blur()})
+			.click(function(){
+				if(! $(this).hasClass("ui-state-disabled") ) {
+					value.callback.apply(this);
+				}
+			}).appendTo(bar);
+	});
+	var toolbar = $("#filetable_wrapper .fg-toolbar");
+	toolbar.append(bar);
+	toolbar.prepend($('<div/>', {'class': 'ui-filemanager-path-widget', id: "filetable_paths" }));
 
 	$("tbody", fileTable).delegate( 'tr', 'mousedown', function(event) {
 		$(this).siblings().andSelf().removeClass("ui-filemanager-state-dblckick");
