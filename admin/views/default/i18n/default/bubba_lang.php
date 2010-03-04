@@ -40,6 +40,7 @@ $lang['title_shutdown']=$lang['Shutdown'];
 $lang['button_label_continue']='Continue';
 $lang['button_label_delete']='Delete';
 $lang['button_label_cancel']='Cancel';
+$lang['button-label-cancel']='Cancel'; // TODO FIXME
 $lang['generic_dialog_text_please_wait'] = "Please wait...";
 $lang['generic_dialog_text_warning'] = "Warning";
 
@@ -290,7 +291,8 @@ $lang["filemanager-label-permission-group-write"] = "write";
 $lang["filemanager-label-permission-other"] = "Other";
 $lang["filemanager-label-permission-other-read"] = "read";
 $lang["filemanager-label-permission-other-write"] = "write";
-$lang["filemanager-button_label_mkdir"] = "Create directory";
+$lang["filemanager-mkdir-dialog-button-label"] = "Create directory";
+$lang["filemanager-mkdir-dialog-title"] = "Create an new directory";
 /*  ------------------- Texts to locate help pages.  -------------------*/
 //General pages
 $lang['help_stat']="";

@@ -19,8 +19,8 @@ if (! function_exists('t'))
 		if( isset($lang[$string]) ){
 			$string = $lang[$string];
 		}else{
-			$CI = &get_instance();
-			$CI->firephp->warn($string, "not defined in \$lang" );
+//			$CI = &get_instance();
+//			$CI->firephp->warn($string, "not defined in \$lang" );
 			$string = $string;
 		}
 		$nbr_args = func_num_args();

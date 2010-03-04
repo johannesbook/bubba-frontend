@@ -14,7 +14,6 @@
 	<tbody>
 		
 	</tbody>
-
 </table>
 
 <div id="fn-dialogs" class="ui-helper-hidden">
@@ -23,7 +22,7 @@
 <table>
 <tr>
 <td><label for="name"><?=t('filemanager-label-name')?></label></td>
-<td><input type="text" id="fn-filemanager-mkdir-name" name="name" class="ui-input-text"/></td>
+<td><input type="text" id="fn-filemanager-mkdir-name" name="name" class="ui-input-text fn-primary-field"/></td>
 </tr>
 <tr>
 <th colspan="2"><?=t('filemanager-title-permissions')?></th>

@@ -6,7 +6,41 @@
 
 
 </style>
+
 <script>
+
+// TODO FIXME XXX extract and cleanup
+_i18n = <?global $lang;echo(json_encode($lang))?>;
+i18n = function(str){
+	if( typeof _i18n[str] != "undefined" ) {
+		return _i18n[str];
+	} else {
+		return str;
+	}
+};
+
+</script>
+
+<script>
+dialog_callbacks = {
+	'default_close': function() {
+		$(this).dialog('close');
+	},
+	'mkdir': function() {
+		var params = $("#fn-filemanager-mkdir").serializeObject();
+		params.root = $("#filetable").data('root');
+		$.post("<?=FORMPREFIX?>/filemanager/mkdir/json", params, function(data){
+			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-mkdir")?>");
+			if( ! data.error ) {
+				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+			}
+		}, 'json');
+		$(this).dialog('close');
+	},
+	'delete': function() {
+		var files = $(".fn-filemanager-selected");		
+	}
+};
 
 dialogs = {};
 fileTable = null;
@@ -52,7 +86,7 @@ file_download_callback = function( dataTable, filetable, options ){
 	).appendTo("body").submit().remove();
 }
 dir_opening_callback = function( dataTable, filetable, options ){
-	options = $.extend({direction: "left", path: "/", speed: 1000},options);
+	options = $.extend({direction: "left", path: "/", speed: 3000},options);
 	orig_width = filetable.outerWidth();
 	orig_height = filetable.outerHeight();
 
@@ -205,41 +239,34 @@ $.fn.dataTableExt.aoFeatures.push( {
 $(document).ready(function() {
 	fileTable = $("#filetable");
 
-	// disable all submits on all forms
-	$("form").submit(function(){return false});
+	// All dialogs can be somewhat generic in buildup
 
-	// buttonize all buttons
-//	$(".fn-button").button();
-//	$(".fn-buttonset").buttonset();
+	$.each( ['mkdir', 'delete'], function( index, value ) {
+		var buttons = {};
+		buttons[i18n("filemanager-" + value + "-dialog-button-label")] = dialog_callbacks[value];
+		buttons[i18n("button-label-cancel")] =  dialog_callbacks["default_close"];
 
-	// Mkdir
-
-	dialogs["mkdir"] = $.dialog( 
-		$("#fn-filemanager-mkdir-dialog"),
-		"hello",
-		{
-			"<?=t('filemanager-button_label_mkdir')?>": function() {
-				var params = $("#fn-filemanager-mkdir").serializeObject();
-				params.root = $("#filetable").data('root');
-				$.post("<?=FORMPREFIX?>/filemanager/mkdir/json", params, function(data){
-					update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-mkdir")?>");
-					if( ! data.error ) {
-						dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
-					}
-				}, 'json');
-				$(this).dialog('close');
-			},
-			"<?=t('button_label_cancel')?>": function() {$(this).dialog('close');}
-		},{
-			"autoOpen": false,
-				"open": function(event,ui) {
-					$("#fn-filemanager-mkdir").trigger("reset");
-					$(".fn-button").button("destroy").button();
-					$(".fn-buttonset").buttonset("destroy").buttonset();
-				$("#fn-filemanager-mkdir-name").focus();
+		var options = { "autoOpen": false,
+			"open": function(event,ui) {
+				var current	= $("#fn-filemanager-" + value + "");
+				current.trigger("reset");
+				$(".fn-button", current).button("destroy").button();
+				$(".fn-buttonset", current).buttonset("destroy").buttonset();
+				$(".fn-primary-field", current).focus();
 			}
-		} 
-	);
+		};
+		dialogs[value] = $.dialog( 
+			$("#fn-filemanager-" + value + "-dialog"),
+			i18n("filemanager-" + value + "-dialog-title"),
+			buttons,
+			options	
+		);
+
+		$("#fn-filemanager-" + value + "-dialog").submit(function() {
+			dialog_callbacks[value].apply(dialogs[value]);
+			return false;
+		});
+	});
 
 	dataTable = fileTable.dataTable({
 		'oClasses': {
