@@ -14,6 +14,7 @@ class Services extends Controller{
 
 	function _renderfull($content){
 		$mdata["head"] = $this->load->view(THEME.'/services/services_head_view','',true);
+		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		$mdata["subnav"]="";
 		$mdata["content"]=$content;

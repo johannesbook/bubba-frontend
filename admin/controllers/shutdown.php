@@ -17,6 +17,7 @@ class Shutdown extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/shutdown_confirm_view');
 		}else{
+			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 			$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 			$mdata["subnav"]="";
 			$mdata["content"]=$this->load->view(THEME.'/shutdown_confirm_view','',true);

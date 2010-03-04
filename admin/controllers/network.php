@@ -19,11 +19,13 @@ class Network extends Controller{
 
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		if($this->session->userdata("run_wizard")) {
+			$mdata["dialog_menu"] = "";
 			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["subnav"]="";
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
+			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["subnav"]=$this->load->view(THEME.'/network/network_submenu_view',$data,true);
 			$mdata["content"]=$content;

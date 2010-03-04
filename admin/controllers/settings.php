@@ -17,10 +17,12 @@ class Settings extends Controller{
 
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		if($this->session->userdata("run_wizard")) {
+				$mdata["dialog_menu"] = "";
 				$mdata["subnav"]="";
 				$mdata["content"]="";
 				$mdata["wizard"]=$content;
 		} else {
+				$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 				$mdata["subnav"]=$this->load->view(THEME.'/settings/settings_submenu_view','',true);
 				$mdata["content"]=$content;
 				$mdata["wizard"]="";

@@ -18,6 +18,7 @@ class Mail extends Controller{
 		if( !is_null($head) ) {
 			$mdata["head"] = $this->load->view(THEME.$head,'',true);
 		}
+		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		$mdata["subnav"]=$this->load->view(THEME.'/mail/mail_submenu_view','',true);;
 		$mdata["content"]=$content;

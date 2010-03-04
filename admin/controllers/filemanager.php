@@ -37,6 +37,7 @@ class Filemanager extends Controller{
 				$mdata['head'] = $head;
 			}
 		}
+		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
 		$mdata["subnav"]=$this->load->view(THEME.'/filemanager/filemanager_submenu_view','',true);;
 		$mdata["content"]=$content;
