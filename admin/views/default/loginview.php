@@ -29,7 +29,7 @@
 
 <div id="login_settings">
 	<ul>
-		<li><a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><?=t("menubar_settings")?></a></li>
+		<li class="default-icon default-icon-logout"><a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><?=t("menubar_settings")?></a></li>
 	</ul>
 </div>
 

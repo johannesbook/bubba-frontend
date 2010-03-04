@@ -9,7 +9,7 @@ form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button] {background:#000;padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0}
+input[type=submit],input[type=button] {background:#000;padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:140%}
 input[type=submit]:hover,input[type=button]:hover {border:0}
 input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding-bottom: 0px;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #999;}
@@ -26,12 +26,10 @@ li{padding: 0.2em 0 0.2em 0;}
 li {display:inline;}
 a {color: #000;}
 img{border: 0;}
-/* LOGIN */
-
 /* WRAPPER */
 #wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:0.5em;max-width:96%;padding-left:3em;padding-top:2em;}
 /*UPDATE STATUS*/
-#update_status {font-size:80%;color:000;background-color:#fbec9d}
+#update_status {color:000;background-color:#fbec9d;font-size:120%;left:48%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:0;width:auto;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
 #logo {font-size:300%;font-weight:normal;color:#000;text-decoration:none;}
 #img_logo {}
@@ -43,7 +41,9 @@ img{border: 0;}
 #nav ul{font-size: 160%;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
 #topnav {float:right;left:70%;top:3%;width:30%;position:absolute;z-index:2;}
 #topnav a, #topnav span {float:left;}
-#topnav_status {margin-right:10%;font-weight:bold;}
+#topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;}
+#topnav button {border:0;background:#fff;}
+#topnav button:hover {border-bottom:0.1em solid black;}
 #subnav {font-size: 120%;list-style: none;margin-top:0.8em;}
 #subnav ul:after {content: ".";height: 0;clear: both;visibility: hidden;}
 #subnav ul li {border-right:1px #000 solid;padding-left:0.3em;padding-top:0;}
@@ -54,7 +54,7 @@ div#subnav ul li a:hover {color: #999;}
 #content {margin-bottom:3em;width:70%;}
 /* SIDE BOARD */
 #sideboard {position:absolute;z-index:1;left:75%;top:15%;}
-#sideboard_switch {margin:left:8%;float:right;}
+#sideboard_switch {margin:left:8%;float:right !important;font-size:180%;color:white;text-decoration:none !important;padding-left:0.3em;}
 /* HOME MENU */
 #home {position:fixed;top:35%;left:20%;width:auto;z-index:3;}
 #home_close {float:right;margin-top:-85px;}
@@ -80,6 +80,7 @@ div#subnav ul li a:hover {color: #999;}
 #filetable:not(.clone) tbody tr.row-selected:hover * {	background: #999 !important}
 #filetable_processing {padding: 30px; display: inline;}
 #filetable_wrapper button {border:0;}
+#filetable .ui_icon {display:inline !important}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
 .ui-filemanager-state-dblckick {background:#fbec9d !important; }
 *:not(.ui-fake) .ui-filemanager-state-hover:hover {	background: #aa7676;}
@@ -95,8 +96,4 @@ div#subnav ul li a:hover {color: #999;}
 .ui-filemanager-type-row {cursor: pointer;}
 .ui-buttonbar {float:right;margin:0 4px;}
 .ui-input-text {width: 100%;}
-.ui-text-center {
-	text-align : center;
-}
-/**/
-
+.ui-text-center {	text-align : center;}

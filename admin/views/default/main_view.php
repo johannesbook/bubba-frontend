@@ -28,7 +28,25 @@ if(isset($head)) {
 $(document).ready(function(){
 	// Make a striped effect on tables in content
 	$('table:not(.blank)').stripe();
-
+	
+	
+	$('#home_switch').click(function(event) {  
+            event.preventDefault();
+            $('#home').toggle()
+        } );
+	$('#sideboard_switch').click(function(event) {  
+            event.preventDefault();
+            
+            if($('#sideboard').is(":visible")) {
+                $('#sideboard').hide();
+                $('#content').css( 'width', '100%' );
+            } else {
+                $('#sideboard').show();
+                $('#content').css( 'width', '70%' );
+            }
+            
+        } );
+	
 <?if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])):?>
 	
 	$("input[type='checkbox']").removeClass("checkbox_radio");
@@ -80,6 +98,13 @@ $(document).ready(function(){
     <div id="wrapper">	
         <div id="header">		
             <div id="topnav">
+<<<<<<< .mine
+                <span id="topnav_status">Inloggad som Admin</span>
+                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Help" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-lightbulb"></span><span class="ui-button-text">&nbsp;</span></button>
+                <button id="home_switch" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
+                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
+                <a id="sideboard_switch" href="#" class="ui-state-default" ><</a>
+=======
             		<?if ($this->session->userdata("valid")) { ?>
 	                <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
             		<?} else {?>
@@ -90,6 +115,7 @@ $(document).ready(function(){
                 <a class="ui-icon ui-icon-home"></a>
                 <a class="ui-icon ui-icon-power"></a>
                 <a id="sideboard_switch" class="ui-icon ui-icon-carat-1-w"></a>
+>>>>>>> .r5211
             </div>	
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
             <div id="nav"><?=$navbar?></div>
@@ -101,7 +127,7 @@ $(document).ready(function(){
           </div>
         </div>
         <div id="sideboard" >
-            <img id="sideboard" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/sideboard_tmp.png" alt="tempfil för dashboard" title="tempfil för dashboard" />
+            <img id="img_sideboard" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/sideboard_tmp.png" alt="tempfil för dashboard" title="tempfil för dashboard" />
         </div>
     </div>
     <div id="home" style="display:none">   
