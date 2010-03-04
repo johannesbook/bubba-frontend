@@ -113,8 +113,7 @@ $(document).ready(function(){
                 <a id="sideboard_switch" href="#" class="ui-state-default" ></a>
             </div>	
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
-            <div id="nav"><?=$navbar?></div>
-            <div id="subnav"><?=$subnav?></div>
+            <?=$navbar?>
         </div>		
         <div id="content">
         	<div id="<?=$this->uri->segment(1)?>">

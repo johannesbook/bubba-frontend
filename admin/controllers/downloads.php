@@ -19,9 +19,9 @@ class Downloads extends Controller{
 	}		
 
 	function _renderfull($content){
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
-		$mdata["subnav"]="";
 		$mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	

@@ -12,10 +12,10 @@ class Album extends Controller {
 	}
 
 	function _output($content){
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 		$mdata["head"] = $this->load->view(THEME.'/album/album_head_view','',true);
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
-		$mdata["subnav"]=$this->load->view(THEME.'/album/album_submenu_view','',true);
 		$mdata["content"]=$content;
 		echo $this->load->view(THEME.'/main_view',$mdata, true);
 	}

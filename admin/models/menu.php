@@ -192,6 +192,7 @@ class Menu extends Model {
 		$selected_children = null;
 		$default = null;
 		$default_children = null;
+		$current_level = trim($current_level,"/");
 		foreach( $menus as $menu ) {
 			if( isset( $menu['deny'] ) && in_array($user, $menu['deny']) ) {
 				continue;

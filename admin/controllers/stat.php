@@ -14,15 +14,14 @@ class Stat extends Controller{
 	}
 
 	function _renderfull($content){
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		if($this->session->userdata("run_wizard")) {
 			$mdata["dialog_menu"] = "";
-			$mdata["subnav"]="";
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
 			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
-			$mdata["subnav"]="";
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";
 		}

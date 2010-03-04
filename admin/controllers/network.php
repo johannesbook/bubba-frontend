@@ -17,17 +17,16 @@ class Network extends Controller{
 
 	function _renderfull($content, $head = '/network/network_head_view', $data = ''){
 
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		if($this->session->userdata("run_wizard")) {
 			$mdata["dialog_menu"] = "";
 			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
-			$mdata["subnav"]="";
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
 			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
-			$mdata["subnav"]=$this->load->view(THEME.'/network/network_submenu_view',$data,true);
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";
 		}

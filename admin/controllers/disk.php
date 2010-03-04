@@ -13,10 +13,10 @@ class Disk extends Controller{
 	}
 
 	function _renderfull($content, $head = '/disk/disk_head_view', $data = ''){
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
 		$mdata["head"] = $this->load->view(THEME.$head,$data,true);
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$data,true);
-		$mdata["subnav"]= $this->load->view(THEME.'/disk/disk_submenu_view',$data,true);
 		$mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	

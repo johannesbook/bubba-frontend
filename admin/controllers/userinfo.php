@@ -14,9 +14,8 @@ class Userinfo extends Controller{
 	}		
 
 	function _renderfull($content){
-		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
-		$mdata["subnav"]="";
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	

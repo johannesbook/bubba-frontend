@@ -14,13 +14,14 @@ class Mail extends Controller{
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
-	function _renderfull($content,$head = null){
-		if( !is_null($head) ) {
-			$mdata["head"] = $this->load->view(THEME.$head,'',true);
+	function _renderfull($content,$head = ""){
+		if( ! $head ) {
+			$mdata["head"] = $this->load->view(THEME.'/filemanager/filemanager_head_view','',true);
+		} else {
+			$mdata['head'] = $head;
 		}
-		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
-		$mdata["subnav"]=$this->load->view(THEME.'/mail/mail_submenu_view','',true);;
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	

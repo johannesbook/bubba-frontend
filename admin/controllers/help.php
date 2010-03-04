@@ -25,5 +25,3 @@ class Help extends Controller{
 	function index () {
 	}
 }
-
-

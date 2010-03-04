@@ -13,18 +13,16 @@ class Users extends Controller{
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
-	function _renderfull($content, $head = '/users/users_head_view', $data = ''){
-		$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
+	function _renderfull($content){
+		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
+		$mdata["head"] = "";
 		if($this->session->userdata('run_wizard')) {
 			$mdata["dialog_menu"] = "";
-			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
-			$mdata["subnav"]="";
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
 			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
-			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
-			$mdata["subnav"]="";
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";
 		}

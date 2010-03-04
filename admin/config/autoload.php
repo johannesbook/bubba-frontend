@@ -108,7 +108,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('Auth_model');
+$autoload['model'] = array('Auth_model','menu');
 
 
 /*

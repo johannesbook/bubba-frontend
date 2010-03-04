@@ -38,6 +38,7 @@ img{border: 0;}
 #header li a {color: #000;text-decoration: none;margin-right:0.3em}
 #header li a:hover {color: #999;}
 #header li.active a {color:#506ab2;}
+#header li.last {border-right:none;}
 #nav ul{font-size: 160%;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
 #topnav {float:right;left:70%;top:3%;width:30%;position:absolute;z-index:2;}
 #topnav a, #topnav span {float:left;}
