@@ -98,24 +98,15 @@ $(document).ready(function(){
     <div id="wrapper">	
         <div id="header">		
             <div id="topnav">
-<<<<<<< .mine
-                <span id="topnav_status">Inloggad som Admin</span>
-                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Help" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-lightbulb"></span><span class="ui-button-text">&nbsp;</span></button>
-                <button id="home_switch" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
-                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
-                <a id="sideboard_switch" href="#" class="ui-state-default" ><</a>
-=======
             		<?if ($this->session->userdata("valid")) { ?>
 	                <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
             		<?} else {?>
 	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             		<? } ?>
-            			
-                <a id="fn-topnav-help" class="ui-icon ui-icon-lightbulb"></a>
-                <a class="ui-icon ui-icon-home"></a>
-                <a class="ui-icon ui-icon-power"></a>
-                <a id="sideboard_switch" class="ui-icon ui-icon-carat-1-w"></a>
->>>>>>> .r5211
+                <button id="fn-topnav-help" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Help" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-lightbulb"></span><span class="ui-button-text">&nbsp;</span></button>
+                <button id="home_switch" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
+                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
+                <a id="sideboard_switch" href="#" class="ui-state-default" ></a>
             </div>	
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
             <div id="nav"><?=$navbar?></div>
