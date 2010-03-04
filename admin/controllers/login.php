@@ -140,5 +140,6 @@ class Login extends Controller{
 		
 		echo json_encode($json_data);
 	}
+
 }
 ?>

@@ -45,6 +45,22 @@ $(document).ready(function(){
 
 <?endif?>
 
+	$("#fn-topnav-help").click( function() {
+		<?
+		$uri = $this->uri->segment(1,"index");
+		if($this->uri->segment(2)) {
+			$uri .= "_".$this->uri->segment(2);
+		}
+		?>
+		$.post("<?=FORMPREFIX?>/help/load/html/<?=$uri?>", function(data) {
+			$.dialog(
+				data,
+				"<?=t("help_box_header")?>",
+				{},
+				{'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
+		});
+	});
+
 });
 </script>
 </head>
@@ -64,8 +80,13 @@ $(document).ready(function(){
     <div id="wrapper">	
         <div id="header">		
             <div id="topnav">
-                <span id="topnav_status">Inloggad som Admin</span>
-                <a class="ui-icon ui-icon-lightbulb"></a>                
+            		<?if ($this->session->userdata("valid")) { ?>
+	                <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
+            		<?} else {?>
+	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
+            		<? } ?>
+            			
+                <a id="fn-topnav-help" class="ui-icon ui-icon-lightbulb"></a>
                 <a class="ui-icon ui-icon-home"></a>
                 <a class="ui-icon ui-icon-power"></a>
                 <a id="sideboard_switch" class="ui-icon ui-icon-carat-1-w"></a>
@@ -75,7 +96,9 @@ $(document).ready(function(){
             <div id="subnav"><?=$subnav?></div>
         </div>		
         <div id="content">
-            <?=$content?>				
+        	<div id="<?=$this->uri->segment(1)?>">
+            <?=$content?>
+          </div>
         </div>
         <div id="sideboard" >
             <img id="sideboard" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/sideboard_tmp.png" alt="tempfil för dashboard" title="tempfil för dashboard" />

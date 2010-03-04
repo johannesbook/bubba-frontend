@@ -95,4 +95,8 @@ div#subnav ul li a:hover {color: #999;}
 .ui-filemanager-type-row {cursor: pointer;}
 .ui-buttonbar {float:right;margin:0 4px;}
 .ui-input-text {width: 100%;}
+.ui-text-center {
+	text-align : center;
+}
 /**/
+

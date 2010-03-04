@@ -16,7 +16,7 @@ function dialog_login(e) {
    		*/
 			$.confirm(
 				$("#div-login-dialog").show(),
-				"<?=t('login-dialog-header')?>",
+				"",
 				{
 					"<?=t('login-dialog-continue')?>": function() { // continue button
 					
@@ -41,12 +41,6 @@ function dialog_login(e) {
 								}
 							}
 						},"json");
-					},
-					"<?=t('login-dialog-cancel')?>": function() { // cancel button
-						// make sure to hide error messages								
-						$("#fn-login-error").children().hide();
-						$("#password").val("");
-						$(this).dialog('close');
 					}
 				}
 			);
