@@ -22,6 +22,46 @@ i18n = function(str){
 </script>
 
 <script>
+buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
+buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
+dialog_pre_open_callbacks = {
+	'perm': function() {
+		var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
+		$.post("<?=FORMPREFIX?>/filemanager/perm/json/get", {files:files}, function(data){
+			if( data.permissions & 00400 ) {
+				$("#fn-filemanager-perm-permission-owner-read").attr("checked","checked");
+			}
+			if( data.permissions & 00200 ) {
+				$("#fn-filemanager-perm-permission-owner-write").attr("checked","checked");
+			}
+			if( data.permissions & 00100 ) {
+				$("#fn-filemanager-perm-permission-owner-execute").attr("checked","checked");
+			}
+
+			if( data.permissions & 00040 ) {
+				$("#fn-filemanager-perm-permission-group-read").attr("checked","checked");
+			}
+			if( data.permissions & 00020 ) {
+				$("#fn-filemanager-perm-permission-group-write").attr("checked","checked");
+			}
+			if( data.permissions & 00010 ) {
+				$("#fn-filemanager-perm-permission-group-execute").attr("checked","checked");
+			}
+
+			if( data.permissions & 00004 ) {
+				$("#fn-filemanager-perm-permission-other-read").attr("checked","checked");
+			}
+			if( data.permissions & 00002 ) {
+				$("#fn-filemanager-perm-permission-other-write").attr("checked","checked");
+			}
+			if( data.permissions & 00001 ) {
+				$("#fn-filemanager-perm-permission-other-execute").attr("checked","checked");
+			}
+		}, 'json');
+		
+	}
+};
+
 dialog_callbacks = {
 	'default_close': function() {
 		$(this).dialog('close');
@@ -29,6 +69,7 @@ dialog_callbacks = {
 	'mkdir': function() {
 		var params = $("#fn-filemanager-mkdir").serializeObject();
 		params.root = $("#filetable").data('root');
+		params.files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
 		$.post("<?=FORMPREFIX?>/filemanager/mkdir/json", params, function(data){
 			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-mkdir")?>");
 			if( ! data.error ) {
@@ -37,12 +78,56 @@ dialog_callbacks = {
 		}, 'json');
 		$(this).dialog('close');
 	},
+	'rename': function() {
+		var params = $("#fn-filemanager-rename").serializeObject();
+		params.path = $(".fn-filemanager-selected").data('path');
+		params.root = $("#filetable").data('root');
+		$.post("<?=FORMPREFIX?>/filemanager/rename/json", params, function(data){
+			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-rename")?>");
+			if( ! data.error ) {
+				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+			}
+		}, 'json');
+		$(this).dialog('close');
+	},
+	'perm': function() {
+		var params = $("#fn-filemanager-perm").serializeObject();
+		params.root = $("#filetable").data('root');
+		$.post("<?=FORMPREFIX?>/filemanager/perm/json/set", params, function(data){
+			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-perm")?>");
+			if( ! data.error ) {
+				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+			}
+		}, 'json');
+		$(this).dialog('close');
+	},
 	'delete': function() {
-		var files = $(".fn-filemanager-selected");		
+		var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
+		$.post("<?=FORMPREFIX?>/filemanager/delete/json", {files: files}, function(data){
+			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-delete")?>");
+			if( ! data.error ) {
+				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: $("#filetable").data('root') }, true );
+			}
+		}, 'json');		
+		$(this).dialog('close');
 	}
 };
 
 dialogs = {};
+
+update_toolbar_buttons = function() {
+	var length = $(".fn-filemanager-selected").length;
+	if( length == 0 ) {
+		$(buttons_requiring_selected_files_selectors).button("disable");
+		$(buttons_requiring_single_selected_file_selectors).button("disable");
+	} else if(length == 1) {
+		$(buttons_requiring_selected_files_selectors).button("enable");
+		$(buttons_requiring_single_selected_file_selectors).button("enable");
+	} else {
+		$(buttons_requiring_single_selected_file_selectors).button("disable");
+		$(buttons_requiring_selected_files_selectors).button("enable");
+	}
+}
 fileTable = null;
 $.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, aoData, bRedraw, fnCallback )
 {
@@ -151,6 +236,7 @@ $.fn.dataTableExt.aoFeatures.push( {
 	"fnInit": function( oSettings ) {
 		var buttons = [
 			{
+				'id': 'fn-filemanager-button-upload',
 				'disabled': false,
 				'type': 'ui-icon-arrowthickstop-1-s',
 				'alt': 'Upload File',
@@ -159,6 +245,7 @@ $.fn.dataTableExt.aoFeatures.push( {
 				}
 			},
 			{
+				'id': 'fn-filemanager-button-create',
 				'disabled': false,
 				'type': 'ui-icon-plusthick',
 				'alt': 'Create Folder',
@@ -168,7 +255,8 @@ $.fn.dataTableExt.aoFeatures.push( {
 				}
 			},
 			{
-				'disabled': false,
+				'id': 'fn-filemanager-button-download',
+				'disabled': true,
 				'type': 'ui-icon-cart',
 				'alt': 'Download as ZIP',
 				'info': '',
@@ -176,7 +264,8 @@ $.fn.dataTableExt.aoFeatures.push( {
 				}
 			},
 			{
-				'disabled': false,
+				'id': 'fn-filemanager-button-move',
+				'disabled': true,
 				'type': 'ui-icon-transferthick-e-w',
 				'alt': 'Move files',
 				'info': '',
@@ -184,6 +273,7 @@ $.fn.dataTableExt.aoFeatures.push( {
 				}
 			},
 			{
+				'id': 'fn-filemanager-button-copy',
 				'disabled': true,
 				'type': 'ui-icon-copy',
 				'alt': 'Copy files',
@@ -192,33 +282,39 @@ $.fn.dataTableExt.aoFeatures.push( {
 				}
 			},
 			{
-				'disabled': false,
+				'id': 'fn-filemanager-button-rename',
+				'disabled': true,
 				'type': 'ui-icon-pencil',
 				'alt': 'Rename',
 				'info': '',
 				'callback': function() {
+					dialogs["rename"].dialog("open");
 				}
 			},
 			{
-				'disabled': false,
+				'id': 'fn-filemanager-button-perm',
+				'disabled': true,
 				'type': 'ui-icon-unlocked',
 				'alt': 'Change permissions',
 				'info': '',
 				'callback': function() {
+					dialogs["perm"].dialog("open");
 				}
 			},
 			{
-				'disabled': false,
+				'id': 'fn-filemanager-button-delete',
+				'disabled': true,
 				'type': 'ui-icon-trash',
 				'alt': 'Delete',
 				'info': '',
 				'callback': function() {
+					dialogs["delete"].dialog("open");
 				}
 			}
 		];
 		var bar = $("<div/>", {'class': 'ui-buttonbar'}).buttonset();
 		$.each(buttons, function(index, value) {
-			$("<button/>", {html: value.alt })
+			$("<button/>", {html: value.alt, id: value.id })
 				.button( { 
 					text: false, 
 						icons: { 
@@ -227,7 +323,11 @@ $.fn.dataTableExt.aoFeatures.push( {
 				} )
 				.button( value.disabled ? 'disable': 'enable' )
 				.click(function(e){$(this).blur()})
-				.click(value.callback)
+				.click(function(){
+					if(! $(this).hasClass("ui-state-disabled") ) {
+						value.callback.apply(this);
+					}
+				})
 				.appendTo(bar);
 		});
 		return bar.get(0);
@@ -241,7 +341,7 @@ $(document).ready(function() {
 
 	// All dialogs can be somewhat generic in buildup
 
-	$.each( ['mkdir', 'delete'], function( index, value ) {
+	$.each( ['mkdir', 'delete', 'perm', 'rename'], function( index, value ) {
 		var buttons = {};
 		buttons[i18n("filemanager-" + value + "-dialog-button-label")] = dialog_callbacks[value];
 		buttons[i18n("button-label-cancel")] =  dialog_callbacks["default_close"];
@@ -250,8 +350,13 @@ $(document).ready(function() {
 			"open": function(event,ui) {
 				var current	= $("#fn-filemanager-" + value + "");
 				current.trigger("reset");
-				$(".fn-button", current).button("destroy").button();
-				$(".fn-buttonset", current).buttonset("destroy").buttonset();
+				//$(".fn-button", current).button("destroy"); // XXX BROKEN
+				//$(".fn-buttonset", current).buttonset("destroy");
+				if(typeof dialog_pre_open_callbacks[value] != "undefined") {
+					dialog_pre_open_callbacks[value].apply(this, [event,ui]);
+				}
+				//$(".fn-button", current).button();
+				//$(".fn-buttonset", current).buttonset();
 				$(".fn-primary-field", current).focus();
 			}
 		};
@@ -337,6 +442,9 @@ $(document).ready(function() {
 				}
 			} );
 		},
+		"fnDrawCallback": function() {
+			update_toolbar_buttons();
+		},
 		"fnRowCallback": function( nRow, aData, iDisplayIndex ) {
 			$(nRow).data({
 				'foo': 'bar',
@@ -396,6 +504,8 @@ $(document).ready(function() {
 			}
 
 		}
+
+		update_toolbar_buttons();
 		return false;
 
 	});

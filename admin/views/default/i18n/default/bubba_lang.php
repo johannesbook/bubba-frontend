@@ -285,14 +285,23 @@ $lang["filemanager-title-permissions"] = "Permissions";
 $lang["filemanager-label-permission-owner"] = "Owner";
 $lang["filemanager-label-permission-owner-read"] = "read";
 $lang["filemanager-label-permission-owner-write"] = "write";
+$lang["filemanager-label-permission-owner-execute"] = "execute";
 $lang["filemanager-label-permission-group"] = "Group";
 $lang["filemanager-label-permission-group-read"] = "read";
 $lang["filemanager-label-permission-group-write"] = "write";
+$lang["filemanager-label-permission-group-execute"] = "execute";
 $lang["filemanager-label-permission-other"] = "Other";
 $lang["filemanager-label-permission-other-read"] = "read";
 $lang["filemanager-label-permission-other-write"] = "write";
+$lang["filemanager-label-permission-other-execute"] = "execute";
+
 $lang["filemanager-mkdir-dialog-button-label"] = "Create directory";
 $lang["filemanager-mkdir-dialog-title"] = "Create an new directory";
+
+$lang["filemanager-delete-dialog-button-label"] = "Delete";
+$lang["filemanager-delete-dialog-title"] = "Delete files and directories";
+$lang["filemanager-delete-fail-message"] = "Failed to delete following files and directories: %s";
+$lang["filemanager-delete-dialog-message"] = "Are you certain that you want to delete selected files and directories?";
 /*  ------------------- Texts to locate help pages.  -------------------*/
 //General pages
 $lang['help_stat']="";

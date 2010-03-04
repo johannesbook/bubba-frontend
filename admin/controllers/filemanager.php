@@ -88,51 +88,63 @@ class Filemanager extends Controller{
 	}
 	
 	function delete($strip=""){
-		$file_id = $this->input->post('file_id') ? 
-				$this->input->post('file_id') : array();
-		$file_name = $this->input->post('file_name') ? 
-				$this->input->post('file_name') : array();
-		
-		$cnt=count($file_id);
-		for($i=0; $i<$cnt; $i++){
-			$data["files"][b_dec($file_name[$file_id[$i]])]=$file_name[$file_id[$i]];
-		}
-		$data["path"]=$this->input->post("path");
 
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_delete_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_delete_view',$data,true),false);
-		}
-	}
-	
-	function dodelete($strip=""){
-		if($this->input->post("cancel")){
-			$this->index();
-			return;
-		}
-
-		$file_list = $this->input->post('file_list') ? $this->input->post('file_list') : array();
-		$user=$this->session->userdata("user");
-		
-		$data["path"]=$this->input->post("path");
-		foreach($file_list as $file){
-			$filename=b_dec($file);
-			$res = rm($filename,$user);
-			if($res){
-				$data["files"][$filename]=true;
-			}else{
-				$data["files"][$filename]=false;
+		if( $strip == 'json' ) {
+			$errors = array();
+			$files = $this->input->post('files');
+			$user=$this->session->userdata("user");
+			if(!is_array($files)) {
+				$files = array($files);
 			}
-		}		
-		
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_dodelete_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_dodelete_view',$data,true),false);
+
+			foreach($files as $file){
+				if(rm($file,$user)){ // true is false
+					$errors[] = $file;
+				}
+			}		
+			$data["success"]=empty($errors);
+
+			if( !empty($errors) ) {
+				$data['error'] = true;
+				$data['html'] = t("filemanager-delete-fail-message",implode(', ',$errors));
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			
+		} else {
+			echo "error";
 		}
 	}
-	
+	function rename($strip=""){
+
+		if( $strip == 'json' ) {
+			$error = false;
+			$path = $this->input->post('path');
+			$root = $this->input->post('root');
+			$newname = $this->input->post('name');
+			if( ! file_exists( $path ) ) {
+				$error = t("filemanager-rename-file-not-exists-error");
+			}
+			if(!$error){
+				$user=$this->session->userdata("user");
+				$newpath = "$root/$newname";
+				if(mv($path,$newpath,$user)) { // true == false
+					$error = t("filemanager-rename-error $newpath - $path - $user");
+				}
+			}
+			$data["success"]=!$error;
+
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			
+		} else {
+			echo "error";
+		}
+	}	
 	function album($strip=""){
 		$file_id = $this->input->post('file_id') ? 
 				$this->input->post('file_id') : array();
@@ -174,6 +186,86 @@ class Filemanager extends Controller{
 			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_doalbum_view',$data,true),false);
 		}
 	}
+	function perm($strip="", $mode = 'get' ){
+
+		if( $strip == 'json' ) {
+			if( $mode == 'get' ) {
+				$files=$this->input->post("files");
+				$file_mode = 0000;
+				foreach( $files as $file ) {
+					$ss = @stat( $file );
+					if( $ss ) {
+						$file_mode |= $ss['mode'] & 000777;
+					}
+				}
+				if( $file_mode == 0 ) {
+					$file_mode = 0775;
+				}
+				$data = array(
+					'permissions' => $file_mode
+				);
+				header("Content-type: application/json");
+				echo json_encode( $data );
+
+				
+			} else {
+				$errors = array();
+
+				$files=$this->input->post("files");
+				$user=$this->session->userdata("user");
+
+				if( ! $error ) {
+					$mask = 0000;
+
+					if($this->input->post("permission-owner-read")) {
+						$mask |= 00400;
+					}
+					if($this->input->post("permission-owner-write")) {
+						$mask |= 00200;
+					}
+					if($this->input->post("permission-owner-execute")) {
+						$mask |= 00100;
+					}
+
+					if($this->input->post("permission-group-read")) {
+						$mask |= 00040;
+					}
+					if($this->input->post("permission-group-write")) {
+						$mask |= 00020;
+					}
+					if($this->input->post("permission-group-execute")) {
+						$mask |= 00010;
+					}
+
+					if($this->input->post("permission-other-read")) {
+						$mask |= 00004;
+					}
+					if($this->input->post("permission-other-write")) {
+						$mask |= 00002;
+					}
+					if($this->input->post("permission-other-execute")) {
+						$mask |= 00001;
+					}
+
+					foreach( $files as $file ) {
+						if( changemod($file,$mask,$user) ) { // true == false
+							$errors[] = $file;
+						}
+					}
+				}
+				$data["success"]=empty($errors);
+
+				if( !empty($errors) ) {
+					$data['error'] = true;
+					$data['html'] = t("filemanager-perm-fail-message",implode(', ',$errors));
+				}
+				header("Content-type: application/json");
+				echo json_encode( $data );
+			}
+		}
+	}
+
+
 	function mkdir($strip=""){
 
 		if( $strip == 'json' ) {
@@ -194,25 +286,25 @@ class Filemanager extends Controller{
 			if( ! $error ) {
 				$mask = 0000;
 
-				if($this->input->post("permission-user-read")) {
-					$mask |= 0500;
+				if($this->input->post("permission-owner-read")) {
+					$mask |= 00500;
 				}
-				if($this->input->post("permission-user-write")) {
-					$mask |= 0300;
+				if($this->input->post("permission-owner-write")) {
+					$mask |= 00300;
 				}
 
 				if($this->input->post("permission-group-read")) {
-					$mask |= 0050;
+					$mask |= 00050;
 				}
 				if($this->input->post("permission-group-write")) {
-					$mask |= 0030;
+					$mask |= 00030;
 				}
 
 				if($this->input->post("permission-other-read")) {
-					$mask |= 0005;
+					$mask |= 00005;
 				}
 				if($this->input->post("permission-other-write")) {
-					$mask |= 0003;
+					$mask |= 00003;
 				}
 
 				if( !md($root."/".$directory,$mask,$user) ) {
@@ -328,57 +420,6 @@ class Filemanager extends Controller{
 			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_domove_view',$data,true),false);
 		}
 	}
-	
-	function chmod($strip=""){
-
-		$data["file_id"] = $this->input->post('file_id') ? $this->input->post('file_id') : array();
-		$data["file_name"] = $this->input->post('file_name') ? $this->input->post('file_name') : array();
-		$data["cnt"] = count($data["file_id"]);
-		$data["path"] = $this->input->post('path');
-
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_chmod_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_chmod_view',$data,true),false);
-		}
-	}	
-	
-	function dochmod($strip=""){
-
-		if($this->input->post('md_cancel')){
-			$this->index();
-			return;
-		}
-	
-		$mask=0600;
-		if($this->input->post('u_read')){
-			$mask|=0040;
-		}
-		if($this->input->post('u_write')){
-			$mask|=0020;
-		}
-		if($this->input->post('o_read')){
-			$mask|=0004;
-		}
-		if($this->input->post('o_write')){
-			$mask|=0002;
-		}
-		$files= $this->input->post('file_list') ? $this->input->post('file_list') : array();
-		$user=$this->session->userdata("user");
-
-		$data["path"] = $this->input->post('path');
-		$data["file_list"]=array();
-		foreach($files as $file){
-			$file=urldecode($file);
-			$data["file_list"][$file]= !changemod($file,$mask,$user);
-		}
-
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_dochmod_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_dochmod_view',$data,true),false);
-		}
-	}	
 
 	function _alter(&$item, $key){
 		$item=b_dec($item);
