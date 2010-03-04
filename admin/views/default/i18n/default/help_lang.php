@@ -1,7 +1,7 @@
 <?
 
 // Help box - Admin
-$lang['help_box_stat']="helpme";
+$lang['help_box_stat']="helpme!";
 
 $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
 The Browse page shows files stored on Bubba|Two. Here you are able to reach your files on Bubba|Two if you are away from home.
@@ -9,31 +9,31 @@ The Browse page shows files stored on Bubba|Two. Here you are able to reach your
 
 	$lang['help_box_filemanager_backup']="
 	<ol>
-    <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click &quot;Create job&quot;. The new backup job gets automatically highlighted in the &quot;Excising jobs&quot; column.</li>
-    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the &quot;Browse&quot; button under the &quot;Included directories&quot; menu. Subdirectories will automatically be included.<br />
+    <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click 'Create job'. The new backup job gets automatically highlighted in the 'Excising jobs' column.</li>
+    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the 'Browse' button under the 'Included directories' menu. Subdirectories will automatically be included.<br />
     </li>
-    <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the &quot;Browse&quot; button under the &quot;Excluded directories&quot; menu and select the non wanted directories.<br />
+    <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the 'Browse' button under the 'Excluded directories' menu and select the non wanted directories.<br />
     </li>
-    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of &quot;Target&quot;. If the destination directory will be created if it does not exist already.<br />
+    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination directory will be created if it does not exist already.<br />
     </li>
   </ol>
   <ul>
-    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the &quot;Disk&quot; drop down list. Fill in the &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder\important\&quot;) or leave it blank for saving backup in the root directory.</li>
-    <li>If choosing remote SSH / FTP you have to fill in &quot;Host&quot; (i.e. an IP-address), &quot;Destination directory&quot; (i.e. &quot;my_ backup_folder/important/&quot;) or leave it blank for saving backup in the remote root directory, &quot;Remote user&quot; and &quot;Remote password&quot;.</li>
+    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the 'Disk' drop down list. Fill in the 'Destination directory' (i.e. 'my_ backup_folder\important\') or leave it blank for saving backup in the root directory.</li>
+    <li>If choosing remote SSH / FTP you have to fill in 'Host' (i.e. an IP-address), 'Destination directory' (i.e. 'my_ backup_folder/important/') or leave it blank for saving backup in the remote root directory, 'Remote user' and 'Remote password'.</li>
    </li>
   </ul>
   <ol start='5'>
-    <li>Click &quot;<strong>Backup schedule</strong>&quot; to set the time and intensity to run the backup job. Also select how many full backups that should be saved.</li>
-    <li>To increase security you have the option to<strong> encrypt the backup job</strong>. Click &quot;Data security&quot;, click &quot;Encrypt data&quot; and select an encryption key.</li>
-    <li>Click &quot;Update job&quot; to save the settings.</li>
-    <li>To run the job immediately, click &quot;Run now&quot;.</li>
+    <li>Click '<strong>Backup schedule</strong>' to set the time and intensity to run the backup job. Also select how many full backups that should be saved.</li>
+    <li>To increase security you have the option to<strong> encrypt the backup job</strong>. Click 'Data security', click 'Encrypt data' and select an encryption key.</li>
+    <li>Click 'Update job' to save the settings.</li>
+    <li>To run the job immediately, click 'Run now'.</li>
   </ol>
   ";
   
 	$lang['help_box_filemanager_restore']=" 
 	<ol>
-    <li>Select the backup job under &quot;Existing jobs&quot; you need to restore. </li>
-    <li>Select the &quot;Backup date&quot; to restore from.</li>
+    <li>Select the backup job under 'Existing jobs' you need to restore. </li>
+    <li>Select the 'Backup date' to restore from.</li>
     <li>Select the files or folders (with automatically included files) you need to restore. The files that will be restored will be highlighted in blue.</li>
     <li>Choose in what way you want to restore the files: 'Restore missing files', 'Overwrite files' or 'Restore to directory'.</li>
     <li>Click 'Restore selection'</li>
@@ -102,7 +102,7 @@ $lang['help_box_network_lan']="
   <p><strong>Use static IP address settings - </strong>Your Bubba|Two will be reached on this static IP address in your LAN. The default fall back IP is : <a href='http://192.168.10.1' target='_blank'>192.168.10.1</a>.</p>
   <ul>
   	<li><strong>Enable DNS service</strong> - The Domain Name System (DNS) translates domain names into IP addresses. When you type in a domain name, the DNS server translates the name into the corresponding IP address. </li>
-    <li><strong>Enable DHCP server</strong> - The  DHCP server gives out IP addresses when a device, connected into Bubba|Two's LAN port, is starting up and  requests an IP address. The device must  be set as a DHCP client to &quot;Obtain  IP address automatically&quot;.</li>
+    <li><strong>Enable DHCP server</strong> - The  DHCP server gives out IP addresses when a device, connected into Bubba|Two's LAN port, is starting up and  requests an IP address. The device must  be set as a DHCP client to 'Obtain  IP address automatically'.</li>
     <li><strong>Lease range</strong> - The DHCP address pool  (Lease range) contains the range of the IP address that will automatically be  assigned to the clients (for example computers, media players) on the network.</li>
   </ul>
   <p><strong>Enable Jumbo frames</strong> - This option enables transmissions of larger data chunks on the LAN interface. <strong>WARNING</strong> - this requires that all equipment on the LAN works in this environment. Use with caution. That said, this feature can improve performance on file transfers between Bubba and Gigabit capable devices.</p>
@@ -130,7 +130,7 @@ $lang['help_box_network_fw']="
   <p><strong>Allow SSH from WAN</strong> - Enables Secure Shell (SSH) to Bubba|Two from WAN.</p>
   <p><strong>Allow WWW from WAN</strong> - Enables WWW traffic to Bubba|Two from WAN.</p>
   <p><strong>Allow FTP from WAN</strong> - Enables FTP connections from WAN to Bubba|Two's port 21.</p>
-  <p><strong>Allow Ping from WAN</strong> -   Enables ping from WAN. The default setting disables computers on the Internet to  get a reply back from Bubba|Two when it is being &quot;pinged&quot;. This   increases the security.</p>
+  <p><strong>Allow Ping from WAN</strong> -   Enables ping from WAN. The default setting disables computers on the Internet to  get a reply back from Bubba|Two when it is being 'pinged'. This   increases the security.</p>
 	<p><strong>Allow WAN access to mailserver</strong> - Enables access from WWW to Bubba|Two's port 25. This is the default mailserver port for sending and receiving mail.</p>
 	<p><strong>Allow WAN access to Mail (IMAP/IMAPS)</strong> - Enables access from WWW to Bubba|Two's ports 143 and 993. These ports are used for sending and receiving mail.</p>
   <p><strong>Open ports for torrent downloader</strong> - Enables faster torrent download. This rule opens the ports 10000-14000.</p>
@@ -205,31 +205,201 @@ $lang['help_box_disk_raid']="
   	<li>Delete the external disc from the 'List of RAID disks' by clicking 'Remove'.</li>
     <li>Disconnect the external disk from the backside of Bubba|Two.</li>
     <li>Attach a new external disk.</li>
-    <li>Click &quot;Recover RAID array&quot;.</li>
+    <li>Click 'Recover RAID array'.</li>
     <li>Select which external disk to add to RAID array. Click 'Recover array'.</li>
     <li>Warning! All data will be erased from the external disk. Click 'Recover array'.</li>
     <li>Press 'Close' to continue working with Bubba|Two. The synchronization is in progress.</li>
   </ol>
   
 ";
-$lang['help_box_printing']="helpme";
+$lang['help_box_printing']="
+<p>With the Print Server you will get easy and comfortable printer access. Bubba|Two gives you a more efficient way of using your printer in your home- or in your office-networks. The print server allows multiple users to share a printer from anywhere on the network without sharing one PC. All you need is a USB printer and its drivers.</p>
+<h3>Installation</h3>
+<ol>
+  <li>Connect your USB printer to Bubba|Two's USB connector.</li>
+  <li>Press 'Add new'.</li>
+  <li>The printer name shows, add this printer and fill out  the requested information.</li>
+  <li>From your PC, browse via samba (use for example Explorer in Windows) to <a href='file:///\\bubba\'>\\bubba\</a>. </li>
+  <li>The printer will now show up next to the home and  storage folders. Double click the printer icon.  </li>
+  <li>You will be prompted for the printer driver, follow  the instructions and install the printer. When this is done, the printer is  ready to be used. Repeat steps 4-6 for all computers using the printer.</li>
+</ol>
+";
 
-$lang['help_box_settings']=$lang['help_box_settings_startwizard']="helpme";
-$lang['help_box_settings_trafficsettings']="helpme";
-$lang['help_box_settings_identity']="helpme";
-$lang['help_box_settings_datetime']="helpme";
-$lang['help_box_settings_backuprestore']="helpme";
-$lang['help_box_settings_software']="helpme";
-$lang['help_box_settings_logs']="helpme";
+$lang['help_box_settings']=$lang['help_box_settings_startwizard']="
+<p>Use the integrated Setup wizard to make the very first important settings on your Bubba|Two such as time and date, add users and make network settings. You can run the wizard at any time later on as well to do this setup.</p>
+<p><strong>Step 1 - Date and time</strong></p>
+<p>Choose  time zone and the date and time. You also have the possibility to use an Internet time server. By doing this the date and time is automatically set and updated and you do not have to do any manual time settings. Click 'Next' to continue.</p>
+<p><strong>Step 2 - Create user</strong></p>
+<p>Create a user, or as many as you desire. Click 'Add user' after filling in the user information. Click 'Next' to continue.</p>
+<p><strong>Step 3 - Network setup</strong></p>
+<p>Choose if you prefer to use Bubba|Two with all its potential in 'Router / Firewall / Server mode' or only 'Server mode'. Also if you would like to register for an free Easyfind name. Read about Easy find in chapter <a href='bubba_from_outside.html#EASYFIND' target='_self'>Reaching Bubba From Outside</a> section Easyfind. Click 'Next' to continue.</p>
+<p><strong>Setup complete</strong></p>
+<p>Click 'Finish setup' to exit the wizard.</p>
+";
+
+$lang['help_box_settings_trafficsettings']="
+<p>To control the the maximum upload / download speed on your torrents adjust the 'Traffic' setting.</p>
+<p>For example if you have a limited broadband connection you do not want to fill your uplink completely. Then set the 'Max upload speed' to a preferred  value. Use 'Max download speed' in the same manner.</p>
+<p>Using  -1 as value = no speed limit.</p>
+<p><i>Update</i> saves your changes.</p>
+";
+
+$lang['help_box_settings_identity']="
+<p><strong>Hostname</strong> - is the  unique name by which a network-attached device is known on a network.</p>
+<p><strong>Workgroup</strong> - Devices  in the same Workgroup may allow each other access to their files, printers, or  Internet connection. Use the same workgroup name on Bubba|Two as on your computer.</p>
+<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba|Two wherever you are.  You will be able to find your Bubba|Two wherever you are typing http://&lt;your_Easyfind_name&gt;.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
+<p><strong>Easyfind name</strong> - Choose a name for your Bubba|Two on the Easyfind network.</p>
+<p><i>Update</i> saves your changes.</p>
+";
+
+$lang['help_box_settings_datetime']="
+<h3>Timezone</h3>
+<p><strong>Current timezone is</strong> - Shows the selected timezon.</p>
+<p><strong>Select timezone</strong> - Select your timezone in the drop down list.</p>
+
+<h3>Date and time</h3>
+<p><strong>Set time automatically</strong> - This enables Bubba|Two to set the date and time automatically via an internet server.</p>
+<p><strong>Date</strong> - Set the system date manually.</p>
+<p><strong>Time</strong> - Set the system time manually.</p>
+";
+
+$lang['help_box_settings_backuprestore']="
+<p>'Backup and restore' will backup all your settings for you in case you reinstall Bubba|Two or move the settings to another Bubba|Two unit. The following settings will be saved:</p>
+<ul>
+  <li>User accounts (including admin login via WAN setting, passwords) but no user data</li>
+  <li>Backup jobs</li>
+  <li>Services settings</li>
+  <li>Mail account settings</li>
+  <li>Network setup (all settings ie profile, hostname, wireless settings, firewall rules etc)</li>
+  <li>Printers</li>
+</ul>
+<h3>Make a settings backup</h3>
+<ol>
+  <li>Insert an external storage device (USB memory or USB disk) into Bubba|Two. </li>
+  <li>Choose the Source/Destination and press Backup. </li>
+  <li>All settings are now saved on a file on the chosen external storage device. </li>
+</ol>
+
+<h3>Restore a backup</h3>
+<ol>
+  <li>Insert the storage device containing the backup file into Bubba|Two.</li>
+  <li>Observe that the current users on Bubba|Two will be removed and the users stored in the backup file will be restored. Although the user data from current user on Bubba|Two will be left intact in the /home/[user] catalogue.</li>
+  <li>Press restore. </li>
+  <li>You might need to reconnect your Bubba|Two depending on how your restored network settings are configured.</li>
+  </ol>
+";
+
+$lang['help_box_settings_software']="
+<h3>Software udate</h3>
+<p>Bubba|Two's software can easily be updated to gain new functionality. Press 'Update', and the update is automatically performed. Please have patient, it might take a while to perform an update.</p>
+<p>After an update, status information is shown. Press the '+' sign to show the complete message.</p>
+<h3>Hotfixes</h3>
+<p>This feature collects status information from your Bubba|Two and sends to Excito for automated analysis. The update server can then take appropriate actions if your system has problems. The system information is sent to Excito via an encrypted connection, and server responses are GPG signed to ensure the security and that the content is distributed by Excito.</p>
+<p>By default this feature is enabled. To disable it uncheck the box. If doing so you might not get the most important updates to your Bubba|Two. </p>
+<p><strong>Any information collected by Excito will never be exposed to any other party than Excito. The information will only be used to pin point errors and perform the best matched updates for your Bubba|Two.</strong></p>
+<p>All information that is collected is listed below.</p>
+<ul>
+  <li>MAC address </li>
+  <li>IP addresses</li>
+  <li>Serial number and key</li>
+  <li>RAM memory size</li>
+  <li>CPU modell </li>
+  <li>Status for the installed bubba specific packages</li>
+  <li>The log file /tmp/bubba-apt.log if existing</li>
+  <li>Current software release version</li>
+  <li>Current running kernel</li>
+  <li>Root disc partition usage</li>
+  <li>Disc partition setup (LVM/RAID) </li>
+</ul>
+
+";
+
+$lang['help_box_settings_logs']="
+<p>To fault trace on your Bubba|Two without logging in with SSH use the Logs function. Select the desired log file in the drop down menu and click 'Show'.</p>
+";
 	
 
 // Help box - User
-$lang['help_box_usermail']="helpme";
+$lang['help_box_usermail']="
+<p>If you set up Bubba|Two to fetch your eMail from other external eMail accounts you may have, they will be stored on Bubba|Two and available via IMAP or web mail, wherever you are.</p>
+<p><strong>Retrieve mail from individual accounts</strong> - Shows your current accounts for mail retrieval.</p>
+<p><strong>Add account</strong> - To fetch mail from an external accout, fill in the information given to you by your mail account provider.</p>
+";
 
-$lang['help_box_downloads']="helpme";
+$lang['help_box_downloads']="
+<p>Use the Bubba|Two download manager to download files directly to your Bubba|Two, wherever you are. The only thing you need is a internet connection and to browse to your way home to your Bubba|Two, for example http://www.&lt;your_domain&gt;.com/admin or http://&lt;your_ip_address&gt;/admin. Of course if you already are in your home network browse to http://bubba/admin.</p>
+<p>Large, time consuming downloads are handled by Bubba|Two while your computer is turned off. When you initiate your first download a catalogue is created in your /home/[username]/ directory: /home/[username]/downloads. </p>
+<h3>How to download</h3>
+<ol>
+  <li>At home browse to http://bubba/admin or away from home http://www.&lt;your_domain&gt;.com/admin or http://&lt;your_ip_address&gt;/admin.</li>
+  <li>Log in as your standard user. </li>
+  <li>Click 'Downloads'.</li>
+  <li>To initiate a download you need to copy* the URL to the file (or torrent) you desire to download and paste it into the 'Location' field on your Bubba|Two and click 'Add'. </li>
+  <li>When the progress bar reaches 100% your download is completed. </li>
+  </ol>
+<p>*To copy the URL simply right click on the file (or torrent). Depending on which browser you use and what type of file you desire to download select the appropriate in the right click menu: 'Copy Shortcut', 'Copy Link Location', 'Copy Image Location'</p>
+<p>As you ad files for download, Bubba|Two allocates disk space for the files. If you look in the /home/[username]/downloads/ catalogue it seems if the files exist but as long as the progress bar still not has reached 100% the files are not complete.</p>
+<p> Currently the download manager support the standards HTTP, FTP and bittorrent downloads. You don't need to open any ports in your firewall when using the download manager, but for torrent downloads it is recommended to open the ports 10000-14000 under 'Integrated Bubba services' in section Network-&gt;Firewall.</p>
+<p>NOTE: When downloading bittorrents, note that the download manager will  continue to share the file until you press Cancel or Clear. </p>
+";
 
-$lang['help_box_userinfo']="helpme";
+$lang['help_box_userinfo']="
+<p>Here every user can change the personal information, such as 'Real name' and password. Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name.</p>
+";
 
-$lang['help_box_album_albums']="helpme";
-$lang['help_box_album_users']="helpme";
+$lang['help_box_album_albums']="
+<p>Share your digital photos with friends and family! With Bubba|Two you get easy to use, out of the box photo album! All you need is your digital pictures!</p>
+<p><strong>Features:</strong></p>
+<ul>
+  <li>Automatic thumbnail creation - fast and convenient album viewing for those with limited bandwidth.</li>
+  <li>Drag and drop image support in administrator interface.</li>
+  <li>Add captions for each photo or album in your collection.</li>
+  <li>Your images are safe on your own Bubba|Two instead of hosted somewhere else.</li>
+  <li>Slide show function.</li>
+  <li>Public or password protected albums.</li>
+  <li>Easy to use.</li>
+</ul>
+
+<h3>Add albums</h3>
+<p>Every user on Bubba|Two can create and publish photo albums, except for the administrator.</p>
+<ol>
+  <li>Copy the folders containing your pictures to \\bubba\storage\pictures, with for example the built in Filemanager or Windows Explorer. </li>
+  <li>Log in as your standard user on Bubba|Two.</li>
+  <li>Click 'Filemanager'.</li>
+  <li>Browse to /home/storage/pictures.</li>
+  <li>Select the checkboxes next to the catalogs you wish to add as photo albums.</li>
+  <li>In the Action drop down list, select 'Add to album'.  </li>
+  <li>Click Add.</li>
+  <li>Now you have to decide if the added albums should be public or private. Click 'Photo album' -&gt; 'Albums'.</li>
+  <li>Click your album, on the left side of the screen.</li>
+  <li>By default all added albums are private.</li>
+  </ol>
+<ul>
+  <li>Ether select the users who you would like to share the album with.</li>
+  <li>Or click 'Public' if you want the album to be open to anyone who can access your Bubba|Two.</li>
+  </ul>
+  <li>Done!</li>
+</ol>
+<p>To add an empty album, press 'Add album' in the  'Photo album' -&gt; 'Albums' section. Now you can drag and drop photos and albums to create sub albums.</p>
+
+<h3>Edit albums</h3>
+<p>Click the album you wish to edit. </p>
+<ul>
+  <li>To edit album or picture caption select the object, enter text and click 'Update'. </li>
+  <li>To delete an album, select the album and press 'Delete album'.</li>
+  <li>To delete a picture, select the picture and press 'Remove from album'.</li>
+</ul>
+
+<p>Your photo album will be visible by browsing to <a href='http://bubba/album' target='_blank'>http://bubba/album</a> (<a href='http://bubba.local/album' target='_blank'>http://bubba.local/album</a> if using Mac) from inside your home network, or by browsing to 'http://www.&lt;my domain&gt;.com/album' from outside your network.</p>
+";
+
+$lang['help_box_album_users']="
+<h3>Add users</h3>
+<p>If you your albums should be public and seen by anyone, you do not have to add any album users. But you have the possibility to add users and create password protected albums to keep your pictures private for you and your family. Remember that the Bubba|Two users and photo album users are not the same. </p>
+<ol>
+  <li>Click 'Add user'.</li>
+  <li>Fill in the required information.</li>
+</ol>
+
+";
 
