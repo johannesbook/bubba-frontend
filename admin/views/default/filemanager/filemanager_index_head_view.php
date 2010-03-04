@@ -8,20 +8,6 @@
 </style>
 
 <script>
-
-// TODO FIXME XXX extract and cleanup
-_i18n = <?global $lang;echo(json_encode($lang))?>;
-i18n = function(str){
-	if( typeof _i18n[str] != "undefined" ) {
-		return _i18n[str];
-	} else {
-		return str;
-	}
-};
-
-</script>
-
-<script>
 buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 
@@ -323,8 +309,8 @@ $(document).ready(function() {
 
 	$.each( ['mkdir', 'delete', 'perm', 'rename'], function( index, value ) {
 		var buttons = {};
-		buttons[i18n("filemanager-" + value + "-dialog-button-label")] = dialog_callbacks[value];
-		buttons[i18n("button-label-cancel")] =  dialog_callbacks["default_close"];
+		buttons[$.message("filemanager-" + value + "-dialog-button-label")] = dialog_callbacks[value];
+		buttons[$.message("button-label-cancel")] =  dialog_callbacks["default_close"];
 
 		var options = { "autoOpen": false,
 			"open": function(event,ui) {
@@ -342,7 +328,7 @@ $(document).ready(function() {
 		};
 		dialogs[value] = $.dialog( 
 			$("#fn-filemanager-" + value + "-dialog"),
-			i18n("filemanager-" + value + "-dialog-title"),
+			$.message("filemanager-" + value + "-dialog-title"),
 			buttons,
 			options	
 		);

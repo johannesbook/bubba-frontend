@@ -211,3 +211,17 @@ $(document).ready( function() {
 
 	}
 )(jQuery);
+
+jQuery.extend({
+	'message': function(str){
+		if( typeof messages[str] != "undefined" ) {
+			return messages[str];
+		} else {
+			if( typeof console != "undefined" ) {
+				console.warn("message '%s' was not defined", str);
+			}
+			return str;
+		}
+	}
+}
+);
