@@ -21,12 +21,13 @@ $('form.ack').live( 'submit', function(e) {
 	return false;
 });
 </script>
-<p style="font-size: large; text-align: center; "><?=t('Welcome to your BUBBA|TWO')?></p>
-<table class="blank">
-<tr>
-<td>
-<fieldset><legend><i><?=t('Info')?></i></legend>
+
+<h1><?=t('Welcome to your BUBBA|TWO')?></h1>
+
+
+
 <table>
+<tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Info')?></td></tr>
 <tr><td><?=t('Total disk size')?></td><td><?=$totalspace?> MB</td></tr>
 <tr><td><?=t('Free disk space')?></td><td><?=$freespace?> MB</td></tr>
 <tr>
@@ -35,7 +36,7 @@ $('form.ack').live( 'submit', function(e) {
 		<div class="space-indicator"><div style="width: <?=$percentused?>%"></div></div>
 	</td>
 </tr>
-<tr><td colspan="2"><hr/></td></tr>
+
 <tr><td><?=t('Uptime')?></td><td>
 <? if($uptime[0]>0) print($uptime[0]." ".t('days')." "); ?>
 <? printf("%02d",$uptime[1])?>:<? printf("%02d",$uptime[2])?>:<? printf("%02d",$uptime[3])?>
@@ -43,23 +44,30 @@ $('form.ack').live( 'submit', function(e) {
 <tr><td><?=t('Version')?></td><td>
 <?=$version?>
 </td></tr>
-</table>
-
 <?if($this->session->userdata('user')=="admin"):?>
-<br/>
-<form action="shutdown" method="post"><fieldset >
-<table>
-<tr><td><?=t('Press button to shut down Bubba Server now')?>.</td></tr>
-<tr><td><input class='submitbutton' type='submit' name='powerdown' value='<?=t('Power down')?>'/></td></tr>
-</table>
-</fieldset></form>
+<form action="shutdown" method="post">
+<tr>
+    <td><?=t('Press button to shut down Bubba Server now')?></td>
+    <td>
+        <input class='submitbutton' type='submit' name='powerdown' value='<?=t('Power down')?>'/>
+    </td>
+</tr>
+</form>
 <?endif?>
+</table>
 
-</fieldset>
+
+
+
+
+
+
+
+
 </td>
 <?if( !is_null($notifications) ):?>
 <td style="width: 50%;">
-<fieldset><legend><i><?=t('System messages')?></i></legend>
+<legend><i><?=t('System messages')?></i></legend>
 <table class="notifications">
 <?foreach( $notifications as $index => $notification ):?>
 <tr class="notification notification-<?=$notification['Level']?>">
@@ -81,10 +89,7 @@ $('form.ack').live( 'submit', function(e) {
 </tr>
 <?endforeach?>
 </table>
-</fieldset>
 
-</td>
+
+
 <?endif?>
-</tr>
-</table>
-

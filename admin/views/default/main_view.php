@@ -6,9 +6,8 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Bubba|TWO - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery-ui-default.css?v='<?=$this->session->userdata('version')?>'" />
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.all.css?v='<?=$this->session->userdata('version')?>'" />
+<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery-ui.js?v='<?=$this->session->userdata('version')?>'"></script>
 
@@ -66,10 +65,10 @@ $(document).ready(function(){
         <div id="header">		
             <div id="topnav">
                 <span id="topnav_status">Inloggad som Admin</span>
-                <a class="ui-icon ui-icon-lightbulb"></a>
+                <a class="ui-icon ui-icon-lightbulb"></a>                
                 <a class="ui-icon ui-icon-home"></a>
                 <a class="ui-icon ui-icon-power"></a>
-                <a id="sideboard_switch" class="ui-icon-carat-1-w"></a>
+                <a id="sideboard_switch" class="ui-icon ui-icon-carat-1-w"></a>
             </div>	
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
             <div id="nav"><?=$navbar?></div>
@@ -81,6 +80,37 @@ $(document).ready(function(){
         <div id="sideboard" >
             <img id="sideboard" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/sideboard_tmp.png" alt="tempfil för dashboard" title="tempfil för dashboard" />
         </div>
+    </div>
+    <div id="home" style="display:none">   
+        <ul>
+            <li>
+                <a class="default-icon default-icon-mail">
+                    <span class="ui-icon ui-icon-locked"></span>
+                </a>    
+                <span class="" style="display:none">Webmail</span>
+            </li>
+            <li>
+                <a class="default-icon default-icon-help"></a>
+                <span class="" style="display:none">Help</span>
+            </li>
+            <li>
+                <a class="default-icon default-icon-filemanager">
+                    <span class="ui-icon ui-icon-locked"></span>
+                </a>                
+                <span class="" style="display:none">Help</span>
+            </li>
+            <li>
+                <a class="default-icon default-icon-music">
+                    <span class="ui-icon ui-icon-locked"></span>
+                </a>
+                <span class="" style="display:none">Music</span>
+            </li>
+            <li>
+                <a class="default-icon default-icon-logout"></a>
+                <span class="" style="display:none">Logout</span>
+            </li>            
+        </ul>
+        <a id="home_close" class="ui-icon ui-icon-closethick" onclick="$('#home').toggle()"></a>
     </div>
     <div id="update_status"></div>
 </body>

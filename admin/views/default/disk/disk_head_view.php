@@ -16,7 +16,7 @@ table.disks {
 
 table.disks > tbody > tr > td {
 	vertical-align : middle;
-	padding : 0em 0.2em;
+	
 }
 
 table.disks > tbody > tr > th {

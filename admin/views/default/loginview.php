@@ -1,24 +1,25 @@
 <div id="login_menubar">
 	<ul>
-		<li><a href="/pim"><?=t("menubar_pim")?></a></li>
-		<li>
-			<a href="/music"><?=t("menubar_music")?>
-			</a>
+		<li class="default-icon default-icon-music">
+		    <a href="/pim"><?=t("menubar_pim")?></a>
+        </li>
+		<li class="default-icon default-icon-music">
+			<a href="/music"><?=t("menubar_music")?></a>
 		</li>
-		<li>
+		<li class="default-icon default-icon-photos">
 			<a href="/album"><?=t("menubar_photos")?></a>
 		</li>
-		<li>
+		<li class="default-icon default-icon-music">
 			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/">
 				<?=t("menubar_usersettings")?>
 			</a>
-		</li>
-		<li>
+		</li >
+		<li class="default-icon default-icon-filemanager">
 			<a class="fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/filemanager/">
 				<?=t("menubar_filemanager")?>
 			</a>
 		</li>
-		<li>
+		<li class="default-icon default-icon-music">
 			<a class="fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/filemanger/backup">
 				<?=t("menubar_backup")?>
 			</a>

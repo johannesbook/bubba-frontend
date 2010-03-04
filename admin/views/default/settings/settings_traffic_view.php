@@ -1,7 +1,6 @@
 <form action="<?=FORMPREFIX?>/settings/settraffic" method="post">
-<fieldset><legend><?=t('Traffic')?></legend>
-
 <table class="admin-table" >
+    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Traffic')?></td></tr>
 	<tr><th colspan="2"><?=t('Bittorrent')?></th></tr>
 	<tr>
 		<td><?=t('Max upload speed')?></td>
@@ -15,11 +14,7 @@
 		<td></td>
 		<td><small><?=t('Use -1 for unlimited traffic')?></small></td>
 	</tr>
-	<tr>	      
-		<td colspan="2">
-			<input type='submit' <?=$ftd_enabled?"":"disabled=\"yes\""?> value='<?=t('Update')?>' name='set_btspeed'/>
-		</td>
-	</tr>   
+	  
 </table>
-</fieldset>
+<input type='submit' <?=$ftd_enabled?"":"disabled=\"yes\""?> value='<?=t('Update')?>' name='set_btspeed'/>
 </form>

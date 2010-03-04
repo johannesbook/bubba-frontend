@@ -87,7 +87,7 @@ jQuery.fn.extend({
 			options = jQuery.extend({
 					"visible": true,
 					"insertintodom": true,
-					"className": "ui-fake",
+					"className": "clone",
 					"wrap": "<div/>",
 					"positionate": true
 				}, options

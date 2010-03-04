@@ -1,7 +1,7 @@
 
-<fieldset><legend><?=t("settings_identity_title")?></legend>
 	<form action="<?=FORMPREFIX?>/settings/identity" method="post">
 	<table class="networksettings">
+	    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('settings_identity_title')?></td></tr>
 		<tr>
 			<td></td>
 			<td><?=t('settings_identity_hostname_label')?>:</td>
@@ -26,23 +26,19 @@
 				/>
 			</td>
 		</tr>
-		<tr>
-			<td></td>
-			<td>
-				<input
+		
+	</table>
+	<input
 					type="submit"
 					value='<?=t('settings_identity_update_hostname_workgroup_label')?>'
 					name='samba_update'
 				/>
-			</td>	
-			<td></td>
-		</tr>
-	</table>
 	</form>
-	</fieldset>
-	<fieldset><legend><?=t("settings_identity_easyfind_title")?></legend>
+
+	
 	<form action="<?=FORMPREFIX?>/settings/identity" method="post">
 	<table class="networksettings">
+	    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('settings_identity_easyfind_title')?></td></tr>
 		<tr>
 			<td></td>
 			<td><?=t('settings_identity_easyfind_message')?>:</td>
@@ -73,18 +69,12 @@
 				/>
 		</tr>
 
-		<tr>
-			<td></td>
-			<td>
-				<input
+		
+	</table>
+	<input
 					type="submit"
 					value='<?=t('settings_identity_update_easyfind_label')?>'
 					name='easyfind_update'
 				/>
-			</td>	
-			<td></td>
-		</tr>
-	</table>
 	</form>
-</fieldset>
 

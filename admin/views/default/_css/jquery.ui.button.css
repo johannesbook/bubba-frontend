@@ -23,8 +23,8 @@ input.ui-button { padding: .4em 1em; }
 .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
 
 /*button sets*/
-.ui-button-set { margin-right: 7px; }
-.ui-button-set .ui-button { margin-left: 0; margin-right: -.3em; }
+.ui-button-set { margin-right: 7px;border:0.1em solid black;}
+.ui-button-set .ui-button { margin-left: 0; margin-right: 0; }
 
 /* workarounds */
 button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */

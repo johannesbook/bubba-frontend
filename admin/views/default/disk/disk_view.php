@@ -1,5 +1,6 @@
-<fieldset><legend><i><?=t('Disk information')?></i></legend>
+
 <table class="disks">
+<tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Disk information')?></td></tr>
 <tr>
 	<th></th>
 	<th class="col1"><i><?=t('Disk')?></i></th>
@@ -54,11 +55,9 @@
 </tr>
 <?endforeach?>
 </table>
-</fieldset>
 
-<fieldset>
-<legend><i><?=t('Partition information')?></i></legend>
 <table class="typetable">
+<tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Partition information')?></td></tr>
 <tr>
 	<th class="colorcode"></th>
 	<th><i><?=t('Partition')?></i></th>
@@ -105,4 +104,3 @@
 	<td />
 </tr>
 </table>
-</fieldset>

@@ -1,6 +1,5 @@
-<fieldset><legend><i><?=t('Backup and restore settings')?></i></legend>
-
 <table border="0" cellpadding="0">
+    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Backup and restore settings')?></td></tr>
 <tr>
 	<td><?=t('Source')?>/<?=t('Destination')?></td>
 	<td colspan="2">
@@ -15,21 +14,14 @@
 		</select>
 	</td>
 </tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>
-		<form action="<?=FORMPREFIX?>/settings/restore" method="post" id="restoreform">
+
+</table>
+<form action="<?=FORMPREFIX?>/settings/restore" method="post" id="restoreform">
 			<input class="unitclass" type="hidden" name="unit"/>
 			<input type="submit" name="restore" value="<?=t('Restore')?>" <?if(empty($disks)):?>disabled="disabled"<?endif?>/>
 		</form>
-	</td>
-	<td>
-		<form action="<?=FORMPREFIX?>/settings/backup" method="post" id="backupform">
+		
+<form action="<?=FORMPREFIX?>/settings/backup" method="post" id="backupform">
 			<input class="unitclass" type="hidden" name="unit"/>
 			<input type="submit" name="backup" value="<?=t('Backup')?>" <?if(empty($disks)):?>disabled="disabled"<?endif?>/>
-		</form>
-	</td>
-</tr>
-</table>
-</fieldset>
-
+		</form>		

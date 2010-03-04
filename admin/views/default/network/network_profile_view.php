@@ -2,8 +2,9 @@
 	// -----  Default page -----
 ?>
 <form id="OTHCFG" action="<?=FORMPREFIX?>/network/update_profile" method="post">
-<fieldset><legend><i><?=t("Network Profile")?></i></legend>
+
 	<table class="networksettings">
+	    <tr><td colspan="3" class="ui-state-default ui-widghet-header"><?=t("Network Profile")?></td></tr>
 		<? if($custom): ?>
 		<tr>
 			<td></td>
@@ -24,24 +25,19 @@
 			<td><input class="checkbox_radio" type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td colspan="2"><?=t("Server only")?></td>
 		</tr>
 		
-		<tr>
-			<td></td>
-            <td>
-            <input
+		
+
+	</table>
+	<input
                 type="submit"
                 id="networkprofile_update" 
                 value='<?=t('Update')?>' 
                 name='profile_update'
             />
-            </td>	
-			<td></td>
-		</tr>
-
-	</table>
 </fieldset>
 </form>
-  <fieldset><legend><i><?=t("Profile explaination")?></i></legend>
     <table id="profile">
+      <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t("Profile explaination")?></td></tr>
       <tr>
         <td>
 	        <div class="profile_legend_h"><?=t("Automatic network settings")?></div>

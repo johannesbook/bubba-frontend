@@ -26,8 +26,9 @@ if($this->session->userdata("run_wizard")) { // wizard is running
 		</table>	
 	
 		<form action="<?=FORMPREFIX?>/settings/wizard"" method="post">
-		<fieldset id="wizard"><legend><?=t("Timezone")?></legend>
+		<fieldset id="wizard">
 			<table id="wizard">
+			    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Timezone')?></td></tr>
 				<tr><td><?=t('Current timezone is')?>:</td><td><?=$wiz_data['t_zone']?></td></tr>
 				<tr><td>Select timezone:</td><td>
 					<select name="wiz_data[user_tz]">
@@ -61,8 +62,9 @@ if($this->session->userdata("run_wizard")) { // wizard is running
  } else { // show start wizard page
 ?>
 		<form action="<?=FORMPREFIX?>/settings/wizard"" method="post">
-		<fieldset id="wizard"><legend><?=t("Setup wizard")?></legend>
+		<fieldset id="wizard">
 			<table>
+			    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Setup wizard')?></td></tr>
 				<tr><td>
 					<?=t('To configure basic functionality of Bubba|Two, press the button to start the setup wizard.')?><br><br>
 					<input type="submit" class="submitbutton" name='wiz_data[start]' value="<?=t('Start wizard')?>"/>

@@ -3,8 +3,8 @@
 	action="<?=FORMPREFIX?>/network/wlanupdate" 
 	method="post"
 >
-<fieldset><legend><i><?=t('wlan_title')?></i></legend>
 <table class="networksettings">
+<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('wlan_title')?></td></tr>
 <tr>
 	<td></td>
 	<td class="col2"><label for="enabled"><?=t("wlan_title_enable")?></label></td>
@@ -60,7 +60,6 @@
 </tr>
 
 </table>
-</fieldset>
 
 <fieldset class="expandable">
 <legend><span class="expansion"><i><span id="wlan_adv_mark">-</span>&nbsp;&nbsp;<?=t('wlan_title_advanced')?></span></i></legend>
@@ -201,7 +200,6 @@
 </table>
 
 </div>
-</fieldset>
 
 <input
 	disabled="disabled"

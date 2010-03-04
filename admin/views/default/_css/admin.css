@@ -7,108 +7,92 @@ h3 {font-size: 1.3em;font-weight: bold;margin: 0.6em 0 0 0;}
 p {line-height: 1.6em;font-size: 1.3em;padding: 0.2em 0 0.5em 0;}
 form {margin: 1em 0;}
 form form {margin: 0;}
-fieldset {border: 0;margin-top: 1em;}
-legend {padding: 0.2em 1em;}
-legend a {margin:0 3px;text-transform:capitalize;}
+fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
 input[type=submit],input[type=button] {background:#000;padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0}
+input[type=submit]:hover,input[type=button]:hover {border:0}
+input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding-bottom: 0px;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #999;}
 input[disabled]{	color: #666;	background: #ccc;}
-input.checkbox_radio {	background: url(../_img/1x1.png) no-repeat;	border: 0px;}
-input:focus {border: 0.2em solid #999;}
-table {border-collapse: collapse;margin: 1em 0;font-size: 1.3em;}
+input:focus {border: 0.1em solid #000;}
+input[type=radio] {border:3px solid blue;}
+table {margin: 1em 0;font-size: 1.3em;border-collapse : collapse;border:0;width:100%; }
 td {padding: 0.5em 1.2em;vertical-align: top;}
-th {padding: 0.5em 1.2em;text-align: left;}
+tr {border-bottom:0.1em solid #999}
+th {padding: 0.3em 0.5em;text-align: left;}
 ul {list-style: square;list-style-position: outside;}
 ul ul{}
 li{padding: 0.2em 0 0.2em 0;}
 li {display:inline;}
 a {color: #000;}
 img{border: 0;}
-/* WRAPPER */
-#wrapper{min-height: 100%;width:1020px;margin: 0 auto;background:#ddd;padding:0.5em;max-width:96%;padding-left:3em;padding-top:2em;}
 /* LOGIN */
 
+/* WRAPPER */
+#wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:0.5em;max-width:96%;padding-left:3em;padding-top:2em;}
+/*UPDATE STATUS*/
+#update_status {font-size:80%;color:000;background-color:#fbec9d}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
 #logo {font-size:300%;font-weight:normal;color:#000;text-decoration:none;}
 #img_logo {}
-#header {padding:0.5em;margin-top:2em;}
-#header li {color: #000;padding:0.1em;line-height: 1em;border-right:2px #000 solid;text-align:center;}
+#header {margin-top:2em;}
+#header li {color: #000;padding:0 0.1em;border-right:2px #000 solid;text-align:center;}
 #header li a {color: #000;text-decoration: none;margin-right:0.3em}
 #header li a:hover {color: #999;}
 #header li.active a {color:#506ab2;}
 #nav ul{font-size: 160%;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
-#topnav {float:right;left:70%;position:fixed;top:3%;width:40%;}
-#topnav a {}
+#topnav {float:right;left:70%;top:3%;width:30%;position:absolute;z-index:2;}
+#topnav a, #topnav span {float:left;}
 #topnav_status {margin-right:10%;font-weight:bold;}
 #subnav {font-size: 120%;list-style: none;margin-top:0.8em;}
 #subnav ul:after {content: ".";height: 0;clear: both;visibility: hidden;}
-#subnav ul li {border-right:1px #000 solid;padding-left:0.3em;}
+#subnav ul li {border-right:1px #000 solid;padding-left:0.3em;padding-top:0;}
 #subnav ul li a{color: #000;text-decoration: none;padding: 0.1em;}
 #subnav ul li.last a {border: 0;}
 div#subnav ul li a:hover {color: #999;}
 /* CONTENT */
-#content {margin-bottom:3em;}
+#content {margin-bottom:3em;width:70%;}
 /* SIDE BOARD */
-#sideboard {float:right;width:25%;display:none;}
-#sideboard_switch {margin:left:8%;background:#000;float:right:}
-
-
-.ui-filemanager-state-dblckick {
-	background: #ee6622 !important; 
-}
-
-*:not(.ui-fake) .ui-filemanager-state-hover:hover {
-	background: #aa7676;
-}
-
-.ui-filemanager-state-selected {
-	background: #881212;
-}
-
-*:not(.ui-fake) .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {
-	background: #a25656 !important;
-}
-
-.ui-filemanager-prev-arrow, .ui-filemanager-next-arrow {
-	font-size: larger;
-	font-weight: bold;
-	color: blue;
-}
-.ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover {
-	cursor: pointer;
-}
-
-.ui-filemanager-path-widget .ui-filemanager-path-divider {
-	margin: 1em;
-}
-
-.ui-filemanager-path-widget .ui-filemanager-path-link {
-	cursor: pointer;
-	color: blue !important;
-}
-
-.ui-filemanager-path-widget {
-	float: left;
-	font-size: larger;
-}
-
-.ui-filemanager-type-file {
-border-left: 2px solid #3232aa;
-}
-
-.ui-filemanager-type-dir {
-border-left: 2px solid #aa3232;
-}
-
-.ui-filemanager-type-row {
-	cursor: pointer;
-}
-
-.ui-buttonbar {
-	float: right;
-	margin: 0 4px;
-}
-.ui-input-text {
-	width: 100%;
-}
+#sideboard {position:absolute;z-index:1;left:75%;top:15%;}
+#sideboard_switch {margin:left:8%;float:right;}
+/* HOME MENU */
+#home {position:fixed;top:35%;left:20%;width:auto;z-index:3;}
+#home_close {float:right;margin-top:-85px;}
+#home li a{margin-right:16px;}
+#home li a span{float:right;}
+#home li div {display:inline;width:74px;}
+.default-icon {width:74px; height:74px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;text-indent:-99999px;float:left;}
+.default-icon-mail {background-position: 0 0;}
+.default-icon-help {background-position: -90px 0;}
+.default-icon-clock {background-position: -180px 0;}
+.default-icon-album {background-position: -360px 0;}
+.default-icon-printing {background-position: -270px 0;}
+.default-icon-filemanager {background-position: -454px 0;}
+.default-icon-downloads {background-position: -544px 0;}
+.default-icon-music {background-position: -635px 0;}
+.default-icon-logout {background-position: -726px 0;}
+/*FILE MANAGER*/
+#filetable_paths {padding-top:10px;}
+#filetable_paths a {color:#000;margin:0 3px;text-transform:capitalize;}
+#filetable tbody .row-selected * {background: #506ab2;}
+#filetable:not(.clone) {cursor: pointer}
+#filetable:not(.clone) tbody tr:hover * {background: #999}
+#filetable:not(.clone) tbody tr.row-selected:hover * {	background: #999 !important}
+#filetable_processing {padding: 30px; display: inline;}
+#filetable_wrapper button {border:0;}
+.ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
+.ui-filemanager-state-dblckick {background:#fbec9d !important; }
+*:not(.ui-fake) .ui-filemanager-state-hover:hover {	background: #aa7676;}
+.ui-filemanager-state-selected {background: #506ab2;}
+*:not(.ui-fake) .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background: #999 !important;}
+.ui-filemanager-prev-arrow, .ui-filemanager-next-arrow {font-size: larger;	font-weight: bold;color:#506ab2;}
+.ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover {cursor: pointer;}
+.ui-filemanager-path-widget .ui-filemanager-path-divider {margin: 0.1em;}
+.ui-filemanager-path-widget .ui-filemanager-path-link {cursor: pointer;}
+.ui-filemanager-path-widget {float: left;font-size: larger;}
+.ui-filemanager-type-file {border-left: 2px solid #3232aa;}
+.ui-filemanager-type-dir {border-left: 2px solid #aa3232;}
+.ui-filemanager-type-row {cursor: pointer;}
+.ui-buttonbar {float:right;margin:0 4px;}
+.ui-input-text {width: 100%;}
+/**/

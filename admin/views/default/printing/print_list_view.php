@@ -1,11 +1,6 @@
-<fieldset>
-<legend>
-	<i><?=t('Installed printers')?></i>
-	<?if(!$printing_enabled):?>&nbsp;&nbsp;<b><?=t('Printing disabled')?></b><?endif?>
-</legend>
-
-
 <table>
+<tr></tr>
+<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Installed printers')?><?if(!$printing_enabled):?>&nbsp;&nbsp;<?=t('Installed printers')?><?endif?></td></tr>
 <tr>
 	<th><?=t('Share')?></th>
 	<th><?=t('Description')?></th>
@@ -46,4 +41,3 @@
 	<form action="<?=FORMPREFIX?>/printing/add" method="post" class="printer_edit">
 		<input type="submit" <?if(!$printing_enabled):?>disabled="disabled"<?endif?>  value="<?=t("Add new")?>" name="add" class="printer_button"/>
 	</form>
-</fieldset>

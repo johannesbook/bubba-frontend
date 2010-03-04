@@ -101,8 +101,9 @@ function copy_fields(formid) {
 </script>
 
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
-<fieldset id="firewall"><legend><?=t('Integrated Bubba services')?></legend>
+<fieldset >
 <table id="firewall">
+    <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Integrated Bubba services')?></td></tr>
 	<tr>
 		<td width="20"></td>
 		<td>
@@ -165,22 +166,16 @@ function copy_fields(formid) {
 		<td class="p_fw_c0"></td>
     <td colspan="5">&nbsp;</td>
 	</tr>
-	<tr>
-		<td class="p_fw_c0"></td>
-		<td colspan=\"2\">
-			<input type="submit" value='<?=t('Update')?>' name='update'/>
-		</td>
-		<td colspan="3"></td>
-	</tr>
+	
 </table>
-</fieldset>
+<input type="submit" value='<?=t('Update')?>' name='update'/>
+
 </form>
 
 <form id="PORTCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <fieldset id="firewall">
-<legend><?=t('Open port')." / ".t('Add port forward')?></legend>
-
 <table id="firewall">
+    <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Open port')." / ".t('Add port forward')?></td></tr>
 	<tr>
 		<td class="p_fw_c0"></td>
 		<td class="p_fw_c3" colspan="2">
@@ -283,7 +278,7 @@ function copy_fields(formid) {
 	<tr>
 		<td class="p_fw_c0"></td>
 		<td>
-			<input type="submit" value='<?=t('Update')?>' name='newport'/>
+			
 		</td>
 		<td colspan="5" class="legend">
 			<?=t('Public port range accepted as start-port:stop-port')?><br />
@@ -291,12 +286,14 @@ function copy_fields(formid) {
 		</td>
 	</tr>
 </table>
-</fieldset>
+<input type="submit" value='<?=t('Update')?>' name='newport'/>
+
 </form>
 
 
-<fieldset id="firewall"><legend><?=t('User defined open / forwarded ports')?></legend>
+<fieldset id="firewall">
 <table  id="firewall">
+    <tr><td colspan="7" class="ui-state-default ui-widghet-header"><?=t('User defined open / forwarded ports')?></td></tr>
 	<tr>
 		<td class="p_fw_c0"></td>
 		<td class="p_fw_c1"><?=t('Source IP')?></td>
@@ -361,6 +358,6 @@ endforeach;
 	</tr>
 
 </table>
-</fieldset>
+
 
 

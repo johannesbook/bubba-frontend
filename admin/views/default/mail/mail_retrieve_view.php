@@ -1,10 +1,6 @@
 <fieldset id="fetchmail">
-		<legend>
-			<?=t('Retrieve mail from individual accounts')?>
-			<?=$fstatus?"":"(<b>".t('Disabled')."</b>)"?>
-		</legend>
-
-<table cellpadding="0" cellspacing="0" border="1">
+	<table cellpadding="0" cellspacing="0" border="1">
+<tr><td colspan="8" class="ui-state-default ui-widghet-header"><?=t('Retrieve mail from individual accounts')?> <?=$fstatus?"":"(".t('Disabled').")"?></td></tr>
 <tr>
    <th><?=t('Host')?></th>
    <th><?=t('Protocol')?></th>
@@ -44,9 +40,10 @@
 
 <hr/>
 
-<fieldset><legend><i><?=t('Add account')?></i></legend>
+
 <form action="<?=FORMPREFIX?>/mail/addfac" method="post">
 <table>
+    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Add account')?> </td></tr>
 	<tr>
 	   <td><?=t('Host')?></td>
 	   <td>
@@ -122,17 +119,13 @@
 			/>
 		</td>
 	</tr>
-	<tr>
-		<td></td>
-		<td>
-			<input 
+	
+</table>
+<input 
 				type="submit" 
 				name="add_account" 
 				value="<?=t('Add account')?>"
 			/>
-		</td>
-	</tr>
-</table>
 </form>
-</fieldset>
+
 </fieldset>

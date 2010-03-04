@@ -1,7 +1,6 @@
 <form action="<?=FORMPREFIX?>/mail/server_update" method="post" id="frm_mail_server_settings">
-<fieldset><legend><?=t('Server settings')?><?if($smtpstatus):?> <b>(<?=t('Disabled')?>)</b><?endif?>:</legend>
 <table>
-
+    <tr><td colspan="8" class="ui-state-default ui-widghet-header"><?=t('Server settings')?> (<?=t('Disabled')?>) </td></tr>
 	<tr>
 		<td><label><?=t('Outgoing mail server')?></label></td>
 		<td><input type="text" name="smarthost" value="<?=$smarthost?>"/></td>
@@ -35,12 +34,8 @@
       <td><label><?=t('Handle mail for domain')?></label></td>
       <td><input type="text" name="domain" value="<? echo $receive["domain"] ?>"/></td>
    </tr>
-   <tr>
-   		<td></td>
-   		<td><input type="submit" name="update" value="<?=t('Update')?>"/></td>
-   </tr>
+  
 
 </table>
-</fieldset>
-
+<input type="submit" name="update" value="<?=t('Update')?>"/>
 </form>

@@ -1,9 +1,8 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 
-<fieldset><legend><i><?=t('WAN')?></i></legend>
 <form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">
 <table class="networksettings">
-
+    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('WAN')?></td></tr>
 	<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom") { ?>
 		<tr>
 			<td valign="top"></td>
@@ -120,13 +119,7 @@
 		</td>
 		<td><?=$err_dns?"* " . t("Invalid DNS setting"):""?></td>
 	</tr>
-	<tr>
-		<td></td>
-		<td><input type="hidden" class='ip' name='refresh' value='3'/><input type="submit" value='<?=t('Update')?>' class='ip' name='update'/></td>	
-		<td></td>
-		<td></td>
-	</tr>
+	
 </table>
+<input type="hidden" class='ip' name='refresh' value='3'/><input type="submit" value='<?=t('Update')?>' class='ip' name='update'/>
 </form>
-</fieldset>
-
