@@ -244,7 +244,6 @@ class Menu extends Model {
 
 	public function retrieve( $user, $level ) {
 		$children = $this->_retrieve( $this->bubba_menu, $user, $level );
-		print_r($children);
 		return $children;
 	}
 }
