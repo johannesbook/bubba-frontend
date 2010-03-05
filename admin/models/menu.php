@@ -5,10 +5,12 @@ class Menu extends Model {
 			'id' => 'home',
 			'default' => true,
 			'uri' => 'stat',
+			'allow' => array( 'admin' ),
 		),
 		array( 
 			'id' => 'filemanager',
 			'uri' => 'filemanager',
+			'allow' => array( 'admin' ),
 			'children' => array(
 				array(
 					'id' => 'filemanager-browse',
@@ -18,19 +20,12 @@ class Menu extends Model {
 				array(
 					'id' => 'filemanager-backup',
 					'uri' => 'filemanager/backup',
-					'allow' => array( 'admin' ),
 				),
 				array(
 					'id' => 'filemanager-restore',
 					'uri' => 'filemanager/restore',
-					'allow' => array( 'admin' ),
 				),
 			),
-		),
-		array( 
-			'id' => 'userinfo',
-			'uri' => 'userinfo',
-			'deny' => array( 'admin' ),
 		),
 
 		array( 
@@ -46,6 +41,7 @@ class Menu extends Model {
 		array( 
 			'id' => 'mail',
 			'uri' => 'mail',
+			'allow' => array( 'admin' ),
 			'children' => array(
 				array(
 					'id' => 'mail-retrieve',
@@ -55,7 +51,6 @@ class Menu extends Model {
 				array(
 					'id' => 'mail-server_settings',
 					'uri' => 'mail/server_settings',
-					'allow' => array( 'admin' ),
 				),
 			),
 		),
@@ -150,6 +145,38 @@ class Menu extends Model {
 			),					
 		),
 		array( 
+			'id' => 'usersettings',
+			'uri' => 'users',
+			'deny' => array( 'admin' ),
+			'children' => array(
+				array( 
+					'id' => 'usersettings-info',
+					'uri' => 'users/edit',
+					'default' => true,
+				),
+				array( 
+					'id' => 'usersettings-mail',
+					'uri' => 'mail',
+				),
+			),			
+		),
+		array( 
+			'id' => 'usersettings',
+			'uri' => 'mail',
+			'deny' => array( 'admin' ),
+			'children' => array(
+				array( 
+					'id' => 'usersettings-info',
+					'uri' => 'users/edit',
+				),
+				array( 
+					'id' => 'usersettings-mail',
+					'uri' => 'mail',
+					'default' => true,
+				),
+			),			
+		),
+		array( 
 			'id' => 'album',
 			'uri' => 'album',
 			'deny' => array( 'admin' ),
@@ -168,7 +195,7 @@ class Menu extends Model {
 		array( 
 			'id' => 'downloads',
 			'uri' => 'downloads',
-			'deny' => array( 'admin' ),
+			'allow' => array( ),
 		)
 	);
 
