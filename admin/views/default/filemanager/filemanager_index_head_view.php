@@ -14,7 +14,7 @@ buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function
 dialog_pre_open_callbacks = {
 	'perm': function() {
 		var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
-		$.post("<?=FORMPREFIX?>/filemanager/perm/json/get", {files:files}, function(data){
+		$.post(config.prefix+"/filemanager/perm/json/get", {files:files}, function(data){
 			if( data.permissions & 00400 ) {
 				$("#fn-filemanager-perm-permission-owner-read").attr("checked","checked");
 			}
@@ -57,10 +57,10 @@ dialog_callbacks = {
 		var params = $("#fn-filemanager-mkdir").serializeObject();
 		params.root = $("#filetable").data('root');
 		params.files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
-		$.post("<?=FORMPREFIX?>/filemanager/mkdir/json", params, function(data){
+		$.post(config.prefix+"/filemanager/mkdir/json", params, function(data){
 			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-mkdir")?>");
 			if( ! data.error ) {
-				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+				dataTable.fnReloadAjax( config.prefix+"/filemanager/index/json", { path: params.root }, true );
 			}
 		}, 'json');
 		$(this).dialog('close');
@@ -69,10 +69,10 @@ dialog_callbacks = {
 		var params = $("#fn-filemanager-rename").serializeObject();
 		params.path = $(".fn-filemanager-selected").data('path');
 		params.root = $("#filetable").data('root');
-		$.post("<?=FORMPREFIX?>/filemanager/rename/json", params, function(data){
+		$.post(config.prefix+"/filemanager/rename/json", params, function(data){
 			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-rename")?>");
 			if( ! data.error ) {
-				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+				dataTable.fnReloadAjax( config.prefix+"/filemanager/index/json", { path: params.root }, true );
 			}
 		}, 'json');
 		$(this).dialog('close');
@@ -80,20 +80,20 @@ dialog_callbacks = {
 	'perm': function() {
 		var params = $("#fn-filemanager-perm").serializeObject();
 		params.root = $("#filetable").data('root');
-		$.post("<?=FORMPREFIX?>/filemanager/perm/json/set", params, function(data){
+		$.post(config.prefix+"/filemanager/perm/json/set", params, function(data){
 			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-perm")?>");
 			if( ! data.error ) {
-				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: params.root }, true );
+				dataTable.fnReloadAjax( config.prefix+"/filemanager/index/json", { path: params.root }, true );
 			}
 		}, 'json');
 		$(this).dialog('close');
 	},
 	'delete': function() {
 		var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
-		$.post("<?=FORMPREFIX?>/filemanager/delete/json", {files: files}, function(data){
+		$.post(config.prefix+"/filemanager/delete/json", {files: files}, function(data){
 			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-delete")?>");
 			if( ! data.error ) {
-				dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: $("#filetable").data('root') }, true );
+				dataTable.fnReloadAjax( config.prefix+"/filemanager/index/json", { path: $("#filetable").data('root') }, true );
 			}
 		}, 'json');		
 		$(this).dialog('close');
@@ -131,7 +131,7 @@ buttons = [
 			var files = $(".fn-filemanager-selected").map(function(){ return $(this).data('path') }).get();
 			var input = $("<input/>", { type: 'text', 'name': 'files[]' });
 				var form = $("<form/>", {
-				'action': "<?=(FORMPREFIX)?>/filemanager/downloadzip",
+				'action': config.prefix+"/filemanager/downloadzip",
 				'method': 'POST'
 			});
 			$.each(files, function(index,value) {
@@ -206,48 +206,15 @@ update_toolbar_buttons = function() {
 	}
 }
 
-fileTable = null;
-$.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, aoData, bRedraw, fnCallback )
-{
-	if ( typeof sNewSource != 'undefined' )
-	{
-		oSettings.sAjaxSource = sNewSource;
-	}
-	this.oApi._fnProcessingDisplay( oSettings, true );
-	var that = this;
-	
-	oSettings.fnServerData( oSettings.sAjaxSource, aoData, function(json) {
-		/* Clear the old information from the table */
-		that.oApi._fnClearTable( oSettings );
-		
-		/* Got the data - add it to the table */
-		for ( var i=0 ; i<json.aaData.length ; i++ )
-		{
-			that.oApi._fnAddData( oSettings, json.aaData[i] );
-		}
-		
-		oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
-		if( typeof bRedraw == 'undefined' || bRedraw ) {
-			that.fnDraw( that );
-		}
-		that.oApi._fnProcessingDisplay( oSettings, false );
-		
-		/* Callback user function - for event handlers etc */
-		if ( typeof fnCallback == 'function' )
-		{
-			fnCallback( oSettings );
-		}
-	} );
-}
-
 file_download_callback = function( dataTable, filetable, options ){
 	$("<form/>", {
-		'action': "<?=(FORMPREFIX)?>/filemanager/download",
+		'action': config.prefix+"/filemanager/download",
 		'method': 'POST',
 		'html': $('<input/>', { type: 'text', 'name': 'path', value: options.path }) 
 		}
 	).appendTo("body").submit().remove();
 }
+
 dir_opening_callback = function( dataTable, filetable, options ){
 	options = $.extend({direction: "left", path: "/", speed: 600},options);
 	orig_width = filetable.outerWidth();
@@ -297,10 +264,45 @@ dir_opening_callback = function( dataTable, filetable, options ){
 		}
 	);
 
-	dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: options.path }, false, function() {
+	dataTable.fnReloadAjax( config.prefix+"/filemanager/index/json", { path: options.path }, false, function() {
 			dataTable.fnDraw();
 	} );
 }
+
+fileTable = null;
+$.fn.dataTableExt.oApi.fnReloadAjax = function ( oSettings, sNewSource, aoData, bRedraw, fnCallback )
+{
+	if ( typeof sNewSource != 'undefined' )
+	{
+		oSettings.sAjaxSource = sNewSource;
+	}
+	this.oApi._fnProcessingDisplay( oSettings, true );
+	var that = this;
+	
+	oSettings.fnServerData( oSettings.sAjaxSource, aoData, function(json) {
+		/* Clear the old information from the table */
+		that.oApi._fnClearTable( oSettings );
+		
+		/* Got the data - add it to the table */
+		for ( var i=0 ; i<json.aaData.length ; i++ )
+		{
+			that.oApi._fnAddData( oSettings, json.aaData[i] );
+		}
+		
+		oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+		if( typeof bRedraw == 'undefined' || bRedraw ) {
+			that.fnDraw( that );
+		}
+		that.oApi._fnProcessingDisplay( oSettings, false );
+		
+		/* Callback user function - for event handlers etc */
+		if ( typeof fnCallback == 'function' )
+		{
+			fnCallback( oSettings );
+		}
+	} );
+}
+
 
 $(document).ready(function() {
 	fileTable = $("#filetable");
@@ -355,7 +357,7 @@ $(document).ready(function() {
 		"bInfo": false,
 		"bPaginate": false,
 		"bProcessing": true,
-		"sAjaxSource": "<?=(FORMPREFIX)?>/filemanager/index/json",
+		"sAjaxSource": config.prefix+"/filemanager/index/json",
 		"aaSorting": [[0, "asc"],[1,"asc"]],
 		"aaSortingFixed": [[0, "asc"]],
 		"bAutoWidth": false,
@@ -389,7 +391,7 @@ $(document).ready(function() {
 						}
 						current += value;
 						a = $('<a/>', {data: {path:current}, html: value, 'class': "ui-filemanager-path-link"}).click(function(){
-							dataTable.fnReloadAjax( "<?=(FORMPREFIX)?>/filemanager/index/json", { path: $(this).data('path') } );
+							dataTable.fnReloadAjax( config.prefix+"/filemanager/index/json", { path: $(this).data('path') } );
 						});
 						current += '/';
 						$("#filetable_paths").append( a ).append( divider.clone() );

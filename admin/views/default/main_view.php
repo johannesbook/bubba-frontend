@@ -20,14 +20,17 @@
 <?endif?>
 
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/main.js?v='<?=$this->session->userdata('version')?>'"></script>
-<?
-if(isset($head)) {
-	echo $head;
-}
-?>
 
 
 <script type="text/javascript">
+
+config = <?=json_encode(
+	array(
+		'prefix' => FORMPREFIX,
+		'theme' => THEME,
+		'version' => $this->session->userdata('version')
+)
+)?>;
 	
 $(document).ready(function(){
 	
@@ -76,6 +79,12 @@ $(document).ready(function(){
 
 });
 </script>
+
+<?
+if(isset($head)) {
+	echo $head;
+}
+?>
 </head>
 <body id="body_<?=$this->uri->segment($this->uri->total_segments())?>">
 <?	
