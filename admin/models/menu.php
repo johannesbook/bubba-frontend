@@ -182,7 +182,8 @@ class Menu extends Model {
 		$selected_children = null;
 		$default = null;
 		$default_children = null;
-		$current_level = trim($current_level,"/");
+		$current_level = ltrim($current_level,"/");
+		$last_matched = "";
 		foreach( $menus as $menu ) {
 			if( isset( $menu['deny'] ) && in_array($user, $menu['deny']) ) {
 				continue;
@@ -192,7 +193,11 @@ class Menu extends Model {
 			}
 			$current = array();
 
-			if( strpos( $current_level , $menu['uri'] ) === 0 ) {
+			if( strpos( $current_level , $menu['uri'] ) === 0 && strlen($menu['uri']) > strlen($last_matched) ) {
+				$last_matched = $menu['uri'];
+				if( !is_null($selected) ) {
+					$selected['selected'] = false;
+				}
 				$selected = &$current;
 				if( isset($menu['children']) && is_array($menu['children']) ) {
 
@@ -239,6 +244,7 @@ class Menu extends Model {
 
 	public function retrieve( $user, $level ) {
 		$children = $this->_retrieve( $this->bubba_menu, $user, $level );
+		print_r($children);
 		return $children;
 	}
 }
