@@ -79,6 +79,9 @@ $(document).ready(function(){
 	$(".ui-login-menubar-a").mouseout(function(e) {
 		$(this).find("span").hide();
 	});
+	
+	$("#fn-topnav-home").attr("disabled","disabled");
+	
 
 	<?if(isset($show_login) && $show_login):?>
 		//show dialog_login

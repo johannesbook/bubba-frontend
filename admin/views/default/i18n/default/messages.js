@@ -22,5 +22,11 @@ messages = {
 	"mail-dialog-delete-foruser" : "Delete account for user '",
 	"mail-dialog-delete-onserver" : "' on server '",
 	"mail-dialog-button-delete" : "Delete account",
-	"mail-dialog-delete-title" : "Delete mail account"	
+	"mail-dialog-delete-title" : "Delete mail account"	,
+	
+	// Logout
+	"logout-dialog-title" : "Logout",
+	"logout-dialog-message" : "Proceed with logout?",
+	"logout-dialog-button-logout" : "Logout"
+	
 }

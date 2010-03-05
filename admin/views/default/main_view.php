@@ -49,10 +49,13 @@ config = <?=json_encode(
 	
 $(document).ready(function(){
 	
-	$('#home_switch').click(function(event) {  
-            event.preventDefault();
-            $('#menu').toggle()
-        } );
+	$('#fn-topnav-home').click(function(event) {  
+  	//event.preventDefault();
+    $('#menu').toggle()
+  } );
+	$('#fn-topnav-logout').click(function(event) {
+		logout_dialog();
+  } );
 	$('#sideboard_switch').click(function(event) {  
             event.preventDefault();
             
@@ -123,8 +126,8 @@ if(isset($head)) {
 	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             		<? } ?>
                 <button id="fn-topnav-help" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Help" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-lightbulb"></span><span class="ui-button-text">&nbsp;</span></button>
-                <button id="home_switch" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
-                <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
+                <button id="fn-topnav-home" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
+                <button id="fn-topnav-logout" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
                 <a id="sideboard_switch" href="#" class="ui-state-default" ></a>
             </div>	
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
@@ -140,5 +143,6 @@ if(isset($head)) {
         </div>
     </div>
     <div id="update_status"></div>
+    <?include("menu_view.php")?>
 </body>
 </html>

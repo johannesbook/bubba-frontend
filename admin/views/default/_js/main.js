@@ -67,6 +67,18 @@ function cursor_ready() {
 	$("select").removeClass('cursor_wait');
 }		
 
+function logout_dialog() {
+	
+	var buttons = {};
+	buttons[$.message("logout-dialog-button-logout")] =  function() {window.location.href = config.prefix+"/logout";};
+	buttons[$.message("button-label-cancel")] =  function() {$(this).dialog('close');};
+	$.confirm( 
+			$.message("logout-dialog-message"),
+			$.message("logout-dialog-title"),
+			buttons
+	);
+}
+
 jQuery.fn.extend({
 		stripe: function() {
 
