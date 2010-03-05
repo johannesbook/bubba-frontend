@@ -7,14 +7,14 @@ class Users extends Controller{
 		
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
-
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->EnforceAuth();
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	function _renderfull($content){
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
+		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["head"] = "";
 		if($this->session->userdata('run_wizard')) {
@@ -32,20 +32,25 @@ class Users extends Controller{
 	function _get_uinfo() {
 
 		$userinfo=get_userinfo();
+		$allow_list_users = $this->Auth_model->policy("userdata","list");
+		foreach($userinfo as $uname => $value){
+			if ( $allow_list_users || ($this->session->userdata("user")==$uname) ) {
 
-		foreach($userinfo as $i => $value){
-			if($value["uid"]<1000 || $value["uid"]>60000){
-				unset($userinfo[$i]);
-				continue;
-			}
-			if($i=="admin"){
-				$userinfo[$i]["shell"]="";
-			}
-			
-			if(trim($value["shell"])=="/bin/bash"){
-				$userinfo[$i]["shell"]=true;;
-			}else{
-				$userinfo[$i]["shell"]=false;
+				if($value["uid"]<1000 || $value["uid"]>60000){
+					unset($userinfo[$uname]);
+					continue;
+				}
+				if($uname=="admin"){
+					$userinfo[$uname]["shell"]="";
+				}
+				
+				if(trim($value["shell"])=="/bin/bash"){
+					$userinfo[$uname]["shell"]=true;;
+				}else{
+					$userinfo[$uname]["shell"]=false;
+				}
+			} else {
+				unset($userinfo[$uname]);
 			}
 		}
 		return $userinfo;
@@ -153,6 +158,7 @@ class Users extends Controller{
 	}
 
 	function dodelete($strip=""){
+		$this->Auth_model->RequireUser('admin');
 		if(!$this->input->post("proceed") || !$this->input->post("uname")){
 			redirect("users");
 			exit();
@@ -254,54 +260,58 @@ class Users extends Controller{
 		$uname=$this->input->post("uname");
 		$remote = $this->input->post("remote");
 
-		if($this->input->post('pwd1') && $this->input->post('pwd2')) {
-			$change_pwdres = $this->_dochpwd($uname,$this->input->post('pwd1'),$this->input->post('pwd2'));
-		}
-		
-		if( isset($change_pwdres["success"]) && !$change_pwdres["success"] ) {
-			// password errors, do not try to change anything else
-			$data["update"]["message"] = "";
-			foreach($change_pwdres as $key => $error) {
-				if($error) {
-					$data["update"]["message"] .= " " . t($key);
-				}
+		if($this->Auth_model->policy("mail","edit_allusers") || $this->session->userdata("user")==$user) {
+	
+			if($this->input->post('pwd1') && $this->input->post('pwd2')) {
+				$change_pwdres = $this->_dochpwd($uname,$this->input->post('pwd1'),$this->input->post('pwd2'));
 			}
-			// load posted data.
-			if($uname=='admin') {
-				$data["remote"] = $remote;
-			} else {
-				$data["shell"] = $shell;
-			}
-			$data["realname"] = $realname;
-			$data["uname"] = $uname;
 			
-		} else {
-			if($uname=='admin') {
-				if ($remote=="true") {
-					if($this->session->userdata("AllowRemote")) {
-						// do nothing already allowing remote access
-					} else {
-						update_bubbacfg("admin","AllowRemote","yes");
-						$this->session->set_userdata("AllowRemote", true);
+			if( isset($change_pwdres["success"]) && !$change_pwdres["success"] ) {
+				// password errors, do not try to change anything else
+				$data["update"]["message"] = "";
+				foreach($change_pwdres as $key => $error) {
+					if($error) {
+						$data["update"]["message"] .= " " . t($key);
 					}
+				}
+	
+				if($uname=='admin') {
+					$data["remote"] = $remote;
 				} else {
-					if($this->session->userdata("AllowRemote")) {
-						update_bubbacfg("admin","AllowRemote","no");
-						$this->session->set_userdata("AllowRemote", false);
+					$data["shell"] = $shell;
+				}
+				$data["realname"] = $realname;
+				$data["uname"] = $uname;
+				
+			} else {
+				if($uname=='admin') {
+					if ($remote=="true") {
+						if($this->session->userdata("AllowRemote")) {
+							// do nothing already allowing remote access
+						} else {
+							update_bubbacfg("admin","AllowRemote","yes");
+							$this->session->set_userdata("AllowRemote", true);
+						}
 					} else {
-						// do nothing already not allowing remote access
-					}
-				}				
+						if($this->session->userdata("AllowRemote")) {
+							update_bubbacfg("admin","AllowRemote","no");
+							$this->session->set_userdata("AllowRemote", false);
+						} else {
+							// do nothing already not allowing remote access
+						}
+					}				
+				}		
+						
+				if( !update_user($realname,$shell,$uname)){
+					$data["update"]["success"] = true;
+					$data["update"]["message"] = "user_update_ok";
+				}else{
+					$data["update"]["message"] = "user_update_error";
+				}
 			}		
-					
-			if( !update_user($realname,$shell,$uname)){
-				$data["update"]["success"] = true;
-				$data["update"]["message"] = "user_update_ok";
-			}else{
-				$data["update"]["message"] = "user_update_error";
-			}
-		}		
-
+		} else {
+				$data["update"]["message"] = "user_update_error_auth_fail";
+		}
 		if($data["update"]["success"]) { // return to main page.
 			$this->index(false,$data);
 		} else {
@@ -315,28 +325,32 @@ class Users extends Controller{
 	
 	function edit($strip=""){
 		require_once(APPPATH."/legacy/user_auth.php");
-		$uinfo=get_userinfo();
+		$uinfo=$this->_get_uinfo();
 
-		if(!isset($uinfo[$this->input->post("uname")])){
-			redirect("users");
-			exit();
+		if(isset($uinfo[$this->input->post("uname")])) {
+			$uname = $this->input->post("uname");
+		} else {
+			$uname = $this->session->userdata("user");
 		}
 
-		$info=$uinfo[$this->input->post("uname")];
-		$info["uname"]=$this->input->post("uname");
-		if($info["uname"] == "admin") {
-			$info["user_is_admin"] = true;
-		}
-		if(trim($info["shell"])=="/bin/bash"){
-			$info["shell"]=true;
-		}else{
-			$info["shell"]=false;
-		}
+		$data=$uinfo[$uname];
+		$data["uname"]=$uname;
+		if($data["uname"] == "admin") {
+			$data["user_is_admin"] = true;
+			$data["remote"] = $this->session->userdata("AllowRemote");
+		} else {
+			if(trim($data["shell"])=="/bin/bash"){
+				$data["shell"]=true;
+			}else{
+				$data["shell"]=false;
+			}
+		}		
+		$data["show_deleteuser"] = $this->Auth_model->policy("userdata","delete");
 
 		if($strip){
-			$this->load->view(THEME.'/users/user_edit_view',$info);		
+			$this->load->view(THEME.'/users/user_edit_view',$data);		
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_edit_view',$info,true));
+			$this->_renderfull($this->load->view(THEME.'/users/user_edit_view',$data,true));
 		}
 		
 	}	
@@ -344,27 +358,8 @@ class Users extends Controller{
 	function index($strip="", $data = array()){
 		require_once(APPPATH."/legacy/user_auth.php");
 		
-		
-		$userinfo=get_userinfo();
-		foreach($userinfo as $i => $value){
-			if($value["uid"]<1000 || $value["uid"]>60000){
-				unset($userinfo[$i]);
-				continue;
-			}
-			if($i=="admin"){
-				$userinfo[$i]["shell"]="";
-				$data["remote"] = $this->session->userdata("AllowRemote");
-			}
-			
-			if(trim($value["shell"])=="/bin/bash"){
-				$userinfo[$i]["shell"]=true;;
-			}else{
-				$userinfo[$i]["shell"]=false;
-			}
-		}
-
-		$data["userinfo"]= $userinfo;
-		
+		$data["userinfo"]= $this->_get_uinfo();
+		$data["show_adduser"] = $this->Auth_model->policy("userdata","add");	
 		// userinfo can be set and called from by "add" function.
 		if(!isset($data["shellyes"])) $data["shellyes"]=false;
 		if(!isset($data["shellno"])) $data["shellno"]=true;

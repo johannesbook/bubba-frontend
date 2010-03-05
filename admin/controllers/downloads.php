@@ -19,6 +19,7 @@ class Downloads extends Controller{
 	}		
 
 	function _renderfull($content){
+		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);

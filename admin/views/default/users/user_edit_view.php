@@ -54,7 +54,9 @@
     <? } ?>
 </table>
 <input id="btn_users_submit_change"	type="submit" name="submit" value='<?=t('Submit changes')?>'/>
-<input id="btn_users_del_user" type="submit" name="delete" <?if(isset($user_is_admin) && $user_is_admin):?> disabled = "disabled" <?endif?> value="<?=t('Delete user')?>" />
+<?if($show_deleteuser):?>
+	<input id="btn_users_del_user" type="submit" name="delete" <?if(isset($user_is_admin) && $user_is_admin):?> disabled = "disabled" <?endif?> value="<?=t('Delete user')?>" />
+<?endif?>
 <input id="btn_users_cancel" type="submit" name="cancel" value="<?=t('Cancel')?>"/>
 <input id="hdn_users_uname" type="hidden" name="uname" value="<?=$uname?>" />
 </form>

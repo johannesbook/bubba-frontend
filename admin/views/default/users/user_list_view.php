@@ -39,6 +39,7 @@
 <? } ?>
 </table>
 
+<?if($show_adduser):?>
 	<form action="<?=FORMPREFIX?>/users/add" method="post">
 		<table border="0" cellpadding="0">
 		<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Add new user')?></td></tr>
@@ -68,3 +69,4 @@
 		</table>
 		<input class="submitbutton" type="submit" name="adduser" value="<?=t('Add user')?>"/>
 	</form>
+<?endif?>
