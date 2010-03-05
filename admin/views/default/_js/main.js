@@ -215,7 +215,9 @@ $(document).ready( function() {
 jQuery.extend({
 	'message': function(str){
 		if( typeof messages[str] != "undefined" ) {
-			return messages[str];
+			var args = Array.prototype.slice.call(arguments);
+			args.shift(); // str
+			return $.vsprintf(messages[str], args);
 		} else {
 			if( typeof console != "undefined" ) {
 				console.warn("message '%s' was not defined", str);

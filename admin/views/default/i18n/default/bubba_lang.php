@@ -330,6 +330,8 @@ $lang["filemanager-delete-dialog-button-label"] = "Delete";
 $lang["filemanager-delete-dialog-title"] = "Delete files and directories";
 $lang["filemanager-delete-fail-message"] = "Failed to delete following files and directories: %s";
 $lang["filemanager-delete-dialog-message"] = "Are you certain that you want to delete selected files and directories?";
+
+$lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
 /*  ------------------- Texts to locate help pages.  -------------------*/
 //General pages
 $lang['help_stat']="";

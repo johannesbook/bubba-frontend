@@ -165,3 +165,25 @@ div.colorcode {	width : 15px;	height : 15px;}
 div.text input {	vertical-align : middle;}
 div.text label {	margin-right : 15px;}
 input.mount {width : 75px;	margin : 0;}
+.ui-filemanager-information-panel {
+
+	height: 3em;
+	background: #efdfad;
+	border: 2px solid #dfcf9d;
+	width: 600px;
+	opacity: .95;
+	position: absolute;
+	text-align: center;
+}
+.ui-action-panel button {
+	border: 0;
+}
+.ui-action-panel {
+	position: absolute;
+	border: 0;
+}
+.ui-helper-inline {
+	display: inline;
+	display: inline-block;
+	vertical-align: bottom;
+}

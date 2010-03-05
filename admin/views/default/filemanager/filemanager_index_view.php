@@ -1,3 +1,6 @@
+<div id="fn-filemanager-information-panel" class="ui-helper-hidden ui-filemanager-information-panel"></div>
+<div id="fn-filemanager-action-panel" class="ui-helper-hidden ui-action-panel"></div>
+
 <table id="filetable">
 	<thead>
 		<tr>

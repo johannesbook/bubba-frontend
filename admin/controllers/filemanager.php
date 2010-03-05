@@ -327,103 +327,67 @@ class Filemanager extends Controller{
 	}
 	
 	function move($strip=""){
-		
-		if($path= $this->input->post('mv_cancel')){
-			$this->index();
-			return;
-		}		
 
-		if($path= $this->input->post('mv_confirm')){
-			$this->domove();
-			return;
-		}
-		
-		$data["mv_path"]=false;
-		$data["bpath"]=false;
-		$data["pathlink"]=false;
-		$data["dirs"]=false;
-		$data["path"]= $path= $this->input->post('path');
-		
-		// Do we have files from a change dir
-		$mv_items=$this->input->post('mv_item') ? $this->input->post('mv_item'):array();
-		
-		if(count($mv_items)==0){ 
-			// No this is first invocation build mv_items
-			$file_id = $this->input->post('file_id') ? 
-					$this->input->post('file_id') : array();
-			$file_name = $this->input->post('file_name') ? 
-					$this->input->post('file_name') : array();
-			$cnt=count($file_id);         
-			for($i=0; $i<$cnt; $i++){
-				$mv_items[] = $file_name[$file_id[$i]];
+		if( $strip == 'json' ) {
+			$errors = array();
+			$files = $this->input->post('files');
+			$target = $this->input->post('path');
+			$user=$this->session->userdata("user");
+
+			if(!is_array($files)) {
+				$files = array($files);
 			}
-		}
 
-		$data["mv_items"]=$mv_items;
-
-		$mv_path=($this->input->post("mv_path")?
-				b_dec($this->input->post("mv_path")):b_dec($path));
-		if($this->input->post("adddir")){
-			$mv_path.="/".b_dec($this->input->post("add_item"));
-		}
-		$data["mv_path"]=$mv_path;
-		
-		$parts=explode("/",$mv_path);
-		$bpath="";
-		$pathlink="";
-		foreach($parts as $part){
-			if($part=="") continue;
-			$bpath.="/$part";
-			$pathlink.="/<a href=\"javascript:doChange('".b_enc($bpath)."')\">$part</a>";
-		}
-		$data["pathlink"]=$pathlink;
-		$data["bpath"]=$bpath;	
-
-		$user=$this->session->userdata("user");
-
-		$out = ls($user,"$mv_path");
-		$dirs=array();
-		if($out!="\0\0"){
-			foreach($out as $line){
-				if($line[0]=="D"){
-					$dirs[]=explode("\t",$line);
+			foreach($files as $file){
+				if(mv($file,$target,$user)){ // true is false
+					$errors[] = $file;
 				}
+			}		
+
+			$data["success"]=empty($errors);
+
+			if( !empty($errors) ) {
+				$data['error'] = true;
+				$data['html'] = t("filemanager-move-fail-message",implode(', ',$errors));
 			}
-		}
-
-		$this->sortarray=$dirs;
-		uksort($dirs,array($this,"_sort_entries"));
-		$data["dirs"]=$dirs;
-    
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_move_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_move_view',$data,true),false);
-		}
-	}	
-	
-	function domove($strip=""){
-		$mv_items=$this->input->post("mv_item");
-		$mv_path=b_dec($this->input->post("mv_path"));
-		$path=$this->input->post("path");
-		
-		$data["mv_path"]=$mv_path;
-		$data["path"]=$path;
-		$data["items"]=array();		
-		
-		$user=$this->session->userdata("user");
-		foreach($mv_items as $eitem){
-			$item=b_dec($eitem);
-			$data["items"][$item]=!mv($item,$mv_path,$user);
-		}
-
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_domove_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_domove_view',$data,true),false);
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			
+		} else {
+			echo "error";
 		}
 	}
+	function copy($strip=""){
 
+		if( $strip == 'json' ) {
+			$errors = array();
+			$files = $this->input->post('files');
+			$target = $this->input->post('path');
+			$user=$this->session->userdata("user");
+
+			if(!is_array($files)) {
+				$files = array($files);
+			}
+
+			foreach($files as $file){
+				if(cp($file,$target,$user)){ // true is false
+					$errors[] = $file;
+				}
+			}		
+
+			$data["success"]=empty($errors);
+
+			if( !empty($errors) ) {
+				$data['error'] = true;
+				$data['html'] = t("filemanager-copy-fail-message",implode(', ',$errors));
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			
+		} else {
+			echo "error";
+		}
+	}
 	function _alter(&$item, $key){
 		$item=b_dec($item);
 	}

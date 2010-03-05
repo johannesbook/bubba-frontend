@@ -9,6 +9,14 @@ messages = {
 	"filemanager-delete-dialog-title" : "Delete files and directories",
 	"filemanager-delete-fail-message" : "Failed to delete following files and directories: %s",
 	"filemanager-delete-dialog-message" : "Are you certain that you want to delete selected files and directories?",
+	"filemanager-move-notice" : "You are about to move %d items. Go to the desired folder and press <span class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm move",
+	"filemanager-move-yes" : "Move",
+	"filemanager-move-no" : "Abort",
+	"filemanager-move-success" : "Succeeded to move the files and directories",
+	"filemanager-copy-notice" : "You are about to copy %d items. Go to the desired folder and press <span class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm copy",
+	"filemanager-copy-yes" : "Copy",
+	"filemanager-copy-no" : "Abort",
+	"filemanager-copy-success" : "Succeeded to copy the files and directories",
 
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",
