@@ -14,7 +14,7 @@
         <a class="default-icon default-icon-filemanager">
             <span class="" style="display:none"><?=t("menubar_backup")?></span>    
         </a>       
-        <a class="default-icon default-icon-filemanager <?=$ui_login_user_lock?>">
+        <a class="default-icon default-icon-filemanager ">
             <span class="" style="display:none"><?=t("menubar_usersettings")?></span>    
         </a>      
         <a class="default-icon default-icon-logout">

@@ -17,9 +17,10 @@
 
 ?>
 
-<fieldset><legend><i><?=t('Backup user data')?></i></legend>
-	
+
 	<table id="backup">
+	    
+	    <tr><td colspan="8" class="ui-state-default ui-widghet-header"><?=t('File sharing')?></td></tr>
 		<tr>
 			<th><?=t('Existing jobs')?></th>
 			<th><?=t('Included directories')?></th>

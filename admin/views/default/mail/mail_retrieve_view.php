@@ -38,8 +38,6 @@
 <?}?>
 </table>
 
-<hr/>
-
 
 <form action="<?=FORMPREFIX?>/mail/addfac" method="post">
 <table>

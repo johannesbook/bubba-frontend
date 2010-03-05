@@ -435,7 +435,8 @@ function progressReport() {
 
 /*]]>*/
 </script>
-<fieldset><legend><i><?=t('Restore user data')?></i></legend>
+
+<div class="ui-state-default ui-widghet-header"><?=t('Restore user data')?></div>
 
 <div id="restore">	
 	<div id="backup_header">

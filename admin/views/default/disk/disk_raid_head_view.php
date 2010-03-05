@@ -2,31 +2,7 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.progress.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.confirm.js?v='<?=$this->session->userdata('version')?>'"></script>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css?v='<?=$this->session->userdata('version')?>'" />
-<style>
 
-.raid_text {
-	font-size : 1.2em;
-}
-
-div#raid_text {
-	font-size : 1.2em;
-}
-div#raid_text input {
-	font-size : 1.1em;
-	margin-top : 8px;
-	margin-right : 15px;
-	width : 130px;
-}
-select {
-	width : 100px;
-}
-
-table.disks td {
-	width: 80px;
-	vertical-align : middle;
-}
-
-</style>
 
 	<script  type="text/javascript">
 $(document).ready( function() {

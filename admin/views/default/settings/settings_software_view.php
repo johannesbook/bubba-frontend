@@ -1,8 +1,8 @@
 <form id="update" method="post">
-<fieldset>
-	<legend>
-		<i><?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?></i>
-	</legend>
+
+	<div class="ui-state-default ui-widghet-header">
+		<?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?>
+	</div>
 	<div id="updater" style="width: 100%">
 	<?if($action == 'install'):?>
 		<ul>
@@ -39,4 +39,3 @@
 				<td colspan="2"><?=t("Retreiving package information")?>...</td>
 			</tr>
 	</table>
-</fieldset>

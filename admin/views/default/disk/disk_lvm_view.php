@@ -1,4 +1,4 @@
-<fieldset><legend><i><?=t('Extend logical volume')?></i></legend>
+    <div class="ui-state-default ui-widghet-header"><?=t('Extend logical volume')?></div>
 	<div id="lvm">
 		<?=t("Extend")?>
 		<select  <?= sizeof( $lvs ) == 0 ? 'disabled="disabled"' : '' ?> id="logical_volume" class="volume">
@@ -23,4 +23,4 @@
 		</select>
 		<p><input <?=(sizeof( $disks ) == 0 or sizeof( $lvs ) == 0) ? 'disabled="disabled"' : '' ?> type="button" class="button" id="extend" value="<?=t("Extend")?>" /></p>
 	</div>
-</fieldset>
+

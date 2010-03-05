@@ -1,25 +1,3 @@
-<style type="text/css">
-
-div#lvm {
-	font-size : 1.2em;
-}
-
-div#lvm input {
-	width : 100px;
-	margin-left : 3.2em;
-}
-div#lvm select {
-	margin : 0.3em;
-	font-size : 1.2em;
-}
-div#lvm select.volume {
-	width : 150px;
-}
-div#lvm select.disk {
-	width : 90px;
-}
-
-</style>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.progress.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script  type="text/javascript">
 $(document).ready( function() {

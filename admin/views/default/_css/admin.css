@@ -1,6 +1,6 @@
 * {margin: 0;padding: 0;}
 html, body{ height: 100%;}
-body {font-size:62.5%;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background-image:url(../_img/background.svg);}
+body {font-size:62.5%;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background:#DDD;}
 h1 {line-height: 1em;font-size: 1.8em;font-weight: normal;}
 h2 {line-height: 1em;font-size: 1.5em;font-weight: normal;margin: 1.2em 0 0 0;}
 h3 {font-size: 1.3em;font-weight: bold;margin: 0.6em 0 0 0;}
@@ -28,7 +28,7 @@ li {display:inline;}
 a {color: #000;}
 img{border: 0;}
 /* WRAPPER */
-#wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:0.5em;max-width:96%;padding-left:3em;padding-top:2em;}
+#wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:0em;max-width:96%;padding-left:3em;padding-top:2em;background:white;border:0.1em solid #000;border-right:0.25em solid #000;}
 /*UPDATE STATUS*/
 #update_status {color:000;background-color:#fbec9d;font-size:120%;left:48%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:0;width:auto;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
@@ -41,7 +41,7 @@ img{border: 0;}
 #header li.active a {color:#506ab2;}
 #header li.last {border-right:none;}
 #nav ul{font-size: 160%;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
-#topnav {float:right;left:70%;top:3%;width:30%;position:absolute;z-index:2;}
+#topnav {float:right;left:72%;top:3%;width:30%;}
 #topnav a, #topnav span {float:left;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;}
 #topnav button {border:0;background:#fff;}
@@ -63,9 +63,9 @@ div#subnav ul li a:hover {color: #999;}
 .ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:20px;padding-top:75px;font-weight:bold;text-align:center;}
 .ui-login-menubar-a span  {display:none;font-size:150%;}
 /* CONTENT */
-#content {margin-bottom:3em;width:70%;}
+#content {margin-bottom:3em;width:70%;padding-top:2em;float:left;}
 /* SIDE BOARD */
-#sideboard {position:absolute;z-index:1;left:75%;top:15%;}
+#sideboard {float:right;width:20%;left:75%;top:15%;margin-top:-6em;}
 #sideboard_switch {margin:left:8%;float:right !important;font-size:180%;color:white;text-decoration:none !important;padding-left:0.3em;}
 /* HOME MENU */
 #menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;}
@@ -84,6 +84,7 @@ div#subnav ul li a:hover {color: #999;}
 .default-icon-downloads {background-position: -544px 0;}
 .default-icon-music {background-position: -635px 0;}
 .default-icon-logout {background-position: -726px 0;}
+#settings form {display:inline}
 /*FILE MANAGER*/
 #filetable {font-size:115%;}
 #filetable_paths {padding-top:10px;}
@@ -112,10 +113,55 @@ div#subnav ul li a:hover {color: #999;}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
 .ui-button-text:hover {color:#999;}
-.ui-element-width_100 {width:100%;}
-.ui-element-width_50 {width:50%;}
+.ui-element-width-100 {width:100%;}
+.ui-element-width-50 {width:50%;}
 .ui-help-box, .ui-help-box .ui-widget-header {background:#000;color:white !important;}
 .ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.8 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)" !important;filter: alpha(opacity=50) !important;}
 .ui-help-box a {color:white !important;}
 .ui-help-box a:hover {color:white !important}
+.ui-fake-updir {background:#EEE}
 /*DISK*/
+table.typetable > tbody > tr > td {	vertical-align : middle;	padding : 0.5em 0.5em;}
+table.typetable > tbody > tr > th {	padding : 0.5em 0.5em;}
+table.disks {	width: 100%;	margin : 0px;}
+table.disks > tbody > tr > td {	vertical-align : middle;}
+table.disks > tbody > tr > th {	padding : 0.5em 0.2em;}
+table.disks > tbody > tr > td.partitions {	padding: 2px;	width: 350px;	height: 100%;}
+th.col1 {	width : 100px;}
+th.path {	width : 250px;}
+div.mount {	float: right !important;}
+table.partitions {	font-size: 1em;	width: 100%;	padding: 0px;	margin: 0px;}
+table.partitions > tbody > tr > td { 	padding: 0px;}
+.partition {padding: 0;	vertical-align: middle;	text-align: center;	color: #000;font-size: 0.8em;	font-weight: bold;	font-family: sans-serif;	text-decoration: none;	height : 25px;}
+td.colorcode {	text-align : center;}
+div.colorcode {	width : 15px;	height : 15px;}
+/*
+ * perl -MGraphics::ColorObject -e 'foreach(0..21) { printf "td.partition-%d { background-color: #%s }\n", $_, Graphics::ColorObject->new_HSL([67+$_*73, .6, .6 ])->as_RGBhex() }'
+ */
+.partition-0 { background-color: #C8D65C }
+.partition-1 { background-color: #5CD685 }
+.partition-2 { background-color: #5C93D6 }
+.partition-3 { background-color: #BA5CD6 }
+.partition-4 { background-color: #D65C5E }
+.partition-5 { background-color: #BED65C }
+.partition-6 { background-color: #5CD68F }
+.partition-7 { background-color: #5C89D6 }
+.partition-8 { background-color: #A9D65C }
+.partition-9 { background-color: #5CD6A3 }
+.partition-10 { background-color: #5C74D6 }
+.partition-11 { background-color: #D65CD4 }
+.partition-12 { background-color: #D6785C }
+.partition-13 { background-color: #9FD65C }
+.partition-14 { background-color: #5CD6AD }
+.partition-15 { background-color: #C45CD6 }
+.partition-16 { background-color: #D6645C }
+.partition-17 { background-color: #B4D65C }
+.partition-18 { background-color: #5CD699 }
+.partition-19 { background-color: #5C7ED6 }
+.partition-20 { background-color: #CE5CD6 }
+.partition-21 { background-color: #D66E5C }
+.partition-e { background-color: #E62323 }
+.partition-system { background-color: #5C5C5C }
+div.text input {	vertical-align : middle;}
+div.text label {	margin-right : 15px;}
+input.mount {width : 75px;	margin : 0;}
