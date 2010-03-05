@@ -4,49 +4,63 @@ $children = array();
 
 
 /* Top level navigation */
-print "<div id='nav'>";
-print "<ul>\n";
+$navbar  = "<div id='nav'>";
+$navbar = "<ul>\n";
 
 foreach($menu as $level) {
 	if(isset($level["children"]) && is_array($level["children"])) {
 		$children = $level["children"];
 	}
-	print "<li class='";
+	$navbar .= "<li class='";
 	if(isset($level["selected"]) && $level["selected"]) {
-		print "active";
+		$navbar .= "active";
 	}
 	if(end($menu) == $level) {
-		print " last";
+		$navbar .= " last";
 	}
 
-	print "'>";
-	print "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>".t("title_" . $level["id"]) . "</span></a>";
-	print "</li>\n";
+	$navbar .= "'>";
+	$navbar .= "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>".t("title_" . $level["id"]) . "</span></a>";
+	$navbar .= "</li>\n";
 }
-print "</ul>\n";
-print "</div>\n";
+$navbar .= "</ul>\n";
 
 
 /* Sub level navigaion */
 
-print "<div id='subnav'>";
-print "<ul>\n";
+$subnav = "<ul>\n";
 
 foreach($children as $level) {
-	print "<li class='";
+	$subnav .= "<li class='";
 	if(isset($level["selected"]) && $level["selected"]) {
-		print "active";
+		$subnav .= "active";
 	}
 	if(end($children) == $level) {
-		print " last";
+		$subnav .= " last";
 	}
 
-	print "'>";
-	print "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>".t("title_" . $level["id"]) . "</span></a>";
-	print "</li>\n";
+	$subnav .= "'>";
+	$subnav .= "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>".t("title_" . $level["id"]) . "</span></a>";
+	$subnav .= "</li>\n";
 }
 
-print "</ul>\n";
-print "</div>";
+$subnav .= "</ul>\n";
+
+// print the navigation menus
+
+if($show_level1) { 
+	print "<div id='nav'>\n";
+	print $navbar;
+	print "</div>\n";
+	print "<div id='subnav'>\n";
+	print $subnav;
+	print "</div>\n";
+} else {  // do not print the first level, and use second level as primary
+	print "<div id='nav'>\n";
+	print $subnav;
+	print "</div>\n";
+}
+
+
 
 ?>
