@@ -310,9 +310,6 @@ $(document).ready(function() {
 	// All dialogs can be somewhat generic in buildup
 
 	$.each( ['mkdir', 'delete', 'perm', 'rename'], function( index, value ) {
-		var buttons = {};
-		buttons[$.message("filemanager-" + value + "-dialog-button-label")] = dialog_callbacks[value];
-		buttons[$.message("button-label-cancel")] =  dialog_callbacks["default_close"];
 
 		var options = { "autoOpen": false,
 			"open": function(event,ui) {
@@ -331,7 +328,13 @@ $(document).ready(function() {
 		dialogs[value] = $.dialog( 
 			$("#fn-filemanager-" + value + "-dialog"),
 			$.message("filemanager-" + value + "-dialog-title"),
-			buttons,
+			[
+				{
+					'label': $.message("filemanager-" + value + "-dialog-button-label"),
+					'callback': dialog_callbacks[value],
+					options: { id: 'fn-' + value + '-dialog-button' }
+				}
+			],
 			options	
 		);
 

@@ -10,6 +10,10 @@
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery-ui.js?v='<?=$this->session->userdata('version')?>'"></script>
+
+<!-- currently diverted from original -->
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.dialog.js?v='<?=$this->session->userdata('version')?>'"></script>
+
 <?if(file_exists(APPPATH.'views/'.THEME.'/_js/i18n/'.LANGUAGE.'/messages.js')):?>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME.'/_js/i18n/messages-'.LANGUAGE.'.js'?>?v='<?=$this->session->userdata('version')?>'"></script>
 <?else :?>
