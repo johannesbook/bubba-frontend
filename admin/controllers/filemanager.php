@@ -37,6 +37,7 @@ class Filemanager extends Controller{
 				$mdata['head'] = $head;
 			}
 		}
+		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["content"]=$content;
