@@ -105,26 +105,17 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-upload',
 		'disabled': false,
-		'type': 'ui-icon-arrowthickstop-1-s',
+		'type': 'ui-icon-arrowthickstop-1-n',
 		'alt': 'Upload File',
 		'info': '',
 		'callback': function() {
-		}
-	},
-	{
-		'id': 'fn-filemanager-button-create',
-		'disabled': false,
-		'type': 'ui-icon-plusthick',
-		'alt': 'Create Folder',
-		'info': '',
-		'callback': function() {
-			dialogs["mkdir"].dialog("open");
+			window.open(config.prefix + "/upload/index" + $("#filetable").data('root'), "", "width=500,height=250.menubar=no,toolbar=no,location=no,directories=no,personalbar=no,status=no,dialog=yes");
 		}
 	},
 	{
 		'id': 'fn-filemanager-button-download',
 		'disabled': true,
-		'type': 'ui-icon-cart',
+		'type': 'ui-icon-arrowthickstop-1-s',
 		'alt': 'Download as ZIP',
 		'info': '',
 		'callback': function() {
@@ -140,6 +131,16 @@ buttons = [
 				form.append(e);
 			});
 			form.appendTo("body").submit().remove();
+		}
+	},
+	{
+		'id': 'fn-filemanager-button-create',
+		'disabled': false,
+		'type': 'ui-icon-plusthick',
+		'alt': 'Create Folder',
+		'info': '',
+		'callback': function() {
+			dialogs["mkdir"].dialog("open");
 		}
 	},
 	{
