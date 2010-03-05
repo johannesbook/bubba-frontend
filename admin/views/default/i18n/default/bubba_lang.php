@@ -39,6 +39,8 @@ $lang['title_shutdown']=$lang['Shutdown'];
 /* 'Elevated' sub navigation */
 $lang['title_usersettings-info'] = "User information";
 $lang['title_usersettings-mail'] = "Mail";
+$lang['title_albums'] = "Album manager";
+$lang['title_album-users'] = "Album users";
 
 
 /* Sub navigation categories  */

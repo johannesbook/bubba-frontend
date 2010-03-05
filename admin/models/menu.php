@@ -187,7 +187,7 @@ class Menu extends Model {
 					'default' => true,
 				),
 				array( 
-					'id' => 'users',
+					'id' => 'album-users',
 					'uri' => 'album/users',
 				),
 			),			
