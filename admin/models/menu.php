@@ -11,17 +11,17 @@ class Menu extends Model {
 			'uri' => 'filemanager',
 			'children' => array(
 				array(
-					'id' => 'browse',
+					'id' => 'filemanager-browse',
 					'uri' => 'filemanager/',
 					'default' => true,
 				),
 				array(
-					'id' => 'backup',
+					'id' => 'filemanager-backup',
 					'uri' => 'filemanager/backup',
 					'allow' => array( 'admin' ),
 				),
 				array(
-					'id' => 'restore',
+					'id' => 'filemanager-restore',
 					'uri' => 'filemanager/restore',
 					'allow' => array( 'admin' ),
 				),
@@ -30,11 +30,6 @@ class Menu extends Model {
 		array( 
 			'id' => 'userinfo',
 			'uri' => 'userinfo',
-			'deny' => array( 'admin' ),
-		),
-		array(
-			'id' => 'usermail',
-			'uri' => 'usermail',
 			'deny' => array( 'admin' ),
 		),
 
@@ -51,21 +46,15 @@ class Menu extends Model {
 		array( 
 			'id' => 'mail',
 			'uri' => 'mail',
-			'allow' => array( 'admin' ),
 			'children' => array(
 				array(
-					'id' => 'retrieve',
-					'uri' => 'mail/retrieve',
+					'id' => 'mail-retrieve',
+					'uri' => 'mail/index',
 					'default' => true,
 				),
 				array(
-					'id' => 'send',
-					'uri' => 'mail/send',
-					'allow' => array( 'admin' ),
-				),
-				array( 
-					'id' => 'recieve',
-					'uri' => 'mail/recieve',
+					'id' => 'mail-server_settings',
+					'uri' => 'mail/server_settings',
 					'allow' => array( 'admin' ),
 				),
 			),
@@ -76,28 +65,24 @@ class Menu extends Model {
 			'allow' => array( 'admin' ),
 			'children' => array(
 				array( 
-					'id' => 'profile',
+					'id' => 'network-profile',
 					'uri' => 'network/profile',
 					'default' => true,
 				),
 				array(
-					'id' => 'wan',
+					'id' => 'network-wan',
 					'uri' => 'network/wan',
 				),
 				array(
-					'id' => 'lan',
+					'id' => 'network-lan',
 					'uri' => 'network/lan',
 				),
 				array(
-					'id' => 'wlan',
+					'id' => 'network-wlan',
 					'uri' => 'network/wlan',
 				),
 				array(
-					'id' => 'identity',
-					'uri' => 'network/other',
-				),
-				array(
-					'id' => 'firewall',
+					'id' => 'network-firewall',
 					'uri' => 'network/fw',
 				),
 			),
@@ -108,16 +93,16 @@ class Menu extends Model {
 			'allow' => array( 'admin' ),
 			'children' => array(
 				array( 
-					'id' => 'info',
+					'id' => 'disk-info',
 					'uri' => 'disk/',
 					'default' => true,
 				),
 				array(
-					'id' => 'lvm',
+					'id' => 'disk-lvm',
 					'uri' => 'disk/lvm',
 				),
 				array( 
-					'id' => 'raid',
+					'id' => 'disk-raid',
 					'uri' => 'disk/raid',
 				),
 			),			
@@ -133,28 +118,33 @@ class Menu extends Model {
 			'allow' => array( 'admin' ),
 			'children' => array(
 				array( 
-					'id' => 'wizard',
+					'id' => 'settings-wizard',
 					'uri' => 'settings/startwizard',
 					'default' => true,
 				),
 				array(
-					'id' => 'traffic',
+					'id' => 'settings-identity',
+					'uri' => 'settings/identity',
+				),
+
+				array(
+					'id' => 'settings-traffic',
 					'uri' => 'settings/trafficsettings',
 				),
 				array( 
-					'id' => 'date',
+					'id' => 'settings-date',
 					'uri' => 'settings/datetime',
 				),
 				array(
-					'id' => 'sysbackup',
+					'id' => 'settings-sysbackup',
 					'uri' => 'settings/backuprestore',
 				),
 				array(
-					'id' => 'update',
+					'id' => 'settings-update',
 					'uri' => 'settings/software',
 				),
 				array( 
-					'id' => 'logs',
+					'id' => 'settings-logs',
 					'uri' => 'settings/logs',
 				),
 			),					
@@ -202,8 +192,7 @@ class Menu extends Model {
 			}
 			$current = array();
 
-
-			if( strpos( $current_level, $menu['uri'] ) === 0 ) {
+			if( strpos( $current_level , $menu['uri'] ) === 0 ) {
 				$selected = &$current;
 				if( isset($menu['children']) && is_array($menu['children']) ) {
 

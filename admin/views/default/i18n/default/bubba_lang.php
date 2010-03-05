@@ -17,7 +17,9 @@ $lang['Disk']="Disk";
 $lang['Userinfo']="User info";
 $lang['Shutdown']="Confirm Shutdown";
 
+/* Main navigation categories  */
 $lang['title_']=$lang['Home'];
+$lang['title_home']=$lang['Home'];
 $lang['title_login']=$lang['Login'];
 $lang['title_users']=$lang['Users'];
 $lang['title_services']=$lang['Services'];
@@ -34,6 +36,29 @@ $lang['title_disk']=$lang['Disk'];
 $lang['title_userinfo']=$lang['Userinfo'];
 $lang['title_shutdown']=$lang['Shutdown'];
 
+/* Sub navigation categories  */
+$lang['title_filemanager-browse']="Browse";
+$lang['title_filemanager-backup']="Backup";
+$lang['title_filemanager-restore']="Restore";
+$lang['title_mail-retrieve']="Retreive Mail";
+$lang['title_mail-server_settings']="Server settings";
+$lang['title_network-profile']="Profile";
+$lang['title_network-lan']="LAN";
+$lang['title_network-wan']="WAN";
+$lang['title_network-wlan']="Wireless";
+$lang['title_network-firewall']="Firewall";
+$lang['title_disk-info']="Disk information";
+$lang['title_disk-lvm']="LVM";
+$lang['title_disk-raid']="RAID";
+$lang['title_settings-wizard']="Setup wizard";
+$lang['title_settings-identity']="Identity";
+$lang['title_settings-traffic']="Traffic";
+$lang['title_settings-date']="Date and time";
+$lang['title_settings-sysbackup']="Config backup";
+$lang['title_settings-update']="Firmware upgrade";
+$lang['title_settings-logs']="Logs";
+
+
 
 /* Generic button labels and texts */
 
@@ -45,6 +70,8 @@ $lang['generic_dialog_text_please_wait'] = "Please wait...";
 $lang['generic_dialog_text_warning'] = "Warning";
 
 /* Login texts  */
+$lang["topnav-authorized"] = "Logged in as '%s'";
+$lang["topnav-not-authorized"] = "Not logged in";
 $lang["login-dialog-header"] = "Login";
 $lang["login-dialog-username"] = "Username";
 $lang["login-dialog-password"] = "Password";

@@ -30,9 +30,6 @@ if(isset($head)) {
 <script type="text/javascript">
 	
 $(document).ready(function(){
-	// Make a striped effect on tables in content
-	$('table:not(.blank)').stripe();
-	
 	
 	$('#home_switch').click(function(event) {  
             event.preventDefault();
@@ -50,13 +47,7 @@ $(document).ready(function(){
             }
             
         } );
-	
-<?if(preg_match("/Opera/i",$_SERVER['HTTP_USER_AGENT'])):?>
-	
-	$("input[type='checkbox']").removeClass("checkbox_radio");
-	$("input[type='radio']").removeClass("checkbox_radio");
 
-<?endif?>
 
 <?if(isset($update) && is_array($update)):?>
 

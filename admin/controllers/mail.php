@@ -16,7 +16,7 @@ class Mail extends Controller{
 
 	function _renderfull($content,$head = ""){
 		if( ! $head ) {
-			$mdata["head"] = $this->load->view(THEME.'/filemanager/filemanager_head_view','',true);
+			$mdata["head"] = $this->load->view(THEME.'/mail/mail_head_view','',true);
 		} else {
 			$mdata['head'] = $head;
 		}
@@ -157,7 +157,7 @@ class Mail extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/mail/mail_editfac_view',$data);
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/mail/mail_editfac_view',$data,true),'/mail/mail_head_view');
+			$this->_renderfull($this->load->view(THEME.'/mail/mail_editfac_view',$data,true),$this->load->view(THEME.'/mail/mail_head_view',$data,true));
 		}
 	}	
 	
@@ -353,7 +353,7 @@ class Mail extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/mail/mail_server_view',$data);
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/mail/mail_server_view',$data,true), '/mail/mail_head_view');
+			$this->_renderfull($this->load->view(THEME.'/mail/mail_server_view',$data,true),$this->load->view(THEME.'/mail/mail_head_view','$data',true));
 		}
 	}
 	

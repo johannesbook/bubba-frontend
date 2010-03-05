@@ -2,6 +2,8 @@
 
 $children = array();
 
+
+/* Top level navigation */
 print "<div id='nav'>";
 print "<ul>\n";
 
@@ -24,10 +26,11 @@ foreach($menu as $level) {
 print "</ul>\n";
 print "</div>\n";
 
+
+/* Sub level navigaion */
+
 print "<div id='subnav'>";
 print "<ul>\n";
-
-
 
 foreach($children as $level) {
 	print "<li class='";
