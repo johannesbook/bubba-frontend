@@ -304,6 +304,7 @@ $lang["infoincomp"] = "Account information incomplete. Account not added.";
 $lang["mail_addok"] = "Account added.";
 $lang["mail_err_usrinvalid"] = "User not allowed to update account";
 $lang["mail_editok"] = "Account updated.";
+$lang["mail_delete_account_ok"] ="Account deleted";
 
 //  ----------- Filemanager --------
 

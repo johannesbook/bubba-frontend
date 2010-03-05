@@ -161,6 +161,16 @@ class Mail extends Controller{
 		}
 	}	
 	
+	function update($strip="") {
+		if($this->input->post('delete_account')) {
+			$this->dodeletefac($strip);
+		} elseif ($this->input->post('edit_account')) {
+			$this->updatefac($strip);
+		} else {
+			$this->index($strip);
+		}
+	}
+	
 	function dodeletefac($strip=""){
 
 		$server=$data["server"]=$this->input->post('server');
@@ -168,21 +178,18 @@ class Mail extends Controller{
 		$ruser=$data["ruser"]=$this->input->post('ruser');
 		$luser=$this->input->post('luser');
 	
-		$data["success"]=false;
-		$data["err_usrinvalid"]=false;
+		$errors = array();
 		
 		if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
-			$data["err_usrinvalid"]=true;		
+			$errors["err_usrinvalid"]=true;		
 		}else{
-			delete_fetchmailaccount($server,$protocol,$ruser);
-			$data["success"]=true;		
+			delete_fetchmailaccount($server,$protocol,$ruser); // error checking??
 		}
-	
-		if($strip){
-			$this->load->view(THEME.'/mail/mail_dodeletefac_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/mail/mail_dodeletefac_view',$data,true));
-		}
+
+		$update = create_updatemsg($errors,"mail_delete_account_ok");
+		$data = array();
+		$data["update"] = $update;
+		$this->viewfetchmail("",$data);
 	}	
 	
 	function updatefac($strip=""){

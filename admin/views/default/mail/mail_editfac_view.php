@@ -1,5 +1,5 @@
 <fieldset id="fetchmail"><legend><i><?=t('Edit account')?></i></legend>
-<form action="<?=FORMPREFIX?>/mail/updatefac" method="post">
+<form action="<?=FORMPREFIX?>/mail/update" method="post" id="fn-mail-retreive-update">
 <input type="hidden" name="old_server" value="<?=$server?>"/>
 <input type="hidden" name="old_protocol" value="<?=$protocol?>"/>
 <input type="hidden" name="old_ruser" value="<?=$ruser?>"/>
@@ -59,13 +59,15 @@
 				type="submit" 
 				name="edit_account" 
 				value="<?=t('Update')?>"
+				id="mail-editfac-update"
 			/>
 			<input
-				id="mail_del_account"
+				id="mail_editfac_delete"
 				type="submit"
-				name="delete_account"
 				value="<?=t('Delete account')?>"
 			/>
+			<input type="hidden" name="delete_account" value="" id="mail-editfac-hidden-delete">
+
 		</td>
 	
 	</tr>

@@ -43,7 +43,7 @@ function dialog_login(e) {
 						},"json");
 					}
 				}
-			);
+			,{dialogClass : "ui-login-dialog"});
 			if(link_locked && data.user && data.valid_session) {
 				// show no-access message if the target is locked for the current user.
 				$("#fn-login-error-grantaccess").show();
