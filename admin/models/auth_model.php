@@ -2,6 +2,30 @@
 
 class Auth_model extends Model{
 
+	private $policies = array(
+		"userdata" 		=> array(
+			"list" 		=> array(
+				"allow" => array("admin")
+			),
+			"add"  		=> array(
+				"allow" => array("admin")
+			),
+			"delete"  => array( 
+				"allow" => array("admin")
+			)
+		),
+		"menu"				=> array(
+			"show_level1" => array(
+				"allow" => array("admin")
+			)
+		),
+		"mail"				=> array(
+			"edit_allusers" => array(
+				"allow" => array("admin")
+			)
+		)
+	);
+		
 	function Auth_model(){
 		parent::Model();
 	 }
@@ -62,6 +86,22 @@ class Auth_model extends Model{
 		$this->session->set_userdata('caller', $this->uri->uri_string());
 		redirect('login');
 		exit();
+	}
+	
+	function policy($policy,$method) {
+		
+		$user = $this->session->userdata("user");
+		if(isset($this->policies[$policy][$method]["deny"])) {
+			if(in_array($user,$this->policies[$policy][$method]["deny"])) {
+				return false;
+			}
+		}
+		if(isset($this->policies[$policy][$method]["allow"])) {
+			if(!in_array($user,$this->policies[$policy][$method]["allow"])) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
 ?>
