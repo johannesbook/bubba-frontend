@@ -40,7 +40,7 @@ $(document).ready(function(){
 	
 	$('#home_switch').click(function(event) {  
             event.preventDefault();
-            $('#home').toggle()
+            $('#menu').toggle()
         } );
 	$('#sideboard_switch').click(function(event) {  
             event.preventDefault();
@@ -114,7 +114,7 @@ if(isset($head)) {
                 <button id="fn-topnav-help" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Help" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-lightbulb"></span><span class="ui-button-text">&nbsp;</span></button>
                 <button id="home_switch" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
                 <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
-                <a id="sideboard_switch" href="#" class="ui-state-default" ></a>
+                <a id="sideboard_switch" href="#" class="ui-state-default" ><</a>
             </div>	
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
             <?=$navbar?>

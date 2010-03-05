@@ -33,7 +33,7 @@ $('form.ack').live( 'submit', function(e) {
 <tr>
 	<td></td>
 	<td>
-		<div class="space-indicator"><div style="width: <?=$percentused?>%"></div></div>
+		<div><div style="width: <?=$percentused?>%"></div></div>
 	</td>
 </tr>
 
@@ -55,14 +55,6 @@ $('form.ack').live( 'submit', function(e) {
 </form>
 <?endif?>
 </table>
-
-
-
-
-
-
-
-
 
 </td>
 <?if( !is_null($notifications) ):?>

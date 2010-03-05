@@ -1,5 +1,5 @@
-<fieldset><legend><i><?=t('Users')?></i></legend>
-<table cellpadding="1" cellspacing="0" border="1">
+<table>
+<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Users')?></td></tr>
 <tr>
 	<th><i><?=t('username')?></i></th>
 	<th><i><?=t('realname')?></i></th>
@@ -38,13 +38,10 @@
 </tr>
 <? } ?>
 </table>
-</fieldset>
-<p/>
 
-
-<fieldset><legend><i><?=t('Add new user')?></i></legend>
 	<form action="<?=FORMPREFIX?>/users/add" method="post">
 		<table border="0" cellpadding="0">
+		<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Add new user')?></td></tr>
 		<tr>
 			<td><?=t('Username')?>:</td>
 			<td><input type="text" name="uname" value="<?=$uname?>" size="30"/></td>
@@ -67,13 +64,7 @@
 		<tr>
 			<td><?=t('Verify password')?>:</td>
 			<td><input type="password" name="pass2" size="30"/></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>
-				<input class="submitbutton" type="submit" name="adduser" value="<?=t('Add user')?>"/>
-			</td>
-		</tr>
+		</tr>		
 		</table>
+		<input class="submitbutton" type="submit" name="adduser" value="<?=t('Add user')?>"/>
 	</form>
-</fieldset>

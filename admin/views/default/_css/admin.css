@@ -9,14 +9,15 @@ form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button] {background:#000;padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:140%}
+input[type=submit],input[type=button] {background:#000;padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:110%}
 input[type=submit]:hover,input[type=button]:hover {border:0}
 input[type=submit]:focus,input[type=button]:focus {border:0}
-input[type=text],input[type=password] {vertical-align:text-bottom;padding-bottom: 0px;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #999;}
+input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #999;}
 input[disabled]{	color: #666;	background: #ccc;}
 input:focus {border: 0.1em solid #000;}
 input[type=radio] {border:3px solid blue;}
 table {margin: 1em 0;font-size: 1.3em;border-collapse : collapse;border:0;width:100%; }
+select {width:49%;}
 td {padding: 0.5em 1.2em;vertical-align: top;}
 tr {border-bottom:0.1em solid #999}
 th {padding: 0.3em 0.5em;text-align: left;}
@@ -33,7 +34,7 @@ img{border: 0;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
 #logo {font-size:300%;font-weight:normal;color:#000;text-decoration:none;}
 #img_logo {}
-#header {margin-top:2em;}
+#header {margin-top:2em;margin-bottom:1em}
 #header li {color: #000;padding:0 0.1em;border-right:2px #000 solid;text-align:center;}
 #header li a {color: #000;text-decoration: none;margin-right:0.3em}
 #header li a:hover {color: #999;}
@@ -47,16 +48,16 @@ img{border: 0;}
 #topnav button:hover {border-bottom:0.1em solid black;}
 #subnav {font-size: 120%;list-style: none;margin-top:0.8em;}
 #subnav ul:after {content: ".";height: 0;clear: both;visibility: hidden;}
-#subnav ul li {border-right:1px #000 solid;padding-left:0.3em;padding-top:0;}
+#subnav ul li {border-right:1px #000 solid;padding-top:0;}
 #subnav ul li a{color: #000;text-decoration: none;padding: 0.1em;}
 #subnav ul li.last a {border: 0;}
 div#subnav ul li a:hover {color: #999;}
 /*LOGIN VIEW*/
 #login h1 {font-size:120%;margin-bottom:2em;}
-#login_more_info {display:block;margin-top:25em;font-size:115%;}
+#login_more_info {display:block;margin-top:25em;font-size:145%;}
 #login_more_info span{display:block;}
 #login_more_info a {font-size:130%;text-decoration:none;margin-right:0.3em;font-weight:bold;}
-#login_more_info a:hover {color:#999;}
+#login_more_info a:hover {color:#506ab2;}
 #login_more_info img{display:block;margin-top:1.5em;}
 #login_menubar {margin-top:3em;}
 .ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:20px;padding-top:75px;font-weight:bold;text-align:center;}
@@ -67,12 +68,13 @@ div#subnav ul li a:hover {color: #999;}
 #sideboard {position:absolute;z-index:1;left:75%;top:15%;}
 #sideboard_switch {margin:left:8%;float:right !important;font-size:180%;color:white;text-decoration:none !important;padding-left:0.3em;}
 /* HOME MENU */
-#home {position:fixed;top:35%;left:20%;width:auto;z-index:3;}
-#home_close {float:right;margin-top:-85px;}
-#home li a{margin-right:16px;}
-#home li a span{float:right;}
-#home li div {display:inline;width:74px;}
+#menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;}
+#menu_close {float:right;margin-top:-85px;}
+#menu li a{margin-right:16px;}
+#menu li a span{float:right;}
+#menu li div {display:inline;width:74px;}
 .default-icon {width:74px; height:74px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
+.default-icon-lock {width:74px; height:74px; background-image:url(../_img/icons_home_lock.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .default-icon-mail {background-position: 0 0;}
 .default-icon-settings {background-position: -90px 0;}
 .default-icon-clock {background-position: -180px 0;}
@@ -83,6 +85,7 @@ div#subnav ul li a:hover {color: #999;}
 .default-icon-music {background-position: -635px 0;}
 .default-icon-logout {background-position: -726px 0;}
 /*FILE MANAGER*/
+#filetable {font-size:115%;}
 #filetable_paths {padding-top:10px;}
 #filetable_paths a {color:#000;margin:0 3px;text-transform:capitalize;}
 #filetable tbody .row-selected * {background: #506ab2;}
@@ -91,7 +94,7 @@ div#subnav ul li a:hover {color: #999;}
 #filetable:not(.clone) tbody tr.row-selected:hover * {	background: #999 !important}
 #filetable_processing {padding: 30px; display: inline;}
 #filetable_wrapper button {border:0;}
-#filetable .ui_icon {display:inline !important}
+#filetable span {float:left !important;}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
 .ui-filemanager-state-dblckick {background:#fbec9d !important; }
 *:not(.ui-fake) .ui-filemanager-state-hover:hover {	background: #aa7676;}
@@ -102,9 +105,17 @@ div#subnav ul li a:hover {color: #999;}
 .ui-filemanager-path-widget .ui-filemanager-path-divider {margin: 0.1em;}
 .ui-filemanager-path-widget .ui-filemanager-path-link {cursor: pointer;}
 .ui-filemanager-path-widget {float: left;font-size: larger;}
-.ui-filemanager-type-file {border-left: 2px solid #3232aa;}
-.ui-filemanager-type-dir {border-left: 2px solid #aa3232;}
+.ui-filemanager-type-file {}
+.ui-filemanager-type-dir {}
 .ui-filemanager-type-row {cursor: pointer;}
 .ui-buttonbar {float:right;margin:0 4px;}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
+.ui-button-text:hover {color:#999;}
+.ui-element-width_100 {width:100%;}
+.ui-element-width_50 {width:50%;}
+.ui-help-box, .ui-help-box .ui-widget-header {background:#000;color:white !important;}
+.ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.8 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)" !important;filter: alpha(opacity=50) !important;}
+.ui-help-box a {color:white !important;}
+.ui-help-box a:hover {color:white !important}
+/*DISK*/

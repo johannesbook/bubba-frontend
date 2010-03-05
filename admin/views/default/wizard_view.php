@@ -11,8 +11,7 @@
 		<tr><td colspan="2"><?=t('Please take a moment to set up basic functionality for Bubba|Two.')?></td></tr>
 		<tr><td colspan="2"><?=t('All entered values can easily be changed later using the administration interface.')?></td></tr>
 
-		<tr><td colspan="2"><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
-	</table>
-	</fieldset>
 		
+	</table>
+	<input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/>		
 	</form>

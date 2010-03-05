@@ -8,7 +8,7 @@ button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a l
 button.ui-button-icons-only { width: 3.2em; } 
 
 /*button text element */
-.ui-button .ui-button-text { display: block; line-height: 1.4;  }
+.ui-button .ui-button-text { display: block; line-height: 1.4;}
 .ui-button-text-only .ui-button-text { padding: .4em 1em; }
 .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
 .ui-button-text-icon .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 1.8em; }
@@ -23,7 +23,7 @@ input.ui-button { padding: .4em 1em; }
 .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
 
 /*button sets*/
-.ui-button-set { margin-right: 7px;border:0.1em solid black;}
+.ui-button-set { margin-right: 7px;border:0.1em solid black;-moz-border-radius: 0.2em;-webkit-border-radius: 0.2em}
 .ui-button-set .ui-button { margin-left: 0; margin-right: 0; }
 
 /* workarounds */
