@@ -1,0 +1,234 @@
+table#sysbackup {
+	font-size : 1em;
+	width : 100%;
+}
+table#sysbackup select{
+	font-size : 1em;
+	width : 150px;
+}
+table#sysbackup input[type=submit]{
+	font-size : 1em;
+	width : 100px;
+}
+
+form {
+	margin : 0px;
+}
+table#backup {
+	font-size : 1em;
+}
+
+table#backup td.backupjobs {
+	width : 85px;
+}
+table#backup td.backupfiles {
+	width : 175px;
+}
+table#backup td.backupsettings {
+	width : 480px;
+	margin : 0px;
+}
+
+table#backup input {
+	font-size : 1em;
+	width : 75px;
+}
+
+table#backup select{
+	border : 0 none;
+	font-size : 1em;
+	width : 150px;
+}
+
+table#backup tr.subhead {
+	height : 2em;
+}
+
+input.incexc {
+	width : 60px;
+}
+
+table#backup div.error {
+	color : red;
+}
+
+table.tbl_settings {
+	font-size : 1em;
+	margin : 0px;
+	width : 476px;
+	padding : 0px;
+	padding-left : 5px;
+}
+table.tbl_settings td{
+	padding : 2px 2px;
+	vertical-align : middle;
+
+}
+table.tbl_settings td.size1{
+	width : 110px;
+}
+
+table.tbl_settings td.tight{
+	width : 80px;
+}
+
+
+div#settings {
+	font-size : 1em;
+}
+div#settings legend {
+	width : 9em;
+}
+
+div#settings input {
+	width : 100px;
+}
+
+div#settings input[type=checkbox]{
+	margin : 0px;
+	padding : 0px;
+	width : 10px;
+}
+
+div#settings select{
+	padding: 0;
+	margin : 0.2em;
+	margin-left : 0.3em;
+	border : 0px;
+	font-size : 1em;
+	width : 103px;
+	font-family : Tahoma,serif;
+}
+
+div#current_jobs{
+	min-height : 30px;
+	max-height : 150px;
+	padding-bottom : 20px;
+	overflow : auto;
+}
+div#current_incfiles{
+	min-height : 30px;
+	max-height : 100px;
+	padding-bottom : 20px;
+	overflow : auto;
+}
+div#current_excfiles{
+	min-height : 25px;
+	max-height : 100px;
+	padding-bottom : 20px;
+	overflow : auto;
+}
+div.files:hover{
+	cursor : pointer;
+}
+
+fieldset.fld_settings {
+	margin : 2px;
+	padding : 0px;
+	width : 100%;
+}
+
+div#backup_header {
+	background-color:#404040;
+	text-align:left;
+	vertical-align: middle;
+	font-size:1em;
+	height:2em;
+}
+
+
+div.jobs {
+	padding-left : 5px;
+	padding-right : 5px;
+	float : left;
+	width : 70px;
+	height : 100%;
+}
+div.date {
+	padding-left : 5px;
+	padding-right : 5px;
+	float : left;
+	width : 100px;
+	height : 100%;
+}
+div.status {
+	padding-left : 5px;
+	padding-right : 5px;
+	float : left;
+	width : 140px;
+	height : 100%;
+}	
+div.backupfiles {
+	padding-left : 5px;
+	padding-right : 5px;
+	float : left;
+	width : 450px;
+	bottom : 0px;
+}
+
+div#current_files {
+	min-height : 150px;
+	max-height : 300px;
+	overflow : auto;
+}
+div#current_dates {
+	max-height : 300px;
+	overflow : auto;
+}
+div#current_jobs {
+	max-height : 300px;
+	overflow : auto;
+}
+.selected {
+	background: #0091D1;
+}
+
+.subselected {
+	background: #005b83;
+}
+
+td.restoreinfo {
+	width : 400px;
+}
+
+input.cb_force {
+	margin : 2px;
+	font-size : 1em;
+}
+
+div.force_settings {
+	vertical-align: middle;
+	margin-top: 10px;
+}
+div.force_settings input{
+	vertical-align: middle;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+
+div.c_link {
+	text-decoration : underline;
+}
+div.c_link:hover {
+	cursor : pointer;
+}
+span.hidden {
+	display : none;
+}
+span.underline {
+	text-decoration : underline;
+}
+div.backup_tree_header {
+	font-size : 1.3em;
+	margin : 10px 0;
+	font-weight : bold;
+}
+input#backup_restore {
+	font-size : 1em;
+	margin-top : 10px;
+}
+
+.treelayout {
+	margin : 0 0 15px 50px;
+	
+}

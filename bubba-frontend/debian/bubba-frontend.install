@@ -1,0 +1,6 @@
+apache.conf /usr/share/bubba-frontend
+apache.site /usr/share/bubba-frontend
+lighttpd.conf /usr/share/bubba-frontend
+php5-cgi.conf /usr/share/bubba-frontend
+spawn-php /usr/sbin
+admin/* /usr/share/web-admin/admin
