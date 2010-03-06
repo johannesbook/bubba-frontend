@@ -11,6 +11,12 @@ class Help extends Controller{
 	
 	function load($strip="",$uri="") {
 		$section = strtr($uri,"/","_");
+		$a_manual_page = split("/",$uri);
+		if(sizeof($a_manual_page)>1) {
+			$manual_page = $a_manual_page[1];
+		} else {
+			$manual_page = $a_manual_page[0];
+		}
 		if($strip == "html") {
 			$footer  = "<div id='help-box-external-links'>";
 			$footer .= "<div class='help-box-external-link'><a target='_blank' href='/manual'>".t('help_box_manual_link')."</a></div>";

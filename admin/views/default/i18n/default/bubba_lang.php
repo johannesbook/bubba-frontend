@@ -342,39 +342,6 @@ $lang["filemanager-delete-fail-message"] = "Failed to delete following files and
 $lang["filemanager-delete-dialog-message"] = "Are you certain that you want to delete selected files and directories?";
 
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
-/*  ------------------- Texts to locate help pages.  -------------------*/
-//General pages
-$lang['help_stat']="";
-$lang['help_login']="?page=quickstart.html";
-$lang['help_filemanager']="?page=fileserver.html#WEB_BASED";
 
+$lang["help_box_header"] = "Bubba|2 Help";
 
-// Administrator pages
-$lang['help_users']="?page=administrator.html#USERS";
-$lang['help_services']="?page=administrator.html#SERVICES";
-$lang['help_mail']="?page=administrator.html#MAIL";
-$lang['help_network']="?page=administrator.html#NETWORK";
-$lang['help_wan']="?page=administrator.html#NETWORK_WAN";
-$lang['help_lan']="?page=administrator.html#NETWORK_LAN";
-$lang['help_other']="?page=administrator.html#NETWORK_identity";
-$lang['help_fw']="?page=administrator.html#NETWORK_Firewall";
-$lang['help_disk']="?page=administrator.html#DISK";
-$lang['help_lvm']="?page=administrator.html#DISK_LVM";
-$lang['help_raid']="?page=administrator.html#DISK_RAID";
-$lang['help_printing']="?page=administrator.html#PRINTING";
-$lang['help_settings']="?page=administrator.html#SETTINGS";
-$lang['help_backup']="?page=backup.html";
-$lang['help_restore']="?page=backup.html#RESTORE";
-$lang['help_trafficsettings']="?page=administrator.html#traffic";
-$lang['help_datetime']="?page=administrator.html#dateandtime";
-$lang['help_backuprestore']="?page=administrator.html#backuprestore";
-$lang['help_software']="?page=sw_upgrade.html";
-$lang['help_hotfix']="?page=sw_upgrade.html#hotfix";
-$lang['help_logs']="?page=administrator.html#logs";
-
-
-// User pages
-$lang['help_usermail']="?page=users.html#MAIL";
-$lang['help_downloads']="?page=users.html#DOWNLOADS";
-$lang['help_userinfo']="?page=users.html#USERINFO";
-$lang['help_album']="?page=users.html#PHOTOALBUM";
