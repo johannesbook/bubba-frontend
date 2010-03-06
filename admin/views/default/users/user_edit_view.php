@@ -40,6 +40,13 @@
 	     	<input type="radio" class="checkbox_radio" name="remote" value='false' <?= $remote?"":"checked"?>/> <?=t('No')?>
 	     </td>
     </tr>
+    <tr valign="top">
+	     <td><?=t('show_default_sideboard')?>:</td>
+	     <td>
+	     	<input type="radio" class="checkbox_radio" name="default_sideboard" value='true' <?= $default_sideboard?"checked":""?> /> <?=t('Yes')?><br/>
+	     	<input type="radio" class="checkbox_radio" name="default_sideboard" value='false' <?= $default_sideboard?"":"checked"?>/> <?=t('No')?>
+	     </td>
+    </tr>
     <? } else { // admin "view"?>
     <tr valign="top">
 	     <td><?=t('allow_ssh')?>:</td>

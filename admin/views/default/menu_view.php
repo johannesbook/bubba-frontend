@@ -21,4 +21,4 @@
              <span class="" style="display:none">Logout</span>
         </a>     
         <a id="menu_close" class="ui-icon ui-icon-closethick" onclick="$('#home').toggle()"></a>
-    </div>
+    </div>	<!-- (dialog) menu -->

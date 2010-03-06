@@ -1075,7 +1075,6 @@ class Network extends Controller{
 
 					// do not use CI output mechanism.
 					$mdata["navbar"]="";
-					$mdata["subnav"]="";
 					$mdata["content"]="";
 					$mdata["wizard"] = $this->load->view(THEME.'/network/network_wizard_view',$data,true);
 					echo $this->load->view(THEME.'/main_view',$mdata,true);    

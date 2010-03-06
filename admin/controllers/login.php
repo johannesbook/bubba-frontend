@@ -26,7 +26,6 @@ class Login extends Controller{
 				if(file_exists("/home/$myuser/.bubbacfg")){
 					$conf=parse_ini_file("/home/$myuser/.bubbacfg");
 					if($admin_wanaccess) {
-						//print_r($conf);
 						if(isset($conf['AllowRemote'])) {
 							if(!$conf['AllowRemote']) {
 								$data['authfail'] = true;
@@ -43,22 +42,10 @@ class Login extends Controller{
 								if(file_exists(APPPATH.'views/'.$conf["theme"])){
 									$this->session->set_userdata("theme", $conf["theme"]);
 								}
+								unset($conf["theme"]);
 							}
-							if(array_key_exists("language",$conf)){
-								$this->session->set_userdata("language", $conf["language"]);
-							}
-							if(array_key_exists("AllowRemote",$conf)){
-								$this->session->set_userdata("AllowRemote", $conf["AllowRemote"]);
-							} else {
-								$this->session->set_userdata("AllowRemote", false);
-							}
-							if(array_key_exists("network_profile",$conf)){
-								$this->session->set_userdata("network_profile", $conf["network_profile"]);
-							}
-							if(array_key_exists("run_wizard",$conf)){
-								if($conf['run_wizard']) {
-									$this->session->set_userdata("run_wizard", true);
-								}
+							foreach($conf as $key => $value) {
+								$this->session->set_userdata($key, $value);
 							}
 						}
 					}
@@ -115,6 +102,8 @@ class Login extends Controller{
 					$this->session->unset_userdata('required_user');
 				}
 			}
+			$conf=parse_ini_file("/home/admin/.bubbacfg");
+			$data["show_sideboard"] = (isset($conf["default_sideboard"]) && $conf["default_sideboard"]);
 		}
 		
 		/*  output data */
@@ -125,7 +114,6 @@ class Login extends Controller{
 			$this->load->view(THEME.'/loginview',$data);
 		}else{
 			$mdata["navbar"]="";
-			$mdata["subnav"]="";
 			$mdata["head"]=$this->load->view(THEME.'/login_head_view',$data,true);;
 			$mdata["content"]=$this->load->view(THEME.'/loginview',$data,true);
 			$this->load->view(THEME.'/main_view',$mdata);

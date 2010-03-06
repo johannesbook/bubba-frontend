@@ -259,6 +259,7 @@ class Users extends Controller{
 		$shell=$this->input->post("shell")=="true"?"/bin/bash":"/sbin/nologin";
 		$uname=$this->input->post("uname");
 		$remote = $this->input->post("remote");
+		$default_sideboard = $this->input->post("default_sideboard");
 
 		if($this->Auth_model->policy("mail","edit_allusers") || $this->session->userdata("user")==$user) {
 	
@@ -285,6 +286,20 @@ class Users extends Controller{
 				
 			} else {
 				if($uname=='admin') {
+
+					if ($default_sideboard=="true") {
+						if($this->session->userdata("default_sideboard")) {
+						} else {
+							update_bubbacfg("admin","default_sideboard","yes");
+							$this->session->set_userdata("default_sideboard", true);
+						}
+					} else {
+						if($this->session->userdata("default_sideboard")) {
+							update_bubbacfg("admin","default_sideboard","no");
+							$this->session->set_userdata("default_sideboard", false);
+						}
+
+					}				
 					if ($remote=="true") {
 						if($this->session->userdata("AllowRemote")) {
 							// do nothing already allowing remote access
@@ -338,6 +353,7 @@ class Users extends Controller{
 		if($data["uname"] == "admin") {
 			$data["user_is_admin"] = true;
 			$data["remote"] = $this->session->userdata("AllowRemote");
+			$data["default_sideboard"] = $this->session->userdata("default_sideboard");
 		} else {
 			if(trim($data["shell"])=="/bin/bash"){
 				$data["shell"]=true;
@@ -452,6 +468,10 @@ class Users extends Controller{
 			}
 		}
 	}
-
+	function config($strip="",$parameter,$value) {
+		update_bubbacfg($this->session->userdata("user"),$parameter,$value);
+		$this->session->set_userdata($parameter,$value);
+		print "Key: $parameter, Value: $value";
+	}
 }
 ?>

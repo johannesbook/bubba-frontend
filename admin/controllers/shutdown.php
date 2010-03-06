@@ -30,7 +30,6 @@ class Shutdown extends Controller{
 			redirect('/stat');
 		} else {
 			$mdata["navbar"]="";
-			$mdata["subnav"]="";
 			$mdata["content"]=$this->load->view(THEME.'/shutdown_view','',true);
 			$this->load->view(THEME.'/main_view',$mdata);
 

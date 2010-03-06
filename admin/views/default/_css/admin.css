@@ -28,7 +28,7 @@ li {display:inline;}
 a {color: #000;}
 img{border: 0;}
 /* WRAPPER */
-#wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:0em;max-width:96%;padding-left:3em;padding-top:2em;background:white;border:0.1em solid #000;border-right:0.25em solid #000;}
+#wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:2em 0em 0em 3em;max-width:96%;	background:white;border:0.1em solid #000;border-right:0.25em solid #000;}
 /*UPDATE STATUS*/
 #update_status {color:000;background-color:#fbec9d;font-size:120%;left:48%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:0;width:auto;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
@@ -41,7 +41,7 @@ img{border: 0;}
 #header li.active a {color:#506ab2;}
 #header li.last {border-right:none;}
 #nav ul{font-size: 160%;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
-#topnav {float:right;left:72%;top:3%;width:30%;}
+#topnav {float:right;left:72%;top:3%;width:29%;}
 #topnav a, #topnav span {float:left;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;}
 #topnav button {border:0;background:#fff;}
@@ -59,13 +59,18 @@ div#subnav ul li a:hover {color: #999;}
 #login_more_info a {font-size:130%;text-decoration:none;margin-right:0.3em;font-weight:bold;}
 #login_more_info a:hover {color:#506ab2;}
 #login_more_info img{display:block;margin-top:1.5em;}
-#login_menubar {margin-top:3em;}
+#login_menubar {margin-top:15em;}
 .ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:20px;padding-top:75px;font-weight:bold;text-align:center;}
 .ui-login-menubar-a span  {display:none;font-size:150%;}
 /* CONTENT */
-#content {margin-bottom:3em;width:70%;padding-top:2em;float:left;}
+#content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
 /* SIDE BOARD */
-#sideboard {float:right;width:20%;left:75%;top:15%;margin-top:-6em;}
+#sideboard {float:right;width:20%;margin-top:-2em;display : none}
+#sideboard-datetime-date {font-size: 10em;font-weight: bold;margin:0 0 -0.3em;}
+#sideboard-datetime-day {font-size: 3em;font-weight: bold;}
+#sideboard-datetime-month {font-size: 1.5em;font-weight: bold;}
+#sideboard-datetime-year {font-size: 1.5em;font-weight: bold;}
+#sideboard-clock-digital {font-size: 1.5em;font-weight: bold;}
 #sideboard_switch {margin:left:8%;float:right !important;font-size:180%;color:white;text-decoration:none !important;padding-left:0.3em;}
 /* HOME MENU */
 #menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;}

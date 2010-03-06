@@ -239,3 +239,7 @@ jQuery.extend({
 	}
 }
 );
+
+$(function($) {
+	$('.jclock').jclock();
+});

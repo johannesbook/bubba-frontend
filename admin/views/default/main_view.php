@@ -29,6 +29,11 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME.'/i18n/default/messages.js'?>?v='<?=$this->session->userdata('version')?>'"></script>
 <?endif?>
 
+<!-- Sideboard gadgets -->
+<!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/coolclock.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.jclock.js"></script>
+
 <?if(false):?>
 <!-- jQuery lint debug -->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.lint.js?v='<?=$this->session->userdata('version')?>'"></script>
@@ -49,26 +54,27 @@ config = <?=json_encode(
 	
 $(document).ready(function(){
 	
-	$('#fn-topnav-home').click(function(event) {  
-  	//event.preventDefault();
-    $('#menu').toggle()
-  } );
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
-  } );
+  	});
 	$('#sideboard_switch').click(function(event) {  
-            event.preventDefault();
-            
-            if($('#sideboard').is(":visible")) {
-                $('#sideboard').hide();
-                $('#content').css( 'width', '100%' );
-            } else {
-                $('#sideboard').show();
-                $('#content').css( 'width', '70%' );
-            }
-            
-        } );
-
+		if($('#sideboard').is(":visible")) {
+			$('#sideboard').hide();
+			$("#content").css("width","95%");
+			$("#sideboard_switch").text("<");
+			$.post(config.prefix+"/users/config/1/show_sideboard/0");
+		} else {
+			$('#sideboard').show();
+			$("#content").css("width","75%");
+			$("#sideboard_switch").text(">");
+			$.post(config.prefix+"/users/config/1/show_sideboard/1");
+		}
+	});
+<?if( ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
+	$("#content").css("width","75%");
+	$("#sideboard").show();
+	$("#sideboard_switch").text(">");
+<?endif?>
 
 <?if(isset($update) && is_array($update)):?>
 
@@ -86,7 +92,7 @@ $(document).ready(function(){
 			$uri .= "_".$this->uri->segment(2);
 		}
 		?>
-		$.post("<?=FORMPREFIX?>/help/load/html/<?=$uri?>", function(data) {
+		$.post(config.prefix+"/help/load/html/<?=$uri?>", function(data) {
 			$.dialog(
 				data,
 				"<?=t("help_box_header")?>",
@@ -128,21 +134,19 @@ if(isset($head)) {
                 <button id="fn-topnav-help" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Help" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-lightbulb"></span><span class="ui-button-text">&nbsp;</span></button>
                 <button id="fn-topnav-home" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Home" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
                 <button id="fn-topnav-logout" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" title="Log out" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-power"></span><span class="ui-button-text">&nbsp;</span></button>                
-                <a id="sideboard_switch" href="#" class="ui-state-default" ></a>
-            </div>	
+                <a id="sideboard_switch" href="#" class="ui-state-default" >&lt;</a>
+            </div>	<!-- topnav -->
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
             <?=$navbar?>
-        </div>		
+        </div>	<!-- header -->		
         <div id="content">
-        	<div id="<?=$this->uri->segment(1)?>">
-            <?=$content?>
-          </div>
-        </div>
-        <div id="sideboard" >
-            <img id="img_sideboard" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/sideboard_tmp.png" alt="tempfil för dashboard" title="tempfil för dashboard" />
-        </div>
-    </div>
+        	<div id="<?=$this->uri->segment(1)?>"> 	<!-- section -->
+            	<?=$content?>
+          	</div> 	<!-- section -->
+        </div>	<!-- content -->
+         <?include("sideboard_view.php")?>
+    </div>	<!-- wrapper -->
+	<?=$dialog_menu?>
     <div id="update_status"></div>
-    <?include("menu_view.php")?>
 </body>
 </html>
