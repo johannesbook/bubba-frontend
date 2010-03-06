@@ -1,7 +1,0 @@
-#!/usr/bin/make -f
-
-include /usr/share/cdbs/1/rules/debhelper.mk 
-DEB_DH_INSTALLINIT_ARGS :=  --name=bubba-adminphp --restart-after-upgrade
-
-binary-post-install/bubba-frontend::
-	dh_codeigniter --destdir=/usr/share/web-admin/admin -x
