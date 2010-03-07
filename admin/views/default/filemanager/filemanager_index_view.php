@@ -11,7 +11,7 @@
 			<th></th>
 		</tr>
 		<tr>
-			<td colspan="5" class="ui-fake-updir"></td>
+			<td colspan="5" class="ui-filemanager-fake-updir"></td>
 		</tr>
 	</thead>
 	<tbody>

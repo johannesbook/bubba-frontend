@@ -96,16 +96,16 @@ div#subnav ul li a:hover {color: #999;}
 #filetable_paths a {color:#000;margin:0 3px;text-transform:capitalize;}
 #filetable tbody .row-selected * {background: #506ab2;}
 #filetable:not(.clone) {cursor: pointer}
-#filetable:not(.clone) tbody tr:hover * {background: #999}
-#filetable:not(.clone) tbody tr.row-selected:hover * {	background: #999 !important}
+#filetable:not(.clone) tbody tr:hover * {background-color: #999}
+#filetable:not(.clone) tbody tr.row-selected:hover * {	background-color: #999 !important}
 #filetable_processing {padding: 30px; display: inline;}
 #filetable_wrapper button {border:0;}
 #filetable span {float:left !important;}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
-.ui-filemanager-state-dblckick {background:#fbec9d !important; }
-*:not(.ui-fake) .ui-filemanager-state-hover:hover {	background: #aa7676;}
-.ui-filemanager-state-selected {background: #506ab2;}
-*:not(.ui-fake) .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background: #999 !important;}
+.ui-filemanager-state-dblckick {background-color:#fbec9d !important; }
+*:not(.ui-fake) .ui-filemanager-state-hover:hover {	background-color: #aa7676;}
+.ui-filemanager-state-selected {background-color: #506ab2;}
+*:not(.ui-fake) .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background-color: #999 !important;}
 .ui-filemanager-prev-arrow, .ui-filemanager-next-arrow {font-size: larger;	font-weight: bold;color:#506ab2;}
 .ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover {cursor: pointer;}
 .ui-filemanager-path-widget .ui-filemanager-path-divider {margin: 0.1em;}
@@ -114,7 +114,7 @@ div#subnav ul li a:hover {color: #999;}
 .ui-filemanager-type-file {}
 .ui-filemanager-type-dir {}
 .ui-filemanager-type-row {cursor: pointer;}
-.ui-buttonbar {float:right;margin:0 4px;}
+.ui-filemanager-buttonbar {float:right;margin:0 4px;}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
 .ui-button-text:hover {color:#999;}

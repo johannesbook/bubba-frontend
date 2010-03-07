@@ -218,43 +218,41 @@ class Filemanager extends Controller{
 				$files=$this->input->post("files");
 				$user=$this->session->userdata("user");
 
-				if( ! $error ) {
-					$mask = 0000;
+				$mask = 0000;
 
-					if($this->input->post("permission-owner-read")) {
-						$mask |= 00400;
-					}
-					if($this->input->post("permission-owner-write")) {
-						$mask |= 00200;
-					}
-					if($this->input->post("permission-owner-execute")) {
-						$mask |= 00100;
-					}
+				if($this->input->post("permission-owner-read")) {
+					$mask |= 00400;
+				}
+				if($this->input->post("permission-owner-write")) {
+					$mask |= 00200;
+				}
+				if($this->input->post("permission-owner-execute")) {
+					$mask |= 00100;
+				}
 
-					if($this->input->post("permission-group-read")) {
-						$mask |= 00040;
-					}
-					if($this->input->post("permission-group-write")) {
-						$mask |= 00020;
-					}
-					if($this->input->post("permission-group-execute")) {
-						$mask |= 00010;
-					}
+				if($this->input->post("permission-group-read")) {
+					$mask |= 00040;
+				}
+				if($this->input->post("permission-group-write")) {
+					$mask |= 00020;
+				}
+				if($this->input->post("permission-group-execute")) {
+					$mask |= 00010;
+				}
 
-					if($this->input->post("permission-other-read")) {
-						$mask |= 00004;
-					}
-					if($this->input->post("permission-other-write")) {
-						$mask |= 00002;
-					}
-					if($this->input->post("permission-other-execute")) {
-						$mask |= 00001;
-					}
+				if($this->input->post("permission-other-read")) {
+					$mask |= 00004;
+				}
+				if($this->input->post("permission-other-write")) {
+					$mask |= 00002;
+				}
+				if($this->input->post("permission-other-execute")) {
+					$mask |= 00001;
+				}
 
-					foreach( $files as $file ) {
-						if( changemod($file,$mask,$user) ) { // true == false
-							$errors[] = $file;
-						}
+				foreach( $files as $file ) {
+					if( changemod($file,$mask,$user) ) { // true == false
+						$errors[] = $file;
 					}
 				}
 				$data["success"]=empty($errors);
