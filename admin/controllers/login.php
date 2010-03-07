@@ -97,8 +97,8 @@ class Login extends Controller{
 				$data["redirect_uri"] = FORMPREFIX.$this->session->userdata('caller');
 				$this->session->unset_userdata('caller');
 				$data["redirect_user"] = $this->session->userdata('user');
-				if($this->session->userdata('required_user') == 'admin') {
-					$data["require_admin"] = true;
+				if($this->session->userdata('required_user')) {
+					$data["required_user"] = $this->session->userdata('required_user');
 					$this->session->unset_userdata('required_user');
 				}
 			}
@@ -113,9 +113,12 @@ class Login extends Controller{
 		}elseif($strip){
 			$this->load->view(THEME.'/loginview',$data);
 		}else{
+			$mymenus = $this->menu->get_dialog_menu();
+			$mymenus = array_merge($mymenus,$this->menu->get_system_menu());
 			$mdata["navbar"]="";
+			$mdata["dialog_menu"] = "";
 			$mdata["head"]=$this->load->view(THEME.'/login_head_view',$data,true);;
-			$mdata["content"]=$this->load->view(THEME.'/loginview',$data,true);
+			$mdata["content"]=$this->load->view(THEME.'/login_view',$mymenus,true);
 			$this->load->view(THEME.'/main_view',$mdata);
 		}
 		

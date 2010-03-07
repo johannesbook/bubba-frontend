@@ -1,15 +1,15 @@
-<h1>This is the heart in you digital lifd.</h1>
+<h1>This is the heart in you digital life.</h1>
 <div id="login_menubar">
-    <a href="/pim" class="ui-login-menubar-a default-icon default-icon-mail"><span><?=t("menubar_pim")?></span></a>
-    <a href="/music"  class="ui-login-menubar-a default-icon default-icon-music"><span><?=t("menubar_music")?></span></a>
-    <a href="/album" class="ui-login-menubar-a default-icon default-icon-album"><span><?=t("menubar_photos")?></span></a>
-    <a class="ui-login-menubar-a default-icon default-icon-settings fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/"><span><?=t("menubar_usersettings")?></span></a>
-    <a class="ui-login-menubar-a default-icon default-icon-filemanager fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/filemanager/"><span><?=t("menubar_filemanager")?></span></a>
-    <a class="ui-login-menubar-a default-icon default-icon-printing fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/filemanger/backup"><span><?=t("menubar_backup")?></span></a>	
+
+<?foreach($main_menu as $menuitem) {
+	print "\t$menuitem\n";
+}?>
 </div>
 
 <div id="login_settings">
-    <a class="ui-login-menubar-a default-icon default-icon-logout fn-login-auth-required fn-login-require-admin <?=$ui_login_admin_lock?>" href="<?=FORMPREFIX?>/stat"><span><?=t("menubar_settings")?></span></a>	
+<?foreach($system_menu as $menuitem) {
+	print "\t$menuitem\n";
+}?>
 </div>
 
 <div id="login_more_info">
@@ -56,7 +56,7 @@
 			<?=t('login-error-wanaccess')?><br/><?=t('login-error-wanaccess-quickstart')?>
 		</div>
 		<?if(isset($redirect_user) && $redirect_user):?>
-			<div id="fn-login-error-redirect" class="ui-stete-error ui-login-dialog-error ui-text-center">
+			<div id="fn-login-error-redirect" class="ui-state-error ui-login-dialog-error ui-text-center">
 				<?=t('login-error-grantaccess',$redirect_user)?>
 			</div>
 		<?endif?>

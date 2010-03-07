@@ -22,7 +22,7 @@ class Users extends Controller{
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
-			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
+			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";
 		}

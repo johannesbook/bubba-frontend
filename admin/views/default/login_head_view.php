@@ -1,11 +1,12 @@
 <script type="text/javascript">
 
 function dialog_login(e) {
-	require_admin = <?=(isset($require_admin) && $require_admin)?"true":"false"?>;
-	if($(this).hasClass("fn-login-require-admin")) {
-		require_admin = true;
+	required_user = <?=(isset($required_user) && $required_user)?"\"$required_user\"":"false"?>;
+	if($(this).hasClass("fn-require-auth") && $(this).attr("name")) {
+		required_user = $(this).attr("name");
 	}
-	link_locked = $(this).hasClass("fn-login-state-lock");
+		
+	link_locked = $(this).hasClass("fn-state-login-lock");
 	// check if already logged in.
 	$.post("<?=FORMPREFIX.'/login/checkauth'?>",function(data){
 		if(!data.valid_session || link_locked || e.uri) {
@@ -17,39 +18,43 @@ function dialog_login(e) {
 			$.confirm(
 				$("#div-login-dialog").show(),
 				"",
-				{
-					"<?=t('login-dialog-continue')?>": function() { // continue button
-					
+				[
+					{
+						'label': $.message("login-dialog-continue"),
+						'callback': function(data){
 						$.post("<?=FORMPREFIX.'/login/index/json'?>",
 						$("#fn-login-dialog-form").serialize(),
-						function(data){
-							// make sure to hide error messages								
-							$("#fn-login-error").children().hide();
-							if(data.authfail) {
-								if(data.auth_err_remote) {
-									$("#fn-login-error-wanaccess").show();
+							function(data){
+								// make sure to hide error messages								
+								$("#fn-login-error").children().hide();
+								if(data.authfail) {
+									if(data.auth_err_remote) {
+										$("#fn-login-error-wanaccess").show();
+									} else {
+										$("#fn-login-error-pwd").show();
+										$("#password").select();
+									}
 								} else {
-									$("#fn-login-error-pwd").show();
-									$("#password").select();
+									$(this).dialog('close');
+									if(e.uri) {
+										window.location.href = e.uri;
+									} else {
+										window.location.href = $(e.target).attr('href');
+									}
 								}
-							} else {
-								$(this).dialog('close');
-								if(e.uri) {
-									window.location.href = e.uri;
-								} else {
-									window.location.href = $(e.target).attr('href');
-								}
-							}
-						},"json");
+							},"json");
+						},
+						options: { id: 'fn-login-dialog-button', class : 'ui-element-width100' }
 					}
-				}
-			,{dialogClass : "ui-login-dialog"});
+				],
+				{dialogClass : "ui-login-dialog"}
+			);
 			if(link_locked && data.user && data.valid_session) {
 				// show no-access message if the target is locked for the current user.
 				$("#fn-login-error-grantaccess").show();
 			}
-			if(require_admin && (data.user != "admin") ) {
-				$("#username").val("admin");
+			if(required_user && (data.user != required_user) ) {
+				$("#username").val(required_user);
 				$("#password").focus();
 			} else {
 				$("#username").val("");
@@ -67,7 +72,7 @@ $(document).ready(function(){
   // do not use css to hide login as it is then impossible to login if javascripts are not working.
 	$("#div-login-dialog").hide();
 
-	$(".fn-login-auth-required").click(function(e) {
+	$(".fn-require-auth").click(function(e) {
 		dialog_login.apply(this,[e]);
 		return false;
 	});

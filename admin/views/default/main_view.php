@@ -95,7 +95,7 @@ $(document).ready(function(){
 		$.post(config.prefix+"/help/load/html/<?=$uri?>", function(data) {
 			$.dialog(
 				data,
-				"<?=t("help_box_header")?>",
+				"<?=t('help_box_header')?> - <?t('title'.$this->uri->segment(1))?>",
 				{},
 				{'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
 		});

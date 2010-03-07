@@ -10,20 +10,26 @@ class Help extends Controller{
 	}
 	
 	function load($strip="",$uri="") {
-		$section = strtr($uri,"/","_");
-		$a_manual_page = split("/",$uri);
+		$a_manual_page = split("_",$uri);
 		if(sizeof($a_manual_page)>1) {
 			$manual_page = $a_manual_page[1];
 		} else {
 			$manual_page = $a_manual_page[0];
 		}
+		if($this->session->userdata("user") != "admin") {
+			$manual_page = "user_" . $manual_page;
+		}
+		if(t("help_".$manual_page) == "help_".$manual_page) { // no translation, send to first page in manual
+			$manual_page = "";
+		}
 		if($strip == "html") {
-			$footer  = "<div id='help-box-external-links'>";
-			$footer .= "<div class='help-box-external-link'><a target='_blank' href='/manual'>".t('help_box_manual_link')."</a></div>";
+			$footer  =" <div id='help-box-further-info'>".t('help-box-further-info')."</div>";
+			$footer .= "<div id='help-box-external-links'>";
+			$footer .= "<div class='help-box-external-link'><a target='_blank' href='/manual/".$manual_page."'>".t('help_box_manual_link')."</a></div>";
 			$footer .= "<div class='help-box-external-link'><a target='_blank' href='http://forum.excito.net/index.php'>".t('help_box_forum_link')."</a></div>";
 			$footer .= "<div class='help-box-external-link'><a target='_blank' href='http://www.excito.com'>".t('help_box_excito_link')."</a></div>";
 			$footer .= "</div>";
-			echo t("help_box_".$section);
+			echo t("help_box_".$uri);
 			echo $footer;			
 		}
 	}

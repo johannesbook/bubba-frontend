@@ -9,6 +9,7 @@ class Stat extends Controller{
 		require_once(ADMINFUNCS);
 
 		$this->Auth_model->EnforceAuth();
+		$this->Auth_model->RequireUser('admin');
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
@@ -21,7 +22,7 @@ class Stat extends Controller{
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
-			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
+			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";
 		}

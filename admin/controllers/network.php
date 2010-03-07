@@ -25,7 +25,8 @@ class Network extends Controller{
 			$mdata["content"]="";
 			$mdata["wizard"]=$content;
 		} else {
-			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
+			$dialog_menu["main_menu"] = $this->menu->get_dialog_menu();
+			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
 			$mdata["head"] = $this->load->view(THEME.$head,$data,true);
 			$mdata["content"]=$content;
 			$mdata["wizard"]="";

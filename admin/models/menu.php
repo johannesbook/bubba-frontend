@@ -1,5 +1,75 @@
 <?php
 class Menu extends Model {
+
+	private $bubba_systembar = array(
+		array(
+			'id' => 'systemsettings',
+			'uri' => '/stat',
+			'auth' => true,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-logout',
+			'allow' => array( 'admin' ),
+		),
+	);
+
+	private $bubba_menubar = array(
+		array(
+			'id' => 'filemanager',
+			'uri' => '/filemanager',
+			'auth' => true,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-filemanager',
+		),
+		array(
+			'id' => 'music',
+			'uri' => '/music',
+			'auth' => true,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-music',
+		),
+		array(
+			'id' => 'album',
+			'uri' => '/album',
+			'auth' => false,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-album',
+			'abs_uri' => true,
+		),
+		array(
+			'id' => 'downloads',
+			'uri' => '/downloads',
+			'auth' => true,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-downloads',
+			'deny' => array( 'admin' ),
+		),
+		array(
+			'id' => 'pim',
+			'uri' => '/pim',
+			'auth' => true,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-mail',
+			'deny' => array( 'admin' ),
+			'abs_uri' => true,
+		),
+		array(
+			'id' => 'usersettings',
+			'uri' => '/users',
+			'auth' => true,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-settings',
+		),
+		array(
+			'id' => 'home',
+			'uri' => '/login',
+			'auth' => false,
+			'class' => 'ui-login-menubar-a',
+			'icon' => 'default-icon default-icon-home',
+			'hide' => array('login'),
+		),
+	);
+
+
 	private $bubba_menu = array(
 		array( 
 			'id' => 'home',
@@ -201,6 +271,8 @@ class Menu extends Model {
 
 	public function __construct() {
 		parent::Model();
+		require_once(APPPATH."/legacy/defines.php");
+
 	}
 
 	private function _retrieve( $menus, $user, $current_level ) {
@@ -273,4 +345,70 @@ class Menu extends Model {
 		$children = $this->_retrieve( $this->bubba_menu, $user, $level );
 		return $children;
 	}
+	
+	private function _retreive_dialogmenu($user,$menu) {
+
+		$manubar = array();
+		
+		foreach ($menu as $menu_item => $menu_value) {
+			if(isset($menu_value['hide']) && in_array($this->uri->segment(1),$menu_value['hide']) ) {
+				continue;
+			}
+			if(isset($menu_value['show']) && !in_array($this->uri->segment(1),$menu_value['show']) ) {
+				continue;
+			}
+
+			$menubar[$menu_value['id']]['class'] = $menu_value['class'] . " " . $menu_value['icon'];
+			$menubar[$menu_value['id']]['name'] = "";
+			
+			if($menu_value['auth']) $menubar[$menu_value['id']]['class'] .= " fn-require-auth";
+
+			if(isset($menu_value['abs_uri'])) {
+				$menubar[$menu_value['id']]['uri'] = $menu_value['uri'];
+			} else {
+				$menubar[$menu_value['id']]['uri'] = FORMPREFIX.$menu_value['uri'];
+			}
+
+
+			$item_locked = " fn-login-state-lock";
+			if($menu_value["auth"] && !$this->session->userdata("valid")) {
+				$item_locked = " fn-state-login-lock";
+			}
+			if(isset($menu_value['deny']) && in_array($user,$menu_value['deny']) ) {
+				$item_locked = " fn-state-login-lock";
+			}
+			if(isset($menu_value['allow']) && (sizeof($menu_value['allow']) == 1) ) {
+				$menubar[$menu_value['id']]['name'] = $menu_value['allow'][0];
+				if(!in_array($user,$menu_value['allow'])) {
+					$item_locked = " fn-state-login-lock";
+				}
+			}
+			$menubar[$menu_value['id']]['class'] .= $item_locked;
+		}
+		
+		$mymenu = array();
+		foreach($menubar as $id => $tags) {
+			/*<a class="ui-login-menubar-a default-icon default-icon-settings fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/"><span><?=t("menubar_usersettings")?></span></a>*/
+			$mymenu[] = "<a class='".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a>";
+		}
+		return $mymenu;
+	}
+	
+	public function get_dialog_menu() {
+
+		$mainmenu = $this->bubba_menubar;
+		$user = $this->session->userdata("user");
+		$ret["main_menu"] = $this->_retreive_dialogmenu($user,$mainmenu);
+		return $ret;
+	}
+
+	public function get_system_menu() {
+
+		$systemmenu = $this->bubba_systembar;
+		$user = $this->session->userdata("user");
+		$ret["system_menu"] = $this->_retreive_dialogmenu($user,$systemmenu);
+		return $ret;
+	}
+	
+	
 }

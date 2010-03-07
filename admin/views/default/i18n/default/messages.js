@@ -27,6 +27,9 @@ messages = {
 	// Logout
 	"logout-dialog-title" : "Logout",
 	"logout-dialog-message" : "Proceed with logout?",
-	"logout-dialog-button-logout" : "Logout"
+	"logout-dialog-button-logout" : "Logout",
+
+	// Login
+	"login-dialog-continue" : "Log in"
 	
 }

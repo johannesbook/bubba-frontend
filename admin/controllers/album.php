@@ -15,7 +15,7 @@ class Album extends Controller {
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
-		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
+		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
 		$mdata["head"] = $this->load->view(THEME.'/album/album_head_view','',true);
 		$mdata["content"]=$content;
 		echo $this->load->view(THEME.'/main_view',$mdata, true);

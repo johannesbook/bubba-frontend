@@ -38,10 +38,11 @@ $lang['help_logs']="?page=administrator.html#logs";
 
 
 // User pages
-$lang['help_usermail']="?page=users.html#MAIL";
-$lang['help_downloads']="?page=users.html#DOWNLOADS";
-$lang['help_userinfo']="?page=users.html#USERINFO";
-$lang['help_album']="?page=users.html#PHOTOALBUM";
+$lang['help_user_users']="?page=users.html#USERINFO";
+$lang['help_user_mail']="?page=users.html#MAIL";
+$lang['help_user_downloads']="?page=users.html#DOWNLOADS";
+$lang['help_user_userinfo']="?page=users.html#USERINFO";
+$lang['help_user_albums']="?page=users.html#PHOTOALBUM";
 
 // Help box - Admin
 $lang['help_box_stat']="helpme!";
