@@ -16,6 +16,7 @@ input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;
 input[disabled]{	color: #666;	background: #ccc;}
 input:focus {border: 0.1em solid #000;}
 input[type=radio] {}
+input[type=checkbox] {}
 table {margin: 1em 0;font-size: 1.3em;border-collapse : collapse;border:0;width:100%; }
 select {width:49%;}
 td {padding: 0.5em 1.2em;vertical-align: top;}
@@ -44,7 +45,7 @@ img{border: 0;}
 #topnav {float:right;left:72%;top:3%;width:29%;}
 #topnav a, #topnav span {float:left;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;}
-#topnav button {border:0;background:transparent;margin-right:0.5em}
+#topnav button {border:0;background:transparent;margin-right:0.8em}
 #topnav button:hover {opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 /*#topnav button:hover {border-bottom:0.1em solid black;}*/
 #subnav {font-size: 120%;list-style: none;margin-top:0.8em;}
@@ -74,7 +75,7 @@ div#subnav ul li a:hover {color: #999;}
 #sideboard-clock-digital {font-size: 1.5em;font-weight: bold;}
 #sideboard_switch {margin:left:8%;float:right !important;font-size:180%;color:white;text-decoration:none !important;padding-left:0.3em;background-image:url(../_img/icons.png);width:15px; height:30px;background-position: -85px -224px;}
 /* HOME MENU */
-#menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;}
+#menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;background:white;padding:1.5em;height:80px;}
 #menu_close {float:right;margin-top:-85px;}
 #menu li a{margin-right:16px;}
 #menu li a span{float:right;}

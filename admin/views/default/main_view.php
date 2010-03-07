@@ -57,6 +57,9 @@ $(document).ready(function(){
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
   	});
+    $('#fn-topnav-home').click(function(event) {
+        $('#menu').toggle();
+  	});
 	$('#sideboard_switch').click(function(event) {  
 		if($('#sideboard').is(":visible")) {
 			$('#sideboard').hide();
