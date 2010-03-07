@@ -60,6 +60,12 @@ $(document).ready(function(){
     $('#fn-topnav-home').click(function(event) {
         $('#menu').toggle();
   	});
+  	$(".ui-login-menubar-a").mouseover(function(e) {	
+		$(this).find("span").show();
+	});	
+	$(".ui-login-menubar-a").mouseout(function(e) {
+		$(this).find("span").hide();
+	});
 	$('#sideboard_switch').click(function(event) {  
 		if($('#sideboard').is(":visible")) {
 			$('#sideboard').hide();
