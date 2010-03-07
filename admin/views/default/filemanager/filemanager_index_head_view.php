@@ -312,6 +312,8 @@ $(document).ready(function() {
 		fileDoubleClickCallback: file_download_callback,
 		dirDoubleClickCallback: update_toolbar_buttons,
 		mouseDownCallback: update_toolbar_buttons,
+		prevDirIcon: 'ui-icons ui-icon-back',
+        nextDirIcon: 'ui-icons ui-icon-next',
 		ajaxSource: config.prefix+"/filemanager/index/json"
 	});
 

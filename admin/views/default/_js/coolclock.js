@@ -73,8 +73,8 @@ CoolClock.config = {
 		// try making your own...
 
 		swissRail: {
-			outerBorder: { lineWidth: 1, radius:95, color: "black", alpha: 1 },
-			smallIndicator: { lineWidth: 2, startAt: 89, endAt: 93, color: "black", alpha: 1 },
+			outerBorder: { lineWidth: 0, radius:95, color: "black", alpha: 1 },
+			smallIndicator: { lineWidth: 0, startAt: 89, endAt: 93, color: "black", alpha: 1 },
 			largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
 			hourHand: { lineWidth: 8, startAt: -15, endAt: 50, color: "black", alpha: 1 },
 			minuteHand: { lineWidth: 7, startAt: -15, endAt: 75, color: "black", alpha: 1 },
