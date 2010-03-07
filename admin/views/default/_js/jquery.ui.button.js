@@ -30,6 +30,7 @@ $.widget( "ui.button", {
 	_create: function() {
 		this._determineButtonType();
 		this.hasTitle = !!this.buttonElement.attr( "title" );
+		this.isHovering = false; // To be used if "enable" is called while mouse is hovering over a disabled dutton
 
 		var self = this,
 			options = this.options,
@@ -45,6 +46,7 @@ $.widget( "ui.button", {
 			.addClass( baseClasses )
 			.attr( "role", "button" )
 			.bind( "mouseenter.button", function() {
+				self.isHovering = true;
 				if ( options.disabled ) {
 					return;
 				}
@@ -54,6 +56,10 @@ $.widget( "ui.button", {
 				}
 			})
 			.bind( "mouseleave.button", function() {
+				self.isHovering = false;
+				if ( options.disabled ) {
+					return;
+				}
 				$( this ).removeClass( hoverClass );
 			})
 			.bind( "focus.button", function() {
@@ -115,6 +121,9 @@ $.widget( "ui.button", {
 					});
 				})
 				.bind( "mouseup.button", function() {
+					if ( options.disabled ) {
+						return;
+					}
 					$( this ).removeClass( "ui-state-active" );
 				})
 				.bind( "keydown.button", function(event) {
@@ -188,6 +197,21 @@ $.widget( "ui.button", {
 	},
 
 	_setOption: function( key, value ) {
+		switch( key ) {
+		case 'disabled':
+			if( value ) {
+				// There is a posibillity that the button is made disabled during hovering/clicking etc...
+				// So to be on the safe side, we'll remove all state classes when calling disabled.
+				this.element.removeClass( "ui-state-active ui-state-hover ui-state-focus" )
+			} else {
+				// We could be hovering (statically) over the disabled button and call "enable" on the button, 
+				// lets then mark it as in a hovering state.
+				if( this.isHovering ) {
+					this.element.addClass( "ui-state-hover" );
+				}
+			}
+			break;
+		}
 		$.Widget.prototype._setOption.apply( this, arguments );
 		this._resetButton();
 	},

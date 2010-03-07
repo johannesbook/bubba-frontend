@@ -344,4 +344,3 @@ $lang["filemanager-delete-dialog-message"] = "Are you certain that you want to d
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
 
 $lang["help_box_header"] = "Bubba|2 Help";
-
