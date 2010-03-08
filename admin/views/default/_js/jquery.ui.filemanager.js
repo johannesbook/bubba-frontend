@@ -300,60 +300,85 @@
 	   options = jQuery.extend({direction: "left"},options);
 	   var orig_width = self.element.outerWidth();
 	   var orig_height = self.element.outerHeight();
-
 	   var offset = self.element.offset();
-	   var fake = self.element.fake();
-	   //self.element.fnClearTable();
 
+	   var fake = self.element.clone();
+	   fake.css({
+			   width: orig_width,
+			   height: orig_height,
+
+		   }
+	   );
+	   fake.find('.ui-filemanager-state-hover').removeClass('ui-filemanager-state-hover');
+	   fake.removeAttr('id').css({margin: 0}).addClass('ui-fake');
+	   var wrap = $('<div/>');
+	   wrap.append(fake);
+	   wrap.hide().appendTo('body').css(
+		   {
+			   position: 'absolute',
+			   width: orig_width,
+			   height: orig_height,
+			   left: offset.left,
+			   top: offset.top,
+			   margin: 0,
+			   padding: 0
+		   }
+	   ).show();
 	   self.element.hide();
-
 
 	   self._reloadAjax( { path: self.element.data('path'), redraw: false, data: { path: options.path }  }, function( json ){
 			   self.element.fnDraw();
-			   var wrapper = jQuery("<div/>", {
-					   css: {
-						   "position": "absolute",
-						   "margin": 0, 
-						   "padding": 0,
-						   top: 0, 
-						   left: 0 
-					   }
+			   var fake2 = self.element.clone();
+			   fake2.removeAttr('id').css({margin: 0}).addClass('ui-fake').hide();
+			   fake2.find('.ui-filemanager-state-hover').removeClass('ui-filemanager-state-hover');
+			   wrap.append(fake2);
+			   fake2.css(
+				   {
+					   position: 'absolute',
+					   left: options.direction == 'left' ? orig_width : -orig_width,
+					   width: orig_width,
+					   top: 0,
+					   margin: 0,
+					   padding: 0
+				   }
+			   ).show();
+			   wrap2 = $('<div/>');
+			   wrap2.appendTo('body');
+			   wrap2.css({
+					   position: 'absolute',
+					   overflow: 'hidden',
+					   width: orig_width,
+					   height: $(window).height() - offset.top,
+					   left: offset.left,
+					   top: offset.top,
+					   margin: 0,
+					   padding: 0					   
 				   }
 			   );
-			   var outer_wrapper = jQuery("<div/>",{
-					   css: {
-						   position: 'absolute',
-						   margin: 0,
-						   padding: 0,
-						   width: orig_width,
-						   height: orig_height,
-						   overflow: "hidden"
-					   }
-				   });
-			   outer_wrapper.append( wrapper );
-
-			   outer_wrapper.appendTo("body").hide();
-
-			   height = self.element.height();
-			   width = self.element.width();
-			   new_fake = self.element.fake();
-			   new_fake.children().andSelf().show();
-			   wrapper.appendLinear([new_fake, fake], {direction: options.direction == "left" ? 'left' : "left" });
-			   wrapper.width(Math.max(orig_width,  width));
-			   wrapper.height(Math.max(orig_height, height));
-			   outer_wrapper.offset(offset);
-			   outer_wrapper.show();
-
-			   wrapper.effect("slide",
+			   wrap2.append(wrap);
+			   wrap.css({
+					   position: 'absolute',
+					   width: orig_width + self.element.outerWidth(),
+					   height: orig_height,
+					   left: options.direction == 'left' ? 0: 0,
+					   top: 0,
+					   margin: 0,
+					   padding: 0
+				   }
+			   );
+			   fake.data('name', 'fake');
+			   fake2.data('name', 'fake2');
+			   wrap.animate(
 				   {
-					   direction: options.direction == "left" ? 'right' : "left", 
-					   easing: "easeOutExpo"
+					   left: options.direction == 'left' ? -orig_width : orig_width
 				   },
-				   1000,
-				   function() {
-					   self.element.show();
-					   wrapper.remove();
-					   outer_wrapper.remove();
+				   {
+					   duration: 1000,
+					   easing: "easeOutExpo",
+					   complete:function() {
+						   self.element.show();
+						   wrap2.remove();
+					   }
 				   }
 			   );
 			   if( self.options.dirPostOpenCallback ) {

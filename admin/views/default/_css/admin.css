@@ -105,22 +105,21 @@ div#subnav ul li a:hover {color: #999;}
 .ui-icon-off {width:65px; height:21px;background-position: -170px -35px;}
 .ui-icon-lock {width:22px; height:29px;background-position: -320px -193px;}
 /*FILE MANAGER*/
-#filetable {font-size:135%;}
-#filetable_paths {padding-top:10px;}
-#filetable_paths a {color:#000;margin:0 3px;text-transform:capitalize;}
-#filetable tbody .row-selected * {background: #506ab2;}
-#filetable:not(.clone) {cursor: pointer}
-#filetable:not(.clone) tbody tr:hover * {background-color: #999}
-#filetable:not(.clone) tbody tr.row-selected:hover * {	background-color: #999 !important}
+.ui-filemanager {font-size:135%;}
+.ui-filemanager-path-widget {padding-top:10px;}
+.ui-filemanager-path-widget a {color:#000;margin:0 3px;text-transform:capitalize;}
+.ui-filemanager tbody .row-selected * {background: #506ab2;}
+.ui-filemanager:not(.clone) {cursor: pointer}
+.ui-filemanager:not(.clone) tbody tr.row-selected:hover * {	background-color: #999 !important}
 #filetable_processing {padding: 30px; display: inline;}
 #filetable_wrapper button {border:0;}
-#filetable span {float:left !important;}
+.ui-filemanager span {float:left !important;}
 #fn-filemanager-information-panel {font-size:120%;width:400px;padding:0.4em;}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
 .ui-filemanager-state-dblckick {background-color:#fbec9d !important; }
-*:not(.ui-fake) .ui-filemanager-state-hover:hover {	background-color: #aa7676;}
+.ui-filemanager-state-hover:hover {	background-color: #aa7676;}
 .ui-filemanager-state-selected {background-color: #506ab2;}
-*:not(.ui-fake) .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background-color: #999 !important;}
+.ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background-color: #999 !important;}
 .ui-filemanager-prev-arrow, .ui-filemanager-next-arrow {font-size: larger;	font-weight: bold;color:#506ab2;}
 .ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover {cursor: pointer;}
 .ui-filemanager-path-widget .ui-filemanager-path-divider {margin: 0.1em;}
