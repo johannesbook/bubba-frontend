@@ -195,3 +195,4 @@ input.mount {width : 75px;	margin : 0;}
 .ui-action-panel {position: absolute;border: 0;}
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
 .ui-dialog-title {font-size:140%;text-align:center;width:100%;padding-top:2em;}
+.ui-div-header {width:100%;font-size:1.3em;padding:0.5em 1.2em;}

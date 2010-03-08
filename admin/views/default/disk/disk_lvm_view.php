@@ -1,4 +1,4 @@
-    <div class="ui-state-default ui-widghet-header"><?=t('Extend logical volume')?></div>
+    <div class="ui-state-default ui-widghet-header ui-div-header"><?=t('Extend logical volume')?></div>
 	<div id="lvm">
 		<?=t("Extend")?>
 		<select  <?= sizeof( $lvs ) == 0 ? 'disabled="disabled"' : '' ?> id="logical_volume" class="volume">

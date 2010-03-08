@@ -1,6 +1,6 @@
 <form id="update" method="post">
 
-	<div class="ui-state-default ui-widghet-header">
+	<div class="ui-state-default ui-widghet-header ui-div-header">
 		<?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?>
 	</div>
 	<div id="updater" style="width: 100%">
