@@ -196,3 +196,18 @@ input.mount {width : 75px;	margin : 0;}
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
 .ui-dialog-title {font-size:140%;text-align:center;width:100%;padding-top:2em;}
 .ui-div-header {width:100%;font-size:1.3em;padding:0.5em 1.2em;}
+
+	.ui-icon-bubba-switch-container {
+		height:21px;
+		width:67px;
+		position: relative;
+		overflow: hidden;
+	}
+	.ui-icon-bubba-switch {
+		height:21px;
+		width:67px;
+		background-image:url(../_img/bubba_switch.png); /* your actual slider image */
+		background-repeat:none;
+		background-position:0px;
+	}
+

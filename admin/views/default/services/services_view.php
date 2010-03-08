@@ -3,15 +3,15 @@
 <table>   
    <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('File sharing')?></td></tr>
    <tr>
-      <td><label for="">FTP</label></td>
+      <td>FTP</td>
       <td align="center"><input name="ftp_enabled" type="checkbox"  value="1" <?= $ftp_status?"":"checked=\"checked\""?>/></td>
    </tr>
    <tr>
-      <td><label for=""><?=t('Anonymous FTP access')?></td>
+      <td><?=t('Anonymous FTP access')?></td>
       <td align="center"><input name="anon_ftp" type="checkbox"  value="1" <?= $anon_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-   	<td><label for="">AFP</label></td>
+   	<td>AFP</td>
 	<td align="center"><input name="afp_enabled" type="checkbox"  value="1" <?= $afp_status?"checked=\"checked\"":""?>/></td>
    </tr>  
 </table>
@@ -19,15 +19,15 @@
 <table>      
    <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Streaming')?></td></tr>
    <tr>
-      <td><label for=""><?=t('UPNP streaming')?></label></td>
+      <td><?=t('UPNP streaming')?></td>
       <td align="center"><input name="upnp_enabled" type="checkbox"  value="1" <?= $upnp_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-      <td><label for=""><?=t('DAAP streaming')?></label></td>
+      <td><?=t('DAAP streaming')?></td>
       <td align="center"><input name="daap_enabled" type="checkbox" value="1" <?= $daap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-	  <td><label for=""><?=t('SqueezeCenter - Squeezebox™ and Transporter® streaming')?></label>
+	  <td><?=t('SqueezeCenter - Squeezebox™ and Transporter® streaming')?>
 		<?if(!$squeezecenter_installed):?>
 <div>
 		<?=t("Squeezecenter isn't installed, please click")?> <a href="<?=FORMPREFIX?>/settings/software/install/<?=$squeezecenter_packagename?>"><?=t('here')?></a> <?=t('to install squeezecenter')?>.
@@ -43,15 +43,15 @@
 <table>      
 	<tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Mail')?></td></tr>
    <tr>
-      <td><label for=""><?=t('Send and recieve')?></label></td>
+      <td><?=t('Send and recieve')?></td>
       <td align="center"><input name="smtp_enabled" type="checkbox" value="1" <?= $smtp_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>
-      <td><label for="">Imap (<?=t('Required for webmail access')?>)</label></td>
+      <td>Imap (<?=t('Required for webmail access')?>)</td>
       <td align="center"><input name="imap_enabled" type="checkbox" value="1" <?= $imap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>
-      <td><label for=""><?=t('Mail retrieval')?></label></td>
+      <td><?=t('Mail retrieval')?></td>
       <td align="center"><input name="fetchmail_enabled" type="checkbox" value="1" <?= $fetchmail_status?"checked=\"checked\"":"" ?>/></td>
    </tr>		  
 </table>
@@ -59,11 +59,11 @@
 <table>      
 	<tr><td colspan="2" class="ui-state-default ui-widghet-header" style="margin-top:1em;"><?=t('Other')?></td></tr>
    <tr>
-      <td><label for=""><?=t('Printing')?></label></td>
+      <td><?=t('Printing')?></td>
       <td align="center"><input name="print_enabled" type="checkbox" value="1" <?= $print_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>
-      <td><label for=""><?=t('Up and downloads')?></label></td>
+      <td><?=t('Up and downloads')?></td>
       <td align="center"><input name="download_enabled" type="checkbox" value="1" <?= $download_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	  
 </table>
