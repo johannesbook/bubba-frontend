@@ -45,10 +45,16 @@ $lang['help_user_userinfo']="?page=users.html#USERINFO";
 $lang['help_user_albums']="?page=users.html#PHOTOALBUM";
 
 // Help box - Admin
-$lang['help_box_stat']="helpme!";
+$lang['help_box_stat']="
+<p>This is the default administrator log in page.</p>
+<p>Here you find information about the installed hard drive size and remaining disk space, Bubba|Two uptime and the installed software revision number.</p>
+<p>The 'Power down' button shuts down Bubba|Two in the same way as pressing the button on the backside of the unit. To start up again, press the button on the backside.</p>
+";
 
 $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
-The Browse page shows files stored on Bubba|Two. Here you are able to reach your files on Bubba|Two if you are away from home.
+<p>The Browse page shows files stored on Bubba|Two. Here you are able to reach your files on Bubba|Two if you are away from home.</p>
+<p>Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ raw.</p>
+<p>Click files or folders and use the icons in the menu to perform different actions.</p>
 ";
 
 	$lang['help_box_filemanager_backup']="
@@ -89,9 +95,9 @@ $lang['help_box_users']="
 	  <p><strong>Users</strong> - Here you find all the registered users on your Bubba|Two. Click on 'Edit user' to change user information.</p>
 	  <p><strong>Add new user</strong> - To add a new user; fill in the information and click 'Add user'.</p>
 	<h3>Edit user</h3>
-	  <p><strong>Username</strong> - Changing the user name (login name) is not possible. To achieve this you  will have to delete the user via the administrator login and add a new  user with the correct name.</p>
+	  <p><strong>Username</strong> - Changing the user name (login name) is not possible. To achieve this you will have to delete the user and add a new user with the correct name.</p>
 	  <p><strong>Real name</strong> - To add the user's 'Real name'; fill in the information here.</p>
-	  <p><strong>Allow remote access to config interface</strong> - The default setting is to block remote access (from the WAN port) for the 'admin' account. To be able to administrate your Bubba from outside (Internet) your network choose 'Yes' here.</p>
+	  <p><strong>Remote administration</strong> - The default setting is to block remote access (from the WAN port) for the 'admin' account. To be able to administrate your Bubba from outside (Internet) of your network, edit the Administrator user and choose 'Allow remote access to config interface: Yes'.</p>
 	  <p><strong>Change password</strong> - The administrator can change every users password. Every user has the possibility to change their own password via their own log in. It is strongly suggested that the <strong>admin password is changed</strong> from the default password.</p>
 ";
 
@@ -106,23 +112,23 @@ $lang['help_box_services']="
 	<p><strong>Mail retrieval </strong>- This  is for fetchmail, a daemon that collects eMails to Bubba|Two</p>
 	<h3>Other</h3>
 	<p><strong>Printing</strong> - Bubba|Two  print server.</p>
-	<p><strong>Up and downloads</strong> -  possibility to up / download files on Bubba|Two, i.e. filemanager and torrents.</p>
+	<p><strong>Up and downloads</strong> - possibility to up / download files on Bubba|Two, i.e. filemanager and torrents.</p>
 ";
 
-$lang['help_box_mail']=$lang['help_box_mail_viewfetchmail']="
-	<p>If you set up Bubba|Two to fetch your eMail from other external eMail accounts you may have, they will be stored on Bubba|Two and available via IMAP or web mail, wherever you are. Logged in as administrator you must select to which user the retrieved mail should be directed, this must be done for every retrieved mail account added. Prior to this you must have added a user.</p>
+$lang['help_box_mail']=$lang['help_box_mail_index']="
+	<p>If you set up Bubba|Two to fetch your eMail from different external eMail accounts you may have, they will be stored on Bubba|Two and available via IMAP or web mail, wherever you are. Logged in as administrator you must select to which user the retrieved mail should be directed, this must be done for every retrieved mail account added. Prior to this you must have added a user.</p>
 	<p><strong>Retrieve mail from individual accounts</strong> - Shows your current accounts for mail retrieval.</p>
 	<p><strong>Add account</strong> - To fetch mail from an external accout, fill in the information given to you by your mail account provider.</p>
 ";
 	
-$lang['help_box_mail_viewmailsend']="
-	<p>If your Internet Service Provider (ISP) blocks outgoing traffic on port 25 you must use an alternative SMTP server than Bubba|Two.</p>
-  <p><strong>Sending eMail</strong> - Leave fields empty to let Bubba|Two handle your outgoing eMails. If your ISP blocks your outgoing traffic on port 25, fill in the information provided to you by your ISP.</p>
+$lang['help_box_mail_server_settings']="
+	<h3>Outgoing mail</h3>
+  <p><strong>Outgoing mail server</strong> - Leave fields empty to let Bubba|Two handle your outgoing eMails. If your ISP blocks your outgoing traffic on port 25you must use an alternative SMTP server than Bubba|Two, fill in the information provided to you by your ISP.</p>
+	<h3>Your own domain</h3>
+	<p>If you have your own domain name it is possible to let Bubba|Two handle your incoming and outgoing eMail.</p>
+	<p><strong>Handle mail for domain</strong> - Enter your domain name here. If you have several domains, just type them in the box space separated.</p>
 ";
-$lang['help_box_mail_viewreceivemail']="
-	<p>If you have your own domain name it is possible to let  Bubba|Two handle your incoming and outgoing eMail.</p>
-	<p><strong>Handle mail for domain</strong> - Enter your domain name here.</p>
-";
+
 
 $lang['help_box_network']=$lang['help_box_network_profile']="
 	<p><strong>Automatic network settings</strong> - Bubba|2 will by default automatically identify your network structure. First Bubba|2 tires to locate a DHCP server in your LAN. If no DHCP server is found Bubba|2 will use a fixed  IP address (<a href=\"192.168.10.1\">192.168.10.1</a>) on the LAN port and start a DHCP server to provide other computers in the LAN with network information. If a DHCP server is found in the LAN, Bubba|2 will obtain IP-address automatically on the LAN port. Bubba|Two will also try to retrieve network settings on WAN port (internet). Editing  the WAN and LAN sections is <strong>not</strong> possible in this profile.</p>
@@ -281,18 +287,18 @@ $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 <p>Click 'Finish setup' to exit the wizard.</p>
 ";
 
+$lang['help_box_settings_identity']="
+<p><strong>Hostname</strong> - is the unique name by which a network-attached device is known on a network.</p>
+<p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or  Internet connection. Use the same workgroup name on Bubba|Two as on your computer.</p>
+<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba|Two wherever you are. You will be able to find your Bubba|Two wherever you are typing http://&lt;your_Easyfind_name&gt;.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
+<p><strong>Easyfind name</strong> - Choose a name for your Bubba|Two on the Easyfind network.</p>
+<p><i>Update</i> saves your changes.</p>
+";
+
 $lang['help_box_settings_trafficsettings']="
 <p>To control the the maximum upload / download speed on your torrents adjust the 'Traffic' setting.</p>
 <p>For example if you have a limited broadband connection you do not want to fill your uplink completely. Then set the 'Max upload speed' to a preferred  value. Use 'Max download speed' in the same manner.</p>
 <p>Using  -1 as value = no speed limit.</p>
-<p><i>Update</i> saves your changes.</p>
-";
-
-$lang['help_box_settings_identity']="
-<p><strong>Hostname</strong> - is the  unique name by which a network-attached device is known on a network.</p>
-<p><strong>Workgroup</strong> - Devices  in the same Workgroup may allow each other access to their files, printers, or  Internet connection. Use the same workgroup name on Bubba|Two as on your computer.</p>
-<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba|Two wherever you are.  You will be able to find your Bubba|Two wherever you are typing http://&lt;your_Easyfind_name&gt;.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
-<p><strong>Easyfind name</strong> - Choose a name for your Bubba|Two on the Easyfind network.</p>
 <p><i>Update</i> saves your changes.</p>
 ";
 
