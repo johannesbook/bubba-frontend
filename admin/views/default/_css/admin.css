@@ -29,7 +29,7 @@ li {display:inline;}
 a {color: #000;}
 img{border: 0;}
 /* WRAPPER */
-#wrapper {min-height: 100%;width:1020px;margin: 0 auto;padding:0em;max-width:96%;padding-left:3em;padding-top:2em;background-image:url(../_img/background.png);border:0.1em solid #000;border-right:0.45em solid #000;}
+#wrapper {min-height: 130%;width:1020px;margin: 0 auto;padding:0em;max-width:96%;padding-left:3em;padding-top:2em;background-image:url(../_img/background.png);border:0.1em solid #000;border-right:0.45em solid #000;}
 /*UPDATE STATUS*/
 #update_status {color:000;background-color:#fbec9d;font-size:120%;left:48%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:0;width:auto;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
@@ -137,6 +137,9 @@ div#subnav ul li a:hover {color: #999;}
 .ui-help-box a {color:white !important;}
 .ui-help-box a:hover {color:white !important}
 .ui-fake-updir {background:#EEE}
+/*SERVICES*/
+#services table {margin-bottom:2em}
+#services .ui-widghet-header, #services label {font-weight:bold;font-size:120%;}
 /*DISK*/
 table.typetable > tbody > tr > td {	vertical-align : middle;	padding : 0.5em 0.5em;}
 table.typetable > tbody > tr > th {	padding : 0.5em 0.5em;}
