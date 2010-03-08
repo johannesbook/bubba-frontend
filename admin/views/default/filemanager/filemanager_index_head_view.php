@@ -12,6 +12,7 @@
 
 buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
+buttons_requiring_write_access_selectors = $.map( [ 'delete', 'rename', 'move', 'perm', 'upload', 'create' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 
 dialog_pre_open_callbacks = {
 	'perm': function() {
@@ -102,6 +103,9 @@ dialog_callbacks = {
 	}
 };
 
+copymove_yesbutton = null;
+copymove_isactive = false;
+
 copymove_callback = function( type ) {
 	var filetable = $("#filetable");
 
@@ -113,13 +117,14 @@ copymove_callback = function( type ) {
 
 	var speed = 750;
 
+	copymove_isactive = true;
 	filetable.filemanager('disableButtons');
 
 
 	action.empty();
 	panel.empty();
 
-	var button_yes = $("<button/>", {text: $.message("filemanager-"+type+"-yes")}).appendTo(action)
+	copymove_yesbutton = $("<button/>", {text: $.message("filemanager-"+type+"-yes")}).appendTo(action)
 		.button({text: false, icons: { primary: 'ui-icon-check' } }).click(function(){
 			action.hide('drop', {direction: 'right'}, speed);
 			$.post(config.prefix+"/filemanager/"+type+"/json", {files: files, path: filetable.filemanager('option','root') }, function(data){
@@ -133,6 +138,8 @@ copymove_callback = function( type ) {
 				if( ! data.error ) {
 					filetable.filemanager('reload');
 				}
+				copymove_yesbutton = null;
+				copymove_isactive = false;
 			}, 'json');		
 		});
 
@@ -141,6 +148,8 @@ copymove_callback = function( type ) {
 			action.hide('drop', {direction: 'right'}, speed);
 			filetable.filemanager('disableButtons', false );
 			panel.hide('drop', {direction: 'down'}, speed);
+			copymove_yesbutton = null;
+			copymove_isactive = false;
 		});
 
 	action.buttonset();
@@ -249,8 +258,15 @@ buttons = [
 	}
 ];
 
+writable = true;
 update_toolbar_buttons = function() {
+	if( copymove_isactive ) {
+		return;
+	}
 	var length = $("#filetable").filemanager('length');
+	if(  writable ) {
+		$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
+	}
 	if( length == 0 ) {
 		$(buttons_requiring_selected_files_selectors).button("disable").data("is_disabled", true);
 		$(buttons_requiring_single_selected_file_selectors).button("disable").data("is_disabled", true);
@@ -260,6 +276,27 @@ update_toolbar_buttons = function() {
 	} else {
 		$(buttons_requiring_single_selected_file_selectors).button("disable").data("is_disabled", true);
 		$(buttons_requiring_selected_files_selectors).button("enable").data("is_disabled", false);
+	}
+	if( ! writable ) {
+		$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
+	}
+
+}
+
+after_open_dir_callback = function(json) {
+	writable = json.meta.writable;
+	if( ! writable ) {
+		if( copymove_isactive ) {
+			copymove_yesbutton.button("disable").data("is_disabled", true);
+		} else {
+			$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
+		}
+	} else {
+		if( copymove_isactive ) {
+			copymove_yesbutton.button("enable").data("is_disabled", false);
+		} else {
+			$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
+		}
 	}
 }
 
@@ -312,8 +349,7 @@ $(document).ready(function() {
 		fileDoubleClickCallback: file_download_callback,
 		dirDoubleClickCallback: update_toolbar_buttons,
 		mouseDownCallback: update_toolbar_buttons,
-		prevDirIcon: 'ui-icons ui-icon-back',
-        nextDirIcon: 'ui-icons ui-icon-next',
+		dirPostOpenCallback: after_open_dir_callback,
 		ajaxSource: config.prefix+"/filemanager/index/json"
 	});
 

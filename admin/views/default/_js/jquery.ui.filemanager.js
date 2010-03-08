@@ -18,6 +18,7 @@
 		   'dir': 'ui-icon-folder-collapsed',
 		   'file': 'ui-icon-document'
 	   },
+	   dirPostOpenCallback: null,
 	   dirDoubleClickCallback: null,
 	   fileDoubleClickCallback: null,
 	   mouseDownCallback: null,
@@ -28,6 +29,7 @@
 	   this.is_disabled = false;
 	   this.multiselect = false;
 	   this.last_selected = null;
+	   this.element.addClass("ui-filemanager");
 
 	   this.buttonBar = jQuery("<div/>", {'class': 'ui-filemanager-buttonbar' }).buttonset();
 	   this.pathWidget = jQuery('<div/>', {'class': 'ui-filemanager-path-widget' });
@@ -88,7 +90,10 @@
 											   'class':  'ui-filemanager-path-link'
 										   }
 									   ).click(function(){
-											   self._reloadAjax( { data: { path: jQuery(this).data('path') } } );
+											   self._reloadAjax( { data: { path: jQuery(this).data('path') } }, function(){
+													   self.options.dirPostOpenCallback.apply( self, arguments );
+												   } 
+											   );
 										   }
 									   );
 									   current += '/';
@@ -272,7 +277,7 @@
 			   // Callback user function - for event handlers etc 
 			   if ( typeof callback == 'function' )
 			   {
-				   callback.apply( self, [ settings ] );
+				   callback.apply( self, [ json ] );
 			   }
 		   }
 	   );
@@ -293,62 +298,66 @@
 	   var self = this;
 
 	   options = jQuery.extend({direction: "left"},options);
-	   orig_width = self.element.outerWidth();
-	   orig_height = self.element.outerHeight();
+	   var orig_width = self.element.outerWidth();
+	   var orig_height = self.element.outerHeight();
 
-	   fake_out = self.element.fake({insertIntoDOM: false});
-	   self.element.fnClearTable();
-	   fake_in = self.element.fake({insertIntoDOM: false});
+	   var offset = self.element.offset();
+	   var fake = self.element.fake();
+	   //self.element.fnClearTable();
 
-	   wrapper = jQuery("<div/>", {
-			   css: {
-				   "position": "absolute",
-				   "margin": 0, 
-				   "padding": 0,
-				   top: 0, 
-				   left: 0 
-			   }
-		   }
-	   );
-
-	   wrapper.appendLinear([fake_in,fake_out], {direction: options.direction == "left" ? 'left' : "right" });
-	   wrapper.width(orig_width);
-	   wrapper.height(orig_height);
-
-	   outer_wrapper = jQuery("<div/>",{
-			   css: {
-				   position: 'absolute',
-				   margin: 0,
-				   padding: 0,
-				   width: orig_width,
-				   height: orig_height,
-				   overflow: "hidden"
-			   }
-		   });
-	   outer_wrapper.offset(self.element.offset());
-	   outer_wrapper.append( wrapper );
-
-	   outer_wrapper.appendTo("body");
 	   self.element.hide();
-	   animation_done = false;
-	   wrapper.effect("slide",
-		   {
-			   direction: options.direction == "left" ? 'right' : "left", 
-			   easing: "easeOutExpo"
-		   },
-		   self.options.animationSpeed,
-		   function() {
-			   self.element.show();
-			   self.element.fnDraw();
-			   animation_done = true;
-			   wrapper.remove();
-			   outer_wrapper.remove();
-		   }
-	   );
 
-	   self._reloadAjax( { path: self.element.data('path'), redraw: false, data: { path: options.path }  }, function(){
-			   if( animation_done ) {
-				   self.element.fnDraw();
+
+	   self._reloadAjax( { path: self.element.data('path'), redraw: false, data: { path: options.path }  }, function( json ){
+			   self.element.fnDraw();
+			   var wrapper = jQuery("<div/>", {
+					   css: {
+						   "position": "absolute",
+						   "margin": 0, 
+						   "padding": 0,
+						   top: 0, 
+						   left: 0 
+					   }
+				   }
+			   );
+			   var outer_wrapper = jQuery("<div/>",{
+					   css: {
+						   position: 'absolute',
+						   margin: 0,
+						   padding: 0,
+						   width: orig_width,
+						   height: orig_height,
+						   overflow: "hidden"
+					   }
+				   });
+			   outer_wrapper.append( wrapper );
+
+			   outer_wrapper.appendTo("body").hide();
+
+			   height = self.element.height();
+			   width = self.element.width();
+			   new_fake = self.element.fake();
+			   new_fake.children().andSelf().show();
+			   wrapper.appendLinear([new_fake, fake], {direction: options.direction == "left" ? 'left' : "left" });
+			   wrapper.width(Math.max(orig_width,  width));
+			   wrapper.height(Math.max(orig_height, height));
+			   outer_wrapper.offset(offset);
+			   outer_wrapper.show();
+
+			   wrapper.effect("slide",
+				   {
+					   direction: options.direction == "left" ? 'right' : "left", 
+					   easing: "easeOutExpo"
+				   },
+				   1000,
+				   function() {
+					   self.element.show();
+					   wrapper.remove();
+					   outer_wrapper.remove();
+				   }
+			   );
+			   if( self.options.dirPostOpenCallback ) {
+				   self.options.dirPostOpenCallback.apply( self, arguments );
 			   }
 		   }
 	   );
