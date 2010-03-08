@@ -1,12 +1,12 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 <form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
-<table class="networksettings">
+<table id="table-network-lan">
     <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('LAN')?></td></tr>
 	<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
 		<tr>
 			<td valign="top"></td>
 			<td valign="top" colspan="3" >
-				<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>.<br />
+				<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
 				<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
 			</td>
 		</tr>
@@ -25,7 +25,7 @@
         />
 		</td>
 		<td valign="top" colspan="3">
-			<?=t('Obtain IP-address automatically')?> (DHCP)<br/>&nbsp;
+			<label for=""><?=t('Obtain IP-address automatically')?> (DHCP)</label>
 		</td>
 	</tr>
 	
@@ -42,13 +42,13 @@
             />
 		</td>
 		<td valign="top" colspan="3">
-			<?=t('Use static IP address settings')?>:<p/>
+			<label for=""><?=t('Use static IP address settings')?></label>:
 		</td>
 	</tr>
 
-	<tr>
+	<tr id="tr-network-ip">
 		<td></td>
-		<td><?=t('IP')?>:&nbsp;&nbsp;</td>
+		<td><label for=""><?=t('IP')?></label>:</td>
         <td>
             <input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
@@ -58,7 +58,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
                 value='<?=$olip[1]?>' 
                 class='ip' 
@@ -66,7 +66,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
                 value='<?=$olip[2]?>' 
                 class='ip' 
@@ -74,7 +74,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
                 value='<?=$olip[3]?>' 
                 class='ip' 
@@ -90,9 +90,9 @@
 <? } ?>
 		</td>
 	</tr>
-	<tr>
+	<tr id="tr-network-netmask">
 		<td></td>
-		<td><?=t('Netmask')?>:&nbsp;&nbsp;</td>	
+		<td><label for=""><?=t('Netmask')?></label>:</td>	
         <td>
             <input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
@@ -102,7 +102,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
                 value='<?=$olmask[1]?>' 
                 class='ip' 
@@ -110,7 +110,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
                 value='<?=$olmask[2]?>' 
                 class='ip' 
@@ -118,7 +118,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
                 value='<?=$olmask[3]?>' 
                 class='ip' 
@@ -136,9 +136,9 @@
 	</tr>
 
 
-	<tr>
+	<tr id="tr-network-gateway">
 		<td></td>
-		<td><?=t('Default gateway')?>:&nbsp;&nbsp;</td>	
+		<td><label for=""><?=t('Default gateway')?></label>:</td>	
         <td>
             <input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
@@ -148,7 +148,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[1]?>' 
                 class='ip' 
@@ -156,7 +156,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[2]?>' 
                 class='ip' 
@@ -164,7 +164,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
                 value='<?=$olgw[3]?>' 
                 class='ip' 
@@ -176,9 +176,9 @@
 		</td>
 		<td />
 	</tr>
-	<tr>
+	<tr id="tr-network-dns">
 		<td></td>
-		<td><?=t('Primary DNS')?>:&nbsp;&nbsp;</td>	
+		<td><label for=""><?=t('Primary DNS')?></label>:</td>	
         <td>
             <input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
@@ -188,7 +188,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[1]?>'
                 class='ip' 
@@ -196,7 +196,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[2]?>' 
                 class='ip' 
@@ -204,7 +204,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
                 value='<?=$oldns[3]?>' 
                 class='ip' 
@@ -217,8 +217,6 @@
         </td>
 		<td />
 	</tr>
-
-
 	<tr>
 		<td></td>
 		<td valign="top" colspan="3">
@@ -250,7 +248,7 @@
             value='dhcpd' 
             <?if($dnsmasq_settings["dhcpd"]):?>checked="checked"<?endif?>
         />
-			<?=t('Enable DHCP server')?>
+			<label for=""><?=t('Enable DHCP server')?></label>
 		</td>
 		<td>
 <? if($update && $err_dnsmasq["dhcpd"]){ ?>
@@ -262,7 +260,7 @@
 
 	<tr>
 		<td></td>
-		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?=t('Lease range')?>:&nbsp;&nbsp;</td>
+		<td><label for=""><?=t('Lease range')?></label>:</td>
         <td>
             <input 
                 class="dnsmasq" 
@@ -272,7 +270,7 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 class="dnsmasq" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][1]?>' 
@@ -280,14 +278,14 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 class="dnsmasq" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][2]?>' 
                 name='dnsmasq[range_start][2]' 
                 type='text' size='3' 
                 maxlength='3'
-            />.<input 
+            />&nbsp;.&nbsp;<input 
                 class="dnsmasq" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][3]?>' 
@@ -304,7 +302,7 @@
             type='text' 
             size='3' 
             maxlength='3'
-        />.<input 
+        />&nbsp;.&nbsp;<input 
             class="dnsmasq" 
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
             value='<?=$dnsmasq_settings["range_end"][1]?>' 
@@ -312,7 +310,7 @@
             type='text' 
             size='3' 
             maxlength='3'
-        />.<input 
+        />&nbsp;.&nbsp;<input 
             class="dnsmasq" 
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
             value='<?=$dnsmasq_settings["range_end"][2]?>' 
@@ -320,7 +318,7 @@
             type='text' 
             size='3' 
             maxlength='3'
-        />.<input
+        />&nbsp;.&nbsp;<input
             class="dnsmasq"
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?>
             value='<?=$dnsmasq_settings["range_end"][3]?>'
@@ -335,12 +333,7 @@
 		</td>
 		<td />
 	</tr>
-
-	<tr>
-		<td valign="top" colspan="4"><br/></td>
-	</tr>
-
-
+	
 	<tr>
         <td>
             <input 
@@ -351,7 +344,7 @@
                 value="1"
             />
         </td>
-		<td colspan="2"><?=t('Enable jumbo frames. Please read manual before enabling.')?></td>
+		<td colspan="2"><label for=""><?=t('Enable jumbo frames. Please read manual before enabling.')?></label></td>
 		<td></td>
 	</tr>
 

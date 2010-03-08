@@ -9,7 +9,7 @@ form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button] {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:110%;background-image:url(../_img/icons.png);background-repeat:overflow:hidden;background-position: -6px -138px;}
+input[type=submit],input[type=button] {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:140%;background-image:url(../_img/icons.png);background-repeat:overflow:hidden;background-position: -6px -138px;}
 input[type=submit]:hover,input[type=button]:hover {border:0;opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #999;}
@@ -26,6 +26,7 @@ ul {list-style: square;list-style-position: outside;}
 ul ul{}
 li{padding: 0.2em 0 0.2em 0;}
 li {display:inline;}
+label {font-weight:bold;font-size:110%;}
 a {color: #000;}
 img{border: 0;}
 /* WRAPPER */
@@ -48,7 +49,7 @@ img{border: 0;}
 #topnav button {border:0;background:transparent;margin-right:0.8em}
 #topnav button:hover {opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 /*#topnav button:hover {border-bottom:0.1em solid black;}*/
-#subnav {font-size: 120%;list-style: none;margin-top:0.8em;}
+#subnav {font-size: 130%;list-style: none;margin-top:0.8em;}
 #subnav ul:after {content: ".";height: 0;clear: both;visibility: hidden;}
 #subnav ul li {border-right:1px #000 solid;padding-top:0;}
 #subnav ul li a{color: #000;text-decoration: none;padding: 0.1em;}
@@ -139,7 +140,9 @@ div#subnav ul li a:hover {color: #999;}
 .ui-fake-updir {background:#EEE}
 /*SERVICES*/
 #services table {margin-bottom:2em}
-#services .ui-widghet-header, #services label {font-weight:bold;font-size:120%;}
+#tr-network-gateway,#tr-network-ip,#tr-network-netmask {border-bottom:0}
+#tr-network-ip td {padding-top:3em}
+#table-network-wan input{font-size:110%;font-weight:bold;padding:0.1em 0.4em;}
 /*DISK*/
 table.typetable > tbody > tr > td {	vertical-align : middle;	padding : 0.5em 0.5em;}
 table.typetable > tbody > tr > th {	padding : 0.5em 0.5em;}

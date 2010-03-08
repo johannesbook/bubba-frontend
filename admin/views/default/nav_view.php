@@ -47,7 +47,6 @@ $subnav .= "\t</ul>\n";
 
 // print the navigation menus
 
-print "\n<!--------   navigation bars    ----------->\n";
 if( !isset($show_level1) || (isset($show_level1) && $show_level1) ) { 
 	print "<div id='nav'>\n";
 	print $navbar;
@@ -60,7 +59,6 @@ if( !isset($show_level1) || (isset($show_level1) && $show_level1) ) {
 	print $subnav;
 	print "</div> <!-- subnav  -->\n";
 }
-print "<!--------  end navigation bars    ----------->\n\n";
 
 
 
