@@ -389,7 +389,7 @@ class Menu extends Model {
 		$mymenu = array();
 		foreach($menubar as $id => $tags) {
 			/*<a class="ui-login-menubar-a default-icon default-icon-settings fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/"><span><?=t("menubar_usersettings")?></span></a>*/
-			$mymenu[] = "<a class='".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a>";
+			$mymenu[] = "<a class='".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a><span class='ui-icons ui-icon-lock'></span>";
 		}
 		return $mymenu;
 	}

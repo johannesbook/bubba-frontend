@@ -63,6 +63,7 @@ div#subnav ul li a:hover {color: #999;}
 #login_more_info a:hover {color:#506ab2;}
 #login_more_info img{display:block;margin-top:1.5em;}
 #login_menubar {margin-top:3em;}
+#login_menubar .ui-icon-lock,#login_settings .ui-icon-lock {margin-left:-3em;margin-right:2em;}
 .ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:20px;padding-top:75px;font-weight:bold;text-align:center;}
 .ui-login-menubar-a span  {display:none;font-size:150%;}
 /* CONTENT */
@@ -102,6 +103,7 @@ div#subnav ul li a:hover {color: #999;}
 .ui-icon-next {width:7px; height:30px;background-position: -170px -196px;}
 .ui-icon-on {width:65px; height:21px;background-position: -52px -4px;}
 .ui-icon-off {width:65px; height:21px;background-position: -170px -35px;}
+.ui-icon-lock {width:22px; height:29px;background-position: -320px -193px;}
 /*FILE MANAGER*/
 #filetable {font-size:135%;}
 #filetable_paths {padding-top:10px;}
