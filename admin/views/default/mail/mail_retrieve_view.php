@@ -1,5 +1,5 @@
 <fieldset id="fetchmail">
-	<table cellpadding="0" cellspacing="0" border="1">
+	<table>
 <tr><td colspan="8" class="ui-state-default ui-widghet-header"><?=t('Retrieve mail from individual accounts')?> <?=$fstatus?"":"(".t('Disabled').")"?></td></tr>
 <tr>
    <th><?=t('Host')?></th>

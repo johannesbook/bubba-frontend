@@ -3,11 +3,11 @@
 <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Disk information')?></td></tr>
 <tr>
 	<th></th>
-	<th class="col1"><i><?=t('Disk')?></i></th>
-	<th><i><?=t('Device')?></i></th>
-	<th><i><?=t('Disk size')?></i></th>
-	<th><i><?=t('Type')?></i></th>
-	<th><i><?=t('Partitions')?></i></th>
+	<th class="col1"><?=t('Disk')?></th>
+	<th><?=t('Device')?></th>
+	<th><?=t('Disk size')?></th>
+	<th><?=t('Type')?></th>
+	<th><?=t('Partitions')?></th>
 </tr>
 <?foreach($disks as $disk):?>
 <tr>
@@ -60,10 +60,10 @@
 <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Partition information')?></td></tr>
 <tr>
 	<th class="colorcode"></th>
-	<th><i><?=t('Partition')?></i></th>
-	<th><i><?=t('Partition label')?></i></th>
-	<th><i><?=t('Partition size')?></i></th>
-	<th class="path"><i><?=t('Mount path')?></i></th>
+	<th><?=t('Partition')?></th>
+	<th><?=t('Partition label')?></th>
+	<th><?=t('Partition size')?></th>
+	<th class="path"><?=t('Mount path')?></th>
 	<th></th>
 </tr>
 

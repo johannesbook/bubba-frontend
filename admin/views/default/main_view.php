@@ -65,24 +65,34 @@ $(document).ready(function(){
 	});	
 	$(".ui-login-menubar-a").mouseout(function(e) {
 		$(this).find("span").hide();
-	});
+	});	
+	$("#fn-topnav-help").mouseover(function(e) {		$("#s-topnav-help").show();	});	
+	$("#fn-topnav-help").mouseout(function(e) {		$("#s-topnav-help").hide();	});	
+	$("#fn-topnav-home").mouseover(function(e) {		$("#s-topnav-home").show();	});	
+	$("#fn-topnav-home").mouseout(function(e) {		$("#s-topnav-home").hide();	});	
+	$("#fn-topnav-logout").mouseover(function(e) {		$("#s-topnav-logout").show();	});	
+	$("#fn-topnav-logout").mouseout(function(e) {		$("#s-topnav-logout").hide();	});
+	
 	$('#sideboard_switch').click(function(event) {  
 		if($('#sideboard').is(":visible")) {
 			$('#sideboard').hide();
 			$("#content").css("width","95%");
-			$("#topnav").css("width","29%");			
+			$("#topnav").css("width","29%");		
+			$('#sideboard_switch').addClass('ui-icon-open ');
+			$('#sideboard_switch').removeClass('ui-icon-close ');		
 			$.post(config.prefix+"/users/config/1/show_sideboard/0");
 		} else {
 			$('#sideboard').show();
 			$("#content").css("width","75%");
 			$("#topnav").css("width","45%");			
+			$('#sideboard_switch').addClass('ui-icon-close ');
+			$('#sideboard_switch').removeClass('ui-icon-open ');		
 			$.post(config.prefix+"/users/config/1/show_sideboard/1");
 		}
 	});
 <?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
 	$("#content").css("width","75%");
 	$("#sideboard").show();
-	$("#sideboard_switch").text(">");
 <?endif?>
 
 <?if(isset($update) && is_array($update)):?>
@@ -139,10 +149,13 @@ if(isset($head)) {
             		<?} else {?>
 	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             		<? } ?>
-                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span class="ui-button-text" style="display:none">Help</span></button>
-                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span class="ui-button-text" style="display:none">Home</span></button>
-                <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span class="ui-button-text" style="display:none">Logout</span></button>                
-                <a id="sideboard_switch" href="#">&lt;</a>
+                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span></button>
+                <span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span>
+                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span></button>
+                <span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span>
+                <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span></button>
+                <span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span>
+                <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
             </div>	<!-- topnav -->
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
             <?=$navbar?>

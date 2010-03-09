@@ -20,7 +20,7 @@
 
 	<table id="backup">
 	    
-	    <tr><td colspan="8" class="ui-state-default ui-widghet-header"><?=t('File sharing')?></td></tr>
+	    <tr><td colspan="8" class="ui-state-default ui-widghet-header ui-div-header"><?=t('File sharing')?></td></tr>
 		<tr>
 			<th><?=t('Existing jobs')?></th>
 			<th><?=t('Included directories')?></th>

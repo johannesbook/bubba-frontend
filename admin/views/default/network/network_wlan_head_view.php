@@ -174,21 +174,6 @@ label.error {
   color: #ea5200;
 }
 
-input[type='submit'] {
-	margin-left : 76px;
-	margin-top : 15px;
-}
-
-input[type='text'] {
-	width : 150px;
-	padding : 2px;
-}
-
-select {
-	width : 155px;
-}
-select#mode {
-	width : 225px;
-}
+/* select#mode { 	width : 225px;} Maxim Skall raderas om den ej används i js*/ 
 
 </style>

@@ -1,6 +1,6 @@
 * {margin: 0;padding: 0;}
 html, body{ height: 100%;}
-body {font-size:62.5%;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background:#DDD;}
+body {font-size:12px;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background:#DDD;}
 h1 {line-height: 1em;font-size: 18px;font-weight: bold;}
 h2 {line-height: 1em;font-size: 1.5em;font-weight: normal;margin: 1.2em 0 0 0;}
 h3 {font-size: 1.3em;font-weight: bold;margin: 0.6em 0 0 0;}
@@ -9,7 +9,7 @@ form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button] {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:140%;background-image:url(../_img/icons.png);background-repeat:overflow:hidden;background-position: -6px -138px;}
+input[type=submit],input[type=button] {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/icons.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;}
 input[type=submit]:hover,input[type=button]:hover {border:0;opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #e5e5e5;}
@@ -19,14 +19,14 @@ input[type=radio] {}
 input[type=checkbox] {}
 table {margin: 1em 0;font-size: 1.3em;border-collapse : collapse;border:0;width:100%; }
 select {width:49%;}
-td {padding: 0.25em 1.2em;vertical-align: top;}
-tr {border-bottom:0.1em solid #e5e5e5}
-th {padding: 0.3em 0.5em;text-align: left;}
+td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
+tr {border:0;border-bottom:0.1em solid #e5e5e5}
+th {padding: 0.25em 1.2em;text-align: left;border:0}
 ul {list-style: square;list-style-position: outside;}
 ul ul{}
 li{padding: 0.2em 0 0.2em 0;}
 li {display:inline;}
-label {font-weight:bold;font-size:110%;}
+label {font-weight:bold;}
 a {color: #000;}
 img{border: 0;}
 /* WRAPPER */
@@ -45,9 +45,9 @@ img{border: 0;}
 #nav ul{font-size: 18px;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
 #topnav {float:right;left:72%;padding-top:0.3em;width:29%;}
 #topnav a, #topnav span {float:left;}
-#topnav .ui-button-text {margin-top:30px;margin-left:-15px;font-size12px;font-weight:bold;}
+#topnav .ui-button-text {top:35px;font-size:12px;font-weight:bold;position:absolute;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;font-size:10px;}
-#topnav button {border:0;background:transparent;margin-right:0.8em}
+#topnav button {border:0;background:transparent;margin-right:0.8em;}
 /*#topnav button:hover {border-bottom:0.1em solid black;}*/
 #subnav {font-size: 14px;list-style: none;margin-top:0.8em;}
 #subnav ul:after {content: ".";height: 0;clear: both;visibility: hidden;}
@@ -70,12 +70,12 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
 /* SIDE BOARD */
 #sideboard {float:right;width:20%;margin-top:-6em;display : none}
-#sideboard-datetime-date {font-size: 14px;font-weight: bold;margin:0 0 -0.3em;}
+#sideboard-datetime-date {font-size: 140px;font-weight: bold;margin:0 0 -0.3em;}
 #sideboard-datetime-day {font-size: 3em;font-weight: bold;}
 #sideboard-datetime-month {font-size: 1.5em;font-weight: bold;}
 #sideboard-datetime-year {font-size: 1.5em;font-weight: bold;}
 #sideboard-clock-digital {font-size: 1.5em;font-weight: bold;}
-#sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;background-image:url(../_img/icons.png);width:15px; height:30px;background-position: -85px -224px;}
+#sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;}
 /* HOME MENU */
 #menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;background:white;padding:1.5em;height:10.5em;}
 #menu_close {float:right;margin-top:-85px;}
@@ -104,6 +104,8 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-on {width:65px; height:21px;background-position: -52px -4px;}
 .ui-icon-off {width:65px; height:21px;background-position: -170px -35px;}
 .ui-icon-lock {width:22px; height:29px;background-position: -320px -193px;}
+.ui-icon-open {width:23px; height:21px;background-position: -86px -224px;} 
+.ui-icon-close {width:23px; height:21px;background-position: -111px -224px;}
 /*WIZARD*/
 .ui-widget-wizard{width:50% !important;}
 /*FILE MANAGER*/
@@ -134,7 +136,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
 .ui-button-text:hover {color:#e5e5e5;}
-.ui-element-width-100 {width:100% !important;}
+.ui-element-width-100 {width:95% !important;}
 .ui-element-width-50 {width:50% !important;}
 .ui-help-box, .ui-help-box .ui-widget-header {background:#000;color:white !important;}
 .ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.9 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;filter: alpha(opacity=90) !important;font-size:12px;}
@@ -146,6 +148,9 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #tr-network-gateway,#tr-network-ip,#tr-network-netmask {border-bottom:0}
 #tr-network-ip td {padding-top:3em}
 #table-network-wan input{font-size:12px;font-weight:bold;padding:0.1em 0.4em;}
+#services td {width:88%;}
+/*NETWORK*/
+#network input[type=submit],input[type=button] {margin: 1.2em;}
 /*DISK*/
 table.typetable > tbody > tr > td {	vertical-align : middle;	padding : 0.5em 0.5em;}
 table.typetable > tbody > tr > th {	padding : 0.5em 0.5em;}
@@ -197,6 +202,8 @@ input.mount {width : 75px;	margin : 0;}
 .ui-action-panel {position: absolute;border: 0;}
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
 .ui-dialog-title {font-size:14px;text-align:center;width:100%;padding-top:2em;}
+.ui-dialog h2 {font-size:14px;font-weight:bold;}
+.ui-dialog label {font-size:12px;}
 .ui-div-header {width:100%;font-size:14px;padding:0.5em 1.2em;}
 #body_wizard .ui-dialog-title {display: none !important;}
 .ui-icon-bubba-switch-container {

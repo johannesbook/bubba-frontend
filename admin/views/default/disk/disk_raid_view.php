@@ -6,9 +6,9 @@
 		<div><input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
 		<?=t("disk_raid_recover_message")?>.</div>
 	</div>
-</fieldset>
 
-<fieldset><legend><i><?=t('disk_raid_status_title')?></i></legend>
+
+<?=t('disk_raid_status_title')?>
 <?if(sizeof($status)) { ?>
 	<?
 	$faulty = false;
@@ -72,11 +72,11 @@
 		<?=t('disk_raid_list_of_arrays_title')?>
 		<table class="disks">
 		<tr>
-			<th><i><?=t('disk_raid_table_list_of_arrays_array_name_title')?></i></th>
-			<th><i><?=t('disk_raid_table_list_of_arrays_level_title')?></i></th>
-			<th><i><?=t('disk_raid_table_list_of_arrays_state_title')?></i></th>
-			<? /*<th><i><?=t('disk_raid_table_list_of_arrays_label_title')?></i></th> */?>
-			<th><i><?=t('disk_raid_table_list_of_arrays_size_title')?></i></th>
+			<th><?=t('disk_raid_table_list_of_arrays_array_name_title')?></th>
+			<th><?=t('disk_raid_table_list_of_arrays_level_title')?></th>
+			<th><?=t('disk_raid_table_list_of_arrays_state_title')?></th>
+			<? /*<th><?=t('disk_raid_table_list_of_arrays_label_title')?></th> */?>
+			<th><?=t('disk_raid_table_list_of_arrays_size_title')?></th>
 			<th></th>
 		</tr>
 		<?foreach($raids as $raid):?>
@@ -91,14 +91,13 @@
 		<?endforeach?>
 		</table>
 		
-		</fieldset>
-		<fieldset><legend><i><?=t('disk_raid_list_of_disks_title')?></i></legend>
+		<?=t('disk_raid_list_of_disks_title')?>
 		<table class="disks">
 		<tr>
-			<th><i><?=t('disk_raid_table_list_of_disks_disk_title')?></i></th>
-			<th><i><?=t('disk_raid_table_list_of_disks_parent_title')?></i></th>
-			<th><i><?=t('disk_raid_table_list_of_disks_state_title')?></i></th>
-			<th><i><?=t('disk_raid_table_list_of_disks_size_title')?></i></th>
+			<th><?=t('disk_raid_table_list_of_disks_disk_title')?></th>
+			<th><?=t('disk_raid_table_list_of_disks_parent_title')?></th>
+			<th><?=t('disk_raid_table_list_of_disks_state_title')?></th>
+			<th><?=t('disk_raid_table_list_of_disks_size_title')?></th>
 			<th></th>
 		</tr>
 		<?foreach($disks as $disk):?>
