@@ -288,11 +288,12 @@ $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 ";
 
 $lang['help_box_settings_identity']="
+<h3>Windows share options</h3>
 <p><strong>Hostname</strong> - is the unique name by which a network-attached device is known on a network.</p>
 <p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or  Internet connection. Use the same workgroup name on Bubba|Two as on your computer.</p>
+<h3>Easyfind options</h3>
 <p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba|Two wherever you are. You will be able to find your Bubba|Two wherever you are typing http://&lt;your_Easyfind_name&gt;.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
 <p><strong>Easyfind name</strong> - Choose a name for your Bubba|Two on the Easyfind network.</p>
-<p><i>Update</i> saves your changes.</p>
 ";
 
 $lang['help_box_settings_trafficsettings']="
@@ -314,7 +315,7 @@ $lang['help_box_settings_datetime']="
 ";
 
 $lang['help_box_settings_backuprestore']="
-<p>'Backup and restore' will backup all your settings for you in case you reinstall Bubba|Two or move the settings to another Bubba|Two unit. The following settings will be saved:</p>
+<p>'Config backup' will backup all your Bubba|2 settings. Nice to have in case you reinstall Bubba|Two or move the settings to another Bubba|Two unit. The following settings will be saved:</p>
 <ul>
   <li>User accounts (including admin login via WAN setting, passwords) but no user data</li>
   <li>Backup jobs</li>
@@ -323,7 +324,7 @@ $lang['help_box_settings_backuprestore']="
   <li>Network setup (all settings ie profile, hostname, wireless settings, firewall rules etc)</li>
   <li>Printers</li>
 </ul>
-<h3>Make a settings backup</h3>
+<h3>Perform a backup</h3>
 <ol>
   <li>Insert an external storage device (USB memory or USB disk) into Bubba|Two. </li>
   <li>Choose the Source/Destination and press Backup. </li>
@@ -333,14 +334,14 @@ $lang['help_box_settings_backuprestore']="
 <h3>Restore a backup</h3>
 <ol>
   <li>Insert the storage device containing the backup file into Bubba|Two.</li>
-  <li>Observe that the current users on Bubba|Two will be removed and the users stored in the backup file will be restored. Although the user data from current user on Bubba|Two will be left intact in the /home/[user] catalogue.</li>
+  <li>Observe that the current users on Bubba|Two will be removed and the users stored in the backup file will be restored. Although the user data from current users on Bubba|Two will be left intact in the /home/[user] catalogue.</li>
   <li>Press restore. </li>
   <li>You might need to reconnect your Bubba|Two depending on how your restored network settings are configured.</li>
   </ol>
 ";
 
 $lang['help_box_settings_software']="
-<h3>Software udate</h3>
+<h3>Udate software</h3>
 <p>Bubba|Two's software can easily be updated to gain new functionality. Press 'Update', and the update is automatically performed. Please have patient, it might take a while to perform an update.</p>
 <p>After an update, status information is shown. Press the '+' sign to show the complete message.</p>
 <h3>Hotfixes</h3>
@@ -370,13 +371,24 @@ $lang['help_box_settings_logs']="
 	
 
 // Help box - User
-$lang['help_box_usermail']="
+
+$lang['help_box_user_users']=$lang['help_box_user_users_edit']="
+<p>Here every user can change the personal information, such as 'Real name' and password. Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name.</p>
+";
+
+$lang['help_box_user_mail']="
 <p>If you set up Bubba|Two to fetch your eMail from other external eMail accounts you may have, they will be stored on Bubba|Two and available via IMAP or web mail, wherever you are.</p>
 <p><strong>Retrieve mail from individual accounts</strong> - Shows your current accounts for mail retrieval.</p>
 <p><strong>Add account</strong> - To fetch mail from an external accout, fill in the information given to you by your mail account provider.</p>
 ";
 
-$lang['help_box_downloads']="
+
+$lang['help_box_user_mail_editfac']="
+<p><strong>Edit account</strong> - Edit the mail settings for the external mail account. Use the information given to you by your mail account provider.</p>
+";
+
+
+$lang['help_box_user_downloads']="
 <p>Use the Bubba|Two download manager to download files directly to your Bubba|Two, wherever you are. The only thing you need is a internet connection and to browse to your way home to your Bubba|Two, for example http://www.&lt;your_domain&gt;.com/admin or http://&lt;your_ip_address&gt;/admin. Of course if you already are in your home network browse to http://bubba/admin.</p>
 <p>Large, time consuming downloads are handled by Bubba|Two while your computer is turned off. When you initiate your first download a catalogue is created in your /home/[username]/ directory: /home/[username]/downloads. </p>
 <h3>How to download</h3>
@@ -389,15 +401,17 @@ $lang['help_box_downloads']="
   </ol>
 <p>*To copy the URL simply right click on the file (or torrent). Depending on which browser you use and what type of file you desire to download select the appropriate in the right click menu: 'Copy Shortcut', 'Copy Link Location', 'Copy Image Location'</p>
 <p>As you ad files for download, Bubba|Two allocates disk space for the files. If you look in the /home/[username]/downloads/ catalogue it seems if the files exist but as long as the progress bar still not has reached 100% the files are not complete.</p>
-<p> Currently the download manager support the standards HTTP, FTP and bittorrent downloads. You don't need to open any ports in your firewall when using the download manager, but for torrent downloads it is recommended to open the ports 10000-14000 under 'Integrated Bubba services' in section Network-&gt;Firewall.</p>
-<p>NOTE: When downloading bittorrents, note that the download manager will  continue to share the file until you press Cancel or Clear. </p>
+<p>Currently the download manager support the standards HTTP, FTP and bittorrent downloads. You don't need to open any ports in your firewall when using the download manager, but for torrent downloads it is recommended to open the ports 10000-14000 under 'Integrated Bubba services' in section Network-&gt;Firewall.</p>
+<p>NOTE: When downloading bittorrents, note that the download manager will continue to share the file until you press 'Cancel' or 'Clear'. </p>
 ";
 
-$lang['help_box_userinfo']="
-<p>Here every user can change the personal information, such as 'Real name' and password. Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name.</p>
+
+$lang['help_box_user_music']="
+<p>Play your music stored on Bubba from any PC in the world! Your music library is availible when logged in as your standard user.</p>
 ";
 
-$lang['help_box_album_albums']="
+
+$lang['help_box_user_album_albums']="
 <p>Share your digital photos with friends and family! With Bubba|Two you get easy to use, out of the box photo album! All you need is your digital pictures!</p>
 <p><strong>Features:</strong></p>
 <ul>
@@ -443,7 +457,7 @@ $lang['help_box_album_albums']="
 <p>Your photo album will be visible by browsing to <a href='http://bubba/album' target='_blank'>http://bubba/album</a> (<a href='http://bubba.local/album' target='_blank'>http://bubba.local/album</a> if using Mac) from inside your home network, or by browsing to 'http://www.&lt;my domain&gt;.com/album' from outside your network.</p>
 ";
 
-$lang['help_box_album_users']="
+$lang['help_box_user_album_users']="
 <h3>Add users</h3>
 <p>If you your albums should be public and seen by anyone, you do not have to add any album users. But you have the possibility to add users and create password protected albums to keep your pictures private for you and your family. Remember that the Bubba|Two users and photo album users are not the same. </p>
 <ol>
