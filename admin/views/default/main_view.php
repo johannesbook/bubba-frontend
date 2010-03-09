@@ -70,12 +70,12 @@ $(document).ready(function(){
 		if($('#sideboard').is(":visible")) {
 			$('#sideboard').hide();
 			$("#content").css("width","95%");
-			$("#sideboard_switch").text("<");
+			$("#topnav").css("width","29%");			
 			$.post(config.prefix+"/users/config/1/show_sideboard/0");
 		} else {
 			$('#sideboard').show();
 			$("#content").css("width","75%");
-			$("#sideboard_switch").text(">");
+			$("#topnav").css("width","45%");			
 			$.post(config.prefix+"/users/config/1/show_sideboard/1");
 		}
 	});
@@ -139,9 +139,9 @@ if(isset($head)) {
             		<?} else {?>
 	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             		<? } ?>
-                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span class="ui-button-text">&nbsp;</span></button>
-                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span class="ui-button-text">&nbsp;</span></button>
-                <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span class="ui-button-text">&nbsp;</span></button>                
+                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span class="ui-button-text" style="display:none">Help</span></button>
+                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span class="ui-button-text" style="display:none">Home</span></button>
+                <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span class="ui-button-text" style="display:none">Logout</span></button>                
                 <a id="sideboard_switch" href="#">&lt;</a>
             </div>	<!-- topnav -->
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
