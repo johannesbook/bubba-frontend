@@ -585,7 +585,6 @@ class Settings extends Controller{
 			}
 			if(!isset($data['wiz_data']['postingpage'])) {
 				// --- PREPROCESSING SETTINGS ----
-				//d_print_r("PREPROCESS: settings");
 				
 				if(service_running("ntpd")) {
 					$data['wiz_data']['use_ntp']= true;
@@ -601,8 +600,7 @@ class Settings extends Controller{
 			}
 
 			// --- LOADING view SETTINGS ----
-			//d_print_r("LOADING view\n");
-			//d_print_r($data);
+			$data["hide_sideboard"] = true;
 			if(isset($error) || (!isset($data['wiz_data']['postingpage'])) ) { // if error or called from "stat" controller load the same view again.
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/settings/settings_wizard_view',$data));

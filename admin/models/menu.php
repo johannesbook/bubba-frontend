@@ -65,7 +65,7 @@ class Menu extends Model {
 			'auth' => false,
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-home',
-			'hide' => array('login'),
+			'hide' => array('login',''),
 		),
 	);
 

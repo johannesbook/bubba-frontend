@@ -25,8 +25,9 @@
 	<h2 class="ui-text-center"><?=t('login-dialog-header')?></h2>
 	<table>
 		<tr>
-			<td><label for="username"><?= t('login-dialog-username')?></label></td>
 			<td>
+				<label for="username"><?=t("Username")?>:</label>
+				<div id="login-dialog-required-user"><?isset($required_user)?$required_user:""?></div>
 				<input
 					id="username"
 					type="text" 
@@ -37,8 +38,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td><label for="password"><?= t('login-dialog-password')?></label></td>
 			<td>
+				<label for="password"><?=t("Password")?>:</label>
 				<input
 					id="password"
 					type="password" 

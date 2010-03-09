@@ -90,7 +90,9 @@ class Stat extends Controller{
 			}
 		}
 	}
-
+	function dialog_wizard_exit() {
+		exit_wizard();
+	}
 }
 
 ?>

@@ -47,7 +47,9 @@ $subnav .= "\t</ul>\n";
 
 // print the navigation menus
 
-if( !isset($show_level1) || (isset($show_level1) && $show_level1) ) { 
+print "\n<!-- ***********  navigation bars    *********** -->\n";
+
+if( $this->Auth_model->policy("menu","show_level1") ) { 
 	print "<div id='nav'>\n";
 	print $navbar;
 	print "</div>\n";
@@ -59,6 +61,7 @@ if( !isset($show_level1) || (isset($show_level1) && $show_level1) ) {
 	print $subnav;
 	print "</div> <!-- subnav  -->\n";
 }
+print "<!-- ***********  end navigation bars    *********** -->\n\n";
 
 
 

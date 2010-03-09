@@ -14,7 +14,6 @@ class Users extends Controller{
 
 	function _renderfull($content){
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
-		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["head"] = "";
 		if($this->session->userdata('run_wizard')) {

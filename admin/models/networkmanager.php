@@ -28,6 +28,16 @@ class NetworkManager extends Model {
 	public function easyfind_validate( $name ) {
 		return preg_match( '#^[A-Za-z0-9-]+$#', $name );
 	}
+	
+	public function set_easyfind( $enable, $name ) {
+		
+		enable_easyfind( $enable );
+		if($name) {
+			return setname_easyfind($name);
+		} else {
+			return 1;
+		}
+	}
 
 	public function easyfind_set_name( $name ) {
 		return setname_easyfind($name);

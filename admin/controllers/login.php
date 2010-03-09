@@ -79,17 +79,6 @@ class Login extends Controller{
 			if(!$mypass){
 				$data['pwdmissing']=true;
 			}
-			// is there an active session?
-			$data["ui_login_user_lock"]  = "ui-login-state-lock fn-login-state-lock";
-			$data["ui_login_admin_lock"] = "ui-login-state-lock fn-login-state-lock";
-			if($this->Auth_model->CheckAuth()) {
-				$data["valid_user"] = $this->session->userdata('user');
-				if($data["valid_user"] == "admin") {
-					$data["ui_login_admin_lock"] = "ui-login-state-nolock";
-				} else {
-					$data["ui_login_user_lock"]  = "ui-login-state-nolock";
-				}
-			}
 			
 			// is there a redirect uri? Then show the login-page.
 			if($this->session->userdata('caller')) {
@@ -104,6 +93,11 @@ class Login extends Controller{
 			}
 			$conf=parse_ini_file("/home/admin/.bubbacfg");
 			$data["show_sideboard"] = (isset($conf["default_sideboard"]) && $conf["default_sideboard"]);
+			if(isset($conf["run_wizard"]) && $conf["run_wizard"]) {
+				$data["show_login"] = true;
+				$data["required_user"] = "admin";
+				$data["redirect_uri"] = FORMPREFIX."/settings/wizard";
+			}
 		}
 		
 		/*  output data */

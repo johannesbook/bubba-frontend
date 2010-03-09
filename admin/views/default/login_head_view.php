@@ -5,7 +5,6 @@ function dialog_login(e) {
 	if($(this).hasClass("fn-require-auth") && $(this).attr("name")) {
 		required_user = $(this).attr("name");
 	}
-		
 	link_locked = $(this).hasClass("fn-state-login-lock");
 	// check if already logged in.
 	$.post("<?=FORMPREFIX.'/login/checkauth'?>",function(data){
@@ -44,10 +43,10 @@ function dialog_login(e) {
 								}
 							},"json");
 						},
-						options: { id: 'fn-login-dialog-button', class : 'ui-element-width100' }
+						options: { id: 'fn-login-dialog-button', class : 'ui-element-100' }
 					}
 				],
-				{dialogClass : "ui-login-dialog"}
+				{dialogClass : "ui-login-dialog", draggable: false}
 			);
 			if(link_locked && data.user && data.valid_session) {
 				// show no-access message if the target is locked for the current user.
@@ -86,7 +85,6 @@ $(document).ready(function(){
 	});
 	
 	$("#fn-topnav-home").attr("disabled","disabled");
-	
 
 	<?if(isset($show_login) && $show_login):?>
 		//show dialog_login

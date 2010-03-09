@@ -79,6 +79,10 @@ function logout_dialog() {
 	);
 }
 
+function exit_wizard() {
+	$.post(config.prefix+"/stat/dialog_wizard_exit");
+}
+
 jQuery.fn.extend({
 		stripe: function() {
 

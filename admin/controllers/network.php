@@ -1031,91 +1031,31 @@ class Network extends Controller{
 		} else {
 			if(isset($data['wiz_data']['postingpage'])) {
 				// if(isset($data['wiz_data']['confirmed'])) {
-
+				
 				// --- POSTPROCESSING NETWORK CONFIRMED ----
-				// load view, then apply changes.
-				//d_print_r("POSTPROCESS: NETWORK CONFIRMED");
-
-				$data['confirmed'] = true;
-
+								
 				// try to set easyfind config.
 				if(isset($data['wiz_data']['en_easyfind'])) {
-					$data['wiz_data']['err_easyfind'] = $this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
+					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
 				} else {
-					$data['wiz_data']['err_easyfind'] = $this->networkmanager->set_easyfind(0,"");
+					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind(0,"");
 				}
-
-				$profile = $this->input->post("profile");
-				if( isset($data['wiz_data']['err_easyfind']) || ($this->session->userdata("network_profile") == $profile) ) {
-
-					if(isset($data['wiz_data']['err_easyfind']) ) {
-						unset($data['confirmed']);
-					}					// setup complete
-
-					switch($profile) {
-					case "auto":
-						$data['wiz_data']['auto'] = true;
-						break;
-					case "router":
-						$data['wiz_data']['router'] = true;
-						break;
-					case "server":
-						$data['wiz_data']['server'] = true;
-						break;
-					default:
-						$data['wiz_data']['custom'] = true;
-						break;
-					}
-
-					if($strip){
-						$this->load->view($this->load->view(THEME.'/network/network_wizard_view',$data));
-					}else{
-						$this->_renderfull($this->load->view(THEME.'/network/network_wizard_view',$data,true));
-					}
-				} else {
-
-					// do not use CI output mechanism.
-					$mdata["navbar"]="";
-					$mdata["content"]="";
-					$mdata["wizard"] = $this->load->view(THEME.'/network/network_wizard_view',$data,true);
-					echo $this->load->view(THEME.'/main_view',$mdata,true);    
-
-					$old_profile = $this->session->userdata("network_profile");
-
-					if( $old_profile != $profile) {
-						update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
-						$this->session->set_userdata("network_profile", $profile);
-						$this->networkmanager->apply_profile($profile,$old_profile);
-					}
+				if($data['wiz_data']['err_easyfind']) {
 					// setup complete
+					$data['confirmed'] = true;
 					exit_wizard();
-
 				}
-
+				
+				if($strip){
+					$this->load->view($this->load->view(THEME.'/network/network_wizard_view',$data));
+				}else{
+					$this->_renderfull($this->load->view(THEME.'/network/network_wizard_view',$data,true));
+				}
 			} else {
+				// --- PREPROCESSING NETWORK  ----
 
-				// --- PREPROCESSING NETWORK ----
-				//d_print_r("PREPROCESS: NETWORK");
-				$this->session->userdata("network_profile")?"":$this->session->set_userdata("network_profile", "custom");
-				switch($this->session->userdata("network_profile")) {
-				case "auto":
-					$data['wiz_data']['auto'] = true;
-					break;
-				case "router":
-					$data['wiz_data']['router'] = true;
-					break;
-				case "server":
-					$data['wiz_data']['server'] = true;
-					break;
-				case "custom":
-					$data['wiz_data']['custom'] = true;
-					break;
-				default:
-					break;
-				}
-				$easyfind = get_easyfind();
-				if($easyfind[0]) $data['wiz_data']['en_easyfind']= true;
-				if($easyfind[2]) $data['wiz_data']['easyfind_name']= $easyfind[2];
+				$data['wiz_data']['easyfind_name'] = $this->networkmanager->easyfind_get_name();
+				$data['wiz_data']['en_easyfind'] = $this->networkmanager->easyfind_is_enabled();
 
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/network/network_wizard_view',$data));

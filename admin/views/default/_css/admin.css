@@ -103,6 +103,8 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-on {width:65px; height:21px;background-position: -52px -4px;}
 .ui-icon-off {width:65px; height:21px;background-position: -170px -35px;}
 .ui-icon-lock {width:22px; height:29px;background-position: -320px -193px;}
+/*WIZARD*/
+.ui-widget-wizard{width:50% !important;}
 /*FILE MANAGER*/
 .ui-filemanager {font-size:12px;margin-top:0.3em;}
 .ui-filemanager-path-widget {padding-top:10px;}
@@ -197,6 +199,7 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog-title {font-size:140%;text-align:center;width:100%;padding-top:2em;}
 .ui-div-header {width:100%;font-size:1.3em;padding:0.5em 1.2em;}
 
+#body_wizard .ui-dialog-title {display: none !important;}
 	.ui-icon-bubba-switch-container {
 		height:21px;
 		width:67px;

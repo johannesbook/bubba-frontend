@@ -20,7 +20,6 @@ class Mail extends Controller{
 		} else {
 			$mdata['head'] = $head;
 		}
-		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);

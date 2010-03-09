@@ -1,11 +1,11 @@
 
-	<table id="wizard">
-		<tr><td class="wiz_head" colspan="2"><?=t('Step 2/3: Create users')?></td></tr>
-	</table>
-
+	<h1 class="wizard-header">
+		<?=t('Step 2/3: Create users')?>
+	</h1>
+	<div id="ui-wizard-adduser">
 	<form action="<?=FORMPREFIX?>/users/wizard"" method="post">
-	<fieldset id="wizard"><legend><?=t("Add users")?></legend>
 		<table id="wizard">
+		  <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t("Add users")?></td></tr>
 			<tr><td><?=t("Username")?>:</td><td><input autocomplete='off' class='adduser' type='text' name='uname' value='<?=isset($uname)?$uname:""?>'/><?=isset($err['uname'])?"<span class=\"highlight\">*</span>":""?></td></tr>
 			<tr><td><?=t("Real name")?>:</td><td><input autocomplete='off' class='adduser' type='text' name='realname' value='<?=isset($realname)?$realname:""?>'/><?=isset($err['realname'])?"<span class=\"highlight\">*</span>":""?></td></tr>
 			<tr>
@@ -29,8 +29,8 @@
 			<tr><td>&nbsp;</td></tr>
 			<tr><td colspan="2"><input class='submitbutton' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
 		</table>
-	</fieldset>
 	</form>
+	</div>
 
 	<div class="wiz userlist">
 	<table id="wizard_ulist">
