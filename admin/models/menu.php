@@ -46,10 +46,9 @@ class Menu extends Model {
 		array(
 			'id' => 'pim',
 			'uri' => '/pim',
-			'auth' => true,
+			'auth' => false,
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-mail',
-			'deny' => array( 'admin' ),
 			'abs_uri' => true,
 		),
 		array(
@@ -59,14 +58,14 @@ class Menu extends Model {
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-settings',
 		),
-		array(
+		/*array(
 			'id' => 'home',
 			'uri' => '/login',
 			'auth' => false,
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-home',
 			'hide' => array('login',''),
-		),
+		),*/
 	);
 
 
@@ -370,26 +369,32 @@ class Menu extends Model {
 			}
 
 
-			$item_locked = " fn-login-state-lock";
+
+			$item_locked = " fn-login-state-nolock";
+			$ui_item_locked = "";
 			if($menu_value["auth"] && !$this->session->userdata("valid")) {
 				$item_locked = " fn-state-login-lock";
+				$ui_item_locked = " ui-icon-lock";
 			}
 			if(isset($menu_value['deny']) && in_array($user,$menu_value['deny']) ) {
 				$item_locked = " fn-state-login-lock";
+				$ui_item_locked = " ui-icon-lock";
 			}
 			if(isset($menu_value['allow']) && (sizeof($menu_value['allow']) == 1) ) {
 				$menubar[$menu_value['id']]['name'] = $menu_value['allow'][0];
 				if(!in_array($user,$menu_value['allow'])) {
 					$item_locked = " fn-state-login-lock";
+					$ui_item_locked = " ui-icon-lock";
 				}
 			}
 			$menubar[$menu_value['id']]['class'] .= $item_locked;
+			$menubar[$menu_value['id']]['ui_lock'] = $ui_item_locked;
 		}
 		
 		$mymenu = array();
 		foreach($menubar as $id => $tags) {
 			/*<a class="ui-login-menubar-a default-icon default-icon-settings fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/"><span><?=t("menubar_usersettings")?></span></a>*/
-			$mymenu[] = "<a class='".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a><span class='ui-icons ui-icon-lock'></span>";
+			$mymenu[] = "<a ".$tags["target"]." class='fn-login-dialog-a ".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a><span class='ui-icons".$tags["ui_lock"]."'></span>";
 		}
 		return $mymenu;
 	}

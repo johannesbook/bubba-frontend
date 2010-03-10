@@ -1,6 +1,39 @@
 <script type="text/javascript">
 
+function postlogin_callback(e) {
+	$("#fn-login-dialog-button").attr('disabled','disabled');
+	$("#fn-login-dialog-button").addClass("ui-state-disabled");
+	$("#fn-login-error").children().hide();
+	$.post(config.prefix+'/login/index/json',
+	$("#fn-login-dialog-form").serialize(),
+		function(data){
+			if(data.authfail) {
+				if(data.auth_err_remote) {
+					$("#fn-login-error-wanaccess").show();
+				} else {
+					$("#fn-login-error-pwd").show();
+					$("#password").select();
+				}
+				$("#fn-login-dialog-button").removeAttr('disabled');
+				$("#fn-login-dialog-button").removeClass("ui-state-disabled");
+			} else {
+				$(this).dialog('close');
+				$(this).dialog('destroy');
+				if(e.uri) {
+					window.location.href = e.uri;
+				} else {
+					window.location.href = $(e.target).attr('href');
+				}
+			}
+		},"json");
+}
+
+function dialog_loginclose_callback() {
+	$("#fn-login-error").children().hide();
+}
+
 function dialog_login(e) {
+	self = this;
 	required_user = <?=(isset($required_user) && $required_user)?"\"$required_user\"":"false"?>;
 	if($(this).hasClass("fn-require-auth") && $(this).attr("name")) {
 		required_user = $(this).attr("name");
@@ -14,39 +47,17 @@ function dialog_login(e) {
    			* the user does not have access rights or
    			* if the user has been redirected here
    		*/
-			$.confirm(
+			$.dialog(
 				$("#div-login-dialog").show(),
 				"",
 				[
 					{
 						'label': $.message("login-dialog-continue"),
-						'callback': function(data){
-						$.post("<?=FORMPREFIX.'/login/index/json'?>",
-						$("#fn-login-dialog-form").serialize(),
-							function(data){
-								// make sure to hide error messages								
-								$("#fn-login-error").children().hide();
-								if(data.authfail) {
-									if(data.auth_err_remote) {
-										$("#fn-login-error-wanaccess").show();
-									} else {
-										$("#fn-login-error-pwd").show();
-										$("#password").select();
-									}
-								} else {
-									$(this).dialog('close');
-									if(e.uri) {
-										window.location.href = e.uri;
-									} else {
-										window.location.href = $(e.target).attr('href');
-									}
-								}
-							},"json");
-						},
-						options: { id: 'fn-login-dialog-button', class : 'ui-element-100' }
+						'callback': function(){ return postlogin_callback.apply( self, [e])},
+						options: { 'id': 'fn-login-dialog-button', 'class' : 'ui-element-width-100' }
 					}
 				],
-				{dialogClass : "ui-login-dialog", draggable: false}
+				{dialogClass : "ui-login-dialog", draggable: false, close : dialog_loginclose_callback}
 			);
 			if(link_locked && data.user && data.valid_session) {
 				// show no-access message if the target is locked for the current user.
@@ -70,6 +81,13 @@ $(document).ready(function(){
 
   // do not use css to hide login as it is then impossible to login if javascripts are not working.
 	$("#div-login-dialog").hide();
+	
+	$("#fn-login-dialog-form input").keypress(function(e) {
+		if( e.which == $.ui.keyCode.ENTER ) {
+			//postlogin_callback.apply(this,[e]);
+			$("#fn-login-dialog-button").click();
+		}
+	});		
 
 	$(".fn-require-auth").click(function(e) {
 		dialog_login.apply(this,[e]);
@@ -84,8 +102,6 @@ $(document).ready(function(){
 		$(this).find("span").hide();
 	});
 	
-	$("#fn-topnav-home").attr("disabled","disabled");
-
 	<?if(isset($show_login) && $show_login):?>
 		//show dialog_login
 		var redirect = new Array();

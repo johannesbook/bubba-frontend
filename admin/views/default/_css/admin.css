@@ -77,7 +77,9 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #sideboard-clock-digital {font-size: 1.5em;font-weight: bold;}
 #sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;}
 /* HOME MENU */
-#menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;background:white;padding:1.5em;height:10.5em;}
+//#menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;background:white;padding:1.5em;height:10.5em;}
+#menu {width:600px;text-align : center;}
+.ui-dialog-menu {text-align: center;}
 #menu_close {float:right;margin-top:-85px;}
 #menu li a{margin-right:16px;}
 #menu li a span{float:right;}

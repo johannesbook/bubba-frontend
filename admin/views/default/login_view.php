@@ -50,18 +50,18 @@
 		</tr>
 	</table>
 	<div id="fn-login-error">
-		<div id="fn-login-error-pwd" class="ui-state-error ui-helper-hidden ui-login-dialog-error ui-text-center">
+		<div id="fn-login-error-pwd" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
 			<?=t('login-error-pwd')?>
 		</div>
-		<div id="fn-login-error-wanaccess" class="ui-state-error ui-helper-hidden ui-login-dialog-error ui-text-center">
+		<div id="fn-login-error-wanaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
 			<?=t('login-error-wanaccess')?><br/><?=t('login-error-wanaccess-quickstart')?>
 		</div>
 		<?if(isset($redirect_user) && $redirect_user):?>
-			<div id="fn-login-error-redirect" class="ui-state-error ui-login-dialog-error ui-text-center">
+			<div id="fn-login-error-redirect" class="ui-state-error-text ui-login-dialog-error ui-text-center">
 				<?=t('login-error-grantaccess',$redirect_user)?>
 			</div>
 		<?endif?>
-		<div id="fn-login-error-grantaccess" class="ui-state-error ui-helper-hidden ui-login-dialog-error ui-text-center">
+		<div id="fn-login-error-grantaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
 			<?if(isset($valid_user) && $valid_user):?>
 				<?=t('login-error-grantaccess',$valid_user)?>
 			<?endif?>

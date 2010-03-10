@@ -33,6 +33,7 @@
 <!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.js"></script><![endif]-->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/coolclock.js"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.jclock.js"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/moreskins.js"></script>
 
 <?if(false):?>
 <!-- jQuery lint debug -->
@@ -54,15 +55,28 @@ config = <?=json_encode(
 	
 $(document).ready(function(){
 	
+	var login_dialog;
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
   	});
     $('#fn-topnav-home').click(function(event) {
-        $('#menu').toggle();
+        login_dialog = $.dialog(
+        	$("#menu").show(),
+        	"",
+        	{},
+        	{ dialogClass: 'ui-dialog-menu', width : 650 }
+        );
   	});
   	$(".ui-login-menubar-a").mouseover(function(e) {	
 		$(this).find("span").show();
 	});	
+
+	$(".fn-login-dialog-a").click(function() {
+		if(login_dialog) {
+			login_dialog.dialog('close');
+			login_dialog.dialog('destroy');
+		}
+	});
 	$(".ui-login-menubar-a").mouseout(function(e) {
 		$(this).find("span").hide();
 	});	
@@ -149,12 +163,12 @@ if(isset($head)) {
             		<?} else {?>
 	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             		<? } ?>
-                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span></button>
-                <span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span>
-                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span></button>
-                <span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span>
                 <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span></button>
                 <span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span>
+                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span></button>
+                <span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span>
+                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span></button>
+                <span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span>
                 <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
             </div>	<!-- topnav -->
             <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>

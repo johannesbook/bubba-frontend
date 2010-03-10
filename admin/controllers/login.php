@@ -75,9 +75,11 @@ class Login extends Controller{
 		}else{ // no post or data missing.
 			if(!$myuser){
 				$data['uidmissing']=true;
+				$data['authfail'] = true;
 			}
 			if(!$mypass){
 				$data['pwdmissing']=true;
+				$data['authfail'] = true;
 			}
 			
 			// is there a redirect uri? Then show the login-page.
@@ -110,7 +112,7 @@ class Login extends Controller{
 			$mymenus = $this->menu->get_dialog_menu();
 			$mymenus = array_merge($mymenus,$this->menu->get_system_menu());
 			$mdata["navbar"]="";
-			$mdata["dialog_menu"] = "";
+			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
 			$mdata["head"]=$this->load->view(THEME.'/login_head_view',$data,true);;
 			$mdata["content"]=$this->load->view(THEME.'/login_view',$mymenus,true);
 			$this->load->view(THEME.'/main_view',$mdata);
