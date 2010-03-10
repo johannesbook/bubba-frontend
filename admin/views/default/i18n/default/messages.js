@@ -1,6 +1,9 @@
 messages = {
 	// Generic
 	"button-label-cancel": "Cancel",
+	"button-label-edit": "Edit",
+	"text-yes": "Yes",
+	"text-no": "No",
 
 	// Filemanager
 	"filemanager-mkdir-dialog-button-label" : "Create directory",	
@@ -31,6 +34,18 @@ messages = {
 	"logout-dialog-button-logout" : "Logout",
 
 	// Login
-	"login-dialog-continue" : "Log in"
+	"login-dialog-continue" : "Log in",
+
+	// Mail
+	"mail-retrieve-edit-dialog-button-label": "Update",
+	"mail-retrieve-edit-dialog-delete-button-label": "Delete",
+	"mail-retrieve-edit-dialog-delete-message": "Are you really sure you want to delete this mail account?",
+	"mail-retrieve-edit-dialog-delete-header": "Delete mail account",
+	"mail-retrieve-add-dialog-button-label": "Add mail account",
+	"mail-retrieve-add-dialog-header": "Add new mail account",
+	"mail-retrieve-add-success-message": "Successfully added new mail account",
+	"mail-retrieve-edit-success-message": "Successfully edited mail account",
+	"mail-retrieve-edit-dialog-header": "Edit mail account information for host <em>%s</em>",
+	"mail-retrieve-delete-success-message" : "Successfully deleted mail account"
 	
 }

@@ -149,7 +149,7 @@ $(document).ready( function() {
 	});
 (
 	function($) {
-		$.dialog = function jQuery_ui_confirm(message, header, buttons, override_options ) {
+		$.dialog = function(message, header, buttons, override_options ) {
 
 			if(!buttons) {
 				buttons = {};
@@ -191,7 +191,7 @@ $(document).ready( function() {
  *	);
  *
  */
-		$.confirm = function jQuery_ui_confirm( message, header, buttons, override_options ) {
+		$.confirm = function( message, header, buttons, override_options ) {
 			if(!buttons) {
 				buttons = {
 					'Continue': function() {
@@ -202,13 +202,14 @@ $(document).ready( function() {
 					}
 				}
 			}
-			options = {dialogClass:'ui_dialog_confirm'};
+			options = {dialogClass:'ui-dialog-confirm', close: function(){$(this).remove()}};
 			$.extend( options, override_options );
-			
-			return $.dialog( message, header, buttons, options );
+			message = $("<div/>",{html:message});
+			message.prepend($('<h2/>',{html:header}));
+			return $.dialog( message, '', buttons, options );
 		};
 
-		$.alert = function jQuery_ui_alert( message, header, button_label, callback, override_options ) {
+		$.alert = function( message, header, button_label, callback, override_options ) {
 			if(!button_label) {
 				button_label = "Ok";
 			}
@@ -219,10 +220,11 @@ $(document).ready( function() {
 					callback.apply( this, [] );
 				}
 			};
-			options = {dialogClass:'ui_dialog_alert'};
+			options = {dialogClass:'ui-dialog-alert', close: function(){$(this).remove()} };
 			$.extend( options, override_options );
-
-			return $.dialog( message, header, buttons, options );
+			message = $("<div/>",{html:message});
+			message.prepend($('<h2/>',{html:header}));
+			return $.dialog( message, '', buttons, options );
 		};
 
 	}

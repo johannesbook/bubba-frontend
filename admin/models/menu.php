@@ -34,6 +34,7 @@ class Menu extends Model {
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-album',
 			'abs_uri' => true,
+			'target' => "album",
 		),
 		array(
 			'id' => 'downloads',
@@ -50,6 +51,7 @@ class Menu extends Model {
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-mail',
 			'abs_uri' => true,
+			'target' => "pim",
 		),
 		array(
 			'id' => 'usersettings',
@@ -368,6 +370,11 @@ class Menu extends Model {
 				$menubar[$menu_value['id']]['uri'] = FORMPREFIX.$menu_value['uri'];
 			}
 
+			if(isset($menu_value['target'])) {
+				$menubar[$menu_value['id']]['target'] = "target='$menu_value[target]'";
+			} else {
+				$menubar[$menu_value['id']]['target'] = "";
+			}
 
 
 			$item_locked = " fn-login-state-nolock";

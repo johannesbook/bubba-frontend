@@ -21,7 +21,18 @@ table {margin: 1em 0;font-size: 14px;border-collapse : collapse;border:0;width:1
 select {width:49%;}
 td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
 tr {border:0;border-bottom:0.1em solid #e5e5e5;line-height:31px;}
-th {padding: 0.25em 1.2em;text-align: left;border:0}
+thead > tr > th {padding: 0.25em 1.2em;text-align: left;border:0}
+tbody > tr > th {
+	padding: 0.25em 1.2em;
+	border: 0;
+	vertical-align: top;
+	text-align: left;
+	font-size: 1em;
+	font-weight: normal;
+}
+tbody > tr > th label {
+	font-weight: bold;
+}
 ul {list-style: square;list-style-position: outside;}
 ul ul{}
 li{padding: 0.2em 0 0.2em 0;}

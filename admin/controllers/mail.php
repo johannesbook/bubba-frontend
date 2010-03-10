@@ -85,174 +85,130 @@ class Mail extends Controller{
 		return $userlist;
 	}
 
-	function addfac($strip=""){
-	
-		$server=$this->input->post('server');
-		$protocol=$this->input->post('protocol');
-		$ruser=$this->input->post('ruser');
-		$pwd=$this->input->post('password');
-		$luser=$this->input->post('luser');
-		$ssl=$this->input->post('usessl');
-		$keep=$this->input->post('keep');
+	function add_fetchmail_account($strip=""){
+		if( $strip == 'json' ) {
+			$error = false;
 
-		$errors = array();
-		$data["update"]["success"]=false;
-		$data["ruser"]=$ruser;
-		$data["server"]=$server;
-		$data["protocol"]=$protocol;
-		$data["luser"]=$luser;
-		$data["usessl"]=$ssl;
-		
-		if(mb_strlen($server)==0 || 
-			mb_strlen($protocol)==0 || 
-			mb_strlen($ruser)==0 ||
-			mb_strlen($pwd)==0 ||
-			mb_strlen($luser)==0){
-			$errors["infoincomp"]=true;
-		}else if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
-			$errors["usrinvalid"]=true;
-		}else{
-			if($keep == "on"){
-				$keep="keep";
-			}else{
-				$keep="NONE";
-			}
-			if($ssl == "on"){
-				$ssl="ssl";
-			}else{
-				$ssl="NONE";
-			}
-			add_fetchmailaccount($server,$protocol,$ruser,$pwd,$luser,$ssl,$keep);
-			if(service_running("fetchmail")){
+			$server=$this->input->post('server');
+			$protocol=$this->input->post('protocol');
+			$ruser=$this->input->post('ruser');
+			$pwd=$this->input->post('password');
+			$luser=$this->input->post('luser');
+			$ssl=$this->input->post('usessl');
+			$keep=$this->input->post('keep');
 
-			}else{
-				if(query_service("fetchmail")){
-					start_service("fetchmail");
+			// TODO remove this uglyness
+			$keep = $keep == 'on' ? 'keep' : 'NONE';
+			$ssl = $ssl == 'on' ? 'ssl' : 'NONE';
+			if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
+				$error = t('mail-auth-error');
+			} else {
+				if($server && $protocol && $ruser && $pwd && $luser ){
+					add_fetchmailaccount($server,$protocol,$ruser,$pwd,$luser,$ssl,$keep);
+					if(query_service("fetchmail") && !service_running("fetchmail")){
+						start_service("fetchmail");
+					}
+				} else {
+					$error = t('mail-validation-error');
 				}
 			}
-		}
-
-		if(sizeof($errors) == 0) {
-			$data = array();
-		}
-		$data["update"] = create_updatemsg($errors,"mail_addok");
-
-		$this->viewfetchmail("",$data);	
-	}	
-
-	function editfac($strip="",$data = array()){
-
-		if(sizeof($data) == 0) {
-			// no data is passed, get the posts.
-			$data["server"]=$this->input->post('server');
-			$data["protocol"]=$this->input->post('protocol');
-			$data["ruser"]=$this->input->post('ruser');
-			$data["luser"]=$this->input->post('luser');
-			$data["ssl"]=$this->input->post('ssl');
-			$data["keep"]=$this->input->post('keep');
-			$data["password"]=$this->input->post('password');
-		}
-
-		$data["userlist"]=$this->_getUsers();
-
-		if($strip){
-			$this->load->view(THEME.'/mail/mail_editfac_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/mail/mail_editfac_view',$data,true),$this->load->view(THEME.'/mail/mail_head_view',$data,true));
-		}
-	}	
-	
-	function update($strip="") {
-		if($this->input->post('delete_account')) {
-			$this->dodeletefac($strip);
-		} elseif ($this->input->post('edit_account')) {
-			$this->updatefac($strip);
-		} else {
-			$this->index($strip);
-		}
-	}
-	
-	function dodeletefac($strip=""){
-
-		$server=$data["server"]=$this->input->post('server');
-		$protocol=$this->input->post('protocol');
-		$ruser=$data["ruser"]=$this->input->post('ruser');
-		$luser=$this->input->post('luser');
-	
-		$errors = array();
-		
-		if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
-			$errors["err_usrinvalid"]=true;		
-		}else{
-			delete_fetchmailaccount($server,$protocol,$ruser); // error checking??
-		}
-
-		$update = create_updatemsg($errors,"mail_delete_account_ok");
-		$data = array();
-		$data["update"] = $update;
-		$this->viewfetchmail("",$data);
-	}	
-	
-	function updatefac($strip=""){
-	
-		$data["o_server"]=$this->input->post('old_server');
-		$data["o_proto"]=$this->input->post('old_protocol');
-		$data["o_ruser"]=$this->input->post('old_ruser');
-		$data["server"]=$this->input->post('server');
-		$data["protocol"]=$this->input->post('protocol');
-		$data["ruser"]=$this->input->post('ruser');
-		$data["pwd"]=$this->input->post('password');
-		$data["luser"]=$this->input->post('luser');
-		$data["ssl"]=$this->input->post('usessl');	
-		$data["keep"]=$this->input->post('keep');	
-		$data["password"]=$this->input->post('password');	
-	
-		$errors = array();
-		
-		if( ($this->session->userdata("user") != "admin") && ($this->session->userdata("user") != $data["luser"]) ) {
-			$errors["mail_err_usrinvalid"]=true; 
-		}else{
-			if($data["ssl"] == "on"){
-				$data["ssl"]="ssl";
-			}else{
-				$data["ssl"]="NONE";
+			$data['success'] = !$error;
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
 			}
-			if($data["keep"] == "on"){
-				$data["keep"]="keep";
-			}else{
-				$data["keep"]="NONE";
-			}
-			if($data["pwd"]==""||$data["pwd"]==NULL){
-				$data["pwd"]="\"\"";
-			}
-			update_fetchmailaccount(
-				$data["o_server"],
-				$data["o_proto"],
-				$data["o_ruser"],
-				$data["server"],
-				$data["protocol"],
-				$data["ruser"],
-				$data["pwd"],
-				$data["luser"],
-				$data["ssl"],
-				$data["keep"]
-			);	
-		}
-		
-		$update = create_updatemsg($errors,"mail_editok");
-		
-		if(sizeof($errors)) {
-			// errors detected, load editfac again
-			$data["update"] = $update;
-			$this->editfac("",$data);
-		} else {
-			// no errors, clear data and return to main page
-			$data = array();
-			$data["update"] = $update;
-			$this->viewfetchmail("",$data);
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
 		}
 	}	
-		
+	function edit_fetchmail_account($strip=""){
+		if( $strip == 'json' ) {
+			$error = false;
+
+			$old_server=$this->input->post('old_server');
+			$server=$this->input->post('server');
+			$old_protocol=$this->input->post('old_protocol');
+			$protocol=$this->input->post('protocol');
+			$old_ruser=$this->input->post('old_ruser');
+			$ruser=$this->input->post('ruser');
+			$pwd=$this->input->post('password');
+			$luser=$this->input->post('luser');
+			$ssl=$this->input->post('usessl');
+			$keep=$this->input->post('keep');
+
+			// TODO remove this uglyness
+			$keep = $keep == 'on' ? 'keep' : 'NONE';
+			$ssl = $ssl == 'on' ? 'ssl' : 'NONE';
+			if( $pwd=="" || is_null($pwd) ){
+				$pwd = "\"\"";
+			}
+			if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
+				$error = t('mail-auth-error');
+			} else {
+				if($server && $protocol && $ruser && $pwd && $luser ){
+					update_fetchmailaccount(
+						$old_server,
+						$old_protocol,
+						$old_ruser,
+						$server,
+						$protocol,
+						$ruser,
+						$pwd,
+						$luser,
+						$ssl,
+						$keep
+					);	
+					if(query_service("fetchmail") && !service_running("fetchmail")){
+						start_service("fetchmail");
+					}
+				} else {
+					$error = t('mail-validation-error');
+				}
+			}
+			$data['success'] = !$error;
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
+		}
+	}	
+
+	function delete_fetchmail_account($strip=""){
+		if( $strip == 'json' ) {
+			$error = false;
+
+			$server=$this->input->post('server');
+			$protocol=$this->input->post('protocol');
+			$ruser=$this->input->post('ruser');
+			$luser=$this->input->post('luser');
+
+			if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
+				$error = t('mail-auth-error');
+			} else {
+				if($server && $protocol && $ruser ){ // XXX luser?
+					delete_fetchmailaccount($server,$protocol,$ruser);
+					if(query_service("fetchmail") && !service_running("fetchmail")){
+						start_service("fetchmail");
+					}
+				} else {
+					$error = t('mail-validation-error');
+				}
+			}
+			$data['success'] = !$error;
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
+		}
+	}	
+
 	function server_update($strip=""){
 
 		$this->Auth_model->RequireUser('admin');
@@ -312,15 +268,10 @@ class Mail extends Controller{
 	}	
 	
 	
-	function viewfetchmail($strip="",$retdata = array()){
+	function viewfetchmail($strip=""){
 
-		require_once(APPPATH."/legacy/user_auth.php");
+		require_once(APPPATH."/legacy/user_auth.php"); // TODO here?
 
-		if(!query_service("fetchmail")){
-			$fetchmailstatus=false;
-		}else{
-			$fetchmailstatus=true;
-		}
 
 		$fa=get_fetchmailaccounts();
 		$accounts=array();
@@ -328,24 +279,28 @@ class Mail extends Controller{
 			$line=explode(" ",$account);
 			if ( ($this->session->userdata("user")=="admin")||($this->session->userdata("user")==$line[4]) ) {
 				$accounts[]=array(
-						"server"=>$line[0],
-						"protocol"=>$line[1],
-						"ruser"=>$line[2],
-						"password"=>preg_replace("/./","*",$line[3]),
-						"luser"=>$line[4],
-						"ssl"=>isset($line[5])?$line[5]:"",
-						"keep"=>isset($line[6])?$line[6]:"");
+					"server"=>$line[0],
+					"protocol"=>$line[1],
+					"ruser"=>$line[2],
+					"password"=>preg_replace("/./","*",$line[3]),
+					"luser"=>$line[4],
+					"ssl"=>isset($line[5])?$line[5]:"",
+					"keep"=>isset($line[6])?$line[6]:""
+				);
 			}
 		}
+		$data["accounts"]=$accounts;
 
-		$retdata["fstatus"]=$fetchmailstatus;
-		$retdata["accounts"]=$accounts;
-		$retdata["userlist"]=$this->_getUsers();
+		if( $strip == 'json' ) {
+			header("Content-type: application/json");
+			echo json_encode( $data );
+		} else {
+			$data["userlist"]=$this->_getUsers();
 
-		if($strip){
-			$this->load->view(THEME.'/mail/mail_retrieve_view',$retdata);
-		}else{	
-			$this->_renderfull($this->load->view(THEME.'/mail/mail_retrieve_view',$retdata,true));
+			$this->_renderfull(
+				$this->load->view(THEME.'/mail/mail_retrieve_view',$data,true),
+				$this->load->view(THEME.'/mail/mail_retrieve_head_view',$data,true)
+			);
 		}
 	}
 	
@@ -361,7 +316,10 @@ class Mail extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/mail/mail_server_view',$data);
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/mail/mail_server_view',$data,true),$this->load->view(THEME.'/mail/mail_head_view','$data',true));
+			$this->_renderfull(
+				$this->load->view(THEME.'/mail/mail_server_view',$data,true),
+				$this->load->view(THEME.'/mail/mail_server_head_view',$data,true)
+			);
 		}
 	}
 	

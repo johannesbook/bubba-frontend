@@ -1,41 +1,96 @@
 <form action="<?=FORMPREFIX?>/mail/server_update" method="post" id="frm_mail_server_settings">
 <table>
-    <tr><td colspan="8" class="ui-state-default ui-widghet-header"><?=t('Server settings')?> (<?=t('Disabled')?>) </td></tr>
+	<thead>
 	<tr>
-		<td><label><?=t('Outgoing mail server')?></label></td>
-		<td><input type="text" name="smarthost" value="<?=$smarthost?>"/></td>
+		<th 
+			colspan="2"
+			class="ui-state-default ui-widget-header"
+		>
+			<?=t('mail-server-title')?>
+		</th>
 	</tr>
-	
+	</thead>
+	<tbody>
+	<tr>
+		<th><label><?=t('Outgoing mail server')?></label></th>
+		<td>
+			<input
+				type="text"
+				name="smarthost"
+				value="<?=$smarthost?>"
+			/>
+		</td>
+	</tr>
+
 	<tr>
 		<? // indent this and the below "hidden" section" ?>
-		<td><?=t('Use authentication')?></td>
-		<td><input type="checkbox" class="checkbox_radio" name="useauth" id="useauth" value="yes" <?if($smtp_auth):?>checked="checked"<?endif?> /></td>
+		<th><label><?=t('Use authentication')?></label></th>
+		<td>
+			<input
+				type="checkbox"
+				class="checkbox_radio"
+				name="useauth"
+				id="useauth"
+				value="yes"
+				<?if($smtp_auth):?>checked="checked"<?endif?>
+
+			 />
+		</td>
 	</tr>
 
 	<? // -----  this should be a hidden section until "use auth" is selected. --- ?>
 	<tr>
-	  <td><?=t('Use plain text authentication')?><br>
-	  <span class="comment"><?=t("(Not recommended, passwords will be sent unencrypted.)")?></span>
-	  </td>
-	  <td><input type="checkbox" class="checkbox_radio" name="useunsecure" id="useunsecure" value="yes" <?if(!$smtp_auth):?>disabled="disabled"<?endif?> <?if($smtp_plain_auth):?>checked="checked"<?endif?> /></td>
-	</tr>
-	<tr>
-		<td><label><?=t('User')?></label></td>
-		<td><input type="text" name="smtpuser" value="<?=$smtp_user?>"/></td>
-	</tr>
-	<tr>
-		<td><label><?=t('Password')?></label></td>
+		<th>
+			<label><?=t('Use plain text authentication')?></label>
+			<div class="ui-text-comment"><?=t("(Not recommended, passwords will be sent unencrypted.)")?></div>
+		</th>
 		<td>
-				<input type="password" name="smtppasswd"/>
+			<input
+				type="checkbox"
+				class="checkbox_radio"
+				name="useunsecure"
+				id="useunsecure"
+				value="yes"
+				<?if(!$smtp_auth):?>disabled="disabled"<?endif?> 
+				<?if($smtp_plain_auth):?>checked="checked"<?endif?> 
+			/>
+		</td>
+	</tr>
+	<tr>
+		<th><label><?=t('User')?></label></th>
+		<td>
+			<input
+				type="text"
+				name="smtpuser"
+				value="<?=$smtp_user?>"
+			/>
+		</td>
+	</tr>
+	<tr>
+		<th><label><?=t('Password')?></label></th>
+		<td>
+			<input
+				type="password"
+				name="smtppasswd"
+			/>
 		</td>
 	</tr>
 	<? // -----  end hidden section --- ?>
    <tr>
-      <td><label><?=t('Handle mail for domain')?></label></td>
-      <td><input type="text" name="domain" value="<? echo $receive["domain"] ?>"/></td>
+	  <th><label><?=t('Handle mail for domain')?></label></th>
+	  <td>
+			<input
+				type="text"
+				name="domain"
+				value="<?=$receive["domain"]?>"
+			/>
+	</td>
    </tr>
-  
-
+  </tbody>
 </table>
-<input type="submit" name="update" value="<?=t('Update')?>"/>
+<input
+	type="submit"
+	name="update"
+	value="<?=t('Update')?>"
+/>
 </form>

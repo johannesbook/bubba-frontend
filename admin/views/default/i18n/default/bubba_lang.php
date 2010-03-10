@@ -346,3 +346,18 @@ $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
 
 $lang["help_box_header"] = "Bubba|2 Help";
+
+//  ----------- Mail --------
+
+$lang["mail-retrieve-edit-host-label"] = "Host";
+$lang["mail-retrieve-edit-protocol-label"] = "Protocol";
+$lang["mail-retrieve-edit-ruser-label"] = "Remove user";
+$lang["mail-retrieve-edit-password-label"] = "Password";
+$lang["mail-retrieve-edit-luser-label"] = "Local user";
+$lang["mail-retrieve-edit-usessl-label"] = "Use SSL";
+$lang["mail-retrieve-edit-keep-label"] = "Keep on server";
+$lang["mail-retrieve-add-button-label"] = "Add new mail account";
+$lang["mail-validation-error"] = "Validation of input failed";
+$lang["mail-auth-error"] = "Authorization failed";
+$lang["mail-retrieve-title"] = "Retrieve mail";
+$lang["mail-server-title"] = "Mail Server";

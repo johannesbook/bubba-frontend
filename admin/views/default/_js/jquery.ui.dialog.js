@@ -315,7 +315,7 @@ $.widget("ui.dialog", {
 
 					// normal callback
 					if( typeof value.callback != 'undefined' ) {
-						options = $.extend( options, { 'click': value.callback } );
+						options = $.extend( options, { 'click': jQuery.proxy(value.callback, self.element[0]) } );
 					}
 
 					// normal label
