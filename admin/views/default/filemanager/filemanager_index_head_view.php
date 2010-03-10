@@ -300,7 +300,7 @@ after_open_dir_callback = function(json) {
 	}
 }
 
-file_download_callback = function( options ){
+file_download_callback = function( row, options ){
 	$("<form/>", {
 		'action': config.prefix+"/filemanager/download",
 		'method': 'POST',

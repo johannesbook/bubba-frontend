@@ -3,13 +3,7 @@
    options: {
 	   root: '/',
 	   ajaxSource: "",
-	   columns: [
-		   { "sWidth": "5%", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
-		   { "sWidth": "60%", "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-name" },
-		   { "sWidth": "20%", "sClass": "ui-filemanager-column-date" },
-		   { "sWidth": "10%", "sClass": "ui-filemanager-column-size" },
-		   { "sWidth": "5%", "bSortable": false, "sClass": "ui-filemanager-column-next" }
-	   ],
+	   columns: null,
 	   sorting: [[0, "asc"],[1,"asc"]],
 	   fixedSorting: [[0, "asc"]],
 	   prevDirIcon: 'ui-icon-arrowthick-1-w',
@@ -22,9 +16,21 @@
 	   dirDoubleClickCallback: null,
 	   fileDoubleClickCallback: null,
 	   mouseDownCallback: null,
+	   serverData: null,
+	   rowCallback: null,
 	   animationSpeed: 600
    },
    _create: function() {
+	   cols = this.options.columns;
+	   if(!cols) {
+		   cols = [
+		   { "sWidth": "5%", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
+		   { "sWidth": "60%", "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-name" },
+		   { "sWidth": "20%", "sClass": "ui-filemanager-column-date" },
+		   { "sWidth": "10%", "sClass": "ui-filemanager-column-size" },
+		   { "sWidth": "5%", "bSortable": false, "sClass": "ui-filemanager-column-next" }
+	   ];
+	   }
 	   var self = this;
 	   this.is_disabled = false;
 	   this.multiselect = false;
@@ -47,14 +53,15 @@
 			   "bJQueryUI": true,
 			   "bFilter": false,
 			   "bInfo": false,
+			   "bSort": !!this.options.sorting,
 			   "bPaginate": false,
 			   "bProcessing": true,
 			   "sAjaxSource": this.options.ajaxSource,
 			   "aaSorting": this.options.sorting,
 			   "aaSortingFixed": this.options.fixedSorting,
 			   "bAutoWidth": false,
-			   "aoColumns": this.options.columns,
-			   "fnServerData": function ( source, data, callback ) {
+			   "aoColumns": cols,
+			   "fnServerData": this.options.serverData ? jQuery.proxy(this.options.serverData,this) : function ( source, data, callback ) {
 				   jQuery.ajax( {
 						   "dataType": 'json', 
 						   "type": "POST", 
@@ -122,7 +129,7 @@
 					   self.options.mouseDownCallback.apply( this, [ self.element ] );
 				   }
 			   },
-			   "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+			   "fnRowCallback": this.options.rowCallback ? this.options.rowCallback : function( nRow, aData, iDisplayIndex ) {
 				   jQuery(nRow).data({
 						   'type': aData[0],
 						   'path': self.options.root + "/" + aData[1]
@@ -291,7 +298,7 @@
    _fileCallback: function( row, options ){
 	   var self = this;
 	   if( self.options.fileDoubleClickCallback ) {
-		   self.options.fileDoubleClickCallback.apply( this, [ self.element, {path:jQuery(this).data('path')} ] );
+		   self.options.fileDoubleClickCallback.apply( self, [ row, options ] );
 	   }
    },
    _dirCallback: function( row, options ){

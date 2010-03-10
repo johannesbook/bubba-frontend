@@ -13,9 +13,9 @@ $(document).ready(function(){
 	switch_height: 21,
 	switch_width: 127
 	};
-	$(':input[type=checkbox]:checked').iCheckbox( 'on', options );
-	$(':input[type=checkbox]:not(:checked)').iCheckbox( 'off', options );
-	$("input[name='ftp_enabled']").click(function() {
+	$(':input[type=checkbox]').iCheckbox( options );
+
+	$("input[name='ftp_enabled']").change(function() {
 		if($("input[name='ftp_enabled']").attr('checked')) {
 			$("input[name='anon_ftp']").attr('disabled',false);
 		} else {
