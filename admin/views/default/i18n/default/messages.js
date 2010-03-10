@@ -3,8 +3,9 @@ messages = {
 	"button-label-cancel": "Cancel",
 
 	// Filemanager
-	"filemanager-mkdir-dialog-button-label" : "Create directory",
-	"filemanager-mkdir-dialog-title" : "Create an new directory",
+	"filemanager-mkdir-dialog-button-label" : "Create directory",	
+	"filemanager-rename-dialog-button-label" : "Rename",	
+	"filemanager-perm-dialog-button-label" : "Change permissions",
 	"filemanager-delete-dialog-button-label" : "Delete",
 	"filemanager-delete-dialog-title" : "Delete files and directories",
 	"filemanager-delete-fail-message" : "Failed to delete following files and directories: %s",

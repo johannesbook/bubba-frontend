@@ -1,5 +1,3 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
-
 <form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">
 <table id="table-network-wan">
     <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('WAN')?></td></tr>
@@ -22,7 +20,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td >
+		<td>
 			<input type="radio" class="checkbox_radio" name='netcfg' value='static' onclick="static_onclick(<?=$disable_gw?>)" <?=$dhcp?"":"checked=\"checked\""?>/>
 		</td>
 		<td  colspan="3">

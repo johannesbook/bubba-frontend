@@ -79,7 +79,7 @@ $lang['generic_dialog_text_warning'] = "Warning";
 /* Login texts  */
 $lang["topnav-authorized"] = "Logged in as '%s'";
 $lang["topnav-not-authorized"] = "Not logged in";
-$lang["login-dialog-header"] = "Login required";
+$lang["login-dialog-header"] = "You have to login to see this content";
 $lang["login-dialog-username"] = "Username";
 $lang["login-dialog-password"] = "Password";
 $lang["login-dialog-cancel"] = "Cancel";
@@ -335,11 +335,13 @@ $lang["filemanager-label-permission-other-execute"] = "execute";
 
 $lang["filemanager-mkdir-dialog-button-label"] = "Create directory";
 $lang["filemanager-mkdir-dialog-title"] = "Create an new directory";
-
 $lang["filemanager-delete-dialog-button-label"] = "Delete";
 $lang["filemanager-delete-dialog-title"] = "Delete files and directories";
 $lang["filemanager-delete-fail-message"] = "Failed to delete following files and directories: %s";
 $lang["filemanager-delete-dialog-message"] = "Are you certain that you want to delete selected files and directories?";
+$lang["filemanager-rename-dialog-title"] = "Rename";
+$lang["filemanager-permission-dialog-title"] = "Change permissions";
+$lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
 

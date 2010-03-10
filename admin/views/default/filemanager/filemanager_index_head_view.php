@@ -3,10 +3,7 @@
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.appendLinear.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ba-serializeobject.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.filemanager.js" type="text/javascript"></script>
-<style>
 
-
-</style>
 
 <script>
 
@@ -328,19 +325,21 @@ $(document).ready(function() {
 		};
 		dialogs[value] = $.dialog( 
 			$("#fn-filemanager-" + value + "-dialog"),
-			$.message("filemanager-" + value + "-dialog-title"),
+			"",
 			[
 				{
 					'label': $.message("filemanager-" + value + "-dialog-button-label"),
 					'callback': function(){dialog_callbacks[value].apply(dialogs[value], arguments)},
-					options: { id: 'fn-' + value + '-dialog-button' }
+					options: { id: 'fn-' + value + '-dialog-button', class:'ui-element-width-100'  }
 				}
 			],
 			options	
 		);
+				
 
 		$("#fn-filemanager-" + value + "-dialog").submit(function() {
 			dialog_callbacks[value].apply(dialogs[value]);
+			
 			return false;
 		});
 	});

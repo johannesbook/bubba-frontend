@@ -21,8 +21,8 @@
 	<table id="backup">
 	    
 	    <tr><td colspan="8" class="ui-state-default ui-widghet-header ui-div-header"><?=t('File sharing')?></td></tr>
-		<tr>
-			<th><?=t('Existing jobs')?></th>
+		<tr class="ui-filemanager-state-hover">
+			<th style="width:20%"><?=t('Existing jobs')?></th>
 			<th><?=t('Included directories')?></th>
 			<th><?=t('Job settings')?></th>
 		</tr>

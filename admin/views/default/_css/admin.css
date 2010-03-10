@@ -9,7 +9,7 @@ form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button] {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/icons.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;}
+input[type=submit],input[type=button],.ui-dialog button {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/icons.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;}
 input[type=submit]:hover,input[type=button]:hover {border:0;opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #e5e5e5;}
@@ -17,24 +17,24 @@ input[disabled]{	color: #666;	background: #ccc;}
 input:focus {border: 0.1em solid #000;}
 input[type=radio] {}
 input[type=checkbox] {}
-table {margin: 1em 0;font-size: 1.3em;border-collapse : collapse;border:0;width:100%; }
+table {margin: 1em 0;font-size: 14px;border-collapse : collapse;border:0;width:100%; }
 select {width:49%;}
 td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
-tr {border:0;border-bottom:0.1em solid #e5e5e5}
+tr {border:0;border-bottom:0.1em solid #e5e5e5;line-height:31px;}
 th {padding: 0.25em 1.2em;text-align: left;border:0}
 ul {list-style: square;list-style-position: outside;}
 ul ul{}
 li{padding: 0.2em 0 0.2em 0;}
 li {display:inline;}
 label {font-weight:bold;}
-a {color: #000;}
+a {color: #000;outline:none;}
+button {outline:none;}
 img{border: 0;}
 /* WRAPPER */
 #wrapper {min-height: 130%;width:1020px;margin: 0 auto;padding:0em;max-width:96%;padding-left:3em;background-image:url(../_img/background.png);border:0.1em solid #000;border-right:0.45em solid #000;}
 /*UPDATE STATUS*/
-#update_status {color:000;background-color:#fbec9d;font-size:120%;left:48%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:0;width:auto;}
+#update_status {color:#000;background-color:#fbec9d;font-size:12px%;left:25px;margin:auto;padding:0.2em;position:fixed;text-align:center;top:2px;width:500px;display:none}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
-#logo {font-size:300%;font-weight:normal;color:#000;text-decoration:none;}
 #img_logo {padding-top:4em;}
 #header {margin-bottom:2em}
 #header li {color: #000;padding:0 0.1em;border-right:2px #000 solid;text-align:center;}
@@ -69,12 +69,12 @@ div#subnav ul li a:hover {text-decoration:underline;}
 /* CONTENT */
 #content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
 /* SIDE BOARD */
-#sideboard {float:right;width:20%;margin-top:-6em;display : none}
+#sideboard {float:right;width:20%;margin-top:-16em;display : none}
 #sideboard-datetime-date {font-size: 140px;font-weight: bold;margin:0 0 -0.3em;}
-#sideboard-datetime-day {font-size: 3em;font-weight: bold;}
-#sideboard-datetime-month {font-size: 1.5em;font-weight: bold;}
-#sideboard-datetime-year {font-size: 1.5em;font-weight: bold;}
-#sideboard-clock-digital {font-size: 1.5em;font-weight: bold;}
+#sideboard-datetime-day {font-size: 14px;font-weight: bold;}
+#sideboard-datetime-month {font-size: 14px;font-weight: bold;}
+#sideboard-datetime-year {font-size: 14px;font-weight: bold;}
+#sideboard-clock-digital {font-size: 14px;font-weight: bold;}
 #sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;}
 /* HOME MENU */
 //#menu {position:fixed;top:35%;left:20%;width:auto;z-index:3;background:white;padding:1.5em;height:10.5em;}
@@ -119,9 +119,10 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #filetable_processing {padding: 30px; display: inline;}
 #filetable_wrapper button {border:0;}
 .ui-filemanager span {float:left !important;}
-#fn-filemanager-information-panel {font-size:12px;width:400px;padding:0.4em;}
+#fn-filemanager-information-panel {font-size:12px;width:957px;padding:0.4em;}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
 .ui-filemanager-state-dblckick {background-color:#fbec9d !important; }
+/*.ui-filemanager-state-hover {background-color: #e5e5e5;}*/
 .ui-filemanager-state-hover:hover {	background-color: #e5e5e5;}
 .ui-filemanager-state-selected {background-color: #506ab2;color:white;}
 .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background-color: #e5e5e5 !important;}
@@ -137,18 +138,21 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-button-set {float:right;margin:0 4px;}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
+.ui-button-text {font-size:16px;}
 .ui-button-text:hover {color:#e5e5e5;}
 .ui-element-width-100 {width:95% !important;}
 .ui-element-width-50 {width:50% !important;}
-.ui-help-box, .ui-help-box .ui-widget-header {background:#000;color:white !important;}
+#filemanager .ui-button-text {display:none;}
+.ui-help-box, .ui-help-box .ui-widget-header,.ui-help-box .ui-widget-content {background:#000;color:white !important;}
 .ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.9 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;filter: alpha(opacity=90) !important;font-size:12px;}
 .ui-help-box a {color:white !important;}
+.ui-help-box p {color:white !important;font-size:12px}
 .ui-help-box a:hover {color:white !important}
 .ui-fake-updir {background:#EEE}
 /*SERVICES*/
-#services table {margin-bottom:2em}
+#services table {margin-bottom:31px}
 #tr-network-gateway,#tr-network-ip,#tr-network-netmask {border-bottom:0}
-#tr-network-ip td {padding-top:3em}
+#tr-network-ip td {padding-top:31px}
 #table-network-wan input{font-size:12px;font-weight:bold;padding:0.1em 0.4em;}
 #services td {width:88%;}
 /*NETWORK*/
@@ -179,7 +183,7 @@ div.colorcode {	width : 15px;	height : 15px;}
 .partition-5 { background-color: #BED65C }
 .partition-6 { background-color: #5CD68F }
 .partition-7 { background-color: #5C89D6 }
-.partition-8 { background-color: #A9D65C }
+.partition-8 { background-color: #506AB2 }
 .partition-9 { background-color: #5CD6A3 }
 .partition-10 { background-color: #5C74D6 }
 .partition-11 { background-color: #D65CD4 }
@@ -199,14 +203,17 @@ div.text input {	vertical-align : middle;}
 div.text label {	margin-right : 15px;}
 input.mount {width : 75px;	margin : 0;}
 
-.ui-filemanager-information-panel {	height: 3em;background: #efdfad;border: 2px solid #dfcf9d;width: 600px;opacity: .95;	position: absolute;	text-align: center;width:100%}
+.ui-filemanager-information-panel {	height: 3em;background: #efdfad;border: 2px solid #dfcf9d;width: 600px;opacity: .95;	position: absolute;	text-align: center;width:100%;margin-top:-45px;}
 .ui-action-panel button {border: 0;}
 .ui-action-panel {position: absolute;border: 0;}
+.ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; }
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
-.ui-dialog-title {font-size:14px;text-align:center;width:100%;padding-top:2em;}
-.ui-dialog h2 {font-size:14px;font-weight:bold;}
+.ui-dialog-title {width:100%;}
+.ui-dialog h2 {font-size:16px;font-weight:bold;text-align:center;}
 .ui-dialog label {font-size:12px;}
-.ui-div-header {width:100%;font-size:14px;padding:0.5em 1.2em;}
+.ui-dialog table {margin:0;}
+.ui-dialog th {font-size:14px;padding:0}
+.ui-div-header {font-size:18px;padding:0.5em 1.2em;}
 #body_wizard .ui-dialog-title {display: none !important;}
 .ui-icon-bubba-switch-container {
 	height:21px;
@@ -221,20 +228,8 @@ input.mount {width : 75px;	margin : 0;}
 	background-repeat:none;
 	background-position:0px;
 }
-
-	.ui-icon-bubba-switch-container {
-		height:21px;
-		width:67px;
-		position: relative;
-		overflow: hidden;
-	}
-	.ui-icon-bubba-switch {
-		height:21px;
-		width:67px;
-		background-image:url(../_img/bubba_switch.png); /* your actual slider image */
-		background-repeat:none;
-		background-position:0px;
-	}
+.ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
+	
 	.ui-icon-bubba-switch.ui-state-disabled {
 		background-image:url(../_img/bubba_switch_disabled.png);
 	}

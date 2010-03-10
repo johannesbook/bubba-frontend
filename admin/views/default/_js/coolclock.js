@@ -76,9 +76,9 @@ CoolClock.config = {
 			outerBorder: { lineWidth: 0, radius:95, color: "black", alpha: 1 },
 			smallIndicator: { lineWidth: 0, startAt: 89, endAt: 93, color: "black", alpha: 1 },
 			largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
-			hourHand: { lineWidth: 4, startAt: -15, endAt: 50, color: "black", alpha: 1 },
-			minuteHand: { lineWidth: 4, startAt: -15, endAt: 94, color: "black", alpha: 1 },
-			secondHand: { lineWidth: 3, startAt: -20, endAt: 88, color: "black", alpha: 1 },
+			hourHand: { lineWidth: 4, startAt: -0, endAt: 65, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 4, startAt: -0, endAt: 90, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 1, startAt: -0, endAt: 92, color: "black", alpha: 1 },
 		},
 		chunkySwiss: {
 			outerBorder: { lineWidth: 4, radius:97, color: "black", alpha: 1 },
@@ -163,7 +163,7 @@ CoolClock.prototype = {
 	},
 
 	radialLineAtAngle: function(angleFraction,skin) {
-		with (this.ctx) {
+		with (this.ctx) {		    
 			save();
 			translate(this.renderRadius,this.renderRadius);
 			rotate(Math.PI * (2 * angleFraction - 0.5));
