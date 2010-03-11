@@ -34,7 +34,7 @@ class Menu extends Model {
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-album',
 			'abs_uri' => true,
-			'target' => "album",
+			'target' => "window_album",
 		),
 		array(
 			'id' => 'downloads',
@@ -51,7 +51,7 @@ class Menu extends Model {
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon default-icon-mail',
 			'abs_uri' => true,
-			'target' => "pim",
+			'target' => "window_pim",
 		),
 		array(
 			'id' => 'usersettings',
@@ -349,7 +349,7 @@ class Menu extends Model {
 	
 	private function _retreive_dialogmenu($user,$menu) {
 
-		$manubar = array();
+		$menubar = array();
 		
 		foreach ($menu as $menu_item => $menu_value) {
 			if(isset($menu_value['hide']) && in_array($this->uri->segment(1),$menu_value['hide']) ) {

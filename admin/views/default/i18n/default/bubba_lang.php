@@ -79,7 +79,7 @@ $lang['generic_dialog_text_warning'] = "Warning";
 /* Login texts  */
 $lang["topnav-authorized"] = "Logged in as '%s'";
 $lang["topnav-not-authorized"] = "Not logged in";
-$lang["login-dialog-header"] = "You have to login to see this content";
+$lang["login-dialog-header"] = "Login required";
 $lang["login-dialog-username"] = "Username";
 $lang["login-dialog-password"] = "Password";
 $lang["login-dialog-cancel"] = "Cancel";

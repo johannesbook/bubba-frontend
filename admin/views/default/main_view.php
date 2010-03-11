@@ -32,7 +32,6 @@
 <!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.js"></script><![endif]-->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/coolclock.js"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.jclock.js"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/moreskins.js"></script>
 
 <?if(false):?>
 <!-- jQuery lint debug -->
@@ -51,10 +50,15 @@ config = <?=json_encode(
 		'version' => $this->session->userdata('version')
 )
 )?>;
+
+var login_dialog;
+var window_music;
+var window_pim;
+var window_album;
 	
 $(document).ready(function(){
 	
-	var login_dialog;
+		
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
   	});
@@ -70,7 +74,7 @@ $(document).ready(function(){
 		$(this).find("span").show();
 	});	
 
-	$(".fn-login-dialog-a").click(function() {
+	$(".fn-login-dialog-a").click(function(e) {
 		if(login_dialog) {
 			login_dialog.dialog('close');
 			login_dialog.dialog('destroy');

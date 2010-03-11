@@ -755,4 +755,19 @@ class NetworkManager extends Model {
 		$data = query_network_manager( $cfg );
 		return $this->wanif = $data['wanif'];
 	}
+
+	function access_interface() {
+		$if = "";
+		$wanip = get_interface_info($this->get_wan_interface());
+		if(count($wanip)>0 && $_SERVER["SERVER_ADDR"] == $wanip[0]) {
+			$if = 'wanif';
+		} else {
+			$lanip = get_interface_info($this->get_lan_interface());
+			if(count($lanip)>0 && $_SERVER["SERVER_ADDR"] == $lanip[0]) {
+				$if = 'lanif';
+			}
+		}
+		return $if;
+	}
+
 }
