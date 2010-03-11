@@ -164,6 +164,14 @@ function piechart(chart_canvas) {
 
 
 $(document).ready( function() {
+		// TODO doesn't work
+		$('.ui-dialog-buttonpane > button.ui-button').live('load',function(){
+				var buttons = $(this).siblings('button.ui-button').andSelf();
+				var count = buttons.length;
+				var diff = ($(this).innerWidth()/$(this).outerWidth())*2;
+				buttons.width((100/count - diff) + '%');
+			}
+		);
 
 		$(".expansion").click(function() {
 			var $thisid = $(this).attr('id');
@@ -215,6 +223,7 @@ $(document).ready( function() {
 				resizable: false,
 				modal: true,
 				buttons: buttons,
+				position: ['center', 200],
 				beforeclose: function(event, ui) { cursor_ready(); }
 			}
 			if( override_options != undefined ) {

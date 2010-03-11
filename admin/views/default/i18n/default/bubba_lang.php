@@ -281,13 +281,20 @@ $lang['settings_identity_easyfind_message'] = "Use 'Easyfind' to locate your Bub
 $lang['settings_identity_update_easyfind_label'] = "Update easyfind";
 
 //  ---------- Users  -----
-$lang['realname'] = 'Real name';
-$lang['username'] = 'User name';
-$lang['shell_login'] = 'Shell login';
-$lang['allow_ssh'] = 'Allow SSH login';
-$lang['allow_remote'] = 'Allow remote access to config interface';
-$lang['users_pwd1'] = 'New password';
-$lang['users_pwd2'] = 'Verify password';
+$lang['users-list-edit-realname-label'] = 'Real name';
+$lang['users-list-edit-username-label'] = 'User name';
+$lang['users-list-edit-shell-label'] = 'Shell login';
+$lang['users-list-edit-remote-label'] = 'Allow remote access to config interface';
+$lang['users-list-edit-password1-label'] = 'New password';
+$lang['users-list-edit-password2-label'] = 'Verify password';
+$lang['users-list-edit-sideboard-label'] = 'Show sideboard default on login page';
+
+$lang['users-title'] = 'Users';
+$lang['users-label-username'] = 'User name';
+$lang['users-label-realname'] = 'Real name';
+$lang['users-label-shell-login'] = 'Allow shell login';
+$lang['users-add-button-label'] = 'Add new user';
+
 $lang['illegal'] = 'Illegal characters in password';
 $lang["mismatch"]='Password do not match';
 $lang["sambafail"]='Failed to update password';

@@ -4,7 +4,7 @@ class Users extends Controller{
 
 	function Users(){
 		parent::Controller();
-		
+
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 		$this->Auth_model->EnforceAuth();
@@ -12,10 +12,14 @@ class Users extends Controller{
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
-	function _renderfull($content){
+	private function _renderfull($content, $head = ''){
+		if( ! $head ) {
+			$mdata["head"] = $this->load->view(THEME.'/users/user_head_view','',true);
+		} else {
+			$mdata['head'] = $head;
+		}
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
-		$mdata["head"] = "";
 		if($this->session->userdata('run_wizard')) {
 			$mdata["dialog_menu"] = "";
 			$mdata["content"]="";
@@ -27,196 +31,32 @@ class Users extends Controller{
 		}
 		$this->load->view(THEME.'/main_view',$mdata);
 	}
-	
-	function _get_uinfo() {
+
+	private function _get_uinfo() {
 
 		$userinfo=get_userinfo();
 		$allow_list_users = $this->Auth_model->policy("userdata","list");
+		$result = array();
 		foreach($userinfo as $uname => $value){
+			if($value["uid"]<1000 || $value["uid"]>60000){
+				continue;
+			}
 			if ( $allow_list_users || ($this->session->userdata("user")==$uname) ) {
 
-				if($value["uid"]<1000 || $value["uid"]>60000){
-					unset($userinfo[$uname]);
-					continue;
-				}
-				if($uname=="admin"){
-					$userinfo[$uname]["shell"]="";
-				}
-				
-				if(trim($value["shell"])=="/bin/bash"){
-					$userinfo[$uname]["shell"]=true;;
-				}else{
-					$userinfo[$uname]["shell"]=false;
-				}
-			} else {
-				unset($userinfo[$uname]);
+				$value["allow:enable_shell"] = $this->Auth_model->policy( 'userdata', 'allow:enable_shell', $uname);
+				$value["allow:enable_rename"] = $this->Auth_model->policy( 'userdata', 'allow:enable_rename', $uname);
+				$value["allow:disable_remote"] = $this->Auth_model->policy( 'userdata', 'allow:disable_remote', $uname);
+				$value["shell"] = trim($value["shell"])=="/bin/bash" && $value["allow:enable_shell"];
+				$value['username'] = $uname;
+				$result[] = $value;
 			}
 		}
-		return $userinfo;
-				
+		return $result;
+
 	}	
 
-	function add($strip=""){
-		// if $strip == -1 $data will be returned and no view loaded.
-		
-		require_once(APPPATH."/legacy/user_auth.php");
+	private function _dochpwd($uname,$pass1,$pass2){
 
-		$uname=$this->input->post("uname");
-		$realname=$this->input->post("realname");
-		$shell=$this->input->post("shell");
-		$pass1=$this->input->post("pass1");
-		$pass2=$this->input->post("pass2");
-
-		$lc_uname=strtolower($uname);
-	
-		$uinfo=get_userinfo();
-		
-		$data["uname"]=$uname;
-		$data["realname"]=$realname;
-		$data["shell"]=$shell;
-
-		$data["update"]=array();
-		$data['update']['success'] = false;
-
-		$data["usr_caseerr"]=false;
-		$data["usr_existerr"]=false;
-		$data["usr_nonameerr"]=false;
-		$data["usr_spacerr"]=false;
-		$data["pwd_charerr"]=false;
-		$data["usr_charerr"]=false;
-		$data["usr_longerr"]=false;
-		$data["pwd_mismatcherr"]=false;
-		
-		if ($lc_uname != $uname) {	
-			// Uppercase letters in username
-			$data['update']['message'] = "usr_caseerr";
-		}elseif (isset($uinfo[$uname])||$uname=="root"||$uname=="storage"||$uname=="web") {
-			// user already exists or is admin account
-			$data['update']['message'] = "usr_existerr";
-		}elseif ($uname == "") {
-			// No username given
-			$data['update']['message'] = "usr_nonameerr";
-		}elseif (count(explode(" ",$uname))!=1) {
-			// Username contains spaces
-			$data['update']['message'] = "usr_spacerr";
-		}elseif (!preg_match('/^\w+$/',$pass1)){
-			// Illegal chars in passwd
-			$data['update']['message'] = "pwd_charerr";
-		}elseif (!preg_match('/^[a-z0-9 _-]+$/',$uname)){
-			// Illegal chars in username
-			$data['update']['message'] = "usr_charerr";
-		}elseif ( strlen($uname)>32){
-			// Username to long
-			$data['update']['message'] = "usr_longerr";
-		}elseif ($uname[0]=='-'){
-			// Illegal chars in username cant start with -
-			$data['update']['message'] = "usr_charerr";
-		}else{
-			// data valid
-			if ((trim($pass1) == trim($pass2)) && (trim($pass1)!="" ||trim($pass2)!="")) {
-				$group="users";
-				if(add_user($realname,$group,$shell,$pass1,$uname)){
-					$data['update']['message'] = "usr_createerr";
-				}else{
-					$data['update']["success"]=true;
-					$data['update']['message'] = "usr_addok";
-				}
-			}else{
-				// Passwords dont match or passwd empty
-				$data['update']['message'] = "pwd_mismatcherr";
-			}
-		}
-		
-
-		if(!$data["update"]["success"]) {
-
-			// enter the input data again
-			$data["shellyes"]=false;
-			$data["shellno"]=true;
-			$data["uname"]=$this->input->post("uname")?$this->input->post("uname"):"";
-			$data["realname"]=$this->input->post("realname")?$this->input->post("realname"):"";
-			if($this->input->post("shell")){
-				if($this->input->post("shell")=="/bin/bash"){
-					$data["shellyes"]=true;
-					$data["shellno"]=false;
-				}
-			}
-		}
-
-		$this->index(false, $data);
-	}	
-
-	function askdelete($strip=""){
-		$data["uname"]=$this->input->post("uname");
-		
-		if($strip){
-			$this->load->view(THEME.'/users/user_askdelete_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_askdelete_view',$data,true));
-		}
-	}
-
-	function dodelete($strip=""){
-		$this->Auth_model->RequireUser('admin');
-		if(!$this->input->post("proceed") || !$this->input->post("uname")){
-			redirect("users");
-			exit();
-		}
-		$uname=$this->input->post("uname");
-		$userdata=$this->input->post("userdata");
-		
-		// TODO: fix this to only allow users with uid>999 to be deleted
-		if($uname=="root" || $uname=="admin"){		
-			print"User [$uname] is root or admin<br/>";			
-			//redirect("users");
-			exit();
-		}
-		$data["deluserdata"]=$userdata;
-		$data["delusersuccess"]=false;
-		$data["deldatasuccess"]=false;
-		$data["uname"]=$uname;
-		if(del_user($uname)==0){
-			$data["delusersuccess"]=true;
-			if($userdata){
-				if(rm("/home/$uname","root")==0){
-					$data["deldatasuccess"]=true;
-				}else{
-					$data["deldatasuccess"]=false;
-				}
-
-				try {
-					purge_horde( $uname );
-					$data["deldatasuccess"] |= true;
-				} catch( AdminException $e ) {
-					$data["deldatasuccess"] = false;
-				}
-			}
-		}else{
-			$data["delusersuccess"]=false;
-		}
-
-		if($strip){
-			$this->load->view(THEME.'/users/user_dodelete_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_dodelete_view',$data,true));
-		}
-	}	
-	
-	function chpwd($strip=""){
-		if(!$this->input->post("uname")){
-			redirect("users");
-			exit();
-		}
-		$data["uname"]=$this->input->post("uname");
-		if($strip){
-			$this->load->view(THEME.'/users/user_chpwd_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_chpwd_view',$data,true));
-		}
-	}
-
-	function _dochpwd($uname,$pass1,$pass2){
-		
 		$result["mismatch"]=false;
 		$result["illegal"]=false;
 		$result["success"]=false;
@@ -246,149 +86,193 @@ class Users extends Controller{
 		return $result;
 	}
 
-	function update($strip=""){
-		
-		if($this->input->post("cancel")) {
-			redirect("users");
-			exit();
-		}
-		$data["update"]["success"] = false;
+	public function add_user_account($strip=""){
+		if( $strip == 'json' ) {
+			require_once(APPPATH."/legacy/user_auth.php");
+			$error = false;
 
-		$realname=$this->input->post("realname");
-		$shell=$this->input->post("shell")=="true"?"/bin/bash":"/sbin/nologin";
-		$uname=$this->input->post("uname");
-		$remote = $this->input->post("remote");
-		$default_sideboard = $this->input->post("default_sideboard");
-
-		if($this->Auth_model->policy("mail","edit_allusers") || $this->session->userdata("user")==$user) {
-	
-			if($this->input->post('pwd1') && $this->input->post('pwd2')) {
-				$change_pwdres = $this->_dochpwd($uname,$this->input->post('pwd1'),$this->input->post('pwd2'));
+			$username=strtolower(trim($this->input->post('username')));
+			$realname=trim($this->input->post('realname'));
+			$password1=trim($this->input->post('password1'));
+			$password2=trim($this->input->post('password2'));
+			$shell=$this->input->post('shell');
+			if($this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
+				$shell = '/bin/bash';
+			} else {
+				$shell = '/usr/sbin/nologin'; 
 			}
-			
-			if( isset($change_pwdres["success"]) && !$change_pwdres["success"] ) {
-				// password errors, do not try to change anything else
-				$data["update"]["message"] = "";
-				foreach($change_pwdres as $key => $error) {
-					if($error) {
-						$data["update"]["message"] .= " " . t($key);
+			$group = 'users'; // Static group for em all
+
+			$uinfo=get_userinfo();
+
+			if (
+				isset($userinfo[$username])
+				|| $username == "root"
+				|| $username == "storage"
+				|| $username == "web"
+				|| $username == ""
+				|| strpos($username, ' ') !== false
+				|| !preg_match('/^\w+$/',$password1)
+				|| !preg_match('/^[a-z0-9 _-]+$/',$username)
+				|| strlen($username) > 32
+				|| $username[0] == '-'
+				|| $password1 == ""
+				|| $password1 != $password2
+			) {
+				$error = t('users-add-account-validation-error');
+			} else {
+				if(add_user($realname,$group,$shell,$password1,$username)){
+					$error = t('users-add-account-error');
+				}
+			}
+
+			$data['success'] = !$error;
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
+		}
+	}
+
+	public function edit_user_account($strip=""){
+		if( $strip == 'json' ) {
+			require_once(APPPATH."/legacy/user_auth.php");
+			$error = false;
+
+			$username=strtolower(trim($this->input->post('username')));
+			$realname=trim($this->input->post('realname'));
+			$password1=trim($this->input->post('password1'));
+			$password2=trim($this->input->post('password2'));
+			$shell=$this->input->post('shell');
+			$remote = $this->input->post("remote");
+			$sideboard = $this->input->post("sideboard");
+
+			if( $this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
+				$shell = '/bin/bash';
+			} else {
+				$shell = '/usr/sbin/nologin'; 
+			}
+
+
+			if($this->Auth_model->policy("userdata","edit_allusers") || $this->session->userdata("user")==$username) {
+
+				if( $password1 && $password2 ) {
+					$result_chpwd = $this->_dochpwd(
+						$username,
+						$password1,
+						$password2
+					);
+				}
+
+				if( isset($result_chpwd["success"]) && !$result_chpwd["success"] ) {
+					$error = "";
+					// password errors, do not try to change anything else
+					$data["update"]["message"] = "";
+					foreach($result_chpwd as $key => $error) {
+						if($error) {
+							$error .= " " . t($key);
+						}
 					}
 				}
-	
-				if($uname=='admin') {
-					$data["remote"] = $remote;
-				} else {
-					$data["shell"] = $shell;
+
+				if( !$error && $this->Auth_model->policy("userdata","allow:enable_remote", $username) ) {
+					update_bubbacfg("admin","AllowRemote",$remote ? 'yes': 'no' );
+					$this->session->set_userdata("AllowRemote", $remote);
 				}
-				$data["realname"] = $realname;
-				$data["uname"] = $uname;
-				
-			} else {
-				if($uname=='admin') {
 
-					if ($default_sideboard=="true") {
-						if($this->session->userdata("default_sideboard")) {
-						} else {
-							update_bubbacfg("admin","default_sideboard","yes");
-							$this->session->set_userdata("default_sideboard", true);
-						}
-					} else {
-						if($this->session->userdata("default_sideboard")) {
-							update_bubbacfg("admin","default_sideboard","no");
-							$this->session->set_userdata("default_sideboard", false);
-						}
+				if( !$error && $username == 'admin' ) {
+					update_bubbacfg("admin","default_sideboard", $sideboard ? "yes" : "no" );
+					$this->session->set_userdata("default_sideboard", $sideboard);
+				}
 
-					}				
-					if ($remote=="true") {
-						if($this->session->userdata("AllowRemote")) {
-							// do nothing already allowing remote access
-						} else {
-							update_bubbacfg("admin","AllowRemote","yes");
-							$this->session->set_userdata("AllowRemote", true);
-						}
-					} else {
-						if($this->session->userdata("AllowRemote")) {
-							update_bubbacfg("admin","AllowRemote","no");
-							$this->session->set_userdata("AllowRemote", false);
-						} else {
-							// do nothing already not allowing remote access
-						}
-					}				
+				if( !$error && update_user($realname,$shell,$username)){
+					$error = t("users-edit-account-error '%s' '%s' '%s'", $realname, $shell, $username);
 				}		
-						
-				if( !update_user($realname,$shell,$uname)){
-					$data["update"]["success"] = true;
-					$data["update"]["message"] = "user_update_ok";
-				}else{
-					$data["update"]["message"] = "user_update_error";
+			} else {
+				$error = t("user_update_error_auth_fail");
+			}
+
+			$data['success'] = !$error;
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
+		}
+	}	
+
+	public function delete_user_account($strip=""){
+		if( $strip == 'json' ) {
+			require_once(APPPATH."/legacy/user_auth.php");
+			$error = false;
+
+			$username=strtolower(trim($this->input->post('username')));
+			$userdata=$this->input->post('userdata');
+
+			if($this->Auth_model->policy("userdata","delete")) {
+
+				// TODO: fix this to only allow users with uid>999 to be deleted
+				if( $username == "root" || $username == "admin" ){		
+					$error = t('users-delete-bad-user-error');
+					exit();
 				}
-			}		
-		} else {
-				$data["update"]["message"] = "user_update_error_auth_fail";
-		}
-		if($data["update"]["success"]) { // return to main page.
-			$this->index(false,$data);
-		} else {
-			if($strip){
-				$this->load->view(THEME.'/users/user_edit_view',$data);
-			}else{
-				$this->_renderfull($this->load->view(THEME.'/users/user_edit_view',$data,true));
+				if(del_user($username)==0){
+					$data["delusersuccess"]=true;
+					if($userdata){
+						if(rm("/home/$username","root")==0){
+						}else{
+							$error = t('users-delete-userdata-error');
+						}
+						try {
+							purge_horde( $username );
+						} catch( AdminException $e ) {
+							$error = t('users-delete-userdata-error');
+						}
+					}
+				}else{
+					$error = t('users-delete-account-error');
+				}
+			} else {
+				$error = t("restricted-access", $username);
 			}
+			$data['success'] = !$error;
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			return;
 		}
 	}	
-	
-	function edit($strip=""){
+
+	public function index($strip="", $data = array()){
 		require_once(APPPATH."/legacy/user_auth.php");
-		$uinfo=$this->_get_uinfo();
 
-		if(isset($uinfo[$this->input->post("uname")])) {
-			$uname = $this->input->post("uname");
-		} else {
-			$uname = $this->session->userdata("user");
-		}
+		$data["accounts"]= $this->_get_uinfo();
 
-		$data=$uinfo[$uname];
-		$data["uname"]=$uname;
-		if($data["uname"] == "admin") {
-			$data["user_is_admin"] = true;
-			$data["remote"] = $this->session->userdata("AllowRemote");
-			$data["default_sideboard"] = $this->session->userdata("default_sideboard");
-		} else {
-			if(trim($data["shell"])=="/bin/bash"){
-				$data["shell"]=true;
-			}else{
-				$data["shell"]=false;
-			}
-		}		
-		$data["show_deleteuser"] = $this->Auth_model->policy("userdata","delete");
-
-		if($strip){
-			$this->load->view(THEME.'/users/user_edit_view',$data);		
+		if($strip == "json" ){
+			header("Content-type: application/json");
+			echo json_encode( $data );
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_edit_view',$data,true));
-		}
-		
-	}	
-	
-	function index($strip="", $data = array()){
-		require_once(APPPATH."/legacy/user_auth.php");
-		
-		$data["userinfo"]= $this->_get_uinfo();
-		$data["show_adduser"] = $this->Auth_model->policy("userdata","add");	
-		// userinfo can be set and called from by "add" function.
-		if(!isset($data["shellyes"])) $data["shellyes"]=false;
-		if(!isset($data["shellno"])) $data["shellno"]=true;
-		if(!isset($data["uname"])) $data["uname"]="";
-		if(!isset($data["realname"])) $data["realname"]="";
-		if($strip){
-			$this->load->view(THEME.'/users/user_list_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/users/user_list_view',$data,true));
+			$data["show_adduser"] = $this->Auth_model->policy("userdata","add");	
+			$data["show_allusers"] = $this->Auth_model->policy("userdata","edit_allusers");	
+			$data["allow_delete"] = $this->Auth_model->policy("userdata","delete");	
+
+			$this->_renderfull(
+				$this->load->view(THEME.'/users/user_list_view',$data,true),
+				$this->load->view(THEME.'/users/user_list_head_view',$data,true)
+			);
 		}
 	}
 
 	function wizard($strip="") {
-	
+
 		require_once(APPPATH."/legacy/user_auth.php");
 
 
@@ -452,11 +336,11 @@ class Users extends Controller{
 				// get userlist.
 				$data['wiz_data']['ulist'] = $this->_get_uinfo();
 			}
-			
+
 			if(  isset($error) ||
-			   (!isset($data['wiz_data']['postingpage'])) || 
-			   (isset($data['wiz_data']['adduser']))
-			  ) { // if error/add or called from "stat" controller load the same view again.
+				(!isset($data['wiz_data']['postingpage'])) || 
+				(isset($data['wiz_data']['adduser']))
+			) { // if error/add or called from "stat" controller load the same view again.
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/users/user_wizard_view',$data));
 				}else{
@@ -467,10 +351,12 @@ class Users extends Controller{
 			}
 		}
 	}
+
 	function config($strip="",$parameter,$value) {
-		update_bubbacfg($this->session->userdata("user"),$parameter,$value);
-		$this->session->set_userdata($parameter,$value);
-		print "Key: $parameter, Value: $value";
+		if( $strip == 'json' ) {
+			update_bubbacfg($this->session->userdata("user"),$parameter,$value);
+			$this->session->set_userdata($parameter,$value);
+		}
 	}
 }
 ?>

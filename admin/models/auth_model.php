@@ -10,9 +10,22 @@ class Auth_model extends Model{
 			"add"  		=> array(
 				"allow" => array("admin")
 			),
-			"delete"  => array( 
+			"delete"    => array( 
 				"allow" => array("admin")
-			)
+			),
+			"edit_allusers" => array(
+				"allow" => array("admin")
+			),			
+			"allow:enable_rename"    => array(
+				"deny"  => array("admin")
+			),
+			"allow:enable_shell"     => array(
+				"deny"  => array("admin")
+			),
+			"allow:disable_remote"     => array(
+				"allow"  => array("admin")
+			),
+			
 		),
 		"menu"				=> array(
 			"show_level1" => array(
@@ -88,9 +101,10 @@ class Auth_model extends Model{
 		exit();
 	}
 	
-	function policy($policy,$method) {
-		
-		$user = $this->session->userdata("user");
+	function policy($policy, $method, $user=null) {
+		if( ! $user ) {
+			$user = $this->session->userdata("user");
+		}
 		if(isset($this->policies[$policy][$method]["deny"])) {
 			if(in_array($user,$this->policies[$policy][$method]["deny"])) {
 				return false;

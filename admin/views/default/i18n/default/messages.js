@@ -47,6 +47,20 @@ messages = {
 	"mail-retrieve-edit-success-message": "Successfully edited mail account",
 	"mail-retrieve-edit-dialog-header": "Edit mail account information for host <em>%s</em>",
 	"mail-retrieve-delete-success-message" : "Successfully deleted mail account",
+
+	// Users
+	"users-list-add-dialog-button-label" : "Add new user",
+	"users-list-edit-dialog-button-label" : "Edit user",
+	"users-list-edit-dialog-delete-button-label" : "Delete user",
+	"users-list-add-dialog-header" : "Add an new user to the system",
+	"users-list-edit-dialog-header" : "Edit user",
+	"users-edit-single-button-label" : "Update your user settings",
+	"users-list-edit-dialog-delete-header":"Delete user",
+	"users-list-edit-dialog-delete-userdata-label":"Delete userdata as well?",
+	"users-list-edit-dialog-delete-message":"Are you sure you want to delete this user from the system",
+	"users-list-delete-success-message":"Deletion was successful",
+	"users-list-add-success-message":"Creation of user was successful",
+	"users-list-edit-success-message":"The user was successfully edited",
 	
 	// Stat
 	"stat-shutdown-button-continue" : "Shut down",

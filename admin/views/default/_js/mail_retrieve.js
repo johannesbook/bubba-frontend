@@ -21,7 +21,7 @@ $(document).ready(function(){
 										html: $.message('button-label-edit'),
 										click: $.proxy(function() {
 												$("h2.fn-dialog-header", dialog).html($.message("mail-retrieve-edit-dialog-header", data.server));
-												this.trigger("reset");
+												$("form",this).trigger("reset");
 												$('input[name=server]', this).val(data.server);
 												$('input[name=old_server]', this).val(data.server);
 												$('input[name=protocol]', this).val(data.protocol);
@@ -164,7 +164,7 @@ $(document).ready(function(){
 		update_mail_table( edit_dialog, mail_accounts );
 
 		$("#fn-retrieve-add").click($.proxy(function() {
-					this.trigger("reset");
+					$("form",this).trigger("reset");
 					this.dialog("open");
 				},
 				add_dialog

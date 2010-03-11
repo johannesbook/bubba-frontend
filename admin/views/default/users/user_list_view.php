@@ -1,72 +1,60 @@
-<table>
-<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Users')?></td></tr>
-<tr class="ui-filemanager-state-header">
-	<th><?=t('username')?></th>
-	<th><?=t('realname')?></th>
-	<th><?=t('shell_login')?></th>
-	<th>&nbsp;</th>
-</tr>
-<? foreach($userinfo as $username => $info){?>
+<?if($show_allusers):?>
+<table id="fn-users-list">
+<thead>
 <tr>
-	<td>
-		<?=$username?>
-	</td>
-	<td>
-		<?=$info["realname"]?$info["realname"]:"&nbsp;"?>
-	</td>
-	<td>
-<? if($username!="admin"){ ?>
-		<?=$info["shell"]?t("Yes"):t("No")?>
-<? } ?>
-	</td>
-	<div id="div_users_userlist">
-	<form action="<?=FORMPREFIX?>/users/edit" method="post">
-		<td>
-			<input
-				type="submit"
-				name="edit"
-				value="<?=t('Edit user')?>"
-			/>
-			<input
-				type="hidden"
-				name="uname"
-				value="<?=$username?>"
-			/>
-		</td>
-	</form>
-</div>
+	<th colspan="7" class="ui-state-default ui-widget-header"><?=t('users-title')?></th>
 </tr>
-<? } ?>
+<tr>
+   <th><?=t('users-label-username')?></th>
+   <th><?=t('users-label-realname')?></th>
+   <th><?=t('users-label-shell-login')?></th>
+   <th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
 </table>
 
 <?if($show_adduser):?>
-	<form action="<?=FORMPREFIX?>/users/add" method="post">
-		<table border="0" cellpadding="0">
-		<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Add new user')?></td></tr>
-		<tr>
-			<td><?=t('Username')?>:</td>
-			<td><input type="text" name="uname" value="<?=$uname?>" size="30"/></td>
-		</tr>
-		<tr>
-			<td><?=t('Real name')?>:</td>
-			<td><input type="text" name="realname" value="<?=$realname?>" size="30"/></td>
-		</tr>
-		<tr>
-			<td><?=t('Allow ssh login')?>:</td>
-			<td>
-				<input type="radio" class="checkbox_radio" name="shell" value="/bin/bash" <?=$shellyes?'checked="checked"':''?>/> <?=t('Yes')?> 
-				<input type="radio" class="checkbox_radio" name="shell" value="/sbin/nologin" <?=$shellno?'checked="checked"':''?> /> <?=t('No')?>
-			</td>
-		</tr>
-		<tr>
-			<td><?=t('Enter user password')?>:</td>
-			<td><input type="password" name="pass1" size="30"/></td>
-		</tr>
-		<tr>
-			<td><?=t('Verify password')?>:</td>
-			<td><input type="password" name="pass2" size="30"/></td>
-		</tr>		
-		</table>
-		<input class="submitbutton" type="submit" name="adduser" value="<?=t('Add user')?>"/>
-	</form>
+<button id="fn-users-list-add"><?=t("users-add-button-label")?></button>
 <?endif?>
+<?endif?>
+
+<div id="fn-users-dialogs" class="ui-helper-hidden">
+<div id="fn-users-list-edit">
+<form>
+<input type="hidden" name="username"/>
+<h2 class="fn-dialog-header ui-dialog-header"></h2>
+	<table>
+	<tr>
+	   <td><label for="username"><?=t('users-list-edit-username-label')?></label></td>
+	   <td><input type="text" name="input_username"/></td>
+	</tr>
+	<tr>
+	   <td><label for="realname"><?=t('users-list-edit-realname-label')?></label></td>
+	   <td><input type="text" name="realname"/></td>
+	</tr>
+	<tr>
+	   <td><label for="password1"><?=t('users-list-edit-password1-label')?></label></td>
+	   <td><input type="password" name="password1"/></td>
+	</tr>
+	<tr>
+	   <td><label for="password2"><?=t('users-list-edit-password2-label')?></label></td>
+	   <td><input type="password" name="password2"/></td>
+	</tr>
+	<tr>
+	   <td><label for="sideboard"><?=t('users-list-edit-sideboard-label')?></label></td>
+	   <td><input type="checkbox" name="sideboard"/></td>
+	</tr>
+	<tr>
+	   <td><label for="remote"><?=t('users-list-edit-remote-label')?></label></td>
+	   <td><input type="checkbox" name="remote"/></td>
+	</tr>
+	<tr>
+	   <td><label for="shell"><?=t('users-list-edit-shell-label')?></label></td>
+	   <td><input type="checkbox" name="shell"/></td>
+	</tr>
+	</table>
+</form>
+</div>
+</div>
