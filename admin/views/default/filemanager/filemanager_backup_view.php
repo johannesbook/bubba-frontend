@@ -21,10 +21,10 @@
 	<table id="backup">
 	    
 	    <tr><td colspan="8" class="ui-state-default ui-widghet-header ui-div-header"><?=t('File sharing')?></td></tr>
-		<tr class="ui-filemanager-state-hover">
-			<th style="width:20%"><?=t('Existing jobs')?></th>
-			<th><?=t('Included directories')?></th>
-			<th><?=t('Job settings')?></th>
+		<tr id="filemanager-backup-head" class="ui-filemanager-state-header">
+			<th style="width:15%"><?=t('Existing jobs')?></th>
+			<th style="width:20%"><?=t('Included directories')?></th>
+			<th ><?=t('Job settings')?></th>
 		</tr>
 		<tr>
 			<td rowspan="3" class="backupjobs">

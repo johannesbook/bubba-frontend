@@ -1,9 +1,9 @@
 <table>
 <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Users')?></td></tr>
-<tr>
-	<th><i><?=t('username')?></i></th>
-	<th><i><?=t('realname')?></i></th>
-	<th><i><?=t('shell_login')?></i></th>
+<tr class="ui-filemanager-state-header">
+	<th><?=t('username')?></th>
+	<th><?=t('realname')?></th>
+	<th><?=t('shell_login')?></th>
 	<th>&nbsp;</th>
 </tr>
 <? foreach($userinfo as $username => $info){?>

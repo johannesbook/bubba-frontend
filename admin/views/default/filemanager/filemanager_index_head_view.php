@@ -150,13 +150,13 @@ copymove_callback = function( type ) {
 		});
 
 	action.buttonset();
-
+    /*
 	panel.position({
 		'my': 'bottom',
 			'at': 'top',
 			'of': filemanager,
 			'offset': 0
-	});
+	});*/
 	action.position({
 		'my': 'right',
 			'at': 'left',
@@ -170,10 +170,19 @@ copymove_callback = function( type ) {
 };
 dialogs = {};
 buttons = [
+    {
+		'id': 'fn-filemanager-button-create',
+		'disabled': false,
+		'type': 'ui-icons ui-icon-plusthick',
+		'alt': 'Create Folder',
+		'callback': function() {
+			dialogs["mkdir"].dialog("open");
+		}
+	},
 	{
 		'id': 'fn-filemanager-button-upload',
 		'disabled': false,
-		'type': 'ui-icon-arrowthickstop-1-n',
+		'type': 'ui-icons ui-icon-upload',
 		'alt': 'Upload File',
 		'callback': function() {
 			window.open(config.prefix + "/upload/index" + $("#filetable").filemanager('option','root'), "", "width=500,height=250.menubar=no,toolbar=no,location=no,directories=no,personalbar=no,status=no,dialog=yes");
@@ -182,7 +191,7 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-download',
 		'disabled': true,
-		'type': 'ui-icon-arrowthickstop-1-s',
+		'type': 'ui-icons ui-icon-download',
 		'alt': 'Download as ZIP',
 		'callback': function() {
 			var files = $("#filetable").filemanager('getSelected');
@@ -198,20 +207,11 @@ buttons = [
 			});
 			form.appendTo("body").submit().remove();
 		}
-	},
-	{
-		'id': 'fn-filemanager-button-create',
-		'disabled': false,
-		'type': 'ui-icon-plusthick',
-		'alt': 'Create Folder',
-		'callback': function() {
-			dialogs["mkdir"].dialog("open");
-		}
-	},
+	},	
 	{
 		'id': 'fn-filemanager-button-move',
 		'disabled': true,
-		'type': 'ui-icon-transferthick-e-w',
+		'type': 'ui-icons ui-icon-move',
 		'alt': 'Move files',
 		'callback': function() { 
 			copymove_callback.apply(this,['move']);
@@ -220,7 +220,7 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-copy',
 		'disabled': true,
-		'type': 'ui-icon-copy',
+		'type': 'ui-icons ui-icon-copy',
 		'alt': 'Copy files',
 		'callback': function() {
 			copymove_callback.apply(this,['copy']);
@@ -229,7 +229,7 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-rename',
 		'disabled': true,
-		'type': 'ui-icon-pencil',
+		'type': 'ui-icons ui-icon-pencil',
 		'alt': 'Rename',
 		'callback': function() {
 			dialogs["rename"].dialog("open");
@@ -238,7 +238,7 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-perm',
 		'disabled': true,
-		'type': 'ui-icon-unlocked',
+		'type': 'ui-icons ui-icon-unlocked',
 		'alt': 'Change permissions',
 		'callback': function() {
 			dialogs["perm"].dialog("open");
@@ -247,7 +247,7 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-delete',
 		'disabled': true,
-		'type': 'ui-icon-trash',
+		'type': 'ui-icons ui-icon-trash',
 		'alt': 'Delete',
 		'callback': function() {
 			dialogs["delete"].dialog("open");

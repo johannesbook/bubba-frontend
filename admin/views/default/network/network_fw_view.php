@@ -103,16 +103,16 @@ function copy_fields(formid) {
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <fieldset >
 <table id="firewall">
-    <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Integrated Bubba services')?></td></tr>
+    <tr><td colspan="5" class="ui-state-default ui-widghet-header"><?=t('Integrated Bubba services')?></td></tr>
 	<tr>
-		<td width="20"></td>
+		
 		<td>
 			<?=t('Allow SSH from WAN')?>:<br /><div class="portnumber">(Port 22)</div>
 		</td>
 		<td>
 			<input type="checkbox" class="checkbox_radio" name="allowSSH" <?if($allowSSH) echo "checked=\"checked\""?>/>
 		</td>
-		<td width="20"></td>
+		
 		<td>
 			<?=t('Allow WAN access to mail server')?>:<br /><div class="portnumber">(Port 25)</div>
 		</td>
@@ -121,14 +121,14 @@ function copy_fields(formid) {
 		</td>
 	</tr>
 	<tr>
-		<td width="20"></td>
+		
 		<td>
 			<?=t('Allow WWW from WAN')?>:<br /><div class="portnumber">(HTTP / HTTPS Ports 80 / 443)</div>
 		</td>
 		<td>
 			<input type="checkbox" class="checkbox_radio" name="allowWWW" <?if($allowWWW) echo "checked=\"checked\""?>/>
 		</td>
-		<td width="20"></td>
+		
 		<td>
 			<?=t('Allow WAN access to Mail')?>:<br /><div class="portnumber">(IMAP / IMAPS Ports 143 / 993)</div>
 		</td>
@@ -137,14 +137,13 @@ function copy_fields(formid) {
 		</td>
 	</tr>
 	<tr>
-		<td class="p_fw_c0"></td>
 		<td>
 			<?=t('Allow FTP from WAN')?>:<br /><div class="portnumber">(Port 21)</div>
 		</td>
 		<td>
 			<input type="checkbox" class="checkbox_radio" name="allowFTP" <?if($allowFTP) echo "checked=\"checked\""?>/>
 		</td>
-		<td width="20"></td>
+		
 		<td>
 			<?=t('Open ports for torrent downloader')?>:<br /><div class="portnumber">(Ports 10000-14000)</div>
 		</td>
@@ -152,8 +151,7 @@ function copy_fields(formid) {
 			<input type="checkbox" class="checkbox_radio" name="allowTorrent" <?if($allowTorrent) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
-	<tr>
-		<td class="p_fw_c0"></td>
+	<tr>		
 		<td>
 			<?=t('Allow Ping from WAN')?>:<br /><div class="portnumber">(ICMP type 8)</div>
 		</td>
@@ -163,7 +161,6 @@ function copy_fields(formid) {
 		<td width="20" colspan="3"></td>
 	</tr>
 	<tr>
-		<td class="p_fw_c0"></td>
     <td colspan="5">&nbsp;</td>
 	</tr>
 	
@@ -280,7 +277,7 @@ function copy_fields(formid) {
 		<td>
 			
 		</td>
-		<td colspan="5" class="legend">
+		<td colspan="6" class="legend">
 			<?=t('Public port range accepted as start-port:stop-port')?><br />
 			<?=t('Private port is start port if public port range entered')?><br />
 		</td>
@@ -347,7 +344,7 @@ $i++;
 endforeach;
 ?>
 <table  id="firewall">
-	<tr>
+	<tr class="ui-filemanager-state-header">
 		<td class="p_fw_c0"></td>
 		<td class="p_fw_c1"></td>
 		<td class="p_fw_c2"></td>

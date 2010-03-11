@@ -1,28 +1,4 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.progress.js?v='<?=$this->session->userdata('version')?>'"></script>
-<style>
-
-div.hotfix {
-	margin-top : 10px;
-	vertical-align : middle;
-}
-div.hotfix *{
-	vertical-align : middle;
-	margin-right : 10px;
-}
-
-fieldset.update {
-	min-height : 135px;
-}
-
-#package_versions td {
-	font-size : 0.8em;
-}
-
-.notifications {
-width: 600px;
-}
-
-</style>
 <script>
 
 function print_versions() {

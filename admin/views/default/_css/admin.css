@@ -1,10 +1,10 @@
 * {margin: 0;padding: 0;}
 html, body{ height: 100%;}
-body {font-size:12px;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background:#DDD;}
+body {font-size:12px;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background:#e5e5e5}
 h1 {line-height: 1em;font-size: 18px;font-weight: bold;}
 h2 {line-height: 1em;font-size: 1.5em;font-weight: normal;margin: 1.2em 0 0 0;}
 h3 {font-size: 1.3em;font-weight: bold;margin: 0.6em 0 0 0;}
-p {line-height: 1.6em;font-size: 1.3em;padding: 0.2em 0 0.5em 0;}
+p {font-size: 12px;padding: 0.2em 0 0.5em 0;}
 form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
@@ -19,32 +19,30 @@ input[type=radio] {}
 input[type=checkbox] {}
 table {margin: 1em 0;font-size: 14px;border-collapse : collapse;border:0;width:100%; }
 select {width:49%;}
+option:hover {color:white;background:#506ab2;}
+option {line-height:16px;font-size:14px;background-color:#FFF}
 td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
 tr {border:0;border-bottom:0.1em solid #e5e5e5;line-height:31px;}
+/*
 thead > tr > th {padding: 0.25em 1.2em;text-align: left;border:0}
-tbody > tr > th {
-	padding: 0.25em 1.2em;
-	border: 0;
-	vertical-align: top;
-	text-align: left;
-	font-size: 1em;
-	font-weight: normal;
-}
-tbody > tr > th label {
-	font-weight: bold;
-}
+tbody > tr > th {padding: 0.25em 1.2em;	border: 0;vertical-align: top;text-align: left;	font-size: 11px;	font-weight: normal;}
+*/
+tbody > tr > th label {	font-weight: bold;}
 ul {list-style: square;list-style-position: outside;}
 ul ul{}
 li{padding: 0.2em 0 0.2em 0;}
 li {display:inline;}
 label {font-weight:bold;}
 a {color: #000;outline:none;}
-button {outline:none;}
+button:hover {outline:none;}
 img{border: 0;}
 /* WRAPPER */
-#wrapper {min-height: 130%;width:1020px;margin: 0 auto;padding:0em;max-width:96%;padding-left:3em;background-image:url(../_img/background.png);border:0.1em solid #000;border-right:0.45em solid #000;}
+#wrapper {width:1020px;margin: 0 auto;padding:0em;max-width:1020px;background-image:url(../_img/background.png);height:100%;}
+/* CONTENT */
+#content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
+#content_wrapper {margin-bottom:3em;float:left;width:70%}
 /*UPDATE STATUS*/
-#update_status {color:#000;background-color:#fbec9d;font-size:12px%;left:25px;margin:auto;padding:0.2em;position:fixed;text-align:center;top:2px;width:500px;display:none}
+#update_status {color:#000;background-color:#fbec9d;font-size:12px%;left:25%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:2px;width:500px;display:none !important;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
 #img_logo {padding-top:4em;}
 #header {margin-bottom:2em}
@@ -54,7 +52,7 @@ img{border: 0;}
 #header li.active a {color:#506ab2;}
 #header li.last {border-right:none;}
 #nav ul{font-size: 18px;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
-#topnav {float:right;left:72%;padding-top:0.3em;width:29%;}
+#topnav {float:right;width:29%;}
 #topnav a, #topnav span {float:left;}
 #topnav .ui-button-text {top:35px;font-size:12px;font-weight:bold;position:absolute;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;font-size:10px;}
@@ -68,21 +66,19 @@ img{border: 0;}
 div#subnav ul li a:hover {text-decoration:underline;}
 /*LOGIN VIEW*/
 #login h1 {font-size:18px;margin-bottom:2em;}
-#login_more_info {display:block;margin-top:650px;font-size:18px;position:absolute;margin-bottom:3em;}
+#login_more_info {display:block;margin-top:350px;font-size:18px;position:absolute;margin-bottom:3em;}
 #login_more_info span{display:block;}
 #login_more_info a {text-decoration:none;margin-right:0.3em;font-weight:bold;}
 #login_more_info a:hover {color:#506ab2;}
 #login_more_info img{display:block;margin-top:1.5em;}
 #login_menubar {margin-top:3em;}
 #login_menubar .ui-icon-lock,#login_settings .ui-icon-lock {margin-left:-3em;margin-right:2em;}
-.ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:2px;padding-top:75px;font-weight:bold;text-align:center;}
+.ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:2px;padding-top:75px;font-weight:bold;text-align:center;margin-right:16px;}
 .ui-login-menubar-a span  {display:none;font-size:12px;}
-/* CONTENT */
-#content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
 /* SIDE BOARD */
-#sideboard {float:right;width:20%;margin-top:-16em;display : none}
+#sideboard {float:right;width:20%;display : none}
 #sideboard-datetime-date {font-size: 140px;font-weight: bold;margin:0 0 -0.3em;}
-#sideboard-datetime-day {font-size: 14px;font-weight: bold;}
+#sideboard-datetime-day {font-size: 29px;font-weight: bold;}
 #sideboard-datetime-month {font-size: 14px;font-weight: bold;}
 #sideboard-datetime-year {font-size: 14px;font-weight: bold;}
 #sideboard-clock-digital {font-size: 14px;font-weight: bold;}
@@ -95,20 +91,28 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #menu li a{margin-right:16px;}
 #menu li a span{float:right;}
 #menu li div {display:inline;width:74px;}
-.default-icon {width:74px; height:74px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
-.default-icon-lock {width:74px; height:74px; background-image:url(../_img/icons_home_lock.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
-.default-icon-mail {background-position: 0 0;}
-.default-icon-settings {background-position: -90px 0;}
+.default-icon {width:74px; height:18px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
+/*.default-icon-lock {width:74px; height:74px; background-image:url(../_img/icons_home_lock.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}*/
+.default-icon-mail {background-position: -363px -328px;}
+.default-icon-settings {background-position: -546px -328px;}
 .default-icon-clock {background-position: -180px 0;}
-.default-icon-album {background-position: -362px 0;}
+.default-icon-album {background-position: -180px -328px;}
 .default-icon-printing {background-position: -270px 0;}
-.default-icon-filemanager {background-position: -454px 0;}
-.default-icon-downloads {background-position: -544px 0;}
-.default-icon-music {background-position: -635px 0;}
-.default-icon-logout {background-position: -726px 0;}
+.default-icon-filemanager {background-position: -0px -328px;}
+.default-icon-downloads {background-position: -272px -328px;}
+.default-icon-music {background-position: -90px -328px;}
+.default-icon-logout {background-position: -724px 0;}
+
+.default-icon-filemanager-lock {background-position: -0px -156px;}
+.default-icon-music-lock {background-position: -90px -156px;}
+.default-icon-album-lock {background-position: -181px -156px;}
+.default-icon-downloads-lock {background-position: -272px -156px;}
+.default-icon-mail-lock {background-position: -363px -156px;}
+.default-icon-settings-lock {background-position: -546px -156px;}
+
 #settings form {display:inline}
 /*UI ICON SET*/
-.ui-icons {background-image:url(../_img/icons.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
+.ui-icons {background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .ui-icon-help {width:15px; height:30px;background-position: -68px -224px;}
 .ui-icon-home {width:20px; height:30px;background-position: -5px -224px;;}
 .ui-icon-logout {width:24px; height:30px;background-position: -35px -224px;}
@@ -119,6 +123,27 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-lock {width:22px; height:29px;background-position: -320px -193px;}
 .ui-icon-open {width:23px; height:21px;background-position: -86px -224px;} 
 .ui-icon-close {width:23px; height:21px;background-position: -111px -224px;}
+
+.ui-icon-plusthick {width:37px; height:26px;background-position: -8px -64px;} 
+.ui-icon-pencil {width:37px; height:26px;background-position: -45px -64px;}
+.ui-icon-copy {width:37px; height:26px;background-position: -82px -64px;} 
+.ui-icon-download {width:37px; height:26px;background-position: -119px -64px;}
+.ui-icon-upload {width:37px; height:26px;background-position: -156px -64px;} 
+.ui-icon-move {width:37px; height:26px;background-position: -193px -64px;}
+.ui-icon-album {width:23px; height:21px;background-position: -230px -64px;}
+.ui-icon-unlocked {width:37px; height:26px;background-position: -266px -64px;} 
+.ui-icon-trash {width:37px; height:26px;background-position: -304px -64px;}
+
+.ui-icon-create-disable {width:37px; height:26px;background-position: -8px -103px;} 
+.ui-icon-rename-disable {width:37px; height:26px;background-position: -45px -103px;}
+.ui-icon-copy-disable {width:37px; height:26px;background-position: -82px -103px;} 
+.ui-icon-download-disable {width:37px; height:26px;background-position: -119px -103px;}
+.ui-icon-upload-disable {width:37px; height:26px;background-position: -156px -103px;} 
+.ui-icon-move-disable {width:37px; height:26px;background-position: -193px -103px;}
+.ui-icon-album-disable {width:23px; height:21px;background-position: -230px -103px;}
+.ui-icon-change-disable {width:37px; height:26px;background-position: -266px -103px;} 
+.ui-icon-delete-disable {width:37px; height:26px;background-position: -304px -103px;}
+
 /*WIZARD*/
 .ui-widget-wizard{width:50% !important;}
 /*FILE MANAGER*/
@@ -128,14 +153,14 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager:not(.clone) {cursor: pointer}
 .ui-filemanager:not(.clone) tbody tr.row-selected:hover * {	background-color: #e5e5e5 !important}
 #filetable_processing {padding: 30px; display: inline;}
-#filetable_wrapper button {border:0;}
+#filetable_wrapper button {border:0;background:transparent;margin:0;}
 .ui-filemanager span {float:left !important;}
 #fn-filemanager-information-panel {font-size:12px;width:957px;padding:0.4em;}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
+.ui-filemanager-state-header {background-color: #e5e5e5;color:#000}
 .ui-filemanager-state-dblckick {background-color:#fbec9d !important; }
-/*.ui-filemanager-state-hover {background-color: #e5e5e5;}*/
-.ui-filemanager-state-hover:hover {	background-color: #e5e5e5;}
-.ui-filemanager-state-selected {background-color: #506ab2;color:white;}
+.ui-filemanager-state-hover:hover {color:#000;background-color: #e5e5e5;}
+.ui-filemanager-state-selected {background-color: #506ab2;color:white;border:1px 0 solid #e4e4e4}
 .ui-filemanager-state-selected.ui-filemanager-state-hover:hover {background-color: #e5e5e5 !important;}
 .ui-filemanager-prev-arrow, .ui-filemanager-next-arrow {font-size: larger;	font-weight: bold;color:#506ab2;}
 .ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover {cursor: pointer;}
@@ -147,6 +172,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager-type-dir {}
 .ui-filemanager-type-row {cursor: pointer;}
 .ui-button-set {float:right;margin:0 4px;}
+.ui-filemanager-buttonbar span {margin:0}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
 .ui-button-text {font-size:16px;}
@@ -154,11 +180,13 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-element-width-100 {width:95% !important;}
 .ui-element-width-50 {width:50% !important;}
 #filemanager .ui-button-text {display:none;}
+/*HELP*/
 .ui-help-box, .ui-help-box .ui-widget-header,.ui-help-box .ui-widget-content {background:#000;color:white !important;}
-.ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.9 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)" !important;filter: alpha(opacity=90) !important;font-size:12px;}
-.ui-help-box a {color:white !important;}
-.ui-help-box p {color:white !important;font-size:12px}
-.ui-help-box a:hover {color:white !important}
+.ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(Opacity=95) !important;font-size:12px;}
+.ui-help-box a {color:white !important;font-weight:bold !important;}
+.ui-help-box #ui-dialog-title-1 {font-size:13px;}
+.ui-help-box p {color:white !important;font-size:12px;font-weight:bold;}
+.ui-help-box a:hover {color:white !important;}
 .ui-fake-updir {background:#EEE}
 /*SERVICES*/
 #services table {margin-bottom:31px}
@@ -166,6 +194,10 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #tr-network-ip td {padding-top:31px}
 #table-network-wan input{font-size:12px;font-weight:bold;padding:0.1em 0.4em;}
 #services td {width:88%;}
+/*SETTINGS*/
+div.hotfix {margin-top : 10px;	vertical-align : middle;}
+div.hotfix *{vertical-align : middle;	margin-right : 10px;}
+#settings fieldset.update {	min-height : 135px;}
 /*NETWORK*/
 #network input[type=submit],input[type=button] {margin: 1.2em;}
 /*DISK*/
@@ -224,7 +256,7 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog label {font-size:12px;}
 .ui-dialog table {margin:0;}
 .ui-dialog th {font-size:14px;padding:0}
-.ui-div-header {font-size:18px;padding:0.5em 1.2em;}
+.ui-div-header {font-size:14px;height:31px;padding:0em 1.2em;}
 #body_wizard .ui-dialog-title {display: none !important;}
 .ui-icon-bubba-switch-container {
 	height:21px;

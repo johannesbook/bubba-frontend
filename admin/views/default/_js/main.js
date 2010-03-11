@@ -69,9 +69,13 @@ function cursor_ready() {
 
 function logout_dialog() {
 	
-	var buttons = {};
-	buttons[$.message("logout-dialog-button-logout")] =  function() {window.location.href = config.prefix+"/logout";};
-	buttons[$.message("button-label-cancel")] =  function() {$(this).dialog('close');};
+	var buttons = [
+        {
+            'label': $.message("logout-dialog-button-logout"),
+			'callback': function(){window.location.href = config.prefix+"/logout";},
+			options: { 'id': 'fn-logout-dialog-button', 'class' : 'ui-element-width-100' }
+		}
+	];
 	$.confirm( 
 			$.message("logout-dialog-message"),
 			$.message("logout-dialog-title"),

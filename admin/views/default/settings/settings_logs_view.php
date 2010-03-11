@@ -1,6 +1,6 @@
 <form action="<?=FORMPREFIX?>/settings/logs" method="post">
-	<fieldset>
-		<legend><i><?=t('Show logs')?></i></legend>
+
+		<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('Show logs')?></div>
 		<select name="log">
 			<?foreach( $logs as $name => $path ):?>
 				<?if(is_array($path)):?>
@@ -25,5 +25,4 @@
 		<div class="line<?=$n++%2?>"><?=htmlspecialchars($line)?></div>
 		<?endforeach?>
 	</div>
-</fieldset>
 <?endif?>

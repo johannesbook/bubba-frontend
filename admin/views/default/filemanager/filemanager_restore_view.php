@@ -439,7 +439,7 @@ function progressReport() {
 <div class="ui-state-default ui-widghet-header ui-div-header"><?=t('Restore user data')?></div>
 
 <div id="restore">	
-	<div id="backup_header" class="ui-filemanager-state-hover">
+	<div id="backup_header" class="ui-filemanager-state-header">
 		<div class="jobs"><?=t("Existing jobs")?></div>
 		<div class="date"><?=t("Backup date")?></div>
 		<div class="status"><?=t("Backup status")?></div>

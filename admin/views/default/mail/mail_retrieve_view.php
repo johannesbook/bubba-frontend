@@ -3,7 +3,7 @@
 <tr>
 	<th colspan="7" class="ui-state-default ui-widget-header"><?=t('mail-retrieve-title')?></th>
 </tr>
-<tr>
+<tr class="ui-filemanager-state-header">
    <th><?=t('Host')?></th>
    <th><?=t('Protocol')?></th>
    <th><?=t('Username')?></th>

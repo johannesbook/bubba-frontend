@@ -58,7 +58,6 @@ var window_album;
 	
 $(document).ready(function(){
 	
-		
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
   	});
@@ -93,14 +92,14 @@ $(document).ready(function(){
 	$('#sideboard_switch').click(function(event) {  
 		if($('#sideboard').is(":visible")) {
 			$('#sideboard').hide();
-			$("#content").css("width","95%");
+			$("#content_wrapper").css("width","95%");
 			$("#topnav").css("width","29%");		
 			$('#sideboard_switch').addClass('ui-icon-open ');
 			$('#sideboard_switch').removeClass('ui-icon-close ');		
 			$.post(config.prefix+"/users/config/1/show_sideboard/0");
 		} else {
 			$('#sideboard').show();
-			$("#content").css("width","75%");
+			$("#content_wrapper").css("width","75%");
 			$("#topnav").css("width","45%");			
 			$('#sideboard_switch').addClass('ui-icon-close ');
 			$('#sideboard_switch').removeClass('ui-icon-open ');		
@@ -108,7 +107,7 @@ $(document).ready(function(){
 		}
 	});
 <?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
-	$("#content").css("width","75%");
+	$("#content_wrapper").css("width","75%");
 	$("#sideboard").show();
 <?endif?>
 
@@ -158,34 +157,40 @@ if(isset($head)) {
 ?>
 </head>
 <body id="body_<?=$this->uri->segment($this->uri->total_segments())?>">
-    <div id="wrapper">	
-        <div id="header">		
-            <div id="topnav">
-            		<?if ($this->session->userdata("valid")) { ?>
-	                <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
-            		<?} else {?>
-	                <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
-            		<? } ?>
-                <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span></button>
-                <span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span>
-                <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span></button>
-                <span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span>
-                <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span></button>
-                <span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span>
-                <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
-            </div>	<!-- topnav -->
-            <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
-            <?=$navbar?>
-        </div>	<!-- header -->		
-        <?if(! (isset($wizard) && $wizard)):?>
-        <div id="content">
-        	<div id="<?=$this->uri->segment(1)?>"> 	<!-- section -->
-            	<?=$content?>
-          	</div> 	<!-- section -->
-        </div>	<!-- content -->
-      	<?endif?>
+    <div id="wrapper">	    
+    
+        <div id="topnav">
+            <?if ($this->session->userdata("valid")) { ?>
+	            <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
+            <?} else {?>
+	            <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
+            <? } ?>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span></button>
+            
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span></button>
+            
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span></button>
+            
+            <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
+        </div>	<!-- topnav -->    
+    
+        <div id="content_wrapper">	
+            <div id="header">		
+                
+                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
+                <?=$navbar?>
+            </div>	<!-- header -->		
+            <?if(! (isset($wizard) && $wizard)):?>
+            <div id="content">
+            	<div id="<?=$this->uri->segment(1)?>"> 	<!-- section -->
+                	<?=$content?>
+              	</div> 	<!-- section -->
+            </div>	<!-- content -->
+          	<?endif?>
+            
+        </div>	<!-- content_wrapper -->
         <?include("sideboard_view.php")?>
-    </div>	<!-- wrapper -->
+    </div> <!-- wrapper -->
 		<?=$dialog_menu?>
     <div id="update_status"></div>
 
