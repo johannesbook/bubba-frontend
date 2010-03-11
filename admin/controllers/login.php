@@ -123,9 +123,13 @@ class Login extends Controller{
 		if($json_data["valid_session"] = $this->Auth_model->CheckAuth()) {
 			$json_data["user"] = $this->session->userdata('user');
 		}
-		
 		echo json_encode($json_data);
 	}
 
+	function shutdown_confirmed(){
+		// needs to be here since this is the only controller that does not require a valid session.
+		$mdata["content"]=$this->load->view(THEME.'/shutdown_view','',true);
+		$this->load->view(THEME.'/main_view',$mdata);
+	}
 }
 ?>

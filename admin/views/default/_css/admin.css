@@ -276,3 +276,18 @@ input.mount {width : 75px;	margin : 0;}
 	.ui-icon-bubba-switch.ui-state-disabled {
 		background-image:url(../_img/bubba_switch_disabled.png);
 	}
+
+label.error {
+	position : relative;
+	top : -50px;
+	left : -30px;
+  background:url("/admin/views/default/_img/x15.png") no-repeat 0px 0px;
+	padding : 5px;
+  padding-left: 15px;
+  color: #fff;
+  background-color : #656565;
+  font-size : 12px;
+}
+input.error {
+	border : 2px solid #506AB2;
+}

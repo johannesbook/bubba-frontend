@@ -25,16 +25,21 @@ class Shutdown extends Controller{
 		}
 	}
 	
-	function confirm(){
+	function confirm($strip=""){
 		if(!$this->input->post('shutdown') || $this->input->post('cancel')) {
 			redirect('/stat');
 		} else {
-			$mdata["navbar"]="";
-			$mdata["content"]=$this->load->view(THEME.'/shutdown_view','',true);
-			$this->load->view(THEME.'/main_view',$mdata);
-
 			power_off();
 			$this->Auth_model->Logout();
+			if($strip) {
+				$json_data['error'] = false;
+				echo json_encode($json_data);				
+			} else {
+				$mdata["navbar"]="";
+				$mdata["content"]=$this->load->view(THEME.'/shutdown_view','',true);
+				$this->load->view(THEME.'/main_view',$mdata);
+	
+			}
 		}
 	}
 }	

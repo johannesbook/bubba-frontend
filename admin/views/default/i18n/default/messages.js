@@ -29,8 +29,8 @@ messages = {
 	"mail-dialog-delete-title" : "Delete mail account"	,
 	
 	// Logout
-	"logout-dialog-title" : "Proceed with logout?",
-	"logout-dialog-message" : "",
+	"logout-dialog-title" : "Logout",
+	"logout-dialog-message" : "Proceed with logout?",
 	"logout-dialog-button-logout" : "Logout",
 
 	// Login
@@ -46,6 +46,11 @@ messages = {
 	"mail-retrieve-add-success-message": "Successfully added new mail account",
 	"mail-retrieve-edit-success-message": "Successfully edited mail account",
 	"mail-retrieve-edit-dialog-header": "Edit mail account information for host <em>%s</em>",
-	"mail-retrieve-delete-success-message" : "Successfully deleted mail account"
+	"mail-retrieve-delete-success-message" : "Successfully deleted mail account",
+	
+	// Stat
+	"stat-shutdown-button-continue" : "Shut down",
+	"stat-shutdown-confirm-message" : "Proceed to shut down Bubba|2",
+	"stat-shutdown-confirm-title" : "Shut down"
 	
 }

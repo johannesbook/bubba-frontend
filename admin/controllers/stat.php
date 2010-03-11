@@ -17,6 +17,7 @@ class Stat extends Controller{
 	function _renderfull($content){
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
+		$mdata["head"] = $this->load->view(THEME.'/stat/stat_head_view',$navdata,true);;
 		if($this->session->userdata("run_wizard")) {
 			$mdata["dialog_menu"] = "";
 			$mdata["content"]="";
@@ -80,13 +81,13 @@ class Stat extends Controller{
 		$sdata['notifications'] = $this->notify->list_all();
 
 		if($strip){
-			$this->load->view(THEME.'/stat_view',$sdata);
+			$this->load->view(THEME.'/stat/stat_view',$sdata);
 		} else {
 			$sdata['wiz_data'] = array();
 			if( $this->session->userdata("run_wizard") ) {
 				redirect('/settings/wizard');
 			} else {
-				$this->_renderfull($this->load->view(THEME.'/stat_view',$sdata,true));
+				$this->_renderfull($this->load->view(THEME.'/stat/stat_view',$sdata,true));
 			}
 		}
 	}

@@ -7,7 +7,8 @@ class Menu extends Model {
 			'uri' => '/stat',
 			'auth' => true,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-logout',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-settings","default-icon-settings-lock"),
 			'allow' => array( 'admin' ),
 		),
 	);
@@ -18,21 +19,25 @@ class Menu extends Model {
 			'uri' => '/filemanager',
 			'auth' => true,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-filemanager',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-filemanager","default-icon-filemanager-lock"),
 		),
 		array(
 			'id' => 'music',
 			'uri' => '/music',
 			'auth' => true,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-music',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-music","default-icon-music-lock"),
+			'target' => "_blank",
 		),
 		array(
 			'id' => 'album',
 			'uri' => '/album',
 			'auth' => false,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-album',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-album","default-icon-album-lock"),
 			'abs_uri' => true,
 			'target' => "window_album",
 		),
@@ -41,7 +46,8 @@ class Menu extends Model {
 			'uri' => '/downloads',
 			'auth' => true,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-downloads',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-downloads","default-icon-downloads-lock"),
 			'deny' => array( 'admin' ),
 		),
 		array(
@@ -49,7 +55,8 @@ class Menu extends Model {
 			'uri' => '/pim',
 			'auth' => false,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-mail',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-mail","default-icon-mail-lock"),
 			'abs_uri' => true,
 			'target' => "window_pim",
 		),
@@ -58,7 +65,8 @@ class Menu extends Model {
 			'uri' => '/users',
 			'auth' => true,
 			'class' => 'ui-login-menubar-a',
-			'icon' => 'default-icon default-icon-settings',
+			'icon' => 'default-icon',
+			'lock-icon' => array("default-icon-settings","default-icon-settings-lock"),
 		),
 		/*array(
 			'id' => 'home',
@@ -378,30 +386,30 @@ class Menu extends Model {
 
 
 			$item_locked = " fn-login-state-nolock";
-			$ui_item_locked = "";
+			$lock_icon = $menu_value['lock-icon'][0];
 			if($menu_value["auth"] && !$this->session->userdata("valid")) {
 				$item_locked = " fn-state-login-lock";
-				$ui_item_locked = " ui-icon-lock";
+				$lock_icon = $menu_value['lock-icon'][1];
 			}
 			if(isset($menu_value['deny']) && in_array($user,$menu_value['deny']) ) {
 				$item_locked = " fn-state-login-lock";
-				$ui_item_locked = " ui-icon-lock";
+				$lock_icon = $menu_value['lock-icon'][1];
 			}
 			if(isset($menu_value['allow']) && (sizeof($menu_value['allow']) == 1) ) {
 				$menubar[$menu_value['id']]['name'] = $menu_value['allow'][0];
 				if(!in_array($user,$menu_value['allow'])) {
 					$item_locked = " fn-state-login-lock";
-					$ui_item_locked = " ui-icon-lock";
+					$lock_icon = $menu_value['lock-icon'][1];
 				}
 			}
 			$menubar[$menu_value['id']]['class'] .= $item_locked;
-			$menubar[$menu_value['id']]['ui_lock'] = $ui_item_locked;
+			$menubar[$menu_value['id']]['class'] .= " " . $lock_icon;
 		}
 		
 		$mymenu = array();
 		foreach($menubar as $id => $tags) {
 			/*<a class="ui-login-menubar-a default-icon default-icon-settings fn-login-auth-required <?=$ui_login_user_lock?>" href="<?=FORMPREFIX?>/userinfo/"><span><?=t("menubar_usersettings")?></span></a>*/
-			$mymenu[] = "<a ".$tags["target"]." class='fn-login-dialog-a ".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a><span class='ui-icons".$tags["ui_lock"]."'></span>";
+			$mymenu[] = "<a ".$tags["target"]." class='fn-login-dialog-a ".$tags['class']."' href='".$tags['uri']."' name='".$tags['name']."'><span>".t("menubar-link-".$id)."</span></a>";
 		}
 		return $mymenu;
 	}

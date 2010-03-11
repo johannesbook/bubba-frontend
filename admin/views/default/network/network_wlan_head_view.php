@@ -21,10 +21,6 @@ labels = {
 <script  type="text/javascript">
 $(document).ready( function() {
 	
-	if(<?=isset($update)?"$update":"'0'"?>) {
-		update_status("<?=isset($success)?$success:"fail"?>","<?=isset($update_msg)?t($update_msg):""?>");
-	}
-
   if( wlan_configurable ) {
       $("#wLANCFG :disabled").removeAttr("disabled");
 	  if( ! capabilities["RX_GF"] ) {
@@ -165,15 +161,3 @@ $(document).ready( function() {
 	$('select#mode').trigger('change');
 });
 </script>
-
-<style>
-label.error {
-  background:url("/admin/views/default/_img/x15.png") no-repeat 0px 0px;
-  padding-left: 16px;
-  padding-bottom: 2px;
-  color: #ea5200;
-}
-
-/* select#mode { 	width : 225px;} Maxim Skall raderas om den ej används i js*/ 
-
-</style>

@@ -32,7 +32,7 @@
 	</form>
 	</div>
 
-	<div class="wiz userlist">
+	<div id="ui-wizard-userlist" class="wiz userlist">
 	<table id="wizard_ulist">
 	<tr><td colspan="2" class="wiz_head"><?=t("Existing users")?></td></tr>	
 	<tr><td class="wiz_head"><?=t("Username")?></td><td class="wiz_head"><?=t("Real name")?></td></tr>	

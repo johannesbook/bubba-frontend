@@ -22,20 +22,21 @@ $('form.ack').live( 'submit', function(e) {
 });
 </script>
 
-<h1><?=t('Welcome to your BUBBA|TWO')?></h1>
-
-
 
 <table>
 <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Info')?></td></tr>
+<tr>
+	<td>
+		<canvas id="piechart" width="120" height="70" rel="<?=$percentused?>">
+			<div class="progress">
+				<div class="bar" style="width:<?=$percentused?>%"><span><?=$percentused?>%</span></div>
+			</div>
+			</canvas>
+	</td>
+	<td></td>
+</tr>
 <tr><td><?=t('Total disk size')?></td><td><?=$totalspace?> MB</td></tr>
 <tr><td><?=t('Free disk space')?></td><td><?=$freespace?> MB</td></tr>
-<tr>
-	<td></td>
-	<td>
-		<div><div style="width: <?=$percentused?>%"></div></div>
-	</td>
-</tr>
 
 <tr><td><?=t('Uptime')?></td><td>
 <? if($uptime[0]>0) print($uptime[0]." ".t('days')." "); ?>
@@ -47,9 +48,8 @@ $('form.ack').live( 'submit', function(e) {
 <?if($this->session->userdata('user')=="admin"):?>
 <form action="shutdown" method="post">
 <tr>
-    <td><?=t('Press button to shut down Bubba Server now')?></td>
     <td>
-        <input class='submitbutton' type='submit' name='powerdown' value='<?=t('Power down')?>'/>
+        <input id="stat-shutdown" class='submitbutton' type='submit' name='powerdown' value='<?=t('Power down')?>'/>
     </td>
 </tr>
 </form>

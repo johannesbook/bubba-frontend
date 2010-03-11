@@ -29,7 +29,7 @@
 <?endif?>
 
 <!-- Sideboard gadgets -->
-<!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.js"></script><![endif]-->
+<!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.compiled.js"></script><![endif]-->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/coolclock.js"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.jclock.js"></script>
 
@@ -89,7 +89,7 @@ $(document).ready(function(){
 	$("#fn-topnav-logout").mouseover(function(e) {		$("#s-topnav-logout").show();	});	
 	$("#fn-topnav-logout").mouseout(function(e) {		$("#s-topnav-logout").hide();	});
 	
-	$('#sideboard_switch').click(function(event) {  
+	$('#sideboard_switch').click(function(event) {
 		if($('#sideboard').is(":visible")) {
 			$('#sideboard').hide();
 			$("#content_wrapper").css("width","95%");
@@ -145,7 +145,12 @@ $(document).ready(function(){
 
 	<?if(isset($wizard) && $wizard): ?>
 		// load wizard dialog here
-		$.dialog($("#wizard").children(),"",{},{dialogClass : 'ui-widget-wizard ui-wizard-notitle', draggable : false, close : exit_wizard});
+		$.dialog(
+			$("#wizard").children(),
+			"",
+			{},
+			{dialogClass : 'ui-widget-wizard ui-wizard-notitle', draggable : false, close : exit_wizard}
+		);
 	<?endif?>
 });
 </script>

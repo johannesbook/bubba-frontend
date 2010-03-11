@@ -33,7 +33,7 @@ function dialog_loginclose_callback() {
 }
 
 function dialog_login(e) {
-	self = this;
+	that = this;
 	required_user = <?=(isset($required_user) && $required_user)?"\"$required_user\"":"false"?>;
 	if($(this).hasClass("fn-require-auth") && $(this).attr("name")) {
 		required_user = $(this).attr("name");
@@ -53,7 +53,7 @@ function dialog_login(e) {
 				[
 					{
 						'label': $.message("login-dialog-continue"),
-						'callback': function(){ return postlogin_callback.apply( self, [e])},
+						'callback': function(){ return postlogin_callback.apply( that, [e])},
 						options: { 'id': 'fn-login-dialog-button', 'class' : 'ui-element-width-100' }
 					}
 				],
