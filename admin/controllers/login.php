@@ -18,8 +18,7 @@ class Login extends Controller{
 				$data['authfail'] = false;
 				if ($myuser == 'admin') {
 					$this->session->set_userdata("AllowRemote", false);
-					$wanip = get_interface_info($this->networkmanager->get_wan_interface());
-					if(count($wanip)>0 && $_SERVER["SERVER_ADDR"] == $wanip[0]) {
+					if($this->networkmanager->access_interface() == "wan") {
 						$admin_wanaccess = true;
 					}
 				}
