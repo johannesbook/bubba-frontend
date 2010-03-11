@@ -149,7 +149,7 @@ $(document).ready(function(){
 			$("#wizard").children(),
 			"",
 			{},
-			{dialogClass : 'ui-widget-wizard ui-wizard-notitle', draggable : false, close : exit_wizard}
+			{dialogClass : 'ui-widget-wizard', draggable : false, close : exit_wizard}
 		);
 	<?endif?>
 });
