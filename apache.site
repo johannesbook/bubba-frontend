@@ -78,5 +78,12 @@
 		Order allow,deny
 		Allow from all
 	</Directory>
+	
+	<Proxy *>
+		Order deny,allow
+		Allow from all
+	</Proxy>
+	ProxyPass /music http://localhost:3689
+	ProxyPassReverse /music http://localhost:3689
 
 </VirtualHost>

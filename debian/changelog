@@ -1,3 +1,9 @@
+bubba-frontend (1.9.0) claire; urgency=low
+
+  * Add reverse proxy for mt-daapd
+
+ -- Tor Krill <tor@excito.com>  Thu, 11 Mar 2010 18:55:34 +0100
+
 bubba-frontend (1.3.2) claire; urgency=low
 
   [ Carl Fürstenberg ]
