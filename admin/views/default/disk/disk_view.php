@@ -1,7 +1,7 @@
 
 <table class="disks">
 <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Disk information')?></td></tr>
-<tr class="ui-filemanager-state-header">
+<tr class="ui-header">
 	<th></th>
 	<th class="col1"><?=t('Disk')?></th>
 	<th><?=t('Device')?></th>
@@ -58,7 +58,7 @@
 
 <table class="typetable">
 <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Partition information')?></td></tr>
-<tr class="ui-filemanager-state-header">
+<tr class="ui-header">
 	<th class="colorcode"></th>
 	<th><?=t('Partition')?></th>
 	<th><?=t('Partition label')?></th>

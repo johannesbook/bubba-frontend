@@ -36,6 +36,7 @@ img{border: 0;}
 
 /*GENERAL CLASSES */
 .ui-header {background-color: #e5e5e5;color:#000;padding-left:1.2em;}
+.ui-div-header {font-size:14px;height:31px;padding:7px 1.2em;height:17px;}
 label.error { position : relative; top : -50px;	left : -30px;padding : 5px;  padding-left: 15px;  color: #fff; background-color : #656565; font-size : 12px;width:300px;z-index:100px;}
 input.error { border : 2px solid #506AB2;}
 
@@ -89,7 +90,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #sideboard-datetime-month {font-size: 14px;font-weight: bold;}
 #sideboard-datetime-year {font-size: 14px;font-weight: bold;}
 #sideboard-clock-digital {font-size: 14px;font-weight: bold;}
-#sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;}
+#sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;margin-top:3px;}
 
 /* HOME MENU */
 .ui-dialog-menu {text-align: center;height:140px !important;width:568px !important;border:0;opacity:0.85 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)" !important;filter: alpha(opacity=85) !important;max-height:140px;max-width:568px;}
@@ -142,15 +143,15 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-unlocked {width:37px; height:26px;background-position: -266px -64px;} 
 .ui-icon-trash {width:37px; height:26px;background-position: -304px -64px;}
 
-.ui-icon-create-disable {width:37px; height:26px;background-position: -8px -103px;} 
-.ui-icon-rename-disable {width:37px; height:26px;background-position: -45px -103px;}
-.ui-icon-copy-disable {width:37px; height:26px;background-position: -82px -103px;} 
-.ui-icon-download-disable {width:37px; height:26px;background-position: -119px -103px;}
-.ui-icon-upload-disable {width:37px; height:26px;background-position: -156px -103px;} 
-.ui-icon-move-disable {width:37px; height:26px;background-position: -193px -103px;}
-.ui-icon-album-disable {width:23px; height:21px;background-position: -230px -103px;}
-.ui-icon-change-disable {width:37px; height:26px;background-position: -266px -103px;} 
-.ui-icon-delete-disable {width:37px; height:26px;background-position: -304px -103px;}
+.ui-icon-create-disable {width:39px; height:26px;background-position: -8px -103px;} 
+.ui-icon-rename-disable {width:39px; height:26px;background-position: -45px -103px;}
+.ui-icon-copy-disable {width:39px; height:26px;background-position: -82px -103px;} 
+.ui-icon-download-disable {width:39px; height:26px;background-position: -119px -103px;}
+.ui-icon-upload-disable {width:39px; height:26px;background-position: -156px -103px;} 
+.ui-icon-move-disable {width:39px; height:26px;background-position: -193px -103px;}
+.ui-icon-album-disable {width:39px; height:21px;background-position: -230px -103px;}
+.ui-icon-change-disable {width:39px; height:26px;background-position: -266px -103px;} 
+.ui-icon-delete-disable {width:39px; height:26px;background-position: -304px -103px;}
 
 /*WIZARD*/
 .ui-widget-wizard h1 {font-size:22px !important;margin-top:0;}
@@ -171,7 +172,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager:not(.clone) tbody tr.row-selected:hover * {	background-color: #e5e5e5 !important}
 #filetable th {text-align:left;}
 #filetable_processing {padding: 30px; display: inline;}
-#filetable_wrapper button {border:0;background:transparent;margin:0;width:35px;display:inline}
+#filetable_wrapper button {border:0;background:transparent;margin:0;width:39px;display:inline}
 #filetable_wrapper button:hover {cursor: pointer;}
 .ui-filemanager span {float:left !important;}
 #fn-filemanager-information-panel {font-size:12px;width:957px;padding:0.4em;}
@@ -200,6 +201,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-element-width-100 {width:95% !important;}
 .ui-element-width-50 {width:50% !important;}
 #filemanager .ui-button-text {display:none;}
+
 /*FILEMANAGER UPLOAD*/
 #uploaddiv {padding:15px;}
 #uploaddiv input{height:21px;}
@@ -207,6 +209,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #pg_adder input {padding:0;display:inline;}
 #submitbutton {margin-top:1em;}
 #upload_close {position:absolute;top:5px;left:95%;margin:0;backround:transparent;}
+
 /*HELP*/
 .ui-help-box, .ui-help-box .ui-widget-header,.ui-help-box .ui-widget-content {background:#000;color:white !important;}
 .ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(Opacity=95) !important;font-size:12px;}
@@ -215,6 +218,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-help-box p {color:white !important;font-size:12px;font-weight:bold;}
 .ui-help-box a:hover {color:white !important;}
 .ui-fake-updir {background:#EEE}
+
 /*SERVICES*/
 #services table {margin-bottom:31px}
 #tr-network-gateway,#tr-network-ip,#tr-network-netmask {border-bottom:0}
@@ -236,6 +240,11 @@ div.hotfix *{vertical-align : middle;	margin-right : 10px;}
 #network input[type=submit],input[type=button] {margin: 1.2em;}
 
 /*DISK*/
+#lvm {margin-top:1em;}
+#lvm select {width:300px;}
+#lvm label {padding-left:1.25em;margin-right:30px;}
+#raid p {padding-left:1.25em;}
+#status_mark {cursor:pointer !important;}
 table.typetable > tbody > tr > td {	vertical-align : middle;	padding : 0.5em 0.5em;}
 table.typetable > tbody > tr > th {	padding : 0.5em 0.5em;}
 table.disks {	width: 100%;	margin : 0px;}
@@ -294,7 +303,7 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog label {font-size:12px;}
 .ui-dialog table {margin:0;}
 .ui-dialog th {font-size:14px;padding:0}
-.ui-div-header {font-size:14px;height:31px;padding:0em 1.2em;}
+
 .ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
 	
 

@@ -1,10 +1,16 @@
-
+<div id="raid">
 	<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
-	<div id="raid_text">
-		<div><input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
-		<?=t("disk_raid_create_message")?>.</div>
-		<div><input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
-		<?=t("disk_raid_recover_message")?>.</div>
+	<div>
+		<div>
+		    <input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
+    		<p>
+    		    <?=t("disk_raid_create_message")?>.
+		    </p>
+            <input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
+    		<p>
+    		    <?=t("disk_raid_recover_message")?>.
+            </p>    		    
+		</div>
 	</div>
 
 
@@ -22,8 +28,10 @@
 	<div class="raid_status <?=$stat['type']?>">
 	<?if($stat['type'] == 'degraded'):?>
 		<?if($stat['sync'] == 'recover'):?>
-			<div class="raid_text"><strong><?=t("disk_raid_degraded_recover_status_message",$stat['dev'])?>.</strong></div><br>
-			<div class="raid_text">
+			<div >
+			    <p><strong><?=t("disk_raid_degraded_recover_status_message",$stat['dev'])?>.</strong></p>
+            </div>
+			<div >
 				<? if ($stat['eta'][0]) { ?>
 					<?=t("disk_raid_degraded_recover_status_message_eta_hours",
 					round($stat['progress'],0),
@@ -36,37 +44,48 @@
 				<? } ?>
 			</div>
 		<?elseif (!$faulty):?>
-			<div class="highlight raid_text"><strong><?=t("disk_raid_degraded_message")?></strong></div>
-			<div class="raid_text">
-				<br>
-				<?=t("disk_raid_degraded_missing_disk_message",$stat['dev'])?>.
+			<p>
+			    <strong><?=t("disk_raid_degraded_message")?></strong>
+            </p>
+			<div >
+				<p>
+				    <?=t("disk_raid_degraded_missing_disk_message",$stat['dev'])?>.
+				</p>
 			</div>
 		<?endif?>
 	<?elseif($stat['type'] == 'faulty'):?>
-		<div class="highlight raid_text"><strong><?=t("disk_raid_external_failure_title")?></strong></div><br>
-		<div class="raid_text">
-			<?=t("disk_raid_external_failure_message_1", $stat['device'])?>.
-			<br><br>
-			<?=t("disk_raid_external_failure_message_2")?>.
-			<br>
-			<?=t("disk_raid_external_failure_message_3")?>.
+		<div>
+		    <p><strong><?=t("disk_raid_external_failure_title")?></strong></p>
+        </div>
+		<div >
+		    <p>
+			    <?=t("disk_raid_external_failure_message_1", $stat['device'])?>.
+			</p>
+    	    <p>
+			    <?=t("disk_raid_external_failure_message_2")?>.
+			</p>
+		    <p>
+    			<?=t("disk_raid_external_failure_message_3")?>.
+			</p>
 		</div>
 	<?endif?>
 	</div>
 	<?endforeach?>
 <? } else {
 		if(sizeof($raids)) {
-			print "<div class='raid_text'>";
+			print "<p>";
 			print t("disk_raid_normal_op_message");
-			print "</div>";
+			print "</p>";
 		} else {
-			print "<div class='raid_text'>";
+			print "<p>";
 			print t("disk_raid_not_activated_message");
-			print "</div>";
+			print "</p>";
 		}
  	 } ?>
 
-<div id="raid_status" class="expansion ui-state-default ui-widghet-header ui-div-header"><span id="status_mark">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?></div>
+<div id="raid_status" class="expansion ui-state-default ui-widghet-header ui-div-header">
+    <span id="status_mark">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?>
+</div>
 	<div id="adv_status">
 	
 		<?=t('disk_raid_list_of_arrays_title')?>
@@ -115,3 +134,4 @@
 		<?endforeach?>
 		</table>		
 	</div>
+</div>	

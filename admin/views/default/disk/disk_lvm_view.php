@@ -1,6 +1,6 @@
     <div class="ui-state-default ui-widghet-header ui-div-header"><?=t('Extend logical volume')?></div>
 	<div id="lvm">
-		<?=t("Extend")?>
+		<label for="logical_volume"><?=t("Extend")?></label>
 		<select  <?= sizeof( $lvs ) == 0 ? 'disabled="disabled"' : '' ?> id="logical_volume" class="volume">
 			<?foreach( $lvs as $lv ):?>
 				<option value="<?=$lv?>"><?
