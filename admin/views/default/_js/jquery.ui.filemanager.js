@@ -24,11 +24,11 @@
 	   cols = this.options.columns;
 	   if(!cols) {
 		   cols = [
-		   { "sWidth": "5%", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
-		   { "sWidth": "60%", "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-name" },
-		   { "sWidth": "20%", "sClass": "ui-filemanager-column-date" },
+		   { "sWidth": "0px", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
+		   { "sWidth": "auto", "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-name" },
+		   { "sWidth": "22ex", "sClass": "ui-filemanager-column-date" },
 		   { "sWidth": "10%", "sClass": "ui-filemanager-column-size" },
-		   { "sWidth": "5%", "bSortable": false, "sClass": "ui-filemanager-column-next" }
+		   { "sWidth": "30px", "bSortable": false, "sClass": "ui-filemanager-column-next" }
 	   ];
 	   }
 	   var self = this;
