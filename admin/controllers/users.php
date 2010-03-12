@@ -86,6 +86,17 @@ class Users extends Controller{
 		return $result;
 	}
 
+	public function check_username($strip="") {
+		if( $strip == 'json' ) {
+			$username=strtolower(trim($this->input->post('input_username')));
+
+
+			header("Content-type: application/json");
+			echo json_encode( !user_exists( $username ) );
+
+		}
+	}
+
 	public function add_user_account($strip=""){
 		if( $strip == 'json' ) {
 			require_once(APPPATH."/legacy/user_auth.php");
@@ -106,7 +117,7 @@ class Users extends Controller{
 			$uinfo=get_userinfo();
 
 			if (
-				isset($uinfo[$username])
+				isset($userinfo[$username])
 				|| $username == "root"
 				|| $username == "storage"
 				|| $username == "web"

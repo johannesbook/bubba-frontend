@@ -1,5 +1,7 @@
+
 $(document).ready(function(){
-		if( ! is_priviledged_user ) {
+
+if( ! is_priviledged_user ) {
 			var source_edit_dialog = $("#fn-users-list-edit");
 			source_edit_dialog.appendTo(source_edit_dialog.parent().parent());
 			source_edit_dialog.find('input[name=input_username]').attr('disabled','disabled');
@@ -22,6 +24,19 @@ $(document).ready(function(){
 				});
 			return;
 		}
+
+		var dialog_options = { 
+			"autoOpen": false,
+			"width": 400,
+			"open": function(event,ui) {
+				$(".fn-primary-field", this).focus();
+			}
+		};
+		var source_edit_dialog = $("#fn-users-list-edit");
+		var add_dialog, edit_dialog;
+		var edit_validator, add_validator;
+
+		// This function redraw the user table
 		var update_user_table = function(dialog, accounts) {
 			var table = $("#fn-users-list tbody");
 			table.empty();
@@ -38,36 +53,7 @@ $(document).ready(function(){
 								html: $('<button/>',
 									{ 
 										html: $.message('button-label-edit'),
-										click: $.proxy(function() {
-												$("h2.fn-dialog-header", dialog).html($.message("users-list-edit-dialog-header", data.server));
-												$("form",this).trigger("reset");
-												$('input[name=username],input[name=input_username]', this).val(data.username);
-												$('input[name=realname]', this).val(data.realname);
-												$('input[name=password1]', this).val("");
-												$('input[name=password2]', this).val(""); disabled="disabled"
-
-												if( data['allow:enable_shell'] ) {
-													$('input[name=shell]', this).val(data.shell || false).closest('tr').show();
-												} else {
-													$('input[name=shell]', this).val(false).closest('tr').hide();
-												}
-												$('input[name=realname]', this).attr('disabled', !data['allow:enable_rename']);
-
-												if( data['allow:disable_remote'] ) {
-													$('input[name=remote]', this).val(data.remote || false).closest('tr').show();
-												} else {
-													$('input[name=remote]', this).val(true).closest('tr').hide();
-												}												
-
-												if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
-													$('input[name=sideboard]', this).val(data.sideboard || false).closest('tr').show();
-												} else {
-													$('input[name=sideboard]', this).val(false).closest('tr').hide();
-												}
-												this.dialog("open");
-											},
-											dialog
-										)
+										click: function(){open_edit_dialog_callback.apply(dialog, [data])}
 									}
 								)
 							}
@@ -77,15 +63,144 @@ $(document).ready(function(){
 				}
 			);			
 		}
-		var options = { 
-			"autoOpen": false,
-			"width": 400,
-			"open": function(event,ui) {
-				$(".fn-primary-field", this).focus();
+
+		// This callback is fired each time click on "edit" is performed
+		var open_edit_dialog_callback = function(data) {
+			$("h2.fn-dialog-header", this).html($.message("users-list-edit-dialog-header", data.server));
+			edit_validator.resetForm();
+			$('input[name=username],input[name=input_username]', this).val(data.username);
+			$('input[name=realname]', this).val(data.realname);
+			$('input[name=password1]', this).val("");
+			$('input[name=password2]', this).val(""); disabled="disabled"
+
+			if( data['allow:enable_shell'] ) {
+				$('input[name=shell]', this).val(data.shell || false).closest('tr').show();
+			} else {
+				$('input[name=shell]', this).val(false).closest('tr').hide();
 			}
+			$('input[name=realname]', this).attr('disabled', !data['allow:enable_rename']);
+
+			if( data['allow:disable_remote'] ) {
+				$('input[name=remote]', this).val(data.remote || false).closest('tr').show();
+			} else {
+				$('input[name=remote]', this).val(true).closest('tr').hide();
+			}												
+
+			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
+				$('input[name=sideboard]', this).val(data.sideboard || false).closest('tr').show();
+			} else {
+				$('input[name=sideboard]', this).val(false).closest('tr').hide();
+			}
+			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
+				$('#fn-users-edit-dialog-delete-button').hide();
+			} else {
+				$('#fn-users-edit-dialog-delete-button').show();
+			}			
+			this.dialog("open");
 		};
-		var source_edit_dialog = $("#fn-users-list-edit");
-		var add_dialog, edit_dialog;
+
+
+		// the callback when confirming adding
+		var add_dialog_button_callback = function(){
+			if( ! add_validator.form() ) {
+				return false;
+			}
+			$('input[name=username]',this).val($('input[name=input_username]',this).val());
+			$.post( config.prefix + "/users/add_user_account/json", $('form', this).serialize(), function(data){
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						update_status( true, $.message("users-list-add-success-message") );
+						$.post(
+							config.prefix + "/users/index/json",
+							{},
+							function(data) {
+								add_dialog.dialog('close');
+								update_user_table( edit_dialog, data.accounts );
+							},
+							'json'
+						);
+					}
+				}, 'json' 
+			);
+		};
+
+		// the callback when confirming update
+		var edit_dialog_button_update_callback = function(){	
+			if( ! edit_validator.form() ) {
+				return false;
+			}
+			$('input[name=username]',this).val($('input[name=input_username]',this).val());
+
+			$.post( config.prefix + "/users/edit_user_account/json", $('form', this).serialize(), function(data){
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						update_status( true, $.message("users-list-edit-success-message") );
+						$.post( 
+							config.prefix + "/users/index/json", 
+							{},
+							function(data) {
+								update_user_table( edit_dialog, data.accounts );
+								edit_dialog.dialog('close');
+							}, 
+							'json' 
+						);
+					}
+				}, 'json' 
+			);
+		};
+
+		// The callback when choosing to initiate deletion
+		var open_delete_dialog_callback = function(){
+			edit_dialog.dialog('close');
+			var post_data = {
+				'username': $('input[name=username]', this).val(),
+			};
+			var body = $('<div/>');
+			body.append($('<div/>',{text: $.message("users-list-edit-dialog-delete-message")}));
+			var userdata_delete = $('<input/>', { 'type': 'checkbox', 'name': 'userdata'});
+			body.append( userdata_delete );
+			body.append($('<label/>',{ 'for': 'userdata', text: $.message("users-list-edit-dialog-delete-userdata-label")}));
+			$.confirm(
+				body,
+				$.message("users-list-edit-dialog-delete-header"),
+				[
+					{
+						'label': $.message("users-list-edit-dialog-delete-button-label"),
+						'callback': function(){
+							post_data.userdata = userdata_delete.is(':checked');
+							delete_dialog_button_confirm_callback.apply(this, [post_data])
+						},
+						options: { id: 'fn-users-edit-dialog-delete-confirm-button' }
+					}
+				]
+			);
+		};
+
+		// callback fired when confirming delete
+		var delete_dialog_button_confirm_callback = function(post_data){
+			var confirm_dialog = $(this);
+			$.post( config.prefix + "/users/delete_user_account/json", post_data, function(data){
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						update_status( true, $.message("users-list-delete-success-message") );
+						$.post( 
+							config.prefix + "/users/index/json", 
+							{},
+							function(data) {
+								update_user_table( edit_dialog, data.accounts );
+								confirm_dialog.dialog('close');
+							}, 
+							'json' 
+						);
+					}
+				}, 'json' 
+			);
+
+		};
+
 		var add_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
 		add_source_edit_dialog.find('input[name=sideboard], input[name=remote]').closest('tr').remove();
 		add_source_edit_dialog.find('input[name=input_username]').addClass('fn-primary-field');
@@ -95,31 +210,13 @@ $(document).ready(function(){
 			[
 				{
 					'label': $.message("users-list-add-dialog-button-label"),
-					'callback': function(){
-						$('input[name=username]',this).val($('input[name=input_username]',this).val());
-						$.post( config.prefix + "/users/add_user_account/json", $('form', this).serialize(), function(data){
-								if( data.error ) {
-									update_status( false, data.html );
-								} else {
-									update_status( true, $.message("users-list-add-success-message") );
-									$.post(
-										config.prefix + "/users/index/json",
-										{},
-										function(data) {
-											add_dialog.dialog('close');
-											update_user_table( edit_dialog, data.accounts );
-										},
-										'json'
-									);
-								}
-							}, 'json' 
-						);
-					},
+					'callback': add_dialog_button_callback,
 					options: { id: 'fn-users-add-dialog-button' }
 				}	
 			],
-			options	
+			dialog_options	
 		);		
+
 		var edit_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
 		edit_source_edit_dialog.find('input[name=input_username]').attr('disabled','disabled');
 		edit_source_edit_dialog.find('input[name=realname]').addClass('fn-primary-field');
@@ -127,93 +224,91 @@ $(document).ready(function(){
 		edit_dialog_buttons = [
 			{
 				'label': $.message("users-list-edit-dialog-button-label"),
-				'callback': function(){	
-					$('input[name=username]',this).val($('input[name=input_username]',this).val());
-
-					$.post( config.prefix + "/users/edit_user_account/json", $('form', this).serialize(), function(data){
-							if( data.error ) {
-								update_status( false, data.html );
-							} else {
-								update_status( true, $.message("users-list-edit-success-message") );
-								$.post( 
-									config.prefix + "/users/index/json", 
-									{},
-									function(data) {
-										update_user_table( edit_dialog, data.accounts );
-										edit_dialog.dialog('close');
-									}, 
-									'json' 
-								);
-							}
-						}, 'json' 
-					);
-				},
+				'callback': edit_dialog_button_update_callback,
 				options: { id: 'fn-users-edit-dialog-button' }
 			}
 		];
+
 		if( allowed_to_delete ) {
 			edit_dialog_buttons.push(
 				{
 					'label': $.message("users-list-edit-dialog-delete-button-label"),
-					'callback': function(){
-						edit_dialog.dialog('close');
-						var post_data = {
-							'username': $('input[name=username]', this).val(),
-						};
-						var body = $('<div/>');
-						body.append($('<div/>',{text: $.message("users-list-edit-dialog-delete-message")}));
-						var userdata_delete = $('<input/>', { 'type': 'checkbox', 'name': 'userdata'});
-						body.append( userdata_delete );
-						body.append($('<label/>',{ 'for': 'userdata', text: $.message("users-list-edit-dialog-delete-userdata-label")}));
-						$.confirm(
-							body,
-							$.message("users-list-edit-dialog-delete-header"),
-							[
-								{
-									'label': $.message("users-list-edit-dialog-delete-button-label"),
-									'callback': function(){
-										var confirm_dialog = $(this);
-										post_data.userdata = userdata_delete.is(':checked');
-										$.post( config.prefix + "/users/delete_user_account/json", post_data, function(data){
-												if( data.error ) {
-													update_status( false, data.html );
-												} else {
-													update_status( true, $.message("users-list-delete-success-message") );
-													$.post( 
-														config.prefix + "/users/index/json", 
-														{},
-														function(data) {
-															update_user_table( edit_dialog, data.accounts );
-															confirm_dialog.dialog('close');
-														}, 
-														'json' 
-													);
-												}
-											}, 'json' 
-										);
-
-									},
-									options: { id: 'fn-users-edit-dialog-delete-confirm-button' }
-								}
-							]
-						);
-					},
+					'callback': open_delete_dialog_callback,
 					options: { id: 'fn-users-edit-dialog-delete-button' }
 				}		
 			);
 		}
+
 		edit_dialog  = $.dialog( 
 			edit_source_edit_dialog,
 			'',
 			edit_dialog_buttons,
-			options	
+			dialog_options	
+		);
+		$.validator.addMethod('valid_username', function(value, element, params) {
+				return /^[^-][a-z0-9 _-]+$/.test(value) && value != 'web' && value != 'storage';
+			} 
+		, jQuery.format("not a valid username"));
+		$.validator.addMethod('valid_password', function(value, element, params) {
+				return /^\w+$/.test(value);
+			} 
+		,jQuery.format("not a valid password"));
+
+		edit_validator = $('form',edit_source_edit_dialog).validate({
+				rules:{
+					'realname': {
+						'required': true
+					},
+					'password1': {
+						'required': true,
+						'valid_password': true
+					},
+					'password2': {
+						'equalTo': $('form input[name=password1]',edit_source_edit_dialog)
+					}
+
+				}
+			}
+		);
+
+		add_validator = $('form',add_source_edit_dialog).validate({
+				rules:{
+					'input_username': {
+						'required': true,
+						'maxlength': 32,
+						'minlength': 2,
+						'valid_username': true,
+						'remote': {
+							url: config.prefix + "/users/check_username/json",
+							type: "post"
+						}
+
+					},
+					'realname': {
+						'required': true
+					},
+					'password1': {
+						'required': true,
+						'valid_password': true
+					},
+					'password2': {
+						'equalTo': $('form input[name=password1]',add_source_edit_dialog)
+					}
+
+				},
+				messages: {
+					'input_username': {
+						'remote': jQuery.format("username {0} is already in use")
+					}
+				}
+			}
 		);
 		$("h2.fn-dialog-header", add_dialog).html($.message("users-list-add-dialog-header"));
 
 		update_user_table( edit_dialog, user_accounts );
 
 		$("#fn-users-list-add").click($.proxy(function() {
-					$("form",this).trigger("reset");
+					add_validator.resetForm();
 					this.dialog("open");
 				},
 				add_dialog
