@@ -90,7 +90,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #sideboard-datetime-month {font-size: 14px;font-weight: bold;}
 #sideboard-datetime-year {font-size: 14px;font-weight: bold;}
 #sideboard-clock-digital {font-size: 14px;font-weight: bold;}
-#sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;margin-top:3px;}
+#sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;margin-top:7px;}
 
 /* HOME MENU */
 .ui-dialog-menu {text-align: center;height:140px !important;width:568px !important;border:0;opacity:0.85 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)" !important;filter: alpha(opacity=85) !important;max-height:140px;max-width:568px;}

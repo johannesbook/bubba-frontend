@@ -10,7 +10,7 @@
 			<th>Size</th>
 			<th></th>
 		</tr>
-		<tr>
+		<tr class="ui-header">
 			<td colspan="5" class="ui-filemanager-fake-updir"></td>
 		</tr>
 	</thead>
