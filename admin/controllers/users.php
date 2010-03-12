@@ -354,8 +354,10 @@ class Users extends Controller{
 
 	function config($strip="",$parameter,$value) {
 		if( $strip == 'json' ) {
-			update_bubbacfg($this->session->userdata("user"),$parameter,$value);
-			$this->session->set_userdata($parameter,$value);
+			if($this->Auth_model->policy("config",$parameter)) {
+				update_bubbacfg($this->session->userdata("user"),$parameter,$value);
+				$this->session->set_userdata($parameter,$value);
+			}
 		}
 	}
 }

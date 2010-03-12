@@ -358,7 +358,6 @@ class Menu extends Model {
 	private function _retreive_dialogmenu($user,$menu) {
 
 		$menubar = array();
-		
 		foreach ($menu as $menu_item => $menu_value) {
 			if(isset($menu_value['hide']) && in_array($this->uri->segment(1),$menu_value['hide']) ) {
 				continue;

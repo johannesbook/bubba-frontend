@@ -90,25 +90,29 @@ $(document).ready(function(){
 	$("#fn-topnav-logout").mouseout(function(e) {		$("#s-topnav-logout").hide();	});
 	
 	$('#sideboard_switch').click(function(event) {
-		if($('#sideboard').is(":visible")) {
-			$('#sideboard').hide();
-			$("#content_wrapper").css("width","95%");
-			$("#topnav").css("width","29%");		
-			$('#sideboard_switch').addClass('ui-icon-open ');
-			$('#sideboard_switch').removeClass('ui-icon-close ');		
-			$.post(config.prefix+"/users/config/1/show_sideboard/0");
+		$('#sideboard').animate({width : 'toggle'},200);
+		if($('#sideboard_switch').hasClass("ui-icon-open")) {
+			// show sideboard
+			$('#content_wrapper').animate({width : '-=160'},200);
+			$("#topnav").animate({width : '+=160'},200);		
+			$('#sideboard_switch').addClass('ui-icon-close');
+			$('#sideboard_switch').removeClass('ui-icon-open');		
+			$.get(config.prefix+"/users/config/json/show_sideboard/1");
 		} else {
-			$('#sideboard').show();
-			$("#content_wrapper").css("width","75%");
-			$("#topnav").css("width","45%");			
-			$('#sideboard_switch').addClass('ui-icon-close ');
-			$('#sideboard_switch').removeClass('ui-icon-open ');		
-			$.post(config.prefix+"/users/config/1/show_sideboard/1");
+			// close sideboard
+			$('#content_wrapper').animate({width : '+=160'},200);
+			$("#topnav").animate({width : '-=160'},200);		
+			$('#sideboard_switch').addClass('ui-icon-open');
+			$('#sideboard_switch').removeClass('ui-icon-close');		
+			$.get(config.prefix+"/users/config/json/show_sideboard/0");
 		}
 	});
 <?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
-	$("#content_wrapper").css("width","75%");
+	$("#content_wrapper").width($("#content_wrapper").width()-160);
+	$("#topnav").width($("#topnav").width()+160);
 	$("#sideboard").show();
+	$("#sideboard_switch").removeClass("ui-icon-open");
+	$("#sideboard_switch").addClass("ui-icon-close");
 <?endif?>
 
 <?if(isset($update) && is_array($update)):?>

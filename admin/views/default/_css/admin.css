@@ -41,7 +41,7 @@ input.error { 	border : 2px solid #506AB2;}
 #wrapper {width:98%;margin: 0 auto;padding:0em;max-width:1020px;background-image:url(../_img/background.png);height:100%;max-width:960px;background-repeat:repeat-y;height:762px;}
 /* CONTENT */
 #content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
-#content_wrapper {margin-bottom:3em;float:left;width:70%}
+#content_wrapper {margin-bottom:3em;float:left;width:95%}
 /*UPDATE STATUS*/
 #update_status {color:#000;background-color:#fbec9d;font-size:12px%;left:25%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:2px;width:500px;display:none !important;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
@@ -53,10 +53,10 @@ input.error { 	border : 2px solid #506AB2;}
 #header li.active a {color:#506ab2;}
 #header li.last {border-right:none;}
 #nav ul{font-size: 18px;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
-#topnav {float:right;width:29%;}
+#topnav {float:right;width:275px;}
 #topnav a, #topnav span {float:left;}
 #topnav .ui-button-text {top:35px;font-size:12px;font-weight:bold;position:absolute;}
-#topnav_status {margin-right:10%;font-weight:bold;margin-top:2.5%;font-size:10px;}
+#topnav_status {margin-right:10%;font-weight:bold;margin-top:10px;font-size:10px;}
 #topnav button {border:0;background:transparent;margin-right:0.8em;}
 /*#topnav button:hover {border-bottom:0.1em solid black;}*/
 #subnav {font-size: 14px;list-style: none;margin-top:0.8em;}
@@ -77,7 +77,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:2px;padding-top:75px;font-weight:bold;text-align:center;margin-right:16px;}
 .ui-login-menubar-a span  {display:none;font-size:12px;}
 /* SIDE BOARD */
-#sideboard {float:right;width:20%;display : none}
+#sideboard {float:right;width:160px;display : none}
 #sideboard-datetime-date {font-size: 140px;font-weight: bold;margin:0 0 -0.3em;}
 #sideboard-datetime-day {font-size: 29px;font-weight: bold;}
 #sideboard-datetime-month {font-size: 14px;font-weight: bold;}
@@ -272,8 +272,6 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog table {margin:0;}
 .ui-dialog th {font-size:14px;padding:0}
 .ui-div-header {font-size:14px;height:31px;padding:0em 1.2em;}
-
-
 .ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
 	
 .ui-icon-bubba-switch.ui-state-disabled {

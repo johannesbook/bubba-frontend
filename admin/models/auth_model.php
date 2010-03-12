@@ -36,6 +36,10 @@ class Auth_model extends Model{
 			"edit_allusers" => array(
 				"allow" => array("admin")
 			)
+		),
+		"config"				=> array(
+			"show_sideboard" => array(
+			)
 		)
 	);
 		
@@ -114,6 +118,10 @@ class Auth_model extends Model{
 			if(!in_array($user,$this->policies[$policy][$method]["allow"])) {
 				return false;
 			}
+		}
+		if(!isset($this->policies[$policy][$method])) {
+			// if asked but no policy set, return false
+			return false;
 		}
 		return true;
 	}
