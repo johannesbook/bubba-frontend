@@ -98,6 +98,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #menu li a{margin-right:16px;}
 #menu li a span{float:right;}
 #menu li div {display:inline;width:74px;}
+#login_settings {margin-top:180px;float:right;}
 .default-icon {width:74px; height:18px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 /*.default-icon-lock {width:74px; height:74px; background-image:url(../_img/icons_home_lock.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}*/
 .default-icon-mail {background-position: -363px -328px;}
@@ -294,7 +295,7 @@ input.mount {width : 75px;	margin : 0;}
 
 /*JQUERY OVERRIDE*/
 .ui-action-panel button {border: 0;}
-.ui-action-panel {position: absolute;border: 0;}
+.ui-action-panel {position: absolute;border: 0;display:inline;background:transparent;}
 .ui-dialog {opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(opacity=95) !important;}
 .ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; }
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}

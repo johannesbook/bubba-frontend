@@ -4,9 +4,9 @@
 	method="post"
 >
 <table class="networksettings">
-<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('wlan_title')?></td></tr>
+<tr><td colspan="3" class="ui-state-default ui-widghet-header"><?=t('wlan_title')?></td></tr>
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="enabled"><?=t("wlan_title_enable")?></label></td>
 	<td>
 		<input 
@@ -22,7 +22,7 @@
 </tr>
 
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="ssid"><?=t("wlan_title_ssid")?></label></td>
 	<td>
 		<input 
@@ -37,7 +37,7 @@
 </tr>
 
 <tr>
-	<td></td>
+	
 	<td class="col2">
 	<label 
 		for="password" 
@@ -70,7 +70,7 @@
 
 <?if($allow_change):?>
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="band"><?=t("wlan_title_band")?></label></td>
 	<td>
 	<input 
@@ -100,7 +100,7 @@
 </tr>
 
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="mode"><?=t("wlan_title_mode")?></label></td>
 	<td>
 	<select
@@ -135,7 +135,7 @@
 </tr>
 
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="width"><?=t("wlan_title_width")?></label></td>
 	<td>
 	<select
@@ -163,7 +163,7 @@
 <?endif?>
 
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="encryption"><?=t("wlan_title_encryption")?></label></td>
 	<td><select disabled="disabled" id="encryption" name="encryption" title="<?=t("wlan_title_encryption_popup")?>">
 <?foreach($encryptions as $encryption):?>
@@ -174,7 +174,7 @@
 </tr>
 
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="channel"><?=t("wlan_title_channel")?></label></td>
     <td>
 	<select disabled="disabled" id="channel" name="channel" title="<?=t("wlan_title_channel_popup")?>">
@@ -183,7 +183,7 @@
 </tr>
 
 <tr>
-	<td></td>
+	
 	<td class="col2"><label for="broadcast_ssid"><?=t("wlan_title_broadcast")?></label></td>
     <td>
     <input
