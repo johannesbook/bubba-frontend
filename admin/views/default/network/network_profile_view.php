@@ -4,7 +4,7 @@
 <form id="OTHCFG" action="<?=FORMPREFIX?>/network/update_profile" method="post">
 
 	<table class="networksettings">
-	    <tr><td colspan="3" class="ui-state-default ui-widghet-header"><?=t("Network Profile")?></td></tr>
+	    <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t("Network Profile")?></td></tr>
 		<? if($custom): ?>
 		<tr>
 			<td></td>
@@ -37,7 +37,7 @@
 </fieldset>
 </form>
     <table id="profile">
-      <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t("Profile explaination")?></td></tr>
+      <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t("Profile explaination")?></td></tr>
       <tr>
         <td>
 	        <div class="profile_legend_h"><?=t("Automatic network settings")?></div>

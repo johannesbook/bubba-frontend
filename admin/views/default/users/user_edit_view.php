@@ -1,6 +1,6 @@
 <form action="<?=FORMPREFIX?>/users/update" method="post">
 <table>
-    <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Edit user information')?></td></tr>
+    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Edit user information')?></td></tr>
     <tr>
 	    <td style="width: 120px;"><?=t('username')?></td>
 	    <td><?=$uname?></td>

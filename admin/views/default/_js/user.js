@@ -67,6 +67,7 @@ if( ! is_priviledged_user ) {
 		// This callback is fired each time click on "edit" is performed
 		var open_edit_dialog_callback = function(data) {
 			$("h2.fn-dialog-header", this).html($.message("users-list-edit-dialog-header", data.server));
+			$('form', this).trigger('reset');
 			edit_validator.resetForm();
 			$('input[name=username],input[name=input_username]', this).val(data.username);
 			$('input[name=realname]', this).val(data.realname);
@@ -308,6 +309,7 @@ if( ! is_priviledged_user ) {
 		update_user_table( edit_dialog, user_accounts );
 
 		$("#fn-users-list-add").click($.proxy(function() {
+					$('form', this).trigger('reset');
 					add_validator.resetForm();
 					this.dialog("open");
 				},

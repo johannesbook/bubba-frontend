@@ -1,4 +1,122 @@
 $(document).ready(function(){
+		
+		var options = { 
+			"autoOpen": false,
+			"width": 400,
+			"open": function(event,ui) {
+				$(".fn-primary-field", this).focus();
+			}
+		};
+		var source_edit_dialog = $("#fn-mail-retrieve-edit");
+		var add_dialog, edit_dialog;
+		var edit_validator, add_validator;
+
+		var open_edit_dialog_callback = function(data) {
+			$("h2.fn-dialog-header", this).html($.message("mail-retrieve-edit-dialog-header", data.server));
+			$("form",this).trigger("reset");
+			$('input[name=server]', this).val(data.server);
+			$('input[name=old_server]', this).val(data.server);
+			$('input[name=protocol]', this).val(data.protocol);
+			$('input[name=old_protocol]', this).val(data.protocol);
+			$('input[name=ruser]', this).val(data.ruser);
+			$('input[name=old_ruser]', this).val(data.ruser);
+			$('input[name=password]', this).val(data.password);
+			$('input[name=luser]', this).val(data.luser);
+			$('input[name=old_luser]', this).val(data.luser);
+			$('input[name=usessl]', this).val(data.usessl != "");
+			$('input[name=keep]', this).val(data.keep != "");
+			this.dialog("open");
+		}
+
+		var add_dialog_button_callback = function(){
+			if( ! add_validator.form() ) {
+				return false;
+			}
+
+			$.post( config.prefix + "/mail/add_fetchmail_account/json", $('form', this).serialize(), function(data){
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						update_status( true, $.message("mail-retrieve-add-success-message") );
+						$.post(
+							config.prefix + "/mail/viewfetchmail/json",
+							{},
+							function(data) {
+								add_dialog.dialog('close');
+								update_mail_table( edit_dialog, data.accounts );
+							},
+							'json'
+						);
+					}
+				}, 'json' 
+			);
+		}
+
+		var edit_dialog_button_update_callback = function(){	
+			if( ! edit_validator.form() ) {
+				return false;
+			}
+			$.post( config.prefix + "/mail/edit_fetchmail_account/json", $('form', this).serialize(), function(data){
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						update_status( true, $.message("mail-retrieve-edit-success-message") );
+						$.post( 
+							config.prefix + "/mail/viewfetchmail/json", 
+							{},
+							function(data) {
+								update_mail_table( edit_dialog, data.accounts );
+								edit_dialog.dialog('close');
+							}, 
+							'json' 
+						);
+					}
+				}, 'json' 
+			);
+		};
+
+		var edit_dialog_delete_dialog_callback = function(post_data){
+			var confirm_dialog = $(this);
+			$.post( config.prefix + "/mail/delete_fetchmail_account/json", post_data, function(data){
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						update_status( true, $.message("mail-retrieve-delete-success-message") );
+						$.post( 
+							config.prefix + "/mail/viewfetchmail/json", 
+							{},
+							function(data) {
+								update_mail_table( edit_dialog, data.accounts );
+								confirm_dialog.dialog('close');
+							}, 
+							'json' 
+						);
+					}
+				}, 'json' 
+			);
+
+		};
+
+		var edit_dialog_button_delete_callback = function(){
+			edit_dialog.dialog('close');
+			var post_data = {
+				'server': $('input[name=old_server]', this).val(),
+				'protocol': $('input[name=old_protocol]', this).val(),
+				'ruser': $('input[name=old_ruser]', this).val(),
+				'luser': $('input[name=old_luser]', this).val()
+			};
+			$.confirm(
+				$.message("mail-retrieve-edit-dialog-delete-message"),
+				$.message("mail-retrieve-edit-dialog-delete-header"),
+				[
+					{
+						'label': $.message("mail-retrieve-edit-dialog-delete-button-label"),
+						'callback': function(){edit_dialog_delete_dialog_callback.apply(this,[post_data])},
+						options: { id: 'fn-mail-edit-dialog-delete-confirm-button' }
+					}
+				]
+			);
+		};
 
 		var update_mail_table = function(dialog, accounts) {
 			var table = $("#fn-mail-retrieve tbody");
@@ -19,24 +137,7 @@ $(document).ready(function(){
 								html: $('<button/>',
 									{ 
 										html: $.message('button-label-edit'),
-										click: $.proxy(function() {
-												$("h2.fn-dialog-header", dialog).html($.message("mail-retrieve-edit-dialog-header", data.server));
-												$("form",this).trigger("reset");
-												$('input[name=server]', this).val(data.server);
-												$('input[name=old_server]', this).val(data.server);
-												$('input[name=protocol]', this).val(data.protocol);
-												$('input[name=old_protocol]', this).val(data.protocol);
-												$('input[name=ruser]', this).val(data.ruser);
-												$('input[name=old_ruser]', this).val(data.ruser);
-												$('input[name=password]', this).val(data.password);
-												$('input[name=luser]', this).val(data.luser);
-												$('input[name=old_luser]', this).val(data.luser);
-												$('input[name=usessl]', this).val(data.usessl != "");
-												$('input[name=keep]', this).val(data.keep != "");
-												this.dialog("open");
-											},
-											dialog
-										)
+										click: function(){open_edit_dialog_callback.apply(dialog, [data])}
 									}
 								)
 							}
@@ -46,118 +147,76 @@ $(document).ready(function(){
 				}
 			);			
 		}
-		var options = { 
-			"autoOpen": false,
-			"width": 400,
-			"open": function(event,ui) {
-				$(".fn-primary-field", this).focus();
-			}
-		};
-		var source_edit_dialog = $("#fn-mail-retrieve-edit");
-		var add_dialog, edit_dialog;
+		var add_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
 		add_dialog  = $.dialog( 
-			source_edit_dialog.clone().removeAttr('id'),
+			add_source_edit_dialog,
 			'',
 			[
 				{
 					'label': $.message("mail-retrieve-add-dialog-button-label"),
-					'callback': function(){
-						$.post( config.prefix + "/mail/add_fetchmail_account/json", $('form', this).serialize(), function(data){
-								if( data.error ) {
-									update_status( false, data.html );
-								} else {
-									update_status( true, $.message("mail-retrieve-add-success-message") );
-									$.post(
-										config.prefix + "/mail/viewfetchmail/json",
-										{},
-										function(data) {
-											add_dialog.dialog('close');
-											update_mail_table( edit_dialog, data.accounts );
-										},
-										'json'
-									);
-								}
-							}, 'json' 
-						);
-					},
+					'callback': add_dialog_button_callback,
 					options: { id: 'fn-mail-add-dialog-button' }
 				}	
 			],
 			options	
 		);		
+		var edit_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
 		edit_dialog  = $.dialog( 
-			source_edit_dialog.clone().removeAttr('id'),
+			edit_source_edit_dialog,
 			'',
 			[
 				{
 					'label': $.message("mail-retrieve-edit-dialog-button-label"),
-					'callback': function(){	
-						$.post( config.prefix + "/mail/edit_fetchmail_account/json", $('form', this).serialize(), function(data){
-								if( data.error ) {
-									update_status( false, data.html );
-								} else {
-									update_status( true, $.message("mail-retrieve-edit-success-message") );
-									$.post( 
-										config.prefix + "/mail/viewfetchmail/json", 
-										{},
-										function(data) {
-											update_mail_table( edit_dialog, data.accounts );
-											edit_dialog.dialog('close');
-										}, 
-										'json' 
-									);
-								}
-							}, 'json' 
-						);
-					},
+					'callback': edit_dialog_button_update_callback,
 					options: { id: 'fn-mail-edit-dialog-button' }
 				},
 				{
 					'label': $.message("mail-retrieve-edit-dialog-delete-button-label"),
-					'callback': function(){
-						edit_dialog.dialog('close');
-						var post_data = {
-							'server': $('input[name=old_server]', this).val(),
-							'protocol': $('input[name=old_protocol]', this).val(),
-							'ruser': $('input[name=old_ruser]', this).val(),
-							'luser': $('input[name=old_luser]', this).val()
-						};
-						$.confirm(
-							$.message("mail-retrieve-edit-dialog-delete-message"),
-							$.message("mail-retrieve-edit-dialog-delete-header"),
-							[
-								{
-									'label': $.message("mail-retrieve-edit-dialog-delete-button-label"),
-									'callback': function(){
-										var confirm_dialog = $(this);
-										$.post( config.prefix + "/mail/delete_fetchmail_account/json", post_data, function(data){
-												if( data.error ) {
-													update_status( false, data.html );
-												} else {
-													update_status( true, $.message("mail-retrieve-delete-success-message") );
-													$.post( 
-														config.prefix + "/mail/viewfetchmail/json", 
-														{},
-														function(data) {
-															update_mail_table( edit_dialog, data.accounts );
-															confirm_dialog.dialog('close');
-														}, 
-														'json' 
-													);
-												}
-											}, 'json' 
-										);
-
-									},
-									options: { id: 'fn-mail-edit-dialog-delete-confirm-button' }
-								}
-							]
-						);
-					},
+					'callback': edit_dialog_button_delete_callback,
 					options: { id: 'fn-mail-edit-dialog-delete-button' }
 				}		
 			],
 			options	
+		);
+		add_validator = $('form',add_source_edit_dialog).validate({
+				rules:{
+					'server': {
+						'required': true
+					},
+					'protocol': {
+						'required': true
+					},
+					'ruser': {
+						'required': true
+					},
+					'password': {
+						'required': true
+					},
+					'luser': {
+						'required': true
+					}
+				}
+			}
+		);
+		edit_validator = $('form',edit_source_edit_dialog).validate({
+				rules:{
+					'server': {
+						'required': true
+					},
+					'protocol': {
+						'required': true
+					},
+					'ruser': {
+						'required': true
+					},
+					'password': {
+						'required': true
+					},
+					'luser': {
+						'required': true
+					}
+				}
+			}
 		);
 		$("h2.fn-dialog-header", add_dialog).html($.message("mail-retrieve-add-dialog-header"));
 

@@ -4,7 +4,7 @@
 	method="post"
 >
 <table class="networksettings">
-<tr><td colspan="3" class="ui-state-default ui-widghet-header"><?=t('wlan_title')?></td></tr>
+<tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('wlan_title')?></td></tr>
 <tr>
 	
 	<td class="col2"><label for="enabled"><?=t("wlan_title_enable")?></label></td>

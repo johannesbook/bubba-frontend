@@ -1,6 +1,6 @@
 <table>
 <tr></tr>
-<tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Installed printers')?><?if(!$printing_enabled):?>&nbsp;&nbsp;<?=t('Installed printers')?><?endif?></td></tr>
+<tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Installed printers')?><?if(!$printing_enabled):?>&nbsp;&nbsp;<?=t('Installed printers')?><?endif?></td></tr>
 <tr class="ui-filemanager-state-header">
 	<th><?=t('Share')?></th>
 	<th><?=t('Description')?></th>

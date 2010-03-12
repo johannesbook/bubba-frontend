@@ -1,7 +1,7 @@
 
 <form action="<?=FORMPREFIX?>/services" method="post">
 <table>   
-   <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('File sharing')?></td></tr>
+   <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('File sharing')?></td></tr>
    <tr>
       <td><label for="">FTP</label></td>
       <td ><input name="ftp_enabled" type="checkbox"  value="1" <?= $ftp_status?"":"checked=\"checked\""?>/></td>
@@ -17,7 +17,7 @@
 </table>
 
 <table>      
-   <tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Streaming')?></td></tr>
+   <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Streaming')?></td></tr>
    <tr>
       <td><label for=""><?=t('UPNP streaming')?></label></td>
       <td ><input name="upnp_enabled" type="checkbox"  value="1" <?= $upnp_status?"checked=\"checked\"":"" ?>/></td>
@@ -41,7 +41,7 @@
 </table>
 
 <table>      
-	<tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Mail')?></td></tr>
+	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Mail')?></td></tr>
    <tr>
       <td><label for=""><?=t('Send and recieve')?></label></td>
       <td ><input name="smtp_enabled" type="checkbox" value="1" <?= $smtp_status?"checked=\"checked\"":"" ?>/></td>
@@ -57,7 +57,7 @@
 </table>
 
 <table>      
-	<tr><td colspan="2" class="ui-state-default ui-widghet-header" style="margin-top:1em;"><?=t('Other')?></td></tr>
+	<tr><td colspan="2" class="ui-state-default ui-widget-header" style="margin-top:1em;"><?=t('Other')?></td></tr>
    <tr>
       <td><label for=""><?=t('Printing')?></label></td>
       <td ><input name="print_enabled" type="checkbox" value="1" <?= $print_status?"checked=\"checked\"":"" ?>/></td>

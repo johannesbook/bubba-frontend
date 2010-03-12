@@ -33,6 +33,7 @@ label {font-weight:bold;}
 a {color: #000;outline:none;}
 button:hover {outline:none;}
 img{border: 0;}
+button:hover, input[type=button], input[type=submit], input[type=reset] { cursor: pointer }
 
 /*GENERAL CLASSES */
 .ui-header {background-color: #e5e5e5;color:#000;padding-left:1.2em;}
@@ -161,6 +162,10 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-widget-wizard select {width:90%;}
 .ui-widget-wizard form {margin:0;}
 .ui-wizard-label-header {padding-left:0;}
+.ui-wizard-next {display:inline;float:right;width:80px;}
+.ui-wizard-prev {display:inline;float:left;width:80px;}
+.ui-wizard-exit {display:inline;float:left;width:80px;}
+.ui-wizard-controls { clear: both; height: 40px; }
 #wizard_exit, #wizard_back {display:inline;float:left;width:80px;}
 #wizard_next {display:inline;float:right;width:80px;}
 #ui-wizard-datetime span {font-size:10px;margin-left:3px;}

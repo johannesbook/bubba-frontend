@@ -1,6 +1,6 @@
 <form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">
 <table id="table-network-wan">
-    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('WAN')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('WAN')?></td></tr>
 	<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom") { ?>
 		<tr>
 			<td ></td>

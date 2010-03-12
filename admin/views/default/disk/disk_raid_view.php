@@ -1,5 +1,5 @@
 <div id="raid">
-	<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
+	<div class="ui-state-default ui-widget-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
 	<div>
 		<div>
 		    <input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
@@ -83,7 +83,7 @@
 		}
  	 } ?>
 
-<div id="raid_status" class="expansion ui-state-default ui-widghet-header ui-div-header">
+<div id="raid_status" class="expansion ui-state-default ui-widget-header ui-div-header">
     <span id="status_mark">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?>
 </div>
 	<div id="adv_status">

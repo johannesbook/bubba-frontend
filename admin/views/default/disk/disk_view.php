@@ -1,6 +1,6 @@
 
 <table class="disks">
-<tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Disk information')?></td></tr>
+<tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Disk information')?></td></tr>
 <tr class="ui-header">
 	<th></th>
 	<th class="col1"><?=t('Disk')?></th>
@@ -57,7 +57,7 @@
 </table>
 
 <table class="typetable">
-<tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Partition information')?></td></tr>
+<tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Partition information')?></td></tr>
 <tr class="ui-header">
 	<th class="colorcode"></th>
 	<th><?=t('Partition')?></th>

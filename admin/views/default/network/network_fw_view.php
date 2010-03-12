@@ -103,7 +103,7 @@ function copy_fields(formid) {
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <fieldset >
 <table id="firewall">
-    <tr><td colspan="5" class="ui-state-default ui-widghet-header"><?=t('Integrated Bubba services')?></td></tr>
+    <tr><td colspan="5" class="ui-state-default ui-widget-header"><?=t('Integrated Bubba services')?></td></tr>
 	<tr>
 		
 		<td>
@@ -172,7 +172,7 @@ function copy_fields(formid) {
 <form id="PORTCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <fieldset id="firewall">
 <table id="firewall">
-    <tr><td colspan="6" class="ui-state-default ui-widghet-header"><?=t('Open port')." / ".t('Add port forward')?></td></tr>
+    <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Open port')." / ".t('Add port forward')?></td></tr>
 	<tr>
 		<td class="p_fw_c0"></td>
 		<td class="p_fw_c3" colspan="2">
@@ -290,7 +290,7 @@ function copy_fields(formid) {
 
 <fieldset id="firewall">
 <table  id="firewall">
-    <tr><td colspan="7" class="ui-state-default ui-widghet-header"><?=t('User defined open / forwarded ports')?></td></tr>
+    <tr><td colspan="7" class="ui-state-default ui-widget-header"><?=t('User defined open / forwarded ports')?></td></tr>
 	<tr>
 		<td class="p_fw_c0"></td>
 		<td class="p_fw_c1"><?=t('Source IP')?></td>

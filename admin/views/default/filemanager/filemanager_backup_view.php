@@ -20,7 +20,7 @@
 
 	<table id="backup">
 	    
-	    <tr><td colspan="8" class="ui-state-default ui-widghet-header ui-div-header"><?=t('File sharing')?></td></tr>
+	    <tr><td colspan="8" class="ui-state-default ui-widget-header ui-div-header"><?=t('File sharing')?></td></tr>
 		<tr id="filemanager-backup-head" class="ui-header">
 			<th style="width:15%"><?=t('Existing jobs')?></th>
 			<th style="width:20%"><?=t('Included directories')?></th>

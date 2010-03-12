@@ -24,7 +24,7 @@ $('form.ack').live( 'submit', function(e) {
 
 
 <table>
-	<tr><td colspan="2" class="ui-state-default ui-widghet-header"><?=t('Info')?></td></tr>
+	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Info')?></td></tr>
 </table>
 
 <table>

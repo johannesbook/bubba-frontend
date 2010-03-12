@@ -355,7 +355,10 @@ class Users extends Controller{
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/users/user_wizard_view',$data));
 				}else{
-					$this->_renderfull($this->load->view(THEME.'/users/user_wizard_view',$data,true));
+					$this->_renderfull(
+						$this->load->view(THEME.'/users/user_wizard_view',$data,true),
+						$this->load->view(THEME.'/users/user_wizard_head_view',$data,true)
+					);
 				}
 			} else {
 				redirect("network/wizard");

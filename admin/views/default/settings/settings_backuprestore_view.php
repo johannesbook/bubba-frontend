@@ -1,5 +1,5 @@
 <table border="0" cellpadding="0">
-    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Backup and restore settings')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Backup and restore settings')?></td></tr>
 <tr>
 	<td><?=t('Source')?>/<?=t('Destination')?></td>
 	<td colspan="2">

@@ -1,7 +1,7 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 <form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
 <table id="table-network-lan">
-    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('LAN')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('LAN')?></td></tr>
 	<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
 		<tr>
 			<td valign="top"></td>
@@ -356,7 +356,7 @@
 
 
 <table border="1" cellspacing="0" cellpadding="1">
-    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('DHCP leases')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('DHCP leases')?></td></tr>
 	<tr>
 		<td><?=t("Hostname")?></td><td><?=t("IP-address")?></td><td><?=t("MAC-address")?></td><td><?=t("Lease expires")?></td>
 	</tr>

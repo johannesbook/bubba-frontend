@@ -1,7 +1,7 @@
 <form action="<?=FORMPREFIX?>/settings/logs" method="post">
 
 	<table>
-	   <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Show logs')?></td></tr>
+	   <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Show logs')?></td></tr>
 	</table>
 		<select name="log">
 			<?foreach( $logs as $name => $path ):?>

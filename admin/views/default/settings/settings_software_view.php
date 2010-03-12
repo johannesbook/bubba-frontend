@@ -1,7 +1,7 @@
 <form id="update" method="post">
 
 	<table>
-	   <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?></td></tr>
+	   <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?></td></tr>
 	</table>
 
 	<div id="updater" style="width: 100%">

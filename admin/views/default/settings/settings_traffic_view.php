@@ -1,6 +1,6 @@
 <form action="<?=FORMPREFIX?>/settings/settraffic" method="post">
 <table id="traffic" >
-    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Traffic')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Traffic')?></td></tr>
 	<tr class="ui-filemanager-state-header"><td colspan="2" ><?=t('Bittorrent')?></td></tr>
 	<tr>
 		<td><?=t('Max upload speed')?></td>
