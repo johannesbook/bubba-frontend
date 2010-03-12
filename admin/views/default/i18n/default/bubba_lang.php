@@ -18,7 +18,7 @@ $lang['Shutdown']="Confirm Shutdown";
 
 /* Main navigation categories  */
 $lang['title_']=$lang['Home'];
-$lang['title_home']=$lang['Home'];
+$lang['title_home']="Status";
 $lang['title_login']=$lang['Login'];
 $lang['title_users']=$lang['Users'];
 $lang['title_services']=$lang['Services'];

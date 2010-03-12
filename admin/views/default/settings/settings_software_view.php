@@ -1,8 +1,9 @@
 <form id="update" method="post">
 
-	<div class="ui-state-default ui-widghet-header ui-div-header">
-		<?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?>
-	</div>
+	<table>
+	   <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?></td></tr>
+	</table>
+
 	<div id="updater" style="width: 100%">
 	<?if($action == 'install'):?>
 		<ul>

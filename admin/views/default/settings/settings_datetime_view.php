@@ -1,7 +1,7 @@
 <form id="SETCLOCK" action="<?=FORMPREFIX?>/settings/setdate" method="post">
 	
 		<table>
-		    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Timezone')?></td></tr>
+		    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Date and time')?></td></tr>
 			<tr>
 				<td><?=t('Current timezone is')?>:</td>
 				<td><?=$t_zone?></td>
@@ -23,11 +23,6 @@
 				</select>
 				</td>
 			</tr>		
-		</table>
-	
-	
-		<table>
-		    <tr><td colspan="4" class="ui-state-default ui-widghet-header"><?=t('Date and time')?></td></tr>
 			<tr>
 				<td><?=t('Set time automatically')?></td>
 				<td>
