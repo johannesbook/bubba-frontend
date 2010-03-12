@@ -9,7 +9,7 @@ form {margin: 1em 0;}
 form form {margin: 0;}
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button],.ui-dialog button {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;height:31px;}
+input[type=submit],input[type=button],input[type=file],.ui-dialog button {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;height:31px;}
 input[type=submit]:hover,input[type=button]:hover {border:0;opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #e5e5e5;}
@@ -20,7 +20,7 @@ input[type=checkbox] {}
 table {margin: 1em 0;font-size: 14px;border-collapse : collapse;border:0;width:100%; }
 select {width:49%;}
 option:hover {color:white;background:#506ab2;}
-option {line-height:16px;font-size:14px;background-color:#FFF}
+option {line-height:16pxbackground-repeat;font-size:14px;background-color:#FFF}
 td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
 tr {border:0;border-bottom:0.1em solid #e5e5e5;line-height:31px;}
 font-size: 11px;	font-weight: normal;}
@@ -33,8 +33,12 @@ label {font-weight:bold;}
 a {color: #000;outline:none;}
 button:hover {outline:none;}
 img{border: 0;}
+/* */
+label.error { position : relative; top : -50px;	left : -30px;  background:url("/admin/views/default/_img/x15.png") no-repeat 0px 0px;	padding : 5px;  padding-left: 15px;  color: #fff;
+ background-color : #656565;  font-size : 12px;}
+input.error { 	border : 2px solid #506AB2;}
 /* WRAPPER */
-#wrapper {width:1020px;margin: 0 auto;padding:0em;max-width:1020px;background-image:url(../_img/background.png);height:100%;}
+#wrapper {width:98%;margin: 0 auto;padding:0em;max-width:1020px;background-image:url(../_img/background.png);height:100%;max-width:960px;background-repeat:repeat-y;height:762px;}
 /* CONTENT */
 #content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
 #content_wrapper {margin-bottom:3em;float:left;width:70%}
@@ -63,7 +67,7 @@ img{border: 0;}
 div#subnav ul li a:hover {text-decoration:underline;}
 /*LOGIN VIEW*/
 #login h1 {font-size:18px;margin-bottom:2em;}
-#login_more_info {display:block;margin-top:350px;font-size:18px;position:absolute;margin-bottom:3em;}
+#login_more_info {display:block;margin-top:350px;font-size:18px;margin-bottom:2em;}
 #login_more_info span{display:block;}
 #login_more_info a {text-decoration:none;margin-right:0.3em;font-weight:bold;}
 #login_more_info a:hover {color:#506ab2;}
@@ -120,6 +124,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-lock {width:22px; height:29px;background-position: -320px -193px;}
 .ui-icon-open {width:23px; height:21px;background-position: -86px -224px;} 
 .ui-icon-close {width:23px; height:21px;background-position: -111px -224px;}
+.ui-icon-dialog-close {width:17px; height:18px;background-position: -95px -194px;cursor:pointer !important;}
 
 .ui-icon-plusthick {width:37px; height:26px;background-position: -8px -64px;} 
 .ui-icon-pencil {width:37px; height:26px;background-position: -45px -64px;}
@@ -178,6 +183,13 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-element-width-100 {width:95% !important;}
 .ui-element-width-50 {width:50% !important;}
 #filemanager .ui-button-text {display:none;}
+/*FILEMANAGER UPLOAD*/
+#uploaddiv {padding:15px;}
+#uploaddiv input{height:21px;}
+#pg_adder {display:inline;padding-left:80px;}
+#pg_adder input {padding:0;display:inline;}
+#submitbutton {margin-top:1em;}
+#upload_close {position:absolute;top:5px;left:95%;margin:0;backround:transparent;}
 /*HELP*/
 .ui-help-box, .ui-help-box .ui-widget-header,.ui-help-box .ui-widget-content {background:#000;color:white !important;}
 .ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(Opacity=95) !important;font-size:12px;}
@@ -192,6 +204,8 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #tr-network-ip td {padding-top:31px}
 #table-network-wan input{font-size:12px;font-weight:bold;padding:0.1em 0.4em;}
 #services td {width:88%;}
+.ui-icon-bubba-switch-container {height:21px;width:67px;position: relative;overflow: hidden;}
+.ui-icon-bubba-switch {height:21px;width:67px;background-image:url(../_img/bubba_switch.png); /* your actual slider image */	background-repeat:none;	background-position:0px;}
 /*SETTINGS*/
 div.hotfix {margin-top : 10px;	vertical-align : middle;}
 div.hotfix *{vertical-align : middle;	margin-right : 10px;}
@@ -246,8 +260,10 @@ div.text label {	margin-right : 15px;}
 input.mount {width : 75px;	margin : 0;}
 
 .ui-filemanager-information-panel {	height: 3em;background: #efdfad;border: 2px solid #dfcf9d;width: 600px;opacity: .95;	position: absolute;	text-align: center;width:100%;margin-top:-45px;}
+/*JQUERY OVERRIDE*/
 .ui-action-panel button {border: 0;}
 .ui-action-panel {position: absolute;border: 0;}
+.ui-dialog {opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(opacity=95) !important;}
 .ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; }
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
 .ui-dialog-title {width:100%;}
@@ -256,35 +272,11 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog table {margin:0;}
 .ui-dialog th {font-size:14px;padding:0}
 .ui-div-header {font-size:14px;height:31px;padding:0em 1.2em;}
-.ui-icon-bubba-switch-container {
-	height:21px;
-	width:67px;
-	position: relative;
-	overflow: hidden;
-}
-.ui-icon-bubba-switch {
-	height:21px;
-	width:67px;
-	background-image:url(../_img/bubba_switch.png); /* your actual slider image */
-	background-repeat:none;
-	background-position:0px;
-}
+
+
 .ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
 	
-	.ui-icon-bubba-switch.ui-state-disabled {
+.ui-icon-bubba-switch.ui-state-disabled {
 		background-image:url(../_img/bubba_switch_disabled.png);
-	}
-label.error {
-	position : relative;
-	top : -50px;
-	left : -30px;
-  background:url("/admin/views/default/_img/x15.png") no-repeat 0px 0px;
-	padding : 5px;
-  padding-left: 15px;
-  color: #fff;
-  background-color : #656565;
-  font-size : 12px;
 }
-input.error {
-	border : 2px solid #506AB2;
-}
+

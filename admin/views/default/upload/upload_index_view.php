@@ -141,19 +141,20 @@ $(document).ready( function(){
 <body>
 
 <div id="uploaddiv">
-<fieldset><legend><?=t('Upload to')?>: <?= $path ?></legend>
 <form action="/cgi-bin/upload.cgi" method="post" enctype="multipart/form-data" target="uploadframe"  id="uploadform"> 
+    <label><?=t('Upload to')?>: <?= $path ?></label>
 	<input type="hidden" name="uuid"  id="uuid" value="<? echo uniqid("upl");  ?>" />
 	<input type="hidden" name="uploadpath" value='<?= rawurlencode($path) ?>'/>
-	<div id="pg_adder">
-		<input type="button" id="addmore" value="<?=t('Add entry')?>"/>
-	</div>
+	
 	<div id="uploads">
 		<div><input type="file" name="file1" id="file1" size="40"/></div>
 	</div>
-	<div><?=t("Maximum total upload (of all files) is 2GByte.")?></div>
-	<input type="submit" id="submitbutton" value="<?=t('Start upload')?>" disabled="disabled" />
-	<input type="button" value="<?=t('Close')?>" onclick="window.close()"/>
+	<span><?=t("Maximum total upload (of all files) is 2GByte.")?></span>
+	<div id="pg_adder">
+		<input type="button" id="addmore" value="<?=t('Add entry')?>"/>
+	</div>	
+	<input type="submit" id="submitbutton" value="<?=t('Start upload')?>" disabled="disabled"  />
+	<span id="upload_close" class="ui-icons ui-icon-dialog-close" onclick="window.close()" ></span>
 </form>
 <div id="progress"></div>
 </div>
@@ -161,7 +162,7 @@ $(document).ready( function(){
 <iframe name="uploadframe" style="border: 0;width: 1px;height: 1px;"></iframe>
 
 <div id="progressbar" style="display: none;">
-<fieldset><legend><?=t('Uploading to')?>: <?= $path ?></legend>
+<span><?=t('Uploading to')?>: <?= $path ?></span>
 <table border="0" cellspacing="0" width="100%">
 	<tr>
 		<td style="font-size: smaller; font-weight: bold;"><?=t('Total Upload')?></td>
@@ -187,7 +188,6 @@ $(document).ready( function(){
 		<td><input type="button" value="<?=t('Close')?>" id="b_close" disabled="disabled"/></td>
 	</tr>
 </table>
-</fieldset>
 </div>
 
 </body>

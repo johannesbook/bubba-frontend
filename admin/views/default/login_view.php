@@ -1,4 +1,4 @@
-<h1>This is the heart in you digital life.</h1>
+<h1>This is the heart in your digital life.</h1>
 <div id="login_menubar">
 
 <?foreach($main_menu as $menuitem) {
