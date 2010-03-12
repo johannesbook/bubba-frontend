@@ -85,31 +85,8 @@ function logout_dialog() {
 
 function exit_wizard() {
 	$.post(config.prefix+"/stat/dialog_wizard_exit");
+	window.location.href = config.prefix+"/settings"
 }
-
-jQuery.fn.extend({
-		stripe: function() {
-
-			return this.each(function(i) {
-					if( !jQuery(this).is('table') ) {
-						return;
-					}
-					var rowClass = 'even';
-					var rowIndex = 0;
-					return jQuery('tr',this).each(function(ii) {
-							if (jQuery('th', this).length) {
-								rowClass = 'subhead';
-								rowIndex = -1;
-							} else if (rowIndex % 1 == 0) {
-								rowClass = (rowClass == 'even' ? 'odd' : 'even');
-							};
-							jQuery(this).removeClass("odd even");
-							jQuery(this).addClass(rowClass);
-							rowIndex++;				
-						});
-				});
-		}
-	});
 
 function piechart(chart_canvas) {
           var chart = chart_canvas[0];

@@ -106,7 +106,7 @@ class Users extends Controller{
 			$uinfo=get_userinfo();
 
 			if (
-				isset($userinfo[$username])
+				isset($uinfo[$username])
 				|| $username == "root"
 				|| $username == "storage"
 				|| $username == "web"
