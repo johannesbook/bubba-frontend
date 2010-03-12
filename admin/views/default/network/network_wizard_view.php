@@ -44,9 +44,7 @@ $(document).ready(function(){
 	} else {
 		// ----   Default page  ------
 	?>
-	<h1 class="wizard-header">
-		<?=t('Step 3/3: Network setup')?>
-	</h1>
+	<h1 class="wizard-header"><?=t('Step 3/3: Network setup')?></h1>
 	<? /*
 	print "<pre>";
 	print_r($wiz_data);
@@ -54,9 +52,9 @@ $(document).ready(function(){
 	?>
 	<form action="<?=FORMPREFIX?>/network/wizard"" method="post">
 		<table id="wizard">
-		  <tr><td class="ui-state-default ui-widghet-header"><?=t("Easyfind")?></td></tr>
-			<tr><td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="checkbox_radio" <?=isset($wiz_data['en_easyfind'])?"CHECKED":""?>/>&nbsp;&nbsp;<?=t('Use "Easyfind" to locate Bubba|Two from the internet')?></td></tr>
-			<tr><td>
+		  <tr><td class="ui-wizard-label-header"><h2><?=t("Easyfind")?></h2></td></tr>
+			<tr class="ui-filemanager-state-header"><td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="checkbox_radio" <?=isset($wiz_data['en_easyfind'])?"CHECKED":""?>/>&nbsp;&nbsp;<?=t('Use "Easyfind" to locate Bubba|Two from the internet')?></td></tr>
+			<tr class="ui-filemanager-state-header"><td>
 				<input
 					<?=(isset($wiz_data['err_easyfind'])&&$wiz_data['err_easyfind'])?"class='highlight'":""?>
 					id="easyfind_name" 
@@ -71,9 +69,9 @@ $(document).ready(function(){
 		
 			<tr>
 				<td>
-					<input class='submitbutton' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/>
-					<input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/><span class="wiz_spacer">&nbsp;</span>
-					<input class='submitbutton' type='submit' value='<?=t('Next')?>'/>
+					<input class='submitbutton' type='submit' id="wizard_back" name='wiz_data[back]' value='<?=t('Back')?>'/>
+					<span class="wiz_spacer">&nbsp;</span>
+					<input class='submitbutton' type='submit' id="wizard_next" value='<?=t('Next')?>'/>
 					<input type="hidden" value="0" name="wiz_data[postingpage]" id="post_value"/>
 				</td>
 			</tr>

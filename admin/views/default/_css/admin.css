@@ -45,7 +45,7 @@ input.error { 	border : 2px solid #506AB2;}
 /*UPDATE STATUS*/
 #update_status {color:#000;background-color:#fbec9d;font-size:12px%;left:25%;margin:auto;padding:0.2em;position:fixed;text-align:center;top:2px;width:500px;display:none !important;}
 /* HEADER */ /* NAV */ /* SUB NAV */ /* TOP NAV */
-#img_logo {padding-top:4em;}
+#img_logo {padding-top:2.5em;}
 #header {margin-bottom:2em}
 #header li {color: #000;padding:0 0.1em;border-right:2px #000 solid;text-align:center;}
 #header li a {color: #000;text-decoration: none;margin-right:0.3em}
@@ -53,7 +53,7 @@ input.error { 	border : 2px solid #506AB2;}
 #header li.active a {color:#506ab2;}
 #header li.last {border-right:none;}
 #nav ul{font-size: 18px;margin: 0;list-style: none;font-weight:bold;margin-top:1em;}
-#topnav {float:right;width:275px;}
+#topnav {float:right;width:275px;margin-top:3px;}
 #topnav a, #topnav span {float:left;}
 #topnav .ui-button-text {top:35px;font-size:12px;font-weight:bold;position:absolute;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:10px;font-size:10px;}
@@ -147,7 +147,17 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-delete-disable {width:37px; height:26px;background-position: -304px -103px;}
 
 /*WIZARD*/
-.ui-widget-wizard{width:50% !important;}
+.ui-widget-wizard h1 {font-size:22px !important;margin-top:0;}
+.ui-widget-wizard h2 {text-align:left !important;fonst-size:14px;font-weight:bold;}
+.ui-widget-wizard {width:50% !important;}
+.ui-widget-wizard select {width:90%;}
+.ui-widget-wizard form {margin:0;}
+.ui-wizard-label-header {padding-left:0;}
+#wizard_exit, #wizard_back {display:inline;float:left;width:80px;}
+#wizard_next {display:inline;float:right;width:80px;}
+#ui-wizard-datetime span {font-size:10px;margin-left:3px;}
+
+
 /*FILE MANAGER*/
 .ui-filemanager {font-size:12px;margin-top:0.3em;}
 .ui-filemanager-path-widget {padding-top:10px;}
