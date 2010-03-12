@@ -4,7 +4,7 @@
 <tr>
 	<th colspan="7" class="ui-state-default ui-widget-header"><?=t('users-title')?></th>
 </tr>
-<tr>
+<tr class="ui-header">
    <th><?=t('users-label-username')?></th>
    <th><?=t('users-label-realname')?></th>
    <th><?=t('users-label-shell-login')?></th>

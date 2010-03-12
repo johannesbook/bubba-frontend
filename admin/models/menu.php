@@ -66,7 +66,7 @@ class Menu extends Model {
 			'auth' => true,
 			'class' => 'ui-login-menubar-a',
 			'icon' => 'default-icon',
-			'lock-icon' => array("default-icon-settings","default-icon-settings-lock"),
+			'lock-icon' => array("default-icon-user","default-icon-user-lock"),
 		),
 		/*array(
 			'id' => 'home',
