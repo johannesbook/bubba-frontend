@@ -404,9 +404,9 @@
       // manipulate the widget
    },
    value: function() {
+	   return this.options.root;
    },
    length: function() {
-
 	   return jQuery(".ui-filemanager-state-selected", this.element ).length;
    },
    destroy: function() {

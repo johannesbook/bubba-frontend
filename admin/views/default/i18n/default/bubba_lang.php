@@ -74,6 +74,7 @@ $lang['button_label_cancel']='Cancel';
 $lang['button-label-cancel']='Cancel'; // TODO FIXME
 $lang['generic_dialog_text_please_wait'] = "Please wait...";
 $lang['generic_dialog_text_warning'] = "Warning";
+$lang['generic-permission-denied'] = "Permission denied";
 
 /* Login texts  */
 $lang["topnav-authorized"] = "Logged in as '%s'";

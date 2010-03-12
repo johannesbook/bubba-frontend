@@ -23,7 +23,6 @@ option:hover {color:white;background:#506ab2;}
 option {line-height:16pxbackground-repeat;font-size:14px;background-color:#FFF}
 td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
 tr {border:0;border-bottom:0.1em solid #e5e5e5;line-height:31px;}
-font-size: 11px;	font-weight: normal;}
 tbody > tr > th label {	font-weight: bold;}
 ul {list-style: square;list-style-position: outside;}
 ul ul{}
@@ -141,7 +140,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-download {width:37px; height:26px;background-position: -119px -64px;}
 .ui-icon-upload {width:37px; height:26px;background-position: -156px -64px;} 
 .ui-icon-move {width:37px; height:26px;background-position: -193px -64px;}
-.ui-icon-album {width:23px; height:21px;background-position: -230px -64px;}
+.ui-icon-album {width:37px; height:26px;background-position: -230px -64px;}
 .ui-icon-unlocked {width:37px; height:26px;background-position: -266px -64px;} 
 .ui-icon-trash {width:37px; height:26px;background-position: -304px -64px;}
 
@@ -151,7 +150,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-download-disable {width:39px; height:26px;background-position: -119px -103px;}
 .ui-icon-upload-disable {width:39px; height:26px;background-position: -156px -103px;} 
 .ui-icon-move-disable {width:39px; height:26px;background-position: -193px -103px;}
-.ui-icon-album-disable {width:39px; height:21px;background-position: -230px -103px;}
+.ui-icon-album-disable {width:39px; height:26px;background-position: -230px -103px;}
 .ui-icon-change-disable {width:39px; height:26px;background-position: -266px -103px;} 
 .ui-icon-delete-disable {width:39px; height:26px;background-position: -304px -103px;}
 
@@ -178,7 +177,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager:not(.clone) tbody tr.row-selected:hover * {	background-color: #e5e5e5 !important}
 #filetable th {text-align:left;}
 #filetable_processing {padding: 30px; display: inline;}
-#filetable_wrapper button {border:0;background:transparent;margin:0;width:39px;display:inline}
+#filetable_wrapper button {border:0;background:transparent;margin:0;width:37px;display:inline}
 #filetable_wrapper button:hover {cursor: pointer;}
 .ui-filemanager span {float:left !important;}
 #fn-filemanager-information-panel {font-size:12px;width:957px;padding:0.4em;}

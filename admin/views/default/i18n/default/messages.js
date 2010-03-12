@@ -4,9 +4,11 @@ messages = {
 	"button-label-edit": "Edit",
 	"text-yes": "Yes",
 	"text-no": "No",
+	
 
 	// Filemanager
 	"filemanager-mkdir-dialog-button-label" : "Create directory",	
+	"filemanager-album-dialog-button-label" : "Album",	
 	"filemanager-rename-dialog-button-label" : "Rename",	
 	"filemanager-perm-dialog-button-label" : "Change permissions",
 	"filemanager-delete-dialog-button-label" : "Delete",

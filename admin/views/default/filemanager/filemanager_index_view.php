@@ -124,4 +124,7 @@
 <div id="fn-filemanager-delete-dialog">
     <h2><?=t('filemanager-delete-dialog-message')?></h2>
 </div>
+<div id="fn-filemanager-album-dialog">
+    <h2><?=t('filemanager-album-dialog-message')?></h2>
+</div>
 </div>

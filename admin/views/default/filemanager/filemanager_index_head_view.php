@@ -1,6 +1,4 @@
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.dataTables.js" type="text/javascript"></script>
-<script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.fake.js" type="text/javascript"></script>
-<script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.appendLinear.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ba-serializeobject.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.filemanager.js" type="text/javascript"></script>
 
@@ -10,6 +8,7 @@
 buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_write_access_selectors = $.map( [ 'delete', 'rename', 'move', 'perm', 'upload', 'create' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
+buttons_requiring_album_access_selectors = $.map( [ 'album' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 
 dialog_pre_open_callbacks = {
 	'perm': function() {
@@ -58,7 +57,7 @@ dialog_callbacks = {
 		params.root = $("#filetable").filemanager('option','root');
 		params.files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/mkdir/json", params, function(data){
-			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-mkdir")?>");
+			update_status( data.success, data.error ? data.html : $.message("filemanager-success-mkdir"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
@@ -70,7 +69,7 @@ dialog_callbacks = {
 		params.path = $("#filetable").filemanager('getSelected')[0];
 		params.root = $("#filetable").filemanager('option','root');
 		$.post(config.prefix+"/filemanager/rename/json", params, function(data){
-			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-rename")?>");
+			update_status( data.success, data.error ? data.html : $.message("filemanager-success-rename"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
@@ -81,7 +80,7 @@ dialog_callbacks = {
 		var params = $("#fn-filemanager-perm").serializeObject();
 		params.files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/perm/json/set", params, function(data){
-			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-perm")?>");
+			update_status( data.success, data.error ? data.html : $.message("filemanager-success-perm"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
@@ -91,9 +90,19 @@ dialog_callbacks = {
 	'delete': function() {
 		var files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/delete/json", {files: files}, function(data){
-			update_status( data.success, data.error ? data.html : "<?=t("filemanager-success-delete")?>");
+			update_status( data.success, data.error ? data.html : $.message("filemanager-success-delete"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
+			}
+		}, 'json');		
+		$(this).dialog('close');
+	},
+	'album': function() {
+		var files = $("#filetable").filemanager('getSelected');
+		$.post(config.prefix+"/filemanager/album/json", {files: files}, function(data){
+			update_status( data.success, data.error ? data.html : $.message("filemanager-success-album %s", data.files_added.join(', ')));
+			if( ! data.error ) {
+				// XXX do anything?
 			}
 		}, 'json');		
 		$(this).dialog('close');
@@ -245,6 +254,15 @@ buttons = [
 		}
 	},
 	{
+		'id': 'fn-filemanager-button-album',
+		'disabled': true,
+		'type': 'ui-icons ui-icon-album',
+		'alt': 'Add to album',
+		'callback': function() {
+			dialogs["album"].dialog("open");
+		}
+	},
+	{
 		'id': 'fn-filemanager-button-delete',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-trash',
@@ -273,6 +291,11 @@ update_toolbar_buttons = function() {
 	} else {
 		$(buttons_requiring_single_selected_file_selectors).button("disable").data("is_disabled", true);
 		$(buttons_requiring_selected_files_selectors).button("enable").data("is_disabled", false);
+	}
+	if( $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') == 0 ) {
+		$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", false);
+	} else {
+		$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", true);
 	}
 	if( ! writable ) {
 		$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
@@ -311,7 +334,7 @@ $(document).ready(function() {
 	filemanager_obj = $("#filetable");
 	// All dialogs can be somewhat generic in buildup
 
-	$.each( ['mkdir', 'delete', 'perm', 'rename'], function( index, value ) {
+	$.each( ['mkdir', 'delete', 'perm', 'rename', 'album'], function( index, value ) {
 
 		var options = { "autoOpen": false,
 			"open": function(event,ui) {

@@ -27,6 +27,18 @@ class Auth_model extends Model{
 			),
 			
 		),
+		"album" => array(
+			"list" 		=> array(
+				"deny" => array("admin")
+			),
+			"add"  		=> array(
+				"deny" => array("admin")
+			),
+			"delete"    => array( 
+				"deny" => array("admin")
+			),
+
+		),
 		"menu"				=> array(
 			"show_level1" => array(
 				"allow" => array("admin")

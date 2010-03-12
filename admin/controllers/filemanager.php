@@ -150,47 +150,34 @@ class Filemanager extends Controller{
 			echo "error";
 		}
 	}	
+
 	function album($strip=""){
-		$file_id = $this->input->post('file_id') ? 
-				$this->input->post('file_id') : array();
-		$file_name = $this->input->post('file_name') ? 
-				$this->input->post('file_name') : array();
-		
-		$cnt=count($file_id);
-		if($cnt>0){
-			for($i=0; $i<$cnt; $i++){
-				$data["files"][b_dec($file_name[$file_id[$i]])]=$file_name[$file_id[$i]];
+
+		if( $strip == 'json' ) {
+			$error = false;
+			if(!$this->Auth_model->policy("album","add")) {
+				$error = t("generic-permission-denied");
 			}
-		}else{
-			$data["files"]=array();
-		}
-		$data["path"]=$this->input->post("path");
 
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_album_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_album_view',$data,true),false);
+			$files = $this->input->post('files');
+			$user=$this->session->userdata("user");
+			$this->load->model('album_model');
+			$data['files_added'] = $this->album_model->batch_add( $file_list );
+
+			$data["success"]=!$error;
+
+			if( $error ) {
+				$data['error'] = true;
+				$data['html'] = $error;
+			}
+			header("Content-type: application/json");
+			echo json_encode( $data );
+			
+		} else {
+			echo "error";
 		}
 	}
-	function doalbum($strip=""){
-		$this->load->model('album_model');
-		if($this->input->post("cancel")){
-			$this->index();
-			return;
-		}
 
-		$file_list = $this->input->post('file_list') ? $this->input->post('file_list') : array();
-		$user=$this->session->userdata("user");
-		
-		$data["path"]=$this->input->post("path");
-		$data['files'] = $this->album_model->batch_add( $file_list );
-
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_doalbum_view',$data);
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_doalbum_view',$data,true),false);
-		}
-	}
 	function perm($strip="", $mode = 'get' ){
 
 		if( $strip == 'json' ) {
