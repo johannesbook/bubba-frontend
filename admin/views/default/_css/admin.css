@@ -1,6 +1,6 @@
 * {margin: 0;padding: 0;}
 html, body{ height: 100%;}
-body {font-size:12px;font-family: Helvetica, Arial, sans-serif; bottom right no-repeat fixed;color: #000;background:#e5e5e5}
+body {font-size:12px;font-family: Helvetica, Arial, sans-serif;color: #000;background:#e5e5e5;background-image:url(../_img/background.png);background-repeat:repeat-y;background-attachment:fixed;background-position:top center;}
 h1 {line-height: 1em;font-size: 18px;font-weight: bold;}
 h2 {line-height: 1em;font-size: 1.5em;font-weight: normal;margin: 1.2em 0 0 0;}
 h3 {font-size: 1.3em;font-weight: bold;margin: 0.6em 0 0 0;}
@@ -41,7 +41,7 @@ label.error { position : relative; top : -50px;	left : -30px;padding : 5px;  pad
 input.error { border : 2px solid #506AB2;}
 
 /* WRAPPER */
-#wrapper {width:98%;margin: 0 auto;padding:0em;max-width:1020px;background-image:url(../_img/background.png);height:100%;max-width:960px;background-repeat:repeat-y;height:762px;}
+#wrapper {width:98%;margin: 0 auto;padding:0em;max-width:1020px;}
 
 /* CONTENT */
 #content {margin-bottom:3em;padding-top:2em;float:left;width:95%}
