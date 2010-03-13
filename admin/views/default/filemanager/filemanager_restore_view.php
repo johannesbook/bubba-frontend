@@ -436,9 +436,9 @@ function progressReport() {
 /*]]>*/
 </script>
 
-<div class="ui-state-default ui-widget-header ui-div-header"><?=t('Restore user data')?></div>
+<div  id="restore" class="ui-state-default ui-widget-header ui-div-header"><?=t('Restore user data')?></div>
 
-<div id="restore">	
+<div>	
 	<div id="backup_header" class="ui-header">
 		<div class="jobs"><?=t("Existing jobs")?></div>
 		<div class="date"><?=t("Backup date")?></div>

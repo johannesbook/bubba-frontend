@@ -3,7 +3,7 @@
 	<table>
 	   <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Show logs')?></td></tr>
 	</table>
-		<select name="log">
+		<select name="log" id="settings_log">
 			<?foreach( $logs as $name => $path ):?>
 				<?if(is_array($path)):?>
 				<optgroup label="<?=$name?>">

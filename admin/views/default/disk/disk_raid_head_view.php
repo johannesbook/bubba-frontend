@@ -8,6 +8,9 @@
 $(document).ready( function() {
 
 	$("div#adv_status").css("display","none");
+	$('#status_mark').click(function(e) {	    
+	    $('#adv_status').show();
+	});
 
 	$('.remove_raid_disk').click(function(e) {
 		$.post(	'<?=site_url("ajax_disk/remove_raid_disk")?>', { disk: $(e.target).attr('rel') }, function(data) {

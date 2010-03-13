@@ -5,8 +5,9 @@ h1 {line-height: 1em;font-size: 18px;font-weight: bold;}
 h2 {line-height: 1em;font-size: 1.5em;font-weight: normal;margin: 1.2em 0 0 0;}
 h3 {font-size: 1.3em;font-weight: bold;margin: 0.6em 0 0 0;}
 p {font-size: 12px;padding: 0.2em 0 0.5em 0;}
-form {margin: 1em 0;}
+/*form {margin: 1em 0;}
 form form {margin: 0;}
+*/
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
 input[type=submit],input[type=button],input[type=file], button {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;height:31px;}
@@ -17,10 +18,11 @@ input[disabled]{color: #888;background:#ddd;}
 input:focus {border: 0.1em solid #000;}
 input[type=radio] {}
 input[type=checkbox] {}
-table {margin: 1em 0;font-size: 14px;border-collapse : collapse;border:0;width:100%; }
+table {margin-bottom: 1em;font-size: 14px;border-collapse : collapse;border:0;width:100%; }
 select {width:49%;}
 option:hover {color:white;background:#506ab2;}
 option {line-height:16pxbackground-repeat;font-size:14px;background-color:#FFF}
+th {border:0;padding: 0.25em 1.2em;text-align: left !important;}
 td {border:0;padding: 0.25em 1.2em;vertical-align: top;}
 tr {border:0;border-bottom:0.1em solid #e5e5e5;line-height:31px;}
 tbody > tr > th label {	font-weight: bold;}
@@ -36,7 +38,7 @@ button:hover, input[type=button], input[type=submit], input[type=reset] { cursor
 
 /*GENERAL CLASSES */
 .ui-header {background-color: #e5e5e5;color:#000;padding-left:1.2em;}
-.ui-div-header {font-size:14px;height:31px;padding:7px 1.2em;height:17px;}
+.ui-div-header {font-size:14px;height:24px;padding:7px 1.2em;height:17px;}
 label.error { position : relative; top : -50px;	left : -30px;padding : 5px;  padding-left: 15px;  color: #fff; background-color : #656565; font-size : 12px;width:300px;z-index:100px;}
 input.error { border : 2px solid #506AB2;}
 
@@ -86,7 +88,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 /* SIDE BOARD */
 #sideboard {float:right;width:160px;display : none}
 #sideboard-datetime-date {font-size: 140px;font-weight: bold;margin:0 0 -0.3em;}
-#sideboard-datetime-day {font-size: 29px;font-weight: bold;}
+#sideboard-datetime-day {font-size: 16px;font-weight: bold;margin-top:0.3em}
 #sideboard-datetime-month {font-size: 14px;font-weight: bold;}
 #sideboard-datetime-year {font-size: 14px;font-weight: bold;}
 #sideboard-clock-digital {font-size: 14px;font-weight: bold;}
@@ -116,9 +118,9 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .default-icon-music-lock {background-position: -90px -156px;}
 .default-icon-album-lock {background-position: -181px -156px;}
 .default-icon-downloads-lock {background-position: -272px -156px;}
-.default-icon-user-lock {background-position: -456px -156px;}
+.default-icon-user-lock {background-position: -454px -156px;}
 .default-icon-mail-lock {background-position: -363px -156px;}
-.default-icon-settings-lock {background-position: -546px -156px;}
+.default-icon-settings-lock {background-position: -543px -156px;}
 
 /*UI ICON SET*/
 .ui-icons {background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
@@ -140,7 +142,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-download {width:37px; height:26px;background-position: -119px -64px;}
 .ui-icon-upload {width:37px; height:26px;background-position: -156px -64px;} 
 .ui-icon-move {width:37px; height:26px;background-position: -193px -64px;}
-.ui-icon-album {width:37px; height:26px;background-position: -230px -64px;}
+.ui-icon-album {width:23px; height:21px;background-position: -230px -64px;}
 .ui-icon-unlocked {width:37px; height:26px;background-position: -266px -64px;} 
 .ui-icon-trash {width:37px; height:26px;background-position: -304px -64px;}
 
@@ -150,7 +152,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-icon-download-disable {width:39px; height:26px;background-position: -119px -103px;}
 .ui-icon-upload-disable {width:39px; height:26px;background-position: -156px -103px;} 
 .ui-icon-move-disable {width:39px; height:26px;background-position: -193px -103px;}
-.ui-icon-album-disable {width:39px; height:26px;background-position: -230px -103px;}
+.ui-icon-album-disable {width:39px; height:21px;background-position: -230px -103px;}
 .ui-icon-change-disable {width:39px; height:26px;background-position: -266px -103px;} 
 .ui-icon-delete-disable {width:39px; height:26px;background-position: -304px -103px;}
 
@@ -170,6 +172,9 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #ui-wizard-datetime span {font-size:10px;margin-left:3px;}
 
 /*FILE MANAGER*/
+#filemanager {margin-top:-3em;}
+#filetable span {margin-top:5px;}
+
 .ui-filemanager {font-size:12px;margin-top:0.3em;}
 .ui-filemanager-path-widget {padding-top:10px;}
 .ui-filemanager-path-widget a {color:#000;margin:0 3px;text-transform:capitalize;}
@@ -177,7 +182,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager:not(.clone) tbody tr.row-selected:hover * {	background-color: #e5e5e5 !important}
 #filetable th {text-align:left;}
 #filetable_processing {padding: 30px; display: inline;}
-#filetable_wrapper button {border:0;background:transparent;margin:0;width:37px;display:inline}
+#filetable_wrapper button {border:0;background:transparent;margin:0;width:39px;display:inline}
 #filetable_wrapper button:hover {cursor: pointer;}
 .ui-filemanager span {float:left !important;}
 #fn-filemanager-information-panel {font-size:12px;width:957px;padding:0.4em;}
@@ -206,6 +211,10 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-element-width-100 {width:95% !important;}
 .ui-element-width-50 {width:50% !important;}
 #filemanager .ui-button-text {display:none;}
+
+/*FILEMANAGER BACKUP / RESTORE*/
+#backup, #restore {margin-top:3em;}
+#backup table, #backup input{font-size:12px}
 
 /*FILEMANAGER UPLOAD*/
 #uploaddiv {padding:15px;}
@@ -240,17 +249,26 @@ div.hotfix {margin-top : 10px;	vertical-align : middle;}
 div.hotfix *{vertical-align : middle;	margin-right : 10px;}
 #settings fieldset.update {	min-height : 135px;}
 #traffic .ui-filemanager-state-header {font-weight:bold;}
+#current_package_versions {margin-top:40px;}
+#package_versions {font-size:11px;width:300px !important;}
+#package_versions tr{height:15px;}
+#package_versions td{padding-top:0;line-height:11px;vertical-align:middle}
+#settings_log {width:40%;}
+#backupform input, #restoreform input{display:inline;}
+
 
 /*NETWORK*/
 #network input[type=submit],input[type=button] {margin: 1.2em;}
 
+/*USERS*/
+
 /*DISK*/
 #lvm {margin-top:1em;}
-#lvm select {width:300px;}
+#lvm select {width:260px;margin-right:10px}
 #lvm label {padding-left:1.25em;margin-right:30px;}
 #raid p {padding-left:1.25em;}
 #status_mark {cursor:pointer !important;}
-table.typetable > tbody > tr > td {	vertical-align : middle;	padding : 0.5em 0.5em;}
+table.typetable > tbody > tr > td {	vertical-align : middle;}
 table.typetable > tbody > tr > th {	padding : 0.5em 0.5em;}
 table.disks {	width: 100%;	margin : 0px;}
 table.disks > tbody > tr > td {	vertical-align : middle;}

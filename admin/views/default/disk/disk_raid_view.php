@@ -1,5 +1,5 @@
 <div id="raid">
-	<div class="ui-state-default ui-widget-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
+	<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
 	<div>
 		<div>
 		    <input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
@@ -14,7 +14,7 @@
 	</div>
 
 
-<?=t('disk_raid_status_title')?>
+<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_status_title')?></div>
 <?if(sizeof($status)) { ?>
 	<?
 	$faulty = false;
@@ -25,7 +25,7 @@
 	}
 	?>
 	<?foreach($status as $stat):?>
-	<div class="raid_status <?=$stat['type']?>">
+	<div class="raid_status <?=$stat['type']?>" >
 	<?if($stat['type'] == 'degraded'):?>
 		<?if($stat['sync'] == 'recover'):?>
 			<div >
@@ -83,14 +83,14 @@
 		}
  	 } ?>
 
-<div id="raid_status" class="expansion ui-state-default ui-widget-header ui-div-header">
+<div id="raid_status" class="expansion ui-state-default ui-widghet-header ui-div-header">
     <span id="status_mark">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?>
 </div>
 	<div id="adv_status">
 	
-		<?=t('disk_raid_list_of_arrays_title')?>
+		<p><?=t('disk_raid_list_of_arrays_title')?></p>
 		<table class="disks">
-		<tr>
+		<tr class="ui-header">
 			<th><?=t('disk_raid_table_list_of_arrays_array_name_title')?></th>
 			<th><?=t('disk_raid_table_list_of_arrays_level_title')?></th>
 			<th><?=t('disk_raid_table_list_of_arrays_state_title')?></th>
@@ -110,9 +110,9 @@
 		<?endforeach?>
 		</table>
 		
-		<?=t('disk_raid_list_of_disks_title')?>
+		<p><?=t('disk_raid_list_of_disks_title')?></p>
 		<table class="disks">
-		<tr>
+		<tr class="ui-header">
 			<th><?=t('disk_raid_table_list_of_disks_disk_title')?></th>
 			<th><?=t('disk_raid_table_list_of_disks_parent_title')?></th>
 			<th><?=t('disk_raid_table_list_of_disks_state_title')?></th>

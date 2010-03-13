@@ -26,7 +26,7 @@
 </fieldset>
 </form>
 
-<fieldset>
+<fieldset id="current_package_versions">
 	<legend><?=t("Current package versions")?></legend>
 	<table id="package_versions">
 		<thead>

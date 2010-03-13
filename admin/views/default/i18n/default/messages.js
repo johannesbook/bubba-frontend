@@ -31,8 +31,8 @@ messages = {
 	"mail-dialog-delete-title" : "Delete mail account"	,
 	
 	// Logout
-	"logout-dialog-title" : "Logout",
-	"logout-dialog-message" : "Proceed with logout?",
+	"logout-dialog-title" : "Proceed with logout?",
+	"logout-dialog-message" : "",
 	"logout-dialog-button-logout" : "Logout",
 
 	// Login
