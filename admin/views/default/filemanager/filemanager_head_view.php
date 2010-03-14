@@ -1,7 +1,4 @@
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/backup.css?v='<?=$this->session->userdata('version')?>'" />
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.js?v='<?=$this->session->userdata('version')?>'"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.confirm.js?v='<?=$this->session->userdata('version')?>'"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.alert.js?v='<?=$this->session->userdata('version')?>'"></script>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css?v='<?=$this->session->userdata('version')?>'" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jqueryFileTree.js?v='<?=$this->session->userdata('version')?>'"></script>
 <link href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jqueryFileTree.css" rel="stylesheet" type="text/css" />
@@ -15,7 +12,7 @@
 		$("select").attr("disabled",true);
 		$.post("<?=site_url("ajax_settings/ajax_backup_runjob")?>", { 'user': "<?=$this->session->userdata("user")?>", 'jobname': job});
 		cursor_wait();
-		update_status("success","<?=t("Backup job scheduled")?>");
+		update_status(true,"<?=t("Backup job scheduled")?>");
 		setTimeout("window.location.reload()",2000);
 	}
 
@@ -57,14 +54,14 @@
 							$my_select.children('option[value='+$uuid_to_select+']').attr("selected","selected");
 						} else {
 							$my_select.prepend("<optgroup label=\"<?=t("By Config")?>\"><option selected=\"selected\" value=\""+$uuid_to_select+"\">"+$label+"</option></optgroup>");
-							$.alert("<?=t("The specified backupdisk is not attached.")?>","","<?=t("Disk error")?>");
+							$.alert("<?=t("The specified backupdisk is not attached.")?>","<?=t("Disk error")?>","");
 						}
 					}						
 						
 					$("#target").append($my_disklables);
 
 				} else {
-					$.alert("<?=t("Error listing disks.")?>","","<?=t("Disk error")?>");
+					$.alert("<?=t("Error listing disks.")?>","<?=t("Disk error")?>","");
 					
 				}
 				cursor_ready
@@ -86,12 +83,12 @@
 			$.post("<?=site_url("ajax_settings/ajax_backup_update")?>", $mypost,
 					function(data){
 						if(data.error == "") {
-							update_status("success","<?=t("Update successful")?>.");
+							update_status(true,"<?=t("Update successful")?>.");
 							$("#buttons input[name='run_now']").attr("disabled",false);
 							$("#buttons input[name='deletejob']").attr("disabled",false);
 							$("#status").empty();
 						} else {
-							update_status("fail","<?=t("Update error")?>:" + data.error);
+							update_status(false,"<?=t("Update error")?>:" + data.error);
 						}
 						cursor_ready();
 					}
@@ -100,7 +97,7 @@
 			$("#target").slideUp(500);
 			$("#schedule").slideUp(500);
 			$("#security").slideDown(500);
-			update_status("fail","<?=t("Encryption passwords do not match")?>");
+			update_status(false,"<?=t("Encryption passwords do not match")?>");
 		}	
  		return false;
  	}
@@ -111,25 +108,34 @@
 		if(!job) {
 			job = $("#current_jobs").children(".selected");
 		}
-
-		$.confirm( "<?=t("Delete backup job:")?> " + job.html(), function() {
-			cursor_wait();
-			disable_buttons();
-			$.post("<?=site_url("ajax_settings/ajax_backup_deletejob")?>",{ 'user': "<?=$this->session->userdata("user")?>", 'jobname': job.html()},
-				function(data){
-					if(!data.error) {
-						job.hide('slow');
-						job.remove();
-						update_status("success","<?=t("Update successful")?>");
-						updatefields($("#current_jobs .files:last"));
-						$("#current_jobs .files:last").addClass("selected");
-					} else {
-						update_status("fail","<?=t("Update error")?>: " + data.error)
-					}
-					cursor_ready();
+		$.confirm(
+			"<?=t("Delete backup job:")?> " + job.html(),
+			"<?=t("Delete job")?>",
+			[
+				{
+					'label': "<?=t("Delete")?>",
+					'callback': function() {
+						disable_buttons();
+						var confirm_dialog = $(this);
+						$.post("<?=site_url("ajax_settings/ajax_backup_deletejob")?>",{ 'user': "<?=$this->session->userdata("user")?>", 'jobname': job.html()},
+							function(data){
+								if(!data.error) {
+									job.hide('slow');
+									job.remove();
+									update_status(true,"<?=t("Update successful")?>");
+									updatefields($("#current_jobs .files:last"));
+									$("#current_jobs .files:last").addClass("selected");
+								} else {
+									update_status(false,"<?=t("Update error")?>: " + data.error)
+								}
+								confirm_dialog.dialog('close');
+							}
+						,"json");
+					},
+					options: { id: 'fn-filemanager-backup-delete-confirm-button' }
 				}
-			,"json");
-		},"<?=t("Delete")?>","<?=t("Cancel")?>","<?=t("Delete job")?>");
+			]
+		);
 
 	}
 	
@@ -147,10 +153,10 @@
 			function(data){
 				cursor_wait();
 				if(!data.error) {
-					update_status("success","'"+data.file + "' " + data.status);
+					update_status(true,"'"+data.file + "' " + data.status);
 					file.hide('slow');
 				} else {
-					update_status("fail","<?=t("Error")?>. '" + data.file + "' " + data.status);
+					update_status(false,"<?=t("Error")?>. '" + data.file + "' " + data.status);
 					}
 				cursor_ready();
 			}
@@ -424,16 +430,16 @@
 							$("#backupsettings input[name='jobname']").val($("#create_job").val());
 							$("#create_job").val("");
 							enable_buttons();
-							update_status("success","<?=t("Backupjob added.")?>")
+							update_status(true,"<?=t("Backupjob added.")?>")
 						} else {
-							update_status("fail","<?=t("Update error")?>: " + data.status)
+							update_status(false,"<?=t("Update error")?>: " + data.status)
 						}
 	
 						cursor_ready();
 	
 					},"json");
 				} else {
-					$.alert("<?=t("Please enter a jobname to identify your backup job.")?>","","<?=t("Jobname missing")?>");
+					$.alert("<?=t("Please enter a jobname to identify your backup job.")?>","<?=t("Jobname missing")?>","");
 					//$("#create_job").css("border","1px solid red");
 				}
 			
@@ -466,7 +472,6 @@
 								'file': to_be_included
 							},
 							function(data){
-								//$.modal.close();
 								alert("Close dialog");
 								if(!data.error) {
 									if(!$("#current_incfiles").children("div[class*='files']").length) {
@@ -474,9 +479,9 @@
 									}
 									show_file = to_be_included;
 									$("#current_incfiles").append("<div class=\"files\">"+show_file+"</div>\n");
-									update_status("success","'"+show_file + "' " + data.status);
+									update_status(true,"'"+show_file + "' " + data.status);
 								} else {
-									update_status("fail","<?=t("Error")?>. '" + data.file + "' " + data.status);
+									update_status(false,"<?=t("Error")?>. '" + data.file + "' " + data.status);
 								}
 								cursor_ready();
 							},"json"
@@ -532,16 +537,15 @@
 								'file': to_be_excluded
 							},
 							function(data){
-								$.modal.close();
 								if(!data.error) {
 									if(!$("#current_excfiles").children("div[class*='files']").length) {
 										$("#current_excfiles").empty(); // remove "No data found"
 									}
 									show_file = to_be_excluded;
 									$("#current_excfiles").append("<div class=\"files\">"+show_file+"</div>\n");
-									update_status("success","'"+show_file + "' " + data.status);
+									update_status(true,"'"+show_file + "' " + data.status);
 								} else {
-									update_status("fail","<?=t("Error")?>. '" + data.file + "' " + data.status);
+									update_status(false,"<?=t("Error")?>. '" + data.file + "' " + data.status);
 								}
 								cursor_ready();
 							},"json"
