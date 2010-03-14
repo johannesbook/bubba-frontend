@@ -83,8 +83,8 @@
 		}
  	 } ?>
 
-<div id="raid_status" class="expansion ui-state-default ui-widghet-header ui-div-header">
-    <span id="status_mark">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?>
+<div id="raid_status" class="ui-state-default ui-widghet-header ui-div-header">
+    <span id="status_switch">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?>
 </div>
 	<div id="adv_status">
 	

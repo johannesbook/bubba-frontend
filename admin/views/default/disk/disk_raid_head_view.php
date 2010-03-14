@@ -8,8 +8,11 @@
 $(document).ready( function() {
 
 	$("div#adv_status").css("display","none");
-	$('#status_mark').click(function(e) {	    
-	    $('#adv_status').show();
+	$('#status_switch').click(function(e) {	    
+	    e.preventDefault();
+	    $('#adv_status').toggle();
+	    if($("#adv_status").is(":visible")) {$("#status_switch").html("-");}
+	    else {$("#status_switch").html("+");}
 	});
 
 	$('.remove_raid_disk').click(function(e) {
