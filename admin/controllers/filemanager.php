@@ -157,12 +157,12 @@ class Filemanager extends Controller{
 			$error = false;
 			if(!$this->Auth_model->policy("album","add")) {
 				$error = t("generic-permission-denied");
+			} else {
+				$files = $this->input->post('files');
+				$user=$this->session->userdata("user");
+				$this->load->model('album_model');
+				$data['files_added'] = $this->album_model->batch_add( $files );
 			}
-
-			$files = $this->input->post('files');
-			$user=$this->session->userdata("user");
-			$this->load->model('album_model');
-			$data['files_added'] = $this->album_model->batch_add( $file_list );
 
 			$data["success"]=!$error;
 

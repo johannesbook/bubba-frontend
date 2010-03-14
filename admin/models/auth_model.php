@@ -3,6 +3,20 @@
 class Auth_model extends Model{
 
 	private $policies = array(
+		"printing" 		=> array(
+			"list" 		=> array(
+				"allow" => array("admin")
+			),
+			"startstop" => array(
+				"allow" => array("admin")
+			),
+			"add"  		=> array(
+				"allow" => array("admin")
+			),
+			"delete"    => array( 
+				"allow" => array("admin")
+			)
+		),
 		"userdata" 		=> array(
 			"list" 		=> array(
 				"allow" => array("admin")
@@ -25,7 +39,6 @@ class Auth_model extends Model{
 			"allow:disable_remote"     => array(
 				"allow"  => array("admin")
 			),
-			
 		),
 		"album" => array(
 			"list" 		=> array(
@@ -37,7 +50,6 @@ class Auth_model extends Model{
 			"delete"    => array( 
 				"deny" => array("admin")
 			),
-
 		),
 		"menu"				=> array(
 			"show_level1" => array(

@@ -2,6 +2,9 @@
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ba-serializeobject.js" type="text/javascript"></script>
 <script src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.filemanager.js" type="text/javascript"></script>
 
+<script>
+album_add_access=<?=json_encode($this->Auth_model->policy("album","add"))?>;
+</script>
 
 <script>
 
@@ -292,11 +295,8 @@ update_toolbar_buttons = function() {
 		$(buttons_requiring_single_selected_file_selectors).button("disable").data("is_disabled", true);
 		$(buttons_requiring_selected_files_selectors).button("enable").data("is_disabled", false);
 	}
-	if( $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') == 0 ) {
-		$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", false);
-	} else {
-		$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", true);
-	}
+
+
 	if( ! writable ) {
 		$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
 	}
@@ -305,6 +305,7 @@ update_toolbar_buttons = function() {
 
 after_open_dir_callback = function(json) {
 	writable = json.meta.writable;
+	
 	if( ! writable ) {
 		if( copymove_isactive ) {
 			copymove_yesbutton.button("disable").data("is_disabled", true);
@@ -318,6 +319,13 @@ after_open_dir_callback = function(json) {
 			$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
 		}
 	}
+
+	if( !copymove_isactive && album_add_access && $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') == 0 ) {
+		$(buttons_requiring_album_access_selectors).button("enable").data("is_disabled", false);
+	} else {
+		$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", true);
+	}
+
 }
 
 file_download_callback = function( row, options ){

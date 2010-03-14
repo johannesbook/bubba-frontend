@@ -2,7 +2,7 @@
 <table id="fn-users-list">
 <thead>
 <tr>
-	<th colspan="7" class="ui-state-default ui-widget-header"><?=t('users-title')?></th>
+	<th colspan="4" class="ui-state-default ui-widget-header"><?=t('users-title')?></th>
 </tr>
 <tr class="ui-header">
    <th><?=t('users-label-username')?></th>

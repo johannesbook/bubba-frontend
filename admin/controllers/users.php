@@ -249,7 +249,7 @@ class Users extends Controller{
 					$error = t('users-delete-account-error');
 				}
 			} else {
-				$error = t("restricted-access", $username);
+				$error = t("generic-permission-denied");
 			}
 			$data['success'] = !$error;
 			if( $error ) {

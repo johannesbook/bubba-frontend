@@ -368,3 +368,17 @@ $lang["mail-validation-error"] = "Validation of input failed";
 $lang["mail-auth-error"] = "Authorization failed";
 $lang["mail-retrieve-title"] = "Retrieve mail";
 $lang["mail-server-title"] = "Mail Server";
+
+//  ----------- Printing --------
+
+$lang["printing-add-button-label"] = "Add new printer";
+$lang["printing-title"] = "Printers";
+$lang["printing-label-share"] = "Share";
+$lang["printing-label-info"] = "Description";
+$lang["printing-label-location"] = "Location";
+$lang["printing-label-state"] = "State";
+$lang["printing-list-edit-printer-label"] = "Printer";
+$lang["printing-list-edit-name-label"] = "Share";
+$lang["printing-list-edit-location-label"] = "Location";
+$lang["printing-list-edit-info-label"] = "Description";
+

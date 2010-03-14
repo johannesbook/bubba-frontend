@@ -59,7 +59,7 @@ messages = {
 	"users-edit-single-button-label" : "Update your user settings",
 	"users-list-edit-dialog-delete-header":"Delete user",
 	"users-list-edit-dialog-delete-userdata-label":"Delete userdata as well?",
-	"users-list-edit-dialog-delete-message":"Are you sure you want to delete this user from the system",
+	"users-list-edit-dialog-delete-message":"Are you sure you want to delete this user from the system?",
 	"users-list-delete-success-message":"Deletion was successful",
 	"users-list-add-success-message":"Creation of user was successful",
 	"users-list-edit-success-message":"The user was successfully edited",
@@ -67,6 +67,28 @@ messages = {
 	// Stat
 	"stat-shutdown-button-continue" : "Shut down",
 	"stat-shutdown-confirm-message" : "Proceed to shut down Bubba|2",
-	"stat-shutdown-confirm-title" : "Shut down"
+	"stat-shutdown-confirm-title" : "Shut down",
+
+	// Printing
+	"printing-list-add-dialog-button-label" : "Add",
+	"printing-list-edit-dialog-button-label" : "Edit",
+	"printing-list-edit-dialog-delete-button-label" : "Delete",
+	"printing-list-add-dialog-header" : "Add an new printer",
+	"printing-list-add-success-message" : "Sucessfully added printer",
+	"printing-state-idle" : "Online",
+	"printing-state-stopped" : "Offline",
+	"printing-list-edit-dialog-delete-header" : "Delete printer",
+	"printing-list-edit-dialog-delete-message" : "Are you sure you want to delete this printer from the system?",
+	"printing-list-delete-success-message" : "Successfully delete the printer",
+	"printing-list-edit-dialog-header" : "Edit printer",
+	"printing-list-edit-dialog-startstop-button-label" : "Start/stop",
+	"printing-list-edit-dialog-start-button-label" : "Start",
+	"printing-list-edit-dialog-stop-button-label" : "Stop",
+	"printing-list-edit-dialog-stop-message" : "Are you sure you want to stop the printer?",
+	"printing-list-edit-dialog-stop-header" : "Stop printer",
+	"printing-list-edit-dialog-start-message" : "Do you want to activate the printer",
+	"printing-list-edit-dialog-start-header" : "Start printer",
+	"printing-list-startstop-success-message" : "Successfully enabled/disabled printer",
+	"printing-list-edit-success-message" : "Successfully edit the printer"
 	
 }

@@ -45,7 +45,8 @@ $.widget("ui.dialog", {
 		stack: true,
 		title: '',
 		width: 300,
-		zIndex: 1000
+		zIndex: 1000,
+		evenButtonWidth: true
 	},
 	_create: function() {
 		this.originalTitle = this.element.attr('title');
@@ -288,6 +289,15 @@ $.widget("ui.dialog", {
 			.filter(':first')
 			.focus();
 
+
+		if( self.options.evenButtonWidth ) {
+			var buttons = self.uiDialog.find('.ui-dialog-buttonpane').children('button.ui-button');
+			var count = buttons.length;
+			console.log(buttons.css('margin-left'));
+			var difference = (buttons.innerWidth()/buttons.outerWidth())*2;
+
+			buttons.width((100/count - difference) + '%');
+		}			
 		self._trigger('open');
 		self._isOpen = true;
 
@@ -350,6 +360,8 @@ $.widget("ui.dialog", {
 				uiDialogButtonPane.appendTo(self.uiDialog);
 			}
 		}
+
+
 	},
 
 	_makeDraggable: function() {
