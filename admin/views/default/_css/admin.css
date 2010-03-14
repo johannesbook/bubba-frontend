@@ -312,21 +312,20 @@ div.colorcode {	width : 15px;	height : 15px;}
 div.text input {	vertical-align : middle;}
 div.text label {	margin-right : 15px;}
 input.mount {width : 75px;	margin : 0;}
-
 .ui-filemanager-information-panel {	height: 3em;background: #efdfad;border: 2px solid #dfcf9d;width: 600px;opacity: .95;	position: absolute;	text-align: center;width:100%;margin-top:-45px;}
 
 /*JQUERY OVERRIDE*/
 .ui-action-panel button {border: 0;}
 .ui-action-panel {position: absolute;border: 0;display:inline;background:transparent;}
-.ui-dialog {opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(opacity=95) !important;}
-.ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; }
+.ui-dialog {opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(opacity=95) !important;clear:both;}
+.ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; height:31px;}
+.ui-dialog-content { padding:0em 1em }
+.ui-dialog .ui-dialog-buttonpane  { padding:0.3em 1em 0.8em 0.4em;}
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
 .ui-dialog-title {width:100%;}
-.ui-dialog h2 {font-size:16px;font-weight:bold;text-align:center;}
+.ui-dialog h2 {font-size:16px;font-weight:bold;text-align:center;margin-top:0;margin-bottom:1.5em;}
 .ui-dialog label {font-size:12px;}
 .ui-dialog table {margin:0;}
 .ui-dialog th {font-size:14px;padding:0}
-
 .ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
-	
-
+.ui-widget-overlay { background:  url(../_img/overlay.png) repeat-x; opacity: .70;filter:Alpha(Opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }	
