@@ -436,48 +436,51 @@ function progressReport() {
 /*]]>*/
 </script>
 
-<div  id="restore" class="ui-state-default ui-widget-header ui-div-header"><?=t('Restore user data')?></div>
-
-<div>	
-	<div id="backup_header" class="ui-header">
-		<div class="jobs"><?=t("Existing jobs")?></div>
-		<div class="date"><?=t("Backup date")?></div>
-		<div class="status"><?=t("Backup status")?></div>
-		<div class="backupfiles"><?=t("Included files")?></div>
-	</div>
-
-	<div id="backup_content">
-		<div class="jobs">
-		<?
-		if(count($backupjobs)) {
-			printjobs($backupjobs);					
-		} else {
-			print t('No jobs found') .".\n";
-		}
-		?>
-		</div>
-		<div class="date">
-			<div id="current_dates">&nbsp;</div>
-		</div>
-		<div class="status">
-			<div id="current_status">&nbsp;</div>
-		</div>
-		<div class="backupfiles">
+<table id="backup" class="restore">
+   <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Restore user data')?></td></tr>
+	<tr id="filemanager-backup-head" class="ui-header">
+		<th class="filemanager-backup-border-right ui-filemanger-restore-jobcolumn"><?=t('Jobname')?></th>
+		<th class="filemanager-backup-border-right ui-filemanger-restore-datecolumn"><?=t('Backup date')?></th>
+		<th class="filemanager-backup-border-right ui-filemanger-restore-statuscolumn"><?=t('Backup status')?></th>
+		<th class="filemanager-backup-border-right ui-filemanger-restore-filecolumn"><?=t('Included files')?></th>
+	</tr>
+	<tr class="data">
+		<td>
+			<div class="jobs">
+			<?
+			if(count($backupjobs)) {
+				printjobs($backupjobs);					
+			} else {
+				print t('No jobs found') .".\n";
+			}
+			?>
+			</div>
+		</td>		
+		<td>
+			<div class="date">
+				<div id="current_dates">&nbsp;</div>
+			</div>
+		</td>
+		<td>
+			<div class="status">
+				<div id="current_status">&nbsp;</div>
+			</div>
+		</td>
+		<td>
+			<div class="backupfiles">
 			<div id="current_files">&nbsp;</div>
-		<div class="force_settings">
-			<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_restore" checked="true"/><?=t("Restore missing files")?><br>
-			<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_force"/><?=t("Overwrite files")?><br>
-			<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_rdir" /><?=t("Restore to directory")?><input disabled="disabled" type="text" id="restore_dir" class="cb_force"/>(/home/<?=$this->session->userdata("user")?><span id="targetdir"></span>)
-			
-		</div>
-		<input type="submit" id="backup_restore" value="<?=t("Restore selection")?>" disabled="true"/>
-		</div>
-	</div>
-</div>	
-</fieldset>
+			<div class="force_settings">
+				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_restore" checked="true"/><?=t("Restore missing files")?><br>
+				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_force"/><?=t("Overwrite files")?><br>
+				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_rdir" /><?=t("Restore to directory")?><input disabled="disabled" type="text" id="restore_dir" class="cb_force"/>(/home/<?=$this->session->userdata("user")?><span id="targetdir"></span>)
+				
+			</div>
+			<input type="submit" id="backup_restore" value="<?=t("Restore selection")?>" disabled="true"/>
+		</td>
+	</tr>
+</table>
 
-
-<fieldset><legend><?=t("Current operations")?></legend>
+<fieldset class="expandable"><legend><?=t("Current operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($restore["lock"])) {
 				echo t("Restoring file(s) from backupjob: ");

@@ -20,13 +20,13 @@
 
 	<table id="backup">
 	    
-	   <tr><td colspan="8" class="ui-state-default ui-widget-header ui-div-header ui-filemanager-backup-header"><?=t('File backup')?></td></tr>
+	   <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('File backup')?></td></tr>
 		<tr id="filemanager-backup-head" class="ui-header">
 			<th class="filemanager-backup-border-right"><?=t('Existing jobs')?></th>
 			<th class="filemanager-backup-border-right"><?=t('Included directories')?></th>
 			<th ><?=t('Job settings')?></th>
 		</tr>
-		<tr>
+		<tr class="data">
 			<td rowspan="3" class="backupjobs filemanager-backup-border-right">
 				<?
 				if(count($backupjobs)) {
@@ -231,10 +231,10 @@
 			</td>
 		</tr>
 
-		<tr>
+		<tr class="data">
 			<th class="filemanager-backup-border-right"><?=t('Excluded directories')?></th>
 		</tr>
-		<tr>
+		<tr class="data">
 			<td class="filemanager-backup-border-right">
 				<div id="current_excfiles">
 				</div>
@@ -248,7 +248,7 @@
 	</table>
 </fieldset>
 
-<fieldset class="fld_settings"><legend><?=t("Current operations")?></legend>
+<fieldset class="fld_settings expandable"><legend><?=t("Current operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($backup["user"])) {
 				?>

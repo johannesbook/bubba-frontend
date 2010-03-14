@@ -15,7 +15,7 @@ li.selected {
 	display: inline;
 }
 
-table#backup tr{
+table#backup tr.data{
 	line-height : 18px;
 }
 
@@ -23,7 +23,7 @@ table#backup th{
 	text-align : left;
 	padding-left : 1.2em;
 }
-table#backup td{
+table#backup tr.data td{
 	font-size : 11px;
 }
 table#backup td.ui-filemanager-backup-header{
@@ -141,33 +141,27 @@ div#backup_header {
 	font-weight:bold;
 }
 
-
 div.jobs {
 	padding-left : 5px;
 	padding-right : 5px;
-	float : left;
-	width : 100px;
+	width : 75px;
 	height : 100%;
 }
 div.date {
 	padding-left : 5px;
 	padding-right : 5px;
-	float : left;
 	width : 100px;
 	height : 100%;
 }
 div.status {
 	padding-left : 5px;
 	padding-right : 5px;
-	float : left;
 	width : 140px;
 	height : 100%;
 }	
 div.backupfiles {
 	padding-left : 5px;
 	padding-right : 5px;
-	float : left;
-	width : 450px;
 	bottom : 0px;
 }
 
@@ -179,6 +173,7 @@ div#current_files {
 div#current_dates {
 	max-height : 300px;
 	overflow : auto;
+	width : 130px;
 }
 div#current_jobs {
 	max-height : 300px;
@@ -191,7 +186,7 @@ div#current_jobs {
 }
 
 .subselected {
-	background: #005b83;
+	background: #607AC2;
 	color:white;
 	padding-left:3px;
 }
@@ -233,6 +228,7 @@ div.backup_tree_header {
 }
 input#backup_restore {	
 	margin-top : 10px;
+	width : 125px !important;
 }
 
 .treelayout {
