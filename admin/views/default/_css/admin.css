@@ -319,6 +319,7 @@ input.mount {width : 75px;	margin : 0;}
 .ui-action-panel {position: absolute;border: 0;display:inline;background:transparent;}
 .ui-dialog {opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(opacity=95) !important;clear:both;}
 .ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; height:31px;}
+.ui-dialog .ui-dialog-titlebar-close {right:1em;}
 .ui-dialog-content { padding:0em 1em }
 .ui-dialog .ui-dialog-buttonpane  { padding:0.3em 1em 0.8em 0.4em;}
 .ui-helper-inline {	display: inline;	display: inline-block;	vertical-align: bottom;}
@@ -329,3 +330,6 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog th {font-size:14px;padding:0}
 .ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
 .ui-widget-overlay { background:  url(../_img/overlay.png) repeat-x; opacity: .70;filter:Alpha(Opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }	
+.ui-icon-closethick {width:17px; height:18px;background-position: -95px -194px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
+
+
