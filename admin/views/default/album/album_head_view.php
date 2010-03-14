@@ -13,7 +13,11 @@ table#album {
 
 table#album input {
 	font-size : 11px;
+	display : inline !important;
 }
+
+#album li {display : block;}
+#album a {color : #000};
 
 table#album tbody tr {
 	overflow: auto;
@@ -68,7 +72,7 @@ table#album tbody td {
 	border-color: #ADA;
 }
 #album_list .selected {
-	background-color: #0091d1;
+	background-color: #506AB2;
 }
 	
 div#loader {
