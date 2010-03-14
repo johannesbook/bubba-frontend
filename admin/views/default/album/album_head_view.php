@@ -29,8 +29,7 @@ table#album tbody td {
 #album_list {
 	height: 400px;
 	overflow: auto;
-	background-color: #444;
-	border: 1px solid #555;
+	border: 1px solid #E5E5E5;
 }
 
 #album_edit_area form{
