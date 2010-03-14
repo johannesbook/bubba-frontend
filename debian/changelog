@@ -1,3 +1,9 @@
+bubba-frontend (1.9.1) claire; urgency=low
+
+  *  Test build for new UI release, needed to test updater.
+
+ -- PA Nilsson <pa@excito.com>  Sun, 14 Mar 2010 23:13:41 +0100
+
 bubba-frontend (1.9.0) claire; urgency=low
 
   * Add reverse proxy for mt-daapd
