@@ -143,7 +143,7 @@ $(document).ready(function(){
 			$.post(help_uri, function(data) {
 				$.dialog(
 					data,
-					"<?=t('help_box_header')?> - <?t('title_'.$this->uri->segment(1))?>",
+					"<?=t('help_box_header')?>",
 					{},
 					{'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
 			});
