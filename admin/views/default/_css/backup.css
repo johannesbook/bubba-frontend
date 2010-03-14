@@ -1,38 +1,60 @@
-table#sysbackup {
-	width : 100%;
-}
-table#sysbackup select{
-	width : 150px;
-}
-table#sysbackup input[type=submit]{
-    width : 96%;	
+.treelayout li {
+	display: block;
 }
 
-form {
-	margin : 0px;
+li.selected {
+	background-color : #506AB2;
+}
+.treelayout li a {
+	color : #000 !important;
+}
+.treelayout li a.selected {
+	color : #fff;
+}	
+.treelayout input[type=button] {
+	display: inline;
+}
+
+table#backup tr{
+	line-height : 18px;
+}
+
+table#backup th{
+	text-align : left;
+	padding-left : 1.2em;
+}
+table#backup td{
+	font-size : 11px;
+}
+table#backup td.ui-filemanager-backup-header{
+	font-size : 14px;
+	line-height : 31px;
+}
+
+table#backup td.ui-filemanager-backup-subheader{
+	line-height : 25px;
 }
 
 table#backup td.backupjobs {
-	width : 85px;
+	width : 115px;
 }
-table#backup td.backupfiles {
+table#backup td.filemanager-backup-files {
 	width : 175px;
 }
 table#backup td.backupsettings {
-	width : 480px;
 	margin : 0px;
 }
 
-table#backup input {	
-	width : 130px;
-	margin:0;
-	margin-bottom: 3px;
-	font-size:12px;
+table#backup .filemanager-backup-border-right {
+	//border-right:0.1em solid #ccc;
 }
 
-table#backup select{
-	border : 0 none;	
-	width : 150px;
+table#backup input {	
+	width : 75px;
+	margin:0;
+	margin-bottom: 3px;
+	display : inline;
+	font-size : 11px;
 }
 
 table#backup tr.subhead {
@@ -49,7 +71,6 @@ table#backup div.error {
 
 table.tbl_settings {	
 	margin : 0px;
-	width : 476px;
 	padding : 0px;
 	padding-left : 5px;
 }
@@ -66,15 +87,8 @@ table.tbl_settings td.tight{
 	width : 80px;
 }
 
-
-div#settings {	
-}
-div#settings legend {
-	width : 9em;
-}
-
 div#settings input {
-	width : 100px;
+	width : 125px;
 }
 
 div#settings input[type=checkbox]{
@@ -84,11 +98,11 @@ div#settings input[type=checkbox]{
 }
 
 div#settings select{
-	padding: 0;
-	margin : 0.2em;
-	margin-left : 0.3em;
-	border : 0px;	
-	width : 103px;
+	width : 134px;
+	font-size : 11px;
+}
+div#settings option{
+	font-size : 11px;
 }
 
 div#current_jobs{
@@ -119,11 +133,11 @@ fieldset.fld_settings {
 	width : 100%;
 }
 
+
 div#backup_header {	
 	text-align:left;
 	vertical-align: middle;
 	height:31px;
-	font-size:13px;
 	font-weight:bold;
 }
 
@@ -214,7 +228,6 @@ span.underline {
 	text-decoration : underline;
 }
 div.backup_tree_header {
-	font-size : 13px;
 	margin : 10px 0;
 	font-weight : bold;
 }
@@ -226,6 +239,3 @@ input#backup_restore {
 	margin : 0 0 15px 50px;	
 }
 
-#backup_content {
-    font-size:14px;
-}

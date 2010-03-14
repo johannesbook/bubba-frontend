@@ -348,3 +348,14 @@ input.mount {width : 75px;	margin : 0;}
 .ui-icon-closethick {width:17px; height:18px;background-position: -95px -194px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .ui-icon-arrowthick-1-w {width:19px; height:12px;background-position: -135px -196px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .ui-icon-arrowthick-1-e {width:7px; height:13px;background-position: -170px -196px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
+
+/*SPECIALS*/
+.expansion { cursor: pointer }
+fieldset.expandable {	border-top : 18px solid #000;	line-height : 18px; }
+fieldset.expandable legend {
+	background:#000 none repeat scroll 0 0;
+	padding:0;
+	padding-left : 5px;
+	color : #fff;
+}
+

@@ -20,14 +20,14 @@
 
 	<table id="backup">
 	    
-	    <tr class="ui-state-default ui-widget-header ui-div-header"><td colspan="8" ><?=t('File sharing')?></td></tr>
+	   <tr><td colspan="8" class="ui-state-default ui-widget-header ui-div-header ui-filemanager-backup-header"><?=t('File backup')?></td></tr>
 		<tr id="filemanager-backup-head" class="ui-header">
-			<th style="width:15%"><?=t('Existing jobs')?></th>
-			<th style="width:20%"><?=t('Included directories')?></th>
+			<th class="filemanager-backup-border-right"><?=t('Existing jobs')?></th>
+			<th class="filemanager-backup-border-right"><?=t('Included directories')?></th>
 			<th ><?=t('Job settings')?></th>
 		</tr>
 		<tr>
-			<td rowspan="3" class="backupjobs">
+			<td rowspan="3" class="backupjobs filemanager-backup-border-right">
 				<?
 				if(count($backupjobs)) {
 					printjobs($backupjobs);					
@@ -39,7 +39,7 @@
 				<input type="text" id="create_job" /><input type="submit" id="btn_createjob" class="incexc" value="<?=t('Create job')?>" />
 				<div id="create_error" class="error"></div>
 			</td>
-			<td>
+			<td class="filemanager-backup-files filemanager-backup-border-right">
 				<div id="current_incfiles">
 				</div>
 				<input type="button" id="remove_inc" value="<?=t("Remove dir")?>" />
@@ -64,7 +64,7 @@
 						</table> <!-- end backupname -->
 					</fieldset>
 						
-					<fieldset class="fld_settings"><legend><span id="s_target" class="expansion"><span id="tar_mark">-</span>&nbsp;&nbsp;<?=t('Target settings')?></span></legend>
+					<fieldset class="fld_settings expandable"><legend><span id="s_target" class="expansion"><span id="tar_mark">-</span>&nbsp;&nbsp;<?=t('Target settings')?></span></legend>
 						<div  id="target">
 						<table class="tbl_settings">
 							<tr>
@@ -95,7 +95,7 @@
 					</fieldset>
 
 
-					<fieldset class="fld_settings"><legend><span id="s_schedule" class="expansion"><span id="sch_mark">-</span>&nbsp;&nbsp;<?=t('Backup schedule')?></span></legend>
+					<fieldset class="fld_settings expandable"><legend><span id="s_schedule" class="expansion"><span id="sch_mark">-</span>&nbsp;&nbsp;<?=t('Backup schedule')?></span></legend>
 						<div  id="schedule">
 						<table class="tbl_settings">
 							<tr>
@@ -194,7 +194,7 @@
 						</div>
 					</fieldset> <!-- end schedule -->
 
-					<fieldset class="fld_settings"><legend><span id="s_security" class="expansion"><span id="sec_mark">-</span>&nbsp;&nbsp;<?=t('Data security')?></span></legend>
+					<fieldset class="fld_settings expandable"><legend><span id="s_security" class="expansion"><span id="sec_mark">-</span>&nbsp;&nbsp;<?=t('Data security')?></span></legend>
 						
 						<div  id="security">
 						<table class="tbl_settings">
@@ -232,10 +232,10 @@
 		</tr>
 
 		<tr>
-			<th><?=t('Excluded directories')?></th>
+			<th class="filemanager-backup-border-right"><?=t('Excluded directories')?></th>
 		</tr>
 		<tr>
-			<td>
+			<td class="filemanager-backup-border-right">
 				<div id="current_excfiles">
 				</div>
 				<input type="button" id="remove_exc" value="<?=t("Remove dir")?>" />
@@ -248,7 +248,7 @@
 	</table>
 </fieldset>
 
-<fieldset><legend><?=t("Current operations")?></legend>
+<fieldset class="fld_settings"><legend><?=t("Current operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($backup["user"])) {
 				?>

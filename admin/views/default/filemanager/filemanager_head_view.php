@@ -466,7 +466,8 @@
 								'file': to_be_included
 							},
 							function(data){
-								$.modal.close();
+								//$.modal.close();
+								alert("Close dialog");
 								if(!data.error) {
 									if(!$("#current_incfiles").children("div[class*='files']").length) {
 										$("#current_incfiles").empty(); // remove "No data found"
@@ -488,14 +489,18 @@
 				script: '<?=site_url("ajax_settings/ajax_backup_filelist")?>',
 				multiFolder: false,
 				dirExpandCallback: function(dir) {
+					$(".selected").removeClass("selected");
+					$("[rel = '"+dir+"']").addClass("selected");
 					to_be_included = dir;
 				},
 				dirCollapseCallback: function(dir) {
 					to_be_included = dir;
+					$(".selected").removeClass("selected");
+					$("[rel = '"+dir+"']").addClass("selected");
 					return true;
 				}
 			});
-			$.modal( form );
+			$.dialog( form , "" ,{}, {dialogClass : 'filemanager-backup-dialog-select', width : '400'});
 
 			return false;
 		
@@ -550,13 +555,17 @@
 				multiFolder: false,
 				dirExpandCallback: function(dir) {
 					to_be_excluded = dir;
+					$(".selected").removeClass("selected");
+					$("[rel = '"+dir+"']").addClass("selected");
 				},
 				dirCollapseCallback: function(dir) {
 					to_be_excluded = dir;
+					$(".selected").removeClass("selected");
+					$("[rel = '"+dir+"']").addClass("selected");
 					return true;
 				}
 			});
-			$.modal( form );
+			$.dialog( form , "" ,{}, {dialogClass : 'filemanager-backup-dialog-select', width : '400'});
 			return false;
 		
 		});
