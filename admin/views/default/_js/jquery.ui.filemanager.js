@@ -35,6 +35,7 @@
 	   this.is_disabled = false;
 	   this.multiselect = false;
 	   this.last_selected = null;
+	   this.was_shift_key = false;
 	   this.element.addClass("ui-filemanager");
 
 	   this.buttonBar = jQuery("<div/>", {'class': 'ui-filemanager-buttonbar' }).buttonset();
@@ -175,11 +176,40 @@
 				   return false;
 			   }
 			   jQuery(this).siblings().andSelf().removeClass("ui-filemanager-state-dblckick");
-			   if( event.ctrlKey ) {
+			   if( event.shiftKey ) {
+				   jQuery(this).siblings().andSelf().removeClass("ui-filemanager-state-selected");
+				   var last = self.last_selected;
+				   if( last ) {
+					   self.multiselect = true;
+					   var cur_idx = this.rowIndex;
+					   var last_idx = last.rowIndex;
+					   var objs;
+
+					   if( cur_idx < last_idx ) {
+						   objs = jQuery(this).siblings().andSelf().filter(function(){
+								   return this.rowIndex >= cur_idx && this.rowIndex <= last_idx;
+							   }
+						   );
+					   } else {
+						   objs = jQuery(this).siblings().andSelf().filter(function(){
+								   return this.rowIndex <= cur_idx && this.rowIndex >= last_idx;
+							   }
+						   );
+					   }
+					   objs.addClass('ui-filemanager-state-selected');
+					   if( ! self.was_shift_key ) {
+						   self.last_selected = this;
+					   }
+					   self.was_shift_key = true;
+				   }
+
+			   } else if( event.ctrlKey ) {
+				   self.was_shift_key = true;
 				   self.multiselect = true;
 				   jQuery(this).toggleClass('ui-filemanager-state-selected');
 				   self.last_selected = this;
 			   } else {
+				   self.was_shift_key = true;
 				   if( self.multiselect ) {
 					   // We where in multi-select mode, 
 					   // thus we should act as there wasn't anything selected in the first place

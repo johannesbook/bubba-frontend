@@ -290,8 +290,9 @@ $.widget("ui.dialog", {
 			.focus();
 
 
+		var buttons = self.uiDialog.find('.ui-dialog-buttonpane').children('button.ui-button');
+		buttons.button("enable");
 		if( self.options.evenButtonWidth ) {
-			var buttons = self.uiDialog.find('.ui-dialog-buttonpane').children('button.ui-button');
 			var count = buttons.length;
 			var difference = (buttons.innerWidth()/buttons.outerWidth())*2;
 

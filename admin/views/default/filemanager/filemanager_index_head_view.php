@@ -333,6 +333,7 @@ update_toobar_button_callback = function( count ) {
 		$(id).button( value ? 'enable' : 'disable' ).data('is_disabled', !value);
 	});
 }
+
 update_toolbar_buttons = function() {
 	var length = $("#filetable").filemanager('length');
 	update_toobar_button_callback( length );
@@ -391,6 +392,7 @@ $(document).ready(function() {
 				
 
 		$("#fn-filemanager-" + value + "-dialog").submit(function() {
+			$(this).closest('.ui-dialog').find('.ui-dialog-buttonpane').children('button.ui-button').button("disable");
 			dialog_callbacks[value].apply(dialogs[value]);
 			
 			return false;
