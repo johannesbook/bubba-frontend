@@ -243,9 +243,12 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-help-box {-moz-border-radius: 0.8em !important;-webkit-border-radius: 0.5em !important;opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(Opacity=95) !important;font-size:12px;}
 .ui-help-box a {color:white !important;font-weight:bold !important;}
 .ui-help-box #ui-dialog-title-1 {font-size:13px;}
-.ui-help-box p {color:white !important;font-size:12px;font-weight:bold;}
+.ui-help-box p, .ui-help-box strong ,.ui-help-box li  {color:white !important;font-size:12px;font-weight:bold;}
+.ui-help-box strong {font-size:14px;}
 .ui-help-box a:hover {color:white !important;}
 .ui-fake-updir {background:#EEE}
+#help-box-further-info {margin-top:14px;font-size:13px;font-weight:bold;text-transform:uppercase}
+.ui-help-box .ui-icon-closethick {width:17px; height:18px;background-position: -114px -194px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 
 /*SERVICES*/
 #services table {margin-bottom:31px}
