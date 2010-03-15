@@ -91,8 +91,11 @@ class Stat extends Controller{
 			}
 		}
 	}
+
 	function dialog_wizard_exit() {
 		exit_wizard();
+		header("Content-type: application/json");
+		print json_encode(array());		
 	}
 }
 

@@ -11,6 +11,7 @@ album_add_access=<?=json_encode($this->Auth_model->policy("album","add"))?>;
 buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_write_access_selectors = $.map( [ 'delete', 'rename', 'move', 'perm', 'upload', 'create' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
+buttons_requiring_read_access_selectors = $.map( [ 'download', 'copy', 'album', 'delete', 'rename', 'move', 'perm', 'upload', 'create' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 buttons_requiring_album_access_selectors = $.map( [ 'album' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
 
 dialog_pre_open_callbacks = {
@@ -277,8 +278,9 @@ buttons = [
 ];
 
 writable = true;
+readable = true;
 update_toolbar_buttons = function() {
-	if( copymove_isactive ) {
+	if( copymove_isactive || ! readable ) {
 		return;
 	}
 	var length = $("#filetable").filemanager('length');
@@ -305,25 +307,34 @@ update_toolbar_buttons = function() {
 
 after_open_dir_callback = function(json) {
 	writable = json.meta.writable;
-	
-	if( ! writable ) {
-		if( copymove_isactive ) {
-			copymove_yesbutton.button("disable").data("is_disabled", true);
-		} else {
-			$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
-		}
+	readable = !json.meta.permission_denied;
+	if( !readable ) {
+		$(buttons_requiring_read_access_selectors).button("disable").data("is_disabled", true);
+		$(".ui-filemanager-permission-denied").show();
 	} else {
-		if( copymove_isactive ) {
-			copymove_yesbutton.button("enable").data("is_disabled", false);
-		} else {
-			$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
-		}
-	}
+		$(buttons_requiring_read_access_selectors).button("enable").data("is_disabled", false);
+		$(".ui-filemanager-permission-denied").hide();
 
-	if( !copymove_isactive && album_add_access && $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') == 0 ) {
-		$(buttons_requiring_album_access_selectors).button("enable").data("is_disabled", false);
-	} else {
-		$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", true);
+
+		if( ! writable ) {
+			if( copymove_isactive ) {
+				copymove_yesbutton.button("disable").data("is_disabled", true);
+			} else {
+				$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
+			}
+		} else {
+			if( copymove_isactive ) {
+				copymove_yesbutton.button("enable").data("is_disabled", false);
+			} else {
+				$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
+			}
+		}
+
+		if( !copymove_isactive && album_add_access && $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') == 0 ) {
+			$(buttons_requiring_album_access_selectors).button("enable").data("is_disabled", false);
+		} else {
+			$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", true);
+		}
 	}
 
 }

@@ -293,7 +293,6 @@ $.widget("ui.dialog", {
 		if( self.options.evenButtonWidth ) {
 			var buttons = self.uiDialog.find('.ui-dialog-buttonpane').children('button.ui-button');
 			var count = buttons.length;
-			console.log(buttons.css('margin-left'));
 			var difference = (buttons.innerWidth()/buttons.outerWidth())*2;
 
 			buttons.width((100/count - difference) + '%');

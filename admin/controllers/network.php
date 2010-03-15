@@ -1043,13 +1043,15 @@ class Network extends Controller{
 				if($data['wiz_data']['err_easyfind']) {
 					// setup complete
 					$data['confirmed'] = true;
-					exit_wizard();
 				}
 				
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/network/network_wizard_view',$data));
 				}else{
 					$this->_renderfull($this->load->view(THEME.'/network/network_wizard_view',$data,true));
+				}
+				if($data['wiz_data']['err_easyfind']) {
+					exit_wizard();
 				}
 			} else {
 				// --- PREPROCESSING NETWORK  ----

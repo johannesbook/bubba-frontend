@@ -17,11 +17,11 @@ $(document).ready(function(){
 </script>
 
 <?
-if($this->session->userdata("run_wizard")) { // wizard is running
+if($this->session->userdata("run_wizard")): // wizard is running
 ?>
 	<h1 class="wizard-header"><?=t('Step 1/3: Date and time')?></h1>
 
-		<form action="<?=FORMPREFIX?>/settings/wizard"" method="post">
+		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
 		<div id="ui-wizard-timezone">
 			<table>
 			  <tr><td colspan="4" class="ui-wizard-label-header" ><h2><?=t('Timezone')?></h2></td></tr>
@@ -56,9 +56,9 @@ if($this->session->userdata("run_wizard")) { // wizard is running
 		</div>
 		</form>
 <?
- } else { // show start wizard page
+  else : // show start wizard page
 ?>
-		<form action="<?=FORMPREFIX?>/settings/wizard"" method="post">
+		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
 			<table>
 			    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Setup wizard')?></td></tr>
 				<tr><td>
@@ -67,4 +67,4 @@ if($this->session->userdata("run_wizard")) { // wizard is running
 			</table>
 			<input type="submit" class="submitbutton"  name='wiz_data[start]' value="<?=t('Start wizard')?>"/>
 		</form>
-<? } ?>
+<? endif ?>

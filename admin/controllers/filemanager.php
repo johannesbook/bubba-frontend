@@ -452,10 +452,11 @@ class Filemanager extends Controller{
 			}
 			$out = ls($user,"$path");
 			$data['aaData'] = array();
+			$data["meta"] = array();
 
 			if($out=="\0\0") {
 				// error
-				$data["err_perm"]=true;
+				$data["meta"]["permission_denied"]=true;
 			}else{
 				$typemap = array(
 					'F' => 'file',

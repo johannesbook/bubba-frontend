@@ -13,6 +13,9 @@
 		<tr class="ui-header">
 			<td colspan="5" class="ui-filemanager-fake-updir"></td>
 		</tr>
+		<tr>
+		<td colspan="5" class="ui-helper-hidden ui-filemanager-permission-denied"><?=t("Permission denied")?></td>
+		</tr>
 	</thead>
 	<tbody>
 		

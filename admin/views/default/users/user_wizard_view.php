@@ -2,9 +2,12 @@
 	<h1 class="wizard-header">
 		<?=t('Step 2/3: Create users')?>
 	</h1>
-	<div id="ui-wizard-adduser">
+<div id="ui-wizard-adduser">
+<table>
+<tr>
+<td>
 	<form id="fn-wizard-add">
-	<table id="wizard">
+	<table>
 	<thead>
 	<tr>
 		<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Add users")?></th>
@@ -52,19 +55,26 @@
 		<input class='ui-wizard-next' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/>
 	</div>
 	</form>
-	</div>
+</td>
+<td>
 
-	<div id="ui-wizard-userlist" class="wiz userlist">
-	<table id="wizard_ulist">
+	<div id="ui-wizard-userlist" class="ui-infobox">
+	<table>
 	<thead>
-	<tr><th colspan="2" class="ui-state-default ui-header"><?=t("Existing users")?></th></tr>	
-	<tr><th class="wiz_head"><?=t("Username")?></th><th class="wiz_head"><?=t("Real name")?></th></tr>	
+	<tr><th colspan="2" class="ui-header"><?=t("Existing users")?></th></tr>	
+	<tr><th><?=t("Username")?></th><th><?=t("Real name")?></th></tr>	
 	</thead>
+	<tbody id="wizard_ulist">
 	<?foreach($wiz_data['ulist'] as $user => $udata):?>
 	<tr>
 		<td><?=$udata['username']?></td>
 		<td><?=$udata['realname']?></td>
 	</tr>
 	<?endforeach?>
+	</tbody>
 	</table>
 	</div>
+</td>
+</tr>
+</table>
+</div>

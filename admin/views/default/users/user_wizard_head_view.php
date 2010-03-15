@@ -1,5 +1,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
+	$.validator.addMethod('valid_username', function(value, element, params) {
+		return /^[^-][a-z0-9 _-]+$/.test(value) && value != 'web' && value != 'storage';
+	} 
+	, jQuery.format("not a valid username"));
+	$.validator.addMethod('valid_password', function(value, element, params) {
+		return /^\w+$/.test(value);
+	} 
+	,jQuery.format("not a valid password"));	
 	add_validator = $('#fn-wizard-add').validate({
 		rules:{
 			'username': {
@@ -45,9 +53,10 @@ $(document).ready(function(){
 				} else {
 					if(data.success) {
 						var row = $("<tr/>");
-						row.append($('<td/>',{ text:$("#wizard-adduser-username").val() }));	
-						row.append($('<td/>',{ text:$("#wizard-adduser-realname").val() }));
-						row.appendTo($("#wizard_ulist"));
+						row.append($('<td/>',{ text:$("#fn-wizard-add input[name=username]").val() }));	
+						row.append($('<td/>',{ text:$("#fn-wizard-add input[name=realname]").val() }));
+						row.appendTo("#wizard_ulist");
+						add_validator.resetForm();
 						$("#fn-wizard-add")[0].reset();
 					} else {
 						update_status(0,"An unknown error has occured, please press the Bubba icon to return to main page.");

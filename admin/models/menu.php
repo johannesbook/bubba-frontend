@@ -416,8 +416,10 @@ class Menu extends Model {
 	public function get_dialog_menu() {
 
 		$mainmenu = $this->bubba_menubar;
+		$systemmenu = $this->bubba_systembar;
 		$user = $this->session->userdata("user");
 		$ret["main_menu"] = $this->_retreive_dialogmenu($user,$mainmenu);
+		$ret["system_menu"] = $this->_retreive_dialogmenu($user,$systemmenu);
 		return $ret;
 	}
 

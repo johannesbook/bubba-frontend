@@ -108,12 +108,10 @@ class Login extends Controller{
 		}elseif($strip){
 			$this->load->view(THEME.'/loginview',$data);
 		}else{
-			$mymenus = $this->menu->get_dialog_menu();
-			$mymenus = array_merge($mymenus,$this->menu->get_system_menu());
 			$mdata["navbar"]="";
 			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
 			$mdata["head"]=$this->load->view(THEME.'/login_head_view',$data,true);;
-			$mdata["content"]=$this->load->view(THEME.'/login_view',$mymenus,true);
+			$mdata["content"]=$this->load->view(THEME.'/login_view', $this->menu->get_dialog_menu(),true);
 			$this->load->view(THEME.'/main_view',$mdata);
 		}
 		
