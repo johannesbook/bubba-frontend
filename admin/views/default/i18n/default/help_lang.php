@@ -60,12 +60,9 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
 	$lang['help_box_filemanager_backup']="
 	<ol>
     <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click 'Create job'. The new backup job gets automatically highlighted in the 'Excising jobs' column.</li>
-    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the 'Browse' button under the 'Included directories' menu. Subdirectories will automatically be included.<br />
-    </li>
-    <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the 'Browse' button under the 'Excluded directories' menu and select the non wanted directories.<br />
-    </li>
-    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination directory will be created if it does not exist already.<br />
-    </li>
+    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the 'Browse' button under the 'Included directories' menu. Subdirectories will automatically be included.</li>
+    <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the 'Browse' button under the 'Excluded directories' menu and select the non wanted directories. </li>
+    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination directory will be created if it does not exist already.</li>
   </ol>
   <ul>
     <li>If choosing local USB / eSATA disk you have to select the disk by pressing the 'Disk' drop down list. Fill in the 'Destination directory' (i.e. 'my_ backup_folder\important\') or leave it blank for saving backup in the root directory.</li>
@@ -102,13 +99,17 @@ $lang['help_box_users']="
 ";
 
 $lang['help_box_services']="
+	 <h3>File sharing</h3>
+  <p><strong>FTP</strong> - The Bubba|Two FTP server.</p>
+  <p><strong>Anonymous FTP access</strong>  - Allow users to log in to FTP server without a password.</p>
+  <p><strong>AFP</strong> - The Apple Filing Protocol (AFP) is a network protocol that offers file services for Mac OS X and original Mac OS.</p>
 	<h3>Streaming</h3>
-	<p><strong>UPnP streaming</strong> -  Universal Plug and Play (UPnP) server. The server shares/streams media data  like audio/video/picture/files to UPnP-clients on the network. Please notice that if  you are located in a unsecure network; disable UPnP because otherwise you are able to  browse the whole file system via Mediatomb's web interface which could be a security risk. </p>
-	<p><strong>DAAP streaming</strong> -  Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes. </p>
+	<p><strong>UPnP streaming</strong> - Universal Plug and Play (UPnP) server. The server shares/streams media data  like audio/video/picture/files to UPnP-clients on the network. Please notice that if  you are located in a unsecure network; disable UPnP because otherwise you are able to  browse the whole file system via Mediatomb's web interface which could be a security risk. </p>
+	<p><strong>DAAP streaming</strong> - Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes. </p>
 	<p><strong>Squeezebox Server </strong>-  is a streaming audio server supported by Logitech that streams music to The Squeezebox product line.</p>
 	<h3>Mail</h3>
 	<p><strong>Send and receive</strong> -  This is for postfix the smtp server: Sending and receiving eMails.</p>
-	<p><strong>Imap (Required for  webmail access)</strong> - This is for dovecot the IMAP server. This service is required  for the webmail access to be functional.</p>
+	<p><strong>Imap (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required  for the webmail access to be functional.</p>
 	<p><strong>Mail retrieval </strong>- This  is for fetchmail, a daemon that collects eMails to Bubba|Two</p>
 	<h3>Other</h3>
 	<p><strong>Printing</strong> - Bubba|Two  print server.</p>
@@ -212,7 +213,7 @@ $lang['help_box_disk_lvm']="
 		
 	<h3>Create Extended disk (LVM)</h3>
 	<ol>
-  	<li>Attach a  external disk, USB or eSATA. Please notice that the disk should be pre formatted, without old RAID or LVM systems.</li>
+  	<li>Attach a external disk, USB or eSATA. Please notice that the disk should be pre formatted, without old RAID or LVM systems.</li>
   	<li>Select the 'Home partition' and the partition from the external disk (for example /dev/sdb). </li>
   	<li>Click 'Extend partition'.</li>
   	<li>Wait for the progress bar to complete.</li>
