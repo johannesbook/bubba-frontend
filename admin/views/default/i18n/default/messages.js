@@ -47,8 +47,8 @@ messages = {
 	// Mail
 	"mail-retrieve-edit-dialog-button-label": "Update",
 	"mail-retrieve-edit-dialog-delete-button-label": "Delete",
-	"mail-retrieve-edit-dialog-delete-message": "Are you really sure you want to delete this mail account?",
-	"mail-retrieve-edit-dialog-delete-header": "Delete mail account",
+	"mail-retrieve-edit-dialog-delete-message": "",
+	"mail-retrieve-edit-dialog-delete-header": "Are you really sure you want to delete this mail account?",
 	"mail-retrieve-add-dialog-button-label": "Add mail account",
 	"mail-retrieve-add-dialog-header": "Add new mail account",
 	"mail-retrieve-add-success-message": "Successfully added new mail account",

@@ -333,8 +333,12 @@ function copy_fields(formid) {
 			<input type="hidden" name="removerule[protocol]" id="protocol" value="<?=$value["protocol"]?>" /><?=$value["protocol"]?>
 		</td>
 		<td class="edit">
-				<a href="javascript: copy_fields('RMPORT_<?=$i?>')"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/edit16.png" alt="<?=t("Edit")?>"</a>
-				<a href="javascript: document.RMPORT_<?=$i?>.submit()"><img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/x15.png" alt="<?=t("Delete")?>"</a>
+				<a href="javascript: copy_fields('RMPORT_<?=$i?>')">
+    			    <span class="ui-icon ui-icon-pencil"></span>
+                </a>
+				<a href="javascript: document.RMPORT_<?=$i?>.submit()">
+				    <span class="ui-icon ui-icon-closethick"></span>
+				</a>
 		</td>
 	</tr>
 </table>
@@ -349,8 +353,8 @@ endforeach;
 		<td class="p_fw_c1"></td>
 		<td class="p_fw_c2"></td>
 		<td colspan="4" class="legend">
-			<img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/edit16.png" alt="<?=t("Edit")?>" />&nbsp;&nbsp;Edit rule&nbsp;&nbsp;
-			<img src="<?=FORMPREFIX.'/views/'.THEME?>/_img/x15.png" alt="<?=t("Edit")?>" />&nbsp;&nbsp;Delete rule
+			 <span class="ui-icon ui-icon-pencil"></span>&nbsp;&nbsp;Edit rule&nbsp;&nbsp;
+			 <span class="ui-icon ui-icon-closethick"></span>&nbsp;&nbsp;Delete rule
 		</td>
 	</tr>
 

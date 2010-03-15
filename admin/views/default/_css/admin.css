@@ -61,7 +61,6 @@ input[type=submit],input[type=button],input[type=file],button {
   font-weight: 700;
   height: 31px;
   margin: .2em;
-  min-width: 70px;
   padding: .2em;
 }
 
@@ -265,7 +264,7 @@ div.progress-notice {
 }
 
 #img_logo {
-  padding-top: 2.5em;
+  padding-top: 1.5em;
 }
 
 #header {
@@ -437,10 +436,10 @@ div.progress-notice {
   filter: alpha(opacity=85)!important;
   height: 140px!important;
   max-height: 140px;
-  max-width: 584px;
+  max-width: 674px;
   opacity: .85!important;
   text-align: center;
-  width: 584px!important;
+  width: 674px!important;
 }
 
 .ui-dialog-menu .ui-widget-content {
@@ -786,6 +785,7 @@ div.progress-notice {
 }
 
 #filemanager {
+  position: relative;
   margin-top: -3em;
 }
 
@@ -836,7 +836,8 @@ button.ui-button::-moz-focus-inner {
 #fn-filemanager-information-panel {
   font-size: 12px;
   padding: .4em;
-  width: 957px;
+  height: auto;
+
 }
 /*
  * ORLY?
@@ -867,7 +868,7 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-filemanager-column-type span {
-  margin-top: 7px;
+  margin-top: 1px;
 }
 
 .ui-filemanager-path-widget .ui-filemanager-path-divider {
@@ -1065,6 +1066,10 @@ div.hotfix * {
   margin: 1.2em;
 }
 
+#network #firewall select {
+    width:100%;
+}
+
 #lvm select {
   margin-right: 10px;
   width: 260px;
@@ -1251,17 +1256,26 @@ input.mount {
   background: #efdfad;
   border: 2px solid #dfcf9d;
   height: 3em;
-  margin-top: -45px;
-  opacity: .95;
   position: absolute;
+/*  margin-top: -45px;*/
+  opacity: .95;
+
   text-align: center;
   width: 100%;
+}
+
+#fn-filemanager-action-panel {
+  width:75px;
+}
+
+#fn-filemanager-action-panel button {
+    display:inline;
+    background-color:transparent;    
 }
 
 .ui-action-panel {
   background: transparent;
   border: 0;
-  display: inline;
   position: absolute;
 }
 
@@ -1324,6 +1338,26 @@ input.mount {
   height: 18px;
   overflow: hidden;
   width: 17px;
+}
+
+#fn-filemanager-action-panel .ui-icon-check,
+#fn-filemanager-action-panel .ui-icon-close  {
+  background-image: url(../_img/icons.png)!important;
+  background-repeat: no-repeat;
+  cursor: pointer!important;
+  display: block;
+  float: left;
+  height: 17px;
+  overflow: hidden;
+  width: 18px;
+}
+
+#fn-filemanager-action-panel .ui-icon-check {
+  background-position: -320px -191px;
+}
+
+#fn-filemanager-action-panel .ui-icon-close {
+  background-position: -352px -191px;
 }
 
 .ui-icon-arrowthick-1-w {
@@ -1399,7 +1433,7 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   text-decoration: underline;
 }
 
-#header li.active a,#login_more_info a:hover {
+#header li.active a, #login_more_info a:hover {
   color: #506ab2;
 }
 
@@ -1420,7 +1454,7 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   margin: 0;
 }
 
-.ui-wizard-next,#wizard_next {
+.ui-wizard-next, #wizard_next {
   display: inline;
   float: right;
   width: 80px;
@@ -1440,8 +1474,13 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   margin-top: 1em;
 }
 
-#settings form,#backupform input,#restoreform input {
-  display: inline;
+#settings form,#backupform input[type=submit],#restoreform input[type=submit] {
+  display: inline; 
+}
+
+
+#settings_easyfind {
+  margin-top: 31px;
 }
 
 table.typetable > tbody > tr > td,table.disks > tbody > tr > td,div.text input {

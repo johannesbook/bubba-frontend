@@ -37,7 +37,7 @@
 
 	
 	<form action="<?=FORMPREFIX?>/settings/identity" method="post">
-	<table class="networksettings">
+	<table class="networksettings" id="settings_easyfind">
 	    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('settings_identity_easyfind_title')?></td></tr>
 		<tr>
 			<td></td>

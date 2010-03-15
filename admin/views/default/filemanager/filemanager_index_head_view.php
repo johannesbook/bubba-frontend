@@ -168,19 +168,10 @@ copymove_callback = function( type ) {
 		});
 
 	action.buttonset();
-    /*
-	panel.position({
-		'my': 'bottom',
-			'at': 'top',
-			'of': filemanager,
-			'offset': 0
-	});*/
-	action.position({
-		'my': 'right',
-			'at': 'left',
-			'of': main_toolbar,
-			'offset': "-30 0"
-	});
+	console.log(panel.offset());
+    
+	panel.offset({top: -30, left: 0});
+	action.offset({top: 0, left: 240});
 
 	panel.show('drop', {direction: 'down'}, speed);
 	action.show('drop', {direction: 'right'}, speed);
@@ -333,7 +324,6 @@ update_toobar_button_callback = function( count ) {
 		$(id).button( value ? 'enable' : 'disable' ).data('is_disabled', !value);
 	});
 }
-
 update_toolbar_buttons = function() {
 	var length = $("#filetable").filemanager('length');
 	update_toobar_button_callback( length );
