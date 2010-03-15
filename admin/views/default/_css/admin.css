@@ -50,6 +50,15 @@ table.ui-table.ui-table-list tbody tr td:last-child button {	float: right;}
 label.error { padding : 1px;color: #fff; background-color : #656565; font-size : 10px !important;width:200px !important;z-index:100px;position:absolute;margin-left:2px;line-height:17px;height:17px;text-align:center;margin-top:6px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;
 -moz-border-radius-bottomleft: 1.5em !important;-webkit-border-radius-bottomleft: 1.5em !important;-moz-border-radius-topleft: 1.5em !important;-webkit-border-radius-left: 1.5em !important;opacity:0.85 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)" !important;filter: alpha(opacity=85) !important;-moz-box-shadow: 2px 3px 3px #666;-webkit-box-shadow:2px 3px 3px #666;box-shadow:2px 3px 3px #666;}
 input.error { border : 2px solid #506AB2;}
+div.progress-main * {height: 17px;padding: 0px;margin: 0px;}
+div.progress-main {text-align:left !important;background-color: #506AB2;width: 100%;}
+div.progress-main div.progress-meter {width: 0%;text-align: right;background-color: #1e90ff;}
+div.progress div.progress-mini-box {width: 100%;overflow: hidden;height: 3px;
+margin: 0;	padding: 0;	background-color: #333;}
+div.progress div.progress-mini {padding: 0;width: 10%;margin-left:-10%;height: 3px;background-color: #bbb;}
+div.progress-error{color:red;font-weight:900;font-size: larger;}
+div.progress-warn{color:orange;font-weight:500;}
+div.progress-notice{color:white;font-weight:500;}
 
 /* WRAPPER */
 #wrapper {width:98%;margin: 0 auto;padding:0em;max-width:1020px;}
@@ -271,7 +280,6 @@ div.hotfix *{vertical-align : middle;	margin-right : 10px;}
 #package_versions td{padding-top:0;line-height:11px;vertical-align:middle}
 #settings_log {width:40%;}
 #backupform input, #restoreform input{display:inline;}
-
 
 /*NETWORK*/
 #network input[type=submit],input[type=button] {margin: 1.2em;}
