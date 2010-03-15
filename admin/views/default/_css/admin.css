@@ -96,8 +96,8 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #login_more_info img{display:block;margin-top:1.5em;}
 #login_menubar {margin-top:3em;}
 #login_menubar .ui-icon-lock,#login_settings .ui-icon-lock {margin-left:-3em;margin-right:2em;}
-.ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:2px;padding-top:75px;font-weight:bold;text-align:center;margin-right:16px;}
-.ui-login-menubar-a span  {display:none;font-size:12px;}
+.ui-login-menubar-a  {text-decoration:none;height:100px;margin-right:2px;padding-top:83px;font-weight:bold;text-align:center;margin-right:14px;}
+.ui-login-menubar-a span  {display:none;font-size:12px;font-weight:normal;}
 
 /* SIDE BOARD */
 #sideboard {float:right;width:160px;display : none}
@@ -109,32 +109,33 @@ div#subnav ul li a:hover {text-decoration:underline;}
 #sideboard_switch {margin:left:8%;float:right !important;color:white;text-decoration:none !important;padding-left:0.3em;width:15px; height:30px;margin-top:7px;}
 
 /* HOME MENU */
-.ui-dialog-menu {text-align: center;height:140px !important;width:568px !important;border:0;opacity:0.85 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)" !important;filter: alpha(opacity=85) !important;max-height:140px;max-width:568px;}
-.ui-dialog-menu ui-widget-content {margin-top:0;}
+.ui-dialog-menu {text-align: center;height:140px !important;width:584px !important;border:0;max-height:140px;max-width:584px;opacity:0.85 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)" !important;filter: alpha(opacity=85) !important;}
+.ui-dialog-menu .ui-widget-content {margin-top:0;padding-top:0;}
+.ui-dialog-menu .ui-dialog-titlebar {margin-bottom:0;height:20px !important;}
 #menu li a{margin-right:16px;}
 #menu li a span{float:right;}
 #menu li div {display:inline;width:74px;}
 #login_settings {margin-top:180px;float:right;}
-.default-icon {width:74px; height:18px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
+.default-icon {width:78px; height:18px; background-image:url(../_img/icons_home.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 /*.default-icon-lock {width:74px; height:74px; background-image:url(../_img/icons_home_lock.png);background-repeat:no-repeat;display:block;overflow:hidden;float:left;}*/
-.default-icon-mail {background-position: -363px -328px;}
-.default-icon-settings {background-position: -546px -328px;}
-.default-icon-clock {background-position: -180px 0;}
-.default-icon-album {background-position: -180px -328px;}
-.default-icon-printing {background-position: -270px 0;}
-.default-icon-filemanager {background-position: -0px -328px;}
-.default-icon-downloads {background-position: -272px -328px;}
-.default-icon-music {background-position: -90px -328px;}
-.default-icon-user {background-position: -456px -328px;}
-.default-icon-logout {background-position: -724px 0;}
+.default-icon-mail {background-position: -367px -328px;}
+.default-icon-settings {background-position: -552px -328px;}
+.default-icon-clock {background-position: -186px 0;}
+.default-icon-album {background-position: -186px -328px;}
+.default-icon-printing {background-position: -276px 0;}
+.default-icon-filemanager {background-position: -6px -328px;}
+.default-icon-downloads {background-position: -278px -328px;}
+.default-icon-music {background-position: -96px -328px;}
+.default-icon-user {background-position: -462px -328px;}
+.default-icon-logout {background-position: -730px 0;}
 
-.default-icon-filemanager-lock {background-position: -0px -156px;}
-.default-icon-music-lock {background-position: -90px -156px;}
-.default-icon-album-lock {background-position: -181px -156px;}
-.default-icon-downloads-lock {background-position: -272px -156px;}
-.default-icon-user-lock {background-position: -454px -156px;}
-.default-icon-mail-lock {background-position: -363px -156px;}
-.default-icon-settings-lock {background-position: -543px -156px;}
+.default-icon-filemanager-lock {background-position: -6px -156px;}
+.default-icon-music-lock {background-position: -96px -156px;}
+.default-icon-album-lock {background-position: -187px -156px;}
+.default-icon-downloads-lock {background-position: -278px -156px;}
+.default-icon-user-lock {background-position: -460px -156px;}
+.default-icon-mail-lock {background-position: -369px -156px;}
+.default-icon-settings-lock {background-position: -549px -156px;}
 
 /*UI ICON SET*/
 .ui-icons {background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
@@ -331,7 +332,7 @@ input.mount {width : 75px;	margin : 0;}
 /*JQUERY OVERRIDE*/
 .ui-action-panel button {border: 0;}
 .ui-action-panel {position: absolute;border: 0;display:inline;background:transparent;}
-.ui-dialog {opacity:0.95 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" !important;filter: alpha(opacity=95) !important;clear:both;}
+.ui-dialog {opacity:0.95 ;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)" ;filter: alpha(opacity=95) ;clear:both;}
 .ui-dialog .ui-dialog-titlebar { padding: 0em .3em .3em 1em; height:31px;}
 .ui-dialog .ui-dialog-titlebar-close {right:1em;}
 .ui-dialog-content { padding:0em 1em }
@@ -342,9 +343,8 @@ input.mount {width : 75px;	margin : 0;}
 .ui-dialog label {font-size:12px;}
 .ui-dialog table {margin:0;}
 .ui-dialog th {font-size:14px;padding:0}
-
 .ui-state-error, .ui-widget-content .ui-state-error {border: 0; background: '';color: #cd0a0a; }
-.ui-widget-overlay { background:  url(../_img/overlay.png) repeat-x; opacity: .70;filter:Alpha(Opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }	
+.ui-widget-overlay {background:  url(../_img/overlay.png) repeat-xy; opacity: .70;filter:Alpha(Opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; }	
 .ui-icon-closethick {width:17px; height:18px;background-position: -95px -194px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .ui-icon-arrowthick-1-w {width:19px; height:12px;background-position: -135px -196px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
 .ui-icon-arrowthick-1-e {width:7px; height:13px;background-position: -170px -196px;cursor:pointer !important;background-image:url(../_img/icons.png) !important;background-repeat:no-repeat;display:block;overflow:hidden;float:left;}
