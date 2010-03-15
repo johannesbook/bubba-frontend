@@ -10,7 +10,7 @@ form form {margin: 0;}
 */
 fieldset {border: 0;} //RENSA BORT VID SLUTCHECK
 input {background:#fff;padding: 0.2em;margin: 0.2em;}
-input[type=submit],input[type=button],input[type=file], button {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;height:31px;}
+input[type=submit],input[type=button],input[type=file], button {padding: 0.2em;margin: 0.2em;color:white;font-weight:bold;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border:0;font-size:12px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;display:block;height:31px;min-width:70px;}
 input[type=submit]:hover,input[type=button]:hover {border:0;opacity:0.5 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)" !important;filter: alpha(opacity=50) !important;}
 input[type=submit]:focus,input[type=button]:focus {border:0}
 input[type=text],input[type=password] {vertical-align:text-bottom;padding:0.3em;-moz-border-radius: 0.3em;-webkit-border-radius: 0.3em;border: 0.1em solid #e5e5e5;}
@@ -39,21 +39,16 @@ button:hover {outline:none;}
 img{border: 0;}
 button:hover, input[type=button], input[type=submit], input[type=reset] { cursor: pointer }
 
-thead tr.ui-header th {
-	text-align: left;
-}
-
-table.ui-table.ui-table-list tbody tr td:last-child button {
-	float: right;
-}
-.ui-dialog-buttonpane {
-	text-align: center;
-}
+thead tr.ui-header th {	text-align: left;}
+table.ui-table.ui-table-list tbody tr td:last-child button {	float: right;}
+.ui-dialog-buttonpane {	text-align: center;}
 
 /*GENERAL CLASSES */
 .ui-header {background-color: #e5e5e5;color:#000;padding-left:1.2em;}
 .ui-div-header {font-size:14px;height:24px;padding:7px 1.2em;height:17px;}
-label.error { padding : 3px;  padding-left: 3px;  color: #fff; background-color : #656565; font-size : 10px !important;width:200px !important;z-index:100px;}
+
+label.error { padding : 1px;color: #fff; background-color : #656565; font-size : 10px !important;width:200px !important;z-index:100px;position:absolute;margin-left:2px;line-height:17px;height:17px;text-align:center;margin-top:6px;background-image:url(../_img/label.png);background-repeat:overflow:hidden;background-position: -6px -138px;
+-moz-border-radius-bottomleft: 1.5em !important;-webkit-border-radius-bottomleft: 1.5em !important;-moz-border-radius-topleft: 1.5em !important;-webkit-border-radius-left: 1.5em !important;opacity:0.85 !important;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)" !important;filter: alpha(opacity=85) !important;-moz-box-shadow: 2px 3px 3px #666;-webkit-box-shadow:2px 3px 3px #666;box-shadow:2px 3px 3px #666;}
 input.error { border : 2px solid #506AB2;}
 
 /* WRAPPER */
@@ -78,7 +73,7 @@ input.error { border : 2px solid #506AB2;}
 #topnav a, #topnav span {float:left;}
 #topnav .ui-button-text {top:35px;font-size:12px;font-weight:bold;position:absolute;}
 #topnav_status {margin-right:10%;font-weight:bold;margin-top:10px;font-size:10px;}
-#topnav button {border:0;background:transparent;margin-right:0.8em;display:inline;font-size:10px;color:#000;}
+#topnav button {border:0;background:transparent;margin-right:0.8em;display:inline;font-size:10px;color:#000;min-width:0px;}
 /*#topnav button:hover {border-bottom:0.1em solid black;}*/
 #subnav {font-size: 14px;list-style: none;margin-top:0.8em;}
 #subnav ul:after {content: ".";height: 0;clear: both;visibility: hidden;}
@@ -197,8 +192,12 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager:not(.clone) tbody tr.row-selected:hover * {	background-color: #e5e5e5 !important}
 #filetable th {text-align:left;}
 #filetable_processing {padding: 30px; display: inline;}
-#filetable_wrapper button {border:0;background:transparent;margin:0;width:37px;display:inline}
+#filetable_wrapper button {border:0;background:transparent;margin:0;width:37px;display:inline;min-width:0;}
 #filetable_wrapper button:hover {cursor: pointer;}
+button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
+
+
+
 .ui-filemanager span {float:left !important;}
 #fn-filemanager-information-panel {font-size:12px;width:957px;padding:0.4em;}
 .ui-corner-all {-moz-border-radius: 0 !important;-webkit-border-radius: 0 !important; }
@@ -217,7 +216,7 @@ div#subnav ul li a:hover {text-decoration:underline;}
 .ui-filemanager-type-dir {}
 .ui-filemanager-type-row {cursor: pointer;}
 .ui-button-set {float:right;margin:0 4px;}
-.ui-filemanager-buttonbar span {margin:0}
+.ui-filemanager-buttonbar span {margin:0;-moz-box-shadow: 2px 3px 3px #666;-webkit-box-shadow:2px 3px 3px #666;box-shadow:2px 3px 3px #666;}
 .ui-input-text {width: 100%;}
 .ui-text-center {	text-align : center;}
 .ui-button-text {font-size:16px;}
@@ -361,4 +360,3 @@ fieldset.expandable legend {
 	padding-left : 5px;
 	color : #fff;
 }
-
