@@ -73,7 +73,11 @@ case "$1" in
 
 	install --directory --group=root   --owner=root  --mode=0755 /var/log/web-admin
 	install --directory --group=root   --owner=root  --mode=0755 /var/cache/web-admin
-	
+
+	if [ ! -e /etc/apache2/mods-enabled/proxy.load ]; then
+		a2enmod proxy
+	fi	
+
 	if [ ! -e /etc/apache2/mods-enabled/actions.load ]; then
 		a2enmod actions
 	fi
