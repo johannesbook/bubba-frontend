@@ -25,8 +25,8 @@ if($this->session->userdata("run_wizard")): // wizard is running
 		<div id="ui-wizard-timezone">
 			<table>
 			  <tr><td colspan="4" class="ui-wizard-label-header" ><h2><?=t('Timezone')?></h2></td></tr>
-				<tr class="ui-filemanager-state-header"><td><?=t('Current timezone is')?>:</td><td><?=$wiz_data['t_zone']?></td></tr>
-				<tr class="ui-filemanager-state-header"><td>Select timezone:</td><td>
+				<tr class="ui-header"><td><?=t('Current timezone is')?>:</td><td><?=$wiz_data['t_zone']?></td></tr>
+				<tr class="ui-header"><td>Select timezone:</td><td>
 					<select name="wiz_data[user_tz]">
 					<option value=""> --- <?=t('Change timezone')?> --- </option>
 					<?
@@ -47,9 +47,9 @@ if($this->session->userdata("run_wizard")): // wizard is running
 		<div id="ui-wizard-datetime">
 			<table>
 			  <tr><td colspan="4" class="ui-wizard-label-header"><h2><?=t('title_settings-date')?></h2></td></tr>
-				<tr class="ui-filemanager-state-header"><td><?=t('Set time automatically')?></td><td><input id="ntp" type="checkbox" class="checkbox_radio" name="wiz_data[use_ntp]" <?=isset($wiz_data['use_ntp'])?"CHECKED":""?> /></td></tr>
-				<tr class="ui-filemanager-state-header"><td>Date:</td><td><input type="text" class="timedate" name="wiz_data[date]" value="<?=$wiz_data['date']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('YYYYMMDD')?>)</span></td></tr>
-				<tr class="ui-filemanager-state-header"><td>Time:</td><td><input type="text" class="timedate" name="wiz_data[time]" value="<?=$wiz_data['time']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('HHmm')?>)</span></td></tr>
+				<tr class="ui-header"><td><?=t('Set time automatically')?></td><td><input id="ntp" type="checkbox" class="checkbox_radio" name="wiz_data[use_ntp]" <?=isset($wiz_data['use_ntp'])?"CHECKED":""?> /></td></tr>
+				<tr class="ui-header"><td>Date:</td><td><input type="text" class="timedate" name="wiz_data[date]" value="<?=$wiz_data['date']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('YYYYMMDD')?>)</span></td></tr>
+				<tr class="ui-header"><td>Time:</td><td><input type="text" class="timedate" name="wiz_data[time]" value="<?=$wiz_data['time']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('HHmm')?>)</span></td></tr>
 				<?=isset($err['timedate'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timedate'])."</div></td></tr>\n":""?>
 				<tr ><td colspan="2"><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' id="wizard_next" name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
 			</table>

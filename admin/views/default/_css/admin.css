@@ -149,6 +149,7 @@ button:hover {
   outline: none;
 }
 
+/*GENERAL CLASSES*/
 .ui-div-header {
   font-size: 14px;
   height: 17px;
@@ -156,17 +157,16 @@ button:hover {
 }
 
 label.error {
-  -moz-border-radius-bottomleft: 1.5em!important;
-  -moz-border-radius-topleft: 1.5em!important;
+  -moz-border-radius-bottomleft: 1.5em !important;
+  -moz-border-radius-topleft: 1.5em !important;
   -moz-box-shadow: 2px 3px 3px #666;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85)!important;
-  -webkit-border-radius-bottomleft: 1.5em!important;
-  -webkit-border-radius-left: 1.5em!important;
+  -webkit-border-radius-bottomleft: 1.5em !important;
+  -webkit-border-radius-left: 1.5em !important;
   -webkit-box-shadow: 2px 3px 3px #666;
   background-color: #656565;
   background-image: url(../_img/label.png);
   background-position: -6px -138px;
-  background-repeat: overflow:hidden;
   box-shadow: 2px 3px 3px #666;
   color: #fff;
   filter: alpha(opacity=85)!important;
@@ -175,7 +175,7 @@ label.error {
   line-height: 17px;
   margin-left: 2px;
   margin-top: 6px;
-  opacity: .85!important;
+  opacity: .85 !important;
   padding: 1px;
   position: absolute;
   text-align: center;
@@ -432,7 +432,8 @@ div.progress-notice {
   color: #FFF;
   float: right!important;
   height: 30px;
-  margin: 7px left:8% left:8%;
+  margin: 7px;
+  left:8%;
   padding-left: .3em;
   text-decoration: none!important;
   width: 15px;
@@ -738,6 +739,7 @@ div.progress-notice {
 .ui-widget-wizard h1 {
   font-size: 22px!important;
   margin-top: 0;
+  margin-bottom:4px;
 }
 
 .ui-widget-wizard h2 {
@@ -754,6 +756,14 @@ div.progress-notice {
   padding-left: 0;
 }
 
+.ui-widget-wizard h2 {
+    margin-bottom:0 !important;
+}
+
+.ui-widget-wizard .ui-dialog-content {
+    padding-top:0;
+}
+
 .ui-wizard-controls {
   clear: both;
   height: 40px;
@@ -762,6 +772,25 @@ div.progress-notice {
 #ui-wizard-datetime span {
   font-size: 10px;
   margin-left: 3px;
+}
+
+#ui-wizard-adduser h2 {
+    margin-bottom:20px !important;
+}
+
+#ui-wizard-adduser td {
+    padding:0;
+}
+
+#ui-wizard-adduser tr {
+    line-height:10px !important;
+    height:13px;
+}
+
+#ui-wizard-adduser th, #ui-wizard-adduser th, #ui-wizard-adduser td {
+    line-height:10px !important;
+    font-size:12px;
+    height:12px;
 }
 
 #filemanager {
@@ -935,11 +964,6 @@ button.ui-button::-moz-focus-inner {
 .ui-help-box p,.ui-help-box strong,.ui-help-box li {
   color: #FFF!important;
   font-size: 12px;
-  font-weight: 700;
-}
-
-.ui-help-box strong {
-  font-size: 14px;
 }
 
 .ui-help-box a:hover {

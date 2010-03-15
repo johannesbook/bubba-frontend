@@ -53,8 +53,8 @@ $(document).ready(function(){
 	<form action="<?=FORMPREFIX?>/network/wizard"" method="post">
 		<table id="wizard">
 		  <tr><td class="ui-wizard-label-header"><h2><?=t("Easyfind")?></h2></td></tr>
-			<tr class="ui-filemanager-state-header"><td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="checkbox_radio" <?=isset($wiz_data['en_easyfind'])?"CHECKED":""?>/>&nbsp;&nbsp;<?=t('Use "Easyfind" to locate Bubba|Two from the internet')?></td></tr>
-			<tr class="ui-filemanager-state-header"><td>
+			<tr class="ui-header"><td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="checkbox_radio" <?=isset($wiz_data['en_easyfind'])?"CHECKED":""?>/>&nbsp;&nbsp;<?=t('Use "Easyfind" to locate Bubba|Two from the internet')?></td></tr>
+			<tr class="ui-header"><td>
 				<input
 					<?=(isset($wiz_data['err_easyfind'])&&$wiz_data['err_easyfind'])?"class='highlight'":""?>
 					id="easyfind_name" 

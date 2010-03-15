@@ -9,8 +9,8 @@
 	<form id="fn-wizard-add">
 	<table>
 	<thead>
-	<tr>
-		<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Add users")?></th>
+	<tr class="ui-wizard-label-header">
+		<td colspan="2"><h2><?=t("Add users")?></h2></td>
 	</tr>
 	</thead>
 	<tbody>
@@ -48,20 +48,14 @@
 	</tbody>
 	</table>
 	</form>
-	<form id="fn-wizard" action="<?=FORMPREFIX?>/users/wizard" method="post">
-	<div class="ui-wizard-controls">
-		<input class='ui-wizard-prev' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/>
-		<input class='ui-wizard-exit' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/>
-		<input class='ui-wizard-next' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/>
-	</div>
-	</form>
+	
 </td>
 <td>
 
 	<div id="ui-wizard-userlist" class="ui-infobox">
 	<table>
 	<thead>
-	<tr><th colspan="2" class="ui-header"><?=t("Existing users")?></th></tr>	
+	<tr><th colspan="2"><?=t("Existing users")?></th></tr>	
 	<tr><th><?=t("Username")?></th><th><?=t("Real name")?></th></tr>	
 	</thead>
 	<tbody id="wizard_ulist">
@@ -77,4 +71,11 @@
 </td>
 </tr>
 </table>
+<form id="fn-wizard" action="<?=FORMPREFIX?>/users/wizard" method="post">
+	<div class="ui-wizard-controls">
+		<input class='ui-wizard-prev' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/>
+		<input class='ui-wizard-exit' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/>
+		<input class='ui-wizard-next' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/>
+	</div>
+	</form>
 </div>
