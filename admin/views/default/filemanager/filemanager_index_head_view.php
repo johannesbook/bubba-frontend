@@ -8,12 +8,6 @@ album_add_access=<?=json_encode($this->Auth_model->policy("album","add"))?>;
 
 <script>
 
-buttons_requiring_selected_files_selectors = $.map( [ 'delete', 'copy', 'move', 'download', 'perm' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
-buttons_requiring_single_selected_file_selectors = $.map( [ 'rename' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
-buttons_requiring_write_access_selectors = $.map( [ 'delete', 'rename', 'move', 'perm', 'upload', 'create' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
-buttons_requiring_read_access_selectors = $.map( [ 'download', 'copy', 'album', 'delete', 'rename', 'move', 'perm', 'upload', 'create' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
-buttons_requiring_album_access_selectors = $.map( [ 'album' ], function(value) { return "#fn-filemanager-button-" + value } ).join(', ');
-
 dialog_pre_open_callbacks = {
 	'perm': function() {
 		var files = $("#filetable").filemanager('getSelected');
@@ -57,59 +51,70 @@ dialog_callbacks = {
 		$(this).dialog('close');
 	},
 	'mkdir': function() {
+		var self = this;
 		var params = $("#fn-filemanager-mkdir").serializeObject();
 		params.root = $("#filetable").filemanager('option','root');
 		params.files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/mkdir/json", params, function(data){
+			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-mkdir"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
 		}, 'json');
-		$(this).dialog('close');
 	},
 	'rename': function() {
+		var self = this;
 		var params = $("#fn-filemanager-rename").serializeObject();
 		params.path = $("#filetable").filemanager('getSelected')[0];
 		params.root = $("#filetable").filemanager('option','root');
 		$.post(config.prefix+"/filemanager/rename/json", params, function(data){
+			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-rename"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
 		}, 'json');
-		$(this).dialog('close');
 	},
 	'perm': function() {
+		var self = this;
 		var params = $("#fn-filemanager-perm").serializeObject();
 		params.files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/perm/json/set", params, function(data){
+			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-perm"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
 		}, 'json');
-		$(this).dialog('close');
 	},
 	'delete': function() {
+		var self = this;
 		var files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/delete/json", {files: files}, function(data){
+			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-delete"));
 			if( ! data.error ) {
 				$("#filetable").filemanager('reload');
 			}
 		}, 'json');		
-		$(this).dialog('close');
 	},
 	'album': function() {
 		var files = $("#filetable").filemanager('getSelected');
+		var self = this;
 		$.post(config.prefix+"/filemanager/album/json", {files: files}, function(data){
-			update_status( data.success, data.error ? data.html : $.message("filemanager-success-album %s", data.files_added.join(', ')));
+			update_status( data.success, data.error ? data.html : $.message("filemanager-success-album"));
 			if( ! data.error ) {
-				// XXX do anything?
+				var box = $('<ul/>');
+				$.each( data.files_added, function( key, value ) {
+					if( value ) {
+						box.append( $('<li/>', {text: key}));
+					}
+				});
+				$.alert(box, "Following images where added" , $.message('button-label-close'), null, {width: '600px'});
 			}
+			$(self).dialog('close');
 		}, 'json');		
-		$(this).dialog('close');
 	}
 };
 
@@ -134,7 +139,7 @@ copymove_callback = function( type ) {
 	action.empty();
 	panel.empty();
 
-	copymove_yesbutton = $("<button/>", {text: $.message("filemanager-"+type+"-yes")}).appendTo(action)
+	copymove_yesbutton = $("<button/>", {id: 'fn-filemanager-button-copymove', text: $.message("filemanager-"+type+"-yes")}).appendTo(action)
 		.button({text: false, icons: { primary: 'ui-icon-check' } }).click(function(){
 			action.hide('drop', {direction: 'right'}, speed);
 			$.post(config.prefix+"/filemanager/"+type+"/json", {files: files, path: filetable.filemanager('option','root') }, function(data){
@@ -279,64 +284,70 @@ buttons = [
 
 writable = true;
 readable = true;
-update_toolbar_buttons = function() {
-	if( copymove_isactive || ! readable ) {
-		return;
+
+update_toobar_button_callback = function( count ) {
+	var required_selected = [ 'delete', 'copy', 'move', 'download', 'perm', 'album' ];
+	var required_single = [ 'rename' ];
+	var required_write = [ 'delete', 'rename', 'move', 'perm', 'upload', 'create', 'copymove' ];
+	var required_read = [ 'download', 'copy', 'album', 'delete', 'rename', 'move', 'perm', 'upload', 'create' ];
+	var required_album = [ 'album' ];
+
+	var states = {
+		'download': true,
+		'copy': true, 
+		'album': true,
+		'delete': true,
+		'rename': true,
+		'move': true,
+		'perm': true,
+		'upload': true,
+		'create': true,
+		'copymove': true
+	};
+
+	if( !readable ) {
+		$.each( required_read, function() { states[this] = false } );
 	}
-	var length = $("#filetable").filemanager('length');
-	if(  writable ) {
-		$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
+
+	if( !writable ) {
+		$.each( required_write, function() { states[this] = false } );
 	}
-	if( length == 0 ) {
-		$(buttons_requiring_selected_files_selectors).button("disable").data("is_disabled", true);
-		$(buttons_requiring_single_selected_file_selectors).button("disable").data("is_disabled", true);
-	} else if(length == 1) {
-		$(buttons_requiring_selected_files_selectors).button("enable").data("is_disabled", false);
-		$(buttons_requiring_single_selected_file_selectors).button("enable").data("is_disabled",false);
+
+	if( count == 0 ) {
+		$.each( required_selected, function() { states[this] = false } );
+		$.each( required_single, function() { states[this] = false } );
+	} else if( count == 1 ) {
+		$.each( required_selected, function() { states[this] &= true } );
+		$.each( required_single, function() { states[this] &= true } );
 	} else {
-		$(buttons_requiring_single_selected_file_selectors).button("disable").data("is_disabled", true);
-		$(buttons_requiring_selected_files_selectors).button("enable").data("is_disabled", false);
+		$.each( required_selected, function() { states[this] &= true } );
+		$.each( required_single, function() { states[this] = false } );
 	}
 
-
-	if( ! writable ) {
-		$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
+	if( !album_add_access || $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') != 0 ) {
+		$.each( required_album, function() { states[this] &= false } );
 	}
+
+	$.each( states, function( key, value ) {
+		var id = "#fn-filemanager-button-" + key;
+		$(id).button( value ? 'enable' : 'disable' ).data('is_disabled', !value);
+	});
+}
+update_toolbar_buttons = function() {
+	var length = $("#filetable").filemanager('length');
+	update_toobar_button_callback( length );
 
 }
 
 after_open_dir_callback = function(json) {
 	writable = json.meta.writable;
 	readable = !json.meta.permission_denied;
+	update_toobar_button_callback( 0 );
 	if( !readable ) {
-		$(buttons_requiring_read_access_selectors).button("disable").data("is_disabled", true);
 		$(".ui-filemanager-permission-denied").show();
 	} else {
-		$(buttons_requiring_read_access_selectors).button("enable").data("is_disabled", false);
 		$(".ui-filemanager-permission-denied").hide();
-
-
-		if( ! writable ) {
-			if( copymove_isactive ) {
-				copymove_yesbutton.button("disable").data("is_disabled", true);
-			} else {
-				$(buttons_requiring_write_access_selectors).button("disable").data("is_disabled", true);
-			}
-		} else {
-			if( copymove_isactive ) {
-				copymove_yesbutton.button("enable").data("is_disabled", false);
-			} else {
-				$(buttons_requiring_write_access_selectors).button("enable").data("is_disabled", false);
-			}
-		}
-
-		if( !copymove_isactive && album_add_access && $("#filetable").filemanager('value').search('^/home/storage/pictures(/|$)') == 0 ) {
-			$(buttons_requiring_album_access_selectors).button("enable").data("is_disabled", false);
-		} else {
-			$(buttons_requiring_album_access_selectors).button("disable").data("is_disabled", true);
-		}
 	}
-
 }
 
 file_download_callback = function( row, options ){

@@ -351,6 +351,7 @@ $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
+$lang["filemanager-album-dialog-message"] = "Are you certain you want to add selected files to the album?";
 
 $lang["help_box_header"] = "Bubba|2 Help";
 

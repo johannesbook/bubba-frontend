@@ -251,7 +251,7 @@ if( ! is_priviledged_user ) {
 			} 
 		, jQuery.format("not a valid username"));
 		$.validator.addMethod('valid_password', function(value, element, params) {
-				return /^\w+$/.test(value);
+				return /^\w*$/.test(value);
 			} 
 		,jQuery.format("not a valid password"));
 
@@ -261,7 +261,6 @@ if( ! is_priviledged_user ) {
 						'required': true
 					},
 					'password1': {
-						'required': true,
 						'valid_password': true
 					},
 					'password2': {
@@ -290,6 +289,7 @@ if( ! is_priviledged_user ) {
 					},
 					'password1': {
 						'required': true,
+						'minlength': 2,
 						'valid_password': true
 					},
 					'password2': {

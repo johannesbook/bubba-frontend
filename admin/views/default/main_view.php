@@ -58,6 +58,20 @@ var login_dialog;
 var window_music;
 var window_pim;
 var window_album;
+
+jQuery.validator.setDefaults({ 
+	errorPlacement: function(label, element) {
+		label.insertAfter( element );
+		label.position({
+			'my': 'left bottom',
+			'at': 'right top',
+			'of': element,
+			'offset': "10 -10"
+		});
+	}	
+});
+
+
 	
 $(document).ready(function(){
 	
@@ -200,11 +214,11 @@ if(isset($head)) {
             </div>	<!-- content -->
           	<?endif?>
             
+    		<div id="update_status" class="ui-corner-all ui-state-highlight ui-helper-hidden"></div>
         </div>	<!-- content_wrapper -->
         <?include("sideboard_view.php")?>
     </div> <!-- wrapper -->
 		<?=$dialog_menu?>
-    <div id="update_status"></div>
 
   <?if(isset($wizard) && $wizard):?>
 		<div id="wizard" class="ui-wizard-<?=$this->uri->segment(1)?>" style="display:none">

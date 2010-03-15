@@ -343,6 +343,10 @@ $.widget("ui.dialog", {
 
 					var button = $("<button/>", options ).appendTo(uiDialogButtonPane).button(button_options);
 
+					if( typeof value.disableOnClick == 'undefined' || value.disableOnClick ) {
+						button.bind( 'click.button', function(){ $(this).button('disable')} );
+					}
+
 				});
 			uiDialogButtonPane.appendTo(self.uiDialog);
 		} else {

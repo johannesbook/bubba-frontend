@@ -3,7 +3,7 @@
 
 <table id="filetable">
 	<thead>
-		<tr>
+		<tr class="ui-state-default ui-widget-header">
 			<th></th>
 			<th>Name</th>
 			<th>Date</th>

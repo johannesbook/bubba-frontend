@@ -28,7 +28,7 @@ if (typeof console == 'undefined')
 var statustimer;
 
 function hide_status() {
-	$("#update_status").slideUp(500);
+	$("#update_status").slideDown(500);
 }
 
 function update_status($success,$msg) {
@@ -38,19 +38,32 @@ function update_status($success,$msg) {
 		console.trace();
 		console.groupEnd();
 	}
+	var update_status = $("#update_status");
+	update_status.html($msg)
+
+	update_status.width($("#content_wrapper").outerWidth());
+	update_status.position({
+			'my': 'bottom',
+			'at': 'bottom',
+			'of': window,
+			'collision': 'fit'
+		}
+	);
 
 	if($success > 0) {
-		$("#update_status").removeClass("error");
-		$("#update_status").html($msg)
-		$("#update_status").slideDown(200);
+		update_status.removeClass("ui-state-error");
+		update_status.show( 'slide', { direction: 'down' }, 200 );
 		if(statustimer) {
 			clearTimeout(statustimer);
 		}
-		statustimer = setTimeout(hide_status,3000);
+		statustimer = setTimeout(function(){
+				update_status.hide( 'slide', { direction: 'down' }, 500 );
+
+			},3000
+		);
 	} else {
-		$("#update_status").addClass("error");
-		$("#update_status").html($msg)
-		$("#update_status").slideDown(100);
+		update_status.addClass("ui-state-error");
+		update_status.show( 'slide', { direction: 'down' }, 200 );
 	}
 }
 

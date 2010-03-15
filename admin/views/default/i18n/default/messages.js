@@ -1,5 +1,6 @@
 messages = {
 	// Generic
+	"button-label-close": "Close",
 	"button-label-cancel": "Cancel",
 	"button-label-edit": "Edit",
 	"text-yes": "Yes",
@@ -8,7 +9,7 @@ messages = {
 
 	// Filemanager
 	"filemanager-mkdir-dialog-button-label" : "Create directory",	
-	"filemanager-album-dialog-button-label" : "Album",	
+	"filemanager-album-dialog-button-label" : "Add to album",	
 	"filemanager-rename-dialog-button-label" : "Rename",	
 	"filemanager-perm-dialog-button-label" : "Change permissions",
 	"filemanager-delete-dialog-button-label" : "Delete",
@@ -23,6 +24,11 @@ messages = {
 	"filemanager-copy-yes" : "Copy",
 	"filemanager-copy-no" : "Abort",
 	"filemanager-copy-success" : "Succeeded to copy the files and directories",
+	"filemanager-success-album" : "Sucessfully added pictures to the album",
+	"filemanager-success-delete" : "Successfully deleted the files/directories",
+	"filemanager-success-perm" : "Successfully changed permission on the given files/directories",
+	"filemanager-success-rename" : "Successfully rename the file/directory",
+	"filemanager-success-mkdir" : "Successfully created an directory",
 
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",

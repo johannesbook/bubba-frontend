@@ -124,7 +124,7 @@ td {
   vertical-align: top;
 }
 
-tr {
+tr.ui-widget-header {
   border: 0;
   border-bottom: .1em solid #e5e5e5;
   line-height: 31px;
@@ -135,7 +135,7 @@ ul {
   list-style-position: outside;
 }
 
-li {
+#nav li, #subnav li {
   display: inline;
   padding: .2em 0;
 }
@@ -160,7 +160,7 @@ label.error {
   -moz-border-radius-bottomleft: 1.5em !important;
   -moz-border-radius-topleft: 1.5em !important;
   -moz-box-shadow: 2px 3px 3px #666;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85)!important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)!important;
   -webkit-border-radius-bottomleft: 1.5em !important;
   -webkit-border-radius-left: 1.5em !important;
   -webkit-box-shadow: 2px 3px 3px #666;
@@ -169,18 +169,18 @@ label.error {
   background-position: -6px -138px;
   box-shadow: 2px 3px 3px #666;
   color: #fff;
-  filter: alpha(opacity=85)!important;
+  filter: alpha(opacity=95)!important;
   font-size: 10px!important;
   height: 17px;
   line-height: 17px;
   margin-left: 2px;
   margin-top: 6px;
-  opacity: .85 !important;
+  opacity: .95 !important;
   padding: 1px;
   position: absolute;
   text-align: center;
   width: 200px!important;
-  z-index: 100px;
+  z-index: 100;
 }
 
 input.error {
@@ -259,17 +259,9 @@ div.progress-notice {
 }
 
 #update_status {
-  background-color: #fbec9d;
-  color: #000;
-  display: none;
-  font-size: 12px;
-  left: 25%;
-  margin: auto;
   padding: .2em;
   position: fixed;
   text-align: center;
-  top: 2px;
-  width: 500px;
 }
 
 #img_logo {
@@ -797,10 +789,6 @@ div.progress-notice {
   margin-top: -3em;
 }
 
-#filetable span {
-  margin-top: 5px;
-}
-
 .ui-filemanager {
   font-size: 12px;
   margin-top: .3em;
@@ -850,11 +838,13 @@ button.ui-button::-moz-focus-inner {
   padding: .4em;
   width: 957px;
 }
-
+/*
+ * ORLY?
 .ui-corner-all {
   -moz-border-radius: 0!important;
   -webkit-border-radius: 0!important;
 }
+*/
 
 .ui-filemanager-state-dblckick {
   background-color: #fbec9d!important;
@@ -1315,12 +1305,6 @@ input.mount {
 .ui-dialog th {
   font-size: 14px;
   padding: 0;
-}
-
-.ui-state-error,.ui-widget-content .ui-state-error {
-  background: ;
-  border: 0;
-  color: #cd0a0a;
 }
 
 .ui-widget-overlay {
