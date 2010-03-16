@@ -46,7 +46,7 @@ $lang['title_album-users'] = "Album users";
 $lang['title_filemanager-browse']="Browse";
 $lang['title_filemanager-backup']="Backup";
 $lang['title_filemanager-restore']="Restore";
-$lang['title_mail-retrieve']="Retreive Email";
+$lang['title_mail-retrieve']="Retreive email";
 $lang['title_mail-server_settings']="Server settings";
 $lang['title_network-profile']="Profile";
 $lang['title_network-lan']="LAN";
@@ -60,8 +60,8 @@ $lang['title_settings-wizard']="Setup wizard";
 $lang['title_settings-identity']="Identity";
 $lang['title_settings-traffic']="Traffic";
 $lang['title_settings-date']="Date and time";
-$lang['title_settings-sysbackup']="Config backup";
-$lang['title_settings-update']="Firmware upgrade";
+$lang['title_settings-sysbackup']="Settings backup";
+$lang['title_settings-update']="Update software";
 $lang['title_settings-logs']="Logs";
 
 
@@ -135,7 +135,7 @@ $lang['disk_raid_create_label'] = "Create RAID array";
 $lang['disk_raid_create_message'] = "Set up internal disk and one external disk into a RAID mirror solution (RAID 1)";
 $lang['disk_raid_recover_label'] = "Recover RAID array";
 $lang['disk_raid_recover_message'] = "Recover internal disk or add a new external disk to existing RAID array";
-$lang['disk_raid_status_title'] = "RAID Status";
+$lang['disk_raid_status_title'] = "RAID status";
 $lang['disk_raid_degraded_recover_status_message'] = "Recovering RAID array '%s'";
 $lang['disk_raid_degraded_recover_status_message_eta_hours'] = "Current recover progress is %d%% and is estimated to finish in %d hours %d minutes";
 $lang['disk_raid_degraded_recover_status_message_eta_minutes'] = "Current recover progress is %d%% and is estimated to finish in %d minutes";
@@ -192,9 +192,9 @@ $lang['disk_raid_recover_broken_internal_no_raid_message'] = "No disks with RAID
 // Network
 $lang['wlan_title'] = 'Wireless';
 $lang['wlan_title_ssid'] = 'Network name (SSID)';
-$lang['wlan_title_ssid_popup'] = 'The network name is used to connect to the Bubba|TWO via a wireless network, often called SSID';
+$lang['wlan_title_ssid_popup'] = 'The network name is used to connect to the Bubba|2 via a wireless network, often called SSID';
 $lang['wlan_title_enable'] = 'Enable wireless';
-$lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your Bubba|TWO';
+$lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your Bubba|2';
 
 $lang['wlan_title_advanced'] = 'Advanced wireless settings';
 
@@ -277,7 +277,7 @@ $lang['settings_identity_title'] = "Windows share options"; # XXX Erm? WTF???
 $lang['settings_identity_hostname_label'] = "Hostname";
 $lang['settings_identity_workgroup_label'] = "Workgroup";
 $lang['settings_identity_update_hostname_workgroup_label'] = "Update hostname and workgroup";
-$lang['settings_identity_easyfind_title'] = "Easyfind options";
+$lang['settings_identity_easyfind_title'] = "Easyfind";
 $lang['settings_identity_easyfind_message'] = "Use 'Easyfind' to locate your Bubba";
 $lang['settings_identity_update_easyfind_label'] = "Update easyfind";
 
@@ -367,13 +367,13 @@ $lang["mail-retrieve-edit-keep-label"] = "Keep on server";
 $lang["mail-retrieve-add-button-label"] = "Add new email account";
 $lang["mail-validation-error"] = "Validation of input failed";
 $lang["mail-auth-error"] = "Authorization failed";
-$lang["mail-retrieve-title"] = "Retrieve mail";
-$lang["mail-server-title"] = "Mail Server";
+$lang["mail-retrieve-title"] = "Retrieve email";
+$lang["mail-server-title"] = "Email server";
 
 //  ----------- Printing --------
 
 $lang["printing-add-button-label"] = "Add new printer";
-$lang["printing-title"] = "Printers";
+$lang["printing-title"] = "Printing";
 $lang["printing-label-share"] = "Share";
 $lang["printing-label-info"] = "Description";
 $lang["printing-label-location"] = "Location";
