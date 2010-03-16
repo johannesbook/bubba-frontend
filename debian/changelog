@@ -1,3 +1,9 @@
+bubba-frontend (1.9.2) claire; urgency=low
+
+  * Testbuild.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 16 Mar 2010 08:00:18 +0100
+
 bubba-frontend (1.9.1) claire; urgency=low
 
   *  Test build for new UI release, needed to test updater.
