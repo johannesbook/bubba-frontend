@@ -47,7 +47,7 @@ input {
   padding: .2em;
 }
 
-input[type=submit],input[type=button],input[type=file],button {
+input[type=submit],input[type=button],button {
   -moz-border-radius: .3em;
   -webkit-border-radius: .3em;
   background-image: url(../_img/label.png);
@@ -188,15 +188,17 @@ div.progress-main * {
 }
 
 div.progress-main {
-  background-color: #506AB2;
+  background-color: #666;
   text-align: left!important;
   width: 100%;
 }
 
 div.progress-main div.progress-meter {
-  background-color: #1e90ff;
+	color: #fff;
+  background-color: #506AB2;
   text-align: right;
   width: 0;
+  padding: 0.1em;
 }
 
 div.progress div.progress-mini-box {

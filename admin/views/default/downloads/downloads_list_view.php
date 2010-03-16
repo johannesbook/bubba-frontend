@@ -9,7 +9,7 @@
 ?>
 <tr>
 	<td style=""><b><?=substr($dl["name"], 0, 50)?></b></td>
-	<td colspan="2" style="text-align: right; width: 50%"><div class="space-indicator"><div style="width: <?=$dld?>%"><b><?printf("%d%%",$dld)?></b></div></div></td>
+	<td colspan="2" style="text-align: right; width: 50%"><div class="progress-main"><div class="progress-meter" style="width: <?=$dld?>%"><b><?printf("%d%%",$dld)?></b></div></div></td>
 </tr>
 <tr>
 	<td style="width: 80%;">

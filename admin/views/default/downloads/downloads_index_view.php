@@ -13,12 +13,10 @@ $(document).ready(function(){
 	);
 </script>
 
-<fieldset><legend><i><?=t('Downloads')?></i></legend>
-<div style="height: 300px; overflow: auto; " id="downloadcontent">
-</div>
-</fieldset>
+<div class="ui-state-default ui-div-header"><?=t('Downloads')?></div>
+<div style="height: 300px; overflow: auto; " id="downloadcontent"></div>
 
-<fieldset><legend><?=t('Add new download')?></legend>
+<div class="ui-state-default ui-div-header"><?=t('Add new download')?></div>
 <form action="<?=FORMPREFIX?>/downloads/add" method="post" id="add_download">
 <table>
 <tr>
@@ -33,4 +31,3 @@ $(document).ready(function(){
 </tr>
 </table>
 </form>
-</fieldset>

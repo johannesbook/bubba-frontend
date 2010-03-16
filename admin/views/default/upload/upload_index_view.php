@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/screen.css?v='<?=$this->session->userdata('version')?>'" />
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
 
@@ -154,7 +153,6 @@ $(document).ready( function(){
 		<input type="button" id="addmore" value="<?=t('Add entry')?>"/>
 	</div>	
 	<input type="submit" id="submitbutton" value="<?=t('Start upload')?>" disabled="disabled"  />
-	<span id="upload_close" class="ui-icons ui-icon-dialog-close" onclick="window.close()" ></span>
 </form>
 <div id="progress"></div>
 </div>
@@ -176,8 +174,8 @@ $(document).ready( function(){
 <table border="0" cellspacing="0" width="100%">
 	<tr>
 		<td width="100%">
-			<div class="space-indicator">
-				<div id="styledprogress" style="width: 0%"></div>
+			<div class="progress-main">
+				<div class="progress-meter" id="styledprogress" style="width: 0%"></div>
 			</div>
 		</td>
 	</tr>
