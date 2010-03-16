@@ -1,4 +1,4 @@
-<form action="<?=FORMPREFIX?>/settings/logs" method="post">
+<form action="<?=FORMPREFIX?>/settings/logs" method="post" id="settings_logs">
 
 	<table>
 	   <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Show logs')?></td></tr>

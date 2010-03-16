@@ -1011,6 +1011,7 @@ button.ui-button::-moz-focus-inner {
   overflow: hidden;
   position: relative;
   width: 67px;
+  cursor :pointer !important;
 }
 
 .ui-icon-bubba-switch {
@@ -1070,6 +1071,12 @@ div.hotfix * {
     width:100%;
 }
 
+#wlan_advanced_switch {
+    font-size:14px;
+    line-height:31px;
+    height: 31px !important;
+}
+
 #lvm select {
   margin-right: 10px;
   width: 260px;
@@ -1078,6 +1085,10 @@ div.hotfix * {
 #lvm label {
   margin-right: 30px;
   padding-left: 1.25em;
+}
+
+#raid_status {
+    cursor:pointer !important;
 }
 
 #raid p {
@@ -1340,13 +1351,24 @@ input.mount {
   width: 17px;
 }
 
+.ui-icon-pencil {
+  background-image: url(../_img/icons.png)!important;
+  background-position: -31px -254px;
+  background-repeat: no-repeat;
+  cursor: pointer !important;
+  display: block;
+  float:left;
+  margin-right:10px;
+  height: 20px;
+  overflow: hidden;
+  width: 22px;
+}
+
 #fn-filemanager-action-panel .ui-icon-check,
 #fn-filemanager-action-panel .ui-icon-close  {
   background-image: url(../_img/icons.png)!important;
   background-repeat: no-repeat;
-  cursor: pointer!important;
-  display: block;
-  float: left;
+  cursor: pointer !important;
   height: 17px;
   overflow: hidden;
   width: 18px;
@@ -1482,6 +1504,20 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
 #settings_easyfind {
   margin-top: 31px;
 }
+
+#settings_log  {
+  margin-left:1.2em;
+}
+
+#users button,
+#mail input,
+#mail button,
+#printing button,
+#services input,
+#settings input {
+  margin-left:1.2em;
+} 
+
 
 table.typetable > tbody > tr > td,table.disks > tbody > tr > td,div.text input {
   vertical-align: middle;

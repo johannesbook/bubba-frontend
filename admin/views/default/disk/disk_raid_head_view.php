@@ -8,7 +8,7 @@
 $(document).ready( function() {
 
 	$("div#adv_status").css("display","none");
-	$('#status_switch').click(function(e) {	    
+	$('#raid_status').click(function(e) {	    
 	    e.preventDefault();
 	    $('#adv_status').toggle();
 	    if($("#adv_status").is(":visible")) {$("#status_switch").html("-");}

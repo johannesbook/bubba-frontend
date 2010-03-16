@@ -3,7 +3,7 @@
 	<table class="networksettings">
 	    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('settings_identity_title')?></td></tr>
 		<tr>
-			<td></td>
+			
 			<td><?=t('settings_identity_hostname_label')?>:</td>
 			<td>
 				<input
@@ -15,7 +15,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td></td>
+			
 			<td><?=t('settings_identity_workgroup_label')?>:</td>
 			<td>
 				<input
@@ -40,7 +40,7 @@
 	<table class="networksettings" id="settings_easyfind">
 	    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('settings_identity_easyfind_title')?></td></tr>
 		<tr>
-			<td></td>
+			
 			<td><?=t('settings_identity_easyfind_message')?>:</td>
 			<td>
 				<input
@@ -56,7 +56,7 @@
 
 		</tr>
 		<tr>
-			<td></td>
+			
 			<td><?=t('Easyfind name')?>:</td>
 			<td>
 				<input

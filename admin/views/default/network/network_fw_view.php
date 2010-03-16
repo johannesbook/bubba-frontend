@@ -334,10 +334,10 @@ function copy_fields(formid) {
 		</td>
 		<td class="edit">
 				<a href="javascript: copy_fields('RMPORT_<?=$i?>')">
-    			    <span class="ui-icon ui-icon-pencil"></span>
+    			    <span class="ui-icon ui-icon-pencil"  title="Edit rule"></span>
                 </a>
 				<a href="javascript: document.RMPORT_<?=$i?>.submit()">
-				    <span class="ui-icon ui-icon-closethick"></span>
+				    <span class="ui-icon ui-icon-closethick" title="Delete rule"></span>
 				</a>
 		</td>
 	</tr>
@@ -347,18 +347,3 @@ function copy_fields(formid) {
 $i++;
 endforeach;
 ?>
-<table  id="firewall">
-	<tr class="ui-filemanager-state-header">
-		<td class="p_fw_c0"></td>
-		<td class="p_fw_c1"></td>
-		<td class="p_fw_c2"></td>
-		<td colspan="4" class="legend">
-			 <span class="ui-icon ui-icon-pencil"></span>&nbsp;&nbsp;Edit rule&nbsp;&nbsp;
-			 <span class="ui-icon ui-icon-closethick"></span>&nbsp;&nbsp;Delete rule
-		</td>
-	</tr>
-
-</table>
-
-
-
