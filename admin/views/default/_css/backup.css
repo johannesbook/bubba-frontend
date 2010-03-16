@@ -1,237 +1,282 @@
-.treelayout li {
-	display: block;
+.selected
+{
+	background:#506AB2;
+	color:#FFF;
+	padding-left:3px;
 }
 
-li.selected {
-	background-color : #506AB2;
-}
-.treelayout li a {
-	color : #000 !important;
-}
-.treelayout li a.selected {
-	color : #fff;
-}	
-.treelayout input[type=button] {
-	display: inline;
+.subselected
+{
+	background:#607AC2;
+	color:#FFF;
+	padding-left:3px;
 }
 
-table#backup tr.data{
-	line-height : 18px;
+.treelayout
+{
+	margin:0 0 15px 50px;
 }
 
-table#backup th{
-	text-align : left;
-	padding-left : 1.2em;
-}
-table#backup tr.data td{
-	font-size : 11px;
-}
-table#backup td.ui-filemanager-backup-header{
-	font-size : 14px;
-	line-height : 31px;
+.treelayout input[type=button]
+{
+	display:inline;
 }
 
-table#backup td.ui-filemanager-backup-subheader{
-	line-height : 25px;
+.treelayout li
+{
+	display:block;
 }
 
-table#backup td.backupjobs {
-	width : 115px;
-}
-table#backup td.filemanager-backup-files {
-	width : 175px;
-}
-table#backup td.backupsettings {
-	margin : 0px;
+.treelayout li a
+{
+	color:#000!important;
 }
 
-table#backup .filemanager-backup-border-right {
-	//border-right:0.1em solid #ccc;
+.treelayout li a.selected
+{
+	color:#fff;
 }
 
-table#backup input {	
-	width : 75px;
-	margin:0;
-	margin-bottom: 3px;
-	display : inline;
-	font-size : 11px;
-}
-
-table#backup tr.subhead {
-	height : 2em;
-}
-
-input.incexc {
-	width : 60px;
-}
-
-table#backup div.error {
-	color : red;
-}
-
-table.tbl_settings {	
-	margin : 0px;
-	padding : 0px;
-	padding-left : 5px;
-}
-table.tbl_settings td{
-	padding : 2px 2px;
-	vertical-align : middle;
-
-}
-table.tbl_settings td.size1{
-	width : 110px;
-}
-
-table.tbl_settings td.tight{
-	width : 80px;
-}
-
-div#settings input {
-	width : 125px;
-}
-
-div#settings input[type=checkbox]{
-	margin : 0px;	
-	padding : 0px;
-	width : 10px;
-}
-
-div#settings select{
-	width : 134px;
-	font-size : 11px;
-}
-div#settings option{
-	font-size : 11px;
-}
-
-div#current_jobs{
-	min-height : 30px;
-	max-height : 150px;
-	padding-bottom : 20px;
-	overflow : auto;
-}
-div#current_incfiles{
-	min-height : 30px;
-	max-height : 100px;
-	padding-bottom : 20px;
-	overflow : auto;
-}
-div#current_excfiles{
-	min-height : 25px;
-	max-height : 100px;
-	padding-bottom : 20px;
-	overflow : auto;
-}
-div.files:hover{
-	cursor : pointer;
-}
-
-fieldset.fld_settings {
-	margin : 2px;
-	padding : 0px;
-	width : 100%;
-}
-
-
-div#backup_header {	
-	text-align:left;
-	vertical-align: middle;
+div#backup_header
+{
+	font-weight:700;
 	height:31px;
-	font-weight:bold;
+	text-align:left;
+	vertical-align:middle;
 }
 
-div.jobs {
-	padding-left : 5px;
-	padding-right : 5px;
-	width : 75px;
-	height : 100%;
-}
-div.date {
-	padding-left : 5px;
-	padding-right : 5px;
-	width : 100px;
-	height : 100%;
-}
-div.status {
-	padding-left : 5px;
-	padding-right : 5px;
-	width : 140px;
-	height : 100%;
-}	
-div.backupfiles {
-	padding-left : 5px;
-	padding-right : 5px;
-	bottom : 0px;
+div#current_dates
+{
+	max-height:300px;
+	overflow:auto;
+	width:130px;
 }
 
-div#current_files {
-	min-height : 150px;
-	max-height : 300px;
-	overflow : auto;
-}
-div#current_dates {
-	max-height : 300px;
-	overflow : auto;
-	width : 130px;
-}
-div#current_jobs {
-	max-height : 300px;
-	overflow : auto;
-}
-.selected {
-	background: #506AB2;
-	color:white;
-	padding-left:3px;
+div#current_excfiles
+{
+	max-height:100px;
+	min-height:25px;
+	overflow:auto;
+	padding-bottom:20px;
 }
 
-.subselected {
-	background: #607AC2;
-	color:white;
-	padding-left:3px;
+div#current_files
+{
+	max-height:300px;
+	min-height:150px;
+	overflow:auto;
 }
 
-td.restoreinfo {
-	width : 400px;
+div#current_incfiles
+{
+	max-height:100px;
+	min-height:30px;
+	overflow:auto;
+	padding-bottom:20px;
 }
 
-input.cb_force {
-	margin : 2px;
-	
+div#current_jobs
+{
+	max-height:300px;
+	min-height:30px;
+	overflow:auto;
+	padding-bottom:20px;
 }
 
-div.force_settings {
-	vertical-align: middle;
-	margin-top: 10px;
-}
-div.force_settings input{
-	vertical-align: middle;
-	margin-left : 5px;
-	margin-right : 5px;
+div#settings input
+{
+	width:125px;
 }
 
-div.c_link {
-	text-decoration : underline;
-}
-div.c_link:hover {
-	cursor : pointer;
-}
-span.hidden {
-	display : none;
-}
-span.underline {
-	text-decoration : underline;
-}
-div.backup_tree_header {
-	margin : 10px 0;
-	font-weight : bold;
-}
-input#backup_restore {	
-	margin-top : 10px;
-	width : 125px !important;
+div#settings input[type=checkbox]
+{
+	margin:0;
+	padding:0;
+	width:10px;
 }
 
-.treelayout {
-	margin : 0 0 15px 50px;	
+div#settings select
+{
+	font-size:11px;
+	width:134px;
 }
 
+div.backup_tree_header
+{
+	font-weight:700;
+	margin:10px 0;
+}
+
+div.backupfiles
+{
+	bottom:0;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+div.c_link,span.underline
+{
+	text-decoration:underline;
+}
+
+div.date
+{
+	height:100%;
+	padding-left:5px;
+	padding-right:5px;
+	width:100px;
+}
+
+div.files:hover,div.c_link:hover
+{
+	cursor:pointer;
+}
+
+div.force_settings
+{
+	margin-top:10px;
+	vertical-align:middle;
+}
+
+div.force_settings input
+{
+	margin-left:5px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+
+div.jobs
+{
+	height:100%;
+	padding-left:5px;
+	padding-right:5px;
+	width:75px;
+}
+
+div.status
+{
+	height:100%;
+	padding-left:5px;
+	padding-right:5px;
+	width:140px;
+}
+
+fieldset.fld_settings
+{
+	margin:2px;
+	padding:0;
+	width:100%;
+}
+
+input#backup_restore
+{
+	margin-top:10px;
+	width:125px!important;
+}
+
+input.cb_force
+{
+	margin:2px;
+}
+
+input.incexc
+{
+	width:60px;
+}
+
+li.selected
+{
+	background-color:#506AB2;
+}
+
+span.hidden
+{
+	display:none;
+}
+
+table#backup div.error
+{
+	color:red;
+}
+
+table#backup input
+{
+	display:inline;
+	font-size:11px;
+	margin:0 0 3px;
+	width:75px;
+}
+
+table#backup td.backupjobs
+{
+	width:115px;
+}
+
+table#backup td.backupsettings
+{
+	margin:0;
+}
+
+table#backup td.filemanager-backup-files
+{
+	width:175px;
+}
+
+table#backup td.ui-filemanager-backup-header
+{
+	font-size:14px;
+	line-height:31px;
+}
+
+table#backup td.ui-filemanager-backup-subheader
+{
+	line-height:25px;
+}
+
+table#backup th
+{
+	padding-left:1.2em;
+	text-align:left;
+}
+
+table#backup tr.data
+{
+	line-height:18px;
+}
+
+table#backup tr.data td,div#settings option
+{
+	font-size:11px;
+}
+
+table#backup tr.subhead
+{
+	height:2em;
+}
+
+table.tbl_settings
+{
+	margin:0;
+	padding:0 0 0 5px;
+}
+
+table.tbl_settings td
+{
+	padding:2px;
+	vertical-align:middle;
+}
+
+table.tbl_settings td.size1
+{
+	width:110px;
+}
+
+table.tbl_settings td.tight
+{
+	width:80px;
+}
+
+td.restoreinfo
+{
+	width:400px;
+}

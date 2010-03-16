@@ -7,7 +7,7 @@
 <meta http-equiv="Expires" content="0" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>Bubba|TWO - <?=php_uname("n")?></title>
+<title>Bubba|2 - <?=php_uname("n")?></title>
 </head>
 <body>
 <div id="content">

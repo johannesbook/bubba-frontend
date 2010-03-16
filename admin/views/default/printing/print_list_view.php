@@ -13,9 +13,15 @@
 </thead>
 <tbody>
 </tbody>
+<tfoot>
+<tr>
+<td colspan="5">
+<button id="fn-printing-list-add"><?=t("printing-add-button-label")?></button>
+</td>
+</tr>
+</tfoot>
 </table>
 
-<button id="fn-printing-list-add"><?=t("printing-add-button-label")?></button>
 
 <div id="fn-printing-dialogs" class="ui-helper-hidden">
 <div id="fn-printing-list-edit">

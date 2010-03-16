@@ -24,7 +24,7 @@
 	</td>
 	<td><?=$disk["model"]?></td>
 	<td><?=substr($disk["dev"],5)?></td>
-	<td><?=sizetohuman($disk['size']*512,1000)?></td>
+	<td><?=sizetohuman($disk['size']*512,1000)?>B</td>
 	<td><?=$disk["type"]?></td>
 	<td class="partitions">
 		<table class="partitions">
@@ -86,7 +86,7 @@
 		}	
 	?></td>
 	<td><?=isset($devices[$legend['name']]['label'])?$devices[$legend['name']]['label']:""?></td> 
-	<td><?=sizetohuman($legend['size'],1000)?></td> 
+	<td><?=sizetohuman($legend['size'],1000)?>B</td> 
 	<td><?if(isset($devices[$legend['name']]['mountpath'])):?>
 		<a href="<?=site_url("filemanager/cd".$devices[$legend['name']]['mountpath'])?>"><?=$devices[$legend['name']]['mountpath']?></a>
 	<?endif?></td>

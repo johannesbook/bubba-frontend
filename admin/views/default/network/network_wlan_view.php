@@ -61,10 +61,9 @@
 
 </table>
 
-<fieldset class="expandable">
-<legend class="ui-state-default ui-widget-header expansion" id="wlan_advanced_switch"><span ><span id="wlan_adv_mark">-</span>&nbsp;&nbsp;<?=t('wlan_title_advanced')?></span></legend>
+<div class="ui-expandable ui-state-default ui-widget-header ui-div-header"><?=t('wlan_title_advanced')?></div>
 
-<div id="wlan_adv">
+<div class="ui-helper-hidden">
 
 <table class="networksettings">
 

@@ -107,27 +107,27 @@ $lang['help_box_services']="
 	<p><strong>UPnP streaming</strong> - Universal Plug and Play (UPnP) server. The server shares/streams media data  like audio/video/picture/files to UPnP-clients on the network. Please notice that if  you are located in a unsecure network; disable UPnP because otherwise you are able to  browse the whole file system via Mediatomb's web interface which could be a security risk. </p>
 	<p><strong>DAAP streaming</strong> - Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes. </p>
 	<p><strong>Squeezebox Server </strong>-  is a streaming audio server supported by Logitech that streams music to The Squeezebox product line.</p>
-	<h3>Mail</h3>
-	<p><strong>Send and receive</strong> -  This is for postfix the smtp server: Sending and receiving eMails.</p>
+	<h3>Email</h3>
+	<p><strong>Send and receive</strong> -  This is for postfix the smtp server: Sending and receiving emails.</p>
 	<p><strong>Imap (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required  for the webmail access to be functional.</p>
-	<p><strong>Mail retrieval </strong>- This  is for fetchmail, a daemon that collects eMails to Bubba|2</p>
+	<p><strong>Email retrieval </strong>- This  is for fetchmail, a daemon that collects emails to Bubba|2</p>
 	<h3>Other</h3>
 	<p><strong>Printing</strong> - Bubba|2  print server.</p>
 	<p><strong>Up and downloads</strong> - possibility to up / download files on Bubba|2, i.e. filemanager and torrents.</p>
 ";
 
 $lang['help_box_mail']=$lang['help_box_mail_index']="
-	<p>If you set up Bubba|2 to fetch your eMail from different external eMail accounts you may have, they will be stored on Bubba|2 and available via IMAP or web mail, wherever you are. Logged in as administrator you must select to which user the retrieved mail should be directed, this must be done for every retrieved mail account added. Prior to this you must have added a user.</p>
-	<p><strong>Retrieve mail from individual accounts</strong> - Shows your current accounts for mail retrieval.</p>
-	<p><strong>Add account</strong> - To fetch mail from an external accout, fill in the information given to you by your mail account provider.</p>
+	<p>If you set up Bubba|2 to fetch your email from different external email accounts you may have, they will be stored on Bubba|2 and available via IMAP or webmail, wherever you are. Logged in as administrator you must select to which user the retrieved email should be directed, this must be done for every retrieved email account added. Prior to this you must have added a user.</p>
+	<p><strong>Retrieve email from individual accounts</strong> - Shows your current accounts for email retrieval.</p>
+	<p><strong>Add account</strong> - To fetch email from an external accout, fill in the information given to you by your email account provider.</p>
 ";
 	
 $lang['help_box_mail_server_settings']="
-	<h3>Outgoing mail</h3>
-  <p><strong>Outgoing mail server</strong> - Leave fields empty to let Bubba|2 handle your outgoing eMails. If your ISP blocks your outgoing traffic on port 25you must use an alternative SMTP server than Bubba|2, fill in the information provided to you by your ISP.</p>
+	<h3>Outgoing email</h3>
+  <p><strong>Outgoing email server</strong> - Leave fields empty to let Bubba|2 handle your outgoing emails. If your ISP blocks your outgoing traffic on port 25you must use an alternative SMTP server than Bubba|2, fill in the information provided to you by your ISP.</p>
 	<h3>Your own domain</h3>
-	<p>If you have your own domain name it is possible to let Bubba|2 handle your incoming and outgoing eMail.</p>
-	<p><strong>Handle mail for domain</strong> - Enter your domain name here. If you have several domains, just type them in the box space separated.</p>
+	<p>If you have your own domain name it is possible to let Bubba|2 handle your incoming and outgoing email.</p>
+	<p><strong>Handle email for domain</strong> - Enter your domain name here. If you have several domains, just type them in the box space separated.</p>
 ";
 
 
@@ -182,8 +182,8 @@ $lang['help_box_network_fw']="
   <p><strong>Allow WWW from WAN</strong> - Enables WWW traffic to Bubba|2 from WAN.</p>
   <p><strong>Allow FTP from WAN</strong> - Enables FTP connections from WAN to Bubba|2's port 21.</p>
   <p><strong>Allow Ping from WAN</strong> -   Enables ping from WAN. The default setting disables computers on the Internet to  get a reply back from Bubba|2 when it is being 'pinged'. This   increases the security.</p>
-	<p><strong>Allow WAN access to mailserver</strong> - Enables access from WWW to Bubba|2's port 25. This is the default mailserver port for sending and receiving mail.</p>
-	<p><strong>Allow WAN access to Mail (IMAP/IMAPS)</strong> - Enables access from WWW to Bubba|2's ports 143 and 993. These ports are used for sending and receiving mail.</p>
+	<p><strong>Allow WAN access to emailserver</strong> - Enables access from WWW to Bubba|2's port 25. This is the default emailserver port for sending and receiving email.</p>
+	<p><strong>Allow WAN access to Email (IMAP/IMAPS)</strong> - Enables access from WWW to Bubba|2's ports 143 and 993. These ports are used for sending and receiving email.</p>
   <p><strong>Open ports for torrent downloader</strong> - Enables faster torrent download. This rule opens the ports 10000-14000.</p>
   <h3>Open port / Add port forward</h3>
 	<p>Choose 'Portforward' or 'Bubba|2 public port' with the radio buttons. With 'Portforward' you open a port from a network device in your internal LAN to the Internet (WAN). 'Bubba|2 public port' opens a port from Bubba|2 to the Internet (WAN)</p>
@@ -321,7 +321,7 @@ $lang['help_box_settings_backuprestore']="
   <li>User accounts (including admin login via WAN setting, passwords) but no user data</li>
   <li>Backup jobs</li>
   <li>Services settings</li>
-  <li>Mail account settings</li>
+  <li>Email account settings</li>
   <li>Network setup (all settings ie profile, hostname, wireless settings, firewall rules etc)</li>
   <li>Printers</li>
 </ul>
@@ -378,14 +378,14 @@ $lang['help_box_user_users']=$lang['help_box_user_users_edit']="
 ";
 
 $lang['help_box_user_mail']="
-<p>If you set up Bubba|2 to fetch your eMail from other external eMail accounts you may have, they will be stored on Bubba|2 and available via IMAP or web mail, wherever you are.</p>
-<p><strong>Retrieve mail from individual accounts</strong> - Shows your current accounts for mail retrieval.</p>
-<p><strong>Add account</strong> - To fetch mail from an external accout, fill in the information given to you by your mail account provider.</p>
+<p>If you set up Bubba|2 to fetch your email from other external email accounts you may have, they will be stored on Bubba|2 and available via IMAP or webmail, wherever you are.</p>
+<p><strong>Retrieve email from individual accounts</strong> - Shows your current accounts for email retrieval.</p>
+<p><strong>Add account</strong> - To fetch email from an external accout, fill in the information given to you by your email account provider.</p>
 ";
 
 
 $lang['help_box_user_mail_editfac']="
-<p><strong>Edit account</strong> - Edit the mail settings for the external mail account. Use the information given to you by your mail account provider.</p>
+<p><strong>Edit account</strong> - Edit the email settings for the external email account. Use the information given to you by your email account provider.</p>
 ";
 
 

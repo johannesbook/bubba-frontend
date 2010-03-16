@@ -21,6 +21,6 @@
 				<option value="<?=$disk?>"><?=$disk?></option>
 			<?endforeach?>
 		</select>
-		<p><input <?=(sizeof( $disks ) == 0 or sizeof( $lvs ) == 0) ? 'disabled="disabled"' : '' ?> type="button" class="button" id="extend" value="<?=t("Extend")?>" /></p>
+		<input <?=(sizeof( $disks ) == 0 or sizeof( $lvs ) == 0) ? 'disabled="disabled"' : '' ?> type="button" class="button" id="extend" value="<?=t("Extend")?>" />
 	</div>
 

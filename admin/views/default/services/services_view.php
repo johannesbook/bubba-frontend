@@ -27,10 +27,10 @@
       <td ><input name="daap_enabled" type="checkbox" value="1" <?= $daap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-	  <td><label for=""><?=t('SqueezeCenter - Squeezebox™ and Transporter® streaming')?></label>
+	  <td><label for=""><?=t('Squeezebox server')?></label>
 		<?if(!$squeezecenter_installed):?>
 <div>
-		<?=t("Squeezecenter isn't installed, please click")?> <a href="<?=FORMPREFIX?>/settings/software/install/<?=$squeezecenter_packagename?>"><?=t('here')?></a> <?=t('to install squeezecenter')?>.
+		<?=t("Squeezebox server isn't installed, please click")?> <a href="<?=FORMPREFIX?>/settings/software/install/<?=$squeezecenter_packagename?>"><?=t('here')?></a> <?=t('to install squeezecenter')?>.
 </div>
 		<?endif?>
 </td>
@@ -41,7 +41,7 @@
 </table>
 
 <table>      
-	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Mail')?></td></tr>
+	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Email')?></td></tr>
    <tr>
       <td><label for=""><?=t('Send and recieve')?></label></td>
       <td ><input name="smtp_enabled" type="checkbox" value="1" <?= $smtp_status?"checked=\"checked\"":"" ?>/></td>
@@ -51,7 +51,7 @@
       <td ><input name="imap_enabled" type="checkbox" value="1" <?= $imap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>
-      <td><label for=""><?=t('Mail retrieval')?></label></td>
+      <td><label for=""><?=t('Email retrieval')?></label></td>
       <td ><input name="fetchmail_enabled" type="checkbox" value="1" <?= $fetchmail_status?"checked=\"checked\"":"" ?>/></td>
    </tr>		  
 </table>
@@ -67,6 +67,8 @@
       <td ><input name="download_enabled" type="checkbox" value="1" <?= $download_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	  
 </table>
+<div class="ui-inset">
 <input type="submit" name="update" value="<?=t('Update')?>"/>
+</div>
 </form>
 </fieldset>

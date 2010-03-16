@@ -1,16 +1,14 @@
 <div id="raid">
 	<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
 	<div>
-		<div>
-		    <input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
-    		<p>
-    		    <?=t("disk_raid_create_message")?>.
-		    </p>
-            <input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
-    		<p>
-    		    <?=t("disk_raid_recover_message")?>.
-            </p>    		    
-		</div>
+			<input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
+			<p>
+				<?=t("disk_raid_create_message")?>.
+			</p>
+			<input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
+			<p>
+				<?=t("disk_raid_recover_message")?>.
+			</p>    		    
 	</div>
 
 
@@ -83,12 +81,12 @@
 		}
  	 } ?>
 
-<div id="raid_status" class="ui-state-default ui-widghet-header ui-div-header">
-    <span id="status_switch">+</span>&nbsp;&nbsp;<?=t('disk_raid_detailed_info_title')?>
+<div class="ui-expandable ui-state-default ui-widghet-header ui-div-header">
+    <?=t('disk_raid_detailed_info_title')?>
 </div>
-	<div id="adv_status">
+	<div class="ui-helper-hidden ui-inset">
 	
-		<p><?=t('disk_raid_list_of_arrays_title')?></p>
+		<h3><?=t('disk_raid_list_of_arrays_title')?></h3>
 		<table class="disks">
 		<tr class="ui-header">
 			<th><?=t('disk_raid_table_list_of_arrays_array_name_title')?></th>
@@ -110,7 +108,7 @@
 		<?endforeach?>
 		</table>
 		
-		<p><?=t('disk_raid_list_of_disks_title')?></p>
+		<h3><?=t('disk_raid_list_of_disks_title')?></h3>
 		<table class="disks">
 		<tr class="ui-header">
 			<th><?=t('disk_raid_table_list_of_disks_disk_title')?></th>

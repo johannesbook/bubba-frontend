@@ -1,7 +1,10 @@
 <form id="SETCLOCK" action="<?=FORMPREFIX?>/settings/setdate" method="post">
 	
-		<table>
-		    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Date and time')?></td></tr>
+	<table>
+		<thead>
+		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Date and time')?></td></tr>
+		</thead>
+		<tbody>
 			<tr>
 				<td><?=t('Current timezone is')?>:</td>
 				<td><?=$t_zone?></td>
@@ -62,7 +65,13 @@
 					(<?=t('HHmm')?>)
 				</td>
 			</tr>
-			
-		</table>
-        <input class='submitbutton' type='submit' name='set_time' value='<?=t('Update')?>'/>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">
+					<input class='submitbutton' type='submit' name='set_time' value='<?=t('Update')?>'/>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
 </form>

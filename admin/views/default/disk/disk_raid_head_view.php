@@ -7,13 +7,6 @@
 	<script  type="text/javascript">
 $(document).ready( function() {
 
-	$("div#adv_status").css("display","none");
-	$('#raid_status').click(function(e) {	    
-	    e.preventDefault();
-	    $('#adv_status').toggle();
-	    if($("#adv_status").is(":visible")) {$("#status_switch").html("-");}
-	    else {$("#status_switch").html("+");}
-	});
 
 	$('.remove_raid_disk').click(function(e) {
 		$.post(	'<?=site_url("ajax_disk/remove_raid_disk")?>', { disk: $(e.target).attr('rel') }, function(data) {

@@ -24,7 +24,7 @@ $('form.ack').live( 'submit', function(e) {
 
 
 <table>
-	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Info')?></td></tr>
+	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Status')?></td></tr>
 </table>
 
 <table>
@@ -51,13 +51,13 @@ $('form.ack').live( 'submit', function(e) {
 						<? printf("%02d",$uptime[1])?>:<? printf("%02d",$uptime[2])?>:<? printf("%02d",$uptime[3])?>
 					</td>
 				</tr>
-				<tr><td><?=t('Version')?></td><td><?=$version?></td></tr>
+				<tr><td><?=t('Software version')?></td><td><?=$version?></td></tr>
 			
 				<?if($this->session->userdata('user')=="admin"):?>
 					<tr>
 						<td>
 							<form action="shutdown" method="post">
-						  <input id="stat-shutdown" class='submitbutton' type='submit' name='powerdown' value='<?=t('Power down')?>'/>
+						  <input id="stat-shutdown" class='submitbutton' type='submit' name='powerdown' value='<?=t('stat-shutdown-label')?>'/>
 							</form>
 						</td>
 					</tr>

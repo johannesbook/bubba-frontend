@@ -14,6 +14,7 @@ $(document).ready(function(){
 		var open_edit_dialog_callback = function(data) {
 			$("h2.fn-dialog-header", this).html($.message("mail-retrieve-edit-dialog-header", data.server));
 			$("form",this).trigger("reset");
+			edit_validator.resetForm();
 			$('input[name=server]', this).val(data.server);
 			$('input[name=old_server]', this).val(data.server);
 			$('input[name=protocol]', this).val(data.protocol);
@@ -224,6 +225,7 @@ $(document).ready(function(){
 
 		$("#fn-retrieve-add").click($.proxy(function() {
 					$("form",this).trigger("reset");
+					add_validator.resetForm();
 					this.dialog("open");
 				},
 				add_dialog

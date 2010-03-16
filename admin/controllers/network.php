@@ -537,7 +537,7 @@ class Network extends Controller{
 								$errmsg["add"] = $add_msg[0];
 							} 
 						}
-						// Update Bubba|Two port
+						// Update Bubba|2 port
 					} else { 
 						if ($old_port["dport"]) {
 							// Remove old port, otherwise it will (most likely)
@@ -565,7 +565,7 @@ class Network extends Controller{
 			if($removerule["source"] == "all")
 				$removerule["source"] = "0";
 
-			if(!$removerule["to_port"]) { // this is a userdefined "Bubba|TWO port"
+			if(!$removerule["to_port"]) { // this is a userdefined "Bubba|2 port"
 				$rm_msg = close_port($removerule);
 			} else {
 				$rm_msg = rm_portforward($removerule);

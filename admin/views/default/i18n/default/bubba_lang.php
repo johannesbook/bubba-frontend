@@ -37,7 +37,7 @@ $lang['title_shutdown']=$lang['Shutdown'];
 
 /* 'Elevated' sub navigation */
 $lang['title_usersettings-info'] = "User information";
-$lang['title_usersettings-mail'] = "Mail";
+$lang['title_usersettings-mail'] = "Email";
 $lang['title_albums'] = "Album manager";
 $lang['title_album-users'] = "Album users";
 
@@ -60,8 +60,8 @@ $lang['title_settings-wizard']="Setup wizard";
 $lang['title_settings-identity']="Identity";
 $lang['title_settings-traffic']="Traffic";
 $lang['title_settings-date']="Date and time";
-$lang['title_settings-sysbackup']="Settings backup";
-$lang['title_settings-update']="Update software";
+$lang['title_settings-sysbackup']="Config backup";
+$lang['title_settings-update']="Firmware upgrade";
 $lang['title_settings-logs']="Logs";
 
 
@@ -135,7 +135,7 @@ $lang['disk_raid_create_label'] = "Create RAID array";
 $lang['disk_raid_create_message'] = "Set up internal disk and one external disk into a RAID mirror solution (RAID 1)";
 $lang['disk_raid_recover_label'] = "Recover RAID array";
 $lang['disk_raid_recover_message'] = "Recover internal disk or add a new external disk to existing RAID array";
-$lang['disk_raid_status_title'] = "RAID status";
+$lang['disk_raid_status_title'] = "RAID Status";
 $lang['disk_raid_degraded_recover_status_message'] = "Recovering RAID array '%s'";
 $lang['disk_raid_degraded_recover_status_message_eta_hours'] = "Current recover progress is %d%% and is estimated to finish in %d hours %d minutes";
 $lang['disk_raid_degraded_recover_status_message_eta_minutes'] = "Current recover progress is %d%% and is estimated to finish in %d minutes";
@@ -269,17 +269,17 @@ $lang['settings_software_include_hotfixes'] = "Include hotfixes and system speci
 
 $lang['settings_identity_error_change_hostname'] = "Failed to change hostname";
 $lang['settings_identity_error_invalid_hostname'] = "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
-$lang['settings_identity_easyfind_error_fail_set_name'] = "Failed to set easyfind name <strong>%s</strong>, probably this name is taken allready. Please try an other one";
+$lang['settings_identity_easyfind_error_fail_set_name'] = "Failed to set Easyfind name <strong>%s</strong>, probably this name is taken allready. Please try an other one";
 $lang['settings_identity_easyfind_error_invalid_name'] = "Easyfind name <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
-$lang['settings_identity_easyfind_error_fail_enable'] = "Failed to enable easyfind";
-$lang['settings_identity_easyfind_error_fail_disable'] = "Failed to disable easyfind";
+$lang['settings_identity_easyfind_error_fail_enable'] = "Failed to enable Easyfind";
+$lang['settings_identity_easyfind_error_fail_disable'] = "Failed to disable Easyfind";
 $lang['settings_identity_title'] = "Windows share options"; # XXX Erm? WTF???
 $lang['settings_identity_hostname_label'] = "Hostname";
 $lang['settings_identity_workgroup_label'] = "Workgroup";
 $lang['settings_identity_update_hostname_workgroup_label'] = "Update hostname and workgroup";
-$lang['settings_identity_easyfind_title'] = "Easyfind";
+$lang['settings_identity_easyfind_title'] = "Easyfind options";
 $lang['settings_identity_easyfind_message'] = "Use 'Easyfind' to locate your Bubba";
-$lang['settings_identity_update_easyfind_label'] = "Update easyfind";
+$lang['settings_identity_update_easyfind_label'] = "Update Easyfind";
 
 //  ---------- Users  -----
 $lang['users-list-edit-realname-label'] = 'Real name';
@@ -287,7 +287,7 @@ $lang['users-list-edit-username-label'] = 'User name';
 $lang['users-list-edit-shell-label'] = 'Shell login';
 $lang['users-list-edit-remote-label'] = 'Allow remote access to config interface';
 $lang['users-list-edit-password1-label'] = 'New password';
-$lang['users-list-edit-password2-label'] = 'Verify password';
+$lang['users-list-edit-password2-label'] = 'Confirm password';
 $lang['users-list-edit-sideboard-label'] = 'Show sideboard default on login page';
 
 $lang['users-title'] = 'Users';
@@ -368,12 +368,12 @@ $lang["mail-retrieve-add-button-label"] = "Add new email account";
 $lang["mail-validation-error"] = "Validation of input failed";
 $lang["mail-auth-error"] = "Authorization failed";
 $lang["mail-retrieve-title"] = "Retrieve email";
-$lang["mail-server-title"] = "Email server";
+$lang["mail-server-title"] = "Email Server";
 
 //  ----------- Printing --------
 
 $lang["printing-add-button-label"] = "Add new printer";
-$lang["printing-title"] = "Printing";
+$lang["printing-title"] = "Printers";
 $lang["printing-label-share"] = "Share";
 $lang["printing-label-info"] = "Description";
 $lang["printing-label-location"] = "Location";
@@ -383,3 +383,6 @@ $lang["printing-list-edit-name-label"] = "Share";
 $lang["printing-list-edit-location-label"] = "Location";
 $lang["printing-list-edit-info-label"] = "Description";
 
+//  ----------- Stat --------
+
+$lang["stat-shutdown-label"] = "Shutdown";

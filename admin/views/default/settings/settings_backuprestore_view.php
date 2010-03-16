@@ -1,8 +1,11 @@
-<table border="0" cellpadding="0">
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Backup and restore settings')?></td></tr>
+<table>
+<thead>
+    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Backup and restore settings')?></td></tr>
+</thead>
+<tbody>
 <tr>
 	<td><?=t('Source')?>/<?=t('Destination')?></td>
-	<td colspan="2">
+	<td>
 		<select name="destination" id="unitselector">
 <?if(!empty($disks)):?>
 <?foreach($disks as $disk):?>
@@ -14,8 +17,10 @@
 		</select>
 	</td>
 </tr>
-
-</table>
+</tbody>
+<tfoot>
+<tr>
+	<td colspan="2">
 <form action="<?=FORMPREFIX?>/settings/restore" method="post" id="restoreform">
 			<input class="unitclass" type="hidden" name="unit"/>
 			<input type="submit" name="restore" value="<?=t('Restore')?>" <?if(empty($disks)):?>disabled="disabled"<?endif?>/>
@@ -25,3 +30,9 @@
 			<input class="unitclass" type="hidden" name="unit"/>
 			<input type="submit" name="backup" value="<?=t('Backup')?>" <?if(empty($disks)):?>disabled="disabled"<?endif?>/>
 		</form>		
+	</td>
+</tr>
+</tfoot>
+
+</table>
+

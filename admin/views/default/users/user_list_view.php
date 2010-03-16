@@ -13,11 +13,15 @@
 </thead>
 <tbody>
 </tbody>
+<tfoot>
+<?if($show_adduser):?>
+<tr><td colspan="4">
+<button id="fn-users-list-add"><?=t("users-add-button-label")?></button>
+</td></tr>
+<?endif?>
+</tfoot>
 </table>
 
-<?if($show_adduser):?>
-<button id="fn-users-list-add"><?=t("users-add-button-label")?></button>
-<?endif?>
 <?endif?>
 
 <div id="fn-users-dialogs" class="ui-helper-hidden">

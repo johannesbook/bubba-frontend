@@ -173,7 +173,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td class="size1"><?=t('Number of fullbackups to keep')?></td>
+								<td class="size1"><?=t('Number of full backups to keep')?></td>
 								<td class="size1"><select name="nbr_fullbackups">
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -207,7 +207,7 @@
 							<tr>
 								<td class="size1" />
 								<td class="size1" />
-								<td class="size1"><?=t('Verify key')?></td>
+								<td class="size1"><?=t('Confirm key')?></td>
 								<td class="size_rest"><input disabled="disabled" type="password" id="GPG_key2" name="GPG_key2" value="<?=isset($backupsettings[0]["GPG_key"])?$backupsettings[0]["GPG_key"]:""?>" /></td>
 							</tr>
 						</table> <!-- end security -->
@@ -248,7 +248,7 @@
 	</table>
 </fieldset>
 
-<fieldset class="fld_settings expandable"><legend><?=t("Current operations")?></legend>
+<fieldset class="fld_settings expandable"><legend><?=t("Current restore operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($backup["user"])) {
 				?>
@@ -258,8 +258,6 @@
 				echo $backup["jobname"];
 				echo t(" for user: ");
 				echo $backup["user"];
-			} else {
-				echo t("No backup jobs currently running");
 			}
 			?>
 		</div>

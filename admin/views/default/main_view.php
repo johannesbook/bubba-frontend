@@ -7,7 +7,7 @@
 <meta http-equiv="Expires" content="0" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>Bubba|TWO - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
+<title>Bubba|2 - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
 
 <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.all.css?v='<?=$this->session->userdata('version')?>'" />
@@ -74,7 +74,12 @@ jQuery.validator.setDefaults({
 
 	
 $(document).ready(function(){
-	
+	help_dialog = $.dialog(
+		$('#fn-help-dialog'),
+		"<?=t('help_box_header')?>",
+		{},
+		{autoOpen: false, 'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
+
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
   	});
@@ -155,11 +160,7 @@ $(document).ready(function(){
 				help_uri = config.prefix+"/help/load/html/user_<?=$uri?>";
 			<?endif?>
 			$.post(help_uri, function(data) {
-				$.dialog(
-					data,
-					"<?=t('help_box_header')?>",
-					{},
-					{'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
+				help_dialog.html(data).dialog('open');
 			});
 		};
 	});
@@ -225,6 +226,7 @@ if(isset($head)) {
 		  	<?=$wizard?>
 		</div> <!-- wizard -->
 	<?endif?>
+	<div id="fn-help-dialog" class="ui-help-dialog ui-helper-hidden"></div>
 
 </body>
 </html>

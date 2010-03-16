@@ -12,7 +12,7 @@
 	</thead>
 	<tbody>
 	<tr>
-		<th><label><?=t('Outgoing mail server')?></label></th>
+		<th><label><?=t('Outgoing email server')?></label></th>
 		<td>
 			<input
 				type="text"
@@ -77,7 +77,7 @@
 	</tr>
 	<? // -----  end hidden section --- ?>
    <tr>
-	  <th><label><?=t('Handle mail for domain')?></label></th>
+	  <th><label><?=t('Handle email for domain')?></label></th>
 	  <td>
 			<input
 				type="text"
@@ -87,10 +87,16 @@
 	</td>
    </tr>
   </tbody>
-</table>
+<tfoot>
+<tr>
+<td colspan="2">
 <input
 	type="submit"
 	name="update"
 	value="<?=t('Update')?>"
 />
+</td>
+</tr>
+</tfoot>
+</table>
 </form>

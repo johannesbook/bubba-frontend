@@ -15,9 +15,13 @@
 </thead>
 <tbody>
 </tbody>
+<tfoot>
+<tr><td colspan="7">
+<button id="fn-retrieve-add"><?=t("mail-retrieve-add-button-label")?></button>
+</td></tr>
+</tfoot>
 </table>
 
-<button id="fn-retrieve-add"><?=t("mail-retrieve-add-button-label")?></button>
 
 <div id="fn-mail-dialogs" class="ui-helper-hidden">
 <div id="fn-mail-retrieve-edit">

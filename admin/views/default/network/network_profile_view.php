@@ -37,10 +37,10 @@
 </fieldset>
 </form>
     <table id="profile">
-      <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t("Profile explaination")?></td></tr>
+      <tr><td colspan="2"><h2><?=t("Profile explaination")?></h2></td></tr>
       <tr>
         <td>
-	        <div class="profile_legend_h"><?=t("Automatic network settings")?></div>
+	        <h3><?=t("Automatic network settings")?></h3>
       	  <div class="profile_legend"><?=t("Bubba will automatically try to set an appropriate network configuration.")?><br>
       	  </div>
         </td>
@@ -50,11 +50,11 @@
 
       <tr>
         <td>
-      	  <div class="profile_legend_h"><?=t("Router + Firewall + Server")?></div>
+      	  <h3><?=t("Router + Firewall + Server")?></h3>
       	  <div class="profile_legend"><?=t("Bubba will automatically try to retreive network settings on WAN (internet),")?><br>
       	  <?=t("and use fixed network settings on the local network providing other computers with network information.")?><br>
       	  &nbsp;<br>
-      	  <?=t("(Bubba|Two will use DHCP on WAN and static IP on LAN with DHCP server active)")?><br>
+      	  <?=t("(Bubba|2 will use DHCP on WAN and static IP on LAN with DHCP server active)")?><br>
       	  </div>
         </td>
         <td>
@@ -64,7 +64,7 @@
       </tr>	  
       <tr>
         <td>
-          <div class="profile_legend_h"><?=t("Server only")?></div>
+          <h3><?=t("Server only")?></h3>
       	  <div class="profile_legend"><?=t("Bubba will automatically try to retreive network settings on LAN (local network) and the WAN port should be left unconnected")?></div>
         </td>
         <td>

@@ -155,12 +155,14 @@ function piechart(chart_canvas) {
 
 
 $(document).ready( function() {
-		// TODO doesn't work
-		$('.ui-dialog-buttonpane > button.ui-button').live('load',function(){
-				var buttons = $(this).siblings('button.ui-button').andSelf();
-				var count = buttons.length;
-				var diff = ($(this).innerWidth()/$(this).outerWidth())*2;
-				buttons.width((100/count - diff) + '%');
+
+		// Expandable divs, first div is header, next is body
+		$(".ui-expandable").prepend($('<div/>',{class: "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));
+		$(".ui-expandable + :hidden").prev().children('div.ui-expandable-icon').toggleClass("ui-icon-triangle-1-s ui-icon-triangle-1-e");
+		$(".ui-expandable").live('click',function(){
+				self= $(this);
+				self.children('div.ui-expandable-icon').toggleClass("ui-icon-triangle-1-s ui-icon-triangle-1-e");
+				self.next().slideToggle('fast',function(){});
 			}
 		);
 
@@ -185,21 +187,6 @@ $(document).ready( function() {
 				
 			});
 		});
-		/*
-		$('fieldset.expandable.collapsed').children(':last-child').hide();
-		$('fieldset.expandable > legend').prepend($('<span/>').addClass('expander'));
-		$('fieldset.expandable > legend').click(function() {
-				collapsed = $(this).parent().hasClass( 'collapsed' );
-				$('fieldset.expandable.expanded').children(':last-child').slideUp(500);
-				$('fieldset.expandable.expanded').removeClass('expanded').addClass('collapsed');
-				if( collapsed ) {
-					$(this).siblings(':last-child').slideDown(500);
-					$(this).parent().removeClass('collapsed').addClass('expanded');
-				}
-			}
-		);
-		*/
-		
 	});
 (
 	function($) {
@@ -210,6 +197,7 @@ $(document).ready( function() {
 			}
 
 			options = {
+				closeText: '',
 				bgiframe: true,
 				resizable: false,
 				modal: true,

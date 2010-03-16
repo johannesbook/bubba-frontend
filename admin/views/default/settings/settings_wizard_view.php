@@ -60,11 +60,19 @@ if($this->session->userdata("run_wizard")): // wizard is running
 ?>
 		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
 			<table>
+				<thead>
 			    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Setup wizard')?></td></tr>
+				</thead>
+				<tbody>
 				<tr><td>
-					<?=t('To configure basic functionality of Bubba|Two, press the button to start the setup wizard.')?>					
+					<?=t('To configure basic functionality of Bubba|2, press the button to start the setup wizard.')?>					
 				</td></tr>
+				</tbody>
+				<tfoot>
+				<tr><td>
+					<input type="submit" class="submitbutton"  name='wiz_data[start]' value="<?=t('Start setup wizard')?>"/>
+				</td></tr>
+				</tfoot>
 			</table>
-			<input type="submit" class="submitbutton"  name='wiz_data[start]' value="<?=t('Start wizard')?>"/>
 		</form>
 <? endif ?>

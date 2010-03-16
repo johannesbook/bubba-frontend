@@ -44,7 +44,6 @@ p {
 
 input {
   background: #fff;
-  margin: .2em;
   padding: .2em;
 }
 
@@ -74,10 +73,11 @@ input[type=submit]:hover,input[type=button]:hover {
 input[type=text],input[type=password] {
   -moz-border-radius: .3em;
   -webkit-border-radius: .3em;
-  border: .1em solid #e5e5e5;
+  border: .1em solid #d5d5d5;
   padding: .3em;
   vertical-align: text-bottom;
 }
+
 
 input[disabled] {
   background: #ddd;
@@ -94,10 +94,6 @@ table {
   font-size: 14px;
   margin-bottom: 1em;
   width: 100%;
-}
-
-select {
-  width: 49%;
 }
 
 option:hover {
@@ -151,8 +147,7 @@ button:hover {
 /*GENERAL CLASSES*/
 .ui-div-header {
   font-size: 14px;
-  height: 17px;
-  padding: 7px 1.2em;
+  padding: 0.25em 1.2em;
 }
 
 label.error {
@@ -264,6 +259,7 @@ div.progress-notice {
 }
 
 #img_logo {
+  border: 0;
   padding-top: 1.5em;
 }
 
@@ -554,19 +550,19 @@ div.progress-notice {
 
 .ui-icon-help {
   background-position: -68px -224px;
-  height: 30px;
+  height: 28px;
   width: 15px;
 }
 
 .ui-icon-home {
   background-position: -5px -224px;
-  height: 30px;
+  height: 28px;
   width: 20px;
 }
 
 .ui-icon-logout {
   background-position: -35px -224px;
-  height: 30px;
+  height: 28px;
   width: 24px;
 }
 
@@ -656,13 +652,13 @@ div.progress-notice {
 }
 
 .ui-icon-album {
-  background-position: -230px -64px;
+  background-position: -266px -64px;
   height: 26px;
   width: 37px;
 }
 
 .ui-icon-unlocked {
-  background-position: -266px -64px;
+  background-position: -230px -64px;
   height: 26px;
   width: 37px;
 }
@@ -996,12 +992,6 @@ button.ui-button::-moz-focus-inner {
   padding-top: 31px;
 }
 
-#table-network-wan input {
-  font-size: 12px;
-  font-weight: 700;
-  padding: .1em .4em;
-}
-
 #services td {
   width: 88%;
 }
@@ -1059,22 +1049,24 @@ div.hotfix * {
   vertical-align: middle;
 }
 
-#settings_log {
-  width: 40%;
-}
-
-#network input[type=submit],input[type=button] {
-  margin: 1.2em;
-}
 
 #network #firewall select {
     width:100%;
 }
 
-#wlan_advanced_switch {
-    font-size:14px;
-    line-height:31px;
-    height: 31px !important;
+.ui-firewall-defined td {
+	width: 17%;
+}
+.ui-firewall-defined td:last-child {
+	width: 10%;
+}
+.ui-firewall-defined-edit {
+	position: relative;
+}
+.ui-firewall-defined-edit div {
+	white-space : nowrap;
+	position: absolute;
+
 }
 
 #lvm select {
@@ -1087,12 +1079,22 @@ div.hotfix * {
   padding-left: 1.25em;
 }
 
-#raid_status {
-    cursor:pointer !important;
+p {
+  padding-left: 1.25em;
+}
+.ui-inset {
+  padding-left: 1.25em;
 }
 
-#raid p {
-  padding-left: 1.25em;
+fieldset.expandable {
+  border-top: 18px solid #000;
+  line-height: 18px;
+}
+
+fieldset.expandable legend {
+  background: #000 none repeat scroll 0 0;
+  color: #fff;
+  padding: 0 0 0 5px;
 }
 
 #status_mark {
@@ -1351,7 +1353,7 @@ input.mount {
   width: 17px;
 }
 
-.ui-icon-pencil {
+.ui-icon-pencil2 {
   background-image: url(../_img/icons.png)!important;
   background-position: -31px -254px;
   background-repeat: no-repeat;
@@ -1505,20 +1507,31 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   margin-top: 31px;
 }
 
-#settings_log  {
-  margin-left:1.2em;
-}
-
-#users button,
-#mail input,
-#mail button,
-#printing button,
-#services input,
-#settings input {
-  margin-left:1.2em;
-} 
-
-
 table.typetable > tbody > tr > td,table.disks > tbody > tr > td,div.text input {
   vertical-align: middle;
+}
+
+.ui-expandable {
+	position: relative;
+	cursor: pointer !important;
+}
+.ui-expandable .ui-expandable-icon {
+	position: absolute;
+	left: 0;
+
+}
+
+table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
+	width: 50%;
+}
+
+.ui-log .ui-log-line0 {
+  background-color: #e5e5e5;
+}
+.ui-log .ui-log-line1 {
+  background-color: #f5f5f5;
+}
+
+.ui-help-box {
+	position: absolute;
 }

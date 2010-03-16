@@ -374,7 +374,7 @@ $(document).ready( function() {
 
 <table id="album">
 <tr>
-	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div><div>BUBBA|TWO <a href="/album" target="_blank"><?=t("photo albums")?></a></div></td>
+	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div><div>Bubba|2 <a href="/album" target="_blank"><?=t("photo albums")?></a></div></td>
 </tr>
 <tr></tr>
 
