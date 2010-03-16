@@ -75,22 +75,22 @@ jQuery.validator.setDefaults({
 	
 $(document).ready(function(){
 	help_dialog = $.dialog(
-		$('#fn-help-dialog'),
+		$('#fn-help-dialog').show(),
 		"<?=t('help_box_header')?>",
 		{},
 		{autoOpen: false, 'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
-
+	menu_dialog = $.dialog(
+		$("#menu").show(),
+			"",
+			{},
+			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : 650 }
+		);
 	$('#fn-topnav-logout').click(function(event) {
 		logout_dialog();
   	});
     $('#fn-topnav-home').click(function(event) {
-        login_dialog = $.dialog(
-        	$("#menu").show(),
-        	"",
-        	{},
-        	{ dialogClass: 'ui-dialog-menu', width : 650 }
-        );
-  	});
+		menu_dialog.dialog('open').show();
+	});
   	$(".ui-login-menubar-a").mouseover(function(e) {	
 		$(this).find("span").show();
 	});	

@@ -1537,3 +1537,7 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 .ui-help-box {
 	position: absolute;
 }
+
+.ui-dialog-menu {
+	position: absolute;
+}
