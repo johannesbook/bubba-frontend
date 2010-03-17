@@ -157,10 +157,10 @@ function piechart(chart_canvas) {
 $(document).ready( function() {
 
 		// Expandable divs, first div is header, next is body
-		$(".ui-expandable").prepend($('<div/>',{class: "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));
+		$(".ui-expandable").prepend($('<div/>',{'class': "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));
 		$(".ui-expandable + :hidden").prev().children('div.ui-expandable-icon').toggleClass("ui-icon-triangle-1-s ui-icon-triangle-1-e");
 		$(".ui-expandable").live('click',function(){
-				self= $(this);
+				var self= $(this);
 				self.children('div.ui-expandable-icon').toggleClass("ui-icon-triangle-1-s ui-icon-triangle-1-e");
 				self.next().slideToggle('fast',function(){});
 			}
@@ -196,7 +196,7 @@ $(document).ready( function() {
 				buttons = {};
 			}
 
-			options = {
+			var options = {
 				closeText: '',
 				bgiframe: true,
 				resizable: false,
@@ -209,7 +209,8 @@ $(document).ready( function() {
 				$.extend( options, override_options );
 			}
 
-			div = $('<div/>');
+			var div = $('<div/>').hide().appendTo('body');
+
 			div.attr('title', header);
 			div.html(message);
 			div.dialog( options );
@@ -245,7 +246,7 @@ $(document).ready( function() {
 					}
 				}
 			}
-			options = {dialogClass:'ui-dialog-confirm', close: function(){$(this).remove()}};
+			var options = {dialogClass:'ui-dialog-confirm', close: function(){$(this).remove()}};
 			$.extend( options, override_options );
 			message = $("<div/>",{html:message});
 			message.prepend($('<h2/>',{html:header}));
@@ -256,14 +257,14 @@ $(document).ready( function() {
 			if(!button_label) {
 				button_label = "Ok";
 			}
-			buttons = {};
+			var buttons = {};
 			buttons[button_label] = function() {
 				$(this).dialog('close');
 				if( $.isFunction( callback ) ) {
 					callback.apply( this, [] );
 				}
 			};
-			options = {dialogClass:'ui-dialog-alert', close: function(){$(this).remove()} };
+			var options = {dialogClass:'ui-dialog-alert', close: function(){$(this).remove()} };
 			$.extend( options, override_options );
 			message = $("<div/>",{html:message});
 			message.prepend($('<h2/>',{html:header}));

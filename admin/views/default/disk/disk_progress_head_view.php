@@ -1,21 +1,34 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.progress.js?v='<?=$this->session->userdata('version')?>'"></script>
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css?v='<?=$this->session->userdata('version')?>'" />
+
+<script type="text/javascript">
+title=<?=json_encode($title)?>;
+initial_progress=<?=json_encode($progress)?>;
+</script>
 
 <script type="text/javascript">
 
 $(document).ready( function() {
 <?if($is_running):?>
-	div = $('<div />');
-	div.append($("<div class='header'><?=$title?></div>"));
-	$.modal(div,{
-		onClose: function() {
-			location.assign("/admin/disk");
-		}
-	});
 	meter = new $.progress();
-	meter.update("<?=$progress['progress']?>","<?=$progress['status']?>");
-	div.append( meter.root().addClass("text") );
+	meter.update(initial_progress.progress, initial_progress.status);
+	dialog = $.dialog(
+		meter.root(),
+		title,
+		[],
+		{
+			closeOnEscape: false,
+			modal: true,
+			draggable: false,
+			resizable: false,
+			beforeclose: function() {
+				return false;
+			},
+			close: function() {
+				location.assign("/admin/disk");
+			}
+		}
+	);
+
 	waiting = false;
 	is_aborted = false;
 	tim = setInterval(
@@ -30,13 +43,13 @@ $(document).ready( function() {
 						}
 						meter.is_done();
 						clearInterval( tim );
-						//location.assign("/admin/disk");
-						div.append(
-							$('<div class="buttons" />')
-							.append(
-								$("<input type='button' class='no simplemodal-close' value='<?=t("Close")?>' />")
-							)
-						);
+						dialog.dialog('option', 'beforeclose', function(){return true});
+						dialog.dialog('option', 'buttons', [
+							{
+								'label': $.message("button-label-close"),
+								'callback': function(){$(this).dialog('close')}
+							}
+						]);
 					} else {
 						meter.update( data.ret.progress, data.ret.status);
 						meter.poke();

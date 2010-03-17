@@ -1,3 +1,10 @@
+bubba-frontend (1.9.7) vlaire; urgency=low
+
+  * make IE not complain too much
+  * make a lot work better
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 17 Mar 2010 19:10:13 +0100
+
 bubba-frontend (1.9.6) karmic; urgency=low
 
   * make progress visible 

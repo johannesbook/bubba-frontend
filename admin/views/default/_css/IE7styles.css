@@ -1,0 +1,7 @@
+#network #firewall select {
+	width: 70px !important;
+
+}
+.ui-dialog select {
+  width: 70%;
+}

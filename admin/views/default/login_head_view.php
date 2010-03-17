@@ -19,14 +19,10 @@ function postlogin_callback(e) {
 			} else {
 				$(this).dialog('close');
 				$(this).dialog('destroy');
-				if(e) {
-					if(e.uri) {
-						window.location.href = e.uri;
-					} else {
-						window.location.href = $(e.target).attr('href');
-					}
+				if(e.uri) {
+					window.location.href = e.uri;
 				} else {
-					window.location.reload();
+					window.location.href = $(e.target).attr('href');
 				}
 			}
 		},"json");
@@ -61,19 +57,34 @@ function dialog_login(e) {
 						options: { 'id': 'fn-login-dialog-button', 'class' : 'ui-element-width-100' }
 					}
 				],
-				{dialogClass : "ui-login-dialog", draggable: false, close : dialog_loginclose_callback}
-			);
+		{dialogClass : "ui-login-dialog", draggable: false, close : dialog_loginclose_callback, open: function(){
 			if(link_locked && data.user && data.valid_session) {
 				// show no-access message if the target is locked for the current user.
 				$("#fn-login-error-grantaccess").show();
 			}
+			var self =this;
 			if(required_user && (data.user != required_user) ) {
-				$("#username").val(required_user);
-				$("#password").focus();
+				var username = $("input[name=username]", self);
+				var password = $("input[name=password]", self);
+				$("input[name=username]", self).val(required_user);
+				if( $.browser.msie ) {
+				// IE makes men cry
+					setTimeout(function(){$("input[name=password]", self).focus().focus()},50);
+				} else {
+					$("input[name=password]", self).focus()
+				}
 			} else {
-				$("#username").val("");
-				$("#username").focus();
+				$("input[name=username]", self).val("");
+				if( $.browser.msie ) {
+				// IE makes men cry
+					setTimeout(function(){$("input[name=username]", self).focus().focus()},50);
+				} else {
+					$("input[name=username]", self).focus()
+				}
 			}
+			
+		}}
+			);
 		} else {
 			window.location.href = $(e.target).attr('href');
 		}
@@ -85,13 +96,6 @@ $(document).ready(function(){
 
   // do not use css to hide login as it is then impossible to login if javascripts are not working.
 	$("#div-login-dialog").hide();
-	
-	<? if(!$this->session->userdata('valid')):?>
-		$('#fn-topnav-logout span:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
-		$('#s-topnav-logout').text('<?=t("Login")?>');
-		
-	<? endif ?>
-
 	
 	$("#fn-login-dialog-form input").keypress(function(e) {
 		if( e.which == $.ui.keyCode.ENTER ) {

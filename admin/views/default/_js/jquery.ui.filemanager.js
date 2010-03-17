@@ -67,7 +67,7 @@
 						   "dataType": 'json', 
 						   "type": "POST", 
 						   "url": source, 
-						   "data": data, 
+						   "data": jQuery.isEmptyObject(data) ? { path: self.options.root } : data, 
 						   "success": function(data){
 							   self.options.root = data.root;
 							   jQuery.each(data.aaData, function( index, value ) {
@@ -113,7 +113,7 @@
 							   arr.pop();
 							   updir = arr.join('/');
 							   jQuery('.ui-filemanager-fake-updir', self.element).html(jQuery('<a/>',{
-										   text: '←',
+										   text: '',
 										   'class': 'ui-filemanager-prev-arrow ui-icon ' + self.options.prevDirIcon,
 										   click: function() {
 											   self._dirCallback.apply( self, [ this, { path : updir, direction: 'right' } ] );
@@ -148,7 +148,7 @@
 					   jQuery("td:eq(4)",nRow).html(
 						   jQuery("<span/>",
 							   {
-								   text: "→", 
+								   text: "", 
 								   'class': 'ui-filemanager-next-arrow ui-icon ' + self.options.nextDirIcon,
 								   click: function() {
 									   self._dirCallback.apply( self, [ this, {path:jQuery(nRow).data('path')} ] );
@@ -342,7 +342,7 @@
 	   var fake = self.element.clone();
 	   fake.css({
 			   width: orig_width,
-			   height: orig_height,
+			   height: orig_height
 
 		   }
 	   );

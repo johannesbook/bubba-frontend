@@ -84,7 +84,7 @@ jQuery.fn.iCheckbox = function(options) {
 				// animate off function
 				iCheckOff: function (elem , options, anim_only ) {
 					options = jQuery.extend({
-							'duration': settings.switch_speed,
+							'duration': settings.switch_speed
 						}, options
 					);
 					elem.animate({backgroundPosition: settings.switch_swing+'px 0px'}, options );
@@ -93,7 +93,7 @@ jQuery.fn.iCheckbox = function(options) {
 				// animate on function
 				iCheckOn: function (elem, options, anim_only) {
 					options = jQuery.extend({
-							'duration': settings.switch_speed,
+							'duration': settings.switch_speed
 						}, options
 					);					
 					elem.animate({backgroundPosition: '0px 0px'}, options );
@@ -147,7 +147,9 @@ jQuery.fn.iCheckbox = function(options) {
 						if( input.is(':disabled') ) {
 							return e;
 						}
-						input.click().change();
+						input.attr('checked', !input.is(':checked'));
+						input.change();
+						image.blur();
 						return e;
 					}
 				);

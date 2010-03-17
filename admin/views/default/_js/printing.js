@@ -118,7 +118,7 @@ $(document).ready(function(){
 		var open_delete_dialog_callback = function(){
 			edit_dialog.dialog('close');
 			var post_data = {
-				'name': $('input[name=name]', this).val(),
+				'name': $('input[name=name]', this).val()
 			};
 			$.confirm(
 				$.message("printing-list-edit-dialog-delete-message"),
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		var open_startstop_dialog_callback = function(){
 			edit_dialog.dialog('close');
 			var post_data = {
-				'name': $('input[name=name]', this).val(),
+				'name': $('input[name=name]', this).val()
 			};
 			if( $(this).data('online') ) {
 				var header = $.message("printing-list-edit-dialog-stop-message");

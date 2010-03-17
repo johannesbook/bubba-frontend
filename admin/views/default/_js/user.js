@@ -156,7 +156,7 @@ if( ! is_priviledged_user ) {
 		var open_delete_dialog_callback = function(){
 			edit_dialog.dialog('close');
 			var post_data = {
-				'username': $('input[name=username]', this).val(),
+				'username': $('input[name=username]', this).val()
 			};
 			var body = $('<div/>');
 			body.append($('<div/>',{text: $.message("users-list-edit-dialog-delete-message")}));

@@ -11,6 +11,7 @@
 
 <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.all.css?v='<?=$this->session->userdata('version')?>'" />
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/IE7styles.css" /><![endif]-->  
 
 <!-- jQuery and jQueryUI javascript libraries -->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
@@ -21,6 +22,7 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.button.js?v='<?=$this->session->userdata('version')?>'"></script>
 
 <!-- Validation -->
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ba-resize.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.validate.js?v='<?=$this->session->userdata('version')?>'"></script>
 
 <!-- Internationalization -->
@@ -86,13 +88,8 @@ $(document).ready(function(){
 			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : 650 }
 		);
 	$('#fn-topnav-logout').click(function(event) {
-		<? if($this->session->userdata('valid')):?>
-			logout_dialog();
-		<?else:?>
-			dialog_login();
-		<? endif ?>
-  });
-  
+		logout_dialog();
+  	});
     $('#fn-topnav-home').click(function(event) {
 		menu_dialog.dialog('open').show();
 	});
@@ -115,6 +112,9 @@ $(document).ready(function(){
 	$("#fn-topnav-home").mouseout(function(e) {		$("#s-topnav-home").hide();	});	
 	$("#fn-topnav-logout").mouseover(function(e) {		$("#s-topnav-logout").show();	});	
 	$("#fn-topnav-logout").mouseout(function(e) {		$("#s-topnav-logout").hide();	});
+	$('#wrapper').resize(function(){
+		$('#content_wrapper').width($('#wrapper').width()-160);
+	});
 	
 	$('#sideboard_switch').click(function(event) {
 		$('#sideboard').animate({width : 'toggle'},200);
@@ -197,11 +197,11 @@ if(isset($head)) {
             <?} else {?>
 	            <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             <? } ?>
-            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span id="s-topnav-logout" class="ui-button-text" style="display:none"><?=t("Logout")?></span></button>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span></button>
             
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Home")?></span></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span></button>
             
-            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span id="s-topnav-help" class="ui-button-text" style="display:none"><?=t("Help")?></span></button>
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span></button>
             
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
         </div>	<!-- topnav -->    

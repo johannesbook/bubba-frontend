@@ -4,11 +4,16 @@
 
 <script>
 album_add_access=<?=json_encode($this->Auth_model->policy("album","add"))?>;
+path=<?=json_encode($path)?>;
 </script>
 
 <script>
 
 dialog_pre_open_callbacks = {
+	'rename': function() {
+		var files = $("#filetable").filemanager('getSelected');
+		$("#fn-filemanager-rename-name").val(files[0].replace(/^.*\//, ''));
+	},
 	'perm': function() {
 		var files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/perm/json/get", {files:files}, function(data){
@@ -374,7 +379,7 @@ $(document).ready(function() {
 				{
 					'label': $.message("filemanager-" + value + "-dialog-button-label"),
 					'callback': function(){dialog_callbacks[value].apply(dialogs[value], arguments)},
-					options: { id: 'fn-' + value + '-dialog-button', class:'ui-element-width-100'  }
+					options: { id: 'fn-' + value + '-dialog-button', 'class':'ui-element-width-100'  }
 				}
 			],
 			options	
@@ -390,6 +395,7 @@ $(document).ready(function() {
 	});
 
 	filemanager_obj.filemanager({
+		root: path,
 		fileDoubleClickCallback: file_download_callback,
 		dirDoubleClickCallback: update_toolbar_buttons,
 		mouseDownCallback: update_toolbar_buttons,

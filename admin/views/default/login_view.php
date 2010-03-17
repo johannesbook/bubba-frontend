@@ -29,7 +29,6 @@
 				<label for="username"><?=t("Username")?>:</label>
 				<div id="login-dialog-required-user"><?isset($required_user)?$required_user:""?></div>
 				<input
-					id="username"
 					type="text" 
 					name="username"
 					class="ui-input-text"
@@ -41,7 +40,6 @@
 			<td>
 				<label for="password"><?=t("Password")?>:</label>
 				<input
-					id="password"
 					type="password" 
 					name="password"
 					class="ui-input-text"

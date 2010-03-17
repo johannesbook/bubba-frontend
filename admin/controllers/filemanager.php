@@ -434,9 +434,10 @@ class Filemanager extends Controller{
 	
 	function cd($strip=""){
 		if(!$this->input->post("path")){
-			$this->lspath="/".join("/",array_slice($this->uri->segment_array(),2));
+			$path="/".join("/",array_slice($this->uri->segment_array(),2));
+			$this->session->set_flashdata('path', $path);
 		}
-		$this->index();
+		redirect("/filemanager");
 	}	
 	
 	function index($strip=""){
@@ -486,37 +487,7 @@ class Filemanager extends Controller{
 			return;
 		}
 
-		// Multiplex requests :(
-		if($this->input->post("action")){
-			if($this->input->post("action")=="download"){
-				$this->downloadzip();
-				return;
-			}else if($this->input->post("action")=="move"){
-				$this->move();	
-				return;
-			}else if($this->input->post("action")=="permissions"){
-				$this->chmod();
-				return;
-			}else if($this->input->post("action")=="delete"){
-				$this->delete();	
-				return;
-			}else if( $this->input->post('action') == 'album') {
-				$this->album();	
-				return;
-			}
-		}
-
-		if($this->input->post("mkdir")){
-			$this->mkdir();
-			return;
-		}
-
-		if($this->lspath){
-			$path=$this->lspath;
-		}else{		
-			$path=$this->input->post('path');
-		}
-		$path=b_dec($path);
+		$path = $this->session->flashdata('path');
 		$user=$this->session->userdata("user");
 
 		$pos=strpos($path,"/home");
@@ -524,61 +495,7 @@ class Filemanager extends Controller{
 		if(($pos===false) || ($pos!=0)){
 			$path="/home/$user";
 		}
-		$pos = strpos( $path, "/home/storage/pictures" );
-		$in_pic_dir = false;
-		if( $pos === 0 ) {
-			$in_pic_dir = true;
-		}
-
-		$parts=explode("/",$path);
-		$bpath="";
-		$pathlink="";
-		foreach($parts as $part){
-			if($part=="") continue;
-			$bpath.="/$part";
-			$pathlink.="/<a href=\"".FORMPREFIX."/filemanager/cd/$bpath\">$part</a>";
-		}
-
-		$data["pathlink"]=$pathlink;
 		$data["path"]=$path;
-		$data["success"]=false;
-		$data["err_perm"]=false;
-		$data["files"]=array();
-		$data["dirs"]=array();
-		$data["user"]=$user;
-		$data["ftd_running"]=query_service("filetransferdaemon");
-		$data["pictures"] = $in_pic_dir && $user!="admin";
-
-		$out = ls($user,"$path");
-
-		if($out=="\0\0") {
-			// error
-			$data["err_perm"]=true;
-		}else{
-			foreach($out as $line) {
-				if($line[0]=='D'){
-					//Dir
-					$data["dirs"][]=explode("\t",$line);
-				}else if($line[0]=="P"){
-					// Permission Hack to avoid more calls than needed to backend
-					$perms=explode("\t",$line);
-					$data["writable"]=$perms[1]=="1";
-				}else if($line[0]!='L'){
-					// Everything else but links
-					$data["files"][]=explode("\t",$line);
-				}else{
-					// Links, we dont support that for security reasons
-				}
-			}
-			$this->sortarray=$data["dirs"];
-			uksort($data["dirs"],array($this,"_sort_entries"));
-
-			$this->sortarray=$data["files"];
-			uksort($data["files"],array($this,"_sort_entries"));
-			
-			$data["success"]=true;
-		
-		}
 
 		if($strip){
 			$this->load->view(THEME.'/filemanager/filemanager_index_view',$data);
@@ -591,5 +508,3 @@ class Filemanager extends Controller{
 	}
 
 }
-
-?>
