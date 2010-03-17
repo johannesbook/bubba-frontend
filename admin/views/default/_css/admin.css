@@ -16,10 +16,11 @@ body {
   color: #000;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
+  padding-left : 30px;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 21	px;
   font-weight: 700;
   line-height: 1em;
 }
@@ -262,7 +263,6 @@ div.progress-notice {
 
 #img_logo {
   border: 0;
-  padding-top: 1.5em;
 }
 
 #header {
@@ -359,13 +359,16 @@ div.progress-notice {
 
 #login_more_info {
   display: block;
-  font-size: 18px;
+  font-size: 21px;
   margin-bottom: 2em;
-  margin-top: 350px;
+  margin-top: 400px;
 }
-
+#login_more_info_header {
+  font-size: 14px;	
+}
 #login_more_info span {
   display: block;
+  font-weight: 700;
 }
 
 #login_more_info a {
@@ -376,7 +379,7 @@ div.progress-notice {
 
 #login_more_info img {
   display: block;
-  margin-top: 1.5em;
+  margin-top: 20px;
 }
 
 #login_menubar .ui-icon-lock,#login_settings .ui-icon-lock {
@@ -396,7 +399,7 @@ div.progress-notice {
 .ui-login-menubar-a span {
   display: none;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 #sideboard {
@@ -406,15 +409,14 @@ div.progress-notice {
 }
 
 #sideboard-datetime-date {
-  font-size: 140px;
-  font-weight: 700;
-  margin: 0 0 -.3em;
+  font-size: 120px;
+  font-weight: 900;
+  margin: 0 0 -15px;
 }
 
-#sideboard-datetime-day {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: .3em;
+#sideboard-datetime-day,#sideboard-datetime-month,#sideboard-datetime-year,#sideboard-clock-digital {
+  font-size: 12px;
+  font-weight: 900;
 }
 
 #sideboard_switch {
@@ -457,11 +459,6 @@ div.progress-notice {
 #menu li div {
   display: inline;
   width: 74px;
-}
-
-#login_settings {
-  float: right;
-  margin-top: 180px;
 }
 
 .default-icon {
@@ -1463,15 +1460,13 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   color: #506ab2;
 }
 
-#login_menubar,#backup,#restore {
+#backup,#restore {
   margin-top: 3em;
 }
 
-#sideboard-datetime-month,#sideboard-datetime-year,#sideboard-clock-digital {
-  font-size: 14px;
-  font-weight: 700;
+#login_menubar {
+  margin-top: 45px;
 }
-
 .ui-widget-wizard,.ui-element-width-50 {
   width: 50%!important;
 }

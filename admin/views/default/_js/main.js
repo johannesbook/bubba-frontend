@@ -157,7 +157,7 @@ function piechart(chart_canvas) {
 $(document).ready( function() {
 
 		// Expandable divs, first div is header, next is body
-		$(".ui-expandable").prepend($('<div/>',{'class': "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));
+		$(".ui-expandable").prepend($('<div/>',{class: "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));
 		$(".ui-expandable + :hidden").prev().children('div.ui-expandable-icon').toggleClass("ui-icon-triangle-1-s ui-icon-triangle-1-e");
 		$(".ui-expandable").live('click',function(){
 				self= $(this);

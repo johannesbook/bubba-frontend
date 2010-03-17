@@ -65,7 +65,7 @@ CoolClock.config = {
 	clockTracker: {},
 	tickDelay: 1000,
 	longTickDelay: 15000,
-	defaultRadius: 85,
+	defaultRadius: 65,
 	renderRadius: 100,
 	defaultSkin: "swissRail",
 	skins:	{
@@ -73,12 +73,12 @@ CoolClock.config = {
 		// try making your own...
 
 		swissRail: {
-			outerBorder: { lineWidth: 0, radius:95, color: "black", alpha: 1 },
+			outerBorder: { lineWidth: 0, radius:65, color: "black", alpha: 1 },
 			smallIndicator: { lineWidth: 0, startAt: 89, endAt: 93, color: "black", alpha: 1 },
 			largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
 			hourHand: { lineWidth: 4, startAt: -0, endAt: 65, color: "black", alpha: 1 },
-			minuteHand: { lineWidth: 4, startAt: -0, endAt: 90, color: "black", alpha: 1 },
-			secondHand: { lineWidth: 1, startAt: -0, endAt: 92, color: "black", alpha: 1 },
+			minuteHand: { lineWidth: 4, startAt: -0, endAt: 85, color: "black", alpha: 1 },
+			secondHand: { lineWidth: 1, startAt: -0, endAt: 85, color: "black", alpha: 1 },
 			secondDecoration: { lineWidth: 0, startAt: 0, radius: 2, fillColor: "black", color: "black", alpha: 1 }
 		},
 		chunkySwiss: {
