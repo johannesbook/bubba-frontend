@@ -1,3 +1,9 @@
+bubba-frontend (1.9.8) claire; urgency=low
+
+  * Reenable overwritten fix for login/logout button
+
+ -- PA Nilsson <pa@excito.com>  Wed, 17 Mar 2010 21:15:09 +0100
+
 bubba-frontend (1.9.7) vlaire; urgency=low
 
   * make IE not complain too much
