@@ -565,6 +565,12 @@ div.progress-notice {
   width: 24px;
 }
 
+.ui-icon-login {
+  background-position: -60px -253px;
+  height: 28px;
+  width: 24px;
+}
+
 .ui-icon-back {
   background-position: -138px -197px;
   height: 10px;
