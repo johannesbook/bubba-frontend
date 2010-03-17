@@ -19,10 +19,14 @@ function postlogin_callback(e) {
 			} else {
 				$(this).dialog('close');
 				$(this).dialog('destroy');
-				if(e.uri) {
-					window.location.href = e.uri;
+				if(e) {
+					if(e.uri) {
+						window.location.href = e.uri;
+					} else {
+						window.location.href = $(e.target).attr('href');
+					}
 				} else {
-					window.location.href = $(e.target).attr('href');
+					window.location.reload();
 				}
 			}
 		},"json");
@@ -97,6 +101,11 @@ $(document).ready(function(){
   // do not use css to hide login as it is then impossible to login if javascripts are not working.
 	$("#div-login-dialog").hide();
 	
+	<? if(!$this->session->userdata('valid')):?>
+		$('#fn-topnav-logout span:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
+		$('#s-topnav-logout').text('<?=t("Login")?>');
+		
+	<? endif ?>
 	$("#fn-login-dialog-form input").keypress(function(e) {
 		if( e.which == $.ui.keyCode.ENTER ) {
 			//postlogin_callback.apply(this,[e]);

@@ -88,7 +88,11 @@ $(document).ready(function(){
 			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : 650 }
 		);
 	$('#fn-topnav-logout').click(function(event) {
-		logout_dialog();
+		<? if($this->session->userdata('valid')):?>
+			logout_dialog();
+		<?else:?>
+			dialog_login();
+		<? endif ?>
   	});
     $('#fn-topnav-home').click(function(event) {
 		menu_dialog.dialog('open').show();
