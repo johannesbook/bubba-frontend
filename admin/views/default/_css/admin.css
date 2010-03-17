@@ -1021,6 +1021,10 @@ button.ui-button::-moz-focus-inner {
   background-image: url(../_img/bubba_switch_disabled.png);
 }
 
+.ui-text-comment {
+	font-size : smaller;
+}
+
 div.hotfix {
   margin-top: 10px;
   vertical-align: middle;

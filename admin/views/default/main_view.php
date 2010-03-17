@@ -197,11 +197,11 @@ if(isset($head)) {
             <?} else {?>
 	            <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             <? } ?>
-            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span></button>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span id="s-topnav-logout" class="ui-button-text" style="display:none"><?=t("Logout")?></span></button>
             
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Home")?></span></button>
             
-            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span></button>
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span id="s-topnav-help" class="ui-button-text" style="display:none"><?=t("Help")?></span></button>
             
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
         </div>	<!-- topnav -->    
