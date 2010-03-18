@@ -27,7 +27,7 @@ messages = {
 	"filemanager-success-album" : "Sucessfully added pictures to the album",
 	"filemanager-success-delete" : "Successfully deleted the files/directories",
 	"filemanager-success-perm" : "Successfully changed permission on the given files/directories",
-	"filemanager-success-rename" : "Successfully rename the file/directory",
+	"filemanager-success-rename" : "Successfully renamed the file/directory",
 	"filemanager-success-mkdir" : "Successfully created an directory",
 
 	// Mail
@@ -66,7 +66,7 @@ messages = {
 	"users-list-edit-dialog-delete-header":"Delete user",
 	"users-list-edit-dialog-delete-userdata-label":"Delete userdata as well?",
 	"users-list-edit-dialog-delete-message":"Are you sure you want to delete this user from the system?",
-	"users-list-delete-success-message":"Deletion was successful",
+	"users-list-delete-success-message":"User was successfully deleted",
 	"users-list-add-success-message":"Creation of user was successful",
 	"users-list-edit-success-message":"The user was successfully edited",
 	
@@ -77,7 +77,7 @@ messages = {
 
 	// Printing
 	"printing-list-add-dialog-button-label" : "Add",
-	"printing-list-edit-dialog-button-label" : "Edit",
+	"printing-list-edit-dialog-button-label" : "Update",
 	"printing-list-edit-dialog-delete-button-label" : "Delete",
 	"printing-list-add-dialog-header" : "Add new printer",
 	"printing-list-add-success-message" : "Sucessfully added printer",

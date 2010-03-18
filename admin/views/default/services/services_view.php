@@ -7,7 +7,7 @@
       <td ><input name="ftp_enabled" type="checkbox"  value="1" <?= $ftp_status?"":"checked=\"checked\""?>/></td>
    </tr>
    <tr>
-      <td><label for=""><?=t('Anonymous FTP access')?></td>
+      <td class="ui-table-sublevel-1"><label for=""><?=t('Anonymous FTP access')?></td>
       <td ><input name="anon_ftp" type="checkbox"  value="1" <?= $anon_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
@@ -66,9 +66,11 @@
       <td><label for=""><?=t('Up and downloads')?></label></td>
       <td ><input name="download_enabled" type="checkbox" value="1" <?= $download_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	  
+	<tfoot>
+	<tr><td>
+	<input type="submit" name="update" value="<?=t('Update')?>"/>
+	</td></tr>
+	</tfoot>
 </table>
-<div class="ui-inset">
-<input type="submit" name="update" value="<?=t('Update')?>"/>
-</div>
 </form>
 </fieldset>

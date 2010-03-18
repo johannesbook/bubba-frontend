@@ -341,7 +341,7 @@ $lang["filemanager-label-permission-other-write"] = "write";
 $lang["filemanager-label-permission-other-execute"] = "execute";
 
 $lang["filemanager-mkdir-dialog-button-label"] = "Create directory";
-$lang["filemanager-mkdir-dialog-title"] = "Create an new directory";
+$lang["filemanager-mkdir-dialog-title"] = "Create a new directory";
 $lang["filemanager-delete-dialog-button-label"] = "Delete";
 $lang["filemanager-delete-dialog-title"] = "Delete files and directories";
 $lang["filemanager-delete-fail-message"] = "Failed to delete following files and directories: %s";
