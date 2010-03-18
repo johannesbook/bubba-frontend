@@ -70,6 +70,9 @@ jQuery.validator.setDefaults({
 			'of': element,
 			'offset': "10 -10"
 		});
+	},
+	invalidHandler: function() {
+		$(this).closest('ui-dialog').children('.ui-dialog-buttonpane').find('.ui-button').button('enable');
 	}	
 });
 

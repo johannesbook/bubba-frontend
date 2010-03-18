@@ -95,6 +95,17 @@ messages = {
 	"printing-list-edit-dialog-start-message" : "Do you want to activate the printer",
 	"printing-list-edit-dialog-start-header" : "Start printer",
 	"printing-list-startstop-success-message" : "Successfully enabled/disabled printer",
-	"printing-list-edit-success-message" : "Successfully edit the printer"
-	
+	"printing-list-edit-success-message" : "Successfully edit the printer",
+
+	// Album
+	"album-users-add-dialog-button-label" : "Add new user",
+	"album-users-edit-dialog-button-label" : "Edit user",
+	"album-users-edit-dialog-delete-button-label" : "Delete user",
+	"album-users-add-dialog-header" : "Add new user to the album",
+	"album-users-edit-dialog-header" : "Edit album user",
+	"album-users-edit-dialog-delete-header":"Delete album user",
+	"album-users-edit-dialog-delete-message":"Are you sure you want to delete this user from the album?",
+	"album-users-delete-success-message":"Album user was successfully deleted",
+	"album-users-add-success-message":"Creation of album user was successful",
+	"album-users-edit-success-message":"The album user was successfully edited"
 }

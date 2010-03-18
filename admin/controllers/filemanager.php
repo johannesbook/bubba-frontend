@@ -283,6 +283,7 @@ class Filemanager extends Controller{
 				if( !md($root."/".$directory,$mask,$user) ) {
 					$error = t("filemanager_mkdir_error_create");
 				}
+
 			}
 			$data["success"]=!$error;
 

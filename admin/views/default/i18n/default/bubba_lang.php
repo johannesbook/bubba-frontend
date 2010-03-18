@@ -386,3 +386,8 @@ $lang["printing-list-edit-info-label"] = "Description";
 //  ----------- Stat --------
 
 $lang["stat-shutdown-label"] = "Shutdown";
+
+//  ---------- Album  -----
+$lang['album-users-edit-username-label'] = 'User name';
+$lang['album-users-edit-password1-label'] = 'New password';
+$lang['album-users-edit-password2-label'] = 'Confirm password';

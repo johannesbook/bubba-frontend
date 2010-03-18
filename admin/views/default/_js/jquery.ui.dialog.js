@@ -46,7 +46,8 @@ $.widget("ui.dialog", {
 		title: '',
 		width: 300,
 		zIndex: 1000,
-		evenButtonWidth: true
+		evenButtonWidth: true,
+		disableButtonsOnClick: true
 	},
 	_create: function() {
 		this.originalTitle = this.element.attr('title');
@@ -342,7 +343,12 @@ $.widget("ui.dialog", {
 
 		// if we already have a button pane, remove it
 		self.uiDialog.find('.ui-dialog-buttonpane').remove();
-
+		if( self.options.disableButtonsOnClick ) {
+			uiDialogButtonPane.delegate( 'button.ui-button', 'click.dialogbutton', function(){ 
+					uiDialogButtonPane.find('button.ui-button').button('disable');
+				}
+			);
+		}
 		if( $.isArray(buttons) ) {
 			uiDialogButtonPane.appendTo(self.uiDialog);
 			$.each(buttons, function( index,value ) {
@@ -365,15 +371,11 @@ $.widget("ui.dialog", {
 
 					var button = $("<button/>", options ).appendTo(uiDialogButtonPane).button(button_options);
 
+	
+
 					// normal callback
 					if( typeof value.callback != 'undefined' ) {
-						button.bind( 'click.dialogbutton1', jQuery.proxy(value.callback, self.element[0]) );
-					}
-
-
-
-					if( typeof value.disableOnClick == 'undefined' || value.disableOnClick ) {
-						button.bind( 'click.dialogbutton2', function(){ $(this).button('disable')} );
+						button.bind( 'click.dialogbutton', jQuery.proxy(value.callback, self.element[0]) );
 					}
 
 				});
