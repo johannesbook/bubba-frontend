@@ -275,32 +275,14 @@ class Filemanager extends Controller{
 
 			if( ! $error ) {
 				$mask = 0000;
-
-				if($this->input->post("permission-owner-read")) {
-					$mask |= 00500;
-				}
-				if($this->input->post("permission-owner-write")) {
-					$mask |= 00300;
-				}
-
-				if($this->input->post("permission-group-read")) {
-					$mask |= 00050;
-				}
-				if($this->input->post("permission-group-write")) {
-					$mask |= 00030;
-				}
-
-				if($this->input->post("permission-other-read")) {
-					$mask |= 00005;
-				}
-				if($this->input->post("permission-other-write")) {
-					$mask |= 00003;
+				$ss = @stat( $root );
+				if( $ss ) {
+					$mask = $ss['mode'] & 000777;
 				}
 
 				if( !md($root."/".$directory,$mask,$user) ) {
 					$error = t("filemanager_mkdir_error_create");
 				}
-
 			}
 			$data["success"]=!$error;
 
