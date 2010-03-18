@@ -59,6 +59,9 @@ class Auth_model extends Model{
 		"mail"				=> array(
 			"edit_allusers" => array(
 				"allow" => array("admin")
+			),
+			"fetch" => array(
+				"deny" => array("admin")
 			)
 		),
 		"config"				=> array(

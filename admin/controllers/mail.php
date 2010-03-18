@@ -78,7 +78,9 @@ class Mail extends Controller{
 		foreach($userinfo as $user=>$info){
 			if ( ($this->session->userdata("user")=="admin")||($this->session->userdata("user")==$user) ) {
 				if($info["uid"]>999 && $info["uid"]<30000){
-					$userlist[]=$user;
+					if($this->Auth_model->policy("mail","fetch",$user)) {
+						$userlist[]=$user;
+					}
 				}
 			}
 		}
