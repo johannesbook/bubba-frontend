@@ -1,5 +1,4 @@
 $(document).ready(function(){
-		
 		var options = { 
 			"autoOpen": false,
 			"width": 400,
@@ -17,15 +16,17 @@ $(document).ready(function(){
 			edit_validator.resetForm();
 			$('input[name=server]', this).val(data.server);
 			$('input[name=old_server]', this).val(data.server);
-			$('input[name=protocol]', this).val(data.protocol);
+			$('select[name=protocol] option[value='+data.protocol+']', this).attr('selected', 'selected');
 			$('input[name=old_protocol]', this).val(data.protocol);
 			$('input[name=ruser]', this).val(data.ruser);
 			$('input[name=old_ruser]', this).val(data.ruser);
 			$('input[name=password]', this).val(data.password);
-			$('input[name=luser]', this).val(data.luser);
+			if( is_priviledged_user ) {
+				$('select[name=luser] option[value='+data.luser+']', this).attr('selected', 'selected');
+			}
 			$('input[name=old_luser]', this).val(data.luser);
-			$('input[name=usessl]', this).val(data.usessl != "");
-			$('input[name=keep]', this).val(data.keep != "");
+			$('input[name=usessl]', this).attr( 'checked', data.usessl != "");
+			$('input[name=keep]', this).attr( 'checked', data.keep != "");
 			this.dialog("open");
 		}
 
@@ -33,7 +34,6 @@ $(document).ready(function(){
 			if( ! add_validator.form() ) {
 				return false;
 			}
-
 			$.post( config.prefix + "/mail/add_fetchmail_account/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
 						update_status( false, data.html );
@@ -194,7 +194,7 @@ $(document).ready(function(){
 						'required': true
 					},
 					'luser': {
-						'required': true
+						'required': is_priviledged_user
 					}
 				}
 			}
@@ -214,7 +214,7 @@ $(document).ready(function(){
 						'required': true
 					},
 					'luser': {
-						'required': true
+						'required': is_priviledged_user
 					}
 				}
 			}

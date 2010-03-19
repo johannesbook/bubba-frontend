@@ -298,6 +298,8 @@ class Mail extends Controller{
 			echo json_encode( $data );
 		} else {
 			$data["userlist"]=$this->_getUsers();
+			$data["edit_allusers"] = $this->Auth_model->policy("mail","edit_allusers");	
+
 
 			$this->_renderfull(
 				$this->load->view(THEME.'/mail/mail_retrieve_view',$data,true),

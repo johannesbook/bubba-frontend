@@ -30,6 +30,9 @@
 <input type="hidden" name="old_protocol"/>
 <input type="hidden" name="old_ruser"/>
 <input type="hidden" name="old_luser"/>
+<?if(!$edit_allusers):?>
+<input type="hidden" name="luser" value="<?=$this->session->userdata("user")?>"/>
+<?endif?>
 <h2 class="fn-dialog-header"></h2>
 	<table>
 	<tr>
@@ -43,7 +46,7 @@
 			 <option value="AUTO">AUTO</option>
 			 <option value="POP2">POP2</option>
 			 <option value="POP3">POP3</option>
-			 <option value="IMAP">IMAP</option>
+			 <option value="IMAP" selected="selected">IMAP</option>
 			 <option value="ETRN">ETRN</option>
 			 <option value="ODMR">ODMR</option>
 		  </select>
@@ -57,18 +60,20 @@
 	   <td><label for="password"><?=t('mail-retrieve-edit-password-label')?></label></td>
 	   <td><input type="password" name="password"/></td>
 	</tr>
+<?if($edit_allusers):?>
 	<tr>
 	   <td><label for="luser"><?=t('mail-retrieve-edit-luser-label')?></label></td>
 	   <td>
 		  <select name="luser" size="1">
 
 		  <?foreach($userlist as $user):?>
-		  <option><?=$user?></option>
+		  <option value="<?=$user?>"><?=$user?></option>
 		  <?endforeach?>
 
 		  </select>
 	   </td>
 	</tr>
+<?endif?>
 	<tr>
 	   <td><label for="usessl"><?=t('mail-retrieve-edit-usessl-label')?></label></td>
 	   <td><input type="checkbox" class="checkbox_radio" name="usessl"/></td>

@@ -46,6 +46,7 @@ class Users extends Controller{
 				$value["allow:enable_shell"] = $this->Auth_model->policy( 'userdata', 'allow:enable_shell', $uname);
 				$value["allow:enable_rename"] = $this->Auth_model->policy( 'userdata', 'allow:enable_rename', $uname);
 				$value["allow:disable_remote"] = $this->Auth_model->policy( 'userdata', 'allow:disable_remote', $uname);
+				$value["remote"] = $this->session->userdata("AllowRemote");
 				$value["shell"] = trim($value["shell"])=="/bin/bash" && $value["allow:enable_shell"];
 				$value['username'] = $uname;
 				$result[] = $value;
@@ -189,14 +190,13 @@ class Users extends Controller{
 					}
 				}
 
-				if( !$error && $this->Auth_model->policy("userdata","allow:enable_remote", $username) ) {
+				if( !$error && $this->Auth_model->policy("userdata","allow:disable_remote", $username) ) {
 					update_bubbacfg("admin","AllowRemote",$remote ? 'yes': 'no' );
 					$this->session->set_userdata("AllowRemote", $remote);
 				}
 
 				if( !$error && $username == 'admin' ) {
 					update_bubbacfg("admin","default_sideboard", $sideboard ? "yes" : "no" );
-					$this->session->set_userdata("default_sideboard", $sideboard);
 				}
 
 				if( !$error && update_user($realname,$shell,$username)){
@@ -274,6 +274,9 @@ class Users extends Controller{
 			$data["show_adduser"] = $this->Auth_model->policy("userdata","add");	
 			$data["show_allusers"] = $this->Auth_model->policy("userdata","edit_allusers");	
 			$data["allow_delete"] = $this->Auth_model->policy("userdata","delete");	
+			$conf=parse_ini_file("/home/admin/.bubbacfg");
+
+			$data["default_sideboard"] =  (!isset($conf["default_sideboard"]) || $conf["default_sideboard"]);
 
 			$this->_renderfull(
 				$this->load->view(THEME.'/users/user_list_view',$data,true),
@@ -375,4 +378,3 @@ class Users extends Controller{
 		}
 	}
 }
-?>

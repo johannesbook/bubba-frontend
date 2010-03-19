@@ -9,7 +9,7 @@ if( ! is_priviledged_user ) {
 			source_edit_dialog.find('input[name=sideboard], input[name=remote], input[name=shell]').closest('tr').remove();
 
 			var account = user_accounts[0];
-			$('input[name=username]',source_edit_dialog).val(account.username);
+			$('input[name=username],input[name=input_username]',source_edit_dialog).val(account.username);
 			$('input[name=realname]',source_edit_dialog).val(account.realname);
 			var update_button = $('<button/>', {html: $.message("users-edit-single-button-label")}).appendTo(source_edit_dialog);
 			update_button.click(function(){	
@@ -75,22 +75,22 @@ if( ! is_priviledged_user ) {
 			$('input[name=password2]', this).val(""); disabled="disabled"
 
 			if( data['allow:enable_shell'] ) {
-				$('input[name=shell]', this).val(data.shell || false).closest('tr').show();
+				$('input[name=shell]', this).attr( 'checked', data.shell || false).closest('tr').show();
 			} else {
-				$('input[name=shell]', this).val(false).closest('tr').hide();
+				$('input[name=shell]', this).attr( 'checked', false).closest('tr').hide();
 			}
 			$('input[name=realname]', this).attr('disabled', !data['allow:enable_rename']);
 
 			if( data['allow:disable_remote'] ) {
-				$('input[name=remote]', this).val(data.remote || false).closest('tr').show();
+				$('input[name=remote]', this).attr( 'checked', data.remote || false).closest('tr').show();
 			} else {
-				$('input[name=remote]', this).val(true).closest('tr').hide();
+				$('input[name=remote]', this).attr( 'checked', true).closest('tr').hide();
 			}												
 
 			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
-				$('input[name=sideboard]', this).val(data.sideboard || false).closest('tr').show();
+				$('input[name=sideboard]', this).attr( 'checked', default_sideboard || false).closest('tr').show();
 			} else {
-				$('input[name=sideboard]', this).val(false).closest('tr').hide();
+				$('input[name=sideboard]', this).attr( 'checked', false).closest('tr').hide();
 			}
 			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
 				$('#fn-users-edit-dialog-delete-button').hide();
@@ -132,6 +132,7 @@ if( ! is_priviledged_user ) {
 				return false;
 			}
 			$('input[name=username]',this).val($('input[name=input_username]',this).val());
+			default_sideboard = $('input[name=sideboard]', this).attr( 'checked' );
 
 			$.post( config.prefix + "/users/edit_user_account/json", $('form', this).serialize(), function(data){
 					if( data.error ) {

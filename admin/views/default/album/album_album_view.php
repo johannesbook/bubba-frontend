@@ -77,7 +77,10 @@ createFileTree = function(obj) {
 
 					del = $('<input type="button" value="<?=t("Remove from album")?>" />');
 					del.click(function() {
-						$.confirm( '<?=t("Remove selected image from album?")?>', function() {
+						$.confirm( '<?=t("Remove selected image from album?")?>', '',[
+					{
+						'label': 'Remove',
+						'callback': function() {
 							$.post( '<?=site_url("ajax_album/delete_image")?>',
 							{id: file}, function(data) {
 								$('#image_' + file ).remove();
@@ -87,10 +90,10 @@ createFileTree = function(obj) {
 								} else {
 									update_status("success","<?=t("Image removed from album")?>");
 								}
-								//$('#tmp').html( data.html );
 							}, 'json' );
 		
-						});
+						}
+					}]);
 						return false;
 					});
 					form.append(del);
@@ -138,7 +141,6 @@ createFileTree = function(obj) {
 								} else {
 									update_status("success","<?=t("Album updated")?>");
 								}
-								//$('#tmp').html( data.html );
 							}, 'json' );
 						return false;
 					});
@@ -173,23 +175,32 @@ createFileTree = function(obj) {
 					form.append(del);
 					form.append($('<input type="submit" value="<?=t("Update")?>" />'));
 					del.click(function() {
-						$.confirm( 'Delete album "' + data.name +'"?', function() {
-							$.post( '<?=site_url("ajax_album/delete_album")?>',
-							{id: dir}, function(data) {
-									$('#album_edit_area').html("");
-									$('#album_' + dir ).remove();
-									if(data.error) {
-										update_status("fail","<?=t("Error deleting album")?>");
-									} else {
+						$.confirm( 
+							'Delete album "' + data.name +'"?', 
+							"<?=t('Delete album')?>",
+							[
+								{
+								label : 'Delete album',
+								callback : function() {
+									$.post( '<?=site_url("ajax_album/delete_album")?>',
+									{id: dir}, 
+									function(data) {
+										$('#album_edit_area').html("");
+										$('#album_' + dir ).remove();
+										if(data.error) {
+											update_status("fail","<?=t("Error deleting album")?>");
+										} else {
 										update_status("success","<?=t("Album deleted")?>");
-									}
-									//$('#tmp').html( data.html );
-								}, 'json' );
-				
-						},"<?=t("Delete album")?>","<?=t("Cancel")?>","<?=t("Delete album")?>");
-					});
-
-
+										}
+									},
+									'json' 
+									);
+								}
+							}
+						]
+					);
+					}
+				);
 				}, 'json' );
 						
 			$.post( '<?=site_url("ajax_album/get_album_access_list")?>',

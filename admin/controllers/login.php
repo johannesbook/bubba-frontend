@@ -93,7 +93,7 @@ class Login extends Controller{
 				}
 			}
 			$conf=parse_ini_file("/home/admin/.bubbacfg");
-			$data["show_sideboard"] = (isset($conf["default_sideboard"]) && $conf["default_sideboard"]);
+			$data["show_sideboard"] = (!isset($conf["default_sideboard"]) || $conf["default_sideboard"]);
 			if(isset($conf["run_wizard"]) && $conf["run_wizard"]) {
 				$data["show_login"] = true;
 				$data["required_user"] = "admin";
