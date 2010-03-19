@@ -1,18 +1,22 @@
 <div id="raid">
-	<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
-	<div>
-			<input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
+	<div class="ui-state-default ui-widget-header ui-div-header"><?=t('disk_raid_setup_title')?></div>
+	<div class="disk-raid-content">
 			<p>
 				<?=t("disk_raid_create_message")?>.
 			</p>
-			<input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
+			<p>
+				<input type="button" class="button" id="create_md_internal_external_mirror" value="<?=t("disk_raid_create_label")?>" <?=$disable_create?> />
+			</p>
 			<p>
 				<?=t("disk_raid_recover_message")?>.
-			</p>    		    
+			</p>
+			<p>
+				<input type="button" class="button" id="recover_md" value="<?=t("disk_raid_recover_label")?>" />
+				</p>
 	</div>
 
 
-<div class="ui-state-default ui-widghet-header ui-div-header"><?=t('disk_raid_status_title')?></div>
+<div class="ui-state-default ui-widget-header ui-div-header"><?=t('disk_raid_status_title')?></div>
 <?if(sizeof($status)) { ?>
 	<?
 	$faulty = false;
@@ -81,7 +85,7 @@
 		}
  	 } ?>
 
-<div class="ui-expandable ui-state-default ui-widghet-header ui-div-header">
+<div class="ui-expandable ui-state-default ui-widget-header ui-div-header">
     <?=t('disk_raid_detailed_info_title')?>
 </div>
 	<div class="ui-helper-hidden ui-inset">

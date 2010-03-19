@@ -248,7 +248,7 @@
 	</table>
 </fieldset>
 
-<fieldset class="fld_settings expandable"><legend><?=t("Current restore operations")?></legend>
+<fieldset class="fld_settings expandable"><legend><?=t("Current backup operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($backup["user"])) {
 				?>
@@ -258,6 +258,8 @@
 				echo $backup["jobname"];
 				echo t(" for user: ");
 				echo $backup["user"];
+			} else {
+				echo t("None");
 			}
 			?>
 		</div>

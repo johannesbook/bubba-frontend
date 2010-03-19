@@ -439,7 +439,7 @@ function progressReport() {
 <table id="backup" class="restore">
    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Restore user data')?></td></tr>
 	<tr id="filemanager-backup-head" class="ui-header">
-		<th class="filemanager-backup-border-right ui-filemanger-restore-jobcolumn"><?=t('Jobname')?></th>
+		<th class="filemanager-backup-border-right ui-filemanger-restore-jobcolumn"><?=t('Job name')?></th>
 		<th class="filemanager-backup-border-right ui-filemanger-restore-datecolumn"><?=t('Backup date')?></th>
 		<th class="filemanager-backup-border-right ui-filemanger-restore-statuscolumn"><?=t('Backup status')?></th>
 		<th class="filemanager-backup-border-right ui-filemanger-restore-filecolumn"><?=t('Included files')?></th>
@@ -480,7 +480,7 @@ function progressReport() {
 	</tr>
 </table>
 
-<fieldset class="expandable"><legend><?=t("Current operations")?></legend>
+<fieldset class="expandable"><legend><?=t("Current restore operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($restore["lock"])) {
 				echo t("Restoring file(s) from backupjob: ");
@@ -488,7 +488,7 @@ function progressReport() {
 				echo t(" for user: ");
 				echo $restore["user"];
 			} else {
-				echo t("No current restore operations");
+				echo t("None");
 			}
 			?>
 		</div>

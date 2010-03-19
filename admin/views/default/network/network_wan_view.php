@@ -117,7 +117,11 @@
 		</td>
 		<td><?=$err_dns?"* " . t("Invalid DNS setting"):""?></td>
 	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="hidden" class='ip' name='refresh' value='3'/><input type="submit" value='<?=t('Update')?>' class='ip' name='update'/>
+		</td>
+	</tr>
 	
 </table>
-<input type="hidden" class='ip' name='refresh' value='3'/><input type="submit" value='<?=t('Update')?>' class='ip' name='update'/>
 </form>

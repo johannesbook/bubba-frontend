@@ -14,10 +14,10 @@
 
 <div id="login_more_info">
     <span>For more information:</span>
-    <a href="" target="_blank">Bubba forum</a>/
-    <a href="" target="_blank">Support</a>/
-    <a href="" target="_blank">Contact</a>
-    <img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png" alt="Bubba, The heart in your digital life" title="Bubba, The heart in your digital life" />
+    <a href="/manual" target="_blank">Manual</a>/
+    <a href="http://forum.excito.net" target="_blank">Forum</a>/
+    <a href="http://www.excito.com/bubba/support/faq.html" target="_blank">Support &amp; Contact</a>
+    <a href="http://www.excito.com" alt="Excito homepage" target="_blank"><img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png" alt="Bubba, The heart in your digital life" title="Bubba, The heart in your digital life" /></a>
 </div>
 
 <div id="div-login-dialog">

@@ -60,8 +60,8 @@ $lang['title_settings-wizard']="Setup wizard";
 $lang['title_settings-identity']="Identity";
 $lang['title_settings-traffic']="Traffic";
 $lang['title_settings-date']="Date and time";
-$lang['title_settings-sysbackup']="Config backup";
-$lang['title_settings-update']="Firmware upgrade";
+$lang['title_settings-sysbackup']="Settings backup";
+$lang['title_settings-update']="Software update";
 $lang['title_settings-logs']="Logs";
 
 
@@ -128,8 +128,6 @@ $lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the da
 $lang['disk_lvm_extend_dialog_warning_title'] = "Extend default data partition";
 $lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
 $lang['disk_lvm_extend_dialog_title'] = "Extending disk";
-$lang['Extend logical volume'] = "Extend Logical Volume";
-
 
 /* RAID */
 $lang['disk_raid_setup_title'] = "Setup RAID array";
@@ -234,9 +232,6 @@ $lang['wlan_title_channel_popup'] = 'The main channel to use';
 $lang['wlan_title_broadcast'] = 'Broadcast SSID';
 $lang['wlan_title_broadcast_popup'] = 'Whenever to broadcast the SSID';
 
-$lang['Network Profile'] = 'Network profile';
-
-
 # Printing
 $lang['printing_add_error_invalid_characters'] = "Invalid characters in share name, only <strong>A-Z</strong>,<strong>a-z</strong> and <strong>_</strong> is allowed";
 $lang['printing_add_error_no_name'] = "No name was provided";
@@ -268,9 +263,11 @@ $lang['settings_datetime_error_set_timezone'] = "Failed to set timezone <strong>
 $lang['settings_datetime_error_set_date_time'] = "Failed to set date <strong>%s</strong> and time <strong>%s</strong>";
 
 $lang['settings_software_install_package'] = "Install %s";
-$lang['settings_software_update_software'] = "Update software";
+$lang['settings_software_update_software'] = "Software update";
 $lang['settings_software_update_system'] = "Update system";
 $lang['settings_software_include_hotfixes'] = "Include hotfixes and system specific updates";
+$lang['help_hotfix']="?page=sw_upgrade.html#hotfix";
+
 
 $lang['settings_identity_error_change_hostname'] = "Failed to change hostname";
 $lang['settings_identity_error_invalid_hostname'] = "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
@@ -354,8 +351,6 @@ $lang["filemanager-delete-dialog-message"] = "Are you certain that you want to d
 $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
-$lang["Jobname"] = "Job name";
-
 
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
 $lang["filemanager-album-dialog-message"] = "Are you certain you want to add selected files to the album?";
@@ -375,7 +370,7 @@ $lang["mail-retrieve-add-button-label"] = "Add new email account";
 $lang["mail-validation-error"] = "Validation of input failed";
 $lang["mail-auth-error"] = "Authorization failed";
 $lang["mail-retrieve-title"] = "Retrieve email";
-$lang["mail-server-title"] = "Email Server";
+$lang["mail-server-title"] = "Email server";
 
 //  ----------- Printing --------
 

@@ -58,7 +58,7 @@ messages = {
 
 	// Users
 	"users-list-add-dialog-button-label" : "Add new user",
-	"users-list-edit-dialog-button-label" : "Edit user",
+	"users-list-edit-dialog-button-label" : "Update",
 	"users-list-edit-dialog-delete-button-label" : "Delete user",
 	"users-list-add-dialog-header" : "Add new user to the system",
 	"users-list-edit-dialog-header" : "Edit user",

@@ -44,7 +44,8 @@ class NetworkManager extends Model {
 	}
 
 	public function easyfind_set_enable( $enable = true ) {
-		return enable_easyfind( $enable );
+		enable_easyfind( $enable );
+		return 1;
 	}
 
 	public function easyfind_is_enabled() {

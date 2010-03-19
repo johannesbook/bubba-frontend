@@ -66,9 +66,9 @@ jQuery.validator.setDefaults({
 		label.insertAfter( element );
 		label.position({
 			'my': 'left bottom',
-			'at': 'right top',
+			'at': 'right center',
 			'of': element,
-			'offset': "10 -10"
+			'offset': "10 0"
 		});
 	},
 	invalidHandler: function() {

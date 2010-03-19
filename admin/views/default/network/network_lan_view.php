@@ -17,7 +17,7 @@
         <input 
             id="net_dhcp" 
             type="radio" 
-            class="checkbox_radio" 
+            class="" 
             name='netcfg' 
             value='dhcp' 
             onclick="dhcp_onclick()" 
@@ -34,7 +34,7 @@
             <input 
                 id="net_static" 
                 type="radio" 
-                class="checkbox_radio" 
+                class="" 
                 name='netcfg' 
                 value='static' 
                 onclick="static_onclick(<?=$disable_gw?>)" 
@@ -222,7 +222,7 @@
 		<td valign="top" colspan="3">
         <input 
             type="checkbox" 
-            class="checkbox_radio dnsmasq" 
+            class="dnsmasq" 
             id="cb_dns" 
             <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[running]' 
@@ -241,7 +241,7 @@
 		<td valign="top" colspan="2">
         <input 
             type="checkbox" 
-            class="checkbox_radio dnsmasq" 
+            class=" dnsmasq" 
             id="dhcpd" 
             <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[dhcpd]' 
@@ -339,7 +339,7 @@
             <input 
                 type="checkbox" 
                 <?if($jumbo):?>checked="checked"<?endif?> 
-                class="checkbox_radio" 
+                class="" 
                 name="jumbo" 
                 value="1"
             />
@@ -348,10 +348,14 @@
 		<td></td>
 	</tr>
 
-	
+	<tr>
+	<td colspan="2">
+		<input type="submit" value='<?=t('Update')?>' name='update'/>
+	</td>
+</tr>
+		
 
 </table>
-<input type="submit" value='<?=t('Update')?>' name='update'/>
 </form>
 
 

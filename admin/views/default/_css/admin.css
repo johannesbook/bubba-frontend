@@ -131,7 +131,6 @@ td {
 tr.ui-widget-header {
   border: 0;
   border-bottom: .1em solid #e5e5e5;
-  line-height: 31px;
 }
 
 ul {
@@ -897,6 +896,9 @@ button.ui-button::-moz-focus-inner {
   -moz-border-radius: 0px 5px 5px 0px;
 }
 
+.ui-filemanager-buttonbar span {
+  -moz-box-shadow: 2px 3px 3px #666;
+}
 .ui-button-text {
   font-size: 16px;
 }
@@ -944,6 +946,10 @@ button.ui-button::-moz-focus-inner {
   color: #FFF!important;
 }
 
+.ui-widget-header {
+	  line-height: 21px;
+}
+	
 .ui-help-box {
   -moz-border-radius: .8em!important;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)!important;
@@ -1087,9 +1093,30 @@ div.hotfix * {
 
 }
 
+#raid .disk-raid-content {
+	margin-top: 15px;
+}
+#raid h3{
+	font-size: 14px;
+}
+
+
+#lvm {
+	margin-top : 10px;
+	padding-left : 15px;
+}
+
+#lvm div.ui-disk-lvm-content{
+	min-height: 10em;
+	display: table-cell;
+	vertical-align: middle;
+}
+
 #lvm select {
   margin-right: 10px;
+  margin-left: 10px;
   width: 260px;
+  vertical-align : baseline;
 }
 
 #lvm label {
@@ -1439,6 +1466,10 @@ input[type=radio], input[type=checkbox] {
 	margin-left : 10px;
 }
 
+#OTHCFG td:first-child,#WANCFG td:first-child,#LANCFG td:first-child {
+	width : 40px;
+}
+
 .ui-dialog select,.ui-input-text,.ui-dialog-title {
   width: 100%;
 }
@@ -1508,7 +1539,7 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   font-size: 12px;
 }
 
-#submitbutton,#lvm {
+#submitbutton {
   margin-top: 1em;
 }
 
