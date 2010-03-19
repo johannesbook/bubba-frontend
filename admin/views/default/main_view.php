@@ -90,6 +90,7 @@ $(document).ready(function(){
 			{},
 			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : 650 }
 		);
+	$('a', menu_dialog).click(function(){menu_dialog.dialog('close')});
 	$('#fn-topnav-logout').click(function(event) {
 		<? if($this->session->userdata('valid')):?>
 			logout_dialog();

@@ -1,3 +1,9 @@
+bubba-frontend (1.9.13) claire; urgency=low
+
+  * close menu when clicking on link 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 19 Mar 2010 17:26:43 +0100
+
 bubba-frontend (1.9.12) claire; urgency=low
 
   * fix selectables in users and mail, remove luser fields for non-admin 
