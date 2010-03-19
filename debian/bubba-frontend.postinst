@@ -78,6 +78,10 @@ case "$1" in
 		a2enmod proxy
 	fi	
 
+	if [ ! -e /etc/apache2/mods-enabled/proxy_http.load ]; then
+		a2enmod proxy_http
+	fi		
+
 	if [ ! -e /etc/apache2/mods-enabled/actions.load ]; then
 		a2enmod actions
 	fi

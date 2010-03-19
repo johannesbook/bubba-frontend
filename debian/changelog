@@ -1,8 +1,10 @@
 bubba-frontend (1.9.12) claire; urgency=low
 
   * fix selectables in users and mail, remove luser fields for non-admin 
+  * adding proxy_http 
+  * sortable sizes in filemanager 
 
- -- Carl Fürstenberg <carl@excito.com>  Fri, 19 Mar 2010 16:18:59 +0100
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 19 Mar 2010 17:08:59 +0100
 
 bubba-frontend (1.9.11) claire; urgency=low
 
