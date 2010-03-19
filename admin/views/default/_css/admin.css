@@ -361,11 +361,6 @@ div.progress-notice {
   text-decoration: none;
 }
 
-#login h1 {
-  font-size: 18px;
-  margin-bottom: 2em;
-}
-
 #login_more_info {
   display: block;
   font-size: 21px;
@@ -681,7 +676,7 @@ div.progress-notice {
 .ui-icon-trash {
   background-position: -304px -64px;
   height: 26px;
-  width: 37px;
+  width: 35px;
 }
 
 .ui-icon-create-disable {
@@ -896,6 +891,10 @@ button.ui-button::-moz-focus-inner {
   -webkit-box-shadow: 2px 3px 3px #666;
   box-shadow: 2px 3px 3px #666;
   margin: 0;
+}
+
+.ui-filemanager-buttonbar-last {
+  -moz-border-radius: 0px 5px 5px 0px;
 }
 
 .ui-button-text {
@@ -1434,6 +1433,10 @@ fieldset.expandable legend {
 
 fieldset,input[type=submit]:focus,input[type=button]:focus,img,#subnav ul li.last a,.ui-action-panel button {
   border: 0;
+}
+
+input[type=radio], input[type=checkbox] {
+	margin-left : 10px;
 }
 
 .ui-dialog select,.ui-input-text,.ui-dialog-title {

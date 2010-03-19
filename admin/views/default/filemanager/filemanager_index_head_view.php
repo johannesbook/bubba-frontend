@@ -270,7 +270,7 @@ buttons = [
 	{
 		'id': 'fn-filemanager-button-delete',
 		'disabled': true,
-		'type': 'ui-icons ui-icon-trash',
+		'type': 'ui-icons ui-icon-trash ui-filemanager-buttonbar-last',
 		'alt': 'Delete',
 		'callback': function() {
 			dialogs["delete"].dialog("open");

@@ -14,26 +14,29 @@
 
 		<? endif ?>
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="auto" <?=isset($auto)?$auto:""?>/></td><td colspan="2"><?=t("Automatic network settings")?></td>
+			<td><input type="radio" name="profile" value="auto" <?=isset($auto)?$auto:""?>/></td><td colspan="2"><?=t("Automatic network settings")?></td>
 		</tr>
 		
 
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="router" <?=isset($router)?$router:""?>/></td><td colspan="2"><?=t("Router + Firewall + Server")?></td>
+			<td><input type="radio" name="profile" value="router" <?=isset($router)?$router:""?>/></td><td colspan="2"><?=t("Router + Firewall + Server")?></td>
 		</tr>
 		<tr>
-			<td><input class="checkbox_radio" type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td colspan="2"><?=t("Server only")?></td>
+			<td><input type="radio" name="profile" value="server" <?=isset($server)?$server:""?>/></td><td colspan="2"><?=t("Server only")?></td>
 		</tr>
 		
 		
-
+		<tr>
+			<td>
+				<input
+			                type="submit"
+			                id="networkprofile_update" 
+			                value='<?=t('Update')?>' 
+			                name='profile_update'
+		     />
+			</td>
+		</tr>
 	</table>
-	<input
-                type="submit"
-                id="networkprofile_update" 
-                value='<?=t('Update')?>' 
-                name='profile_update'
-            />
 </fieldset>
 </form>
     <table id="profile">
