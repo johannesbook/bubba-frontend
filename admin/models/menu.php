@@ -130,7 +130,7 @@ class Menu extends Model {
 				array(
 					'id' => 'mail-server_settings',
 					'uri' => 'mail/server_settings',
-					'alias' => array( 'server_update' )
+					'alias' => array( 'mail/server_update' )
 				),
 			),
 		),
@@ -302,7 +302,19 @@ class Menu extends Model {
 			}
 			$current = array();
 
-			if( strpos( $current_level , $menu['uri'] ) === 0 && strlen($menu['uri']) > strlen($last_matched) ) {
+			$aliases = array( $menu['uri'] );
+			if( isset( $menu['alias'] ) ) {
+				$aliases = array_merge( $aliases, $menu['alias'] );
+			}
+			$matched = false;
+			foreach( $aliases as $alias ) {
+				if( strpos( $current_level , $alias ) === 0 && strlen($alias) > strlen($last_matched) ) {
+					$matched = true;
+					break;
+				}
+			}
+
+			if( $matched ) {
 				$last_matched = $menu['uri'];
 				if( !is_null($selected) ) {
 					$selected['selected'] = false;

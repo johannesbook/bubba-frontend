@@ -1,8 +1,10 @@
 bubba-frontend (1.9.13) claire; urgency=low
 
   * close menu when clicking on link 
+  * add alias fucntionallity to menu model
+  * remove bounch of obsolete images
 
- -- Carl Fürstenberg <carl@excito.com>  Fri, 19 Mar 2010 17:26:43 +0100
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 19 Mar 2010 18:57:57 +0100
 
 bubba-frontend (1.9.12) claire; urgency=low
 
