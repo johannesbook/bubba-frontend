@@ -128,6 +128,8 @@ $lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the da
 $lang['disk_lvm_extend_dialog_warning_title'] = "Extend default data partition";
 $lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
 $lang['disk_lvm_extend_dialog_title'] = "Extending disk";
+$lang['Extend logical volume'] = "Extend Logical Volume";
+
 
 /* RAID */
 $lang['disk_raid_setup_title'] = "Setup RAID array";
@@ -231,6 +233,9 @@ $lang['wlan_title_channel_popup'] = 'The main channel to use';
 
 $lang['wlan_title_broadcast'] = 'Broadcast SSID';
 $lang['wlan_title_broadcast_popup'] = 'Whenever to broadcast the SSID';
+
+$lang['Network Profile'] = 'Network profile';
+
 
 # Printing
 $lang['printing_add_error_invalid_characters'] = "Invalid characters in share name, only <strong>A-Z</strong>,<strong>a-z</strong> and <strong>_</strong> is allowed";
@@ -349,6 +354,8 @@ $lang["filemanager-delete-dialog-message"] = "Are you certain that you want to d
 $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
+$lang["Jobname"] = "Job name";
+
 
 $lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
 $lang["filemanager-album-dialog-message"] = "Are you certain you want to add selected files to the album?";
