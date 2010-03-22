@@ -3,7 +3,7 @@
 <table>   
    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('File sharing')?></td></tr>
    <tr>
-      <td><label for="">FTP</label></td>
+      <td class="ui-services-indent"><label for="">FTP</label></td>
       <td ><input name="ftp_enabled" type="checkbox"  value="1" <?= $ftp_status?"":"checked=\"checked\""?>/></td>
    </tr>
    <tr>

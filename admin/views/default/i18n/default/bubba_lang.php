@@ -130,6 +130,7 @@ $lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
 $lang['disk_lvm_extend_dialog_title'] = "Extending disk";
 
 /* RAID */
+$lang['disk-examine-disks'] = "Examining existing disks";
 $lang['disk_raid_setup_title'] = "Setup RAID array";
 $lang['disk_raid_create_label'] = "Create RAID array";
 $lang['disk_raid_create_message'] = "Set up internal disk and one external disk into a RAID mirror solution (RAID 1)";
@@ -171,7 +172,7 @@ $lang['disk_raid_create_warning_2'] = "Please make certain that you have a backu
 $lang['disk_raid_create_warning_3'] = "Continue to create RAID?";
 $lang['disk_raid_create_error_no_disks_found_message'] = "No usable disk found";
 $lang['disk_raid_create_button_label'] = "Create RAID";
-
+$lang['disk_raid_nodisk_label_cancel'] = "Close";
 # Recover
 $lang['disk_raid_recover_title'] = "Recover RAID array";
 $lang['disk_raid_recover_broken_external_progress_title'] = "Recovering external disk in RAID array";
@@ -232,6 +233,9 @@ $lang['wlan_title_channel_popup'] = 'The main channel to use';
 $lang['wlan_title_broadcast'] = 'Broadcast SSID';
 $lang['wlan_title_broadcast_popup'] = 'Whenever to broadcast the SSID';
 
+$lang['fw_title_advanced'] = 'Advanced firewall settings';
+
+
 # Printing
 $lang['printing_add_error_invalid_characters'] = "Invalid characters in share name, only <strong>A-Z</strong>,<strong>a-z</strong> and <strong>_</strong> is allowed";
 $lang['printing_add_error_no_name'] = "No name was provided";
@@ -275,7 +279,7 @@ $lang['settings_identity_easyfind_error_fail_set_name'] = "Failed to set Easyfin
 $lang['settings_identity_easyfind_error_invalid_name'] = "Easyfind name <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
 $lang['settings_identity_easyfind_error_fail_enable'] = "Failed to enable Easyfind";
 $lang['settings_identity_easyfind_error_fail_disable'] = "Failed to disable Easyfind";
-$lang['settings_identity_title'] = "Windows share options"; # XXX Erm? WTF???
+$lang['settings_identity_title'] = "System identity";
 $lang['settings_identity_hostname_label'] = "Hostname";
 $lang['settings_identity_workgroup_label'] = "Workgroup";
 $lang['settings_identity_update_hostname_workgroup_label'] = "Update hostname and workgroup";
@@ -287,10 +291,10 @@ $lang['settings_identity_update_easyfind_label'] = "Update Easyfind";
 $lang['users-list-edit-realname-label'] = 'Real name';
 $lang['users-list-edit-username-label'] = 'User name';
 $lang['users-list-edit-shell-label'] = 'Shell login';
-$lang['users-list-edit-remote-label'] = 'Allow remote access to config interface';
+$lang['users-list-edit-remote-label'] = 'Allow remote access to system settings';
 $lang['users-list-edit-password1-label'] = 'New password';
 $lang['users-list-edit-password2-label'] = 'Confirm password';
-$lang['users-list-edit-sideboard-label'] = 'Show sideboard default on login page';
+$lang['users-list-edit-sideboard-label'] = 'Display sideboard for non-logged in users';
 
 $lang['users-title'] = 'Users';
 $lang['users-label-username'] = 'User name';
@@ -364,24 +368,25 @@ $lang["mail-retrieve-edit-protocol-label"] = "Protocol";
 $lang["mail-retrieve-edit-ruser-label"] = "Remove user";
 $lang["mail-retrieve-edit-password-label"] = "Password";
 $lang["mail-retrieve-edit-luser-label"] = "Local user";
-$lang["mail-retrieve-edit-usessl-label"] = "Use SSL";
-$lang["mail-retrieve-edit-keep-label"] = "Keep on server";
+$lang["mail-retrieve-edit-usessl-label"] = "Use encryption";
+$lang["mail-retrieve-edit-keep-label"] = "Leave email copy on server";
 $lang["mail-retrieve-add-button-label"] = "Add new email account";
 $lang["mail-validation-error"] = "Validation of input failed";
 $lang["mail-auth-error"] = "Authorization failed";
 $lang["mail-retrieve-title"] = "Retrieve email";
 $lang["mail-server-title"] = "Email server";
+$lang["SSL"] = "Encrypted";
 
 //  ----------- Printing --------
 
 $lang["printing-add-button-label"] = "Add new printer";
 $lang["printing-title"] = "Printers";
-$lang["printing-label-share"] = "Share";
+$lang["printing-label-share"] = "Name";
 $lang["printing-label-info"] = "Description";
 $lang["printing-label-location"] = "Location";
 $lang["printing-label-state"] = "State";
 $lang["printing-list-edit-printer-label"] = "Printer";
-$lang["printing-list-edit-name-label"] = "Share";
+$lang["printing-list-edit-name-label"] = "Name";
 $lang["printing-list-edit-location-label"] = "Location";
 $lang["printing-list-edit-info-label"] = "Description";
 

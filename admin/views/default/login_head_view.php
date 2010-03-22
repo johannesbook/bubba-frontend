@@ -97,9 +97,6 @@ function dialog_login(e) {
 }
 
 $(document).ready(function(){
-
-  // do not use css to hide login as it is then impossible to login if javascripts are not working.
-	$("#div-login-dialog").hide();
 	
 	<? if(!$this->session->userdata('valid')):?>
 		$('#fn-topnav-logout span:first').removeClass("ui-icon-logout").addClass("ui-icon-login");

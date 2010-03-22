@@ -70,9 +70,11 @@ if( ! is_priviledged_user ) {
 			$('form', this).trigger('reset');
 			edit_validator.resetForm();
 			$('input[name=username],input[name=input_username]', this).val(data.username);
+			$('input[name=input_username]', this).hide();
+			$('#fn-user-username-text', this).text(data.username);
 			$('input[name=realname]', this).val(data.realname);
 			$('input[name=password1]', this).val("");
-			$('input[name=password2]', this).val(""); disabled="disabled"
+			$('input[name=password2]', this).val("");
 
 			if( data['allow:enable_shell'] ) {
 				$('input[name=shell]', this).attr( 'checked', data.shell || false).closest('tr').show();

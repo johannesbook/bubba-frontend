@@ -130,7 +130,7 @@ class Menu extends Model {
 				array(
 					'id' => 'mail-server_settings',
 					'uri' => 'mail/server_settings',
-					'alias' => array( 'mail/server_update' )
+					'alias' => array( 'mail/server_update','mail/mc_update' )
 				),
 			),
 		),

@@ -36,7 +36,7 @@
 	</tr>
 	<tr>
 	   <td><label for="name"><?=t('printing-list-edit-name-label')?></label></td>
-	   <td><input type="text" name="input_name"/></td>
+	   <td><input type="text" name="input_name"/><span id="printing-name"></span></td>
 	</tr>
 	<tr>
 	   <td><label for="location"><?=t('printing-list-edit-location-label')?></label></td>

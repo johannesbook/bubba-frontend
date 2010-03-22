@@ -60,6 +60,17 @@ $(document).ready(function(){
 			update_leasefields();
 		}
 	});
+	
+	$(".ip").change( function() {
+
+		$("[name='dnsmasq[range_start][0]']").val($("[name='ip[0]']").val());
+		$("[name='dnsmasq[range_start][1]']").val($("[name='ip[1]']").val());
+		$("[name='dnsmasq[range_start][2]']").val($("[name='ip[2]']").val());
+		$("[name='dnsmasq[range_end][0]']").val($("[name='ip[0]']").val());
+		$("[name='dnsmasq[range_end][1]']").val($("[name='ip[1]']").val());
+		$("[name='dnsmasq[range_end][2]']").val($("[name='ip[2]']").val());
+		
+	});
 });
 
 </script>

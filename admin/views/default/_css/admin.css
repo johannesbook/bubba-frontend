@@ -360,6 +360,10 @@ div.progress-notice {
   text-decoration: none;
 }
 
+#div-login-dialog {
+	display : none;
+}
+
 #login_more_info {
   display: block;
   font-size: 21px;
@@ -789,6 +793,14 @@ div.progress-notice {
     height:12px;
 }
 
+#body_mail select,option,#body_printing select,option {
+	width : 83%;
+}
+div#mail th {
+	width: 450px;
+}
+
+
 #filemanager {
   position: relative;
   margin-top: -3em;
@@ -1002,6 +1014,9 @@ button.ui-button::-moz-focus-inner {
 
 #services table {
   margin-bottom: 31px;
+}
+#services table .ui-services-indent {
+	margin-left : 15px;
 }
 
 #tr-network-gateway,#tr-network-ip,#tr-network-netmask {

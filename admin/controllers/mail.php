@@ -211,6 +211,28 @@ class Mail extends Controller{
 		}
 	}	
 
+	function mc_update($strip="") {
+
+		$errors = array();
+
+		$domain=$this->input->post('domain');
+		$current_mc = $this->_parse_mailcfg(get_mailcfg());
+		if( $current_mc["domain"] != $domain ) {
+			// domain updated
+			write_receive_mailcfg($domain);
+			$update_postfix=true;
+		}
+
+		if($update_postfix){
+			if(query_service("postfix")){
+				stop_service("postfix");
+				start_service("postfix");
+			}
+		}
+		$data["update"] = create_updatemsg($errors);
+		$this->server_settings("",$data);
+	}
+
 	function server_update($strip=""){
 
 		$this->Auth_model->RequireUser('admin');
@@ -220,18 +242,11 @@ class Mail extends Controller{
 		$use_plain_auth=$this->input->post('useunsecure');
 		$smtpuser=$this->input->post('smtpuser');
 		$smtppasswd=$this->input->post('smtppasswd');
-		$domain=$this->input->post('domain');
 		$smtp_passwd_mask=$this->input->post('smtp_passwd_mask');
 
 		$update_postfix=false;
 		$errors = array();
 
-		$current_mc = $this->_parse_mailcfg(get_mailcfg());
-		if( $current_mc["domain"] != $domain ) {
-			// domain updated
-			write_receive_mailcfg($domain);
-			$update_postfix=true;
-		}
 		if(
 			$current_mc["smarthost"] != $smarthost ||
 			$current_mc["smtp_auth"] != $useauth ||

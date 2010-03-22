@@ -76,6 +76,35 @@
 		</td>
 	</tr>
 	<? // -----  end hidden section --- ?>
+  </tbody>
+<tfoot>
+<tr>
+<td colspan="2">
+<input
+	type="submit"
+	name="update"
+	value="<?=t('Update')?>"
+/>
+</td>
+</tr>
+</tfoot>
+</table>
+</form>
+
+
+<form action="<?=FORMPREFIX?>/mail/mc_update" method="post" id="frm_mail_domaincontroller_settings">
+<table>
+	<thead>
+	<tr>
+		<th 
+			colspan="2"
+			class="ui-state-default ui-widget-header"
+		>
+			<?=t('mail-server-domaincontroller')?>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
    <tr>
 	  <th><label><?=t('Handle email for domain')?></label></th>
 	  <td>

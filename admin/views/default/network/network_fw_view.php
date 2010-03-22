@@ -103,62 +103,62 @@ function copy_fields(formid) {
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <table id="firewall">
 	<thead>
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Integrated Bubba services')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Allow external (WAN) access Bubba services')?></td></tr>
 	</thead>
 	<tbody>
 	<tr>
 		
 		<td>
-			<?=t('Allow SSH from WAN')?>:<br /><div class="portnumber">(Port 22)</div>
+			<?=t('SSH')?> (Port 22)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowSSH" <?if($allowSSH) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowSSH" <?if($allowSSH) echo "checked=\"checked\""?>/>
 		</td>
 		
 		<td>
-			<?=t('Allow WAN access to email server')?>:<br /><div class="portnumber">(Port 25)</div>
+			<?=t('Email server')?> (Port 25)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowMail" <?if($allowMail) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowMail" <?if($allowMail) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
 	<tr>
 		
 		<td>
-			<?=t('Allow WWW from WAN')?>:<br /><div class="portnumber">(HTTP / HTTPS Ports 80 / 443)</div>
+			<?=t('WWW')?> (HTTP / HTTPS Ports 80 / 443)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowWWW" <?if($allowWWW) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowWWW" <?if($allowWWW) echo "checked=\"checked\""?>/>
 		</td>
 		
 		<td>
-			<?=t('Allow WAN access to Email')?>:<br /><div class="portnumber">(IMAP / IMAPS Ports 143 / 993)</div>
+			<?=t('Email')?> (IMAP / IMAPS Ports 143 / 993)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowIMAP" <?if($allowIMAP) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowIMAP" <?if($allowIMAP) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<?=t('Allow FTP from WAN')?>:<br /><div class="portnumber">(Port 21)</div>
+			<?=t('FTP')?> (Port 21)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowFTP" <?if($allowFTP) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowFTP" <?if($allowFTP) echo "checked=\"checked\""?>/>
 		</td>
 		
 		<td>
-			<?=t('Open ports for torrent downloader')?>:<br /><div class="portnumber">(Ports 10000-14000)</div>
+			<?=t('Downloader')?> (Ports 10000-14000)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowTorrent" <?if($allowTorrent) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowTorrent" <?if($allowTorrent) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
 	<tr>		
 		<td>
-			<?=t('Allow Ping from WAN')?>:<br /><div class="portnumber">(ICMP type 8)</div>
+			<?=t('Respond to ping')?> (ICMP type 8)
 		</td>
 		<td>
-			<input type="checkbox" class="checkbox_radio" name="allowPing" <?if($allowPing) echo "checked=\"checked\""?>/>
+			<input type="checkbox" name="allowPing" <?if($allowPing) echo "checked=\"checked\""?>/>
 		</td>
 		<td width="20" colspan="2"></td>
 	</tr>
@@ -173,20 +173,19 @@ function copy_fields(formid) {
 
 </form>
 
+<div class="ui-expandable ui-state-default ui-widget-header ui-div-header"><?=t('fw_title_advanced')?></div>
+<div class="ui-helper-hidden">
+
 <form id="PORTCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <table id="firewall">
-	<thead>
-    <tr><td colspan="5" class="ui-state-default ui-widget-header"><?=t('Open port')." / ".t('Add port forward')?></td></tr>
-	</thead>
 	<tbody>
 	<tr>
-		<td colspan="2">
-			<input id="p_forward" type="radio" name="portforward" value=1 class="checkbox_radio" <? if($portforward) echo "checked=\"checked\"";?> onclick="enable_portforward()"/>&nbsp;&nbsp;
-			<?=t('Port forward')?>
-		</td>
-		<td colspan="2">
-			<input id="B2public" type="radio" name="portforward" value=0 class="checkbox_radio" <? if(!$portforward) echo "checked=\"checked\"";?> onclick="disable_portforward()"/>&nbsp;&nbsp;
-			<?=t('Open Bubba|2 public port')?>
+		<td colspan="4">
+				<input id="p_forward" type="radio" name="portforward" value=1 class="checkbox_radio" <? if($portforward) echo "checked=\"checked\"";?> onclick="enable_portforward()"/>&nbsp;&nbsp;
+				<?=t('Port forward to internal network')?>
+				<br>
+				<input id="B2public" type="radio" name="portforward" value=0 class="checkbox_radio" <? if(!$portforward) echo "checked=\"checked\"";?> onclick="disable_portforward()"/>&nbsp;&nbsp;
+				<?=t('Open Bubba|2 port')?>
 		</td>
 		<td>
 		</td>
@@ -343,3 +342,4 @@ function copy_fields(formid) {
 $i++;
 endforeach;
 ?>
+</div>

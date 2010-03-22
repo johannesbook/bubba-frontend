@@ -1,3 +1,10 @@
+bubba-frontend (1.9.15) claire; urgency=low
+
+  * changed from dispabled input field when user can not edit to just print user (or printer) name.
+  * Multiple alignment and text fixes.  
+
+ -- PA Nilsson <pa@excito.com>  Mon, 22 Mar 2010 16:46:39 +0100
+
 bubba-frontend (1.9.14) claire; urgency=low
 
   * adding samba to services 

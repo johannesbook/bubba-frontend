@@ -239,6 +239,7 @@
 	<tr>
 		<td></td>
 		<td valign="top" colspan="2">
+			&nbsp;
         <input 
             type="checkbox" 
             class=" dnsmasq" 
@@ -260,7 +261,7 @@
 
 	<tr>
 		<td></td>
-		<td><label for=""><?=t('Lease range')?></label>:</td>
+		<td><label for=""><?=t('Lease range start')?></label></td>
         <td>
             <input 
                 class="dnsmasq" 
@@ -293,7 +294,14 @@
                 type='text' 
                 size='3' 
                 maxlength='3'
-            />&nbsp;-&nbsp;
+            />
+        </td>
+      </tr>
+		 	<tr>
+				<td></td>
+				<td><label for=""><?=t('Lease range end')?></label></td>
+        <td>
+
         <input
             class="dnsmasq" 
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 

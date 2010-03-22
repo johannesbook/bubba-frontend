@@ -9,7 +9,7 @@
    <th><?=t('Username')?></th>
    <th><?=t('Local user')?></th>
    <th><?=t('SSL')?></th>
-   <th><?=t('Leave email on server')?></th>
+   <th><?=t('Leave copy')?></th>
    <th>&nbsp;</th>
 </tr>
 </thead>
@@ -43,12 +43,12 @@
 	   <td><label for="protocol"><?=t('mail-retrieve-edit-protocol-label')?></label></td>
 	   <td>
 		  <select name="protocol">
-			 <option value="AUTO">AUTO</option>
+			 <option value="POP3" selected="selected">POP3</option>
 			 <option value="POP2">POP2</option>
-			 <option value="POP3">POP3</option>
-			 <option value="IMAP" selected="selected">IMAP</option>
+			 <option value="IMAP">IMAP</option>
 			 <option value="ETRN">ETRN</option>
 			 <option value="ODMR">ODMR</option>
+			 <option value="AUTO">AUTO</option>
 		  </select>
 	   </td>
 	</tr>

@@ -2,15 +2,16 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-		$("#downloadcontent").PeriodicalUpdate(
-			{
-			url:'<?=FORMPREFIX?>/downloads/dolist',
-			delay:2000,
-			delayed:true
-			}
-		);
+	$("#downloadcontent").PeriodicalUpdate(
+		{
+		url:'<?=FORMPREFIX?>/downloads/dolist',
+		delay:2000,
+		delayed:true
 		}
 	);
+		
+	$("#download-addurl").focus();		
+	});
 </script>
 
 <div class="ui-state-default ui-div-header"><?=t('Downloads')?></div>
@@ -21,7 +22,7 @@ $(document).ready(function(){
 <table>
 <tr>
    <td style="width: 10%; text-align: left; "><?=t('Location')?></td>
-   <td style="width: 90%; text-align: center; "><input type="text" name="url" size="40"/></td>
+   <td style="width: 90%; text-align: center; "><input id="download-addurl" type="text" name="url" size="40"/></td>
 </tr>
 <tr>
 <td>

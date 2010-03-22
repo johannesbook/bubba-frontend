@@ -53,6 +53,8 @@ $(document).ready(function(){
 			$('form', this).trigger('reset');
 			edit_validator.resetForm();
 			$('input[name=name],input[name=input_name]', this).val(data.name);
+			$('input[name=input_name]', this).hide();
+			$('#printing-name', this).text(data.name);
 			$('input[name=info]', this).val(data.info);
 			$('input[name=location]', this).val(data.location);
 			$('input[name=printer]', this).val(data.url);

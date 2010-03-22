@@ -31,7 +31,7 @@ class Auth_model extends Model{
 				"allow" => array("admin")
 			),			
 			"allow:enable_rename"    => array(
-				"deny"  => array("admin")
+				"deny"  => array("")
 			),
 			"allow:enable_shell"     => array(
 				"deny"  => array("admin")

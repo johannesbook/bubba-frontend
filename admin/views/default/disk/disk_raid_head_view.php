@@ -19,7 +19,9 @@ $(document).ready( function() {
 	});
 	$('#recover_md').click(function() {
 		dialog_element = $.dialog("", "<?=t("disk_raid_recover_title")?>", {});
+		dialog_element.text("<?=t("disk-examine-disks")?>.");
 		$.post(	'<?=site_url("ajax_disk/get_raid_disks")?>', {}, function(data) {
+			dialog_element.empty();
 			if( data.internal ) {
 				if( data.clean_disks.length > 0 ) {
 					// we got disks that can be used in RAID array
@@ -75,14 +77,14 @@ $(document).ready( function() {
 				} else {
 					// We have no disks to use as RAID array
 					dialog_element.html($("<p/>",{html:"<?=t("disk_raid_recover_broken_external_no_disks_message")?>."}) );
-					dialog_element.dialog('option','buttons', {"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}});
+					dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
 				}
 
 			} else if(data.disks.length > 0) {
 				if( data.internal_got_mounts ) {
 					// There exists mounts under /home 
 					dialog_element.html($("<p/>",{html:"<?=t("disk_raid_recover_broken_internal_mount_exists_message")?>."}) );
-					dialog_element.dialog('option','buttons', {"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}});
+					dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
 				} else {
 					// we got disks that can be used in RAID array
 					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_message")?>."}) );
@@ -139,15 +141,17 @@ $(document).ready( function() {
 			} else {
 				// We have no disks to use as RAID array
 				dialog_element.html($("<p/>",{html:"<?=t("disk_raid_recover_broken_internal_no_raid_message")?>."}) );
-				dialog_element.dialog('option','buttons', {"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}});
+				dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
 			}
 		}, 'json' );
 	});
 
 	$('#create_md_internal_external_mirror').click(function() {
 		dialog_element = $.dialog("", "<?=t("disk_raid_create_title")?>", {});
+		dialog_element.text("<?=t("disk-examine-disks")?>.");
 
 		$.post(	'<?=site_url("ajax_disk/get_external_disks")?>', { removable: !false, raid: false, usb: !false }, function(data) {
+			dialog_element.empty();
 			if( data.internal_got_mounts ) {
 				// There exists mounts under /home 
 				dialog_element.html($("<p/>",{html:"<?=t("disk_raid_create_error_mounts_exists_message")?>."}) );
@@ -209,7 +213,7 @@ $(document).ready( function() {
 				} else {
 					// We have no disks to use as RAID array
 					dialog_element.html($("<p/>",{html:"<?=t("disk_raid_create_error_no_disks_found_message")?>."}) );
-					dialog_element.dialog('option','buttons', {"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}});
+					dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
 				}
 			}
 
