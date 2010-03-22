@@ -144,8 +144,17 @@ copymove_callback = function( type ) {
 	action.empty();
 	panel.empty();
 
+	var button_no = $("<button/>", {text: $.message("filemanager-"+type+"-no")}).appendTo(action)
+		.button({text: false, icons: { primary: 'ui-icon-close' } }).click(function(){
+			action.hide('drop', {direction: 'right'}, speed);
+			filetable.filemanager('disableButtons', false );
+			panel.hide('drop', {direction: 'down'}, speed);
+			copymove_yesbutton = null;
+			copymove_isactive = false;
+		});
+
 	copymove_yesbutton = $("<button/>", {id: 'fn-filemanager-button-copymove', text: $.message("filemanager-"+type+"-yes")}).appendTo(action)
-		.button({text: false, icons: { primary: 'ui-icon-check' } }).click(function(){
+		.button({text: false, icons: { primary: 'ui-icon-check ui-filemanager-buttonbar-last' } }).click(function(){
 			action.hide('drop', {direction: 'right'}, speed);
 			$.post(config.prefix+"/filemanager/"+type+"/json", {files: files, path: filetable.filemanager('option','root') }, function(data){
 				update_status( data.success, data.error ? data.html : $.message("filemanager-"+type+"-success") );
@@ -163,20 +172,12 @@ copymove_callback = function( type ) {
 			}, 'json');		
 		});
 
-	var button_no = $("<button/>", {text: $.message("filemanager-"+type+"-no")}).appendTo(action)
-		.button({text: false, icons: { primary: 'ui-icon-close' } }).click(function(){
-			action.hide('drop', {direction: 'right'}, speed);
-			filetable.filemanager('disableButtons', false );
-			panel.hide('drop', {direction: 'down'}, speed);
-			copymove_yesbutton = null;
-			copymove_isactive = false;
-		});
 
 	action.buttonset();
 	console.log(panel.offset());
     
 	panel.offset({top: -30, left: 0});
-	action.offset({top: 0, left: 240});
+	action.offset({top: 2, left: 320});
 
 	panel.show('drop', {direction: 'down'}, speed);
 	action.show('drop', {direction: 'right'}, speed);

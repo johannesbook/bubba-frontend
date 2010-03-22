@@ -1312,16 +1312,18 @@ input.mount {
   opacity: .95;
 
   text-align: center;
-  width: 100%;
+  width: 98%;
 }
 
 #fn-filemanager-action-panel {
-  width:75px;
+  width:110px;
 }
 
 #fn-filemanager-action-panel button {
     display:inline;
-    background-color:transparent;    
+    background-color:transparent;
+    padding : 0px;
+    margin : 0px;
 }
 
 .ui-action-panel {
@@ -1409,18 +1411,22 @@ input.mount {
   background-image: url(../_img/icons.png)!important;
   background-repeat: no-repeat;
   cursor: pointer !important;
-  height: 17px;
+  height: 26px;
   overflow: hidden;
-  width: 18px;
+  width: 37px;
   display: block;
+  -moz-box-shadow: 2px 3px 3px #666;
+  -webkit-box-shadow: 2px 3px 3px #666;
+  box-shadow: 2px 3px 3px #666;
+  margin: 0;
 }
 
 #fn-filemanager-action-panel .ui-icon-check {
-  background-position: -320px -191px;
+  background-position: -301px -135px;
 }
 
 #fn-filemanager-action-panel .ui-icon-close {
-  background-position: -352px -191px;
+  background-position: -265px -135px;
 }
 
 .ui-icon-arrowthick-1-w {
@@ -1462,7 +1468,7 @@ fieldset,input[type=submit]:focus,input[type=button]:focus,img,#subnav ul li.las
   border: 0;
 }
 
-input[type=radio], input[type=checkbox] {
+input[type=radio] {
 	margin-left : 10px;
 }
 
