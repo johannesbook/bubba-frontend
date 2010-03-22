@@ -54,6 +54,9 @@ class Services extends Controller{
 		$fetchmail_status=query_service("fetchmail");
 		$fetchmail_enabled=$this->input->post('fetchmail_enabled');
 
+		$samba_status=query_service("samba");
+		$samba_enabled=$this->input->post('samba_enabled');
+
 		$smtp_status=query_service("postfix");
 		$smtp_enabled=$this->input->post('smtp_enabled');
 
@@ -182,7 +185,15 @@ class Services extends Controller{
 				start_service("postfix");
 				$smtp_status=1;        
 			} 			
-
+			if($samba_status && !$samba_enabled){
+				remove_service("samba");
+				stop_service("samba");
+				$samba_status=0;
+			}else if(!$samba_status && $samba_enabled){
+				add_service("samba");
+				start_service("samba");
+				$samba_status=1;        
+			} 		
 		}
 		$data["ftp_status"]=$ftp_status;
 		$data["anon_status"]=$anon_status;
@@ -197,6 +208,7 @@ class Services extends Controller{
 		$data["fetchmail_status"]=$fetchmail_status;
 		$data["print_status"]=$print_status;
 		$data["download_status"]=$download_status;
+		$data["samba_status"]=$samba_status;
 
 		if($strip){
 			$this->load->view(THEME.'/services/services_view',$data);

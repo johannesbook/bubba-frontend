@@ -14,6 +14,10 @@
    	<td><label for="">AFP</label></td>
 	<td ><input name="afp_enabled" type="checkbox"  value="1" <?= $afp_status?"checked=\"checked\"":""?>/></td>
    </tr>  
+   <tr>
+   	<td><label for="">Samba</label></td>
+	<td ><input name="samba_enabled" type="checkbox"  value="1" <?= $samba_status?"checked=\"checked\"":""?>/></td>
+   </tr>
 </table>
 
 <table>      
