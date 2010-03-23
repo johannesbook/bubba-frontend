@@ -898,7 +898,7 @@ button.ui-button::-moz-focus-inner {
   margin: .25em;
 }
 
-.ui-button-set {
+.ui-buttonset {
   float: right;
   margin: 0 4px;
 }
