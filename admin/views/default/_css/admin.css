@@ -796,6 +796,12 @@ div.progress-notice {
 #body_mail select,option,#body_printing select,option {
 	width : 83%;
 }
+
+#stat-shutdown input[type=submit] {
+	display : inline;
+	width : 100px;
+}
+
 div#mail th {
 	width: 450px;
 }

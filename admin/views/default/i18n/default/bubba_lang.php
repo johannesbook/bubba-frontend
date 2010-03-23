@@ -393,6 +393,7 @@ $lang["printing-list-edit-info-label"] = "Description";
 //  ----------- Stat --------
 
 $lang["stat-shutdown-label"] = "Shutdown";
+$lang["stat-reboot-label"] = "Restart";
 
 //  ---------- Album  -----
 $lang['album-users-edit-username-label'] = 'User name';

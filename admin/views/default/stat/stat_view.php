@@ -55,9 +55,11 @@ $('form.ack').live( 'submit', function(e) {
 			
 				<?if($this->session->userdata('user')=="admin"):?>
 					<tr>
-						<td>
-							<form action="shutdown" method="post">
-						  <input id="stat-shutdown" class='submitbutton' type='submit' name='powerdown' value='<?=t('stat-shutdown-label')?>'/>
+						<td colspan="2">
+							<form action="shutdown/confirm" method="post" id="stat-shutdown">
+							<input type="hidden" name="action" id="fn-stat-shutdown-action">
+						  <input id="stat-button-shutdown" class='submitbutton' type='submit' name='shutdown' value='<?=t('stat-shutdown-label')?>'/>
+						  <input id="stat-button-reboot" class='submitbutton' type='submit' name='reboot' value='<?=t('stat-reboot-label')?>'/>
 							</form>
 						</td>
 					</tr>

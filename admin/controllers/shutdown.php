@@ -13,33 +13,34 @@ class Shutdown extends Controller{
 	}
 	
 	function index($strip=""){
-	
-		if($strip){
-			$this->load->view(THEME.'/shutdown_confirm_view');
-		}else{
-			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view','',true);
-			$mdata["navbar"]=$this->load->view(THEME.'/nav_view','',true);
-			$mdata["subnav"]="";
-			$mdata["content"]=$this->load->view(THEME.'/shutdown_confirm_view','',true);
-			$this->load->view(THEME.'/main_view',$mdata);
-		}
+		confirm();	
 	}
 	
 	function confirm($strip=""){
-		if(!$this->input->post('shutdown') || $this->input->post('cancel')) {
+		if(!$this->input->post('action') || $this->input->post('cancel')) {
 			redirect('/stat');
 		} else {
-			power_off();
-			$this->Auth_model->Logout();
+			$action = $this->input->post('action');
+			if($action == "shutdown") {
+				$data["shutdown"] = true;
+				power_off();
+			} elseif ($action == "reboot") {
+				$data["reboot"] = true;
+				reboot();
+			} else {
+				echo "redirect";
+				redirect('');
+				exit();
+			}
 			if($strip) {
-				$json_data['error'] = false;
-				echo json_encode($json_data);				
 			} else {
 				$mdata["navbar"]="";
-				$mdata["content"]=$this->load->view(THEME.'/shutdown_view','',true);
+				$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
+				$mdata["content"]=$this->load->view(THEME.'/shutdown_view',$data,true);
 				$this->load->view(THEME.'/main_view',$mdata);
 	
 			}
+			$this->Auth_model->Logout();
 		}
 	}
 }	

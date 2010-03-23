@@ -72,8 +72,11 @@ messages = {
 	
 	// Stat
 	"stat-shutdown-button-continue" : "Shut down",
-	"stat-shutdown-confirm-message" : "Proceed to shut down Bubba|2",
+	"stat-shutdown-confirm-message" : "Proceed to shut down Bubba|2?",
 	"stat-shutdown-confirm-title" : "Shut down",
+	"stat-reboot-button-continue" : "Restart",
+	"stat-reboot-confirm-message" : "Proceed to restart Bubba|2?",
+	"stat-reboot-confirm-title" : "Restart",
 
 	// Printing
 	"printing-list-add-dialog-button-label" : "Add",
