@@ -70,7 +70,7 @@ input[type=submit]:hover,input[type=button]:hover {
   opacity: .5!important;
 }
 
-input[type=text],input[type=password] {
+input[type=text],input[type=password],textarea {
   -moz-border-radius: .3em;
   -webkit-border-radius: .3em;
   border: .1em solid #d5d5d5;
@@ -315,6 +315,7 @@ div.progress-notice {
   font-size: 12px;
   font-weight: 700;
   position: absolute;
+	margin-left : -9px;
   top: 35px;
 }
 
@@ -331,7 +332,7 @@ div.progress-notice {
   color: #000;
   display: inline;
   font-size: 10px;
-  margin-right: .8em;
+  margin: 0 4px;
   min-width: 0;
 }
 
@@ -401,6 +402,7 @@ div.progress-notice {
   padding-top: 83px;
   text-align: center;
   text-decoration: none;
+  overflow : visible !important;
 }
 
 .ui-login-menubar-a span {

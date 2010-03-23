@@ -9,7 +9,6 @@ table#album {
 	width: 100%;
 	height: 490px;
 	overflow: auto;
-	font-size : 11px;
 	margin : 0px;
 }
 
@@ -25,13 +24,14 @@ table#album tbody tr {
 	overflow: auto;
 }
 table#album tbody td {
+	font-size : 11px;
 	width: 50%;
 	overflow: auto;
 }
 #album_list {
 	height: 400px;
 	overflow: auto;
-	border: 1px solid #E5E5E5;
+	border: 1px solid #ccc;
 }
 
 #album_edit_area form{
@@ -117,8 +117,13 @@ table#user-mod {
 	width: 100%;
 	min-height: 2em;
 	overflow: auto;
-	border : 1px solid;
+	border : 1px solid #ccc;
 }
+
+table#album fieldset {
+	margin-bottom : 40px;
+}
+
 table#user-mod tbody tr td {
 }
 

@@ -101,14 +101,14 @@ messages = {
 	"printing-list-edit-success-message" : "Printer settings edited",
 
 	// Album
-	"album-users-add-dialog-button-label" : "Add new user",
-	"album-users-edit-dialog-button-label" : "Edit user",
-	"album-users-edit-dialog-delete-button-label" : "Delete user",
-	"album-users-add-dialog-header" : "Add new user to the album",
-	"album-users-edit-dialog-header" : "Edit album user",
-	"album-users-edit-dialog-delete-header":"Delete album user",
-	"album-users-edit-dialog-delete-message":"Are you sure you want to delete this user from the album?",
-	"album-users-delete-success-message":"Album user was successfully deleted",
-	"album-users-add-success-message":"Creation of album user was successful",
-	"album-users-edit-success-message":"The album user was successfully edited"
+	"album-users-add-dialog-button-label" : "Add new viewer",
+	"album-users-edit-dialog-button-label" : "Update viewer",
+	"album-users-edit-dialog-delete-button-label" : "Delete viewer",
+	"album-users-add-dialog-header" : "Add new viewer to the photo album",
+	"album-users-edit-dialog-header" : "Edit album viewer",
+	"album-users-edit-dialog-delete-header":"Delete photo album viewer",
+	"album-users-edit-dialog-delete-message":"Delete this photo album viewer?",
+	"album-users-delete-success-message":"Viewer deleted",
+	"album-users-add-success-message":"Viewer added",
+	"album-users-edit-success-message":"Viewer updated"
 }

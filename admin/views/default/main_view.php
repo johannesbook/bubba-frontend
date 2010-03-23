@@ -116,6 +116,8 @@ $(document).ready(function(){
 	$(".ui-login-menubar-a").mouseout(function(e) {
 		$(this).find("span").hide();
 	});	
+
+
 	$("#fn-topnav-help").mouseover(function(e) {		$("#s-topnav-help").show();	});	
 	$("#fn-topnav-help").mouseout(function(e) {		$("#s-topnav-help").hide();	});	
 	$("#fn-topnav-home").mouseover(function(e) {		$("#s-topnav-home").show();	});	
@@ -207,11 +209,11 @@ if(isset($head)) {
             <?} else {?>
 	            <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             <? } ?>
-            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-logout"></span><span id="s-topnav-logout" class="ui-button-text" style="display:none">Logout</span></button>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text ui-helper-hidden">Logout</div></button>
             
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-home"></span><span id="s-topnav-home" class="ui-button-text" style="display:none">Home</span></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text" style="display:none">Home</div></button>
             
-            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><span class="ui-icons ui-icon-help"></span><span id="s-topnav-help" class="ui-button-text" style="display:none">Help</span></button>
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text" style="display:none">Help</div></button>
             
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
         </div>	<!-- topnav -->    

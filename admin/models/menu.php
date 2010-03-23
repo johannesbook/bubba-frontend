@@ -231,7 +231,7 @@ class Menu extends Model {
 			'children' => array(
 				array( 
 					'id' => 'usersettings-info',
-					'uri' => 'users/edit',
+					'uri' => 'users',
 					'default' => true,
 				),
 				array( 
@@ -247,7 +247,7 @@ class Menu extends Model {
 			'children' => array(
 				array( 
 					'id' => 'usersettings-info',
-					'uri' => 'users/edit',
+					'uri' => 'users',
 				),
 				array( 
 					'id' => 'usersettings-mail',
@@ -269,6 +269,12 @@ class Menu extends Model {
 				array( 
 					'id' => 'album-users',
 					'uri' => 'album/users',
+				),
+				array( 
+					'id' => 'photo-albums',
+					'uri' => '../album',
+					'abs_uri' => true,
+					'target' => "window_album",
 				),
 			),			
 		),

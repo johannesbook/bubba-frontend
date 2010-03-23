@@ -45,7 +45,6 @@ createFileTree = function(obj) {
 					$('#album_edit_area').append("<div class='filename'>" + data.path + "</div>");
 					field1 = $('<fieldset />');
 					field1.appendTo($('#album_edit_area'));
-					field1.append($('<legend><?=t("Image")?></legend>'));
 					form.appendTo(field1);
 					
 					image_metadata = $("<table class='metadata' />");
@@ -119,8 +118,6 @@ createFileTree = function(obj) {
 			field2 = field1.clone();
 			field2.prependTo($('#album_edit_area'));
 			field1.prependTo($('#album_edit_area'));
-			field1.append($('<legend><?=t("Album")?></legend>'));
-			field2.append($('<legend><?=t("User access")?></legend>'));
 			
 			$.post( '<?=site_url("ajax_album/get_album_metadata")?>',
 				{ 'album': dir }, function(data) {
@@ -268,7 +265,7 @@ createFileTree = function(obj) {
 					tr.append(
 						$('<td />')
 						.addClass('username')
-						.text("<?=t("Username")?>")
+						.text("<?=t("Viewer")?>")
 					);
 					tr.append(
 						$('<td />')
@@ -385,10 +382,11 @@ $(document).ready( function() {
 
 <table id="album">
 <tr>
-	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div><div>Bubba|2 <a href="/album" target="_blank"><?=t("photo albums")?></a></div></td>
+	<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing albums")?></th>
 </tr>
-<tr></tr>
-
+<tr>
+	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div></td>
+</tr>
 <tr>
 	<td><div id="album_list" /></td>
 	<td><div id="album_edit_area" /></td>

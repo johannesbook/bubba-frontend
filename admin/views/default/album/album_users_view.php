@@ -1,14 +1,14 @@
 <table id="fn-album-users" class="ui-table ui-table-list" title="User list">
 <thead>
 	<tr>
-		<td colspan="2"><h2 class="ui-div-header ui-state-default"><?=t("Existing users")?></h2></td>
+		<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing viewers")?></th>
 	</tr>
 </thead>
 <tbody>
 </tbody>
 <tfoot>
 <tr><td colspan="2">
-<input type="button" id="fn-album-users-add" value="<?=t("Add user")?>" />
+<input type="button" id="fn-album-users-add" value="<?=t("Add viewer")?>" />
 </td></tr>
 </tfoot>
 </table>

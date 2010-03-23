@@ -1,4 +1,4 @@
-<h1><?=t("The heart in your digital life")?>.</h1>
+<h1>&nbsp;</h1>
 <div id="login_menubar">
 
 <?foreach($main_menu as $menuitem) {
@@ -16,8 +16,8 @@
     <span>For more information:</span>
     <a href="/manual" target="_blank">Manual</a>/
     <a href="http://forum.excito.net" target="_blank">Forum</a>/
-    <a href="http://www.excito.com/bubba/support/faq.html" target="_blank">Support &amp; Contact</a>
-    <a href="http://www.excito.com" alt="Excito homepage" target="_blank"><img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png" alt="Bubba, The heart in your digital life" title="Bubba, The heart in your digital life" /></a>
+    <a href="http://www.excito.com/bubba/support/" target="_blank">Support &amp; Contact</a>
+    <a href="http://www.excito.com" alt="Excito homepage" target="_blank"><img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png"/></a>
 </div>
 
 <div id="div-login-dialog">

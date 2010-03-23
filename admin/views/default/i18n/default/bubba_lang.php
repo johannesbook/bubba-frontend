@@ -39,7 +39,7 @@ $lang['title_shutdown']=$lang['Shutdown'];
 $lang['title_usersettings-info'] = "User information";
 $lang['title_usersettings-mail'] = "Email";
 $lang['title_albums'] = "Album manager";
-$lang['title_album-users'] = "Album users";
+$lang['title_album-users'] = "Album viewers";
 
 
 /* Sub navigation categories  */
@@ -63,6 +63,7 @@ $lang['title_settings-date']="Date and time";
 $lang['title_settings-sysbackup']="Settings backup";
 $lang['title_settings-update']="Software update";
 $lang['title_settings-logs']="Logs";
+$lang['title_photo-albums']="Photo albums";
 
 
 
@@ -93,10 +94,10 @@ $lang['login-error-pwd'] = "Invalid user/password combination.";
 $lang['menubar-link-pim'] = "Webmail";
 $lang['menubar-link-music'] = "Music";
 $lang['menubar-link-album'] = "Photos";
-$lang['menubar-link-usersettings'] = "User settings";
-$lang['menubar-link-filemanager'] = "File manager";
-$lang['menubar-link-backup'] = "File backup";
-$lang['menubar-link-systemsettings'] = "System settings";
+$lang['menubar-link-usersettings'] = "User&nbsp;settings";
+$lang['menubar-link-filemanager'] = "File&nbsp;manager";
+$lang['menubar-link-backup'] = "File&nbsp;backup";
+$lang['menubar-link-systemsettings'] = "System&nbsp;settings";
 $lang['menubar-link-downloads'] = "Downloads";
 
 
@@ -328,6 +329,8 @@ $lang["mail_addok"] = "Account added.";
 $lang["mail_err_usrinvalid"] = "User not allowed to update account";
 $lang["mail_editok"] = "Account updated.";
 $lang["mail_delete_account_ok"] ="Account deleted";
+$lang["mail-server-domaincontroller"] ="Email domain";
+
 
 //  ----------- Filemanager --------
 
@@ -396,6 +399,6 @@ $lang["stat-shutdown-label"] = "Shutdown";
 $lang["stat-reboot-label"] = "Restart";
 
 //  ---------- Album  -----
-$lang['album-users-edit-username-label'] = 'User name';
+$lang['album-users-edit-username-label'] = 'Viewer name';
 $lang['album-users-edit-password1-label'] = 'New password';
 $lang['album-users-edit-password2-label'] = 'Confirm password';

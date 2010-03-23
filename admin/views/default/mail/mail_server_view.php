@@ -12,7 +12,7 @@
 	</thead>
 	<tbody>
 	<tr>
-		<th><label><?=t('Outgoing email server')?></label></th>
+		<th><label><?=t('Outgoing email server')?> (SMTP)</label></th>
 		<td>
 			<input
 				type="text"
