@@ -169,6 +169,7 @@ copymove_callback = function( type ) {
 				}
 				copymove_yesbutton = null;
 				copymove_isactive = false;
+				$(window).unbind('resize.filemanager-action');
 			}, 'json');		
 		});
 
@@ -176,8 +177,10 @@ copymove_callback = function( type ) {
 	action.buttonset();
 	console.log(panel.offset());
     
-	panel.offset({top: -30, left: 0});
-	action.offset({top: 2, left: 320});
+	panel.css({top: -30, left: 0});
+	$(window).bind('resize.filemanager-action', function(){
+		action.css({top: 2, left: main_toolbar.position().left - action.width() });
+	}).triggerHandler( 'resize.filemanager-action' );
 
 	panel.show('drop', {direction: 'down'}, speed);
 	action.show('drop', {direction: 'right'}, speed);

@@ -81,6 +81,36 @@ Bytes.prototype.toString = function( magnitude ) {
 
 }
 
+jQuery.fn.dataTableExt._fnFeatureHtmlProcessing = function ( oSettings )
+{
+	var nProcessing = jQuery( 'div', 
+		{
+			'class': oSettings.oClasses.sProcessing, 
+			'html': oSettings.oLanguage.sProcessing,
+			'color': 'red'
+		} 
+	);
+
+	if ( oSettings.sTableId !== '' && typeof oSettings.aanFeatures.r == "undefined" )
+	{
+		nProcessing.attr('id', oSettings.sTableId+'_processing' );
+	}
+	jQuery(oSettings.nTable).insertBefore( nProcessing );
+
+	return nProcessing[0];
+};
+jQuery.fn.dataTableExt.oApi. _fnProcessingDisplay = function ( oSettings, bShow )	
+{
+	if ( oSettings.oFeatures.bProcessing )
+	{
+		var an = oSettings.aanFeatures.r;
+		for ( var i=0, iLen=an.length ; i<iLen ; i++ )
+		{
+			jQuery(an[i])[bShow ? "show" : "hide"]('slow');
+		}
+	}
+}
+
 jQuery.fn.dataTableExt.oSort['size-asc']  = function(a,b) {
 
 	var x = (a == "") ? 0 : Bytes.valueOf(a);
@@ -108,6 +138,7 @@ jQuery.widget("ui.filemanager", {
 	   fixedSorting: [[0, "asc"]],
 	   prevDirIcon: 'ui-icon-arrowthick-1-w',
 	   nextDirIcon: 'ui-icon-arrowthick-1-e',
+	   fileDownloadIcon: 'ui-icon-arrowthickstop-1-s',
 	   icons: {
 		   'dir': 'ui-icon-folder-collapsed',
 		   'file': 'ui-icon-document'
@@ -121,7 +152,9 @@ jQuery.widget("ui.filemanager", {
 	   animationSpeed: 600
    },
    _create: function() {
+	   var self = this;
 	   cols = this.options.columns;
+	   
 	   if(!cols) {
 		   cols = [
 		   { "sWidth": "0px", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
@@ -131,7 +164,6 @@ jQuery.widget("ui.filemanager", {
 		   { "sWidth": "30px", "bSortable": false, "sClass": "ui-filemanager-column-next" }
 	   ];
 	   }
-	   var self = this;
 	   this.is_disabled = false;
 	   this.multiselect = false;
 	   this.last_selected = null;
@@ -156,13 +188,14 @@ jQuery.widget("ui.filemanager", {
 			   "bInfo": false,
 			   "bSort": !!this.options.sorting,
 			   "bPaginate": false,
-			   "bProcessing": true,
+			   "bProcessing": false,
 			   "sAjaxSource": this.options.ajaxSource,
 			   "aaSorting": this.options.sorting,
 			   "aaSortingFixed": this.options.fixedSorting,
 			   "bAutoWidth": false,
 			   "aoColumns": cols,
 			   "fnServerData": this.options.serverData ? jQuery.proxy(this.options.serverData,this) : function ( source, data, callback ) {
+				   jQuery.throbber.show();
 				   jQuery.ajax( {
 						   "dataType": 'json', 
 						   "type": "POST", 
@@ -221,6 +254,7 @@ jQuery.widget("ui.filemanager", {
 									   }
 								   )
 							   );
+							   jQuery.throbber.hide();
 						   }
 					   } 
 				   );
@@ -231,6 +265,7 @@ jQuery.widget("ui.filemanager", {
 				   }
 			   },
 			   "fnRowCallback": this.options.rowCallback ? this.options.rowCallback : function( nRow, aData, iDisplayIndex ) {
+				   var path = self.options.root + "/" + aData[1];
 				   jQuery(nRow).data({
 						   'type': aData[0],
 						   'path': self.options.root + "/" + aData[1]
@@ -249,14 +284,31 @@ jQuery.widget("ui.filemanager", {
 						   jQuery("<span/>",
 							   {
 								   text: "", 
-								   'class': 'ui-filemanager-next-arrow ui-icon ' + self.options.nextDirIcon,
-								   click: function() {
-									   self._dirCallback.apply( self, [ this, {path:jQuery(nRow).data('path')} ] );
-								   } 
+								   'class': 'ui-filemanager-next-arrow ui-icon ' + self.options.nextDirIcon
 							   }
 						   )
-					   ).data('path', self.options.root + "/" + aData[1] );
+					   ).data('path', path )
+					   .bind( 'click.filemanager', function() {
+							   self._dirCallback.apply( self, [ this, {path: path} ] );
+						   }
+					   );
+
+				   } else if( aData[0] == "file" ) { // default
+					   jQuery("td:eq(4)",nRow).html(
+						   jQuery("<span/>",
+							   {
+								   text: "", 
+								   'class': 'ui-filemanager-next-arrow ui-icon ' + self.options.fileDownloadIcon
+							   }
+						   )
+					   ).data('path', path )
+					   .bind( 'click.filemanager', function() {
+							   self._fileCallback.apply( self, [ this, {path: path} ] );
+						   }
+					   );
 				   }
+
+				   jQuery("td:eq(4)",nRow).hover(function(){jQuery(this).toggleClass("ui-state-hover")});
 
 				   jQuery(nRow).addClass("ui-filemanager-state-hover ui-filemanager-type-" + aData[0] );
 
@@ -527,11 +579,6 @@ jQuery.widget("ui.filemanager", {
 	   if( self.options.dirDoubleClickCallback ) {
 		   self.options.dirDoubleClickCallback.apply( self, [ row, options ] );
 	   }
-   },
-
-   _doSomething: function() {
-      // internal functions should be named with a leading underscore
-      // manipulate the widget
    },
    value: function() {
 	   return this.options.root;

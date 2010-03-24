@@ -10,8 +10,10 @@ createFileTree = function(obj) {
 			$('#album_edit_area').html( '<div id="loader" class="loading"></div>' );
 			
 
+			$.throbber.show();
 			$.post( '<?=site_url("ajax_album/get_image_metadata")?>',
 				{ 'image': file }, function(data) {
+					$.throbber.hide();
 
 					$('<img />').load(function() {
 						$(this).hide();
@@ -30,8 +32,10 @@ createFileTree = function(obj) {
 							name: this.name.value,
 							id: file
 						};
+						$.throbber.show();
 						$.post( '<?=site_url("ajax_album/update_image_metadata")?>',
 							post, function(data) {
+								$.throbber.hide();
 								$('#image_' + file + ' > a' ).text( post.name );
 								if(data.error) {
 									update_status(false,"<?=t("Error updating image")?>");
@@ -80,8 +84,12 @@ createFileTree = function(obj) {
 					{
 						'label': 'Remove',
 						'callback': function() {
+							var self = this;
+							$.throbber.show();
 							$.post( '<?=site_url("ajax_album/delete_image")?>',
-							{id: file}, function(data) {
+					{id: file}, function(data) {
+								$.throbber.hide();
+								$(self).dialog("close");
 								$('#image_' + file ).remove();
 								$('#album_edit_area').html("");
 								if(data.error) {
@@ -119,8 +127,10 @@ createFileTree = function(obj) {
 			field2.prependTo($('#album_edit_area'));
 			field1.prependTo($('#album_edit_area'));
 			
+			$.throbber.show();
 			$.post( '<?=site_url("ajax_album/get_album_metadata")?>',
 				{ 'album': dir }, function(data) {
+					$.throbber.hide();
 
 					
 					form = $('<form />');
@@ -130,8 +140,10 @@ createFileTree = function(obj) {
 							name: this.name.value,
 							id: dir
 						};
+						$.throbber.show();
 						$.post( '<?=site_url("ajax_album/update_album_metadata")?>',
 							post, function(data) {
+								$.throbber.hide();
 								$('#album_' + dir + ' > a' ).text( post.name );
 								if(data.error) {
 									update_status(false,"<?=t("Error updating album")?>");
@@ -178,10 +190,14 @@ createFileTree = function(obj) {
 							[
 								{
 								label : 'Delete album',
-								callback : function() {
+									callback : function() {
+									var self = this;
+									$.throbber.show();
 									$.post( '<?=site_url("ajax_album/delete_album")?>',
 									{id: dir}, 
 									function(data) {
+										$.throbber.hide();
+										$(self).dialog("close");
 										$('#album_edit_area').html("");
 										$('#album_' + dir ).remove();
 										if(data.error) {
@@ -200,8 +216,10 @@ createFileTree = function(obj) {
 				);
 				}, 'json' );
 						
+			$.throbber.show();
 			$.post( '<?=site_url("ajax_album/get_album_access_list")?>',
 				{ 'album': dir }, function(data) {
+					$.throbber.hide();
 
 					
 					form = $('<form />');
@@ -211,8 +229,10 @@ createFileTree = function(obj) {
 							name: this.name.value,
 							id: dir
 						};
+						$.throbber.show();
 						$.post( '<?=site_url("ajax_album/update_album_access_list")?>',
 							post, function(data) {
+								$.throbber.hide();
 								//$('#tmp').html( data.html );
 							}, 'json' );
 						return false;
@@ -304,11 +324,13 @@ createFileTree = function(obj) {
 					})
 					.click(function() {
 						
+						$.throbber.show();
 						$.post( '<?=site_url("ajax_album/set_public")?>',
 							{
 								album: dir,
 								public: $("#public").attr("checked")
 							}, function(data) {
+								$.throbber.hide();
 								if(data.error) {
 									update_status(false,"<?=t("Error updating user access to public")?>");
 								} else {
@@ -329,11 +351,13 @@ createFileTree = function(obj) {
 						});
 						n_uid = n_uid.replace(/, $/,""); // remove trailing ","
 						n_uid += "]";
+						$.throbber.show();
 						$.post( '<?=site_url("ajax_album/modify_user_access")?>',
 							{
 								album: dir,
 								uid: n_uid
 							}, function(data) {
+								$.throbber.hide();
 								if(data.error) {
 									update_status(false,"<?=t("Error updating user access")?>");
 								} else {
@@ -350,8 +374,10 @@ createFileTree = function(obj) {
 			}, 'json' );
 		},
 		moveCallback: function( from, to, directory ) {
+			$.throbber.show();
 			$.post( '<?=site_url("ajax_album/move")?>',
 				{ id: from, target: to, album: directory }, function(data) {
+					$.throbber.hide();
 					//$('#tmp').html( data.html );
 				}, 'json' );
 		},
@@ -369,8 +395,10 @@ $(document).ready( function() {
 
 
 	$("#add").click(function(e) {
+	$.throbber.show();
 	$.post( '<?=site_url("ajax_album/create_album")?>',
 				{}, function(data) {
+					$.throbber.hide();
 					$('#album_list').html();
 					$('#album_list').data('last_id', data.id);
 					createFileTree( $('#album_list') );
@@ -385,7 +413,7 @@ $(document).ready( function() {
 	<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing albums")?></th>
 </tr>
 <tr>
-	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("file manager")?></a></div></td>
+	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div></td>
 </tr>
 <tr>
 	<td><div id="album_list" /></td>

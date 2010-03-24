@@ -1,3 +1,11 @@
+bubba-frontend (1.9.19) claire; urgency=low
+
+  * add throbber
+  * bugfixes
+  * testbuild
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 24 Mar 2010 18:01:43 +0100
+
 bubba-frontend (1.9.18) claire; urgency=low
 
   * Visual updates, test build

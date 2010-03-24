@@ -67,17 +67,29 @@ function update_status($success,$msg) {
 	}
 }
 
+var globalThrobber = null;
+
+$.throbber = {
+	show: function() {
+		if( ! globalThrobber ) {
+			globalThrobber = $('<div />').appendTo( 'body' );
+			globalThrobber.throbber();
+		}
+		globalThrobber.throbber('show');
+	},
+	hide: function() {
+		if( globalThrobber ) {
+			globalThrobber.throbber('hide');
+		}
+	}
+}
+
+// TODO remove usage
 function cursor_wait() {
-	$('body').addClass('cursor_wait');
-	$('body *').addClass('cursor_wait');
-	$("input").addClass('cursor_wait');
-	$("select").addClass('cursor_wait');
+	$.throbber.show();
 }		
 function cursor_ready() {
-	$('body').removeClass('cursor_wait');
-	$('body *').removeClass('cursor_wait');
-	$("input").removeClass('cursor_wait');
-	$("select").removeClass('cursor_wait');
+	$.throbber.hide();
 }		
 
 function logout_dialog() {
@@ -210,7 +222,7 @@ $(document).ready( function() {
 				modal: true,
 				buttons: buttons,
 				position: ['center', 200],
-				beforeclose: function(event, ui) { cursor_ready(); }
+				beforeclose: function(event, ui) { $.throbber.hide(); }
 			}
 			if( override_options != undefined ) {
 				$.extend( options, override_options );
