@@ -8,7 +8,7 @@ html,body {
 }
 
 body {
-  background: #ccc;
+  background: #e5e5e5;
   background-attachment: fixed;
   background-image: url(../_img/background.png);
   background-position: top center;
@@ -243,20 +243,17 @@ div.progress-notice {
 
 #wrapper {
   margin: 0 auto;
-  max-width: 970px;
   padding: 0 0 0 50px;
 }
 
 #content {
   float: left;
-  margin-bottom: 3em;
   padding-top: 2em;
   width: 95%;
 }
 
 #content_wrapper {
   float: left;
-  margin-bottom: 3em;
   width: 95%;
 }
 
@@ -366,8 +363,7 @@ div.progress-notice {
 #login_more_info {
   display: block;
   font-size: 21px;
-  margin-bottom: 2em;
-  margin-top: 400px;
+  margin-top: 350px;
 }
 #login_more_info_header {
   font-size: 14px;	
