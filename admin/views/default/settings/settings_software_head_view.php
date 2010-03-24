@@ -59,6 +59,7 @@ $(document).ready(function(){
                       dataType: 'json',
                       success: function(data) {
 						  if( ! data ) {
+							  waiting = false;
 							  return;
 						  }
                         meter.update( data.progress, data.statusMessage);
