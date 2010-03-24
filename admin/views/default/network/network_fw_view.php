@@ -174,7 +174,7 @@ function copy_fields(formid) {
 </form>
 
 <div class="ui-expandable ui-state-default ui-widget-header ui-div-header"><?=t('fw_title_advanced')?></div>
-<div class="ui-helper-hidden">
+<div id="network-firewall-advanced" class="ui-helper-hidden">
 
 <form id="PORTCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <table id="firewall">

@@ -7,11 +7,11 @@
 	<tr class="ui-filemanager-state-header"><td colspan="2" ><?=t('BitTorrent')?></td></tr>
 	<tr>
 		<td><?=t('Max upload speed')?></td>
-		<td><input <?if(!$ftd_enabled):?>disabled="disabled"<?endif?> name="torrent_upload" size="5" type="text" value="<?=$btul_throttle?>"/> KiB/s</td>
+		<td><input <?if(!$ftd_enabled):?>disabled="disabled"<?endif?> name="torrent_upload" size="5" type="text" value="<?=$btul_throttle?>"/> kByte/s</td>
 	</tr>
 	<tr>
 		<td><?=t('Max download speed')?></td>
-		<td><input <?if(!$ftd_enabled):?>disabled="disabled"<?endif?> name="torrent_download" size="5" type="text" value="<?=$btdl_throttle?>"/> KiB/s</td>
+		<td><input <?if(!$ftd_enabled):?>disabled="disabled"<?endif?> name="torrent_download" size="5" type="text" value="<?=$btdl_throttle?>"/> kByte/s</td>
 	</tr>
 	<tr>
 		<td></td>

@@ -438,7 +438,8 @@ class Network extends Controller{
 
 		/////--- ADD/EDIT PORTFORWARD -------
 		// create datastructure for update PORTFORWARD
-		if($this->input->post("newport")) { 
+		if($this->input->post("newport")) {
+			$expand = true;
 			$errmsg = array();
 			$new_port["to_ip"]=$this->input->post("to_ip");
 			$new_port["dport"]=$this->input->post("dport");
@@ -561,6 +562,7 @@ class Network extends Controller{
 		/////--- REMOVE PORTFORWARD -------
 		// create portlist to remove from forwards.
 		// Remove portforward
+		$expand = true;
 		if($removerule=$this->input->post("removerule")) {
 			if($removerule["source"] == "all")
 				$removerule["source"] = "0";
@@ -597,8 +599,7 @@ class Network extends Controller{
 		} else {
 			$data["success"] = true;
 		}
-
-		d_print_r($data);
+		$data["expand"] = $expand;
 		if($strip){
 			$this->load->view(THEME.'/network/network_fw_view.php',$data);
 		}else{

@@ -13,32 +13,13 @@ function disable_leasefields() {
 			$("[name='dnsmasq[range_end]["+i+"]']").removeAttr("disabled");
 		}
 	}
-	/*
-	if( ($("[name='mask[1]']").val() & $("[name='ip[1]']").val()) == $("[name='ip[1]']").val()) {
-		$("[name='dnsmasq[range_start][1]']").attr("disabled","disabled");
-		$("[name='dnsmasq[range_end][1]']").attr("disabled","disabled");
-	} else {
-		$("[name='dnsmasq[range_start][1]']").removeAttr("disabled");
-		$("[name='dnsmasq[range_end][1]']").removeAttr("disabled");
-	}
-	if( ($("[name='mask[2]']").val() & $("[name='ip[2]']").val()) == $("[name='ip[2]']").val()) {
-		$("[name='dnsmasq[range_start][2]']").attr("disabled","disabled");
-		$("[name='dnsmasq[range_end][2]']").attr("disabled","disabled");
-	} else {
-		$("[name='dnsmasq[range_start][2]']").removeAttr("disabled");
-		$("[name='dnsmasq[range_end][2]']").removeAttr("disabled");
-	}
-	if( ($("[name='mask[3]']").val() & $("[name='ip[3]']").val()) == $("[name='ip[3]']").val()) {
-		$("[name='dnsmasq[range_start][3]']").attr("disabled","disabled");
-		$("[name='dnsmasq[range_end][3]']").attr("disabled","disabled");
-	} else {
-		$("[name='dnsmasq[range_start][3]']").removeAttr("disabled");
-		$("[name='dnsmasq[range_end][3]']").removeAttr("disabled");
-	}
-	*/
 }
 
 $(document).ready(function(){
+
+	<?if(isset($expand) && $expand):?>
+	$("#network-firewall-advanced").removeClass("ui-helper-hidden");
+	<?endif?>
 
 	<?if(isset($disable_network) && $disable_network):?>
 	$('input').attr("disabled","true");

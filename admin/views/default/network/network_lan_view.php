@@ -242,7 +242,7 @@
 			&nbsp;
         <input 
             type="checkbox" 
-            class=" dnsmasq" 
+            class="dnsmasq" 
             id="dhcpd" 
             <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[dhcpd]' 
@@ -264,7 +264,7 @@
 		<td><label for=""><?=t('Lease range start')?></label></td>
         <td>
             <input 
-                class="dnsmasq" 
+                class="dnsmasq ip" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][0]?>' 
                 name='dnsmasq[range_start][0]' 
@@ -272,7 +272,7 @@
                 size='3' 
                 maxlength='3'
             />&nbsp;.&nbsp;<input 
-                class="dnsmasq" 
+                class="dnsmasq ip" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][1]?>' 
                 name='dnsmasq[range_start][1]' 
@@ -280,14 +280,14 @@
                 size='3' 
                 maxlength='3'
             />&nbsp;.&nbsp;<input 
-                class="dnsmasq" 
+                class="dnsmasq ip" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][2]?>' 
                 name='dnsmasq[range_start][2]' 
                 type='text' size='3' 
                 maxlength='3'
             />&nbsp;.&nbsp;<input 
-                class="dnsmasq" 
+                class="dnsmasq ip" 
                 <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
                 value='<?=$dnsmasq_settings["range_start"][3]?>' 
                 name='dnsmasq[range_start][3]' 
@@ -303,7 +303,7 @@
         <td>
 
         <input
-            class="dnsmasq" 
+            class="dnsmasq ip" 
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
             value='<?=$dnsmasq_settings["range_end"][0]?>' 
             name='dnsmasq[range_end][0]' 
@@ -311,7 +311,7 @@
             size='3' 
             maxlength='3'
         />&nbsp;.&nbsp;<input 
-            class="dnsmasq" 
+            class="dnsmasq ip" 
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
             value='<?=$dnsmasq_settings["range_end"][1]?>' 
             name='dnsmasq[range_end][1]' 
@@ -319,7 +319,7 @@
             size='3' 
             maxlength='3'
         />&nbsp;.&nbsp;<input 
-            class="dnsmasq" 
+            class="dnsmasq ip" 
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?> 
             value='<?=$dnsmasq_settings["range_end"][2]?>' 
             name='dnsmasq[range_end][2]' 
@@ -327,7 +327,7 @@
             size='3' 
             maxlength='3'
         />&nbsp;.&nbsp;<input
-            class="dnsmasq"
+            class="dnsmasq ip"
             <?if(!$dnsmasq_settings["dhcpd"]):?>disabled="disabled"<?endif?>
             value='<?=$dnsmasq_settings["range_end"][3]?>'
             name='dnsmasq[range_end][3]'

@@ -385,7 +385,7 @@ $(document).ready( function() {
 	<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing albums")?></th>
 </tr>
 <tr>
-	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div></td>
+	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("file manager")?></a></div></td>
 </tr>
 <tr>
 	<td><div id="album_list" /></td>

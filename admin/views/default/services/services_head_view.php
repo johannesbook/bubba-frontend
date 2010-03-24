@@ -22,6 +22,10 @@ $(document).ready(function(){
 			$("input[name='anon_ftp']").attr('disabled',true);
 		}
 	});
+
+	$("input[type='submit']").click( function () {
+		$("input").attr("disabled","disabled");
+	});
 		
 });
 

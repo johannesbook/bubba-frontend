@@ -148,7 +148,7 @@ $(document).ready( function(){
 	<div id="uploads">
 		<div><input type="file" name="file1" id="file1" size="40"/></div>
 	</div>
-	<span><?=t("Maximum total upload (of all files) is 2GByte.")?></span>
+	<span><?=t("Maximum total upload is 2GByte.")?></span>
 	<div id="pg_adder">
 		<input type="button" id="addmore" value="<?=t('Add entry')?>"/>
 	</div>	

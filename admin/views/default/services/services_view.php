@@ -31,7 +31,7 @@
       <td ><input name="daap_enabled" type="checkbox" value="1" <?= $daap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-	  <td><label for=""><?=t('Squeezebox server')?></label>
+	  <td><label for=""><?=t('Squeezebox Server')?></label>
 		<?if(!$squeezecenter_installed):?>
 <div>
 		<?=t("Squeezebox server isn't installed, please click")?> <a href="<?=FORMPREFIX?>/settings/software/install/<?=$squeezecenter_packagename?>"><?=t('here')?></a> <?=t('to install squeezecenter')?>.
