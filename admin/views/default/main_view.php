@@ -125,30 +125,30 @@ $(document).ready(function(){
 	$("#fn-topnav-logout").mouseover(function(e) {		$("#s-topnav-logout").show();	});	
 	$("#fn-topnav-logout").mouseout(function(e) {		$("#s-topnav-logout").hide();	});
 	$('#wrapper').resize(function(){
-		$('#content_wrapper').width($('#wrapper').width()-160);
+		$('#content_wrapper').width($('#wrapper').width()-150);
 	});
 	
 	$('#sideboard_switch').click(function(event) {
 		$('#sideboard').animate({width : 'toggle'},200);
 		if($('#sideboard_switch').hasClass("ui-icon-open")) {
 			// show sideboard
-			$('#content_wrapper').animate({width : '-=160'},200);
-			$("#topnav").animate({width : '+=160'},200);		
+			$('#content_wrapper').animate({width : '-=150'},200);
+			$("#topnav").animate({width : '+=150'},200);		
 			$('#sideboard_switch').addClass('ui-icon-close');
 			$('#sideboard_switch').removeClass('ui-icon-open');		
 			$.get(config.prefix+"/users/config/json/show_sideboard/1");
 		} else {
 			// close sideboard
-			$('#content_wrapper').animate({width : '+=160'},200);
-			$("#topnav").animate({width : '-=160'},200);		
+			$('#content_wrapper').animate({width : '+=150'},200);
+			$("#topnav").animate({width : '-=150'},200);		
 			$('#sideboard_switch').addClass('ui-icon-open');
 			$('#sideboard_switch').removeClass('ui-icon-close');		
 			$.get(config.prefix+"/users/config/json/show_sideboard/0");
 		}
 	});
 <?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
-	$("#content_wrapper").width($("#content_wrapper").width()-160);
-	$("#topnav").width($("#topnav").width()+160);
+	$("#content_wrapper").width($("#content_wrapper").width()-150);
+	$("#topnav").width($("#topnav").width()+150);
 	$("#sideboard").show();
 	$("#sideboard_switch").removeClass("ui-icon-open");
 	$("#sideboard_switch").addClass("ui-icon-close");
@@ -209,11 +209,11 @@ if(isset($head)) {
             <?} else {?>
 	            <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
             <? } ?>
-            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text ui-helper-hidden">Logout</div></button>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text ui-helper-hidden"><?=t("Logout")?></div></button>
             
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text" style="display:none">Home</div></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
             
-            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text" style="display:none">Help</div></button>
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text" style="display:none"><?=t("Help")?></div></button>
             
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
         </div>	<!-- topnav -->    

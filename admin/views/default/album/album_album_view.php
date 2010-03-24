@@ -34,9 +34,9 @@ createFileTree = function(obj) {
 							post, function(data) {
 								$('#image_' + file + ' > a' ).text( post.name );
 								if(data.error) {
-									update_status("fail","<?=t("Error updating image")?>");
+									update_status(false,"<?=t("Error updating image")?>");
 								} else {
-									update_status("success","<?=t("Image updated")?>");
+									update_status(true,"<?=t("Image updated")?>");
 								}
 								//$('#tmp').html( data.html );
 							}, 'json' );
@@ -85,9 +85,9 @@ createFileTree = function(obj) {
 								$('#image_' + file ).remove();
 								$('#album_edit_area').html("");
 								if(data.error) {
-									update_status("fail","<?=t("Error removing image")?>");
+									update_status(false,"<?=t("Error removing image")?>");
 								} else {
-									update_status("success","<?=t("Image removed from album")?>");
+									update_status(true,"<?=t("Image removed from album")?>");
 								}
 							}, 'json' );
 		
@@ -134,9 +134,9 @@ createFileTree = function(obj) {
 							post, function(data) {
 								$('#album_' + dir + ' > a' ).text( post.name );
 								if(data.error) {
-									update_status("fail","<?=t("Error updating album")?>");
+									update_status(false,"<?=t("Error updating album")?>");
 								} else {
-									update_status("success","<?=t("Album updated")?>");
+									update_status(true,"<?=t("Album updated")?>");
 								}
 							}, 'json' );
 						return false;
@@ -185,9 +185,9 @@ createFileTree = function(obj) {
 										$('#album_edit_area').html("");
 										$('#album_' + dir ).remove();
 										if(data.error) {
-											update_status("fail","<?=t("Error deleting album")?>");
+											update_status(false,"<?=t("Error deleting album")?>");
 										} else {
-										update_status("success","<?=t("Album deleted")?>");
+										update_status(true,"<?=t("Album deleted")?>");
 										}
 									},
 									'json' 
@@ -310,9 +310,9 @@ createFileTree = function(obj) {
 								public: $("#public").attr("checked")
 							}, function(data) {
 								if(data.error) {
-									update_status("fail","<?=t("Error updating user access to public")?>");
+									update_status(false,"<?=t("Error updating user access to public")?>");
 								} else {
-									update_status("success","<?=t("Album access rights updated")?>");
+									update_status(true,"<?=t("Album access rights updated")?>");
 								}
 							}, 
 							'json'
@@ -335,9 +335,9 @@ createFileTree = function(obj) {
 								uid: n_uid
 							}, function(data) {
 								if(data.error) {
-									update_status("fail","<?=t("Error updating user access")?>");
+									update_status(false,"<?=t("Error updating user access")?>");
 								} else {
-									update_status("success","<?=t("Album access rights updated")?>");
+									update_status(true,"<?=t("Album access rights updated")?>");
 								}
 							}, 
 							'json'

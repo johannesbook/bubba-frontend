@@ -2,6 +2,42 @@
 
 <script type="text/javascript">
 
+
+function disable_leasefields() {
+	for(i=0;i<4;i++) {
+		if( ($("[name='mask["+i+"]']").val() & $("[name='ip["+i+"]']").val()) == $("[name='ip["+i+"]']").val()) {
+			$("[name='dnsmasq[range_start]["+i+"]']").attr("disabled","disabled");
+			$("[name='dnsmasq[range_end]["+i+"]']").attr("disabled","disabled");
+		} else {
+			$("[name='dnsmasq[range_start]["+i+"]']").removeAttr("disabled");
+			$("[name='dnsmasq[range_end]["+i+"]']").removeAttr("disabled");
+		}
+	}
+	/*
+	if( ($("[name='mask[1]']").val() & $("[name='ip[1]']").val()) == $("[name='ip[1]']").val()) {
+		$("[name='dnsmasq[range_start][1]']").attr("disabled","disabled");
+		$("[name='dnsmasq[range_end][1]']").attr("disabled","disabled");
+	} else {
+		$("[name='dnsmasq[range_start][1]']").removeAttr("disabled");
+		$("[name='dnsmasq[range_end][1]']").removeAttr("disabled");
+	}
+	if( ($("[name='mask[2]']").val() & $("[name='ip[2]']").val()) == $("[name='ip[2]']").val()) {
+		$("[name='dnsmasq[range_start][2]']").attr("disabled","disabled");
+		$("[name='dnsmasq[range_end][2]']").attr("disabled","disabled");
+	} else {
+		$("[name='dnsmasq[range_start][2]']").removeAttr("disabled");
+		$("[name='dnsmasq[range_end][2]']").removeAttr("disabled");
+	}
+	if( ($("[name='mask[3]']").val() & $("[name='ip[3]']").val()) == $("[name='ip[3]']").val()) {
+		$("[name='dnsmasq[range_start][3]']").attr("disabled","disabled");
+		$("[name='dnsmasq[range_end][3]']").attr("disabled","disabled");
+	} else {
+		$("[name='dnsmasq[range_start][3]']").removeAttr("disabled");
+		$("[name='dnsmasq[range_end][3]']").removeAttr("disabled");
+	}
+	*/
+}
+
 $(document).ready(function(){
 
 	<?if(isset($disable_network) && $disable_network):?>
@@ -69,8 +105,11 @@ $(document).ready(function(){
 		$("[name='dnsmasq[range_end][0]']").val($("[name='ip[0]']").val());
 		$("[name='dnsmasq[range_end][1]']").val($("[name='ip[1]']").val());
 		$("[name='dnsmasq[range_end][2]']").val($("[name='ip[2]']").val());
-		
+		disable_leasefields();
 	});
+
+	disable_leasefields();
+	
 });
 
 </script>

@@ -25,7 +25,7 @@ $(document).ready(function(){
 				$('select[name=luser] option[value='+data.luser+']', this).attr('selected', 'selected');
 			}
 			$('input[name=old_luser]', this).val(data.luser);
-			$('input[name=usessl]', this).attr( 'checked', data.usessl != "");
+			$('input[name=usessl]', this).attr( 'checked', data.ssl != "");
 			$('input[name=keep]', this).attr( 'checked', data.keep != "");
 			this.dialog("open");
 		}

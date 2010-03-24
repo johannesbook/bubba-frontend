@@ -8,7 +8,7 @@ html,body {
 }
 
 body {
-  background: #e5e5e5;
+  background: #ccc;
   background-attachment: fixed;
   background-image: url(../_img/background.png);
   background-position: top center;
@@ -16,7 +16,6 @@ body {
   color: #000;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
-  padding-left : 30px;
 }
 
 h1 {
@@ -244,9 +243,8 @@ div.progress-notice {
 
 #wrapper {
   margin: 0 auto;
-  max-width: 1020px;
-  padding: 0;
-  width: 98%;
+  max-width: 970px;
+  padding: 0 0 0 50px;
 }
 
 #content {
@@ -414,7 +412,7 @@ div.progress-notice {
 #sideboard {
   display: none;
   float: right;
-  width: 160px;
+  width: 150px;
 }
 
 #sideboard-datetime-date {
@@ -434,7 +432,7 @@ div.progress-notice {
   right: 0;
   top: 3px;
   height: 30px;
-  margin: 7px;
+  margin-top: 3px;
   padding-left: .3em;
   text-decoration: none!important;
   width: 20px;
@@ -612,7 +610,7 @@ div.progress-notice {
 }
 
 .ui-icon-open {
-  background-position: -86px -226px;
+  background-position: -85px -226px;
   height: 21px;
   width: 23px;
 }

@@ -368,7 +368,7 @@ $lang["help_box_header"] = "Bubba|2 Help";
 
 $lang["mail-retrieve-edit-host-label"] = "Host";
 $lang["mail-retrieve-edit-protocol-label"] = "Protocol";
-$lang["mail-retrieve-edit-ruser-label"] = "Remove user";
+$lang["mail-retrieve-edit-ruser-label"] = "Remote user";
 $lang["mail-retrieve-edit-password-label"] = "Password";
 $lang["mail-retrieve-edit-luser-label"] = "Local user";
 $lang["mail-retrieve-edit-usessl-label"] = "Use encryption";
