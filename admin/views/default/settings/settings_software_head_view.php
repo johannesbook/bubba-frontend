@@ -58,6 +58,9 @@ $(document).ready(function(){
                       timeout: 5000,
                       dataType: 'json',
                       success: function(data) {
+						  if( ! data ) {
+							  return;
+						  }
                         meter.update( data.progress, data.statusMessage);
                         meter.poke();
                         if( data.done ) {
