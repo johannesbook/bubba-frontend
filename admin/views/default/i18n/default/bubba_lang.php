@@ -298,6 +298,7 @@ $lang['users-list-edit-password2-label'] = 'Confirm password';
 $lang['users-list-edit-sideboard-label'] = 'Display sideboard for non-logged in users';
 
 $lang['users-title'] = 'Users';
+$lang['user-users-title'] = 'User information';
 $lang['users-label-username'] = 'User name';
 $lang['users-label-realname'] = 'Real name';
 $lang['users-label-shell-login'] = 'Allow shell login';

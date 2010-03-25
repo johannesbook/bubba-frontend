@@ -92,6 +92,28 @@ function cursor_ready() {
 	$.throbber.hide();
 }		
 
+function display_menu() {
+	if(! menu_dialog.dialog('isOpen') ) {
+		marginleft = ($("html").outerWidth()-$(".ui-dialog-menu").outerWidth())/2;
+		$(".ui-dialog-menu").width(0);
+		menu_dialog.dialog('open').show();
+	  $(".ui-dialog-menu").animate({
+	    left: marginleft,
+	    width : 674
+	  },200);
+	} else {
+	  $(".ui-dialog-menu").animate({
+	    left: 0,
+	    width : 0
+	  },200,
+	  	function() {
+				menu_dialog.dialog('close');
+	    	$(".ui-dialog-menu").width(674);
+			}
+		);
+	}
+}
+
 function logout_dialog() {
 	
 	var buttons = [

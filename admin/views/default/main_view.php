@@ -90,7 +90,7 @@ $(document).ready(function(){
 		$("#menu").show(),
 			"",
 			{},
-			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : 650 }
+			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : '0' , position : [0,200]}
 		);
 	$('a', menu_dialog).click(function(){menu_dialog.dialog('close')});
 	$('#fn-topnav-logout').click(function(event) {
@@ -100,9 +100,22 @@ $(document).ready(function(){
 			dialog_login();
 		<? endif ?>
   	});
-    $('#fn-topnav-home').click(function(event) {
-		menu_dialog.dialog('open').show();
-	});
+    $('#fn-topnav-home').click(function() {
+    	window.location.href = '<?=FORMPREFIX?>';
+    });
+  
+    $('#fn-menu-trigger').click(function() {
+    	display_menu();
+		});
+  
+	  $('html').keydown(function(e) {
+	  	//alert("NODE: " + e.target.nodeName + "CLASS: " + e.target.hasClass('ui-dialog-menu'));
+		  if(e.keyCode == 77 && (e.target.nodeName == "HTML" || $(e.target).hasClass('ui-dialog-menu'))) {
+		  	display_menu();
+		  }
+		});
+
+
   	$(".ui-login-menubar-a").mouseover(function(e) {	
 		$(this).find("span").show();
 	});	
@@ -236,6 +249,11 @@ if(isset($head)) {
         </div>	<!-- content_wrapper -->
         <?include("sideboard_view.php")?>
     </div> <!-- wrapper -->
+    <?if( $this->uri->total_segments() && ($this->uri->segment(1) != "login") ) :?>
+	    <div id="menu-trigger">
+	    	<button id="fn-menu-trigger" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-menu-trigger"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
+	    </div>
+	  <?endif?>
 		<?=$dialog_menu?>
 
   <?if(isset($wizard) && $wizard):?>

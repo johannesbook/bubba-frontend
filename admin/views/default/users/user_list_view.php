@@ -22,13 +22,24 @@
 </tfoot>
 </table>
 
+<?else :?>
+<table id="fn-users-list">
+<thead>
+<tr>
+	<th colspan="4" class="ui-state-default ui-widget-header"><?=t('user-users-title')?></th>
+</tr>
+</table>
+
 <?endif?>
+
 
 <div id="fn-users-dialogs" class="ui-helper-hidden">
 <div id="fn-users-list-edit">
 <form>
 <input type="hidden" name="username"/>
+<?if($show_allusers):?>
 <h2 class="fn-dialog-header ui-dialog-header"></h2>
+<?endif?>
 	<table>
 	<tr>
 	   <td><label for="username"><?=t('users-list-edit-username-label')?></label></td>

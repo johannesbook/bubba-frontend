@@ -308,6 +308,13 @@ div.progress-notice {
   margin: 1em 0 0;
 }
 
+#menu-trigger {
+	position : absolute;
+	left : 0px;
+	top : 225px;
+	z-index : 2000;
+}
+
 #topnav {
   position: relative;
   float: right;
@@ -334,7 +341,7 @@ div.progress-notice {
   margin-top: 10px;
 }
 
-#topnav button {
+#topnav button,#fn-menu-trigger {
   background: transparent;
   border: 0;
   color: #000;
@@ -343,7 +350,12 @@ div.progress-notice {
   margin: 0 4px;
   min-width: 0;
 }
-
+#fn-menu-trigger {
+	margin : 0px;
+	padding : 0px;
+	height : 67px;
+	width : 30px;
+}
 #subnav {
   font-size: 14px;
   list-style: none;
@@ -456,7 +468,8 @@ div.progress-notice {
   max-width: 674px;
   opacity: .85!important;
   text-align: center;
-  width: 674px!important;
+ 	width: 674px;
+	overflow : hidden;
 }
 
 .ui-dialog-menu .ui-widget-content {
@@ -616,6 +629,12 @@ div.progress-notice {
   background-position: -320px -193px;
   height: 29px;
   width: 22px;
+}
+
+.ui-icon-menu-trigger {
+  background-position: -350px -60px;
+  height: 100px;
+  width: 50px;
 }
 
 .ui-icon-open {
