@@ -378,6 +378,12 @@ class Filemanager extends Controller{
 		if( substr_compare($zipname, '.zip', -4, 4, true ) != 0 ) {
 			$zipname .= '.zip';
 		}
+
+		$regex = "#^".preg_quote( $prefix, '#' )."/?#";
+		foreach( $files as &$file ) {
+			$file = preg_replace( $regex, '', $file );
+		}
+		unset($file);
 		
 		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 		header("Pragma: public");

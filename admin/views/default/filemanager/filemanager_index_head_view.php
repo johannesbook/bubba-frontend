@@ -213,8 +213,9 @@ buttons = [
 		'alt': 'Download as ZIP',
 		'callback': function() {
 			var files = $("#filetable").filemanager('getSelected');
+
 			var input = $("<input/>", { type: 'text', 'name': 'files[]' });
-				var form = $("<form/>", {
+			var form = $("<form/>", {
 				'action': config.prefix+"/filemanager/downloadzip",
 				'method': 'POST'
 			});
@@ -223,6 +224,7 @@ buttons = [
 				e.attr('value',value);
 				form.append(e);
 			});
+			$("<input/>", { type: 'hidden', 'name': 'path', 'value': $("#filetable").filemanager('option','root') }).appendTo(form);
 			form.appendTo("body").submit().remove();
 		}
 	},	
