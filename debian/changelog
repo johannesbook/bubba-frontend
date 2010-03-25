@@ -1,3 +1,9 @@
+bubba-frontend (1.9.23) claire; urgency=low
+
+  * remove the lonesome alert in the old backup add dir dialog 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 25 Mar 2010 20:47:00 +0100
+
 bubba-frontend (1.9.22) claire; urgency=low
 
   * make download as zip remember what directory it's in 

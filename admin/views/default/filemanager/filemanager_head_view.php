@@ -447,6 +447,7 @@
 		});
 		
 		$("#include").click(function() {
+			var my_dialog;
 			to_be_included = '';
 			form = $('<form />');
 			form.addClass("treelayout");
@@ -456,8 +457,6 @@
 			doit = $('<input />');
 			form.append(
 				$('<div class="buttons" />')
-				.append($("<input />").attr("type","button").addClass("simplemodal-close").val("<?=t("Cancel")?>"))
-
 				.append(
 					
 					$("<input />").attr("id","do_include").attr("type","button").val("<?=t("Include")?>").click(function(e) {
@@ -472,7 +471,7 @@
 								'file': to_be_included
 							},
 							function(data){
-								alert("Close dialog");
+								my_dialog.dialog("close");
 								if(!data.error) {
 									if(!$("#current_incfiles").children("div[class*='files']").length) {
 										$("#current_incfiles").empty(); // remove "No data found"
@@ -505,7 +504,7 @@
 					return true;
 				}
 			});
-			$.dialog( form , "" ,{}, {dialogClass : 'filemanager-backup-dialog-select', width : '400'});
+			my_dialog = $.dialog( form , "" ,{}, {dialogClass : 'filemanager-backup-dialog-select', width : '400'});
 
 			return false;
 		
