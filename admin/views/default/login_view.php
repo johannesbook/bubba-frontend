@@ -26,7 +26,7 @@
 	<table>
 		<tr>
 			<td>
-				<label for="username"><?=t("Username")?>:</label>
+				<label for="username"><?=t("Username")?>:</label><br>
 				<div id="login-dialog-required-user"><?isset($required_user)?$required_user:""?></div>
 				<input
 					type="text" 
@@ -38,7 +38,7 @@
 		</tr>
 		<tr>
 			<td>
-				<label for="password"><?=t("Password")?>:</label>
+				<label for="password"><?=t("Password")?>:</label><br>
 				<input
 					type="password" 
 					name="password"

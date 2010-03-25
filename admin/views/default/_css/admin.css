@@ -712,6 +712,12 @@ div.progress-notice {
   width: 35px;
 }
 
+.opera .ui-filemanager-buttonbar button,.safari .ui-filemanager-buttonbar button, .msie .ui-filemanager-buttonbar button {
+  width: 46px!important;
+	margin-left : -9px !important;
+}
+
+
 .ui-icon-create-disable {
   background-position: -8px -103px;
   height: 26px;

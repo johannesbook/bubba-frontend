@@ -73,13 +73,15 @@ CoolClock.config = {
 		// try making your own...
 
 		swissRail: {
-			outerBorder: { lineWidth: 0, radius:65, color: "black", alpha: 1 },
-			smallIndicator: { lineWidth: 0, startAt: 89, endAt: 93, color: "black", alpha: 1 },
-			largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
-			hourHand: { lineWidth: 4, startAt: -0, endAt: 65, color: "black", alpha: 1 },
-			minuteHand: { lineWidth: 4, startAt: -0, endAt: 85, color: "black", alpha: 1 },
-			secondHand: { lineWidth: 1, startAt: -0, endAt: 85, color: "black", alpha: 1 },
-			secondDecoration: { lineWidth: 0, startAt: 0, radius: 2, fillColor: "black", color: "black", alpha: 1 }
+
+		outerBorder: { lineWidth: 0, radius:98, color: "black", alpha: 0 },
+		smallIndicator: { lineWidth: 0, startAt: 89, endAt: 93, color: "black", alpha: 0 },
+		largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
+		hourHand: { lineWidth: 4, startAt: -0, endAt: 65, color: "black", alpha: 1 },
+		minuteHand: { lineWidth: 4, startAt: -0, endAt: 85, color: "black", alpha: 1 },
+		secondHand: { lineWidth: 1, startAt: -0, endAt: 85, color: "black", alpha: 1 },
+		secondDecoration: { lineWidth: 0, startAt: 70, radius: 4, fillColor: "black", color: "black", alpha: 0 }
+
 		},
 		chunkySwiss: {
 			outerBorder: { lineWidth: 4, radius:97, color: "black", alpha: 1 },
