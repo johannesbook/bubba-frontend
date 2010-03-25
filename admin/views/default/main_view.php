@@ -81,6 +81,12 @@ jQuery.validator.setDefaults({
 
 	
 $(document).ready(function(){
+	$.each( $.browser, function( key, value ) {
+		if( value && key !== 'version' ) {
+			$('body').addClass(key);
+		}
+	});
+
 	help_dialog = $.dialog(
 		$('#fn-help-dialog').show(),
 		"<?=t('help_box_header')?>",
