@@ -179,7 +179,7 @@ copymove_callback = function( type ) {
     
 	panel.css({top: -30, left: 0});
 	$(window).bind('resize.filemanager-action', function(){
-		action.css({top: 2, left: main_toolbar.position().left - action.width() });
+		action.css({top: 0, left: main_toolbar.position().left - action.width() });
 	}).triggerHandler( 'resize.filemanager-action' );
 
 	panel.show('drop', {direction: 'down'}, speed);
