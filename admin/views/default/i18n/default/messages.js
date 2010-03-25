@@ -83,6 +83,8 @@ messages = {
 	"printing-list-edit-dialog-button-label" : "Update",
 	"printing-list-edit-dialog-delete-button-label" : "Delete",
 	"printing-list-add-dialog-header" : "Add new printer",
+	"printing-list-add-dialog-no-printer-header" : "No printers found",
+	"printing-list-add-dialog-no-printer-message" : "Please check connections and that all equipment is turned on",
 	"printing-list-add-success-message" : "Sucessfully added printer",
 	"printing-state-idle" : "Online",
 	"printing-state-stopped" : "Offline",

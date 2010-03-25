@@ -252,9 +252,12 @@ div.progress-notice {
   font-weight: 500;
 }
 
-#wrapper {
-  margin: 0 auto;
+body {
   padding: 0 0 0 50px;
+}
+
+#content_wrapper, #sideboard-wrapper, #topnav, #empty-header {
+	padding: 0;
 }
 
 #content {
@@ -317,17 +320,32 @@ div.progress-notice {
 	z-index : 2000;
 }
 
+
 #topnav {
+	padding: 0;
+	padding-right: 6px;
+	margin: 0;
+  width: 100%;
   position: relative;
-  float: right;
+  right: 0;
   margin-top: 3px;
-  width: 300px;
 }
 
 #topnav a,#topnav span {
-  float: left;
 }
 
+#topnav-content {
+	position: relative;
+	right: 0;
+	height: 2em;
+	width: 100%;
+}
+#topnav-content-inner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+}
 #topnav .ui-button-text {
   font-size: 12px;
   font-weight: 700;
@@ -431,10 +449,12 @@ div.progress-notice {
   font-size: 12px;
   font-weight: 700;
 }
-
+#sideboard-wrapper {
+  margin: 0;
+  max-width: 150px;
+}
 #sideboard {
   display: none;
-  float: right;
   width: 145px;
 }
 

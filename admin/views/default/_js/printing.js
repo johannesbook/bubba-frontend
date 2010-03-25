@@ -215,24 +215,34 @@ $(document).ready(function(){
 
 		};
 
-		var add_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
-		add_source_edit_dialog.find('input[name=input_name]').addClass('fn-primary-field');
-		add_source_edit_dialog_printers = add_source_edit_dialog.find('select[name=input_printer]');
-		$.each( attached_printers, function() {
-				add_source_edit_dialog_printers.append($('<option/>', { value: this.url, html: this.description}));
-			});
-		add_dialog  = $.dialog(
-			add_source_edit_dialog,
-			'',
-			[
-				{
-					'label': $.message("printing-list-add-dialog-button-label"),
-					'callback': add_dialog_button_callback,
-					options: { id: 'fn-printing-add-dialog-button' }
-				}	
-			],
-			dialog_options	
-		);		
+		if( attached_printers.length ) {
+			var add_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
+			add_source_edit_dialog.find('input[name=input_name]').addClass('fn-primary-field');
+			add_source_edit_dialog_printers = add_source_edit_dialog.find('select[name=input_printer]');
+			$.each( attached_printers, function() {
+					add_source_edit_dialog_printers.append($('<option/>', { value: this.url, html: this.description}));
+				});
+			add_dialog  = $.dialog(
+				add_source_edit_dialog,
+				'',
+				[
+					{
+						'label': $.message("printing-list-add-dialog-button-label"),
+						'callback': add_dialog_button_callback,
+						options: { id: 'fn-printing-add-dialog-button' }
+					}	
+				],
+				dialog_options	
+			);		
+		} else {
+			add_dialog = $.alert( 
+				$.message("printing-list-add-dialog-no-printer-message"), 
+				$.message("printing-list-add-dialog-no-printer-header"), 
+				$.message("button-label-close"), 
+				null, 
+				$.extend({ close: function(){}},dialog_options)
+			);
+		}
 
 		var edit_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
 		edit_source_edit_dialog.find('select[name=input_printer]').closest('tr').remove();		

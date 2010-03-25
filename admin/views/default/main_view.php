@@ -143,31 +143,21 @@ $(document).ready(function(){
 	$("#fn-topnav-home").mouseout(function(e) {		$("#s-topnav-home").hide();	});	
 	$("#fn-topnav-logout").mouseover(function(e) {		$("#s-topnav-logout").show();	});	
 	$("#fn-topnav-logout").mouseout(function(e) {		$("#s-topnav-logout").hide();	});
-	$('#wrapper').resize(function(){
-		$('#content_wrapper').width($('#wrapper').width()-150);
-	});
+
 	
 	$('#sideboard_switch').click(function(event) {
-		$('#sideboard').animate({width : 'toggle'},200);
+		$('#sideboard').animate({'width': 'toggle'},600, 'easeInOutCubic');
 		if($('#sideboard_switch').hasClass("ui-icon-open")) {
-			// show sideboard
-			$('#content_wrapper').animate({width : '-=150'},200);
-			$("#topnav").animate({width : '+=150'},200);		
 			$('#sideboard_switch').addClass('ui-icon-close');
 			$('#sideboard_switch').removeClass('ui-icon-open');		
 			$.get(config.prefix+"/users/config/json/show_sideboard/1");
 		} else {
-			// close sideboard
-			$('#content_wrapper').animate({width : '+=150'},200);
-			$("#topnav").animate({width : '-=150'},200);		
 			$('#sideboard_switch').addClass('ui-icon-open');
 			$('#sideboard_switch').removeClass('ui-icon-close');		
 			$.get(config.prefix+"/users/config/json/show_sideboard/0");
 		}
 	});
 <?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
-	$("#content_wrapper").width($("#content_wrapper").width()-150);
-	$("#topnav").width($("#topnav").width()+150);
 	$("#sideboard").show();
 	$("#sideboard_switch").removeClass("ui-icon-open");
 	$("#sideboard_switch").addClass("ui-icon-close");
@@ -220,9 +210,12 @@ if(isset($head)) {
 ?>
 </head>
 <body id="body_<?=$this->uri->segment($this->uri->total_segments())?>">
-    <div id="wrapper">	    
+    <table id="wrapper">	    
     
-        <div id="topnav">
+		<tr>
+		<td id="topnav">
+		<div id="topnav-content">
+		<div id="topnav-content-inner">
             <?if ($this->session->userdata("valid")) { ?>
 	            <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
             <?} else {?>
@@ -234,10 +227,15 @@ if(isset($head)) {
             
             <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text" style="display:none"><?=t("Help")?></div></button>
             
+		</div>
+		</div>
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
-        </div>	<!-- topnav -->    
+		</td> 	<!-- topnav --> 
+		<td id="empty-header"></td>
+        </tr>   
     
-        <div id="content_wrapper">	
+		<tr>
+		<td id="content_wrapper">	
             <div id="header">		
                 
                 <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
@@ -252,9 +250,13 @@ if(isset($head)) {
           	<?endif?>
             
     		<div id="update_status" class="ui-corner-all ui-state-highlight ui-helper-hidden"></div>
-        </div>	<!-- content_wrapper -->
+        </td>	<!-- content_wrapper -->
+
+		<td id="sideboard-wrapper">
         <?include("sideboard_view.php")?>
-    </div> <!-- wrapper -->
+		</td> <!-- sideboard -->
+		</tr>
+    </table> <!-- wrapper -->
     <?if( $this->uri->total_segments() && ($this->uri->segment(1) != "login") ) :?>
 	    <div id="menu-trigger">
 	    	<button id="fn-menu-trigger" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-menu-trigger"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
