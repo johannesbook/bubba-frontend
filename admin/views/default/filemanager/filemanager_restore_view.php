@@ -257,10 +257,10 @@ function progressReport() {
 		$.post("<?=site_url("ajax_settings/ajax_backup_update")?>", $mypost,
 				function(data){
 					if(data.error == "") {
-						update_status("success","<?=t("Update successful")?>");
+						update_status(true,"<?=t("Update successful")?>");
 						setup_clicks();
 					} else {
-						update_status("fail","<?=t("Update error")?>");
+						update_status(false,"<?=t("Update error")?>");
 					}
 					cursor_ready();
 				}
@@ -277,7 +277,7 @@ function progressReport() {
 						$("#lock_progress").empty();
 						window.setTimeout( progressReport, 5000 );
 					} else {
-						update_status("fail","<?=t("Update error")?>");
+						update_status(false,"<?=t("Update error")?>");
 					}
 				}
 		,"json");
@@ -324,7 +324,7 @@ function progressReport() {
 
 			cursor_wait();
 			if(!o) {
-				update_status("success","<?=t("Retreiving information started")?>");
+				update_status(true,"<?=t("Retreiving information started")?>");
 				$("#lock_header").text("<?=t("Retreiving information")?>");
 				timer = setTimeout( progressIndicate, 0 );
 				$.post("<?=site_url("ajax_settings/ajax_backup_current_filelist")?>", {"jobname" : $mypost["jobname"]},
@@ -345,7 +345,7 @@ function progressReport() {
 								$("#current_status").append(
 									$("<div />").text(data.status)
 								);
-								update_status("fail","<?=t("Error retreiving data from target")?>");
+								update_status(false,"<?=t("Error retreiving data from target")?>");
 								if(timer) {
 									clearTimeout(timer);
 								}
@@ -356,7 +356,7 @@ function progressReport() {
 						}
 				,"json");
 			} else {
-				update_status("success","<?=t("Restore started")?>");
+				update_status(true,"<?=t("Restore started")?>");
 				do_restore($mypost);
 			}
 			return false;

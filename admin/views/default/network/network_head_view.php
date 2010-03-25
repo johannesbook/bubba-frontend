@@ -27,7 +27,6 @@ $(document).ready(function(){
 
 	$("#OTHCFG input:radio").click(function(){$("#networkprofile_update").removeAttr("disabled")});
 	$("#networkprofile_update").click(function() {
-		cursor_wait();
 		$.post("<?=site_url("ajax_network/validate_profile_change")?>",{ profile: $("input[name='profile']:checked").val() }, function(data){
 			if( data.error ) {
 				$.alert(data.html);

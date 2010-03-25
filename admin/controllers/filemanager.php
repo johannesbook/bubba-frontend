@@ -63,7 +63,7 @@ class Filemanager extends Controller{
 		$this->Auth_model->RequireUser('admin');
 
 		$data["backupjobs"] = get_backupjobs($this->session->userdata("user"));
-		$data["loc_fileinfo"] = $this->session->userdata("user")."/.backup/";
+		$data["loc_fileinfo"] = "/home/".$this->session->userdata("user")."/.backup/";
 		
 		if(file_exists(RESTORE_LOCKFILE)) {
 			$data["restore"]["lock"] = true;
