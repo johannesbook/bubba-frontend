@@ -1397,6 +1397,7 @@ input.mount {
 .ui-dialog .ui-dialog-titlebar {
   height: 31px;
   padding: 0 .3em .3em 1em;
+  margin : 0px;
 }
 
 .ui-dialog .ui-dialog-titlebar-close {
