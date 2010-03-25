@@ -28,37 +28,33 @@
 <h2 class="ui-text-center"><?=t('filemanager-permission-dialog-title')?></h2>
 <form id="fn-filemanager-perm">
 <table>
-    <tr>
+	<tr>
         <th><?=t('filemanager-label-permission-owner')?></th>
-        <td class="fn-buttonset" colspan="2">        
-        <input type="checkbox" id="fn-filemanager-perm-permission-owner-read" name="permission-owner-read"/>
-        <label for="fn-filemanager-perm-permission-owner-read"><?=t("filemanager-label-permission-owner-read")?></label>
-        <input type="checkbox" id="fn-filemanager-perm-permission-owner-write" name="permission-owner-write"/>
-        <label for="fn-filemanager-perm-permission-owner-write"><?=t("filemanager-label-permission-owner-write")?></label>
-        <input type="checkbox" id="fn-filemanager-perm-permission-owner-execute" name="permission-owner-execute"/>
-        <label for="fn-filemanager-perm-permission-owner-execute"><?=t("filemanager-label-permission-owner-execute")?></label>
+        <td>
+        	<select name="permission-owner" id="fn-filemanager-perm-permission-owner">
+        		<option value="rw"><?=t('Read and write')?></option>
+        		<option value="r"><?=t('Read only')?></option>
+        	</select>
         </td>
-    </tr>
+	</tr>		
     <tr>
         <th><?=t('filemanager-label-permission-group')?></th>
-        <td class="fn-buttonset">
-        <input type="checkbox" id="fn-filemanager-perm-permission-group-read" name="permission-group-read"/>
-        <label for="fn-filemanager-perm-permission-group-read"><?=t("filemanager-label-permission-group-read")?></label>
-        <input type="checkbox" id="fn-filemanager-perm-permission-group-write" name="permission-group-write"/>
-        <label for="fn-filemanager-perm-permission-group-write"><?=t("filemanager-label-permission-group-write")?></label>
-        <input type="checkbox" id="fn-filemanager-perm-permission-group-execute" name="permission-group-execute"/>
-        <label for="fn-filemanager-perm-permission-group-execute"><?=t("filemanager-label-permission-group-execute")?></label>
+        <td>
+        	<select name="permission-group" id="fn-filemanager-perm-permission-group">
+        		<option value="rw"><?=t('Read and write')?></option>
+        		<option value="r"><?=t('Read only')?></option>
+        		<option value="n"><?=t('No access')?></option>
+        	</select>
         </td>
     </tr>
     <tr>
         <th><?=t('filemanager-label-permission-other')?></th>
-        <td class="fn-buttonset">
-        <input type="checkbox" id="fn-filemanager-perm-permission-other-read" name="permission-other-read"/>
-        <label for="fn-filemanager-perm-permission-other-read"><?=t("filemanager-label-permission-other-read")?></label>
-        <input type="checkbox" id="fn-filemanager-perm-permission-other-write" name="permission-other-write"/>
-        <label for="fn-filemanager-perm-permission-other-write"><?=t("filemanager-label-permission-other-write")?></label>
-        <input type="checkbox" id="fn-filemanager-perm-permission-other-execute" name="permission-other-execute"/>
-        <label for="fn-filemanager-perm-permission-other-execute"><?=t("filemanager-label-permission-other-execute")?></label>
+        <td>
+        	<select name="permission-other" id="fn-filemanager-perm-permission-other">
+        		<option value="rw"><?=t('Read and write')?></option>
+        		<option value="r"><?=t('Read only')?></option>
+        		<option value="n"><?=t('No access')?></option>
+        	</select>
         </td>
     </tr>
 </table>

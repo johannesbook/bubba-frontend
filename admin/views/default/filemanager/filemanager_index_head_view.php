@@ -17,34 +17,30 @@ dialog_pre_open_callbacks = {
 	'perm': function() {
 		var files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/perm/json/get", {files:files}, function(data){
-			if( data.permissions & 00400 ) {
-				$("#fn-filemanager-perm-permission-owner-read").attr("checked","checked");
-			}
-			if( data.permissions & 00200 ) {
-				$("#fn-filemanager-perm-permission-owner-write").attr("checked","checked");
-			}
-			if( data.permissions & 00100 ) {
-				$("#fn-filemanager-perm-permission-owner-execute").attr("checked","checked");
-			}
-
-			if( data.permissions & 00040 ) {
-				$("#fn-filemanager-perm-permission-group-read").attr("checked","checked");
-			}
-			if( data.permissions & 00020 ) {
-				$("#fn-filemanager-perm-permission-group-write").attr("checked","checked");
-			}
-			if( data.permissions & 00010 ) {
-				$("#fn-filemanager-perm-permission-group-execute").attr("checked","checked");
+			if( (data.permissions & 00600) == 0600 ) {
+				$("#fn-filemanager-perm-permission-owner option[value='rw']").attr("selected",true);
+			}else if( (data.permissions & 00400) == 0400 ) {
+				$("#fn-filemanager-perm-permission-owner option[value='r']").attr("selected",true);
+			}else{
+				/* Owner should always be able to read */
+				$("#fn-filemanager-perm-permission-owner option[value='r']").attr("selected",true);
 			}
 
-			if( data.permissions & 00004 ) {
-				$("#fn-filemanager-perm-permission-other-read").attr("checked","checked");
+			if( (data.permissions & 00060) == 00060 ) {
+				$("#fn-filemanager-perm-permission-group option[value='rw']").attr("selected",true);
+			}else if( (data.permissions & 00040) == 00040 ) {
+				$("#fn-filemanager-perm-permission-group option[value='r']").attr("selected",true);
+			}else if( (data.permissions & 00070) == 00000){
+				$("#fn-filemanager-perm-permission-group option[value='n']").attr("selected",true);
 			}
-			if( data.permissions & 00002 ) {
-				$("#fn-filemanager-perm-permission-other-write").attr("checked","checked");
-			}
-			if( data.permissions & 00001 ) {
-				$("#fn-filemanager-perm-permission-other-execute").attr("checked","checked");
+
+
+			if( (data.permissions & 00006) == 00006 ) {
+				$("#fn-filemanager-perm-permission-other option[value='rw']").attr("selected",true);
+			}else if( (data.permissions & 00004) == 00004 ) {
+				$("#fn-filemanager-perm-permission-other option[value='r']").attr("selected",true);
+			}else if( (data.permissions & 00007) == 00000){
+				$("#fn-filemanager-perm-permission-other option[value='n']").attr("selected",true);
 			}
 		}, 'json');
 		

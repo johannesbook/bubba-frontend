@@ -208,34 +208,25 @@ class Filemanager extends Controller{
 
 				$mask = 0000;
 
-				if($this->input->post("permission-owner-read")) {
+				if($this->input->post("permission-owner")=="rw") {
+					$mask |= 00600;
+				}
+				if($this->input->post("permission-owner")=="r") {
 					$mask |= 00400;
 				}
-				if($this->input->post("permission-owner-write")) {
-					$mask |= 00200;
-				}
-				if($this->input->post("permission-owner-execute")) {
-					$mask |= 00100;
-				}
 
-				if($this->input->post("permission-group-read")) {
+				if($this->input->post("permission-group")=="rw") {
+					$mask |= 00060;
+				}
+				if($this->input->post("permission-group")=="r") {
 					$mask |= 00040;
 				}
-				if($this->input->post("permission-group-write")) {
-					$mask |= 00020;
-				}
-				if($this->input->post("permission-group-execute")) {
-					$mask |= 00010;
-				}
 
-				if($this->input->post("permission-other-read")) {
+				if($this->input->post("permission-other")=="rw") {
+					$mask |= 00006;
+				}
+				if($this->input->post("permission-other")=="r") {
 					$mask |= 00004;
-				}
-				if($this->input->post("permission-other-write")) {
-					$mask |= 00002;
-				}
-				if($this->input->post("permission-other-execute")) {
-					$mask |= 00001;
 				}
 
 				foreach( $files as $file ) {
