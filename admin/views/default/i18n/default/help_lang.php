@@ -305,7 +305,7 @@ $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 ";
 
 $lang['help_box_settings_identity']="
-<h3>Windows share options</h3>
+<h3>System identity</h3>
 <p><strong>Hostname</strong> - is the unique name by which a network-attached device is known on a network.</p>
 <p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or Internet connection. Use the same workgroup name on Bubba|2 as on your computer.</p>
 <h3>Easyfind options</h3>
@@ -321,11 +321,9 @@ $lang['help_box_settings_trafficsettings']="
 ";
 
 $lang['help_box_settings_datetime']="
-<h3>Timezone</h3>
+<h3>Date and time</h3>
 <p><strong>Current timezone is</strong> - Shows the selected timezon.</p>
 <p><strong>Select timezone</strong> - Select your timezone in the drop down list.</p>
-
-<h3>Date and time</h3>
 <p><strong>Set time automatically</strong> - This enables Bubba|2 to set the date and time automatically via an internet server.</p>
 <p><strong>Date</strong> - Set the system date manually.</p>
 <p><strong>Time</strong> - Set the system time manually.</p>
@@ -391,6 +389,12 @@ $lang['help_box_settings_logs']="
 
 $lang['help_box_user_users']=$lang['help_box_user_users_edit']="
 <p>Here every user can change the personal information, such as 'Real name' and password. Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name.</p>
+";
+
+$lang['help_box_user_filemanager']="
+<p>From the File manager you are able to reach your files on Bubba|2 if you are away from home.</p>
+<p>Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ raw.</p>
+<p>Click files or folders and use the icons in the menu to perform different actions.</p>
 ";
 
 $lang['help_box_user_mail']="
