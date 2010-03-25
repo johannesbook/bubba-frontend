@@ -67,6 +67,8 @@ input[type=submit],input[type=button],button {
   height: 31px;
   margin: .2em;
   padding: 3px 7px 5px;
+}
+input[type=submit],input[type=button] {
   min-width : 75px;
 }
 
@@ -837,7 +839,6 @@ div#mail th {
 
 #filemanager {
   position: relative;
-  margin-top: -3em;
 }
 
 .ui-filemanager {
