@@ -484,11 +484,11 @@ body {
 .ui-dialog-menu {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85)!important;
   border: 0;
-  filter: alpha(opacity=85)!important;
+  filter: alpha(opacity=85);
   height: 140px!important;
   max-height: 140px;
   max-width: 674px;
-  opacity: .85!important;
+  opacity: .85;
   text-align: center;
  	width: 674px;
 	overflow : hidden;
@@ -912,7 +912,8 @@ button.ui-button::-moz-focus-inner {
 
 #fn-filemanager-information-panel {
   font-size: 12px;
-  padding: .4em;
+  padding-top: .4em;
+  padding-bottom: .4em;
   height: auto;
 
 }
@@ -1379,21 +1380,13 @@ div.text label {
   margin-right: 15px;
 }
 
-input.mount {
-  margin: 0;
-  width: 75px;
-}
-
 .ui-filemanager-information-panel {
   background: #efdfad;
   border: 2px solid #dfcf9d;
   height: 3em;
   position: absolute;
-/*  margin-top: -45px;*/
   opacity: .95;
-
   text-align: center;
-  width: 98%;
 }
 
 #fn-filemanager-action-panel {

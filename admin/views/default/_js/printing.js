@@ -19,17 +19,18 @@ $(document).ready(function(){
 			var row = $("<tr/>");
 			$.each( accounts, function(key) {
 					var data = this;
+					/*
 					var state = data.state;
 					if( state == 'Stopped' ) {
 						state = $.message( 'printing-state-stopped' );
 					} else if( state == 'Idle' ) {
 						state = $.message( 'printing-state-idle' );
-					}
+					}*/
 					row.clone().appendTo(table)
 					.append($('<td/>',{text: data.name}))
 					.append($('<td/>',{text: data.info}))
 					.append($('<td/>',{text: data.location}))
-					.append($('<td/>',{text: state }))
+					/*.append($('<td/>',{text: state }))*/
 					.append(
 						$('<td/>',
 							{

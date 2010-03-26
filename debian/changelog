@@ -1,3 +1,13 @@
+bubba-frontend (1.9.25) claire; urgency=low
+
+  * reanimate the menu
+  * fix disk mount button width
+  * remove state from printing
+  * make yellow field not jump in filemanager
+
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 26 Mar 2010 17:37:05 +0100
+
 bubba-frontend (1.9.24) claire; urgency=low
 
   * Bump version to. (Forgott that) 

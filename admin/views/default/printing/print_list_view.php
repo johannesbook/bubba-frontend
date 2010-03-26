@@ -7,7 +7,7 @@
    <th><?=t('printing-label-share')?></th>
    <th><?=t('printing-label-info')?></th>
    <th><?=t('printing-label-location')?></th>
-   <th><?=t('printing-label-state')?></th>
+   <!--th><?=t('printing-label-state')?></th-->
    <th>&nbsp;</th>
 </tr>
 </thead>
@@ -15,7 +15,8 @@
 </tbody>
 <tfoot>
 <tr>
-<td colspan="5">
+<!-- 5 with state -->
+<td colspan="4">
 <button id="fn-printing-list-add"><?=t("printing-add-button-label")?></button>
 </td>
 </tr>

@@ -176,11 +176,13 @@ copymove_callback = function( type ) {
 	panel.css({top: -30, left: 0});
 	$(window).bind('resize.filemanager-action', function(){
 		action.css({top: 0, left: main_toolbar.position().left - action.width() });
+		panel.css({width: filetable.innerWidth() - (panel.outerWidth(true)-panel.innerWidth())});
 	}).triggerHandler( 'resize.filemanager-action' );
 
-	panel.show('drop', {direction: 'down'}, speed);
-	action.show('drop', {direction: 'right'}, speed);
 	panel.html($.message("filemanager-"+type+"-notice", files.length));
+	panel.show('drop', {direction: 'down'}, speed);
+//	setTimeout(function(){panel.stop(false,false)},600);
+	action.show('drop', {direction: 'right'}, speed);
 };
 dialogs = {};
 buttons = [

@@ -960,7 +960,7 @@ class Network extends Controller{
 			($this->session->userdata("network_profile")=="server") || 
 			($this->session->userdata("network_profile")=="auto") )  {
 
-				$data[$this->session->userdata("network_profile")] = "CHECKED";
+				$data[$this->session->userdata("network_profile")] = 'checked="checked"';
 
 				$data['custom'] = false;
 			} else {
@@ -994,7 +994,7 @@ class Network extends Controller{
 			$this->session->set_userdata("network_profile", $profile);
 			$this->networkmanager->apply_profile($profile,$old_profile);
 		}
-		$data[$this->session->userdata("network_profile")] = "CHECKED";
+		$data[$this->session->userdata("network_profile")] = 'checked="checked"';
 
 		if($strip){
 			$this->load->view($this->load->view(THEME.'/network/network_profile_view',$data));

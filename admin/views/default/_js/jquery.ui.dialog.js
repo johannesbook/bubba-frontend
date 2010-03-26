@@ -47,7 +47,8 @@ $.widget("ui.dialog", {
 		width: 300,
 		zIndex: 1000,
 		evenButtonWidth: true,
-		disableButtonsOnClick: true
+		disableButtonsOnClick: true,
+		collision: 'fit'
 	},
 	_create: function() {
 		this.originalTitle = this.element.attr('title');
@@ -548,7 +549,7 @@ $.widget("ui.dialog", {
 				at: myAt.join(' '),
 				offset: offset.join(' '),
 				of: window,
-				collision: 'fit',
+				collision: this.options.collision,
 				// ensure that the titlebar is never outside the document
 				using: function(pos) {
 					var topOffset = $(this).css(pos).offset().top;

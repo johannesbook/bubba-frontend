@@ -94,23 +94,33 @@ function cursor_ready() {
 
 function display_menu() {
 	if(! menu_dialog.dialog('isOpen') ) {
-		marginleft = ($("html").outerWidth()-$(".ui-dialog-menu").outerWidth())/2;
-		$(".ui-dialog-menu").width(0);
-		menu_dialog.dialog('open').show();
-	  $(".ui-dialog-menu").animate({
-	    left: marginleft,
-	    width : 674
-	  },200);
+		menu_dialog.dialog('open');
+		var width = menu_dialog.outerWidth(true);
+		var speed = 300;
+		menu_dialog.parent().hide().animate( 
+			{
+				'left': $(window).width()/2 - width / 2,
+				'opacity': 'show'
+			}, {
+				'duration': speed,
+				'specialEasing': {
+					'left': 'swing',
+					'opacity': 'easeInQuint'
+				}
+			});
 	} else {
-	  $(".ui-dialog-menu").animate({
-	    left: 0,
-	    width : 0
-	  },200,
-	  	function() {
-				menu_dialog.dialog('close');
-	    	$(".ui-dialog-menu").width(674);
-			}
-		);
+		var width = menu_dialog.outerWidth(true);
+		menu_dialog.parent().show().animate( 
+			{
+				'left': - width,
+				'opacity': 'hide'
+			}, {
+				'duration': speed,
+				'specialEasing': {
+					'left': 'swing',
+					'opacity': 'easeOutQuint'
+				}
+			}).queue(function(){ menu_dialog.dialog('close'), $(this).dequeue()});
 	}
 }
 

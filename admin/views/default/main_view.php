@@ -92,11 +92,18 @@ $(document).ready(function(){
 		"<?=t('help_box_header')?>",
 		{},
 		{autoOpen: false, 'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
+
 	menu_dialog = $.dialog(
-		$("#menu").show(),
+		$("#menu"),
 			"",
 			{},
-			{ autoOpen: false, dialogClass: 'ui-dialog-menu', width : '0' , position : [0,200]}
+		{ 
+			autoOpen: false, 
+			dialogClass: 'ui-dialog-menu', 
+			width : '674' ,
+			position : [-800, 200], 
+			'collision': 'none' 
+		}
 		);
 	$('a', menu_dialog).click(function(){menu_dialog.dialog('close')});
 	$('#fn-topnav-logout').click(function(event) {
@@ -114,8 +121,7 @@ $(document).ready(function(){
     	display_menu();
 		});
   
-	  $('html').keydown(function(e) {
-	  	//alert("NODE: " + e.target.nodeName + "CLASS: " + e.target.hasClass('ui-dialog-menu'));
+	  $(window).keydown(function(e) {
 		  if(e.keyCode == 77 && (e.target.nodeName == "HTML" || $(e.target).hasClass('ui-dialog-menu'))) {
 		  	display_menu();
 		  }
