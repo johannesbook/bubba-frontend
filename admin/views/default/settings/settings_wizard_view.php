@@ -47,7 +47,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 		<div id="ui-wizard-datetime">
 			<table>
 			  <tr><td colspan="4" class="ui-wizard-label-header"><h2><?=t('title_settings-date')?></h2></td></tr>
-				<tr class="ui-header"><td><?=t('Set time automatically')?></td><td><input id="ntp" type="checkbox" class="checkbox_radio" name="wiz_data[use_ntp]" <?=isset($wiz_data['use_ntp'])?"CHECKED":""?> /></td></tr>
+				<tr class="ui-header"><td><?=t('Auto adjust date and time')?></td><td><input id="ntp" type="checkbox" class="slide" name="wiz_data[use_ntp]" <?=isset($wiz_data['use_ntp'])?"CHECKED":""?> /></td></tr>
 				<tr class="ui-header"><td>Date:</td><td><input type="text" class="timedate" name="wiz_data[date]" value="<?=$wiz_data['date']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('YYYYMMDD')?>)</span></td></tr>
 				<tr class="ui-header"><td>Time:</td><td><input type="text" class="timedate" name="wiz_data[time]" value="<?=$wiz_data['time']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('HHmm')?>)</span></td></tr>
 				<?=isset($err['timedate'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timedate'])."</div></td></tr>\n":""?>
@@ -59,10 +59,12 @@ if($this->session->userdata("run_wizard")): // wizard is running
   else : // show start wizard page
 ?>
 		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
-			<table>
+			<table class="ui-table-outline">
 				<thead>
 			    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Setup wizard')?></td></tr>
 				</thead>
+			</table>
+			<table>
 				<tbody>
 				<tr><td>
 					<?=t('To configure basic functionality of Bubba|2, press the button to start the setup wizard.')?>					

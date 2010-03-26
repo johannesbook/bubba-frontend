@@ -129,7 +129,7 @@ jQuery.fn.iCheckbox = function(options) {
 				input.wrapAll(container);
 				container = input.parent();
 				// make the switch image based on starting state
-				image = jQuery('<img/>', { 'class': settings.class_switch, 'src': settings.switch_container_src } );
+				image = jQuery('<div/>', { 'class': settings.class_switch } );
 				container.append(image);
 				// sync the checkbox to initial state
 				if( input.is(':disabled') ) {

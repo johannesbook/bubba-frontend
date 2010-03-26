@@ -53,7 +53,7 @@ input[type=text].ip {
 	width : 40px;
 }
 
-input[type=submit],input[type=button],button {
+input[type=submit],input[type=button],button.submit {
   -moz-border-radius: .3em;
   -webkit-border-radius: .3em;
   background-image: url(../_img/label.png);
@@ -65,14 +65,12 @@ input[type=submit],input[type=button],button {
   font-size: 12px;
   font-weight: 700;
   height: 31px;
-  margin: .2em;
-  padding: 3px 7px 5px;
-}
-input[type=submit],input[type=button] {
-  min-width : 75px;
+  margin: 3px;
+  min-width : 80px;
+  padding: 3px 8px 5px;
 }
 
-input[type=submit]:hover,input[type=button]:hover {
+input[type=submit]:hover,input[type=button]:hover, button.submit:hover {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)!important;
   border: 0;
   filter: alpha(opacity=50)!important;
@@ -133,9 +131,24 @@ th {
 }
 
 td {
-  border: 0;
-  padding: .25em 1.2em;
-  vertical-align: top;
+	border : 0;
+}
+
+table.ui-table-outline td {
+  padding: 3px 16px;
+	vertical-align : middle;
+	font-size : 14px;
+	font-weight : 700;
+}
+
+table.ui-table-outline tr {
+	border-top : 1px solid #bbb !important;
+	border-bottom : 1px solid #bbb !important;
+	line-height : 28px;
+}
+
+table.ui-table-outline tr:hover {
+	background-color : #e5e5e5;
 }
 
 tr.ui-widget-header {
@@ -166,6 +179,14 @@ button:hover {
 .ui-div-header {
   font-size: 14px;
   padding: 0.25em 1.2em;
+}
+
+.ui-indent-margin {
+	margin-left : 16px !important;
+}
+
+.ui-indent1 {
+	padding-left : 33px !important;
 }
 
 label.error {
@@ -339,6 +360,7 @@ body {
 	right: 0;
 	height: 2em;
 	width: 100%;
+	margin-top: 9px;
 }
 #topnav-content-inner {
 	position: absolute;
@@ -416,6 +438,8 @@ body {
 #login_more_info span {
   display: block;
   font-weight: 700;
+  font-size : 14px;
+  margin-bottom : 4px;
 }
 
 #login_more_info a {
@@ -437,7 +461,7 @@ body {
 .ui-login-menubar-a {
   font-weight: 700;
   height: 100px;
-  margin-right: 14px;
+  margin-right: 10px;
   padding-top: 83px;
   text-align: center;
   text-decoration: none;
@@ -451,31 +475,37 @@ body {
 }
 #sideboard-wrapper {
   margin: 0;
-  max-width: 150px;
+  max-width: 178px;
+  vertical-align : top;
 }
 #sideboard {
   display: none;
-  width: 145px;
+  width: 178px;
 }
 
 #sideboard-datetime-date {
   font-size: 120px;
-  font-weight: 900;
-  margin: 0 0 -15px;
+  font-weight: 700;
+  letter-spacing:-4px;
+  line-height : 120px;
 }
 
 #sideboard-datetime-day,#sideboard-datetime-month,#sideboard-datetime-year,#sideboard-clock-digital {
-  font-size: 12px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 700;
+  line-height : 18px;
+}
+
+#sideboard-clock-digital {
+	margin-top : 10px;
 }
 
 #sideboard_switch {
   color: #FFF;
   position: absolute;
   right: 0;
-  top: 3px;
+  top: 14px;
   height: 30px;
-  margin-top: 3px;
   padding-left: .3em;
   text-decoration: none!important;
   width: 20px;
@@ -520,7 +550,7 @@ body {
   float: left;
   height: 18px;
   overflow: hidden;
-  width: 78px;
+  width: 81px;
 }
 
 .default-icon-mail {
@@ -556,7 +586,7 @@ body {
 }
 
 .default-icon-user {
-  background-position: -462px -328px;
+  background-position: -459px -328px;
 }
 
 .default-icon-logout {
@@ -1078,15 +1108,7 @@ button.ui-button::-moz-focus-inner {
 	margin-left : 15px;
 }
 
-#tr-network-gateway,#tr-network-ip,#tr-network-netmask {
-  border-bottom: 0;
-}
-
-#tr-network-ip td {
-  padding-top: 31px;
-}
-
-#services td {
+#services td:first-child, #FWCFG td:first-child {
   width: 88%;
 }
 
@@ -1103,7 +1125,8 @@ button.ui-button::-moz-focus-inner {
   background-position: 0;
   background-repeat: none;
   height: 21px;
-  width: 67px;
+  width: 66px;
+  display : table-cell;
 }
 
 .ui-icon-bubba-switch.ui-state-disabled {
@@ -1111,7 +1134,8 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-text-comment {
-	font-size : smaller;
+	font-size : 11px;
+	line-height : 13px;
 }
 
 div.hotfix {
@@ -1147,6 +1171,16 @@ div.hotfix * {
   vertical-align: middle;
 }
 
+#SETCLOCK select,#SETCLOCK input[type=text] {
+	width : 200px;
+}  
+
+#settings select#unitselector{
+	width : 250px;
+}
+#settings select#unitselector option{
+	width : 100%
+}
 
 #network #firewall select {
     width:100%;
@@ -1212,10 +1246,6 @@ p {
 .ui-inset {
   padding-left: 1.25em;
 }
-.ui-table-sublevel-1 {
-	padding-left: 2em;
-	font-size: .95em;
-}
 
 #status_mark {
   cursor: pointer!important;
@@ -1254,7 +1284,7 @@ div.mount {
 
 table.partitions {
   font-size: 1em;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   width: 100%;
 }
@@ -1380,13 +1410,26 @@ div.text label {
   margin-right: 15px;
 }
 
-.ui-filemanager-information-panel {
+.ui-filemanager-information-panel, .ui-network-information-panel {
   background: #efdfad;
   border: 2px solid #dfcf9d;
-  height: 3em;
-  position: absolute;
   opacity: .95;
   text-align: center;
+}
+.ui-filemanager-information-panel {
+  position: absolute;
+  height: 3em;
+  width : 90%;
+}
+.ui-network-information-panel {
+	padding-top : 5px;
+	padding-bottom : 5px;
+	font-weight : 700;
+	margin-bottom : 10px;
+}
+
+.ui-network-information-panel a {
+	color : #506AB2;
 }
 
 #fn-filemanager-action-panel {
@@ -1514,6 +1557,8 @@ div.text label {
   height: 12px;
   overflow: hidden;
   width: 19px;
+  margin-top : 8px;
+  margin-bottom : 8px;
 }
 
 .ui-icon-arrowthick-1-e {
@@ -1563,10 +1608,13 @@ button:hover,input[type=button],input[type=submit],input[type=reset],.ui-fileman
   cursor: pointer;
 }
 
-thead tr.ui-header th,#filetable th {
+thead tr.ui-header th {
   text-align: left;
 }
-
+.ui-filemanager th {
+	font-size : 14px;
+  text-align: left;
+}
 table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   float: right;
 }
@@ -1576,7 +1624,7 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
 }
 
 .ui-header,.ui-filemanager-state-header {
-  background-color: #e5e5e5;
+  background-color: #ddd;
   color: #000;
   padding-left: 1.2em;
 }
@@ -1640,6 +1688,7 @@ table.typetable > tbody > tr > td,table.disks > tbody > tr > td,div.text input {
 .ui-expandable {
 	position: relative;
 	cursor: pointer !important;
+	margin-bottom : 15px;
 }
 .ui-expandable .ui-expandable-icon {
 	position: absolute;

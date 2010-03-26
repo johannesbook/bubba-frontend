@@ -1,16 +1,13 @@
-<form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">
-<table id="table-network-wan">
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('WAN')?></td></tr>
-	<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom") { ?>
-		<tr>
-			<td ></td>
-			<td  colspan="3" >
-				<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
-				<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
-			</td>
-		</tr>
-	<? } ?>
+<div class="ui-network-information-panel">
+<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
+	<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
+	<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
+<? endif ?>
+</div>
 
+<form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">
+<table id="table-network-wan" class="ui-table-outline">
+  <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('WAN')?></td></tr>
 	<tr>
 		<td >
 		<input type="radio" class="checkbox_radio" name='netcfg' value='dhcp' onclick="dhcp_onclick()" <?=$dhcp?"checked=\"checked\"":""?>/>

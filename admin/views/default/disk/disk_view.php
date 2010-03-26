@@ -1,5 +1,5 @@
 
-<table class="disks">
+<table class="disks ui-table-outline">
 <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Disk information')?></td></tr>
 <tr class="ui-header">
 	<th></th>
@@ -56,7 +56,7 @@
 <?endforeach?>
 </table>
 
-<table class="typetable">
+<table class="typetable ui-table-outline">
 <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Partition information')?></td></tr>
 <tr class="ui-header">
 	<th class="colorcode"></th>

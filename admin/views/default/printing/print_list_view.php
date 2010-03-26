@@ -1,4 +1,4 @@
-<table id="fn-printing-list" class="ui-table ui-table-list">
+<table id="fn-printing-list" class="ui-table ui-table-list ui-table-outline">
 <thead>
 <tr>
 	<th colspan="5" class="ui-state-default ui-widget-header"><?=t('printing-title')?></th>
@@ -17,7 +17,7 @@
 <tr>
 <!-- 5 with state -->
 <td colspan="4">
-<button id="fn-printing-list-add"><?=t("printing-add-button-label")?></button>
+<button class="submit" id="fn-printing-list-add"><?=t("printing-add-button-label")?></button>
 </td>
 </tr>
 </tfoot>

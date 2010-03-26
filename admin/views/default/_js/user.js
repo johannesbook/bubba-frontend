@@ -53,7 +53,8 @@ if( ! is_priviledged_user ) {
 								html: $('<button/>',
 									{ 
 										html: $.message('button-label-edit'),
-										click: function(){open_edit_dialog_callback.apply(dialog, [data])}
+										click: function(){open_edit_dialog_callback.apply(dialog, [data])},
+										class: "submit"
 									}
 								)
 							}

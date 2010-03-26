@@ -1,6 +1,6 @@
 
 	<form action="<?=FORMPREFIX?>/settings/identity" method="post">
-	<table class="networksettings ui-table-two-col">
+	<table class="networksettings ui-table-two-col ui-table-outline">
 		<thead>
 		<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('settings_identity_title')?></td></tr>
 		</thead>
@@ -44,7 +44,7 @@
 
 	
 	<form action="<?=FORMPREFIX?>/settings/identity" method="post">
-	<table class="networksettings ui-table-two-col" id="settings_easyfind">
+	<table class="networksettings ui-table-two-col ui-table-outline" id="settings_easyfind">
 		<thead>
 	    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('settings_identity_easyfind_title')?></td></tr>
 		</thead>
@@ -56,7 +56,7 @@
 				<input
 					id="easyfind_enabled"
 					type="checkbox"
-					class="checkbox_radio"
+					class="slide"
 					name="easyfind_enabled"
 					<?if($easyfind_enabled):?>checked="checked"<?endif?>
 

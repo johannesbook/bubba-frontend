@@ -1,5 +1,4 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/network.js?v='<?=$this->session->userdata('version')?>'"></script>
-
 <script type="text/javascript">
 
 
@@ -16,6 +15,15 @@ function disable_leasefields() {
 }
 
 $(document).ready(function(){
+	
+	$("#network tr td:nth-child(2)").addClass("col2");	
+	
+	$("input[type='submit']").click( function () {
+		$("input").attr("disabled","disabled");
+	});
+		
+
+
 
 	<?if(isset($expand) && $expand):?>
 	$("#network-firewall-advanced").removeClass("ui-helper-hidden");

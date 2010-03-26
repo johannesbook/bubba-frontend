@@ -1,6 +1,6 @@
 <form id="update" method="post">
 
-	<table>
+	<table class="ui-table-outline">
 	   <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=$action=='install'?t("settings_software_install_package",$package):t('settings_software_update_software')?></td></tr>
 	</table>
 

@@ -1,4 +1,4 @@
-<table id="fn-mail-retrieve">
+<table id="fn-mail-retrieve" class="ui-table-outline">
 <thead>
 <tr>
 	<th colspan="7" class="ui-state-default ui-widget-header"><?=t('mail-retrieve-title')?></th>
@@ -17,7 +17,7 @@
 </tbody>
 <tfoot>
 <tr><td colspan="7">
-<button id="fn-retrieve-add"><?=t("mail-retrieve-add-button-label")?></button>
+<button class="submit" id="fn-retrieve-add"><?=t("mail-retrieve-add-button-label")?></button>
 </td></tr>
 </tfoot>
 </table>

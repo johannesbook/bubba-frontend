@@ -1,4 +1,4 @@
-<table>
+<table class="ui-table-outline">
 <thead>
     <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Backup and restore settings')?></td></tr>
 </thead>

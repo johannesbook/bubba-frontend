@@ -3,7 +3,7 @@
 ?>
 <form id="OTHCFG" action="<?=FORMPREFIX?>/network/update_profile" method="post">
 
-	<table class="networksettings">
+	<table class="networksettings ui-table-outline">
 	    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t("Network profile")?></td></tr>
 		<? if($custom): ?>
 		<tr>

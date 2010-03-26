@@ -23,6 +23,7 @@ $(document).ready( function() {
 	
   if( wlan_configurable ) {
       $("#wLANCFG :disabled").removeAttr("disabled");
+      $("#wLANCFG .ui-icon-bubba-switch").removeClass("ui-state-disabled");
 	  if( ! capabilities["RX_GF"] ) {
 		  $("#mode_greenfield").attr("disabled","disabled");
 	  }

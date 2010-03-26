@@ -1,4 +1,8 @@
-<div class="ui-state-default ui-widget-header ui-div-header"><?=t('Show logs')?></div>
+<table class="ui-table-outline">
+<thead>
+    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Show logs')?></td></tr>
+</thead>
+</table>
 <div class="ui-inset">
 	<form action="<?=FORMPREFIX?>/settings/logs" method="post" id="settings_logs">
 	<select name="log" id="settings_log">

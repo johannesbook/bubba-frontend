@@ -14,8 +14,8 @@
 
 <div id="login_more_info">
     <span>For more information:</span>
-    <a href="/manual" target="_blank">Manual</a>/
-    <a href="http://forum.excito.net" target="_blank">Forum</a>/
+    <a href="/manual" target="_blank">Manual</a>|
+    <a href="http://forum.excito.net" target="_blank">Forum</a>|
     <a href="http://www.excito.com/bubba/support/" target="_blank">Support &amp; Contact</a>
     <a href="http://www.excito.com" alt="Excito homepage" target="_blank"><img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png"/></a>
 </div>

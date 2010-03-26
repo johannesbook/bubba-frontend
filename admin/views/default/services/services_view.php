@@ -1,13 +1,13 @@
 
 <form action="<?=FORMPREFIX?>/services" method="post">
-<table>   
+<table class="ui-table-outline">   
    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('File sharing')?></td></tr>
    <tr>
-      <td class="ui-services-indent"><label for="">FTP</label></td>
+      <td><label for="">FTP</label></td>
       <td ><input name="ftp_enabled" type="checkbox"  value="1" <?= $ftp_status?"":"checked=\"checked\""?>/></td>
    </tr>
    <tr>
-      <td class="ui-table-sublevel-1"><label for=""><?=t('Anonymous FTP access')?></td>
+      <td class="ui-indent1"><label for=""><?=t('Anonymous FTP access')?></td>
       <td ><input name="anon_ftp" type="checkbox"  value="1" <?= $anon_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
@@ -15,12 +15,12 @@
 	<td ><input name="afp_enabled" type="checkbox"  value="1" <?= $afp_status?"checked=\"checked\"":""?>/></td>
    </tr>  
    <tr>
-   	<td><label for="">Samba</label></td>
+   	<td><label for="">Windows file share</label></td>
 	<td ><input name="samba_enabled" type="checkbox"  value="1" <?= $samba_status?"checked=\"checked\"":""?>/></td>
    </tr>
 </table>
 
-<table>      
+<table class="ui-table-outline">      
    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Streaming')?></td></tr>
    <tr>
       <td><label for=""><?=t('UPNP streaming')?></label></td>
@@ -44,7 +44,7 @@
    </tr>	 
 </table>
 
-<table>      
+<table class="ui-table-outline">      
 	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Email')?></td></tr>
    <tr>
       <td><label for=""><?=t('Send and recieve')?></label></td>
@@ -60,7 +60,7 @@
    </tr>		  
 </table>
 
-<table>      
+<table class="ui-table-outline">      
 	<tr><td colspan="2" class="ui-state-default ui-widget-header" style="margin-top:1em;"><?=t('Other')?></td></tr>
    <tr>
       <td><label for=""><?=t('Printing')?></label></td>

@@ -1,5 +1,5 @@
 <form action="<?=FORMPREFIX?>/mail/server_update" method="post" id="frm_mail_server_settings">
-<table>
+<table class="ui-table-outline">
 	<thead>
 	<tr>
 		<th 
@@ -93,7 +93,7 @@
 
 
 <form action="<?=FORMPREFIX?>/mail/mc_update" method="post" id="frm_mail_domaincontroller_settings">
-<table>
+<table class="ui-table-outline">
 	<thead>
 	<tr>
 		<th 

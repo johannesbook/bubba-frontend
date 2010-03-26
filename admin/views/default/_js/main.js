@@ -197,15 +197,11 @@ function piechart(chart_canvas) {
           }
 }
 
-$(document).load( function() {
-
-		$('.jclock').jclock();
-	
-});
 
 
 $(document).ready( function() {
 	
+		$('.jclock').jclock();
 
 		// Expandable divs, first div is header, next is body
 		$(".ui-expandable").prepend($('<div/>',{'class': "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));
@@ -238,6 +234,18 @@ $(document).ready( function() {
 				
 			});
 		});
+		var iCheckbox_options = {
+			switch_container_src: config.prefix+'/views/'+config.theme+'/_img/bubba_switch_container.png',
+			class_container: 'ui-icon-bubba-switch-container',
+			class_switch: 'ui-icon-bubba-switch',
+			switch_speed: 50,
+			switch_swing: -65,
+			checkbox_hide: true,
+			switch_height: 21,
+			switch_width: 127
+		};
+		$(':input[type=checkbox].slide').iCheckbox( iCheckbox_options );
+
 	});
 (
 	function($) {

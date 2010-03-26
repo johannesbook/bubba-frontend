@@ -1,7 +1,7 @@
 <div id="fn-filemanager-information-panel" class="ui-helper-hidden ui-filemanager-information-panel"></div>
 <div id="fn-filemanager-action-panel" class="ui-helper-hidden ui-action-panel"></div>
 
-<table id="filetable">
+<table id="filetable" class="ui-table-outline">
 	<thead>
 		<tr class="ui-state-default ui-widget-header">
 			<th></th>

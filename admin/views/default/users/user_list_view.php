@@ -1,5 +1,5 @@
 <?if($show_allusers):?>
-<table id="fn-users-list">
+<table id="fn-users-list" class="ui-table-outline">
 <thead>
 <tr>
 	<th colspan="4" class="ui-state-default ui-widget-header"><?=t('users-title')?></th>
@@ -16,7 +16,7 @@
 <tfoot>
 <?if($show_adduser):?>
 <tr><td colspan="4">
-<button id="fn-users-list-add"><?=t("users-add-button-label")?></button>
+<button class="submit" id="fn-users-list-add"><?=t("users-add-button-label")?></button>
 </td></tr>
 <?endif?>
 </tfoot>

@@ -1,8 +1,15 @@
-<?if (isset($success) && !$success):?>
-<?=t('Update failure')?><br />
-<?endif?>
-
 <script language ="JavaScript">
+
+$(document).ready(function(){
+
+	$("input[type='submit']").click( function () {
+		$("input").attr("disabled","disabled");
+	});
+		
+});
+
+
+
 
 function SubmitForm(form_to_submit) {
 	var myform = getElementByName(form_to_submit);
@@ -101,41 +108,41 @@ function copy_fields(formid) {
 </script>
 
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
-<table id="firewall">
+<table id="firewall" class="ui-table-outline">
 	<thead>
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Allow external (WAN) access Bubba services')?></td></tr>
+    <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('Allow external (WAN) access Bubba services')?></td></tr>
 	</thead>
 	<tbody>
 	<tr>
-		
 		<td>
 			<?=t('SSH')?> (Port 22)
 		</td>
 		<td>
-			<input type="checkbox" name="allowSSH" <?if($allowSSH) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowSSH" <?if($allowSSH) echo "checked=\"checked\""?>/>
 		</td>
-		
+	</tr>
+	<tr>
 		<td>
 			<?=t('Email server')?> (Port 25)
 		</td>
 		<td>
-			<input type="checkbox" name="allowMail" <?if($allowMail) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowMail" <?if($allowMail) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
 	<tr>
-		
 		<td>
 			<?=t('WWW')?> (HTTP / HTTPS Ports 80 / 443)
 		</td>
 		<td>
-			<input type="checkbox" name="allowWWW" <?if($allowWWW) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowWWW" <?if($allowWWW) echo "checked=\"checked\""?>/>
 		</td>
-		
+	</tr>
+	<tr>
 		<td>
 			<?=t('Email')?> (IMAP / IMAPS Ports 143 / 993)
 		</td>
 		<td>
-			<input type="checkbox" name="allowIMAP" <?if($allowIMAP) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowIMAP" <?if($allowIMAP) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
 	<tr>
@@ -143,29 +150,29 @@ function copy_fields(formid) {
 			<?=t('FTP')?> (Port 21)
 		</td>
 		<td>
-			<input type="checkbox" name="allowFTP" <?if($allowFTP) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowFTP" <?if($allowFTP) echo "checked=\"checked\""?>/>
 		</td>
-		
+	</tr>
+	<tr>
 		<td>
 			<?=t('Downloader')?> (Ports 10000-14000)
 		</td>
 		<td>
-			<input type="checkbox" name="allowTorrent" <?if($allowTorrent) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowTorrent" <?if($allowTorrent) echo "checked=\"checked\""?>/>
 		</td>
 	</tr>
-	<tr>		
+	<tr>
 		<td>
 			<?=t('Respond to ping')?> (ICMP type 8)
 		</td>
 		<td>
-			<input type="checkbox" name="allowPing" <?if($allowPing) echo "checked=\"checked\""?>/>
+			<input class="slide" type="checkbox" name="allowPing" <?if($allowPing) echo "checked=\"checked\""?>/>
 		</td>
-		<td width="20" colspan="2"></td>
 	</tr>
 	</tbody>
 	<tfoot>
-	<tr><td colspan="4">
-		<input type="submit" value='<?=t('Update')?>' name='update'/>
+	<tr><td>
+		<input class="slide" type="submit" value='<?=t('Update')?>' name='update'/>
 	</td></tr>
 	</tfoot>
 	
@@ -177,7 +184,7 @@ function copy_fields(formid) {
 <div id="network-firewall-advanced" class="ui-helper-hidden">
 
 <form id="PORTCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
-<table id="firewall">
+<table id="firewall" class="ui-table-outline">
 	<tbody>
 	<tr>
 		<td colspan="4">
@@ -192,44 +199,38 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('Source IP')?>
-		</td>
-		<td>
-			<?=t('Public port')?>
-		</td>
-		<td>
-			<?=t('Private port')?>
-		</td>
-		<td>
-			<?=t('Private IP')?>
-		</td>
-		<td>
-			<?=t('Protocol')?>
-		</td>
-	</tr>
-	<tr>
-		<td>
 			<?
 			if(isset($new_port["source"]))
 				if(!$new_port["source"])
 					$new_port["source"] = "all";
 			?>
+			<?=t('Source IP')?><br>
 			<input type="text" name="source" size="15" <?=isset($err_portforward["source"])?"class=\"err\" ":""?><?=isset($new_port["source"])?"value=\"".$new_port["source"]."\"":"value=\"all\""?>/>
 		</td>
 		<td>
+			<?=t('Public port')?><br>
 			<input type="text" name="dport" size="11" <?=isset($err_portforward["dport"])?"class=\"err\" ":""?><?=isset($new_port["dport"])?"value=\"".$new_port["dport"]."\"":""?>/>
 		</td>
 		<td>
+			<?=t('Private port')?><br>
 			<input type="text" name="to_port" size="11" <?=$disabled?> <?=isset($err_portforward["to_port"])?"class=\"err\" ":""?><?=isset($new_port["to_port"])?"value=\"".$new_port["to_port"]."\"":""?>/>
 		</td>
 		<td>
+			<?=t('Private IP')?><br>
 			<input type="text" name="to_ip" size="15" <?=$disabled?> <?=isset($err_portforward["to_ip"])?"class=\"err\" ":""?><?=isset($new_port["to_ip"])?"value=\"".$new_port["to_ip"]."\"":""?>/>
 		</td>
 		<td>
+			<?=t('Protocol')?><br>
 			<select name="protocol">
 				<option value="tcp">TCP</option>
 				<option value="udp">UDP</option>
 			</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<?=t('Public port range accepted as start-port:stop-port')?><br />
+			<?=t('Private port is start port if public port range entered')?><br />
 		</td>
 	</tr>
 	<tr>
@@ -272,12 +273,6 @@ function copy_fields(formid) {
 
 	</tbody>
 	<tfoot>
-	<tr>
-		<td colspan="6" class="legend">
-			<?=t('Public port range accepted as start-port:stop-port')?><br />
-			<?=t('Private port is start port if public port range entered')?><br />
-		</td>
-	</tr>
 	<tr><td colspan="6">
 		<input type="submit" value='<?=t('Update')?>' name='newport'/>
 	</td></tr>
@@ -287,7 +282,7 @@ function copy_fields(formid) {
 </form>
 
 
-<table  class="ui-firewall-defined">
+<table  class="ui-firewall-defined ui-table-outline">
 	<thead>
     <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('User defined open / forwarded ports')?></td></tr>
 	<tr>

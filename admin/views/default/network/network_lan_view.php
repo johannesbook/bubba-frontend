@@ -1,19 +1,15 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/periodicalUpdate.js?v='<?=$this->session->userdata('version')?>'"></script>
-<form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
-<table id="table-network-lan">
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('LAN')?></td></tr>
-	<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
-		<tr>
-			<td valign="top"></td>
-			<td valign="top" colspan="3" >
+<div class="ui-network-information-panel">
+<? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
 				<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
 				<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
-			</td>
-		</tr>
-	<? endif ?>
+<? endif ?>
+</div>
+<form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
+<table id="table-network-lan" class="ui-table-outline">
+    <tr><td colspan="5" class="ui-state-default ui-widget-header"><?=t('LAN')?></td></tr>
 
 	<tr>
-		<td valign="top">
+		<td>
         <input 
             id="net_dhcp" 
             type="radio" 
@@ -24,13 +20,13 @@
             <?if($dhcp):?>checked="checked"<?endif?>
         />
 		</td>
-		<td valign="top" colspan="3">
+		<td colspan="3">
 			<label for=""><?=t('Obtain IP-address automatically')?> (DHCP)</label>
 		</td>
 	</tr>
 	
 	<tr>
-		<td valign="top">
+		<td>
             <input 
                 id="net_static" 
                 type="radio" 
@@ -41,7 +37,7 @@
                 <?=$dhcp?"":"checked=\"checked\""?>
             />
 		</td>
-		<td valign="top" colspan="3">
+		<td colspan="3">
 			<label for=""><?=t('Use static IP address settings')?></label>:
 		</td>
 	</tr>
@@ -213,23 +209,22 @@
                 size='3' 
                 maxlength='3'
             />
-            <br>&nbsp;
         </td>
 		<td />
 	</tr>
 	<tr>
-		<td></td>
-		<td valign="top" colspan="3">
+		<td />
+		<td><label for="cb_dns"><?=t('Enable DNS service')?></label></td>
+		<td colspan="2">
         <input 
             type="checkbox" 
-            class="dnsmasq" 
+            class="slide dnsmasq" 
             id="cb_dns" 
             <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[running]' 
             value='dns' 
             <?if(isset($dnsmasq_settings["running"]) && $dnsmasq_settings["running"]):?>checked="checked"<?endif?>
         />
-			<label for="cb_dns"><?=t('Enable DNS service')?></label>
 		</td>
 <? if($update && $err_dnsmasq["dns"]){ ?>
 		<td>* <?=t("Error starting/stopping DNS service")?></td>
@@ -237,19 +232,18 @@
 	</tr>
 
 	<tr>
-		<td></td>
-		<td valign="top" colspan="2">
-			&nbsp;
+		<td />
+		<td class="ui-indent1"><label for="dhcpd"><?=t('Enable DHCP server')?></label></td>
+		<td colspan="2">
         <input 
             type="checkbox" 
-            class="dnsmasq" 
+            class="slide dnsmasq" 
             id="dhcpd" 
             <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[dhcpd]' 
             value='dhcpd' 
             <?if($dnsmasq_settings["dhcpd"]):?>checked="checked"<?endif?>
         />
-			<label for=""><?=t('Enable DHCP server')?></label>
 		</td>
 		<td>
 <? if($update && $err_dnsmasq["dhcpd"]){ ?>
@@ -261,7 +255,7 @@
 
 	<tr>
 		<td></td>
-		<td><label for=""><?=t('Lease range start')?></label></td>
+		<td class="ui-indent1"><label for=""><?=t('Lease range start')?></label></td>
         <td>
             <input 
                 class="dnsmasq ip" 
@@ -299,7 +293,7 @@
       </tr>
 		 	<tr>
 				<td></td>
-				<td><label for=""><?=t('Lease range end')?></label></td>
+				<td class="ui-indent1"><label for=""><?=t('Lease range end')?></label></td>
         <td>
 
         <input
@@ -344,16 +338,18 @@
 	
 	<tr>
         <td>
-            <input 
-                type="checkbox" 
-                <?if($jumbo):?>checked="checked"<?endif?> 
-                class="" 
-                name="jumbo" 
-                value="1"
-            />
         </td>
-		<td colspan="2"><label for=""><?=t('Enable jumbo frames. Please read manual before enabling.')?></label></td>
-		<td></td>
+		<td><label for="jumbo"><?=t('Enable jumbo frames.')?> <span class="ui-text-comment"><?=t('(Please read manual before enabling)')?></span></label></td>
+		<td>
+			<input 
+				id="jumbo"
+			  type="checkbox" 
+			  <?if($jumbo):?>checked="checked"<?endif?> 
+			  class="slide" 
+			  name="jumbo" 
+			  value="1"
+			/>
+		</td>
 	</tr>
 
 	<tr>
@@ -367,17 +363,22 @@
 </form>
 
 
-<table border="1" cellspacing="0" cellpadding="1">
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('DHCP leases')?></td></tr>
-	<tr>
-		<td><?=t("Hostname")?></td><td><?=t("IP-address")?></td><td><?=t("MAC-address")?></td><td><?=t("Lease expires")?></td>
-	</tr>
-	<?
-	foreach ($dhcpd_leases as $mac => $lease) { ?>
-		<tr>
-			<td><?=$lease["hostname"]?></td><td><?=$lease["ip"]?></td><td><?=$mac?></td><td><?=date("M jS, H:i",$lease["exp_time"])?></td>
+<table class="ui-table-outline">
+	<thead>
+
+    <tr><th colspan="4" class="ui-state-default ui-widget-header"><?=t('DHCP leases')?></td></tr>
+		<tr class="ui-header">
+			<th><?=t("Hostname")?></th><th><?=t("IP-address")?></th><th><?=t("MAC-address")?></th><th><?=t("Lease expires")?></th>
 		</tr>
-	<? } ?>
+	</thead>
+	<tbody>
+		<?
+		foreach ($dhcpd_leases as $mac => $lease) { ?>
+			<tr>
+				<td><?=$lease["hostname"]?></td><td><?=$lease["ip"]?></td><td><?=$mac?></td><td><?=date("M jS, H:i",$lease["exp_time"])?></td>
+			</tr>
+		<? } ?>
+	</tbody>
 	
 </table>
 

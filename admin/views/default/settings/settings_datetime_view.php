@@ -1,6 +1,6 @@
 <form id="SETCLOCK" action="<?=FORMPREFIX?>/settings/setdate" method="post">
 	
-	<table>
+	<table class="ui-table-outline">
 		<thead>
 		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Date and time')?></td></tr>
 		</thead>
@@ -27,12 +27,12 @@
 				</td>
 			</tr>		
 			<tr>
-				<td><?=t('Set time automatically')?></td>
+				<td><?=t('Auto adjust date and time')?></td>
 				<td>
 					<input
 						id="ntp" 
 						type="checkbox"
-						class="checkbox_radio"
+						class="slide"
 						name="use_ntp"
 						<?if(isset($use_ntp)):?>checked="checked"<?endif?>
 

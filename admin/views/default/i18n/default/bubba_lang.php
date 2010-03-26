@@ -195,7 +195,7 @@ $lang['disk_raid_recover_broken_internal_no_raid_message'] = "No disks with RAID
 $lang['wlan_title'] = 'Wireless';
 $lang['wlan_title_ssid'] = 'Network name (SSID)';
 $lang['wlan_title_ssid_popup'] = 'The network name is used to connect to the Bubba|2 via a wireless network, often called SSID';
-$lang['wlan_title_enable'] = 'Enable wireless';
+$lang['wlan_title_enable'] = 'Wireless access point';
 $lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your Bubba|2';
 
 $lang['wlan_title_advanced'] = 'Advanced wireless settings';
@@ -285,7 +285,7 @@ $lang['settings_identity_hostname_label'] = "Hostname";
 $lang['settings_identity_workgroup_label'] = "Workgroup";
 $lang['settings_identity_update_hostname_workgroup_label'] = "Update hostname and workgroup";
 $lang['settings_identity_easyfind_title'] = "Easyfind options";
-$lang['settings_identity_easyfind_message'] = "Use 'Easyfind' to locate your Bubba";
+$lang['settings_identity_easyfind_message'] = "'Easyfind' location service";
 $lang['settings_identity_update_easyfind_label'] = "Update Easyfind";
 
 //  ---------- Users  -----
