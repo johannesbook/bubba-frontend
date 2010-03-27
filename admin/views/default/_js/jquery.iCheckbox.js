@@ -27,12 +27,10 @@
 (
 	function() {
 		var original = jQuery.fn.attr;
-		jQuery.fn.attr = function(key, value) {
-			var old = original.apply( this, [ key ] );
-			var ret = original.apply( this, [ key, value ] );
-			if( typeof value != 'undefined' && old != key ) {
-				jQuery(this).trigger('attrChanged', [key, value]);
-			} else if( typeof value != 'undefined' )  {
+		jQuery.fn.attr = function(key, value ) {
+			var ret = original.apply( this, arguments  );
+			if( typeof value != 'undefined' ) {
+				jQuery(this).trigger('attrChanged', arguments);
 			}
 			return ret;
 		}

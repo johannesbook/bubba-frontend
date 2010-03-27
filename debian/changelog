@@ -1,3 +1,9 @@
+bubba-frontend (1.9.26) claire; urgency=low
+
+  * fixed bug in iCheckbox which really fnucked up it all 
+
+ -- Carl Fürstenberg <carl@excito.com>  Sat, 27 Mar 2010 17:36:33 +0100
+
 bubba-frontend (1.9.25) claire; urgency=low
 
   * reanimate the menu
