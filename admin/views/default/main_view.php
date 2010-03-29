@@ -153,12 +153,13 @@ $(document).ready(function(){
 
 	
 	$('#sideboard_switch').click(function(event) {
-		$('#sideboard').animate({'width': 'toggle'},600, 'easeInOutCubic');
 		if($('#sideboard_switch').hasClass("ui-icon-open")) {
+			$('#sideboard').show('slide', {duration: 600, direction: 'right', easing: 'easeInOutCubic'});
 			$('#sideboard_switch').addClass('ui-icon-close');
 			$('#sideboard_switch').removeClass('ui-icon-open');		
 			$.get(config.prefix+"/users/config/json/show_sideboard/1");
 		} else {
+			$('#sideboard').hide('slide', {duration: 600, direction: 'right', easing: 'easeInOutCubic'});
 			$('#sideboard_switch').addClass('ui-icon-open');
 			$('#sideboard_switch').removeClass('ui-icon-close');		
 			$.get(config.prefix+"/users/config/json/show_sideboard/0");
