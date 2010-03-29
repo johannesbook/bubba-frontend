@@ -1,8 +1,12 @@
 bubba-frontend (1.9.26) claire; urgency=low
 
+  [ Carl Fürstenberg ]
   * fixed bug in iCheckbox which really fnucked up it all 
 
- -- Carl Fürstenberg <carl@excito.com>  Sat, 27 Mar 2010 17:36:33 +0100
+  [ Tor Krill ]
+  * Fix character encoding in filename in download and download as zip 
+
+ -- Tor Krill <tor@excito.com>  Mon, 29 Mar 2010 10:25:16 +0200
 
 bubba-frontend (1.9.25) claire; urgency=low
 
