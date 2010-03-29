@@ -3,11 +3,12 @@ bubba-frontend (1.9.26) claire; urgency=low
   [ Carl Fürstenberg ]
   * fixed bug in iCheckbox which really fnucked up it all 
   * change animation of sideboard to work as well in safari 
+  * force music to be opened in it's own window 
 
   [ Tor Krill ]
   * Fix character encoding in filename in download and download as zip 
 
- -- Carl Fürstenberg <carl@excito.com>  Mon, 29 Mar 2010 16:22:05 +0200
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 29 Mar 2010 17:18:28 +0200
 
 bubba-frontend (1.9.25) claire; urgency=low
 

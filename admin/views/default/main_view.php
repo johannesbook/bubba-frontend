@@ -139,6 +139,25 @@ $(document).ready(function(){
 			login_dialog.dialog('destroy');
 		}
 	});
+	$('.fn-menubar-link-music').click(function(event){
+			event.preventDefault();
+			// we need to stop here
+			event.stopImmediatePropagation();
+			$.throbber.show();
+			$(
+				window.open(
+					event.target.href,
+					"musicWindow",
+					"menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"
+				)
+			)
+			.ready(function(){
+				$.throbber.hide();
+			}).focus();
+
+			//return false;
+		}
+	);	
 	$(".ui-login-menubar-a").mouseout(function(e) {
 		$(this).find("div").hide();
 	});	
