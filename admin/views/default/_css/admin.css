@@ -1127,7 +1127,9 @@ button.ui-button::-moz-focus-inner {
   width: 67px;
   cursor :pointer !important;
 }
-
+#body_services .ui-icon-bubba-switch-container {
+  float: right;
+}
 .ui-icon-bubba-switch {
   background-image: url(../_img/bubba_switch.png);
   background-position: 0;
