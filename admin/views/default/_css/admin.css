@@ -1065,7 +1065,7 @@ button.ui-button::-moz-focus-inner {
   -webkit-border-radius: .5em!important;
   filter: alpha(Opacity=95)!important;
   font-size: 12px;
-  opacity: .95!important;
+  opacity: .82!important;
 }
 
 .ui-help-box a {
