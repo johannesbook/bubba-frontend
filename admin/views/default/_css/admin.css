@@ -548,15 +548,6 @@ body {
   margin-bottom: 0;
 }
 
-#menu li a {
-  margin-right: 16px;
-}
-
-#menu li div {
-  display: inline;
-  width: 74px;
-}
-
 .default-icon {
   background-image: url(../_img/icons_home.png);
   background-repeat: no-repeat;

@@ -10,6 +10,8 @@ class Login extends Controller{
 	
 		$myuser=$this->input->post('username');
 		$mypass=$this->input->post('password');
+		$caller = $this->session->flashdata('caller');
+		$required_user = $this->session->flashdata('required_user');
 		$data['username']=$myuser;
 		if($myuser && $mypass){
 			// login flow.
@@ -59,9 +61,8 @@ class Login extends Controller{
 					//$this->Auth_model->Logout();
 				} else {
 					if($strip!="json"){
-						if($this->session->userdata('caller')){
-							redirect($this->session->userdata('caller'));
-							$this->session->unset_userdata('caller');
+						if($caller){
+							redirect($caller);
 						}else{
 							redirect('');
 						}
@@ -82,14 +83,12 @@ class Login extends Controller{
 			}
 			
 			// is there a redirect uri? Then show the login-page.
-			if($this->session->userdata('caller')) {
+			if($caller) {
 				$data["show_login"] = true;
-				$data["redirect_uri"] = FORMPREFIX.$this->session->userdata('caller');
-				$this->session->unset_userdata('caller');
+				$data["redirect_uri"] = FORMPREFIX.$caller;
 				$data["redirect_user"] = $this->session->userdata('user');
-				if($this->session->userdata('required_user')) {
-					$data["required_user"] = $this->session->userdata('required_user');
-					$this->session->unset_userdata('required_user');
+				if($required_user) {
+					$data["required_user"] = $required_user;
 				}
 			}
 			$conf=parse_ini_file("/home/admin/.bubbacfg");

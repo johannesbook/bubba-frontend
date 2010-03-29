@@ -123,7 +123,7 @@ $(document).ready(function(){
 		});
   
 	  $(window).keydown(function(e) {
-		  if(e.keyCode == 77 && (e.target.nodeName == "HTML" || $(e.target).hasClass('ui-dialog-menu'))) {
+		  if(e.which == 77 && (e.target.nodeName == "BODY" || e.target.nodeName == "HTML" || $(e.target).hasClass('ui-dialog-menu'))) {
 		  	display_menu();
 		  }
 		});

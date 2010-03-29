@@ -108,8 +108,8 @@ class Auth_model extends Model{
 		if( $this->session->userdata('user') == $user ){
 			return;
 		}
-		$this->session->set_userdata('caller', $this->uri->uri_string());
-		$this->session->set_userdata('required_user', $user);
+		$this->session->set_flashdata('caller', $this->uri->uri_string());
+		$this->session->set_flashdata('required_user', $user);
 		redirect('login');
 		exit();	
 	}
@@ -118,7 +118,7 @@ class Auth_model extends Model{
 		if( $this->session->userdata('user') != $user ){
 			return;
 		}
-		$this->session->set_userdata('caller', $this->uri->uri_string());
+		$this->session->set_flashdata('caller', $this->uri->uri_string());
 		redirect('login');
 		exit();	
 	}
@@ -127,7 +127,7 @@ class Auth_model extends Model{
 		if($this->CheckAuth()){
 			return;
 		}
-		$this->session->set_userdata('caller', $this->uri->uri_string());
+		$this->session->set_flashdata('caller', $this->uri->uri_string());
 		redirect('login');
 		exit();
 	}
