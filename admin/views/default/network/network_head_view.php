@@ -15,6 +15,11 @@ function disable_leasefields() {
 }
 
 $(document).ready(function(){
+
+	<?if(isset($dhcpd) && !$dhcpd):?>
+		$("#cb_dns").attr("disabled","disabled");
+		$("#dhcpd").attr("disabled","disabled");
+	<?endif?> 
 	
 	$("#network tr td:nth-child(2)").addClass("col2");	
 	

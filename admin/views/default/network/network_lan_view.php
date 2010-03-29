@@ -220,7 +220,6 @@
             type="checkbox" 
             class="slide dnsmasq" 
             id="cb_dns" 
-            <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[running]' 
             value='dns' 
             <?if(isset($dnsmasq_settings["running"]) && $dnsmasq_settings["running"]):?>checked="checked"<?endif?>
@@ -239,7 +238,6 @@
             type="checkbox" 
             class="slide dnsmasq" 
             id="dhcpd" 
-            <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
             name='dnsmasq[dhcpd]' 
             value='dhcpd' 
             <?if($dnsmasq_settings["dhcpd"]):?>checked="checked"<?endif?>
@@ -353,7 +351,7 @@
 	</tr>
 
 	<tr>
-	<td colspan="2">
+	<td colspan="4">
 		<input type="submit" value='<?=t('Update')?>' name='update'/>
 	</td>
 </tr>

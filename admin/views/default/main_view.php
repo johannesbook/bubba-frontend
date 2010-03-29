@@ -130,7 +130,7 @@ $(document).ready(function(){
 
 
   	$(".ui-login-menubar-a").mouseover(function(e) {	
-		$(this).find("span").show();
+		$(this).find("div").show();
 	});	
 
 	$(".fn-login-dialog-a").click(function(e) {
@@ -140,7 +140,7 @@ $(document).ready(function(){
 		}
 	});
 	$(".ui-login-menubar-a").mouseout(function(e) {
-		$(this).find("span").hide();
+		$(this).find("div").hide();
 	});	
 
 
@@ -217,23 +217,25 @@ if(isset($head)) {
 ?>
 </head>
 <body id="body_<?=$this->uri->segment($this->uri->total_segments())?>">
+<div id="bg-right"></div>
+
     <table id="wrapper">	    
     
 		<tr>
 		<td id="topnav">
 		<div id="topnav-content">
 		<div id="topnav-content-inner">
+				<span id="topnav_status">
+	
             <?if ($this->session->userdata("valid")) { ?>
-	            <span id="topnav_status"><?=t("topnav-authorized",$this->session->userdata("user"))?></span>
+	            <?=t("topnav-authorized",$this->session->userdata("user"))?>
             <?} else {?>
-	            <span id="topnav_status"><?=t("topnav-not-authorized")?></span>
+	            <?=t("topnav-not-authorized")?>
             <? } ?>
+        </span>
             <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text ui-helper-hidden"><?=t("Logout")?></div></button>
-            
             <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
-            
             <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text" style="display:none"><?=t("Help")?></div></button>
-            
 		</div>
 		</div>
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
@@ -264,11 +266,13 @@ if(isset($head)) {
 		</td> <!-- sideboard -->
 		</tr>
     </table> <!-- wrapper -->
+<?/*
     <?if( $this->uri->total_segments() && ($this->uri->segment(1) != "login") ) :?>
 	    <div id="menu-trigger">
 	    	<button id="fn-menu-trigger" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-menu-trigger"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
 	    </div>
 	  <?endif?>
+*/?>
 		<?=$dialog_menu?>
 
   <?if(isset($wizard) && $wizard):?>

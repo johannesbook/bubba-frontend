@@ -99,7 +99,7 @@ function dialog_login(e) {
 $(document).ready(function(){
 	
 	<? if(!$this->session->userdata('valid')):?>
-		$('#fn-topnav-logout span:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
+		$('#fn-topnav-logout div:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
 		$('#s-topnav-logout').text('<?=t("Login")?>');
 		
 	<? endif ?>

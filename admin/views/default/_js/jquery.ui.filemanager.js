@@ -138,7 +138,7 @@ jQuery.widget("ui.filemanager", {
 	   fixedSorting: [[0, "asc"]],
 	   prevDirIcon: 'ui-icon-arrowthick-1-w',
 	   nextDirIcon: 'ui-icon-arrowthick-1-e',
-	   fileDownloadIcon: 'ui-icon-arrowthickstop-1-s',
+	   fileDownloadIcon: 'ui-icon-download-1',
 	   icons: {
 		   'dir': 'ui-icon-folder-collapsed',
 		   'file': 'ui-icon-document'
