@@ -1554,20 +1554,20 @@ div.text label {
 
 .ui-icon-download-1 {
   background-image: url(../_img/icons.png)!important;
-  background-position: -204px -257px;
+  background-position: -185px -257px;
   background-repeat: no-repeat;
   cursor: pointer!important;
   display: block;
   float: left;
   height: 19px !important;
   overflow: hidden;
-  width: 21px !important;
+  width: 16px !important;
   margin-top : 1px;
   margin-bottom : 1px;
 }
 
 .ui-filemanager .ui-filemanager-state-selected .ui-icon-download-1 {
-  background-position: -185px -257px;
+  background-position: -200px -257px;
 }
 
 .ui-icon-folder-collapsed {
