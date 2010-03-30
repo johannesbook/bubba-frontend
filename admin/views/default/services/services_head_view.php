@@ -1,6 +1,9 @@
 <script  type="text/javascript">
 
 $(document).ready(function(){
+	$("#fn-settings-form").submit(function(){
+		$.throbber.show();
+	});
 	$("input[name='ftp_enabled']").change(function() {
 		if($("input[name='ftp_enabled']").not(':disabled').is(':checked') ) {
 			$("input[name='anon_ftp']").attr('disabled',false);

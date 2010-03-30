@@ -237,6 +237,8 @@ class Mail extends Controller{
 
 		$this->Auth_model->RequireUser('admin');
 	
+		$current_mc = $this->_parse_mailcfg(get_mailcfg());
+
 		$smarthost=$this->input->post('smarthost');
 		$useauth=$this->input->post('useauth');
 		$use_plain_auth=$this->input->post('useunsecure');

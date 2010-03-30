@@ -1,3 +1,9 @@
+bubba-frontend (1.9.28) claire; urgency=low
+
+  * bugfixes (Closes: #1258, #1240, #1266) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 30 Mar 2010 18:23:44 +0200
+
 bubba-frontend (1.9.27) claire; urgency=low
 
   * use flashdata for auth data
