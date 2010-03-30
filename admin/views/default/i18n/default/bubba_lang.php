@@ -58,9 +58,9 @@ $lang['title_disk-lvm']="LVM";
 $lang['title_disk-raid']="RAID";
 $lang['title_settings-wizard']="Setup wizard";
 $lang['title_settings-identity']="Identity";
-$lang['title_settings-traffic']="Traffic";
+$lang['title_settings-traffic']="Torrent throttle";
 $lang['title_settings-date']="Date and time";
-$lang['title_settings-sysbackup']="Settings backup";
+$lang['title_settings-sysbackup']="Backup settings";
 $lang['title_settings-update']="Software update";
 $lang['title_settings-logs']="Logs";
 $lang['title_photo-albums']="Photo albums";
@@ -85,8 +85,8 @@ $lang["login-dialog-username"] = "Username";
 $lang["login-dialog-password"] = "Password";
 $lang["login-dialog-cancel"] = "Cancel";
 $lang['login-error-grantaccess'] = "Access not granted for user '%s'.";
-$lang['login-error-wanaccess'] = "Admin user not allowed to login on wan interface.";
-$lang['login-error-wanaccess-quickstart'] = "Please read quickstart guide for advice.";
+$lang['login-error-wanaccess'] = "Admin user not allowed to login on WAN interface.";
+$lang['login-error-wanaccess-quickstart'] = "Please read the users manual for advice.";
 $lang['login-error-pwd'] = "Invalid user/password combination.";
 
 /* Menu bar texts */
@@ -109,23 +109,23 @@ $lang['target_protocol'] = "Target";
 $lang['disk_action_title_extend_lvm'] = 'Extending user storage space';
 $lang['disk_action_title_create_raid'] = 'Converting system to RAID';
 $lang['disk_action_title_restore_raid'] = 'Recovering RAID';
-$lang['disk_action_title_format'] = 'Formating disk';
+$lang['disk_action_title_format'] = 'Formatting disk';
 $lang['in_sync'] = 'In sync';
 $lang['faulty'] = 'Disk error';
 $lang['active'] = 'Active';
 $lang['clean'] = 'Clean';
 
 $lang['disk_format_title'] = "Format disk";
-$lang['disk_format_error_mounts_exists_message'] = "There seems to be disks mounted, please unmount these and try again";
+$lang['disk_format_error_mounts_exists_message'] = "There seem to be disks mounted, please unmount these and try again";
 $lang['disk_format_message'] = "Please specify label for your new partition";
 $lang['disk_format_format_button_label'] = "Format disk";
 $lang['disk_format_label_label'] = "Label";
-$lang['disk_format_warning_1'] = "Formating disk will destroy all data on disk";
-$lang['disk_format_warning_2'] = "Continue with formatting the disk?";
-$lang['disk_format_format_progress_title'] = "Formating disk";
+$lang['disk_format_warning_1'] = "Formatting disk will destroy all data on disk";
+$lang['disk_format_warning_2'] = "Continue formatting the disk?";
+$lang['disk_format_format_progress_title'] = "Formatting disk";
 $lang['disk_format'] = "";
 
-$lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the data on the external device. Continue?</p> <p>Note: Removal of the new disk from the system will require a full reinstall.</p>";
+$lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the data on the new, external device. Continue?</p> <p>Note: Removal of the new disk from the system will require a full reinstall.</p>";
 $lang['disk_lvm_extend_dialog_warning_title'] = "Extend default data partition";
 $lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
 $lang['disk_lvm_extend_dialog_title'] = "Extending disk";
@@ -134,7 +134,7 @@ $lang['disk_lvm_extend_dialog_title'] = "Extending disk";
 $lang['disk-examine-disks'] = "Examining existing disks";
 $lang['disk_raid_setup_title'] = "Setup RAID array";
 $lang['disk_raid_create_label'] = "Create RAID array";
-$lang['disk_raid_create_message'] = "Set up internal disk and one external disk into a RAID mirror solution (RAID 1)";
+$lang['disk_raid_create_message'] = "Set up the internal disk and one external disk into a RAID mirror solution (RAID 1)";
 $lang['disk_raid_recover_label'] = "Recover RAID array";
 $lang['disk_raid_recover_message'] = "Recover internal disk or add a new external disk to existing RAID array";
 $lang['disk_raid_status_title'] = "RAID Status";
@@ -166,10 +166,10 @@ $lang['disk_raid_disk_faulty_remove_button_label'] = "Remove";
 # Create
 $lang['disk_raid_create_progress_title'] = "Recovering RAID array";
 $lang['disk_raid_create_title'] = "Create RAID array";
-$lang['disk_raid_create_error_mounts_exists_message'] = "There seems to be disks mounted, please unmount these and try again";
-$lang['disk_raid_create_select_disk_message'] = "Select which external disk to include in the array. For best usage an external disk with the same size is recommended";
+$lang['disk_raid_create_error_mounts_exists_message'] = "There seem to be disks mounted, please unmount these and try again";
+$lang['disk_raid_create_select_disk_message'] = "Select which external disk to include in the array. An external disk with the same size is recommended";
 $lang['disk_raid_create_warning_1'] = "Creating the RAID array will <strong>destroy all content</strong> on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage') and erase the selected external disk";
-$lang['disk_raid_create_warning_2'] = "Please make certain that you have a backup of all files";
+$lang['disk_raid_create_warning_2'] = "Please make sure that you have backup of all files";
 $lang['disk_raid_create_warning_3'] = "Continue to create RAID?";
 $lang['disk_raid_create_error_no_disks_found_message'] = "No usable disk found";
 $lang['disk_raid_create_button_label'] = "Create RAID";
@@ -183,7 +183,7 @@ $lang['disk_raid_recover_broken_external_warning_2'] = "Continue to recover RAID
 $lang['disk_raid_recover_broken_external_button_label'] = "Add disk to RAID array";
 $lang['disk_raid_recover_broken_external_no_disks_message'] = "There are no usable external disks attached, please add an external e-SATA disk and try again";
 $lang['disk_raid_recover_broken_internal_progress_title'] = "Recovering internal disk in RAID array";
-$lang['disk_raid_recover_broken_internal_mount_exists_message'] = "There seems to be disks mounted, please unmount these and try again";
+$lang['disk_raid_recover_broken_internal_mount_exists_message'] = "There seem to be disks mounted, please unmount these and try again";
 $lang['disk_raid_recover_broken_internal_message'] = "Select which external disk to recover RAID data from";
 $lang['disk_raid_recover_broken_internal_button_label'] = "Recover internal disk";
 $lang['disk_raid_recover_broken_internal_warning_1'] = "Recovering the RAID array will <strong>destroy all content</strong> on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')";
@@ -194,9 +194,9 @@ $lang['disk_raid_recover_broken_internal_no_raid_message'] = "No disks with RAID
 // Network
 $lang['wlan_title'] = 'Wireless';
 $lang['wlan_title_ssid'] = 'Network name (SSID)';
-$lang['wlan_title_ssid_popup'] = 'The network name is used to connect to the Bubba|2 via a wireless network, often called SSID';
+$lang['wlan_title_ssid_popup'] = 'The network name (also called SSID) is broadcast by Bubba and will show up on clients when browsing wireless networks.';
 $lang['wlan_title_enable'] = 'Wireless access point';
-$lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your Bubba|2';
+$lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your Bubba';
 
 $lang['wlan_title_advanced'] = 'Advanced wireless settings';
 
@@ -226,13 +226,13 @@ $lang['wlan_title_width_20MHz'] = '20MHz';
 $lang['wlan_title_width_40MHz'] = '40MHz';
 
 $lang['wlan_title_password'] = 'Password';
-$lang['wlan_title_password_popup'] = 'The WEP or WPA password that should be required to connect to the AP';
+$lang['wlan_title_password_popup'] = 'The password that will be required to connect to Bubba wirelessly';
 
 $lang['wlan_title_channel'] = 'Channel';
 $lang['wlan_title_channel_popup'] = 'The main channel to use';
 
 $lang['wlan_title_broadcast'] = 'Broadcast SSID';
-$lang['wlan_title_broadcast_popup'] = 'Whenever to broadcast the SSID';
+$lang['wlan_title_broadcast_popup'] = 'Turning this of hides the network - users have to manually type the SSID on clients';
 
 $lang['fw_title_advanced'] = 'Advanced firewall settings';
 
@@ -256,12 +256,12 @@ $lang['settings_traffic_error_set_dl_throttle'] = "Failed to set download thrott
 $lang['settings_traffic_error_set_ul_throttle'] = "Failed to set upload throttle";
 
 $lang['settings_backup_error_no_path'] = "Failed to set up mount point for backup";
-$lang['settings_backup_error_failed'] = "The system was unable to create an backup";
-$lang['settings_backup_success'] = "System backup was sucessfully created";
+$lang['settings_backup_error_failed'] = "The system was unable to create a backup";
+$lang['settings_backup_success'] = "System settings backup was sucessfully created";
 
 $lang['settings_restore_error_no_path'] = "Failed to set up mount point for restore";
 $lang['settings_restore_error_failed'] = "The system was unable to restore the system from an backup";
-$lang['settings_restore_success'] = "System was sucessfully restored";
+$lang['settings_restore_success'] = "System settings was sucessfully restored";
 
 $lang['settings_datetime_success'] = "Timezone, date and/or time was successfully updated";
 $lang['settings_datetime_error_set_timezone'] = "Failed to set timezone <strong>%s</strong>";
@@ -276,7 +276,7 @@ $lang['help_hotfix']="?page=sw_upgrade.html#hotfix";
 
 $lang['settings_identity_error_change_hostname'] = "Failed to change hostname";
 $lang['settings_identity_error_invalid_hostname'] = "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
-$lang['settings_identity_easyfind_error_fail_set_name'] = "Failed to set Easyfind name <strong>%s</strong>, probably this name is taken allready. Please try an other one";
+$lang['settings_identity_easyfind_error_fail_set_name'] = "Failed to set Easyfind name <strong>%s</strong>, this name is probably used. Please try another name";
 $lang['settings_identity_easyfind_error_invalid_name'] = "Easyfind name <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid";
 $lang['settings_identity_easyfind_error_fail_enable'] = "Failed to enable Easyfind";
 $lang['settings_identity_easyfind_error_fail_disable'] = "Failed to disable Easyfind";
@@ -305,7 +305,7 @@ $lang['users-label-shell-login'] = 'Allow shell login';
 $lang['users-add-button-label'] = 'Add new user';
 
 $lang['illegal'] = 'Illegal characters in password';
-$lang["mismatch"]='Password do not match';
+$lang["mismatch"]='Passwords do not match';
 $lang["sambafail"]='Failed to update password';
 $lang["passwdfail"]=$lang["sambafail"];
 $lang["user_update_error_auth_fail"] = "Authorization failure";
@@ -317,7 +317,7 @@ $lang["usr_existerr"] = "User already exists or is an administrational account";
 $lang["usr_nonameerr"] = "No username entered";
 $lang["usr_spacerr"] = "White space not allowed in username";
 $lang["pwd_charerr"] = "Illegal characters in password";
-$lang["usr_charerr"] = "Illegal characters in username"; 
+$lang["usr_charerr"] = "Illegal characters in username";
 $lang["usr_longerr"] = "Username to long. Max 32 characters";
 $lang["usr_createerr"] = "Error creating user";
 $lang["usr_addok"] = "User added";
@@ -341,11 +341,11 @@ $lang["filemanager-label-permission-owner"] = "Owner";
 $lang["filemanager-label-permission-owner-read"] = "read";
 $lang["filemanager-label-permission-owner-write"] = "write";
 $lang["filemanager-label-permission-owner-execute"] = "execute";
-$lang["filemanager-label-permission-group"] = "Group";
+$lang["filemanager-label-permission-group"] = "Bubba users";
 $lang["filemanager-label-permission-group-read"] = "read";
 $lang["filemanager-label-permission-group-write"] = "write";
 $lang["filemanager-label-permission-group-execute"] = "execute";
-$lang["filemanager-label-permission-other"] = "Other";
+$lang["filemanager-label-permission-other"] = "Not logged in";
 $lang["filemanager-label-permission-other-read"] = "read";
 $lang["filemanager-label-permission-other-write"] = "write";
 $lang["filemanager-label-permission-other-execute"] = "execute";
@@ -354,16 +354,16 @@ $lang["filemanager-mkdir-dialog-button-label"] = "Create directory";
 $lang["filemanager-mkdir-dialog-title"] = "Create a new directory";
 $lang["filemanager-delete-dialog-button-label"] = "Delete";
 $lang["filemanager-delete-dialog-title"] = "Delete files and directories";
-$lang["filemanager-delete-fail-message"] = "Failed to delete following files and directories: %s";
-$lang["filemanager-delete-dialog-message"] = "Are you certain that you want to delete selected files and directories?";
+$lang["filemanager-delete-fail-message"] = "Failed to delete following files/directories: %s";
+$lang["filemanager-delete-dialog-message"] = "Are you sure?";
 $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 
-$lang["filemanager-move-fail-message"] = "Failed to move following files and directories: %s";
-$lang["filemanager-album-dialog-message"] = "Are you certain you want to add selected files to the album?";
+$lang["filemanager-move-fail-message"] = "Failed to move the following files and directories: %s";
+$lang["filemanager-album-dialog-message"] = "Are you sure?";
 
-$lang["help_box_header"] = "Bubba|2 Help";
+$lang["help_box_header"] = "Bubba Help";
 
 //  ----------- Mail --------
 
@@ -387,11 +387,11 @@ $lang["printing-add-button-label"] = "Add new printer";
 $lang["printing-title"] = "Printers";
 $lang["printing-label-share"] = "Name";
 $lang["printing-label-info"] = "Description";
-$lang["printing-label-location"] = "Location";
+$lang["printing-label-location"] = "Physical Location";
 $lang["printing-label-state"] = "State";
 $lang["printing-list-edit-printer-label"] = "Printer";
 $lang["printing-list-edit-name-label"] = "Name";
-$lang["printing-list-edit-location-label"] = "Location";
+$lang["printing-list-edit-location-label"] = "Physical Location";
 $lang["printing-list-edit-info-label"] = "Description";
 
 //  ----------- Stat --------
