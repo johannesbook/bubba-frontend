@@ -21,7 +21,7 @@
 </div>
 
 <div id="div-login-dialog">
-<form method="post" action="login" class="ui-form-login-dialog" id="fn-login-dialog-form">
+<form method="post" class="ui-form-login-dialog" id="fn-login-dialog-form">
 	<h2 class="ui-text-center"><?=t('login-dialog-header')?></h2>
 	<table>
 		<tr>

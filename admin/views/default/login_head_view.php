@@ -1,11 +1,12 @@
 <script type="text/javascript">
 
 function postlogin_callback(e) {
+	var serial = $("#fn-login-dialog-form").serialize();
 	$("#fn-login-dialog-button").attr('disabled','disabled');
 	$("#fn-login-dialog-button").addClass("ui-state-disabled");
 	$("#fn-login-error").children().hide();
 	$.post(config.prefix+'/login/index/json',
-	$("#fn-login-dialog-form").serialize(),
+	serial,
 		function(data){
 			if(data.authfail) {
 				if(data.auth_err_remote) {
@@ -105,9 +106,10 @@ $(document).ready(function(){
 	<? endif ?>
 	$("#fn-login-dialog-form input").keypress(function(e) {
 		if( e.which == $.ui.keyCode.ENTER ) {
-			//postlogin_callback.apply(this,[e]);
-			$("#fn-login-dialog-button").click();
+			$("#fn-login-dialog-button").trigger('click');
+			return false;
 		}
+		return true;
 	});		
 
 	$(".fn-require-auth").click(function(e) {
