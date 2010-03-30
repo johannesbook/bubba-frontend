@@ -73,6 +73,13 @@ class NetworkManager extends Model {
 		configure_dnsmasq($dnsmasq);
 		if($restart_lan) $this->ifrestart($this->get_lan_interface());
 		if($restart_wan) $this->ifrestart($this->get_wan_interface());
+
+		if($restart_lan) {
+			$this->_restart_services($this->get_lan_interface());
+		} else {
+			$this->_restart_services();
+		}
+
 	}
 
 	function set_router($restart_lan = true, $restart_wan = true) {
@@ -94,6 +101,12 @@ class NetworkManager extends Model {
 
 		if($restart_lan) $this->ifrestart($this->get_lan_interface());
 		if($restart_wan) $this->ifrestart($this->get_wan_interface());
+		
+		if($restart_lan) {
+			$this->_restart_services($this->get_lan_interface());
+		} else {
+			$this->_restart_services();
+		}
 	}
 
 	function set_server($restart_lan = true, $restart_wan = true) {
@@ -108,6 +121,13 @@ class NetworkManager extends Model {
 
 		if($restart_lan) $this->ifrestart($this->get_lan_interface());
 		if($restart_wan) $this->ifrestart($this->get_wan_interface());
+
+		if($restart_lan) {
+			$this->_restart_services($this->get_lan_interface());
+		} else {
+			$this->_restart_services();
+		}
+
 	}
 
 	function apply_profile($profile,$old_profile) {
@@ -160,6 +180,7 @@ class NetworkManager extends Model {
 				break;
 			case "auto":
 				$this->set_auto();
+				break;
 			default:
 				// if here, something has gone wrong, really wrong.
 				throw new Exception("$old_profile and $profile isn't valid and cant be handled");
@@ -262,6 +283,34 @@ class NetworkManager extends Model {
 			return Null;
 		}
 	}
+
+	private function _restart_services($interface) {
+		
+		print "Restarting on interface: ". $interface;
+		
+	  if(service_running("proftpd")){
+			stop_service("proftpd");
+			start_service("proftpd");
+		}
+		if($interface == $this->get_lan_interface()) {
+	    if(service_running("samba")){
+				restart_samba();
+	    }
+	    if(service_running("avahi-daemon")){
+	        stop_service("avahi-daemon");
+	        start_service("avahi-daemon");
+	    }
+	    if(service_running("mt-daapd")){
+	        stop_service("mt-daapd");
+					sleep(1);
+	        start_service("mt-daapd");
+	    }  
+	    if(service_running("mediatomb")){
+		    stop_service("mediatomb");
+		    start_service("mediatomb");
+	    }
+	}
+}
 
 	public function ifrestart($interface){
 		$data = query_network_manager( array(

@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 <div class="ui-state-default ui-div-header"><?=t('Add new download')?></div>
 <form action="<?=FORMPREFIX?>/downloads/add" method="post" id="add_download">
-<table>
+<table class="ui-table-outline">
 <tr>
    <td style="width: 10%; text-align: left; "><?=t('Location')?></td>
    <td style="width: 90%; text-align: center; "><input id="download-addurl" type="text" name="url" size="40"/></td>

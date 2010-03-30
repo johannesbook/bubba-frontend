@@ -42,7 +42,7 @@ messages = {
 	"logout-dialog-button-logout" : "Logout",
 
 	// Login
-	"login-dialog-continue" : "Log in",
+	"login-dialog-continue" : "Login",
 
 	// Mail
 	"mail-retrieve-edit-dialog-button-label": "Update",

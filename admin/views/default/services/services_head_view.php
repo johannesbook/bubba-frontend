@@ -9,8 +9,10 @@ $(document).ready(function(){
 		}
 	}).change();
 
-	$("input[type='submit']").click( function () {
-		$("input").attr("disabled","disabled");
+	$("#fn-settings-update").click( function () {
+		$("button").attr("disabled","disabled");
+		$("#fn-settings-input-update").val("update");
+		$("#fn-settings-form").submit();
 	});
 		
 });

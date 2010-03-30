@@ -11,7 +11,7 @@ if( ! is_priviledged_user ) {
 			var account = user_accounts[0];
 			$('input[name=username],input[name=input_username]',source_edit_dialog).val(account.username);
 			$('input[name=realname]',source_edit_dialog).val(account.realname);
-			var update_button = $('<button/>', {html: $.message("users-edit-single-button-label")}).appendTo(source_edit_dialog);
+			var update_button = $('<button/>', {class: 'submit',html: $.message("users-edit-single-button-label")}).appendTo(source_edit_dialog);
 			update_button.click(function(){	
 					$.post( config.prefix + "/users/edit_user_account/json", $('form', source_edit_dialog).serialize(), function(data){
 							if( data.error ) {

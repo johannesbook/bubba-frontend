@@ -40,7 +40,7 @@
 <?if($show_allusers):?>
 <h2 class="fn-dialog-header ui-dialog-header"></h2>
 <?endif?>
-	<table>
+	<table class="ui-table-outline">
 	<tr>
 	   <td><label for="username"><?=t('users-list-edit-username-label')?></label></td>
 	   <td><input type="text" name="input_username"><span id="fn-user-username-text"></span></td>

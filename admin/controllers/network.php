@@ -978,7 +978,7 @@ class Network extends Controller{
 
 	function update_profile($strip=""){
 
-		$profile = $this->input->post('profile');
+		$profile = $this->input->post('set_profile');
 		$old_profile = $this->session->userdata("network_profile");
 
 		$data['profile'] = $profile;
@@ -989,8 +989,7 @@ class Network extends Controller{
 
 		if( $old_profile != $profile) {
 			// Profile updated
-
-			update_bubbacfg($this->session->userdata("user"),'network_profile',$profile);
+			update_bubbacfg($old_profile,'network_profile',$profile);
 			$this->session->set_userdata("network_profile", $profile);
 			$this->networkmanager->apply_profile($profile,$old_profile);
 		}

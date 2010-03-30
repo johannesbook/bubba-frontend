@@ -89,6 +89,7 @@ class Ajax_network extends Controller {
             break;
         default:
             // say "custom"...
+            $this->json_data['alert_msg'] = t("Apply profile: '$new_profile'?");
             break;
         }      
     }

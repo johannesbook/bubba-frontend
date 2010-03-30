@@ -142,10 +142,11 @@ th {
 
 td {
 	border : 0;
+  padding: 3px 16px;
+  vertical-align : top;
 }
 
 table.ui-table-outline td {
-  padding: 3px 16px;
 	vertical-align : middle;
 	font-size : 14px;
 	font-weight : 700;
@@ -1188,7 +1189,7 @@ div.hotfix * {
 }
 
 #network .col2 {
-	width : 490px;
+	width : 40%;
 }
 
 #wLANCFG select {
@@ -1651,7 +1652,7 @@ input[type=radio] {
 }
 
 .ui-dialog select,.ui-input-text,.ui-dialog-title {
-  width: 100%;
+  width: 100% !important;
 }
 
 tbody > tr > th label,label,#traffic .ui-filemanager-state-header {

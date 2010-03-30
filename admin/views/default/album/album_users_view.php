@@ -1,4 +1,4 @@
-<table id="fn-album-users" class="ui-table ui-table-list" title="User list">
+<table id="fn-album-users" class="ui-table ui-table-list ui-table-outline" title="User list">
 <thead>
 	<tr>
 		<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing viewers")?></th>

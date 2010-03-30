@@ -29,10 +29,10 @@
 		<tr>
 			<td colspan="2">
 				<input
-			                type="submit"
+			                type="button"
+			                class="submit"
 			                id="networkprofile_update" 
 			                value='<?=t('Update')?>' 
-			                name='profile_update'
 		     />
 			</td>
 		</tr>

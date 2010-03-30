@@ -1,4 +1,4 @@
-<table style="border: 0px; width: 100%;">
+<table  class="ui-table-outline">
 <?	foreach($dls as $dl):
 		if($dl["size"]==0){
 			$dld=0;
