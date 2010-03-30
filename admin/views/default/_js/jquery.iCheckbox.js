@@ -29,8 +29,20 @@
 		var original = jQuery.fn.attr;
 		jQuery.fn.attr = function(key, value ) {
 			var ret = original.apply( this, arguments  );
-			if( typeof value != 'undefined' ) {
-				jQuery(this).trigger('attrChanged', arguments);
+			if( jQuery.isPlainObject( key ) ) {
+				jQuery.each(this,function(){
+						var self = this;
+						jQuery.each( key, function( key, value ) {
+								jQuery.publish("/attr/" + key, [self,value] );
+							}
+						);
+					}
+				);
+			} else if( typeof value != 'undefined' ) {
+				jQuery.each(this,function(){
+						jQuery.publish("/attr/" + key, [this,value] );
+					}
+				);
 			}
 			return ret;
 		}
@@ -44,7 +56,10 @@
 		var original = jQuery.fn.removeAttr;
 		jQuery.fn.removeAttr = function(key, fn) {
 			var ret = original.apply( this, [ key, fn ] );
-			jQuery(this).trigger('attrRemoved', [key]);
+			jQuery.each(this,function(){
+					jQuery.publish("/attr/" + key, [this,false] );
+				}
+			);
 			return ret;
 		}
 	}
@@ -101,47 +116,53 @@ jQuery.fn.iCheckbox = function(options) {
 		// create the switch
 		return this.each(function() {
 
+				var self = this;
 				var input = jQuery(this);
 				var container;
 				var image;
 
-				input.bind( 'attrChanged', function(event, key, value) {
-						if( key == 'disabled' ) {
-							if( value !== false ) {
-								image.addClass('ui-state-disabled');
-							} else {
-								image.removeClass('ui-state-disabled');
-							}
+				var attrDisabledCallback = function(elem, value) {
+					if( elem == self ) {
+						if( value !== false ) {
+							image.addClass('ui-state-disabled');
+						} else {
+							image.removeClass('ui-state-disabled');
 						}
 					}
-				);
-				input.bind( 'attrRemoved', function(event, key) {
-						if( key == 'disabled' ) {
-							image.removeAttr('disabled').change();
-						}
+				};
+
+				jQuery.subscribe( "/attr/disabled", attrDisabledCallback );
+
+				var attrCheckedCallback = function(elem, value) {
+					if( elem == self ) {
+						input.trigger( 'change' );
 					}
-				);
+				};
+
+				jQuery.subscribe( "/attr/checked", attrCheckedCallback );
 
 				// make the container
 				container = jQuery('<span/>', { 'class': settings.class_container });
 				input.wrapAll(container);
 				container = input.parent();
+
 				// make the switch image based on starting state
 				image = jQuery('<div/>', { 'class': settings.class_switch } );
 				container.append(image);
+
 				// sync the checkbox to initial state
 				if( input.is(':disabled') ) {
 					image.addClass('ui-state-disabled');
-					settings.iCheckOff.apply( input, [ image, { duration: 1 } ] ); // must have a positive time for the initial event to fire
-				} else {
-					if(input.is(':checked')) {
-						settings.iCheckOn.apply( input, [ image, { duration: 1 } ] ); // must have a positive time for the initial event to fire
-					} else {
-						settings.iCheckOff.apply( input, [ image, { duration: 1 } ] ); // must have a positive time for the initial event to fire
-					}
 				}
+
+				if(input.is(':checked')) {
+					settings.iCheckOn.apply( input, [ image, { duration: 1 } ] ); // must have a positive time for the initial event to fire
+				} else {
+					settings.iCheckOff.apply( input, [ image, { duration: 1 } ] ); // must have a positive time for the initial event to fire
+				}
+
 				// bind clicking on the image
-				image.click(function (e) {						
+				image.bind( 'click.slidebox ',function (e) {						
 						if( input.is(':disabled') ) {
 							return e;
 						}
@@ -158,7 +179,7 @@ jQuery.fn.iCheckbox = function(options) {
 					input.hide();
 				}
 				// bind clicking on a visible checkbox
-				input.change(function (e) {
+				input.bind( 'change.slidebox', function (e) {
 						if(input.is(':checked')) {
 							// let the natural onchange() occur
 							settings.iCheckOn.apply( input, [ image ] );

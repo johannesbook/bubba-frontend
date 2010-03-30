@@ -653,12 +653,12 @@ class Settings extends Controller{
 			if( $workgroup != $current_workgroup ) {
 				// TODO : Add errorchecking
 				set_workgroup($workgroup);
-				$restartsamba=true;
+				$restart_samba=true;
 				$data['workgroup'] = $workgroup;
 
 			}
 
-			if ($restartsamba){
+			if ($restart_samba){
 				if(!query_service("smb")){
 					restart_samba();
 				}

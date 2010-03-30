@@ -2,8 +2,9 @@ bubba-frontend (1.9.27) claire; urgency=low
 
   * use flashdata for auth data
   * make "m" menu work in webkit
+  * rewrite iCheckbox to use pubsub for message passing 
 
- -- Carl Fürstenberg <carl@excito.com>  Mon, 29 Mar 2010 21:07:36 +0200
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 30 Mar 2010 14:13:33 +0200
 
 bubba-frontend (1.9.26) claire; urgency=low
 
