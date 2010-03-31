@@ -354,6 +354,7 @@ class Filemanager extends Controller{
 	}
 
 	function downloadzip(){
+		$this->load->helper('content_disposition');
 		$files = $this->input->post('files');
 		$user=$this->session->userdata("user");		
 		$prefix=$this->input->post('path')?$this->input->post('path'):"/"; 		
@@ -387,6 +388,7 @@ class Filemanager extends Controller{
 	
 	function download(){
 			
+		$this->load->helper('content_disposition');
 		if(!$this->input->post("path")){
 			$get_file="/".join("/",array_slice($this->uri->segment_array(),2));
 		}else{

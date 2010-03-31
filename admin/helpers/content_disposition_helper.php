@@ -3,19 +3,21 @@
  * per http://greenbytes.de/tech/tc2231
  */
 function content_disposition( $type, $filename ) {
-	$browser = get_browser();
+	$CI = &get_instance();
+	$CI->load->library('browser_cap');
+	$browser = $CI->browser_cap->getBrowser();
 	if( 
-		($browser.browser == 'Firefox' && $browser.majorver >= 3)
+		($browser->Browser == 'Firefox' && $browser->MajorVer >= 3)
 		||
-		($browser.browser == 'Opera' && $browser.majorver >= 10) 
+		($browser->Browser == 'Opera' && $browser->MajorVer >= 10) 
 	) {
 		// only Firefox and Opera handles RFC2231 encoding
 		return "Content-Disposition: $type; filename*=utf-8''".rawurlencode($filename);
 	}
 	elseif( 
-		($browser.browser == 'Chrome' && $browser.majorver >= 3 ) 
+		($browser->Browser == 'Chrome' && $browser->MajorVer >= 3 ) 
 		||
-		($browser.browser == 'Konqueror' && $browser.majorver >= 4 ) 
+		($browser->Browser == 'Konqueror' && $browser->MajorVer >= 4 ) 
 	) {
 		// Chrome and Konqueror supports RFC2047 encoding even though it's wrongful
 		// Firefox and opera also seems to do this, but we uses RFC 2231 for them

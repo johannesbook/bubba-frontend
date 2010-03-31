@@ -1,3 +1,9 @@
+bubba-frontend (1.9.32) claire; urgency=low
+
+  * fix issues with browscaps 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 31 Mar 2010 23:06:09 +0200
+
 bubba-frontend (1.9.31) claire; urgency=low
 
   * fix issues related for file download; (Closes: #1253 ) 
