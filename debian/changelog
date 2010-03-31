@@ -1,3 +1,9 @@
+bubba-frontend (1.9.31) claire; urgency=low
+
+  * fix issues related for file download; (Closes: #1253 ) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 31 Mar 2010 19:08:56 +0200
+
 bubba-frontend (1.9.30) claire; urgency=low
 
   * fix bugs related to buttons not working (class unstringified as key)

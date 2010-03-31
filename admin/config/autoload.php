@@ -51,7 +51,7 @@ $autoload['libraries'] = array( 'session' );
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','simplei18n', 'html', 'exec');
+$autoload['helper'] = array('url','simplei18n', 'html', 'exec', 'content_disposition');
 
 
 /*

@@ -171,7 +171,6 @@ copymove_callback = function( type ) {
 
 
 	action.buttonset();
-	console.log(panel.offset());
     
 	panel.css({top: -30, left: 0});
 	$(window).bind('resize.filemanager-action', function(){
@@ -212,18 +211,16 @@ buttons = [
 		'callback': function() {
 			var files = $("#filetable").filemanager('getSelected');
 
-			var input = $("<input/>", { type: 'text', 'name': 'files[]' });
+			var input = $("<input/>", { type: 'hidden', 'name': 'files[]' });
 			var form = $("<form/>", {
 				'action': config.prefix+"/filemanager/downloadzip",
 				'method': 'POST'
-			});
+			}).appendTo("body");
 			$.each(files, function(index,value) {
-				var e = input.clone();
-				e.attr('value',value);
-				form.append(e);
+				form.append($("<input/>", { 'type': 'hidden', 'name': 'files[]', 'value': value }));
 			});
-			$("<input/>", { type: 'hidden', 'name': 'path', 'value': $("#filetable").filemanager('option','root') }).appendTo(form);
-			form.appendTo("body").submit().remove();
+			$("<input/>", { 'type': 'hidden', 'name': 'path', 'value': $("#filetable").filemanager('option','root') }).appendTo(form);
+			form.submit().remove();
 		}
 	},	
 	{
@@ -354,7 +351,7 @@ file_download_callback = function( row, options ){
 	$("<form/>", {
 		'action': config.prefix+"/filemanager/download",
 		'method': 'POST',
-		'html': $('<input/>', { type: 'text', 'name': 'path', value: options.path }) 
+		'html': $('<input/>', { type: 'hidden', 'name': 'path', value: options.path }) 
 		}
 	).appendTo("body").submit().remove();
 }

@@ -379,7 +379,7 @@ class Filemanager extends Controller{
 		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 		header("Pragma: public");
 		mb_internal_encoding('UTF-8');
-		header("Content-Disposition: attachment; filename*=utf-8''".rawurlencode($zipname));
+		header(content_disposition('attachment',$zipname));
 		header("Content-type: application/x-zip");
 		set_time_limit(3600);
 		zip_files($files,$prefix,$user);
@@ -392,7 +392,6 @@ class Filemanager extends Controller{
 		}else{
 			$get_file=$this->input->post("path");
 		}
-		$get_file=b_dec($get_file);
 		$user=$this->session->userdata("user");
 		$mime_type=get_mime($get_file);
 		
@@ -400,7 +399,7 @@ class Filemanager extends Controller{
 		$filesize = get_filesize($get_file,$user);
 		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 		header("Pragma: public");
-		header("Content-Disposition: attachment; filename*=utf-8''".rawurlencode($filename));
+		header(content_disposition('attachment',$filename));
 		header("Content-Length: $filesize");
 		
 		if($mime_type) {
