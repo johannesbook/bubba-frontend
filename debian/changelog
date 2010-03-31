@@ -1,3 +1,10 @@
+bubba-frontend (1.9.30) claire; urgency=low
+
+  * fix bugs related to buttons not working (class unstringified as key)
+    (Closes: #1270) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 31 Mar 2010 14:34:15 +0200
+
 bubba-frontend (1.9.29) claire; urgency=low
 
   * fix content disposition filename encoding field 

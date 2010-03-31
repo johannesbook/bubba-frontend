@@ -26,7 +26,7 @@ $(document).ready(function(){
 							{
 								html: $('<button/>',
 									{ 
-										class : "submit",
+										'class' : "submit",
 										html: $.message('button-label-edit'),
 										click: function(){open_edit_dialog_callback.apply(dialog, [data])}
 									}

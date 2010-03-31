@@ -123,7 +123,7 @@
 		close: true,
 		closeHTML: '<a href="#" title="Close" class="modalCloseX">x</a>',
 		closeClass: 'simplemodal-close',
-		position: ["20%",],
+		position: ["20%"],
 		persist: false,
 		onOpen: null,
 		onShow: null,

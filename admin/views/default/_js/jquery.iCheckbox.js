@@ -193,7 +193,6 @@ jQuery.fn.iCheckbox = function(options) {
 				return this;
 			}
 		);
-		return this;
 	} else {
 		return false;
 	};
