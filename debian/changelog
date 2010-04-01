@@ -1,3 +1,9 @@
+bubba-frontend (1.9.34) claire; urgency=low
+
+  * fix chrome stype problems with upload dialog (Closes: #1250) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 01 Apr 2010 12:22:52 +0200
+
 bubba-frontend (1.9.33) claire; urgency=low
 
   * Add special handling for IE filenames in download

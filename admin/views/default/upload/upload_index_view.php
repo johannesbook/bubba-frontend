@@ -157,7 +157,7 @@ $(document).ready( function(){
 <div id="progress"></div>
 </div>
 
-<iframe name="uploadframe" style="border: 0;width: 1px;height: 1px;"></iframe>
+<iframe name="uploadframe" id="uploadframe"></iframe>
 
 <div id="progressbar" style="display: none;">
 <span><?=t('Uploading to')?>: <?= $path ?></span>

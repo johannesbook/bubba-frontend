@@ -1802,3 +1802,15 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 
 }
 
+input[type=file] {
+	background-color: #fff;
+}
+
+#uploadframe {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 0;
+	height: 0;
+	display: none;
+}
