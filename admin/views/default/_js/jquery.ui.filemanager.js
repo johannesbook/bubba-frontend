@@ -395,7 +395,17 @@ jQuery.widget("ui.filemanager", {
 		   }
 	   );	   
 
-	   jQuery("tbody", this.element).delegate( 'tr', 'dblclick', function() {
+	   jQuery("tbody", this.element).delegate( 'tr', 'dblclick', function(event) {
+			   // MSIE did it again
+			   if(document.selection && document.selection.empty){
+				   document.selection.empty() ;
+			   } else if(window.getSelection) {
+				   var sel=window.getSelection();
+				   if(sel && sel.removeAllRanges)
+					   sel.removeAllRanges() ;
+			   }
+			   event.preventDefault();
+
 			   jQuery(this).addClass("ui-filemanager-state-dblckick");
 			   if( jQuery(this).data('type') == 'dir' ) {
 				   self._dirCallback.apply( self, [ this, {path:jQuery(this).data('path')} ] );

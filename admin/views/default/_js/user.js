@@ -1,19 +1,25 @@
 
 $(document).ready(function(){
 
-if( ! is_priviledged_user ) {
+		if( ! is_priviledged_user ) {
 			var source_edit_dialog = $("#fn-users-list-edit");
+			var edit_validator;
 			source_edit_dialog.appendTo(source_edit_dialog.parent().parent());
-			source_edit_dialog.find('input[name=input_username]').attr('disabled','disabled');
+			source_edit_dialog.find('input[name=input_username]').closest('td').empty().append($("<span/>", {'id': 'input_username'}));
 			source_edit_dialog.find('input[name=realname]').addClass('fn-primary-field');
 			source_edit_dialog.find('input[name=sideboard], input[name=remote], input[name=shell]').closest('tr').remove();
 
+
 			var account = user_accounts[0];
-			$('input[name=username],input[name=input_username]',source_edit_dialog).val(account.username);
+			$('input[name=username]',source_edit_dialog).val(account.username);
+			$('#input_username',source_edit_dialog).html(account.username);
 			$('input[name=realname]',source_edit_dialog).val(account.realname);
 			var update_button = $('<button/>', {'class': 'submit',html: $.message("users-edit-single-button-label")}).appendTo(source_edit_dialog);
 			update_button.click(function(){	
-					$.post( config.prefix + "/users/edit_user_account/json", $('form', source_edit_dialog).serialize(), function(data){
+					if( ! edit_validator.form() ) {
+						return false;
+					}
+					$.post( config.prefix + "/users/edit_user_account/json", $('form', source_edit_dialog).serialize()+'&flashdata=on', function(data){
 							if( data.error ) {
 								update_status( false, data.html );
 							} else {
@@ -22,6 +28,26 @@ if( ! is_priviledged_user ) {
 						}, 'json' 
 					);
 				});
+			$.validator.addMethod('valid_password', function(value, element, params) {
+					return /^\w*$/.test(value);
+				} 
+				,jQuery.format("not a valid password"));
+
+			edit_validator = $('form',source_edit_dialog).validate({
+					rules:{
+						'realname': {
+							'required': true
+						},
+						'password1': {
+							'valid_password': true
+						},
+						'password2': {
+							'equalTo': $('form input[name=password1]',source_edit_dialog)
+						}
+
+					}
+				}
+			);			
 			return;
 		}
 
@@ -253,11 +279,11 @@ if( ! is_priviledged_user ) {
 		$.validator.addMethod('valid_username', function(value, element, params) {
 				return /^[^-][a-z0-9 _-]+$/.test(value) && value != 'web' && value != 'storage';
 			} 
-		, jQuery.format("not a valid username"));
+			, jQuery.format("not a valid username"));
 		$.validator.addMethod('valid_password', function(value, element, params) {
 				return /^\w*$/.test(value);
 			} 
-		,jQuery.format("not a valid password"));
+			,jQuery.format("not a valid password"));
 
 		edit_validator = $('form',edit_source_edit_dialog).validate({
 				rules:{

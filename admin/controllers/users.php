@@ -162,12 +162,6 @@ class Users extends Controller{
 			$remote = $this->input->post("remote");
 			$sideboard = $this->input->post("sideboard");
 
-			if( $this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
-				$shell = '/bin/bash';
-			} else {
-				$shell = '/usr/sbin/nologin'; 
-			}
-
 
 			if($this->Auth_model->policy("userdata","edit_allusers") || $this->session->userdata("user")==$username) {
 
@@ -177,6 +171,23 @@ class Users extends Controller{
 						$password1,
 						$password2
 					);
+				}
+
+				if( $shell !== false ) {
+					if( $this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
+						$shell = '/bin/bash';
+					} else {
+						$shell = '/usr/sbin/nologin'; 
+					}
+				} else {
+					$userinfo=get_userinfo();
+					if( isset( $userinfo[$username] ) ) {
+						$shell = trim($userinfo[$username]['shell']);
+					} else {
+						// should never happen, but better to be o nthe safe side
+						$shell = '/usr/sbin/nologin';
+					}
+
 				}
 
 				if( isset($result_chpwd["success"]) && !$result_chpwd["success"] ) {
@@ -210,6 +221,15 @@ class Users extends Controller{
 			if( $error ) {
 				$data['error'] = true;
 				$data['html'] = $error;
+			}
+			if( $this->input->post('flashdata') !== false ) {
+				$this->session->set_flashdata(
+					'update', 
+					array(
+						'success' => $data['success'], 
+						'message' => isset($data['html']) ? $data['html'] : t('user_update_ok')
+					) 
+				);
 			}
 			header("Content-type: application/json");
 			echo json_encode( $data );
@@ -265,6 +285,10 @@ class Users extends Controller{
 	public function index($strip="", $data = array()){
 		require_once(APPPATH."/legacy/user_auth.php");
 
+		$update =  $this->session->flashdata('update');
+		if( $update ) {
+			$data['update'] = $update;
+		}
 		$data["accounts"]= $this->_get_uinfo();
 
 		if($strip == "json" ){
