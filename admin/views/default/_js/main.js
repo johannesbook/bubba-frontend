@@ -198,10 +198,12 @@ function piechart(chart_canvas) {
 }
 
 
+$(window).load(function() {
+	$('.jclock').jclock();
+});
+
 
 $(document).ready( function() {
-	
-		$('.jclock').jclock();
 
 		// Expandable divs, first div is header, next is body
 		$(".ui-expandable").prepend($('<div/>',{'class': "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));

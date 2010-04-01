@@ -1,8 +1,11 @@
 <script type="text/javascript">
 
+$(window).load(function() {
+	piechart($('#piechart'));
+});
 
+$(document).ready( function() {
 
-$(document).ready( function(e) {
 
 	$("#stat-shutdown input[type='submit']").click(function() {
 		var buttons = {};
@@ -31,8 +34,6 @@ $(document).ready( function(e) {
 		return false;
 	});
 		
-	piechart($('#piechart'));
-
 });
 
 </script>
