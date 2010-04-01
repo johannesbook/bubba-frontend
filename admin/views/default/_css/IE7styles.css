@@ -5,3 +5,10 @@
 .ui-dialog select {
   width: 70%;
 }
+.msie fieldset.fld_settings legend {
+	margin-top : 0px;
+}
+
+input[type=submit],input[type=button],button.submit {
+  min-width : 0;
+}

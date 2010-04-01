@@ -1,12 +1,12 @@
-<div class="ui-network-information-panel">
 <? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
-				<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
-				<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
+	<div class="ui-network-information-panel">
+	<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
+	<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
+	</div>
 <? endif ?>
-</div>
 <form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
 <table id="table-network-lan" class="ui-table-outline">
-    <tr><td colspan="5" class="ui-state-default ui-widget-header"><?=t('LAN')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('LAN')?></td></tr>
 
 	<tr>
 		<td>
@@ -215,7 +215,7 @@
 	<tr>
 		<td />
 		<td><label for="cb_dns"><?=t('Enable DNS service')?></label></td>
-		<td colspan="2">
+		<td>
         <input 
             type="checkbox" 
             class="slide dnsmasq" 
@@ -233,7 +233,7 @@
 	<tr>
 		<td />
 		<td class="ui-indent1"><label for="dhcpd"><?=t('Enable DHCP server')?></label></td>
-		<td colspan="2">
+		<td>
         <input 
             type="checkbox" 
             class="slide dnsmasq" 
@@ -352,7 +352,8 @@
 
 	<tr>
 	<td colspan="4">
-		<input type="submit" value='<?=t('Update')?>' name='update'/>
+		<button class="submit .fn-network-button_submit"><?=t('Update')?></button>
+		<input type="hidden" value='1' name='update'/>
 	</td>
 </tr>
 		

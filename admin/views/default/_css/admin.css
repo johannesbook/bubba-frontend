@@ -330,8 +330,12 @@ body {
 
 #header li a {
   color: #000;
-  margin-right: .3em;
+  margin-right: 3px;
   text-decoration: none;
+}
+
+.msie #header li a {
+  margin-left: 3px;
 }
 
 #header li.last {
@@ -1196,18 +1200,17 @@ div.hotfix * {
 	width : 225px;
 }
 
-.ui-firewall-defined td {
-	width: 17%;
+#content table.ui-firewall-defined  {
+	margin-bottom : 0px;
 }
-.ui-firewall-defined td:last-child {
-	width: 10%;
+.ui-firewall-defined td,.ui-firewall-defined th {
+	width: 17%;
 }
 .ui-firewall-defined-edit {
 	position: relative;
 }
 .ui-firewall-defined-edit div {
-	white-space : nowrap;
-	position: absolute;
+	width : 60px;
 
 }
 
@@ -1628,17 +1631,21 @@ div.text label {
   background-position: -151px -196px;
 }
 
-fieldset.expandable {
+fieldset.fld_settings {
   border-top: 18px solid #000;
   line-height: 18px;
 }
 
-fieldset.expandable legend {
+fieldset.fld_settings legend {
   background: #000 none repeat scroll 0 0;
   color: #fff;
-  padding: 0 0 0 5px;
+  padding: 0 5px 0 5px;
+  margin : 0px;
 }
 
+.msie fieldset.fld_settings legend {
+	margin-top : -18px;
+}
 fieldset,input[type=submit]:focus,input[type=button]:focus,img,#subnav ul li.last a,.ui-action-panel button {
   border: 0;
 }

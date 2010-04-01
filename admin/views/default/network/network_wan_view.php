@@ -1,9 +1,9 @@
-<div class="ui-network-information-panel">
 <? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
+	<div class="ui-network-information-panel">
 	<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
 	<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
+	</div>
 <? endif ?>
-</div>
 
 <form id="WANCFG" action="<?=FORMPREFIX?>/network/wanupdate" method="post">
 <table id="table-network-wan" class="ui-table-outline">
@@ -115,8 +115,9 @@
 		<td><?=$err_dns?"* " . t("Invalid DNS setting"):""?></td>
 	</tr>
 	<tr>
-		<td colspan="2">
-			<input type="hidden" class='ip' name='refresh' value='3'/><input type="submit" value='<?=t('Update')?>' class='ip' name='update'/>
+		<td colspan="4">
+			<input type="hidden" name='update'/>
+			<button class="submit .fn-network-button_submit"><?=t('Update')?></button>
 		</td>
 	</tr>
 	

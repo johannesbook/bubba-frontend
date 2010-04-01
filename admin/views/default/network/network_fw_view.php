@@ -1,16 +1,5 @@
 <script language ="JavaScript">
 
-$(document).ready(function(){
-
-	$("input[type='submit']").click( function () {
-		$("input").attr("disabled","disabled");
-	});
-		
-});
-
-
-
-
 function SubmitForm(form_to_submit) {
 	var myform = getElementByName(form_to_submit);
 	myform.submit();
@@ -172,7 +161,8 @@ function copy_fields(formid) {
 	</tbody>
 	<tfoot>
 	<tr><td>
-		<input class="slide" type="submit" value='<?=t('Update')?>' name='update'/>
+		<button class="submit fn-network-button_submit"><?=t('Update')?></button>
+		<input type="hidden" value='1' name='update'/>
 	</td></tr>
 	</tfoot>
 	
@@ -228,19 +218,20 @@ function copy_fields(formid) {
 		</td>
 	</tr>
 	<tr>
-		<td colspan="4">
+		<td colspan="5">
 			<?=t('Public port range accepted as start-port:stop-port')?><br />
 			<?=t('Private port is start port if public port range entered')?><br />
-		</td>
-	</tr>
-	<tr>
-		<td class="err" colspan="6">
 			<input type="hidden" name="o_source" />
 			<input type="hidden" name="o_dport" />
 			<input type="hidden" name="o_to_port" />
 			<input type="hidden" name="o_to_ip" />
 			<input type="hidden" name="o_protocol" />
 			<input type="hidden" name="o_portforward" />
+		</td>
+	</tr>
+	<?if(isset($err_portforward)):?>
+	<tr>
+		<td class="err" colspan="6">
 				<?
 			$br="";
 			if(isset($err_portforward["rm"])) {
@@ -270,11 +261,12 @@ function copy_fields(formid) {
 			?>
 		</td>
 	</tr>
-
+	<?endif?>
 	</tbody>
 	<tfoot>
 	<tr><td colspan="6">
-		<input type="submit" value='<?=t('Update')?>' name='newport'/>
+		<button class="submit fn-network-button_submit"><?=t('Update')?></button>
+		<input type="hidden" value='1' name='newport'/>
 	</td></tr>
 	</tfoot>
 </table>
@@ -285,13 +277,13 @@ function copy_fields(formid) {
 <table  class="ui-firewall-defined ui-table-outline">
 	<thead>
     <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('User defined open / forwarded ports')?></td></tr>
-	<tr>
-		<td><?=t('Source IP')?></td>
-		<td><?=t('Public port')?></td>
-		<td><?=t('Private port')?></td>
-		<td><?=t('Private IP')?></td>
-		<td><?=t('Protocol')?></td>
-		<td></td>
+	<tr class="ui-header">
+		<th><?=t('Source IP')?></th>
+		<th><?=t('Public port')?></th>
+		<th><?=t('Private port')?></th>
+		<th><?=t('Private IP')?></th>
+		<th><?=t('Protocol')?></th>
+		<th></th>
 	</tr>
 	</thead>
 </table>
@@ -299,7 +291,7 @@ function copy_fields(formid) {
   $i=1;
   foreach($fwports as $value):?>
 	<form id="RMPORT_<?=$i?>" name="RMPORT_<?=$i?>" class="firewall" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
-	<table class="ui-firewall-defined">
+	<table class="ui-firewall-defined ui-table-outline">
 	<tr>
 		<td>
 			<?

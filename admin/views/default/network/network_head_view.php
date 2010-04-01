@@ -21,14 +21,12 @@ $(document).ready(function(){
 		$("#dhcpd").attr("disabled","disabled");
 	<?endif?> 
 	
-	$("#network tr td:nth-child(2)").addClass("col2");	
-	
-	$("input[type='submit']").click( function () {
-		$("input").attr("disabled","disabled");
-	});
+	$("#body_lan tr td:nth-child(2),#body_wan tr td:nth-child(2)").addClass("col2");	
 		
-
-
+	$(".fn-network-button_submit").click( function () {
+		$(".fn-network-button_submit").addClass("ui-state-disabled");
+		$(this).parents("form").submit();
+	});
 
 	<?if(isset($expand) && $expand):?>
 	$("#network-firewall-advanced").removeClass("ui-helper-hidden");
@@ -36,6 +34,8 @@ $(document).ready(function(){
 
 	<?if(isset($disable_network) && $disable_network):?>
 	$('input').attr("disabled","true");
+	$('button').attr("disabled","true");
+	$('button').addClass("ui-state-disabled");
 	<?endif?>
 
 	$("#OTHCFG input:radio").click(function(){$("#networkprofile_update").removeAttr("disabled")});

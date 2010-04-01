@@ -978,7 +978,7 @@ class Network extends Controller{
 
 	function update_profile($strip=""){
 
-		$profile = $this->input->post('set_profile');
+		$profile = $this->input->post('profile');
 		$old_profile = $this->session->userdata("network_profile");
 
 		$data['profile'] = $profile;
