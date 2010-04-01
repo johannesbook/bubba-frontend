@@ -512,6 +512,7 @@
 		
 		$("#exclude").click(function() {
 
+			var my_dialog;
 			to_be_excluded = '';
 			form = $('<form />');
 			form.addClass("treelayout");
@@ -536,6 +537,7 @@
 								'file': to_be_excluded
 							},
 							function(data){
+								my_dialog.dialog("close");
 								if(!data.error) {
 									if(!$("#current_excfiles").children("div[class*='files']").length) {
 										$("#current_excfiles").empty(); // remove "No data found"
@@ -568,7 +570,7 @@
 					return true;
 				}
 			});
-			$.dialog( form , "" ,{}, {dialogClass : 'filemanager-backup-dialog-select', width : '400'});
+			my_dialog = $.dialog( form , "" ,{}, {dialogClass : 'filemanager-backup-dialog-select', width : '400'});
 			return false;
 		
 		});

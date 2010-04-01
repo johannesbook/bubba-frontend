@@ -42,7 +42,7 @@
 			<td class="filemanager-backup-files filemanager-backup-border-right">
 				<div id="current_incfiles">
 				</div>
-				<input type="button" id="remove_inc" value="<?=t("Remove dir")?>" />
+				<input type="button" class="incexc" id="remove_inc" value="<?=t("Remove dir")?>" />
 				<input <?if(!count($backupjobs)):?>disabled="disabled"<?endif?> type="submit" id="include" name="btn_include" class="incexc" value="<?=t('Browse')?>" />
 				<div id="inc_error" class="error"></div>
 			</td>
@@ -238,7 +238,7 @@
 			<td class="filemanager-backup-border-right">
 				<div id="current_excfiles">
 				</div>
-				<input type="button" id="remove_exc" value="<?=t("Remove dir")?>" />
+				<input type="button" class="incexc" id="remove_exc" value="<?=t("Remove dir")?>" />
 				<input type="submit" id="exclude" name="btn_exclude" class="incexc" value="<?=t('Browse')?>" />
 				<div id="exc_error" class="error"></div>
 			</td>

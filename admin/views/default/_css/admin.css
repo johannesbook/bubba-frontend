@@ -445,7 +445,8 @@ body {
   display: block;
   font-size: 21px;
 	position : absolute;
-	bottom : 0;
+	bottom : 20px;
+	left : 50px;
 }
 #login_more_info_header {
   font-size: 14px;	
@@ -1666,7 +1667,7 @@ tbody > tr > th label,label,#traffic .ui-filemanager-state-header {
   font-weight: 700;
 }
 
-button:hover,input[type=button],input[type=submit],input[type=reset],.ui-filemanager:not(.clone),#filetable_wrapper button:hover,.ui-filemanager-prev-arrow:hover,.ui-filemanager-next-arrow:hover,.ui-filemanager-path-widget .ui-filemanager-path-link,.ui-filemanager-type-row,.expansion {
+button:hover,input[type=button],input[type=submit],input[type=reset],.ui-filemanager,#filetable_wrapper button:hover,.ui-filemanager-prev-arrow:hover,.ui-filemanager-next-arrow:hover,.ui-filemanager-path-widget .ui-filemanager-path-link,.ui-filemanager-type-row,.expansion {
   cursor: pointer;
 }
 
