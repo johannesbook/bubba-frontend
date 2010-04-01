@@ -183,7 +183,7 @@ $lang['help_box_network_lan']="
 ";
 	
 $lang['help_box_network_wlan']="
-	<p>Bubba can act as your access point, both in 'Router / Firewall / Server mode' or in 'Server mode'.</p>
+	<p>Bubba can act as your access point, both in 'Router + Firewall + Server' or in 'Server only' mode.</p>
 	<h3>Wireless</h3>
   <p><strong>Enable wireless</strong> - Select this box to enable the wireless access point in Bubba.</p>
   <p><strong>Network name (SSID</strong>) - This is the name that identifies a particular wireless network. The default name is your Bubbas host name. The SSID can be up to 32 characters long.</p>
@@ -197,16 +197,16 @@ $lang['help_box_network_wlan']="
 	
 $lang['help_box_network_fw']="
 	<p>Bubba has an built in firewall to protect your internal network and Bubba itself.</p>
-	<h3><strong>Integrated Bubba services </h3>
-  <p><strong>Allow SSH from WAN</strong> - Enables Secure Shell (SSH) to Bubba from WAN.</p>
-  <p><strong>Allow WWW from WAN</strong> - Enables WWW traffic to Bubba from WAN.</p>
-  <p><strong>Allow FTP from WAN</strong> - Enables FTP connections from WAN to Bubba's port 21.</p>
-  <p><strong>Allow Ping from WAN</strong> -   Enables ping from WAN. The default setting disables computers on the Internet to get a reply back from Bubba when it is being 'pinged'. This increases the security.</p>
-	<p><strong>Allow WAN access to emailserver</strong> - Enables access from WWW to Bubba's port 25. This is the default emailserver port for sending and receiving email.</p>
-	<p><strong>Allow WAN access to Email (IMAP/IMAPS)</strong> - Enables access from WWW to Bubba's ports 143 and 993. These ports are used for sending and receiving email.</p>
-  <p><strong>Open ports for torrent downloader</strong> - Enables faster torrent download. This rule opens the ports 10000-14000.</p>
-  <h3>Open port / Add port forward</h3>
-	<p>Choose 'Portforward' or 'Bubba public port' with the radio buttons. With 'Portforward' you open a port from a network device in your internal LAN to the Internet (WAN). 'Bubba public port' opens a port from Bubba to the Internet (WAN)</p>
+	<h3><strong>Allow external (WAN) access Bubba services</h3>
+  <p><strong>SSH (Port 22)</strong> - Enables Secure Shell (SSH) to Bubba from WAN.</p>
+  <p><strong>Email server (Port 25)</strong> - Enables access from WWW to Bubba's port 25. This is the default emailserver port for sending and receiving email.</p>
+  <p><strong>WWW (HTTP / HTTPS Ports 80 / 443)</strong> - Enables WWW traffic to Bubba from WAN.</p>
+  <p><strong>Email (IMAP / IMAPS Ports 143 / 993)</strong> - Enables access from WWW to Bubba's ports 143 and 993. These ports are used for sending and receiving email.</p>
+  <p><strong>FTP (Port 21)/strong> - Enables FTP connections from WAN to Bubba's port 21.</p>
+  <p><strong>Downloader (Ports 10000-14000)</strong> - Enables faster torrent download. This rule opens the ports 10000-14000.</p>
+  <p><strong>Respond to ping (ICMP type 8)</strong> - Enables ping from WAN. The default setting disables computers on the Internet to get a reply back from Bubba when it is being 'pinged'. This increases the security.</p>
+  <h3>Advanced firewall settings</h3>
+	<p>Choose 'Port forward to internal network' or '   Open Bubba|2 port' with the radio buttons. The first will open a port from Internet (WAN) to a network device in your internal network (LAN). The later one will open a port from Internet (WAN) to Bubba.</p>
 	<p><strong>Source IP</strong> - The source IP on the WAN side that the port forward will be directed to. Enter 'all' if all the port forward are not directed to a specific IP address.</p>
   <p><strong>Public port</strong> - The port number on the WAN side. You can input a single port or a range of  ports (ex. 4001:4005).</p>
   <p><strong>Private port</strong> - The port number on the LAN side. Enter a single start port if range is used in Public port (ex. 4001).</p>
@@ -303,7 +303,7 @@ $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 <p><strong>Step 2 - Create user</strong></p>
 <p>Create a user, or as many as you desire. Click 'Add user' after filling in the user information. Click 'Next' to continue.</p>
 <p><strong>Step 3 - Network setup</strong></p>
-<p>Choose if you prefer to use Bubba with all its potential in 'Router / Firewall / Server mode' or only 'Server mode'. Also if you would like to register for a free Easyfind name. Read about Easy find in chapter <a href='bubba_from_outside.html#EASYFIND' target='_self'>Reaching Bubba From Outside</a> section Easyfind. Click 'Next' to continue.</p>
+<p>Choose if you would like to register for a free Easyfind name. You will reach your Bubba by surfing to www.<your easyfind name>.bubbaserver.com. Click 'Next' to continue.</p>
 <p><strong>Setup complete</strong></p>
 <p>Click 'Finish setup' to exit the wizard.</p>
 ";
@@ -313,7 +313,7 @@ $lang['help_box_settings_identity']="
 <p><strong>Hostname</strong> - is the unique name by which a network-attached device is known on a network.</p>
 <p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or Internet connection. Use the same workgroup name on Bubba as on your computer.</p>
 <h3>Easyfind options</h3>
-<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba wherever you are. You will be able to find your Bubba wherever you are typing http://&lt;your_Easyfind_name&gt;.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
+<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba wherever you are. You will be able to find your Bubba wherever you are typing www.<your easyfind name>.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
 <p><strong>Easyfind name</strong> - Choose a name for your Bubba on the Easyfind network.</p>
 ";
 
