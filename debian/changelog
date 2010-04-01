@@ -1,3 +1,9 @@
+bubba-frontend (1.9.37) claire; urgency=low
+
+  * IE fixes (Closes: #1289, #1290) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 01 Apr 2010 17:54:47 +0200
+
 bubba-frontend (1.9.36) karmic; urgency=low
 
   * fix notification of user update and fix issue with lacking ssh after

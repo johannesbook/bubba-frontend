@@ -47,7 +47,7 @@ $(document).ready( function() {
 								external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
-								dialog_element.html($("<h2/>",{class:"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
 								dialog_element
 									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_external_warning_1")?>"}))
 									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_external_warning_2")?>"}));
@@ -110,7 +110,7 @@ $(document).ready( function() {
 								external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
-								dialog_element.html($("<h2/>",{class:"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
 								dialog_element
 									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_warning_1")?>"}))
 									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_warning_2")?>"}));
@@ -181,7 +181,7 @@ $(document).ready( function() {
 								external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
-								dialog_element.html($("<h2/>",{class:"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
 								dialog_element
 									.append($('<p/>',{html:"<?=t("disk_raid_create_warning_1")?>"}))
 									.append($('<p/>',{html:"<?=t("disk_raid_create_warning_2")?>"}))
