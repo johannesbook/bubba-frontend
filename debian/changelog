@@ -1,3 +1,9 @@
+bubba-frontend (1.9.38) claire; urgency=low
+
+  * bind "m" to document instead of window (Closes: #1275) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 01 Apr 2010 18:17:29 +0200
+
 bubba-frontend (1.9.37) claire; urgency=low
 
   * IE fixes (Closes: #1289, #1290) 
