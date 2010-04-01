@@ -1,3 +1,9 @@
+bubba-frontend (1.9.33) claire; urgency=low
+
+  * Add special handling for IE filenames in download
+
+ -- Tor Krill <tor@excito.com>  Thu, 01 Apr 2010 11:54:10 +0200
+
 bubba-frontend (1.9.32) claire; urgency=low
 
   * fix issues with browscaps 
