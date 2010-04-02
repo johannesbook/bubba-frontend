@@ -16,3 +16,8 @@ input[type=submit],input[type=button],button.submit {
 #header li a {
   margin-left: 3px;
 }
+
+table.ui-table-outline td {
+	border-top : 1px solid #bbb;
+	border-bottom : 1px solid #bbb;
+}

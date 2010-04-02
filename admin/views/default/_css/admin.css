@@ -153,8 +153,8 @@ table.ui-table-outline td {
 }
 
 table.ui-table-outline tr {
-	border-top : 1px solid #bbb !important;
-	border-bottom : 1px solid #bbb !important;
+	border-top : 1px solid #bbb;
+	border-bottom : 1px solid #bbb;
 	line-height : 28px;
 }
 

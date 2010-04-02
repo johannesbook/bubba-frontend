@@ -205,11 +205,11 @@ class Users extends Controller{
 					update_bubbacfg("admin","AllowRemote",$remote ? 'yes': 'no' );
 					$this->session->set_userdata("AllowRemote", $remote);
 				}
-
+				/*
 				if( !$error && $username == 'admin' ) {
 					update_bubbacfg("admin","default_sideboard", $sideboard ? "yes" : "no" );
 				}
-
+				*/
 				if( !$error && update_user($realname,$shell,$username)){
 					$error = t("users-edit-account-error '%s' '%s' '%s'", $realname, $shell, $username);
 				}		

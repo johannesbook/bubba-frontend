@@ -57,10 +57,14 @@
 	   <td><label for="password2"><?=t('users-list-edit-password2-label')?></label></td>
 	   <td><input type="password" name="password2"/></td>
 	</tr>
+	<?
+	/*
 	<tr>
 	   <td><label for="sideboard"><?=t('users-list-edit-sideboard-label')?></label></td>
 	   <td><input type="checkbox" name="sideboard"/></td>
 	</tr>
+	*/
+	?>
 	<tr>
 	   <td><label for="remote"><?=t('users-list-edit-remote-label')?></label></td>
 	   <td><input type="checkbox" name="remote"/></td>
