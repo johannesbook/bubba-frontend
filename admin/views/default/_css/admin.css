@@ -334,10 +334,6 @@ body {
   text-decoration: none;
 }
 
-.msie #header li a {
-  margin-left: 3px;
-}
-
 #header li.last {
   border-right: none;
 }
@@ -773,7 +769,9 @@ body {
 }
 
 .opera .ui-filemanager-buttonbar button,.safari .ui-filemanager-buttonbar button, .msie .ui-filemanager-buttonbar button {
-  width: 46px!important;
+	width: 46px!important;
+	height : 27px!important;
+	margin-bottom : 2px;
 	margin-left : -9px !important;
 }
 
