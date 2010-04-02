@@ -1040,7 +1040,7 @@ class Network extends Controller{
 				} else {
 					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind(0,"");
 				}
-				if($data['wiz_data']['err_easyfind']) {
+				if(!$data['wiz_data']['err_easyfind']) {
 					// setup complete
 					$data['confirmed'] = true;
 				}

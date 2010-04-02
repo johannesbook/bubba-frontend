@@ -24,7 +24,10 @@ if($this->session->userdata("run_wizard")): // wizard is running
 		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
 		<div id="ui-wizard-timezone">
 			<table>
-			  <tr><td colspan="4" class="ui-wizard-label-header" ><h2><?=t('Timezone')?></h2></td></tr>
+				<thead>
+				  <tr><th colspan="4"><h2><?=t('Timezone')?></h2></th></tr>
+			  </thead>
+			  <tbody>
 				<tr class="ui-header"><td><?=t('Current timezone is')?>:</td><td><?=$wiz_data['t_zone']?></td></tr>
 				<tr class="ui-header"><td>Select timezone:</td><td>
 					<select name="wiz_data[user_tz]">
@@ -41,17 +44,22 @@ if($this->session->userdata("run_wizard")): // wizard is running
 					?>
 					</select>
 					<?=isset($err['timezone'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timezone'])."</div></td></tr>\n":""?>
-				</td></tr>		
+				</td></tr>
+			</tbody>		
 			</table>
 		</div>
 		<div id="ui-wizard-datetime">
 			<table>
-			  <tr><td colspan="4" class="ui-wizard-label-header"><h2><?=t('title_settings-date')?></h2></td></tr>
-				<tr class="ui-header"><td><?=t('Auto adjust date and time')?></td><td><input id="ntp" type="checkbox" class="slide" name="wiz_data[use_ntp]" <?=isset($wiz_data['use_ntp'])?"CHECKED":""?> /></td></tr>
-				<tr class="ui-header"><td>Date:</td><td><input type="text" class="timedate" name="wiz_data[date]" value="<?=$wiz_data['date']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('YYYYMMDD')?>)</span></td></tr>
-				<tr class="ui-header"><td>Time:</td><td><input type="text" class="timedate" name="wiz_data[time]" value="<?=$wiz_data['time']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('HHmm')?>)</span></td></tr>
-				<?=isset($err['timedate'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timedate'])."</div></td></tr>\n":""?>
-				<tr ><td colspan="2"><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' id="wizard_next" name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
+				<thead>
+				  <tr><th colspan="4"><h2><?=t('title_settings-date')?></h2></th></tr>
+				</thead>
+				<tbody>
+					<tr class="ui-header"><td><?=t('Auto adjust date and time')?></td><td><input id="ntp" type="checkbox" class="slide" name="wiz_data[use_ntp]" <?=isset($wiz_data['use_ntp'])?"CHECKED":""?> /></td></tr>
+					<tr class="ui-header"><td>Date:</td><td><input type="text" class="timedate" name="wiz_data[date]" value="<?=$wiz_data['date']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('YYYYMMDD')?>)</span></td></tr>
+					<tr class="ui-header"><td>Time:</td><td><input type="text" class="timedate" name="wiz_data[time]" value="<?=$wiz_data['time']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('HHmm')?>)</span></td></tr>
+					<?=isset($err['timedate'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timedate'])."</div></td></tr>\n":""?>
+					<tr ><td colspan="2"><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' id="wizard_next" name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
+				</tbody>
 			</table>
 		</div>
 		</form>

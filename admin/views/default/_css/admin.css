@@ -830,61 +830,32 @@ body {
   width: 39px;
 }
 
-.ui-widget-wizard h1 {
-  font-size: 22px!important;
+.ui-widget-wizard, .ui-widget-wizard input, .ui-widget-wizard select {
+	font-weight : bold;
+}
+.ui-widget-wizard input[type=text]{
+	vertical-align : baseline;
+}
+h1.wizard-header {
+  font-size: 22px;
   margin-top: 0;
-  margin-bottom:4px;
+  margin-bottom:17px;
 }
-
-.ui-widget-wizard h2 {
-  fonst-size: 14px;
+.ui-widget-wizard th h2 {
+  font-size: 14px;
   font-weight: 700;
-  text-align: left!important;
+  text-align: left;
+  margin-bottom : 3px;
+  margin-top : 10px;
 }
-
-.ui-widget-wizard select {
-  width: 90%;
+.ui-widget-wizard td {
+	vertical-align : middle;
+	padding-top : 5px;
+	padding-bottom : 5px;
 }
-
-.ui-wizard-label-header {
-  padding-left: 0;
-}
-
-.ui-widget-wizard h2 {
-    margin-bottom:0 !important;
-}
-
-.ui-widget-wizard .ui-dialog-content {
-    padding-top:0;
-}
-
-.ui-wizard-controls {
-  clear: both;
-  height: 40px;
-}
-
-#ui-wizard-datetime span {
-  font-size: 10px;
-  margin-left: 3px;
-}
-
-#ui-wizard-adduser h2 {
-    margin-bottom:20px !important;
-}
-
-#ui-wizard-adduser td {
-    padding:0;
-}
-
-#ui-wizard-adduser tr {
-    line-height:10px !important;
-    height:13px;
-}
-
-#ui-wizard-adduser th, #ui-wizard-adduser th, #ui-wizard-adduser td {
-    line-height:10px !important;
-    font-size:12px;
-    height:12px;
+.ui-widget-wizard td.ui-wizard-existing-users {
+	margin-left : 10px;
+	vertical-align : top;
 }
 
 #body_mail select,option,#body_printing select,option {
@@ -1120,6 +1091,8 @@ button.ui-button::-moz-focus-inner {
   position: relative;
   width: 67px;
   cursor :pointer !important;
+  display : inline-block;
+  vertical-align : middle;
 }
 #body_services .ui-icon-bubba-switch-container {
   float: right;
