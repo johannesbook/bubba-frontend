@@ -522,8 +522,6 @@
 			doit = $('<input />');
 			form.append(
 				$('<div class="buttons" />')
-				.append($("<input />").attr("type","button").addClass("simplemodal-close").val("<?=t("Cancel")?>"))
-
 				.append(
 					$("<input />").attr("id","do_exclude").attr("type","button").val("<?=t("Exclude")?>").click(function(e) {
 						if( ! tree.find('.expanded') ) {
