@@ -205,14 +205,17 @@ class Menu extends Model {
 				array(
 					'id' => 'settings-traffic',
 					'uri' => 'settings/trafficsettings',
+					'alias' => array( 'settings/settraffic' ),
 				),
 				array( 
 					'id' => 'settings-date',
 					'uri' => 'settings/datetime',
+					'alias' => array( 'settings/setdate' ),
 				),
 				array(
 					'id' => 'settings-sysbackup',
 					'uri' => 'settings/backuprestore',
+					'alias' => array('settings/backup','settings/restore'),
 				),
 				array(
 					'id' => 'settings-update',
