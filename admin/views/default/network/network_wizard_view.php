@@ -57,7 +57,7 @@ $(document).ready(function(){
 			<tbody>
 				<tr class="ui-header">
 					<td><?=t("To locate Bubba|2 from the internet, use 'Easyfind' location service")?></td>
-					<td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="slide" <?=isset($wiz_data['en_easyfind'])?"CHECKED":""?>/></td>
+					<td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="slide" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"checked='checked'":""?>/></td>
 				</tr>
 				<tr class="ui-header">
 					<td>
@@ -66,7 +66,7 @@ $(document).ready(function(){
 						id="easyfind_name" 
 						name="wiz_data[easyfind_name]" 
 						type="text" 
-						value="<?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("Set easyfind name")?>" <?=isset($wiz_data['en_easyfind'])?"":"DISABLED"?>/>
+						value="<?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("Set easyfind name")?>" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"":"disabled='disabled'"?>/>
 					 (http://<span id="mybubba"><?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("mybubba")?></span>.bubbaserver.com)
 					 <?if(isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind']):?>
 					 	<br><span class='ui-state-error-text'><?=t("Name not available or failed to validate request")?></span>

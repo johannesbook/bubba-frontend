@@ -836,6 +836,9 @@ body {
 .ui-widget-wizard input[type=text]{
 	vertical-align : baseline;
 }
+input[disabled]#easyfind_name {
+	background-color : #ccc;
+}
 h1.wizard-header {
   font-size: 22px;
   margin-top: 0;
