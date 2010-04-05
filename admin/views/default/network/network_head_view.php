@@ -5,11 +5,11 @@
 function disable_leasefields() {
 	for(i=0;i<4;i++) {
 		if( $("[name='mask["+i+"]']").val() == "255") {
-			$("[name='dnsmasq[range_start]["+i+"]']").attr("disabled","disabled");
-			$("[name='dnsmasq[range_end]["+i+"]']").attr("disabled","disabled");
+			$("[name='dnsmasq[range_start]["+i+"]']").attr("readonly","readonly");
+			$("[name='dnsmasq[range_end]["+i+"]']").attr("readonly","readonly");
 		} else {
-			$("[name='dnsmasq[range_start]["+i+"]']").removeAttr("disabled");
-			$("[name='dnsmasq[range_end]["+i+"]']").removeAttr("disabled");
+			$("[name='dnsmasq[range_start]["+i+"]']").removeAttr("readonly");
+			$("[name='dnsmasq[range_end]["+i+"]']").removeAttr("readonly");
 		}
 	}
 }

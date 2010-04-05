@@ -1,3 +1,9 @@
+bubba-frontend (1.9.52) karmic; urgency=low
+
+  * Changed 'disabled' fields to readonly. Closes #806 
+
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 20:22:47 +0200
+
 bubba-frontend (1.9.51) karmic; urgency=low
 
   * Fixed "create folder error message" 

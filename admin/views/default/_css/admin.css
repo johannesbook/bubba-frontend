@@ -96,7 +96,7 @@ input[type=text],input[type=password],textarea {
 }
 
 
-input[disabled] {
+input[disabled],input[readonly] {
   background: #ddd;
   color: #888;
 }
