@@ -1,3 +1,9 @@
+bubba-frontend (1.9.47) claire; urgency=low
+
+  * Fixed set date/time. (Closes #1317) 
+
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 14:37:52 +0200
+
 bubba-frontend (1.9.46) karmic; urgency=low
 
   * Fixed rename error message. (Closes #1280) 

@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
 
-	$("#ntp").click(function() {
+	$("#ntp").change(function() {
 		if($(this).attr('checked')) {
 			$(".timedate").attr("disabled","true");
 		} else {
