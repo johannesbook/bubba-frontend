@@ -168,8 +168,8 @@ tr.ui-widget-header {
 }
 
 ul {
-  list-style: square;
   list-style-position: outside;
+  list-style : disc;
 }
 
 #nav li, #subnav li {
@@ -1032,23 +1032,23 @@ button.ui-button::-moz-focus-inner {
   top: 5px;
 }
 
-.ui-help-box,.ui-help-box .ui-widget-header,.ui-help-box .ui-widget-content {
-  background: #000;
-  color: #FFF!important;
-}
-
 .ui-widget-header {
 	  line-height: 21px;
 	  margin-top : 15px;
 }
-	
+
 .ui-help-box {
-  -moz-border-radius: .8em!important;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)!important;
-  -webkit-border-radius: .5em!important;
-  filter: alpha(Opacity=95)!important;
+  -moz-border-radius: 0!important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90)!important;
+  -webkit-border-radius: 0!important;
+  filter: alpha(Opacity=90)!important;
   font-size: 12px;
-  opacity: .82!important;
+  opacity: .90!important;
+}
+
+.ui-help-box,.ui-help-box .ui-widget-header,.ui-help-box .ui-widget-content {
+  background: #000;
+  color: #FFF!important;
 }
 
 .ui-help-box a {
@@ -1057,12 +1057,17 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-help-box #ui-dialog-title-1 {
-  font-size: 13px;
+	margin-top: 5px;
+  font-size: 1.3em;
 }
 
 .ui-help-box p,.ui-help-box strong,.ui-help-box li {
-  color: #FFF!important;
-  font-size: 12px;
+	color: #FFF!important;
+	font-size: 12px;
+	margin-bottom : 5px;
+}
+.ui-help-box ul,.ui-help-box ol  {
+	padding-left : 1.25em;
 }
 
 .ui-help-box a:hover {

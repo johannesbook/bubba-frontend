@@ -77,17 +77,16 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
 
 	$lang['help_box_filemanager_backup']="
 	<ol>
-    <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click 'Create job'. The new backup job gets automatically highlighted in the 'Excising jobs' column.</li>
+    <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click 'Create job'. The new backup job gets automatically highlighted in the 'Existing jobs' column.</li>
     <li>Add the <strong>files you want to include</strong> in the backup job by clicking the 'Browse' button under the 'Included directories' menu. Subdirectories will automatically be included.</li>
     <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the 'Browse' button under the 'Excluded directories' menu and select the non wanted directories. </li>
-    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination directory will be created if it does not exist already.</li>
-  </ol>
-  <ul>
-    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the 'Disk' drop down list. Fill in the 'Destination directory' (i.e. 'my_ backup_folder\important\') or leave it blank for saving backup in the root directory.</li>
-    <li>If choosing remote SSH / FTP you have to fill in 'Host' (i.e. an IP-address), 'Destination directory' (i.e. 'my_ backup_folder/important/') or leave it blank for saving backup in the remote root directory, 'Remote user' and 'Remote password'.</li>
-   </li>
-  </ul>
-  <ol start='5'>
+    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination directory will be created if it does not exist already.<br>
+		  <ul>
+		    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the 'Disk' drop down list. Fill in the 'Destination directory' (i.e. 'my_ backup_folder\important\') or leave it blank for saving backup in the root directory.</li>
+		    <li>If choosing remote SSH / FTP you have to fill in 'Host' (i.e. an IP-address), 'Destination directory' (i.e. 'my_ backup_folder/important/') or leave it blank for saving backup in the remote root directory, 'Remote user' and 'Remote password'.</li>
+		   </li>
+		  </ul>
+	 </li>
     <li>Click '<strong>Backup schedule</strong>' to set the time and intensity to run the backup job. Also select how many full backups that should be saved.</li>
     <li>To increase security you have the option to<strong> encrypt the backup job</strong>. Click 'Data security', click 'Encrypt data' and select an encryption key.</li>
     <li>Click 'Update job' to save the settings.</li>
@@ -360,7 +359,7 @@ $lang['help_box_settings_backuprestore']="
 ";
 
 $lang['help_box_settings_software']="
-<h3>Udate software</h3>
+<h3>Update software</h3>
 <p>Bubba's software can easily be updated to gain new functionality. Press 'Update', and the update is automatically performed. Please have patient, it might take a while to perform an update.</p>
 <p>After an update, status information is shown. Press the '+' sign to show the complete message.</p>
 <h3>Hotfixes</h3>
