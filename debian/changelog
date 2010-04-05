@@ -4,8 +4,9 @@ bubba-frontend (1.9.52) claire; urgency=low
   * Styled "add to album" popup. Closes #1329 
   * Set all style to "bold" Closes #1314
   * Prohibit list of USB disk for RAID use.
+  * Styled downloads. Closes #1263 
 
- -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 21:14:27 +0200
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 21:47:10 +0200
 
 bubba-frontend (1.9.51) karmic; urgency=low
 

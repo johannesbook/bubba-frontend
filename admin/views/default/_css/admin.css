@@ -245,11 +245,12 @@ div.progress-main {
 }
 
 div.progress-main div.progress-meter {
-	color: #fff;
+  color: #fff;
   background-color: #506AB2;
   text-align: right;
   width: 0;
-  padding: 0.1em;
+  padding-bottom: 6px;
+  padding-top: 0px;
 }
 
 div.progress div.progress-mini-box {
@@ -1006,6 +1007,18 @@ button.ui-button::-moz-focus-inner {
 
 #filemanager .ui-button-text {
   display: none;
+}
+#ui-downloads-list table {
+	margin-bottom : 5px;
+}
+#ui-downloads-list table.ui-downloads-listitem tr {
+	border : none;
+	line-height : 16px;
+
+}
+	
+#download-addurl {
+	width : 100%;
 }
 
 #uploaddiv {

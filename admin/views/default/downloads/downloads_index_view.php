@@ -22,7 +22,7 @@ $(document).ready(function(){
 <table class="ui-table-outline">
 <tr>
    <td style="width: 10%; text-align: left; "><?=t('Location')?></td>
-   <td style="width: 90%; text-align: center; "><input id="download-addurl" type="text" name="url" size="40"/></td>
+   <td style="width: 90%; text-align: center; "><input id="download-addurl" type="text" name="url"/></td>
 </tr>
 <tr>
 <td>
