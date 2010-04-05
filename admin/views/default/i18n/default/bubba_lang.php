@@ -331,7 +331,7 @@ $lang["mail_err_usrinvalid"] = "User not allowed to update account";
 $lang["mail_editok"] = "Account updated.";
 $lang["mail_delete_account_ok"] ="Account deleted";
 $lang["mail-server-domaincontroller"] ="Email domain";
-
+$lan['mail_server_userpwdmissing'] = "Missing mail server password";
 
 //  ----------- Filemanager --------
 
