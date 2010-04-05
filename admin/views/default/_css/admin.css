@@ -1136,6 +1136,8 @@ button.ui-button::-moz-focus-inner {
 .ui-text-comment {
 	font-size : 11px;
 	line-height : 13px;
+	font-style : italic;
+	font-weight : 500 !important;
 }
 
 div.hotfix {

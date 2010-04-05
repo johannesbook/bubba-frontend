@@ -218,7 +218,7 @@ function copy_fields(formid) {
 		</td>
 	</tr>
 	<tr>
-		<td colspan="5">
+		<td colspan="5" class="ui-text-comment">
 			<?=t('Public port range accepted as start-port:stop-port')?><br />
 			<?=t('Private port is start port if public port range entered')?><br />
 			<input type="hidden" name="o_source" />
@@ -231,7 +231,7 @@ function copy_fields(formid) {
 	</tr>
 	<?if(isset($err_portforward)):?>
 	<tr>
-		<td class="err" colspan="6">
+		<td class="ui-state-error" colspan="6">
 				<?
 			$br="";
 			if(isset($err_portforward["rm"])) {
