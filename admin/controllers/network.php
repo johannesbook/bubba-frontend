@@ -562,8 +562,8 @@ class Network extends Controller{
 		/////--- REMOVE PORTFORWARD -------
 		// create portlist to remove from forwards.
 		// Remove portforward
-		$expand = true;
 		if($removerule=$this->input->post("removerule")) {
+			$expand = true;
 			if($removerule["source"] == "all")
 				$removerule["source"] = "0";
 
@@ -599,7 +599,7 @@ class Network extends Controller{
 		} else {
 			$data["success"] = true;
 		}
-		$data["expand"] = $expand;
+		if(isset($expand)) $data["expand"] = $expand;
 		if($strip){
 			$this->load->view(THEME.'/network/network_fw_view.php',$data);
 		}else{
