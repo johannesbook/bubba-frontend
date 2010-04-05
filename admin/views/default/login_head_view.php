@@ -125,6 +125,11 @@ $(document).ready(function(){
 		$(this).find("span").hide();
 	});
 	
+	if($(window).height()<450) {
+		// move more info out of the way...
+		$("#login_more_info").css("top",285);
+	}
+	
 	<?if(isset($show_login) && $show_login):?>
 		//show dialog_login
 		var redirect = new Array();
