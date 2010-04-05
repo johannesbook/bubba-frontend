@@ -1040,7 +1040,12 @@ class Network extends Controller{
 								
 				// try to set easyfind config.
 				if(isset($data['wiz_data']['en_easyfind'])) {
-					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
+					if($this->networkmanager->easyfind_get_name() == $data['wiz_data']['easyfind_name']) {
+						// just enable it.
+						$data['wiz_data']['err_easyfind'] = !$this->networkmanager->easyfind_set_enable();
+					} else {
+						$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
+					}
 				} else {
 					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind(0,"");
 				}
