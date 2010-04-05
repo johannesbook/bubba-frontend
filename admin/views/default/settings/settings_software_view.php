@@ -14,8 +14,12 @@
 	<?else :?>
 			<input type="submit" value="<?=t('settings_software_update_system')?>"/>
 			<div class="hotfix">
-			<input type="checkbox" class="checkbox_radio" name="hotfix_enabled" id="hotfix_enabled" <?if($hotfix_enabled):?>checked="checked" <?endif?>/>
-				<span><?=t("settings_software_include_hotfixes")?></span><span class="help"><a href="/manual/<?=t("help_hotfix")?>" target="_blank">(<?=t('Explain')?>)</a></span>
+			<table class="ui-table-outline">
+				<tr>
+					<td><?=t("settings_software_include_hotfixes")?> <a href="/manual/<?=t("help_hotfix")?>" target="_blank">(<?=t('Explain')?>)</a></td>
+					<td><input type="checkbox" class="slide" name="hotfix_enabled" id="hotfix_enabled" <?if($hotfix_enabled):?>checked="checked" <?endif?>/></td>
+				</tr>
+			</table>
 			</div>
 		<input type="hidden" name="apt_type" id="apt_type" value="upgrade"/>
 	<?endif?>
@@ -28,11 +32,11 @@
 
 <fieldset id="current_package_versions">
 	<legend><?=t("Current package versions")?></legend>
-	<table id="package_versions">
+	<table id="package_versions" class="ui-table-outline">
 		<thead>
 			<tr>
-				<td><?=t("Package name")?></td>
-				<td><?=t("Package version")?></td>
+				<th><?=t("Package name")?></th>
+				<th><?=t("Package version")?></th>
 			</tr>
 		</thead>
 		<tbody id="package_versions_body" />
