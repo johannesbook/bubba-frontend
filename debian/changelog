@@ -1,3 +1,9 @@
+bubba-frontend (1.9.45) claire; urgency=low
+
+  * Disable fw view when wan not configured, (Closes #1312)
+
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 13:57:43 +0200
+
 bubba-frontend (1.9.44) claire; urgency=low
 
   * Fixed update of network profile (Closes #1313)
