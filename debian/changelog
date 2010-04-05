@@ -1,3 +1,9 @@
+bubba-frontend (1.9.51) karmic; urgency=low
+
+  * Fixed "create folder error message" 
+
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 17:15:36 +0200
+
 bubba-frontend (1.9.50) claire; urgency=low
 
   * Fixed styles in wizard. Closes #1292
