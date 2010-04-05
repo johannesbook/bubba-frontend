@@ -97,7 +97,7 @@ function copy_fields(formid) {
 </script>
 <? if(isset($disable_fw) && $disable_fw): ?>
 	<div class="ui-network-information-panel">
-	<?=t("These settings are locked")" (".t("no valid WAN port connection").")"?>
+	<?=t("These settings are locked")?> (<?=t("no valid WAN port connection")?>).
 	</div>
 <? endif ?>
 

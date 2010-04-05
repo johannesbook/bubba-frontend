@@ -60,9 +60,9 @@ $(document).ready(function(){
 
 	<?if( (isset($disable_network) && $disable_network) || (isset($disable_fw) && $disable_fw) ):?>
 		// lan + wan + firewall
-		$('input').attr("disabled","true");
-		$('button').attr("disabled","true");
-		$('button').addClass("ui-state-disabled");
+		$('#content_wrapper input').attr("disabled","true");
+		$('#content_wrapper button').attr("disabled","true");
+		$('#content_wrapper button').addClass("ui-state-disabled");
 	<?endif?>
 	
 	// wan + lan
