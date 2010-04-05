@@ -1077,10 +1077,16 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-help-box a {
-  color: #FFF!important;
-  font-weight: 700!important;
+  color: #fff;
+  text-decoration : none;
 }
-
+.ui-help-box p {
+  font-weight : 500 !important;
+}
+.ui-help-box a:hover {
+	color : #506AB2;
+	text-decoration : underline;
+}
 .ui-help-box #ui-dialog-title-1 {
 	margin-top: 5px;
   font-size: 1.3em;
@@ -1094,20 +1100,13 @@ button.ui-button::-moz-focus-inner {
 .ui-help-box ul,.ui-help-box ol  {
 	padding-left : 1.25em;
 }
-
-.ui-help-box a:hover {
-  color: #FFF!important;
-}
-
 .ui-fake-updir {
   background: #EEE;
 }
 
 #help-box-further-info {
   font-size: 13px;
-
   margin-top: 14px;
-  text-transform: uppercase;
 }
 
 .ui-help-box .ui-icon-closethick {

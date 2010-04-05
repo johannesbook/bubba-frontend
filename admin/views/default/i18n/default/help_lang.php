@@ -1,8 +1,8 @@
 <?
 
 // External links
-$lang["help_box_manual_link"] = "Bubba Manual";
-$lang["help_box_forum_link"] = "Excito community forum";
+$lang["help_box_manual_link"] = "Bubba|2 Manual";
+$lang["help_box_forum_link"] = "Forum";
 $lang["help_box_excito_link"] = "Excito web site";
 $lang["help-box-further-info"] = "Additional resources";
 
