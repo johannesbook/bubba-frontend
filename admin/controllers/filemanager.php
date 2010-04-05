@@ -134,7 +134,7 @@ class Filemanager extends Controller{
 				$user=$this->session->userdata("user");
 				$newpath = "$root/$newname";
 				if(mv($path,$newpath,$user)) { // true == false
-					$error = t("filemanager-rename-error $newpath - $path - $user");
+					$error = t("filemanager-rename-error",$path);
 				}
 			}
 			$data["success"]=!$error;
