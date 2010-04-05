@@ -284,7 +284,7 @@ class NetworkManager extends Model {
 		}
 	}
 
-	private function _restart_services($interface) {
+	private function _restart_services($interface = null) {
 	  if(service_running("proftpd")){
 			stop_service("proftpd");
 			start_service("proftpd");
