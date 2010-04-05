@@ -1,3 +1,10 @@
+bubba-frontend (1.9.50) claire; urgency=low
+
+  * Fixed styles in wizard. Closes #1292
+  * Fixed spacing on first page for notebooks, Closes #1308 
+
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 16:42:11 +0200
+
 bubba-frontend (1.9.49) claire; urgency=low
 
   * Fixed wizard easyfind "reenable with same name". Closes #1321

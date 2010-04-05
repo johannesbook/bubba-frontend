@@ -856,6 +856,13 @@ h1.wizard-header {
 	padding-top : 5px;
 	padding-bottom : 5px;
 }
+#fn-wizard-add label {
+	font-size : 14px;	
+}
+.ui-widget-wizard div.ui-wizard-controls {
+	margin-top : 5px;
+}
+
 .ui-widget-wizard td.ui-wizard-existing-users {
 	margin-left : 10px;
 	vertical-align : top;
