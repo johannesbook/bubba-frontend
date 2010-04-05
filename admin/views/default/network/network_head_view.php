@@ -4,7 +4,7 @@
 
 function disable_leasefields() {
 	for(i=0;i<4;i++) {
-		if( ($("[name='mask["+i+"]']").val() & $("[name='ip["+i+"]']").val()) == $("[name='ip["+i+"]']").val()) {
+		if( $("[name='mask["+i+"]']").val() == "255") {
 			$("[name='dnsmasq[range_start]["+i+"]']").attr("disabled","disabled");
 			$("[name='dnsmasq[range_end]["+i+"]']").attr("disabled","disabled");
 		} else {

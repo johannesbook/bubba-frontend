@@ -989,7 +989,7 @@ class Network extends Controller{
 
 		if( $old_profile != $profile) {
 			// Profile updated
-			update_bubbacfg($old_profile,'network_profile',$profile);
+			update_bubbacfg($this->session->userdata('user'),'network_profile',$profile);
 			$this->session->set_userdata("network_profile", $profile);
 			$this->networkmanager->apply_profile($profile,$old_profile);
 		}
