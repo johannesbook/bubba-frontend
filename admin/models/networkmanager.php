@@ -26,6 +26,7 @@ class NetworkManager extends Model {
 	}
 
 	public function easyfind_validate( $name ) {
+		if(!$name) return 0;
 		return preg_match( '#^[A-Za-z0-9-]+$#', $name );
 	}
 	

@@ -676,7 +676,7 @@ class Settings extends Controller{
 			$easyfind_enable = $this->input->post('easyfind_enabled');
 			if( $easyfind_enable ) {
 				# easyfind selected to be enabled
-				if( $easyfind != $current_easyfind ) {
+				if( $easyfind != $current_easyfind || $easyfind == "") {
 					# we have new easyfind name
 					if( $this->networkmanager->easyfind_validate( $easyfind ) ) {
 						# name is valid
