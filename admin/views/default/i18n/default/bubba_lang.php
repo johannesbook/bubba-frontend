@@ -360,6 +360,7 @@ $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 
+$lang['filemanager_mkdir_error_file_exists'] = "Error creating directory, name already exists";
 $lang['filemanager_mkdir_error_create'] = "Failed to create directory";
 $lang['filemanager-rename-error'] = "Error renaming file '%s'";
 $lang["filemanager-move-fail-message"] = "Failed to move the following files and directories: %s";
