@@ -1,3 +1,10 @@
+bubba-frontend (1.9.48) claire; urgency=low
+
+  * Fixed enable easyfind (Closes #1318)
+  * Fixed php error in network managar (Closes #1315)
+
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 15:16:29 +0200
+
 bubba-frontend (1.9.47) claire; urgency=low
 
   * Fixed set date/time. (Closes #1317) 
