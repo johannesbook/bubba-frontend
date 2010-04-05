@@ -1,9 +1,11 @@
-bubba-frontend (1.9.52) karmic; urgency=low
+bubba-frontend (1.9.52) claire; urgency=low
 
   * Changed 'disabled' fields to readonly. Closes #806 
   * Styled "add to album" popup. Closes #1329 
+  * Set all style to "bold" Closes #1314
+  * Prohibit list of USB disk for RAID use.
 
- -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 20:56:39 +0200
+ -- PA Nilsson <pa@excito.com>  Mon, 05 Apr 2010 21:14:27 +0200
 
 bubba-frontend (1.9.51) karmic; urgency=low
 

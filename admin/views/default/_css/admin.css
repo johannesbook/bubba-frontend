@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight : 700;
 }
 
 html,body {
@@ -30,7 +31,7 @@ div#bg-right {
 
 h1 {
   font-size: 21	px;
-  font-weight: 700;
+
   line-height: 1em;
 }
 
@@ -43,7 +44,6 @@ h2 {
 
 h3 {
   font-size: 1.3em;
-  font-weight: 700;
   margin: .6em 0 0;
 }
 
@@ -73,7 +73,7 @@ input[type=submit],input[type=button],button.submit {
   color: #FFF;
   display: block;
   font-size: 12px;
-  font-weight: 700;
+
   height: 31px;
   margin: 3px;
   min-width : 80px;
@@ -149,7 +149,7 @@ td {
 table.ui-table-outline td {
 	vertical-align : middle;
 	font-size : 14px;
-	font-weight : 700;
+
 }
 
 table.ui-table-outline tr {
@@ -170,7 +170,7 @@ tr.ui-widget-header {
 ul {
   list-style-position: outside;
   list-style : disc;
-  font-weight : 700;
+
 }
 
 #nav li, #subnav li {
@@ -341,7 +341,7 @@ body {
 
 #nav ul {
   font-size: 18px;
-  font-weight: 700;
+
   list-style: none;
   margin: 1em 0 0;
 }
@@ -380,7 +380,7 @@ body {
 }
 #topnav .ui-button-text {
   font-size: 12px;
-  font-weight: 700;
+
   position: absolute;
 	margin-left : -5px;
   top: 35px;
@@ -388,7 +388,7 @@ body {
 
 #topnav_status {
   font-size: 10px;
-  font-weight: 700;
+
   margin-top: 0px;
 }
 
@@ -423,7 +423,7 @@ body {
 
 #subnav ul li {
   border-right: 1px #000 solid;
-  font-weight: 700;
+
   padding-top: 0;
 }
 
@@ -449,13 +449,13 @@ body {
 }
 #login_more_info span {
   display: block;
-  font-weight: 700;
+
   font-size : 14px;
   margin-bottom : 4px;
 }
 
 #login_more_info a {
-  font-weight: 700;
+
   margin-right: .3em;
   text-decoration: none;
 }
@@ -471,7 +471,7 @@ body {
 }
 
 .ui-login-menubar-a {
-  font-weight: 700;
+
   height: 100px;
   margin-right: 5px;
   margin-left: 5px;
@@ -484,7 +484,7 @@ body {
 .ui-login-menubar-a div {
   display: none;
   font-size: 12px;
-  font-weight: 700;
+
   width : 150px;
   position : relative;
   left : -35px;
@@ -501,14 +501,14 @@ body {
 
 #sideboard-datetime-date {
   font-size: 120px;
-  font-weight: 700;
+
   letter-spacing:-4px;
   line-height : 120px;
 }
 
 #sideboard-datetime-day,#sideboard-datetime-month,#sideboard-datetime-year,#sideboard-clock-digital {
   font-size: 14px;
-  font-weight: 700;
+
   line-height : 18px;
 }
 
@@ -832,7 +832,7 @@ body {
 }
 
 .ui-widget-wizard, .ui-widget-wizard input, .ui-widget-wizard select {
-	font-weight : bold;
+
 }
 .ui-widget-wizard input[type=text]{
 	vertical-align : baseline;
@@ -847,7 +847,7 @@ h1.wizard-header {
 }
 .ui-widget-wizard th h2 {
   font-size: 14px;
-  font-weight: 700;
+
   text-align: left;
   margin-bottom : 3px;
   margin-top : 10px;
@@ -1092,7 +1092,7 @@ button.ui-button::-moz-focus-inner {
 
 #help-box-further-info {
   font-size: 13px;
-  font-weight: 700;
+
   margin-top: 14px;
   text-transform: uppercase;
 }
@@ -1155,7 +1155,7 @@ button.ui-button::-moz-focus-inner {
 div.hotfix {
   margin-top: 12px;
   vertical-align: middle;
-  font-weight : 700;
+
 }
 
 #settings fieldset.update {
@@ -1164,7 +1164,7 @@ div.hotfix {
 
 #current_package_versions {
   margin-top: 40px;
-  font-weight : 700;
+
   font-size : 12px;
 }
 
@@ -1303,7 +1303,7 @@ table.partitions > tbody > tr > td {
   color: #000;
   font-family: sans-serif;
   font-size: .8em;
-  font-weight: 700;
+
   height: 25px;
   padding: 0;
   text-align: center;
@@ -1430,7 +1430,7 @@ div.text label {
 .ui-network-information-panel {
 	padding-top : 5px;
 	padding-bottom : 5px;
-	font-weight : 700;
+
 	margin-bottom : 10px;
 }
 
@@ -1487,7 +1487,7 @@ div.text label {
 
 .ui-dialog h2 {
   font-size: 16px;
-  font-weight: 700;
+
   margin-bottom: 1.5em;
   margin-top: 0;
   text-align: center;
@@ -1664,7 +1664,7 @@ input[type=radio] {
 }
 
 tbody > tr > th label,label,#traffic .ui-filemanager-state-header {
-  font-weight: 700;
+
 }
 
 button:hover,input[type=button],input[type=submit],input[type=reset],.ui-filemanager,#filetable_wrapper button:hover,.ui-filemanager-prev-arrow:hover,.ui-filemanager-next-arrow:hover,.ui-filemanager-path-widget .ui-filemanager-path-link,.ui-filemanager-type-row,.expansion {

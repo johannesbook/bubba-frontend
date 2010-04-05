@@ -150,7 +150,7 @@ $(document).ready( function() {
 		dialog_element = $.dialog("", "<?=t("disk_raid_create_title")?>", {});
 		dialog_element.text("<?=t("disk-examine-disks")?>.");
 
-		$.post(	'<?=site_url("ajax_disk/get_external_disks")?>', { removable: !false, raid: false, usb: !false }, function(data) {
+		$.post(	'<?=site_url("ajax_disk/get_external_disks")?>', { removable: !false, raid: false, usb: false }, function(data) {
 			dialog_element.empty();
 			if( data.internal_got_mounts ) {
 				// There exists mounts under /home 
