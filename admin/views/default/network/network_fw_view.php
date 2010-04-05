@@ -95,6 +95,11 @@ function copy_fields(formid) {
 }
 
 </script>
+<? if(isset($disable_fw) && $disable_fw): ?>
+	<div class="ui-network-information-panel">
+	<?=t("These settings are locked")." (".t("Bubba WAN port is not configured").")"?>
+	</div>
+<? endif ?>
 
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <table id="firewall" class="ui-table-outline">

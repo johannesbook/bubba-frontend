@@ -940,6 +940,10 @@ class Network extends Controller{
 
 	function fw($strip="") {
 		$data = get_fwsettings();
+		$wan_ifc = $this->networkmanager->get_networkconfig($this->networkmanager->get_wan_interface());
+		if($wan_ifc["address"] == "0.0.0.0") {		
+			$data['disable_fw'] = true;
+		}
 		$data["disabled"] = "";
 		$data["portforward"] = true;
 		if($strip){

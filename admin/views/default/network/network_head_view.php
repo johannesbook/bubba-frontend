@@ -16,28 +16,7 @@ function disable_leasefields() {
 
 $(document).ready(function(){
 
-	<?if(isset($dhcpd) && !$dhcpd):?>
-		$("#cb_dns").attr("disabled","disabled");
-		$("#dhcpd").attr("disabled","disabled");
-	<?endif?> 
-	
-	$("#body_lan tr td:nth-child(2),#body_wan tr td:nth-child(2)").addClass("col2");	
-		
-	$(".fn-network-button_submit").click( function () {
-		$(".fn-network-button_submit").addClass("ui-state-disabled");
-		$(this).parents("form").submit();
-	});
-
-	<?if(isset($expand) && $expand):?>
-	$("#network-firewall-advanced").removeClass("ui-helper-hidden");
-	<?endif?>
-
-	<?if(isset($disable_network) && $disable_network):?>
-	$('input').attr("disabled","true");
-	$('button').attr("disabled","true");
-	$('button').addClass("ui-state-disabled");
-	<?endif?>
-
+	// network profile
 	$("#OTHCFG input:radio").click(function(){$("#networkprofile_update").removeAttr("disabled")});
 	$("#networkprofile_update").click(function() {
 		$.post("<?=site_url("ajax_network/validate_profile_change")?>",{ profile: $("input[name='profile']:checked").val() }, function(data){
@@ -72,8 +51,33 @@ $(document).ready(function(){
 			}
 		}, 'json');
 		return false;
+	});	
+
+	// firewall scripts
+	<?if(isset($expand) && $expand):?>
+	$("#network-firewall-advanced").removeClass("ui-helper-hidden");
+	<?endif?>
+
+	<?if( (isset($disable_network) && $disable_network) || (isset($disable_fw) && $disable_fw) ):?>
+		// lan + wan + firewall
+		$('input').attr("disabled","true");
+		$('button').attr("disabled","true");
+		$('button').addClass("ui-state-disabled");
+	<?endif?>
+	
+	// wan + lan
+	$("#body_lan tr td:nth-child(2),#body_wan tr td:nth-child(2)").addClass("col2");	
+		
+	$(".fn-network-button_submit").click( function () {
+		$(".fn-network-button_submit").addClass("ui-state-disabled");
+		$(this).parents("form").submit();
 	});
 
+	// lan scripts
+	<?if(isset($dhcpd) && !$dhcpd):?>
+		$("#cb_dns").attr("disabled","disabled");
+		$("#dhcpd").attr("disabled","disabled");
+	<?endif?> 
 
 	$("#dhcpd").click(function() {
 		update_leasefields();
