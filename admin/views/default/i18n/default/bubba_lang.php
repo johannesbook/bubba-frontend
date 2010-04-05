@@ -355,7 +355,7 @@ $lang["filemanager-mkdir-dialog-title"] = "Create a new directory";
 $lang["filemanager-delete-dialog-button-label"] = "Delete";
 $lang["filemanager-delete-dialog-title"] = "Delete files and directories";
 $lang["filemanager-delete-fail-message"] = "Failed to delete following files/directories: %s";
-$lang["filemanager-delete-dialog-message"] = "Are you sure?";
+$lang["filemanager-delete-dialog-message"] = "Delete selected files and/or directories?";
 $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
@@ -363,7 +363,7 @@ $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 $lang['filemanager_mkdir_error_create'] = "Failed to create directory";
 $lang['filemanager-rename-error'] = "Error renaming file '%s'";
 $lang["filemanager-move-fail-message"] = "Failed to move the following files and directories: %s";
-$lang["filemanager-album-dialog-message"] = "Are you sure?";
+$lang["filemanager-album-dialog-message"] = "Add selected images/directories to photo album?";
 
 $lang["help_box_header"] = "Bubba Help";
 

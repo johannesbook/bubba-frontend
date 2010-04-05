@@ -112,7 +112,7 @@ dialog_callbacks = {
 						box.append( $('<li/>', {text: key}));
 					}
 				});
-				$.alert(box, "Following images where added" , $.message('button-label-close'), null, {width: '600px'});
+				$.alert(box, "The following images were added" , $.message('button-label-close'), null, {width: '600px'});
 			}
 			$(self).dialog('close');
 		}, 'json');		

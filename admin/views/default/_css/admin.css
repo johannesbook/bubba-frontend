@@ -170,6 +170,7 @@ tr.ui-widget-header {
 ul {
   list-style-position: outside;
   list-style : disc;
+  font-weight : 700;
 }
 
 #nav li, #subnav li {
@@ -974,6 +975,10 @@ button.ui-button::-moz-focus-inner {
 
 .ui-filemanager-path-widget .ui-filemanager-path-divider {
   margin: .25em;
+}
+
+#body_filemanager ul {
+	padding-left : 15px;
 }
 
 .fg-toolbar {
