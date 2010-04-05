@@ -302,7 +302,7 @@ $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 <p><strong>Step 2 - Create user</strong></p>
 <p>Create a user, or as many as you desire. Click 'Add user' after filling in the user information. Click 'Next' to continue.</p>
 <p><strong>Step 3 - Network setup</strong></p>
-<p>Choose if you would like to register for a free Easyfind name. You will reach your Bubba by surfing to www.<your easyfind name>.bubbaserver.com. Click 'Next' to continue.</p>
+<p>Choose if you would like to register for a free Easyfind name. You will reach your Bubba by surfing to www.-your easyfind name-.bubbaserver.com. Click 'Next' to continue.</p>
 <p><strong>Setup complete</strong></p>
 <p>Click 'Finish setup' to exit the wizard.</p>
 ";
@@ -312,7 +312,7 @@ $lang['help_box_settings_identity']="
 <p><strong>Hostname</strong> - is the unique name by which a network-attached device is known on a network.</p>
 <p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or Internet connection. Use the same workgroup name on Bubba as on your computer.</p>
 <h3>Easyfind options</h3>
-<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba wherever you are. You will be able to find your Bubba wherever you are typing www.<your easyfind name>.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
+<p><strong>Use 'Easyfind' to locate your Bubba</strong> - Using our free service Easyfind you will be able to reach your Bubba wherever you are. You will be able to find your Bubba wherever you are typing www.-your easyfind name-.bubbaserver.com. <strong>Easyfind only works with http and https protocols</strong>.</p>
 <p><strong>Easyfind name</strong> - Choose a name for your Bubba on the Easyfind network.</p>
 ";
 
@@ -413,11 +413,11 @@ $lang['help_box_user_mail_editfac']="
 
 
 $lang['help_box_user_downloads']="
-<p>Use the Bubba download manager to download files directly to your Bubba, wherever you are. The only thing you need is a internet connection and a web browser. Surf to www.<your easyfind name>.bubbaserver.com. Of course if you already are in your home network browse to http://bubba/admin.</p>
+<p>Use the Bubba download manager to download files directly to your Bubba, wherever you are. The only thing you need is a internet connection and a web browser. Surf to www.-your easyfind name-.bubbaserver.com. Of course if you already are in your home network browse to http://bubba/admin.</p>
 <p>Large, time consuming downloads are handled by Bubba while your computer is turned off. When you initiate your first download a catalogue is created in your /home/[username]/ directory: /home/[username]/downloads. </p>
 <h3>How to download</h3>
 <ol>
-  <li>At home browse to http://bubba/admin or away from home www.<your easyfind name>.bubbaserver.com/admin.</li>
+  <li>At home browse to http://bubba/admin or away from home www.-your easyfind name-.bubbaserver.com/admin.</li>
   <li>Log in as your standard user. </li>
   <li>Click 'Downloads'.</li>
   <li>To initiate a download you need to copy* the URL to the file (or torrent) you desire to download and paste it into the 'Location' field on your Bubba and click 'Add'. </li>
