@@ -381,9 +381,9 @@ body {
 }
 #topnav .ui-button-text {
   font-size: 12px;
-
+	width : 100px;
   position: absolute;
-	margin-left : -5px;
+	left : -38px;
   top: 35px;
 }
 
@@ -394,6 +394,7 @@ body {
 }
 
 #topnav button,#fn-menu-trigger {
+	position : relative;
   background: transparent;
   border: 0;
   color: #000;
@@ -534,10 +535,10 @@ body {
   filter: alpha(opacity=85);
   height: 140px!important;
   max-height: 140px;
-  max-width: 674px;
+  max-width: 575px;
   opacity: .85;
   text-align: center;
- 	width: 674px;
+ 	width: 575px;
 	overflow : hidden;
 }
 
@@ -638,11 +639,19 @@ body {
 }
 
 .ui-icon-help {
-  background-position: -68px -224px;
+  background-position: -64px -224px;
   height: 28px;
-  width: 15px;
+  width: 20px;
 }
 
+#topnav #fn-topnav-settings {
+	margin: 0 0 0 4px;
+}
+.ui-icon-settings {
+  background-position: -199px -145px;
+  height: 28px;
+  width: 24px;
+}
 .ui-icon-home {
   background-position: -5px -224px;
   height: 28px;

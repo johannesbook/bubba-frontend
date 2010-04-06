@@ -441,7 +441,7 @@ class Menu extends Model {
 		$systemmenu = $this->bubba_systembar;
 		$user = $this->session->userdata("user");
 		$ret["main_menu"] = $this->_retreive_dialogmenu($user,$mainmenu);
-		$ret["system_menu"] = $this->_retreive_dialogmenu($user,$systemmenu);
+		//$ret["system_menu"] = $this->_retreive_dialogmenu($user,$systemmenu);
 		return $ret;
 	}
 

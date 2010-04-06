@@ -1,3 +1,9 @@
+bubba-frontend (1.9.54) claire; urgency=low
+
+  * Moved "settings" to seperate topnav icon.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 06 Apr 2010 08:56:58 +0200
+
 bubba-frontend (1.9.53) claire; urgency=low
 
   * Fixed error message for existing folder. Closes #1316

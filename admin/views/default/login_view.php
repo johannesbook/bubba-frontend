@@ -6,12 +6,6 @@
 }?>
 </div>
 
-<div id="login_settings">
-<?foreach($system_menu as $menuitem) {
-	print "\t$menuitem\n";
-}?>
-</div>
-
 <div id="login_more_info">
     <span>For more information:</span>
     <a href="/manual" target="_blank">Manual</a>|

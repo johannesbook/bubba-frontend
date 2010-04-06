@@ -108,6 +108,7 @@ $(document).ready(function(){
 		}
 		);
 	$('a', menu_dialog).click(function(){menu_dialog.dialog('close')});
+
 	$('#fn-topnav-logout').click(function(event) {
 		<? if($this->session->userdata('valid')):?>
 			logout_dialog();
@@ -117,6 +118,9 @@ $(document).ready(function(){
   	});
     $('#fn-topnav-home').click(function() {
     	window.location.href = '<?=FORMPREFIX?>';
+    });
+    $('#fn-topnav-settings').click(function() {
+    	window.location.href = '<?=FORMPREFIX?>/stat';
     });
   
     $('#fn-menu-trigger').click(function() {
@@ -166,6 +170,8 @@ $(document).ready(function(){
 
 	$("#fn-topnav-help").mouseover(function(e) {		$("#s-topnav-help").show();	});	
 	$("#fn-topnav-help").mouseout(function(e) {		$("#s-topnav-help").hide();	});	
+	$("#fn-topnav-settings").mouseover(function(e) {		$("#s-topnav-settings").show();	});	
+	$("#fn-topnav-settings").mouseout(function(e) {		$("#s-topnav-settings").hide();	});	
 	$("#fn-topnav-home").mouseover(function(e) {		$("#s-topnav-home").show();	});	
 	$("#fn-topnav-home").mouseout(function(e) {		$("#s-topnav-home").hide();	});	
 	$("#fn-topnav-logout").mouseover(function(e) {		$("#s-topnav-logout").show();	});	
@@ -255,7 +261,8 @@ if(isset($head)) {
             <? } ?>
         </span>
             <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text ui-helper-hidden"><?=t("Logout")?></div></button>
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Home")?></div></button>
+            <button id="fn-topnav-settings" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-settings"></div><div id="s-topnav-settings" class="ui-button-text" style="display:none"><?=t("Settings")?></div></button>
             <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text" style="display:none"><?=t("Help")?></div></button>
 		</div>
 		</div>
