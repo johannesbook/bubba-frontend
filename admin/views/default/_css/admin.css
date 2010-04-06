@@ -1089,22 +1089,18 @@ button.ui-button::-moz-focus-inner {
   color: #fff;
   text-decoration : none;
 }
-.ui-help-box p {
-  font-weight : 500 !important;
-}
 .ui-help-box a:hover {
 	color : #506AB2;
 	text-decoration : underline;
 }
 .ui-help-box #ui-dialog-title-1 {
-	margin-top: 5px;
-  font-size: 1.3em;
+	margin-top: 7px;
+  font-size: 14px;
 }
-
-.ui-help-box p,.ui-help-box strong,.ui-help-box li {
-	color: #FFF!important;
+.ui-help-box p,.ui-help-box li  {
 	font-size: 12px;
 	margin-bottom : 5px;
+  font-weight : 500;
 }
 .ui-help-box ul,.ui-help-box ol  {
 	padding-left : 1.25em;
@@ -1116,8 +1112,13 @@ button.ui-button::-moz-focus-inner {
 #help-box-further-info {
   font-size: 13px;
   margin-top: 14px;
+  margin-bottom: 5px;
+  border-top : 1px solid #fff;
 }
-
+#help-box-external-links a{
+	margin-left: 2px;
+	margin-right: 2px;
+}
 .ui-help-box .ui-icon-closethick {
   background-image: url(../_img/icons.png)!important;
   background-position: -114px -194px;

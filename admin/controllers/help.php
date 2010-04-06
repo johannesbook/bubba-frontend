@@ -23,7 +23,7 @@ class Help extends Controller{
 			$manual_page = "";
 		}
 		if($strip == "html") {
-			$footer  =" <div id='help-box-further-info'>".t('help-box-further-info')."</div>";
+			$footer  =" <div id='help-box-further-info'></div>";
 			$footer .= "<div id='help-box-external-links'>";
 			$footer .= "<div class='help-box-external-link'><a target='_blank' href='/manual/'>".t('help_box_manual_link')."</a> | ";
 			$footer .= "<a target='_blank' href='http://forum.excito.net/index.php'>".t('help_box_forum_link')."</a> | ";

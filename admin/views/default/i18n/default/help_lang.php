@@ -1,7 +1,7 @@
 <?
 
 // External links
-$lang["help_box_manual_link"] = "Bubba|2 Manual";
+$lang["help_box_manual_link"] = "Bubba Manual";
 $lang["help_box_forum_link"] = "Forum";
 $lang["help_box_excito_link"] = "Excito web site";
 $lang["help-box-further-info"] = "Additional resources";
@@ -149,7 +149,7 @@ $lang['help_box_mail_server_settings']="
 ";
 
 
-$lang['help_box_network']=$lang['help_box_network_profile']="
+$lang['help_box_network']=$lang['help_box_network_profile']=$lang['help_box_update_profile']="
   <p>Automatic settings will work in most cases, you do probably not need to change this. Read the technical manual if you need further information.</p>
 	<p><strong>Automatic network settings</strong> - Bubba will automatically try to set an appropriate network configuration.</p>
 	<p><strong>Router + Firewall + Server</strong> - Bubba will automatically try to retreive network settings on WAN (internet), and use fixed network settings on the local network providing other computers with network information.</p>

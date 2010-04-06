@@ -291,19 +291,19 @@ class NetworkManager extends Model {
 			start_service("proftpd");
 		}
 		if($interface == $this->get_lan_interface()) {
-	    if(service_running("samba")){
+	    if(query_service("samba")){
 				restart_samba();
 	    }
-	    if(service_running("avahi-daemon")){
+	    if(query_service("avahi-daemon")){
 	        stop_service("avahi-daemon");
 	        start_service("avahi-daemon");
 	    }
-	    if(service_running("mt-daapd")){
+	    if(query_service("mt-daapd")){
 	        stop_service("mt-daapd");
 					sleep(1);
 	        start_service("mt-daapd");
 	    }  
-	    if(service_running("mediatomb")){
+	    if(query_service("mediatomb")){
 		    stop_service("mediatomb");
 		    start_service("mediatomb");
 	    }
