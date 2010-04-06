@@ -1,3 +1,9 @@
+bubba-frontend (1.9.56) karmic; urgency=low
+
+  * Fixed tooltips in IE8. Closes #1336. 
+
+ -- PA Nilsson <pa@excito.com>  Tue, 06 Apr 2010 11:51:49 +0200
+
 bubba-frontend (1.9.55) claire; urgency=low
 
   *  Restart of samba when changing profile. Closes #1178,#1177

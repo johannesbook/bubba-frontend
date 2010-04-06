@@ -384,7 +384,8 @@ body {
 	width : 100px;
   position: absolute;
 	left : -38px;
-  top: 35px;
+	top : 35px;
+	display : none;
 }
 
 #topnav_status {
@@ -403,6 +404,7 @@ body {
   margin: 0 6px;
   min-width: 0;
   vertical-align : middle;
+  overflow : visible;
 }
 #fn-menu-trigger {
 	margin : 0px;
