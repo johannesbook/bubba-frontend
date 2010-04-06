@@ -1,3 +1,9 @@
+bubba-frontend (1.9.57) karmic; urgency=low
+
+  * "admin" pre-entered for stat-login.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 06 Apr 2010 13:22:09 +0200
+
 bubba-frontend (1.9.56) karmic; urgency=low
 
   * Fixed tooltips in IE8. Closes #1336. 

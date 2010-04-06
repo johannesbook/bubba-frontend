@@ -8,8 +8,8 @@ class Stat extends Controller{
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		$this->Auth_model->EnforceAuth();
 		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->EnforceAuth();
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
