@@ -76,7 +76,7 @@ CoolClock.config = {
 
 		outerBorder: { lineWidth: 0, radius:98, color: "black", alpha: 0 },
 		smallIndicator: { lineWidth: 0, startAt: 89, endAt: 93, color: "black", alpha: 0 },
-		largeIndicator: { lineWidth: 4, startAt: 80, endAt: 93, color: "black", alpha: 1 },
+		largeIndicator: { lineWidth: 4, startAt: 76, endAt: 93, color: "black", alpha: 1 },
 		hourHand: { lineWidth: 4, startAt: -0, endAt: 65, color: "black", alpha: 1 },
 		minuteHand: { lineWidth: 4, startAt: -0, endAt: 85, color: "black", alpha: 1 },
 		secondHand: { lineWidth: 1, startAt: -0, endAt: 85, color: "black", alpha: 1 },

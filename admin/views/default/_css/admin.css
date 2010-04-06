@@ -64,17 +64,16 @@ input[type=text].ip {
 }
 
 input[type=submit],input[type=button],button.submit {
-  -moz-border-radius: .3em;
-  -webkit-border-radius: .3em;
-  background-image: url(../_img/label.png);
-  background-position: -6px -138px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-image: url(../_img/icons.png);
+  background-position: -12px -189px;
   background-repeat: overflow:hidden;
   border: 0;
   color: #FFF;
   display: block;
   font-size: 12px;
-
-  height: 31px;
+  height: 29px;
   margin: 3px;
   min-width : 80px;
   padding: 3px 8px 5px;
@@ -83,8 +82,6 @@ input[type=submit],input[type=button],button.submit {
 input[type=submit]:hover,input[type=button]:hover, button.submit:hover {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)!important;
   border: 0;
-  filter: alpha(opacity=50)!important;
-  opacity: .5!important;
 }
 
 input[type=text],input[type=password],textarea {
@@ -151,17 +148,14 @@ table.ui-table-outline td {
 	font-size : 14px;
 
 }
-
 table.ui-table-outline tr {
 	border-top : 1px solid #bbb;
-	border-bottom : 1px solid #bbb;
-	line-height : 28px;
+	line-height : 24px;
 }
 
 table.ui-table-outline tr:hover {
 	background-color : #e5e5e5;
 }
-
 tr.ui-widget-header {
   border: 0;
   border-bottom: .1em solid #e5e5e5;
@@ -328,6 +322,7 @@ body {
   color: #000;
   padding: 0 .1em;
   text-align: center;
+  line-height : 30px;
 }
 
 #header li a {
@@ -341,9 +336,8 @@ body {
 }
 
 #nav ul {
-  font-size: 18px;
-
-  list-style: none;
+  font-size: 21px;
+	list-style: none;
   margin: 1em 0 0;
 }
 
@@ -415,7 +409,6 @@ body {
 #subnav {
   font-size: 14px;
   list-style: none;
-  margin-top: .8em;
 }
 
 #subnav ul:after {
@@ -426,8 +419,7 @@ body {
 }
 
 #subnav ul li {
-  border-right: 1px #000 solid;
-
+  border-right: 2px #000 solid;
   padding-top: 0;
 }
 
@@ -505,9 +497,9 @@ body {
 
 #sideboard-datetime-date {
   font-size: 120px;
-
+	margin-top : 10px;
   letter-spacing:-4px;
-  line-height : 120px;
+  line-height : 112px;
 }
 
 #sideboard-datetime-day,#sideboard-datetime-month,#sideboard-datetime-year,#sideboard-clock-digital {
@@ -889,6 +881,14 @@ h1.wizard-header {
 	display : inline;
 	width : 100px;
 }
+#content table #ui-stat-list {
+	margin-bottom : 0px;
+}
+#content table #ui-stat-swupdate {
+	margin-bottom : 20px;
+	margin-left : 20px;
+	width : 90%;
+}
 
 div#mail th {
 	width: 450px;
@@ -978,7 +978,7 @@ button.ui-button::-moz-focus-inner {
 
 .ui-filemanager-state-selected:hover {
   background-color: #506ab2!important;
-  color: #e5e5e5!important;
+  color: #fff!important;
 }
 
 .ui-filemanager-column-type span {
@@ -1524,9 +1524,10 @@ div.text label {
 
 .ui-widget-overlay {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
-  background: url(../_img/overlay.png) repeat-xy;
-  filter: Alpha(Opacity=70);
-  opacity: .70;
+  background: #000 url(../_img/overlay.png) 100% 100% no-repeat;
+  background-position:center top;
+  filter: Alpha(Opacity=50);
+  opacity: .50;
 }
 
 .ui-icon-closethick {
@@ -1639,8 +1640,8 @@ div.text label {
   height: 12px;
   overflow: hidden;
   width: 19px;
-  margin-top : 8px;
-  margin-bottom : 8px;
+  margin-top : 2px;
+  margin-bottom : 2px;
 }
 
 .ui-icon-arrowthick-1-e {
@@ -1717,6 +1718,7 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   background-color: #ddd;
   color: #000;
   padding-left: 1.2em;
+  line-height : 17px!important;
 }
 
 #header li a:hover,div#subnav ul li a:hover,.ui-filemanager-path-widget a:hover {
