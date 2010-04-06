@@ -1575,7 +1575,6 @@ div.text label {
 }
 
 .ui-icon-download-1 {
-  background-image: url(../_img/icons.png)!important;
   background-position: -185px -257px;
   background-repeat: no-repeat;
   cursor: pointer!important;
@@ -1588,7 +1587,11 @@ div.text label {
   margin-bottom : 1px;
 }
 
+.ui-filemanager .ui-filemanager-state-hover:hover .ui-icon-download-1 {
+  background-image: url(../_img/icons.png)!important;
+}
 .ui-filemanager .ui-filemanager-state-selected .ui-icon-download-1 {
+  background-image: url(../_img/icons.png)!important;
   background-position: -200px -257px;
 }
 

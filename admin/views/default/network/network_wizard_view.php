@@ -1,55 +1,54 @@
 <script type="text/javascript">
-<!--
 
+var easyfind_name=<?=json_encode(t("Set easyfind name"))?>;
 $(document).ready(function(){
 
 
 	$("#en_easyfind").change(function() {
 		if($(this).attr('checked')) {
 			$("#easyfind_name").removeAttr("disabled");
-      if($("#easyfind_name").val() == <?="\"".t("Set easyfind name")."\""?>) {
-			  $("#easyfind_name").val("");
-			  $("#mybubba").text("");
+			if($("#easyfind_name").val() == easyfind_name) {
+				$("#easyfind_name").val("");
+				$("#mybubba").text("");
 			}
 		} else {
 			$("#easyfind_name").attr("disabled","true");
-      if($("#easyfind_name").val() == "") {
-			  $("#easyfind_name").val(<?="\"".t("Set easyfind name")."\""?>);
+			if($("#easyfind_name").val() == "") {
+				$("#easyfind_name").val(easyfind_name);
 			}
 		}	
 	})
 
 	$("#easyfind_name").bind("keyup", function() {
     $("#mybubba").html($("#easyfind_name").val());
-  })
+  });
+	var validator = $('#fn-network-wizard-form').validate({
+		rules: {
+			'wiz_data[easyfind_name]': {
+				'required': true
+			}
+		}
+	});
 
 });
 	
-// -->
 </script>
 
 
-	<? if(isset($confirmed)) { ?>
+	<? if(isset($confirmed)): ?>
 	<h1 class="wizard-header">
 		<?=t('Setup complete')?>
 	</h1>
-	<form action="<?=FORMPREFIX?>/network/wizard"" method="post">
+	<form action="<?=FORMPREFIX?>/network/wizard" method="post">
 		<table id="wizard">
 			<tr><td colspan="2"><?=t('Enjoy Bubba|2.')?></td></tr>
 			<tr><td><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Finish setup')?>'/></td></tr>
 	</form>
 		
-	<?	
-	} else {
-		// ----   Default page  ------
-	?>
+	<?else:?>
 	<h1 class="wizard-header"><?=t('Step 3/3: Network setup')?></h1>
-	<? /*
-	print "<pre>";
-	print_r($wiz_data);
-	print "</pre>"; */
-	?>
-	<form action="<?=FORMPREFIX?>/network/wizard"" method="post">
+
+	<form action="<?=FORMPREFIX?>/network/wizard" method="post" id="fn-network-wizard-form">
 		<table id="wizard">
 			<thead>
 				<tr><th class="ui-wizard-label-header"><h2><?=t("Easyfind")?></h2></th></tr>
@@ -85,4 +84,4 @@ $(document).ready(function(){
 	</form>
 
 
-<? } ?>
+<?endif?>

@@ -1,8 +1,12 @@
-bubba-frontend (1.9.57) karmic; urgency=low
+bubba-frontend (1.9.57) claire; urgency=low
 
+  [ PA Nilsson ]
   * "admin" pre-entered for stat-login.
 
- -- PA Nilsson <pa@excito.com>  Tue, 06 Apr 2010 13:22:09 +0200
+  [ Carl Fürstenberg ]
+  * easyfind and throbbers
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 06 Apr 2010 16:48:12 +0200
 
 bubba-frontend (1.9.56) karmic; urgency=low
 

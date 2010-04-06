@@ -172,6 +172,10 @@ jQuery.widget("ui.filemanager", {
 
 	   this.buttonBar = jQuery("<div/>", {'class': 'ui-filemanager-buttonbar' }).buttonset();
 	   this.pathWidget = jQuery('<div/>', {'class': 'ui-filemanager-path-widget' });
+	   jQuery(window).bind('resize.filemanager', function() {
+			   self.pathWidget.width(self.element.width() - self.buttonBar.width())
+		   }
+	   ).triggerHandler('resize.filemanager');
 	   this.element.dataTable({
 			   'oClasses': {
 				   'sSortJUIAsc': 'ui-icon ui-icon-triangle-1-n',
@@ -211,6 +215,7 @@ jQuery.widget("ui.filemanager", {
 
 							   current = '/';
 							   self.pathWidget.html("");
+							   jQuery(window).triggerHandler('resize.filemanager');
 							   divider = jQuery('<span/>', 
 								   {
 									   text : '/', 
@@ -597,6 +602,7 @@ jQuery.widget("ui.filemanager", {
 	   return jQuery(".ui-filemanager-state-selected", this.element ).length;
    },
    destroy: function() {
+
        jQuery.Widget.prototype.destroy.apply(this, arguments); // default destroy
         // now do other stuff particular to this widget
    }

@@ -28,7 +28,7 @@ if (typeof console == 'undefined')
 var statustimer;
 
 function hide_status() {
-	$("#update_status").slideDown(500);
+	$("#update_status").not(':hidden').hide( 'slide', { direction: 'down' }, 500 );
 }
 
 function update_status($success,$msg) {

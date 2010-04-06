@@ -191,6 +191,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-plusthick',
 		'alt': 'Create Folder',
 		'callback': function() {
+			hide_status();
 			dialogs["mkdir"].dialog("open");
 		}
 	},
@@ -200,6 +201,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-upload',
 		'alt': 'Upload File',
 		'callback': function() {
+			hide_status();
 			window.open(config.prefix + "/upload/index" + $("#filetable").filemanager('option','root'), "", "width=500,height=250.menubar=no,toolbar=no,location=no,directories=no,personalbar=no,status=no,dialog=yes");
 		}
 	},
@@ -209,6 +211,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-download',
 		'alt': 'Download as ZIP',
 		'callback': function() {
+			hide_status();
 			var files = $("#filetable").filemanager('getSelected');
 
 			var input = $("<input/>", { type: 'hidden', 'name': 'files[]' });
@@ -229,6 +232,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-move',
 		'alt': 'Move files',
 		'callback': function() { 
+			hide_status();
 			copymove_callback.apply(this,['move']);
 		}
 	},
@@ -238,6 +242,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-copy',
 		'alt': 'Copy files',
 		'callback': function() {
+			hide_status();
 			copymove_callback.apply(this,['copy']);
 		}
 	},
@@ -247,6 +252,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-pencil',
 		'alt': 'Rename',
 		'callback': function() {
+			hide_status();
 			dialogs["rename"].dialog("open");
 		}
 	},
@@ -256,6 +262,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-unlocked',
 		'alt': 'Change permissions',
 		'callback': function() {
+			hide_status();
 			dialogs["perm"].dialog("open");
 		}
 	},
@@ -265,6 +272,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-album',
 		'alt': 'Add to album',
 		'callback': function() {
+			hide_status();
 			dialogs["album"].dialog("open");
 		}
 	},
@@ -274,6 +282,7 @@ buttons = [
 		'type': 'ui-icons ui-icon-trash ui-filemanager-buttonbar-last',
 		'alt': 'Delete',
 		'callback': function() {
+			hide_status();
 			dialogs["delete"].dialog("open");
 		}
 	}
@@ -337,6 +346,7 @@ update_toolbar_buttons = function() {
 }
 
 after_open_dir_callback = function(json) {
+	hide_status();
 	writable = json.meta.writable;
 	readable = !json.meta.permission_denied;
 	update_toobar_button_callback( 0 );
@@ -348,6 +358,7 @@ after_open_dir_callback = function(json) {
 }
 
 file_download_callback = function( row, options ){
+	hide_status();
 	$("<form/>", {
 		'action': config.prefix+"/filemanager/download",
 		'method': 'POST',

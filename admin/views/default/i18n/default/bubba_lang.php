@@ -363,6 +363,7 @@ $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 $lang['filemanager_mkdir_error_file_exists'] = "Error creating directory, name already exists";
 $lang['filemanager_mkdir_error_create'] = "Failed to create directory";
 $lang['filemanager-rename-error'] = "Error renaming file '%s'";
+$lang["filemanager-copy-fail-message"] = "Failed to copy the following files and directories: %s";
 $lang["filemanager-move-fail-message"] = "Failed to move the following files and directories: %s";
 $lang["filemanager-album-dialog-message"] = "Add selected images/directories to photo album?";
 
