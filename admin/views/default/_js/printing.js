@@ -19,18 +19,11 @@ $(document).ready(function(){
 			var row = $("<tr/>");
 			$.each( accounts, function(key) {
 					var data = this;
-					/*
-					var state = data.state;
-					if( state == 'Stopped' ) {
-						state = $.message( 'printing-state-stopped' );
-					} else if( state == 'Idle' ) {
-						state = $.message( 'printing-state-idle' );
-					}*/
+
 					row.clone().appendTo(table)
 					.append($('<td/>',{text: data.name}))
 					.append($('<td/>',{text: data.info}))
 					.append($('<td/>',{text: data.location}))
-					/*.append($('<td/>',{text: state }))*/
 					.append(
 						$('<td/>',
 							{
@@ -73,8 +66,10 @@ $(document).ready(function(){
 			}
 			$('input[name=name]',this).val($('input[name=input_name]',this).val());
 			$('input[name=printer]',this).val($('select[name=input_printer]',this).val());
+			$.throbber.show();
 			$.post( config.prefix + "/printing/add_printer/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("printing-list-add-success-message") );
@@ -82,6 +77,7 @@ $(document).ready(function(){
 							config.prefix + "/printing/index/json",
 							{},
 							function(data) {
+								$.throbber.hide();
 								add_dialog.dialog('close');
 								update_user_table( edit_dialog, data.installed_printers );
 							},
@@ -99,8 +95,10 @@ $(document).ready(function(){
 			}
 			$('input[name=name]',this).val($('input[name=input_name]',this).val());
 
+			$.throbber.show();
 			$.post( config.prefix + "/printing/edit_printer/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("printing-list-edit-success-message") );
@@ -108,6 +106,7 @@ $(document).ready(function(){
 							config.prefix + "/printing/index/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_user_table( edit_dialog, data.installed_printers );
 								edit_dialog.dialog('close');
 							}, 
@@ -142,8 +141,10 @@ $(document).ready(function(){
 		// callback fired when confirming delete
 		var delete_dialog_button_confirm_callback = function(post_data){
 			var confirm_dialog = $(this);
+			$.throbber.show();
 			$.post( config.prefix + "/printing/delete_printer/json", post_data, function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("printing-list-delete-success-message") );
@@ -151,6 +152,7 @@ $(document).ready(function(){
 							config.prefix + "/printing/index/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_user_table( edit_dialog, data.installed_printers );
 								confirm_dialog.dialog('close');
 							}, 
@@ -197,8 +199,10 @@ $(document).ready(function(){
 		// callback fired when confirming delete
 		var startstop_dialog_button_confirm_callback = function(post_data){
 			var confirm_dialog = $(this);
+			$.throbber.show();
 			$.post( config.prefix + "/printing/startstop_printer/json", post_data, function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("printing-list-startstop-success-message") );
@@ -206,6 +210,7 @@ $(document).ready(function(){
 							config.prefix + "/printing/index/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_user_table( edit_dialog, data.installed_printers );
 								confirm_dialog.dialog('close');
 							}, 
@@ -287,7 +292,7 @@ $(document).ready(function(){
 		$.validator.addMethod('valid_printername', function(value, element, params) {
 				return /^[a-z,A-Z,\_]+$/.test(value);
 			} 
-		, jQuery.format("not a valid printer name"));
+			, jQuery.format("not a valid printer name"));
 
 		edit_validator = $('form',edit_source_edit_dialog).validate({
 				rules:{

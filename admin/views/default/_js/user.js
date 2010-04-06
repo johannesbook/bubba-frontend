@@ -19,7 +19,9 @@ $(document).ready(function(){
 					if( ! edit_validator.form() ) {
 						return false;
 					}
+					$.throbber.show();
 					$.post( config.prefix + "/users/edit_user_account/json", $('form', source_edit_dialog).serialize()+'&flashdata=on', function(data){
+							$.throbber.hide();
 							if( data.error ) {
 								update_status( false, data.html );
 							} else {
@@ -136,8 +138,10 @@ $(document).ready(function(){
 				return false;
 			}
 			$('input[name=username]',this).val($('input[name=input_username]',this).val());
+					$.throbber.show();
 			$.post( config.prefix + "/users/add_user_account/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("users-list-add-success-message") );
@@ -145,6 +149,7 @@ $(document).ready(function(){
 							config.prefix + "/users/index/json",
 							{},
 							function(data) {
+								$.throbber.hide();
 								add_dialog.dialog('close');
 								update_user_table( edit_dialog, data.accounts );
 							},
@@ -163,8 +168,10 @@ $(document).ready(function(){
 			$('input[name=username]',this).val($('input[name=input_username]',this).val());
 			default_sideboard = $('input[name=sideboard]', this).attr( 'checked' );
 
+			$.throbber.show();
 			$.post( config.prefix + "/users/edit_user_account/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("users-list-edit-success-message") );
@@ -172,6 +179,7 @@ $(document).ready(function(){
 							config.prefix + "/users/index/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_user_table( edit_dialog, data.accounts );
 								edit_dialog.dialog('close');
 							}, 
@@ -212,8 +220,10 @@ $(document).ready(function(){
 		// callback fired when confirming delete
 		var delete_dialog_button_confirm_callback = function(post_data){
 			var confirm_dialog = $(this);
+			$.throbber.show();
 			$.post( config.prefix + "/users/delete_user_account/json", post_data, function(data){
 					if( data.error ) {
+					$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("users-list-delete-success-message") );
@@ -221,6 +231,7 @@ $(document).ready(function(){
 							config.prefix + "/users/index/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_user_table( edit_dialog, data.accounts );
 								confirm_dialog.dialog('close');
 							}, 

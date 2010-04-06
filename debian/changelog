@@ -5,8 +5,9 @@ bubba-frontend (1.9.57) claire; urgency=low
 
   [ Carl Fürstenberg ]
   * easyfind and throbbers
+  * throbbers 
 
- -- Carl Fürstenberg <carl@excito.com>  Tue, 06 Apr 2010 16:48:12 +0200
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 06 Apr 2010 18:58:39 +0200
 
 bubba-frontend (1.9.56) karmic; urgency=low
 

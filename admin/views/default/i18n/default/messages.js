@@ -25,10 +25,13 @@ messages = {
 	"filemanager-copy-no" : "Abort",
 	"filemanager-copy-success" : "Succeeded to copy the files and directories",
 	"filemanager-success-album" : "Sucessfully added pictures to the album",
+	"filemanager-success-album-title" : "Pictures added",
+	"filemanager-success-album-message" : "Sucessfully added %d pictures to the album",
 	"filemanager-success-delete" : "Successfully deleted the files/directories",
 	"filemanager-success-perm" : "Successfully changed permission on the given files/directories",
 	"filemanager-success-rename" : "Successfully renamed the file/directory",
 	"filemanager-success-mkdir" : "Successfully created a directory",
+	"filemanager-perm-fail-message" : "Failed to change permission for the file/directory",
 
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",

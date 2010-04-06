@@ -34,15 +34,18 @@ $(document).ready(function(){
 			if( ! add_validator.form() ) {
 				return false;
 			}
+			$.throbber.show();
 			$.post( config.prefix + "/mail/add_fetchmail_account/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
 						update_status( false, data.html );
+						$.throbber.hide();
 					} else {
 						update_status( true, $.message("mail-retrieve-add-success-message") );
 						$.post(
 							config.prefix + "/mail/viewfetchmail/json",
 							{},
 							function(data) {
+								$.throbber.hide();
 								add_dialog.dialog('close');
 								update_mail_table( edit_dialog, data.accounts );
 							},
@@ -57,8 +60,10 @@ $(document).ready(function(){
 			if( ! edit_validator.form() ) {
 				return false;
 			}
+			$.throbber.show();
 			$.post( config.prefix + "/mail/edit_fetchmail_account/json", $('form', this).serialize(), function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("mail-retrieve-edit-success-message") );
@@ -66,6 +71,7 @@ $(document).ready(function(){
 							config.prefix + "/mail/viewfetchmail/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_mail_table( edit_dialog, data.accounts );
 								edit_dialog.dialog('close');
 							}, 
@@ -78,8 +84,10 @@ $(document).ready(function(){
 
 		var edit_dialog_delete_dialog_callback = function(post_data){
 			var confirm_dialog = $(this);
+			$.throbber.show();
 			$.post( config.prefix + "/mail/delete_fetchmail_account/json", post_data, function(data){
 					if( data.error ) {
+						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
 						update_status( true, $.message("mail-retrieve-delete-success-message") );
@@ -87,6 +95,7 @@ $(document).ready(function(){
 							config.prefix + "/mail/viewfetchmail/json", 
 							{},
 							function(data) {
+								$.throbber.hide();
 								update_mail_table( edit_dialog, data.accounts );
 								confirm_dialog.dialog('close');
 							}, 

@@ -16,7 +16,9 @@ dialog_pre_open_callbacks = {
 	},
 	'perm': function() {
 		var files = $("#filetable").filemanager('getSelected');
+		$.throbber.show();
 		$.post(config.prefix+"/filemanager/perm/json/get", {files:files}, function(data){
+			$.throbber.hide();
 			if( (data.permissions & 00600) == 0600 ) {
 				$("#fn-filemanager-perm-permission-owner option[value='rw']").attr("selected",true);
 			}else if( (data.permissions & 00400) == 0400 ) {
@@ -52,11 +54,13 @@ dialog_callbacks = {
 		$(this).dialog('close');
 	},
 	'mkdir': function() {
+		$.throbber.show();
 		var self = this;
 		var params = $("#fn-filemanager-mkdir").serializeObject();
 		params.root = $("#filetable").filemanager('option','root');
 		params.files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/mkdir/json", params, function(data){
+			$.throbber.hide();
 			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-mkdir"));
 			if( ! data.error ) {
@@ -65,11 +69,13 @@ dialog_callbacks = {
 		}, 'json');
 	},
 	'rename': function() {
+		$.throbber.show();
 		var self = this;
 		var params = $("#fn-filemanager-rename").serializeObject();
 		params.path = $("#filetable").filemanager('getSelected')[0];
 		params.root = $("#filetable").filemanager('option','root');
 		$.post(config.prefix+"/filemanager/rename/json", params, function(data){
+			$.throbber.hide();
 			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-rename"));
 			if( ! data.error ) {
@@ -78,10 +84,12 @@ dialog_callbacks = {
 		}, 'json');
 	},
 	'perm': function() {
+		$.throbber.show();
 		var self = this;
 		var params = $("#fn-filemanager-perm").serializeObject();
 		params.files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/perm/json/set", params, function(data){
+			$.throbber.hide();
 			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-perm"));
 			if( ! data.error ) {
@@ -90,9 +98,11 @@ dialog_callbacks = {
 		}, 'json');
 	},
 	'delete': function() {
+		$.throbber.show();
 		var self = this;
 		var files = $("#filetable").filemanager('getSelected');
 		$.post(config.prefix+"/filemanager/delete/json", {files: files}, function(data){
+			$.throbber.hide();
 			$(self).dialog('close');
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-delete"));
 			if( ! data.error ) {
@@ -101,18 +111,20 @@ dialog_callbacks = {
 		}, 'json');		
 	},
 	'album': function() {
+		$.throbber.show();
 		var files = $("#filetable").filemanager('getSelected');
 		var self = this;
 		$.post(config.prefix+"/filemanager/album/json", {files: files}, function(data){
+			$.throbber.hide();
 			update_status( data.success, data.error ? data.html : $.message("filemanager-success-album"));
 			if( ! data.error ) {
-				var box = $('<ul/>');
+				var count = 0;
 				$.each( data.files_added, function( key, value ) {
 					if( value ) {
-						box.append( $('<li/>', {text: key}));
+						++count;
 					}
 				});
-				$.alert(box, "The following images were added" , $.message('button-label-close'), null, {width: '600px'});
+				$.alert($.message("filemanager-success-album-message", count), $.message("filemanager-success-album-title") , $.message('button-label-close'));
 			}
 			$(self).dialog('close');
 		}, 'json');		
@@ -152,7 +164,9 @@ copymove_callback = function( type ) {
 	copymove_yesbutton = $("<button/>", {id: 'fn-filemanager-button-copymove', text: $.message("filemanager-"+type+"-yes")}).appendTo(action)
 		.button({text: false, icons: { primary: 'ui-icon-check ui-filemanager-buttonbar-last' } }).click(function(){
 			action.hide('drop', {direction: 'right'}, speed);
+			$.throbber.show();
 			$.post(config.prefix+"/filemanager/"+type+"/json", {files: files, path: filetable.filemanager('option','root') }, function(data){
+				$.throbber.hide();
 				update_status( data.success, data.error ? data.html : $.message("filemanager-"+type+"-success") );
 
 
