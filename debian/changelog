@@ -1,3 +1,10 @@
+bubba-frontend (1.9.58) karmic; urgency=low
+
+  * Fixed background of buttons
+  * wizard easyfind fixed, closes #1324,#1325
+
+ -- PA Nilsson <pa@excito.com>  Wed, 07 Apr 2010 09:11:48 +0200
+
 bubba-frontend (1.9.57) claire; urgency=low
 
   [ PA Nilsson ]

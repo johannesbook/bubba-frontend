@@ -1044,7 +1044,14 @@ class Network extends Controller{
 						// just enable it.
 						$data['wiz_data']['err_easyfind'] = !$this->networkmanager->easyfind_set_enable();
 					} else {
-						$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
+						if($this->networkmanager->easyfind_validate($data['wiz_data']['easyfind_name'])) {
+							$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
+						} else {
+							if(!$data['wiz_data']['easyfind_name']) {
+								$data['wiz_data']['err_easyfind_empty'] = 1;
+							}
+							$data['wiz_data']['err_easyfind'] = 1;
+						}
 					}
 				} else {
 					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind(0,"");
@@ -1059,7 +1066,7 @@ class Network extends Controller{
 				}else{
 					$this->_renderfull($this->load->view(THEME.'/network/network_wizard_view',$data,true));
 				}
-				if($data['wiz_data']['err_easyfind']) {
+				if(!$data['wiz_data']['err_easyfind']) {
 					exit_wizard();
 				}
 			} else {

@@ -22,6 +22,9 @@ $(document).ready(function(){
 	$("#easyfind_name").bind("keyup", function() {
     $("#mybubba").html($("#easyfind_name").val());
   });
+	
+	// do not use validator here at the moment.
+	/* 
 	var validator = $('#fn-network-wizard-form').validate({
 		rules: {
 			'wiz_data[easyfind_name]': {
@@ -29,7 +32,7 @@ $(document).ready(function(){
 			}
 		}
 	});
-
+	*/
 });
 	
 </script>
@@ -68,7 +71,12 @@ $(document).ready(function(){
 						value="<?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("Set easyfind name")?>" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"":"disabled='disabled'"?>/>
 					 (http://<span id="mybubba"><?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("mybubba")?></span>.bubbaserver.com)
 					 <?if(isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind']):?>
-					 	<br><span class='ui-state-error-text'><?=t("Name not available or failed to validate request")?></span>
+					 	<br>
+					 		<?if(isset($wiz_data['err_easyfind_empty']) && $wiz_data['err_easyfind_empty']):?>
+					 			<span class='ui-state-error-text'><?=t("Empty name not allowed")?></span>
+					 		<?else:?>
+					 			<span class='ui-state-error-text'><?=t("Name not available or failed to validate request")?></span>
+					 		<?endif?>
 					 <?endif?>
 					</td>
 					<td></td>
