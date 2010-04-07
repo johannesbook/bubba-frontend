@@ -69,10 +69,24 @@ $lang['help_box_stat']="
 ";
 
 $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
-<p>The Browse page shows files stored on Bubba. Here you are able to reach your files on Bubba if you are away from home.</p>
+<p>From the File manager you are able to reach your files on Bubba if you are away from home.</p>
+<h3>Navigation</h3>
 <p>Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ line.</p>
-<p>Click files or folders and use the icons in the menu to perform different actions.</p>
-<p>Hover the menu icons for action description.</p>
+<h3>File and folder actions</h3>
+<p>Click files or folders and use the file function bar to perform different actions. The functions from left to right are:</p>
+<ul>
+	<li>Create folder</li>
+	<li>Upload file</li>
+	<li>Download as zip</li>
+	<li>Move files</li>
+	<li>Copy files</li>
+	<li>Rename</li>
+	<li>Change permissions</li>
+	<li>Add to album</li>
+	<li>Delete</li>
+</ul>
+<h3>Photos</h3>
+<p>Logged in as administrator you are not able to add photos. Log with your standard user to add and manage photos.</p>
 ";
 
 	$lang['help_box_filemanager_backup']="
@@ -396,8 +410,23 @@ $lang['help_box_user_users']=$lang['help_box_user_users_edit']="
 
 $lang['help_box_user_filemanager']="
 <p>From the File manager you are able to reach your files on Bubba if you are away from home.</p>
+<h3>Navigation</h3>
 <p>Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ raw.</p>
-<p>Click files or folders and use the icons in the menu to perform different actions.</p>
+<h3>File and folder actions</h3>
+<p>Click files or folders and use the file function bar to perform different actions. The functions from left to right are:</p>
+<ul>
+	<li>Create folder</li>
+	<li>Upload file</li>
+	<li>Download as zip</li>
+	<li>Move files</li>
+	<li>Copy files</li>
+	<li>Rename</li>
+	<li>Change permissions</li>
+	<li>Add to album</li>
+	<li>Delete</li>
+</ul>
+<h3>Photos</h3>
+<p>You have to place your photos in the catalog home/storage/pictures. Then select the files or folders and use the <strong>Add to album</strong> icon in the file function bar to add your photos to the Bubba photo album. Then continue to the Album manager to publish the photos.</p>
 ";
 
 $lang['help_box_user_mail']="
