@@ -24,6 +24,16 @@ function print_versions() {
 
 $(document).ready(function(){
 	
+	$("#fn-settings-hotfix-link").click( function() {
+		if(!$(".ui-help-box").is(":visible")) {
+			help_uri = config.prefix+"/help/load/html/settings_software";
+			$.post(help_uri, function(data) {
+				help_dialog.html(data).dialog('open');
+			});
+		};
+		return false;
+	});
+
 		print_versions();
 		
     $("#update").submit(function(){
