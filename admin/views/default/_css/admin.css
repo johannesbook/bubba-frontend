@@ -76,7 +76,11 @@ input[type=submit],input[type=button],button.submit {
   height: 29px;
   margin: 3px;
   min-width : 80px;
-  padding: 2px 8px 8px;
+  padding: 0px 8px 8px;
+}
+
+.msie input[type=submit],.msie input[type=button],.msie button.submit {
+	padding-top : 4px;
 }
 
 input[type=submit]:hover,input[type=button]:hover, button.submit:hover {
@@ -156,6 +160,10 @@ table.ui-table-outline tr {
 table.ui-table-outline tr:hover {
 	background-color : #e5e5e5;
 }
+table.ui-table-outline tr:first-child {
+	border-top : none;
+}
+
 tr.ui-widget-header {
   border: 0;
   border-bottom: .1em solid #e5e5e5;
@@ -881,13 +889,22 @@ h1.wizard-header {
 	display : inline;
 	width : 100px;
 }
+
+#content table#ui-stat-table td.ui-stat-table-col1{
+	width : 200px;
+	padding-top : 25px;
+}
+#content table#ui-stat-list td.ui-stat-list-col1,#content table#ui-stat-list td.ui-stat-list-col2{
+	width : 150px;
+}
+
 #content table #ui-stat-list {
 	margin-bottom : 0px;
 }
 #content table #ui-stat-swupdate {
 	margin-bottom : 20px;
 	margin-left : 20px;
-	width : 90%;
+	width : 200px;
 }
 
 div#mail th {

@@ -6,7 +6,7 @@ function piechart(chart_canvas) {
   {
     var x = Math.PI/50;
     var ctx = chart.getContext('2d');
-    ctx.scale(1,0.45);
+    ctx.scale(1.5,0.6);
 
     if (x*percentage - Math.PI/2 > 0)
     {
