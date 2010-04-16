@@ -208,7 +208,9 @@ $(document).ready(function(){
 					{
 						'label': $.message("users-list-edit-dialog-delete-button-label"),
 						'callback': function(){
-							post_data.userdata = userdata_delete.is(':checked');
+							if(userdata_delete.is(':checked')) {
+								post_data.userdata = 'on';
+							}
 							delete_dialog_button_confirm_callback.apply(this, [post_data])
 						},
 						options: { id: 'fn-users-edit-dialog-delete-confirm-button' }

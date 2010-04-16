@@ -367,7 +367,7 @@ class Filemanager extends Controller{
 			$zipname = basename($files[0]);
 		}
 
-		if( substr_compare($zipname, '.zip', -4, 4, true ) != 0 ) {
+		if( strlen($zipname) <= 4 || substr_compare($zipname, '.zip', -4, 4, true ) != 0 ) {
 			$zipname .= '.zip';
 		}
 

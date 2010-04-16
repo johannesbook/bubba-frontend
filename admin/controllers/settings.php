@@ -118,7 +118,10 @@ class Settings extends Controller{
 		$this->load->model('disk_model');
 
 		$part=$this->input->post("unit");
-		if($part && $this->disk_model->is_mounted($part)){
+		if(!$part) {
+			redirect('/settings/backuprestore');
+		}
+		if($this->disk_model->is_mounted($part)){
 			$info = $this->disk_model->partition_info(substr($part,5));
 			$path = $info['mountpath'];
 			$allready_mounted = true;
@@ -147,7 +150,8 @@ class Settings extends Controller{
 				$this->disk_model->umount_partition( $part );
 			}
 		}
-		$this->backuprestore($strip, $data);
+		$this->session->set_flashdata('update', $data['update']);
+		redirect('/settings/backuprestore');
 	}	
 
 	function restore($strip=""){
@@ -159,8 +163,11 @@ class Settings extends Controller{
 		$data["err_opfailed"]=false;
 
 		$part=$this->input->post("unit");
+		if(!$part) {
+			redirect('/settings/backuprestore');
+		}
 
-		if($part && $this->disk_model->is_mounted($part)){
+		if($this->disk_model->is_mounted($part)){
 			$info = $this->disk_model->partition_info(substr($part,5));
 			$path = $info['mountpath'];
 			$mounted = true;
@@ -190,9 +197,8 @@ class Settings extends Controller{
 		if(!isset($mounted)) {
 			$this->disk_model->umount_partition($part);
 		}
-		
-		$this->backuprestore($strip, $data);
-
+		$this->session->set_flashdata('update', $data['update']);
+		redirect('/settings/backuprestore');
 	}	
 
 	/* XXX This function can't utilize a format parameter due to clients might use current setting still during update */
@@ -427,7 +433,10 @@ class Settings extends Controller{
 	}
 
 	function backuprestore($strip="",$data=array()){
-
+		$update =  $this->session->flashdata('update');
+		if( $update ) {
+			$data['update'] = $update;
+		}
 		$this->load->model('disk_model');
 		$data['disks'] = array();
 		$disks=$this->disk_model->list_external_disks(false,true,false,true); // allow removable, not RAID, allow USB, list partitions

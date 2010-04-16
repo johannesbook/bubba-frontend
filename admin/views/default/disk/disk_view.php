@@ -38,7 +38,7 @@
 						$ccid = $partition['cid'];
 					}
 				?>
-				<td style="width: <?=max(1,floor($partition['size'] / $disk['size'] * 100))?>%">
+				<td style="width: <?=(isset($disk['size']) && $disk['size'] > 0) ? max(1,floor($partition['size'] / $disk['size'] * 100)) : 100?>%">
 					<div class="partition-<?=$ccid?> partition " rel="<?=substr($partition["dev"], 5)?>">
 					</div>
 				</td>

@@ -16,7 +16,7 @@
 			<div class="hotfix">
 			<table class="ui-table-outline">
 				<tr>
-					<td><?=t("settings_software_include_hotfixes")?> <a id="fn-settings-hotfix-link" href="#">(<?=t('Explain')?>)</a></td>
+					<td><?=t("settings_software_include_hotfixes")?> <a href="/manual/<?=t("help_hotfix")?>" target="_blank">(<?=t('Explain')?>)</a></td>
 					<td><input type="checkbox" class="slide" name="hotfix_enabled" id="hotfix_enabled" <?if($hotfix_enabled):?>checked="checked" <?endif?>/></td>
 				</tr>
 			</table>

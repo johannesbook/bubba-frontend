@@ -35,6 +35,14 @@ $lang['title_disk']=$lang['Disk'];
 $lang['title_userinfo']=$lang['Userinfo'];
 $lang['title_shutdown']=$lang['Shutdown'];
 
+/* Topnav */
+
+$lang['topnav-settings'] = "Administration";
+$lang['topnav-help'] = "Help";
+$lang['topnav-home'] = "Home";
+$lang['topnav-logout'] = "Logout";
+
+
 /* 'Elevated' sub navigation */
 $lang['title_usersettings-info'] = "User information";
 $lang['title_usersettings-mail'] = "Email";
@@ -360,7 +368,7 @@ $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 
-$lang['filemanager-perm-fail-message'] = "Failed to change permissions";
+$lang['filemanager_mkdir_error_nodir'] = "Error creating directory, no name supplied";
 $lang['filemanager_mkdir_error_file_exists'] = "Error creating directory, name already exists";
 $lang['filemanager_mkdir_error_create'] = "Failed to create directory";
 $lang['filemanager-rename-error'] = "Error renaming file '%s'";

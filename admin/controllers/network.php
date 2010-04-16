@@ -985,6 +985,10 @@ class Network extends Controller{
 		$profile = $this->input->post('profile');
 		$old_profile = $this->session->userdata("network_profile");
 
+		if(!$profile || !$old_profile) {
+			redirect('/network/profile');
+		}
+
 		$data['profile'] = $profile;
 		$data['update'] = 1; // indicate that the user has pressed update with green status bar.
 		$data['success'] = "success";

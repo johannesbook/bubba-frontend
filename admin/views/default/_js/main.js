@@ -96,10 +96,15 @@ function display_menu() {
 	if(! menu_dialog.dialog('isOpen') ) {
 		menu_dialog.dialog('open');
 		var width = menu_dialog.outerWidth(true);
+		if( config.ua.Browser == 'Safari' ) {
+			width = 575 + 3; // possible bug in safari
+		}
+		console.log( width );
 		var speed = 300;
+		var left = $(window).width()/2 - width / 2;
 		menu_dialog.parent().hide().animate( 
 			{
-				'left': $(window).width()/2 - width / 2,
+				'left': left,
 				'opacity': 'show'
 			}, {
 				'duration': speed,
@@ -110,6 +115,9 @@ function display_menu() {
 			});
 	} else {
 		var width = menu_dialog.outerWidth(true);
+		if( config.ua.Browser == 'Safari' ) {
+			width = 575 + 3; // possible bug in safari
+		}
 		menu_dialog.parent().show().animate( 
 			{
 				'left': - width,
@@ -154,6 +162,13 @@ $(window).load(function() {
 
 
 $(document).ready( function() {
+
+	// prohobit submit with no action set.
+	$("*:has(input[type=text])").submit( function(e) {
+			if(!$(e.target).closest('form').attr("action")) {
+			return false;
+		}
+	});
 
 		// Expandable divs, first div is header, next is body
 		$(".ui-expandable").prepend($('<div/>',{'class': "ui-expandable-icon ui-icon ui-icon-triangle-1-s"}));

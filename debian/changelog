@@ -1,3 +1,89 @@
+bubba-frontend (1.9.69) claire estelle; urgency=low
+
+  * Fixed wizard "auto" start. Closes #1404
+
+ -- PA Nilsson <pa@excito.com>  Wed, 14 Apr 2010 13:33:49 +0200
+
+bubba-frontend (1.9.68) claire estelle; urgency=low
+
+  * IE button fixes (Closes: #1398) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 14 Apr 2010 13:28:18 +0200
+
+bubba-frontend (1.9.67) claire estelle; urgency=low
+
+  * fix issue in lvm extension (Closes: #1403)
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 14 Apr 2010 13:02:10 +0200
+
+bubba-frontend (1.9.66) karmic; urgency=low
+
+  * Fixed chrome buttons for now, not good but enough... Closes #1367 
+
+ -- PA Nilsson <pa@excito.com>  Tue, 13 Apr 2010 13:48:33 +0200
+
+bubba-frontend (1.9.65) claire estelle; urgency=low
+
+  * Remove hover effect in album manager (Closes: #1350)
+  * rename topnav "Settings" to "Administration" (Closes: #1393)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 13 Apr 2010 13:34:53 +0200
+
+bubba-frontend (1.9.64) claire estelle; urgency=low
+
+  [ PA Nilsson ]
+  * Update lease range when loading page, closes #1383 
+  * Floating buttons in IE as well, closes #1219
+
+  [ Carl Fürstenberg ]
+  * fix issue with deleting or not deleting user data (Closes: #1381) 
+  * fix POST erro in backup/restore (Closes: #1386) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 13 Apr 2010 12:09:11 +0200
+
+bubba-frontend (1.9.63) claire estelle; urgency=low
+
+  * some more help texts 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 12 Apr 2010 23:13:03 +0200
+
+bubba-frontend (1.9.62) claire estelle; urgency=low
+
+  * fix submit global bind
+  * rework menu trigger logic to work better under IE (tested IE, FF and
+    chrome) (Closes: #1392)
+  * fix minor bug from 1.9.61 related to global submit event 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 12 Apr 2010 16:33:04 +0200
+
+bubba-frontend (1.9.61) claire estelle; urgency=low
+
+  [ PA Nilsson ]
+  * Fixed admin login from wan interface, (Closes: #1341)
+  * Fixed icons in filemanager, (Closes: #1344)
+  * Fixed Buttontexts in IE7, (Closes: #1346)
+  * Fixed dead software update button in IE, (Closes: #1351)
+  * Fixed error message for "Create dir" with empty name, (Closes: #1373)
+  * Fixed enable of dhcpd, (Closes: #1374)
+  * Fixed server->router, (Closes: #1348)
+  * Fixed logout error on RAID page, (Closes: #1357) 
+  * Fixed chrome submit on dialogs, (Closes: #1370) 
+  * Fixed radius and height of disabled buttons, (Closes: #1367) 
+  * Fixed too long text in validator form, (Closes: #1378)
+  * Fixed width of download section, (Closes: #700)
+  * Removed lines in download section for ie7, (Closes: #1204)
+
+  [ Carl Fürstenberg ]
+  * circumvent error in disk view when disk size is zero. 
+  * prevent looping of non-array in disks (Closes: #1389) 
+  * fix issue with disabling shell access (Closes: #1390) 
+  * force .zip suffix for zipnames with four or less chars (Closes: #1364) 
+  * hack style and placement for slidein menu under safari (Closes: #1377) 
+  * remove cancel buttons from RAID dialogs (Closes: #1340, #1342)
+  * mark all wlan fields disabled per default
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 12 Apr 2010 14:11:59 +0200
+
 bubba-frontend (1.9.60) claire; urgency=low
 
   * Fixed "explain hotfix" link. 

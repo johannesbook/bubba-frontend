@@ -8,9 +8,9 @@
 $(document).ready( function() {
 
 	$('input.format').click(function(e) {
-		disk = $(this).attr( 'rel' );
-		disk_model = $(this).attr( 'name' );
-		dialog_element = $.dialog("", "<?=t("disk_format_title")?>", {});
+		var disk = $(this).attr( 'rel' );
+		var disk_model = $(this).attr( 'name' );
+		var dialog_element = $.dialog("", "<?=t("disk_format_title")?>", {});
 		$.post(	'<?=site_url("ajax_disk/disk_got_mounts")?>', { disk: disk }, function(data) {
 
 			if( data.disk_got_mounts ) {

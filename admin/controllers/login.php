@@ -15,64 +15,57 @@ class Login extends Controller{
 		$data['username']=$myuser;
 		if($myuser && $mypass){
 			// login flow.
-			if($this->Auth_model->Login($myuser,$mypass)){
-				$admin_wanaccess = false;
-				$data['authfail'] = false;
-				if ($myuser == 'admin') {
-					$this->session->set_userdata("AllowRemote", false);
-					if($this->networkmanager->access_interface() == "wan") {
-						$admin_wanaccess = true;
-					}
-				}
-				if(file_exists("/home/$myuser/.bubbacfg")){
-					$conf=parse_ini_file("/home/$myuser/.bubbacfg");
-					if($admin_wanaccess) {
-						if(isset($conf['AllowRemote'])) {
-							if(!$conf['AllowRemote']) {
-								$data['authfail'] = true;
-								$data['auth_err_remote'] = true;
-							}
-						} else {
-							$data['authfail'] = true;
-							$data['auth_err_remote'] = true;
-						}
-					}
-					if (!$data['authfail']) {
-						if(is_array($conf)){
-							if(array_key_exists("theme",$conf)){
-								if(file_exists(APPPATH.'views/'.$conf["theme"])){
-									$this->session->set_userdata("theme", $conf["theme"]);
-								}
-								unset($conf["theme"]);
-							}
-							foreach($conf as $key => $value) {
-								$this->session->set_userdata($key, $value);
-							}
-						}
-					}
-				} elseif ($admin_wanaccess) { // no config file exists.
-					$data['authfail']=true;
-					$data['auth_err_remote'] = true;
-				}
+			$data['authfail'] = false;
+			$data['auth_err_remote'] = false;
 
-				$this->session->set_userdata("version",get_package_version("bubba-frontend"));
-
-				if ($data['authfail']) {
-					//$this->Auth_model->Logout();
-				} else {
-					if($strip!="json"){
-						if($caller){
-							redirect($caller);
-						}else{
-							redirect('');
-						}
-						exit();
-					}
-				}
-			}else{
-				$data['authfail']=true;
+			// read config file
+			if(file_exists("/home/$myuser/.bubbacfg")){
+				$conf=parse_ini_file("/home/$myuser/.bubbacfg");
 			}
-		}else{ // no post or data missing.
+			if ($myuser == 'admin') {
+				if($this->networkmanager->access_interface() == $this->networkmanager->get_wan_interface()) {
+					// check if remote is allowed
+					if(isset($conf['AllowRemote']) && $conf['AllowRemote']) {
+						// allow remote access for admin
+					} else {
+						$data['authfail'] = true;
+						$data['auth_err_remote'] = true;
+					}
+				} else {
+					if( !isset($conf['run_wizard']) || $conf['run_wizard'] ) {
+					// if this parameter is not in the config file, we should run the wizard
+						$this->session->set_userdata('run_wizard',true);
+					}
+				}
+			}
+			if(!$data['authfail'] && $this->Auth_model->Login($myuser,$mypass)){
+				// show clock by default
+				$this->session->set_userdata("show_sideboard",true);
+				if(isset($conf) && is_array($conf)){
+					if(array_key_exists("theme",$conf)){
+						if(file_exists(APPPATH.'views/'.$conf["theme"])){
+							$this->session->set_userdata("theme", $conf["theme"]);
+						}
+						unset($conf["theme"]);
+					}
+					foreach($conf as $key => $value) {
+						$this->session->set_userdata($key, $value);
+					}
+				}
+				$this->session->set_userdata("version",get_package_version("bubba-frontend"));
+				if($strip!="json"){
+					if($caller){
+						redirect($caller);
+					}else{
+						redirect('');
+					}
+					exit();
+				}
+			} else {
+				$data['authfail'] = true;
+			}
+			
+		} else { // no post or data missing.
 			if(!$myuser){
 				$data['uidmissing']=true;
 				$data['authfail'] = true;
@@ -91,9 +84,14 @@ class Login extends Controller{
 					$data["required_user"] = $required_user;
 				}
 			}
-			$conf=parse_ini_file("/home/admin/.bubbacfg");
+			// read admin config file for "look ahead" info
+			if(file_exists("/home/admin/.bubbacfg")){
+				$conf=parse_ini_file("/home/admin/.bubbacfg");
+			}
+
 			$data["show_sideboard"] = (!isset($conf["default_sideboard"]) || $conf["default_sideboard"]);
-			if(isset($conf["run_wizard"]) && $conf["run_wizard"]) {
+			
+			if( (!isset($conf["run_wizard"]) || $conf["run_wizard"]) && ($this->networkmanager->access_interface() != $this->networkmanager->get_wan_interface()) ) {
 				$data["show_login"] = true;
 				$data["required_user"] = "admin";
 				$data["redirect_uri"] = FORMPREFIX."/settings/wizard";

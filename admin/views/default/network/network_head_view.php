@@ -74,15 +74,21 @@ $(document).ready(function(){
 	});
 
 	// lan scripts
+	$("[name='dnsmasq[range_start][0]']").val($("[name='ip[0]']").val());
+	$("[name='dnsmasq[range_start][1]']").val($("[name='ip[1]']").val());
+	$("[name='dnsmasq[range_start][2]']").val($("[name='ip[2]']").val());
+	$("[name='dnsmasq[range_end][0]']").val($("[name='ip[0]']").val());
+	$("[name='dnsmasq[range_end][1]']").val($("[name='ip[1]']").val());
+	$("[name='dnsmasq[range_end][2]']").val($("[name='ip[2]']").val());
 	<?if(isset($dhcpd) && !$dhcpd):?>
 		$("#cb_dns").attr("disabled","disabled");
 		$("#dhcpd").attr("disabled","disabled");
 	<?endif?> 
 
-	$("#dhcpd").click(function() {
+	$("#dhcpd").change(function() {
 		update_leasefields();
 	});
-	$("#cb_dns").click(function() {
+	$("#cb_dns").change(function() {
 		if($("#cb_dns").attr('checked')) {
 			$("#dhcpd").attr('checked','true');
 			$("#dhcpd").removeAttr('disabled');

@@ -217,6 +217,7 @@ class Mail extends Controller{
 
 		$domain=$this->input->post('domain');
 		$current_mc = $this->_parse_mailcfg(get_mailcfg());
+		$update_postfix = false;
 		if( $current_mc["domain"] != $domain ) {
 			// domain updated
 			write_receive_mailcfg($domain);

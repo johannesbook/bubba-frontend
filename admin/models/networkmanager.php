@@ -805,14 +805,16 @@ class NetworkManager extends Model {
 	}
 
 	function access_interface() {
-		$if = "";
-		$wanip = get_interface_info($this->get_wan_interface());
+		$wanif = $this->get_wan_interface();
+		$if = "unknown interface";
+		$wanip = get_interface_info($wanif);
 		if(count($wanip)>0 && $_SERVER["SERVER_ADDR"] == $wanip[0]) {
-			$if = 'wanif';
+			$if = $wanif;
 		} else {
-			$lanip = get_interface_info($this->get_lan_interface());
+			$lanif = $this->get_lan_interface();
+			$lanip = get_interface_info($lanif);
 			if(count($lanip)>0 && $_SERVER["SERVER_ADDR"] == $lanip[0]) {
-				$if = 'lanif';
+				$if = $lanif;
 			}
 		}
 		return $if;

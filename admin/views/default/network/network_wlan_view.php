@@ -14,6 +14,7 @@
 			class="slide"
 			name="enabled" 
 			id="enabled" 
+				disabled="disabled"
 			title="<?=t("wlan_title_enable_popup")?>"
 			<?if($enabled):?>checked="checked"<?endif?>
 		/>
@@ -29,6 +30,7 @@
 			type="text" 
 			name="ssid" 
 			id="ssid" 
+				disabled="disabled"
 			title="<?=t("wlan_title_ssid_popup")?>"
 			value="<?=$ssid?>"
 		/>
@@ -52,6 +54,7 @@
 		class="password"
 		name="password" 
 		id="password" 
+				disabled="disabled"
 		title="<?=t("wlan_title_password_popup")?>"
 		value="<?=htmlentities($encryption_key)?>"
 	/>
@@ -189,6 +192,7 @@
 		        name="broadcast_ssid"
 		        title="<?=t("wlan_title_broadcast_popup")?>"
 		        type="checkbox"
+				disabled="disabled"
 		        class="slide"
 		        <?if($broadcast_ssid):?>checked="checked"<?endif?>
 		    />

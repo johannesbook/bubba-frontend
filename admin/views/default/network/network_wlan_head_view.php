@@ -27,6 +27,9 @@ $(document).ready( function() {
 	  if( ! capabilities["RX_GF"] ) {
 		  $("#mode_greenfield").attr("disabled","disabled");
 	  }
+  } else {
+	  // we dont want to do anything
+	  return;
   }
 
 	// hide advanced settings
@@ -126,7 +129,7 @@ $(document).ready( function() {
 					wep: true,
 					messages: {
 						required: "Please enter an WEP key",
-						wep: jQuery.format("WEP key need to be 5 or 13 characters of length")
+						wep: jQuery.format("WEP key needs to be 5 or 13 characters")
 					}
 
 				});
@@ -136,7 +139,7 @@ $(document).ready( function() {
 					rangelength: [8, 63],
 					messages: {
 						required: "Please enter an WPA key",
-						rangelength: jQuery.format("WPA key need to be between {0} and {1} characters of length")
+						rangelength: jQuery.format("WPA key needs to be between {0} and {1} characters")
 					}
 				});
 			}

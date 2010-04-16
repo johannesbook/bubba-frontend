@@ -408,7 +408,7 @@ $(document).ready( function() {
 });
 </script>
 
-<table id="album" class="ui-table-outline">
+<table id="album" class="ui-table-outline ui-no-hover">
 <tr>
 	<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing albums")?></th>
 </tr>

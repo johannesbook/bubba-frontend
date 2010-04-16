@@ -49,7 +49,9 @@ $('form.ack').live( 'submit', function(e) {
 					<td><?=$version?></td><td />
 				</tr>
 			</table>
-			<a href="<?=FORMPREFIX?>/settings/software"><button id="ui-stat-swupdate" class="submit"><?=t("Software update")?></button></a>
+				<form action="settings/software" method="post">
+					<input type="submit" id="ui-stat-swupdate" value="<?=t("Software update")?>"/>
+				</form>
 		</td>
 	</tr>
 	<tr>

@@ -63,8 +63,8 @@ input[type=text].ip {
 }
 
 input[type=submit],input[type=button],button.submit {
-  -moz-border-radius: 4px 4px 8px 8px;
-  -webkit-border-radius: 4px 4px 8px 8px;
+  -moz-border-radius: 4px 4px 7px 7px;
+  -webkit-border-radius: 4px 4px 7px 7px;
   background-image: url(../_img/label.png);
   background-position: 0 0;
   background-color: transparent;
@@ -76,13 +76,8 @@ input[type=submit],input[type=button],button.submit {
   height: 29px;
   margin: 3px;
   min-width : 80px;
-  padding: 0px 8px 8px;
+  padding: 0px 8px 6px 8px;
 }
-
-.msie input[type=submit],.msie input[type=button],.msie button.submit {
-	padding-top : 4px;
-}
-
 input[type=submit]:hover,input[type=button]:hover, button.submit:hover {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)!important;
   border: 0;
@@ -97,9 +92,14 @@ input[type=text],input[type=password],textarea {
 }
 
 
-input[disabled],input[readonly] {
+input[disabled],input[readonly],button.disabled {
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
   background: #ddd;
   color: #888;
+}
+input[disabled].incexc,button.disabled {
+  height : 27px;
 }
 
 input:focus {
@@ -160,6 +160,10 @@ table.ui-table-outline tr {
 table.ui-table-outline tr:hover {
 	background-color : #e5e5e5;
 }
+table.ui-table-outline.ui-no-hover tr:hover {
+	background-color : transparent;
+}
+
 table.ui-table-outline tr:first-child {
 	border-top : none;
 }
@@ -208,12 +212,11 @@ label.error {
   -moz-border-radius-topleft: 1.5em !important;
   -moz-box-shadow: 2px 3px 3px #666;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95)!important;
-  -webkit-border-radius-bottomleft: 1.5em !important;
-  -webkit-border-radius-left: 1.5em !important;
+  -webkit-border-bottom-left-radius: 1.5em !important;
+  -webkit-border-top-left-radius: 1.5em !important;
   -webkit-box-shadow: 2px 3px 3px #666;
   background-color: #656565;
   background-image: url(../_img/label.png);
-  background-position: -6px -138px;
   box-shadow: 2px 3px 3px #666;
   color: #fff;
   filter: alpha(opacity=95)!important;
@@ -223,10 +226,10 @@ label.error {
   margin-left: 2px;
   margin-top: 6px;
   opacity: .95 !important;
-  padding: 1px;
+  padding: 3px 5px 1px 10px;
   position: absolute;
   text-align: center;
-  width: 200px!important;
+  min-width: 200px!important;
   z-index: 100;
 }
 
@@ -1042,7 +1045,6 @@ button.ui-button::-moz-focus-inner {
 #ui-downloads-list table.ui-downloads-listitem tr {
 	border : none;
 	line-height : 16px;
-
 }
 	
 #download-addurl {
@@ -1726,7 +1728,9 @@ thead tr.ui-header th {
 table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   float: right;
 }
-
+.msie table.ui-table-outline tbody tr td button {
+	float : right;
+}
 .ui-dialog-buttonpane,.ui-text-center,td.colorcode {
   text-align: center;
 }
@@ -1855,4 +1859,3 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 	background: transparent !important;
 
 }
-

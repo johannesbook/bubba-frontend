@@ -173,21 +173,10 @@ class Users extends Controller{
 					);
 				}
 
-				if( $shell !== false ) {
-					if( $this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
-						$shell = '/bin/bash';
-					} else {
-						$shell = '/usr/sbin/nologin'; 
-					}
+				if( $this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
+					$shell = '/bin/bash';
 				} else {
-					$userinfo=get_userinfo();
-					if( isset( $userinfo[$username] ) ) {
-						$shell = trim($userinfo[$username]['shell']);
-					} else {
-						// should never happen, but better to be o nthe safe side
-						$shell = '/usr/sbin/nologin';
-					}
-
+					$shell = '/usr/sbin/nologin'; 
 				}
 
 				if( isset($result_chpwd["success"]) && !$result_chpwd["success"] ) {

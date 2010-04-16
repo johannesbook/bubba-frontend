@@ -2,8 +2,11 @@
 <script  type="text/javascript">
 $(document).ready( function() {
 	$("#extend").click(function() {
-		lv = $("#logical_volume option:selected").attr('value');
-		disk = $("#disk option:selected").attr('value');
+		var lv = $("select#logical_volume").val();
+		var disk = $("select#disk").val();
+		if( ! disk || ! lv ) {
+			return;
+		}
 		$.confirm( 
 			"<?=t("disk_lvm_extend_dialog_warning_message")?>", 
 			"<?=t("disk_lvm_extend_dialog_warning_title")?>", {
@@ -17,8 +20,6 @@ $(document).ready( function() {
 						function(data) {
 							location.assign("/admin/disk/progress");
 						}, 'json' );					
-				},"<?=t('button_label_cancel')?>": function() {
-					$(this).dialog('close');
 				}
 			}
 		);

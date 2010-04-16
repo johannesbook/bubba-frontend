@@ -20,3 +20,11 @@ input[type=submit],input[type=button],button.submit {
 table.ui-table-outline td {
 	border-top : 1px solid #bbb;
 }
+
+#ui-downloads-list {
+	width : 98%;
+}
+#ui-downloads-list table.ui-downloads-listitem td {
+	border : none;
+	line-height : 16px;
+}

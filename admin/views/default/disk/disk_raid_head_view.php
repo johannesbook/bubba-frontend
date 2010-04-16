@@ -1,7 +1,4 @@
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.progress.js?v='<?=$this->session->userdata('version')?>'"></script>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.simplemodal.confirm.js?v='<?=$this->session->userdata('version')?>'"></script>
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.simplemodal.css?v='<?=$this->session->userdata('version')?>'" />
 
 
 	<script  type="text/javascript">
@@ -18,7 +15,7 @@ $(document).ready( function() {
 		});
 	});
 	$('#recover_md').click(function() {
-		dialog_element = $.dialog("", "<?=t("disk_raid_recover_title")?>", {});
+		var dialog_element = $.dialog("", "<?=t("disk_raid_recover_title")?>", {});
 		dialog_element.text("<?=t("disk-examine-disks")?>.");
 		$.post(	'<?=site_url("ajax_disk/get_raid_disks")?>', {}, function(data) {
 			dialog_element.empty();
@@ -28,7 +25,7 @@ $(document).ready( function() {
 					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_recover_broken_external_message")?>."}) );
 
 					// Creating the dropdown of all available external disks
-					select = $('<select/>', {id: 'external'});
+					var select = $('<select/>', {id: 'external'});
 					for(i=0;i<data.clean_disks.length;++i) {
 						select.append(
 							$("<option />", { 
@@ -44,7 +41,7 @@ $(document).ready( function() {
 						'option','buttons', {
 							"<?=t('disk_raid_recover_broken_external_button_label')?>": function() {
 								// Callback when choosing to create RAID
-								external_device = select.val();
+								var external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
 								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
@@ -67,11 +64,9 @@ $(document).ready( function() {
 												function(data) {
 													location.assign("/admin/disk/progress");
 												}, 'json' );
-										},
-											"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+										}
 									});
-							},
-								"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+							}
 						}
 					);
 				} else {
@@ -90,7 +85,7 @@ $(document).ready( function() {
 					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_message")?>."}) );
 
 					// Creating the dropdown of all available external disks
-					select = $('<select/>', {id: 'external'});
+					var select = $('<select/>', {id: 'external'});
 					for(i=0;i<data.disks.length;++i) {
 						select.append(
 							$("<option />", { 
@@ -107,7 +102,7 @@ $(document).ready( function() {
 						'option','buttons', {
 							"<?=t('disk_raid_recover_broken_internal_button_label')?>": function() {
 								// Callback when choosing to create RAID
-								external_device = select.val();
+								var external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
 								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
@@ -130,11 +125,9 @@ $(document).ready( function() {
 												function(data) {
 													location.assign("/admin/disk/progress");
 												}, 'json' );
-										},
-											"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+										}
 									});
-							},
-								"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+							}
 						}
 					);
 				};
@@ -147,7 +140,7 @@ $(document).ready( function() {
 	});
 
 	$('#create_md_internal_external_mirror').click(function() {
-		dialog_element = $.dialog("", "<?=t("disk_raid_create_title")?>", {});
+		var dialog_element = $.dialog("", "<?=t("disk_raid_create_title")?>", {});
 		dialog_element.text("<?=t("disk-examine-disks")?>.");
 
 		$.post(	'<?=site_url("ajax_disk/get_external_disks")?>', { removable: !false, raid: false, usb: false }, function(data) {
@@ -162,7 +155,7 @@ $(document).ready( function() {
 					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_create_select_disk_message")?>."}) );
 
 					// Creating the dropdown of all available external disks
-					select = $('<select/>', {id: 'external'});
+					var select = $('<select/>', {id: 'external'});
 					for(i=0;i<data.disks.length;++i) {
 						select.append(
 							$("<option />", { 
@@ -202,11 +195,9 @@ $(document).ready( function() {
 												function(data) {
 													location.assign("/admin/disk/progress");
 												}, 'json' );
-										},
-											"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+										}
 									});
-							},
-								"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}
+							}
 						}
 					);
 

@@ -6,6 +6,8 @@ messages = {
 	"text-yes": "Yes",
 	"text-no": "No",
 	
+	// Topnav
+	"topnav-login": "Login",
 
 	// Filemanager
 	"filemanager-mkdir-dialog-button-label" : "Create directory",	

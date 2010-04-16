@@ -330,11 +330,17 @@ class Disk extends Controller{
 
 		unset( $partition );
 		unset( $disk );
-		foreach( $disks as &$disk ) {
-			if( array_key_exists( 'partitions', $disk ) ) {
-				$parts = $disk['partitions'];
-				$this->disk_model->array_sort( 'dev', &$parts );
-			}
+		# possible gpt parted bug when $disks goes pretty much empty
+		# as of now, show empty array instead
+		if( is_array( $disks ) ) {
+			foreach( $disks as &$disk ) {
+				if( array_key_exists( 'partitions', $disk ) ) {
+					$parts = $disk['partitions'];
+					$this->disk_model->array_sort( 'dev', &$parts );
+				}
+			} }
+		else {
+			$disks = array();
 		}
 		$data['disks'] = $disks;
 		$data['devices'] = $devices;

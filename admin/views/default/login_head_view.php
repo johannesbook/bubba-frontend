@@ -101,7 +101,7 @@ $(document).ready(function(){
 	
 	<? if(!$this->session->userdata('valid')):?>
 		$('#fn-topnav-logout div:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
-		$('#s-topnav-logout').text('<?=t("Login")?>');
+		$('#s-topnav-logout').text($.message('topnav-login'));
 		
 	<? endif ?>
 	$("#fn-login-dialog-form input").keypress(function(e) {

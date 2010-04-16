@@ -1,3 +1,8 @@
+<?
+	$CI = &get_instance();
+	$CI->load->library('browser_cap');
+	$browser = $CI->browser_cap->getBrowser(null, true);
+?>
 <?="<?xml version=\"1.0\" encoding=\"UTF-8\"?>"?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -10,10 +15,14 @@
 <title>Bubba|2 - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
 
 <!-- Stylesheets -->
-<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.css?v='<?=$this->session->userdata('version')?>'" />
+<? /* <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.css?v='<?=$this->session->userdata('version')?>'" /> */ ?>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.theme.default.css?v='<?=$this->session->userdata('version')?>'" />
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
 <!--[if IE 7]><link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/IE7styles.css" /><![endif]-->  
+
+<?if($browser['Browser'] === 'Safari'):?>
+<link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/Safaristyles.css" />
+<?endif?>
 
 <!-- jQuery and jQueryUI javascript libraries -->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
@@ -56,7 +65,8 @@ config = <?=json_encode(
 	array(
 		'prefix' => FORMPREFIX,
 		'theme' => THEME,
-		'version' => $this->session->userdata('version')
+		'version' => $this->session->userdata('version'),
+		'ua' => $browser
 )
 )?>;
 
@@ -128,7 +138,7 @@ $(document).ready(function(){
 		});
   
 	  $(document).keydown(function(e) {
-		  if(e.which == 77 && (e.target.nodeName == "BODY" || e.target.nodeName == "HTML" || $(e.target).hasClass('ui-dialog-menu'))) {
+		  if(e.which == 77 && ($(e.target).is(':not(:input)') && !$('.ui-dialog:not(.ui-dialog-menu)').is(':visible') || $(e.target).hasClass('ui-dialog-menu'))) {
 		  	display_menu();
 		  }
 		});
@@ -260,10 +270,10 @@ if(isset($head)) {
 	            <?=t("topnav-not-authorized")?>
             <? } ?>
         </span>
-            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text"><?=t("Logout")?></div></button>
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text"><?=t("Home")?></div></button>
-            <button id="fn-topnav-settings" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-settings"></div><div id="s-topnav-settings" class="ui-button-text"><?=t("Settings")?></div></button>
-            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text"><?=t("Help")?></div></button>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text"><?=t("topnav-logout")?></div></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text"><?=t("topnav-home")?></div></button>
+            <button id="fn-topnav-settings" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-settings"></div><div id="s-topnav-settings" class="ui-button-text"><?=t("topnav-settings")?></div></button>
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text"><?=t("topnav-help")?></div></button>
 		</div>
 		</div>
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
