@@ -105,14 +105,13 @@ $(document).ready(function(){
 			$('input[name=password1]', this).val("");
 			$('input[name=password2]', this).val("");
 
-			if( data['allow:enable_shell'] ) {
+			if( data['shell_access'] ) {
 				$('input[name=shell]', this).attr( 'checked', data.shell || false).closest('tr').show();
 			} else {
 				$('input[name=shell]', this).attr( 'checked', false).closest('tr').hide();
 			}
-			$('input[name=realname]', this).attr('disabled', !data['allow:enable_rename']);
 
-			if( data['allow:disable_remote'] ) {
+			if( data['disable_remote'] ) {
 				$('input[name=remote]', this).attr( 'checked', data.remote || false).closest('tr').show();
 			} else {
 				$('input[name=remote]', this).attr( 'checked', true).closest('tr').hide();

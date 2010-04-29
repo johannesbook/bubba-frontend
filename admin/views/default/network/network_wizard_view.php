@@ -1,16 +1,12 @@
 <script type="text/javascript">
 
-var easyfind_name=<?=json_encode(t("Set easyfind name"))?>;
 $(document).ready(function(){
 
 
 	$("#en_easyfind").change(function() {
 		if($(this).attr('checked')) {
 			$("#easyfind_name").removeAttr("disabled");
-			if($("#easyfind_name").val() == easyfind_name) {
-				$("#easyfind_name").val("");
-				$("#mybubba").text("");
-			}
+			$("#easyfind_name").select();
 		} else {
 			$("#easyfind_name").attr("disabled","true");
 			if($("#easyfind_name").val() == "") {
@@ -68,8 +64,8 @@ $(document).ready(function(){
 						id="easyfind_name" 
 						name="wiz_data[easyfind_name]" 
 						type="text" 
-						value="<?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("Set easyfind name")?>" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"":"disabled='disabled'"?>/>
-					 (http://<span id="mybubba"><?=isset($wiz_data['easyfind_name'])?$wiz_data['easyfind_name']:t("mybubba")?></span>.bubbaserver.com)
+						value="<?=isset($wiz_data['easyfind_name'])&&$wiz_data['easyfind_name']?$wiz_data['easyfind_name']:t("your-easyfind-name")?>" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"":"disabled='disabled'"?>/>
+					 (http://<span id="mybubba"><?=isset($wiz_data['easyfind_name'])&&$wiz_data['easyfind_name']?$wiz_data['easyfind_name']:t("your-easyfind-name")?></span>.bubbaserver.com)
 					 <?if(isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind']):?>
 					 	<br>
 					 		<?if(isset($wiz_data['err_easyfind_empty']) && $wiz_data['err_easyfind_empty']):?>

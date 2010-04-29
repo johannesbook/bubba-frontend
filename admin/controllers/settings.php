@@ -629,8 +629,11 @@ class Settings extends Controller{
 		$errors = array();
 		$update = false;
 		$data['workgroup'] = $current_workgroup = get_workgroup();
-		$data['easyfind'] = $current_easyfind = $this->networkmanager->easyfind_get_name();
 		$data['hostname'] = $current_hostname = php_uname('n');
+		$data['easyfind'] = $current_easyfind = $this->networkmanager->easyfind_get_name();
+		if(!$current_easyfind) {
+			$data['easyfind'] = t("your-easyfind-name");
+		}
 
 		if( $this->input->post("samba_update") ) {
 			$update = true;
@@ -640,7 +643,7 @@ class Settings extends Controller{
 			$hostname=$this->input->post("hostname");
 			$workgroup=$this->input->post('workgroup');
 
-			$restart_samba = false;
+			$restart_services = false;
 
 			if( $hostname != $current_hostname ) {
 				# Hostname is updated
@@ -650,7 +653,7 @@ class Settings extends Controller{
 						# we failed to update hostname
 						$errors["settings_identity_error_change_hostname"]=true;
 					}else{
-						$restartsamba=true;
+						$restart_services=true;
 						$data['hostname'] = $hostname;
 					}
 				}else{
@@ -662,13 +665,13 @@ class Settings extends Controller{
 			if( $workgroup != $current_workgroup ) {
 				// TODO : Add errorchecking
 				set_workgroup($workgroup);
-				$restart_samba=true;
+				$restart_services=true;
 				$data['workgroup'] = $workgroup;
 
 			}
 
-			if ($restart_samba){
-				if(!query_service("smb")){
+			if ($restart_services){
+				if(query_service("samba")){
 					restart_samba();
 				}
 			} else {
@@ -715,7 +718,7 @@ class Settings extends Controller{
 			} elseif( $this->networkmanager->easyfind_is_enabled() ) {
 				# easyfind is enabled, and we want to disable it
 				if( $this->networkmanager->easyfind_set_enable(false) ) {
-					$data["easyfind"] = $easyfind;
+					$data["easyfind"] = $current_easyfind;
 				} else {
 					# we failed to disable easyfind (how???)
 					$errors["settings_identity_easyfind_error_fail_disable"]=true;

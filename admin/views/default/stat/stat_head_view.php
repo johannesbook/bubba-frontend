@@ -56,7 +56,39 @@ $(window).load(function() {
 
 $(document).ready( function() {
 
-
+	$('button.fn-ack').bind( 'click', function(e) {
+		var self = this;
+		e.preventDefault();
+		uuid=$(this).parent().find('input.uuid').val();
+		$.throbber.show();
+		$.ajax({
+			type: 'POST',
+				dataType: 'json',
+				url: "/admin/ajax_notify/ack",
+				data: {uuid: uuid} ,
+				timeout: 20000,
+				success: function( data ) {
+					$.throbber.hide();
+					if( data.error ) {
+						update_status( false, data.html );
+					} else {
+						var table = $(self).closest('table.notifications');
+						$(self).closest('tr.notification').remove();
+						if( table.find('tr').length == 0 ) {
+							table.append(
+								$('<tr/>',{
+									'html':
+										$('<td/>',{
+											'text': $.message('stat-notify-no-more-messages')
+										})
+								})
+							);
+						}
+					}
+				}
+		});
+		return false;
+	});
 	$("#stat-shutdown input[type='submit']").click(function() {
 		var buttons = {};
 		var action = $(this).attr("name");

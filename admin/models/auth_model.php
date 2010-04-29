@@ -30,13 +30,16 @@ class Auth_model extends Model{
 			"edit_allusers" => array(
 				"allow" => array("admin")
 			),			
-			"allow:enable_rename"    => array(
-				"deny"  => array("")
-			),
-			"allow:enable_shell"     => array(
+			"shell_access"     => array(
 				"deny"  => array("admin")
 			),
-			"allow:disable_remote"     => array(
+			"set:shell_access"     => array(
+				"allow"  => array("admin")
+			),
+			"disable_remote"     => array(
+				"allow"  => array("admin")
+			),
+			"set:disable_remote"     => array(
 				"allow"  => array("admin")
 			),
 		),

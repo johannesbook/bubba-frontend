@@ -1,3 +1,52 @@
+bubba-frontend (2.0.0.7) claire estelle; urgency=high
+
+  * adding admin-manager-specific favicons 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 23 Apr 2010 16:42:27 +0200
+
+bubba-frontend (2.0.0.6) claire estelle; urgency=emergency
+
+  * _really_ fix bug in valid shell (Closes: #1409) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 23 Apr 2010 14:33:06 +0200
+
+bubba-frontend (2.0.0.5) claire estelle; urgency=high
+
+  * fix bug in identify valid shell (Closes: #1409) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 23 Apr 2010 12:15:34 +0200
+
+bubba-frontend (2.0.0.4) claire estelle; urgency=high
+
+  * fix missing implementation for ack notify and clean up notify table
+    somewhat as it lacked wanted style. (Closes: #1419)
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 22 Apr 2010 17:46:50 +0200
+
+bubba-frontend (2.0.0.3) claire estelle; urgency=low
+
+  * Added easyfind 'link'-names in identity view. (Closes: #1295)
+
+ -- PA Nilsson <pa@excito.com>  Thu, 22 Apr 2010 16:16:17 +0200
+
+bubba-frontend (2.0.0.2) claire estelle; urgency=low
+
+  [ PA Nilsson ]
+  * Fixed IE issue with conflicting firewall rules. (Closes: #1418)
+  * Fixed too narrow selectboxes in IE7, (Closes: #1408)
+
+  [ Carl Fürstenberg ]
+  * add workaorund for unpartitioned devices for sysbackup (Closes: #1422)
+
+ -- PA Nilsson <pa@excito.com>  Wed, 21 Apr 2010 16:27:54 +0200
+
+bubba-frontend (2.0.0.1) claire estelle; urgency=high
+
+  * make sure that shell is only updated when shell is allowed to be changed
+    (Closes: #1409)
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 16 Apr 2010 13:54:02 +0200
+
 bubba-frontend (1.9.69) claire estelle; urgency=low
 
   * Fixed wizard "auto" start. Closes #1404

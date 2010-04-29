@@ -82,6 +82,7 @@ messages = {
 	"stat-reboot-button-continue" : "Restart",
 	"stat-reboot-confirm-message" : "Proceed to restart Bubba|2?",
 	"stat-reboot-confirm-title" : "Restart",
+	"stat-notify-no-more-messages" : "No more system messages available",
 
 	// Printing
 	"printing-list-add-dialog-button-label" : "Add",

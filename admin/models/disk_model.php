@@ -75,9 +75,14 @@ class Disk_model extends Model {
 					}
 				}
 			}
-			if($list_partitions) {
-				foreach( $disk['partitions'] as $part ) {
-					$ret[$disk['dev']][] = $part['dev'];
+			if($list_partitions ) {
+				if( isset( $disk['partitions'] ) ) {
+					foreach( $disk['partitions'] as $part ) {
+						$ret[$disk['dev']][] = $part['dev'];
+					}
+				} else {
+					// the old and glory factory default unpartitioned USB memory stick
+					$ret[$disk['dev']][] = $disk['dev'];
 				}
 			} else {
 				$ret[] = $disk['dev'];

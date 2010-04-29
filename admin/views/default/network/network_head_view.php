@@ -68,9 +68,10 @@ $(document).ready(function(){
 	// wan + lan
 	$("#body_lan tr td:nth-child(2),#body_wan tr td:nth-child(2)").addClass("col2");	
 		
-	$(".fn-network-button_submit").click( function () {
+	$(".fn-network-button_submit").click( function (e) {
 		$(".fn-network-button_submit").addClass("ui-state-disabled");
 		$(this).parents("form").submit();
+		e.preventDefault();
 	});
 
 	// lan scripts

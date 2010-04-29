@@ -28,3 +28,6 @@ table.ui-table-outline td {
 	border : none;
 	line-height : 16px;
 }
+#fn-filemanager-perm-dialog select {
+	width : 140px!important;
+}

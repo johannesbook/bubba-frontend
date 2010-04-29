@@ -77,6 +77,8 @@
 					<?if(!$easyfind_enabled):?>disabled="disabled"<?endif?>
 
 				/>
+				(http://<span id="fn-settings-easyfind-url"><?=$easyfind?></span>.bubbaserver.com)
+			</td>
 		</tr>
 
 		</tbody>

@@ -43,11 +43,12 @@ class Users extends Controller{
 			}
 			if ( $allow_list_users || ($this->session->userdata("user")==$uname) ) {
 
-				$value["allow:enable_shell"] = $this->Auth_model->policy( 'userdata', 'allow:enable_shell', $uname);
-				$value["allow:enable_rename"] = $this->Auth_model->policy( 'userdata', 'allow:enable_rename', $uname);
-				$value["allow:disable_remote"] = $this->Auth_model->policy( 'userdata', 'allow:disable_remote', $uname);
+				$value["set:shell_access"] = $this->Auth_model->policy( 'userdata', 'set:shell_access', $uname);
+				$value["shell_access"] = $this->Auth_model->policy( 'userdata', 'shell_access', $uname);
+				$value["set:disable_remote"] = $this->Auth_model->policy( 'userdata', 'set:disable_remote', $uname);
+				$value["disable_remote"] = $this->Auth_model->policy( 'userdata', 'disable_remote', $uname);
 				$value["remote"] = $this->session->userdata("AllowRemote");
-				$value["shell"] = trim($value["shell"])=="/bin/bash" && $value["allow:enable_shell"];
+				$value["shell"] = trim($value["shell"])==='/bin/bash' && $value["shell_access"];
 				$value['username'] = $uname;
 				$result[] = $value;
 			}
@@ -108,7 +109,11 @@ class Users extends Controller{
 			$password1=trim($this->input->post('password1'));
 			$password2=trim($this->input->post('password2'));
 			$shell=$this->input->post('shell');
-			if($this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
+			if(
+				$this->Auth_model->policy("userdata","set:shell_access", $username) 
+				&& $this->Auth_model->policy("userdata","shell_access", $username) 
+				&& $shell 
+			) {
 				$shell = '/bin/bash';
 			} else {
 				$shell = '/usr/sbin/nologin'; 
@@ -158,7 +163,7 @@ class Users extends Controller{
 			$realname=trim($this->input->post('realname'));
 			$password1=trim($this->input->post('password1'));
 			$password2=trim($this->input->post('password2'));
-			$shell=$this->input->post('shell');
+			$input_shell=$this->input->post('shell');
 			$remote = $this->input->post("remote");
 			$sideboard = $this->input->post("sideboard");
 
@@ -173,10 +178,24 @@ class Users extends Controller{
 					);
 				}
 
-				if( $this->Auth_model->policy("userdata","allow:enable_shell", $username) && $shell ) {
-					$shell = '/bin/bash';
+				if( $this->Auth_model->policy("userdata","set:shell_access", $this->session->userdata("user") ) ) {
+					if( $this->Auth_model->policy("userdata","shell_access", $username ) ) {
+						if( $input_shell ) {
+						$shell = true;
+						} else {
+							$shell = false;
+						}
+					} else {
+						$shell = false; 
+					}
 				} else {
-					$shell = '/usr/sbin/nologin'; 
+					$userinfo=get_userinfo();
+					if( isset( $userinfo[$username] ) ) {
+						$shell = trim($userinfo[$username]['shell']) == '/bin/bash';
+					} else {
+						// should never happen, but better to be on the safe side
+						$shell = false;
+					}		
 				}
 
 				if( isset($result_chpwd["success"]) && !$result_chpwd["success"] ) {
@@ -190,7 +209,11 @@ class Users extends Controller{
 					}
 				}
 
-				if( !$error && $this->Auth_model->policy("userdata","allow:disable_remote", $username) ) {
+				if( 
+					!$error 
+					&& $this->Auth_model->policy("userdata","set:disable_remote", $this->session->userdata("user")) 
+					&& $this->Auth_model->policy("userdata","disable_remote", $username)
+				) {
 					update_bubbacfg("admin","AllowRemote",$remote ? 'yes': 'no' );
 					$this->session->set_userdata("AllowRemote", $remote);
 				}
@@ -199,8 +222,8 @@ class Users extends Controller{
 					update_bubbacfg("admin","default_sideboard", $sideboard ? "yes" : "no" );
 				}
 				*/
-				if( !$error && update_user($realname,$shell,$username)){
-					$error = t("users-edit-account-error '%s' '%s' '%s'", $realname, $shell, $username);
+				if( !$error && update_user($realname,$shell?'/bin/bash':'/usr/sbin/nologin',$username)){
+					$error = t("users-edit-account-error", $realname, $shell, $username);
 				}		
 			} else {
 				$error = t("user_update_error_auth_fail");
@@ -317,13 +340,10 @@ class Users extends Controller{
 			if(isset($data['wiz_data']['postingpage']) || isset($data['wiz_data']['adduser'])) {
 				// --- POSTPROCESSING USERS ----
 
-				//d_print_r("POSTPROCESS: users");
-				//d_print_r($data);
 				if( isset($data['wiz_data']['adduser']) ) {
 					// add user
 					$ret['info'] = $this->add(-1);
 					if(!$ret['info']['success']) {
-						//d_print_r($ret['info']);
 						$error = true;
 						$data['err']['uname'] = "";
 						$data['err']['pwd'] = "";
@@ -359,7 +379,6 @@ class Users extends Controller{
 				}
 			} else {
 				// --- PREPROCESSING USERS ----
-				//d_print_r("PREPROCESS: users");
 				// get userlist.
 				$data['wiz_data']['ulist'] = $this->_get_uinfo();
 			}

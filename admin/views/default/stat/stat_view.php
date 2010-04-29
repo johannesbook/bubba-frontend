@@ -1,27 +1,4 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/notify.js?v='<?=$this->session->userdata('version')?>'"></script>
-<script>
-$('form.ack').live( 'submit', function(e) {
-	uuid=$(this).find('input.uuid').val();
-	$.ajax({
-		type: 'POST',
-		dataType: 'json',
-		url: "/admin/ajax_notify/ack",
-		data: {uuid: uuid} ,
-		timeout: 20000,
-		success: function( data ) {
-		}
-	});
-	if( $(this).closest('table').find('tr').size() <= 1 ) {
-	$(this).closest('fieldset').closest('td').remove();
-	} else {
-		table = $(this).closest( 'table' );
-		$(this).closest( 'tr' ).remove();
-		table.stripe();
-	}
-	return false;
-});
-</script>
-
 
 <table class="ui-table-outline">
 	<tr><th colspan="2" class="ui-state-default ui-widget-header"><?=t('Status')?></th></tr>
@@ -61,7 +38,7 @@ $('form.ack').live( 'submit', function(e) {
 	<tr><th colspan="2" class="ui-state-default ui-widget-header"><?=t('System messages')?></th></tr>
 </table>
 
-<table class="notifications">
+<table class="notifications ui-table-outline">
 	<?if(isset($notifications) && is_array($notifications)):?>
 		<?foreach( $notifications as $index => $notification ):?>
 			<tr class="notification notification-<?=$notification['Level']?>">
@@ -75,9 +52,9 @@ $('form.ack').live( 'submit', function(e) {
 					<?endif?>
 				</td>
 				<td class="notification-ack">
-					<form class="ack" method="post">
+					<form class="ack">
 						<input type="hidden" class="uuid" name="uuid" id="uuid_<?=$index?>" value="<?=$notification['UUID']?>" />
-						<input type="submit" value="<?=t("Acknowledge")?>" <?if( ! $notification['AllowedToAck']):?>disabled="disabled"<?endif?>/>		
+						<button class="fn-ack submit" <?if( ! $notification['AllowedToAck']):?>disabled="disabled"<?endif?>><?=t("Acknowledge")?></button>		
 					</form>
 				</td>
 			</tr>

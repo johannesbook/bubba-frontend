@@ -311,6 +311,7 @@ $lang['users-label-username'] = 'User name';
 $lang['users-label-realname'] = 'Real name';
 $lang['users-label-shell-login'] = 'Allow shell login';
 $lang['users-add-button-label'] = 'Add new user';
+$lang['users-edit-account-error'] = 'Failed to edit account for %s (%3$s) shell: %2$s';
 
 $lang['illegal'] = 'Illegal characters in password';
 $lang["mismatch"]='Passwords do not match';

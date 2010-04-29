@@ -852,6 +852,10 @@ body {
 .ui-widget-wizard input[type=text]{
 	vertical-align : baseline;
 }
+
+input#easyfind_name {
+	vertical-align : middle;
+}
 input[disabled]#easyfind_name {
 	background-color : #ccc;
 }
@@ -1858,4 +1862,11 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 	border: 0;
 	background: transparent !important;
 
+}
+
+td.notification-type {
+	width: 50px;
+}
+td.notification-ack {
+	width: 200px;
 }

@@ -14,6 +14,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Bubba|2 - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
 
+<!--[if IE]><link rel="shortcut icon" href="<?=FORMPREFIX.'/views/'.THEME?>/favicon_ie.ico"><![endif]-->
+<link rel="icon" type="image/png" href="<?=FORMPREFIX.'/views/'.THEME?>/favicon_64px.png" />
 <!-- Stylesheets -->
 <? /* <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.css?v='<?=$this->session->userdata('version')?>'" /> */ ?>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.theme.default.css?v='<?=$this->session->userdata('version')?>'" />
