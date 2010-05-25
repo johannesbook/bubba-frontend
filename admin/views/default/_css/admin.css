@@ -147,24 +147,24 @@ td {
   vertical-align : top;
 }
 
-table.ui-table-outline td {
+table.ui-table-outline tbody td {
 	vertical-align : middle;
 	font-size : 14px;
 
 }
-table.ui-table-outline tr {
+table.ui-table-outline tbody tr {
 	border-top : 1px solid #bbb;
 	line-height : 24px;
 }
 
-table.ui-table-outline tr:hover {
+table.ui-table-outline tbody tr:hover {
 	background-color : #e5e5e5;
 }
-table.ui-table-outline.ui-no-hover tr:hover {
+table.ui-table-outline.ui-no-hover tbody  tr:hover {
 	background-color : transparent;
 }
 
-table.ui-table-outline tr:first-child {
+table.ui-table-outline tbody tr:first-child {
 	border-top : none;
 }
 
@@ -1718,7 +1718,7 @@ tbody > tr > th label,label,#traffic .ui-filemanager-state-header {
 
 }
 
-button:hover,input[type=button],input[type=submit],input[type=reset],.ui-filemanager,#filetable_wrapper button:hover,.ui-filemanager-prev-arrow:hover,.ui-filemanager-next-arrow:hover,.ui-filemanager-path-widget .ui-filemanager-path-link,.ui-filemanager-type-row,.expansion {
+button:hover, input[type=button], input[type=submit], input[type=reset], .ui-filemanager tbody, .ui-filemanager thead,#filetable_wrapper button:hover, .ui-filemanager-prev-arrow:hover, .ui-filemanager-next-arrow:hover, .ui-filemanager-path-widget .ui-filemanager-path-link, .ui-filemanager-type-row, .expansion {
   cursor: pointer;
 }
 
@@ -1762,7 +1762,7 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
   margin-top: 45px;
 }
 .ui-widget-wizard,.ui-element-width-50 {
-  width: 50%!important;
+  width: 48%!important;
 }
 
 .ui-widget-wizard form,.ui-dialog table {
@@ -1869,4 +1869,10 @@ td.notification-type {
 }
 td.notification-ack {
 	width: 200px;
+}
+.dataTables_empty {
+	display: none;
+}
+.ui-filemanager-fake-updir {
+	cursor: default;
 }

@@ -6,7 +6,7 @@ class Album extends Controller {
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		$this->Auth_model->EnforceAuth();
+		$this->Auth_model->EnforceAuth('web_admin');
 		$this->Auth_model->DenyUser('admin');
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}

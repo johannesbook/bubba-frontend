@@ -122,7 +122,7 @@ $(document).ready(function(){
 	$('a', menu_dialog).click(function(){menu_dialog.dialog('close')});
 
 	$('#fn-topnav-logout').click(function(event) {
-		<? if($this->session->userdata('valid')):?>
+		<? if($this->Auth_model->CheckAuth("web_admin")):?>
 			logout_dialog();
 		<?else:?>
 			dialog_login();
@@ -203,7 +203,7 @@ $(document).ready(function(){
 			$.get(config.prefix+"/users/config/json/show_sideboard/0");
 		}
 	});
-<?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->session->userdata("valid") ) || (isset($show_sideboard) && $show_sideboard && !$this->session->userdata("valid")) ):?>
+<?if(  !$this->session->userdata("run_wizard") && ($this->session->userdata("show_sideboard") && $this->Auth_model->CheckAuth("web_admin") ) || (isset($show_sideboard) && $show_sideboard && !$this->Auth_model->CheckAuth("web_admin")) ):?>
 	$("#sideboard").show();
 	$("#sideboard_switch").removeClass("ui-icon-open");
 	$("#sideboard_switch").addClass("ui-icon-close");
@@ -266,8 +266,8 @@ if(isset($head)) {
 		<div id="topnav-content-inner">
 				<span id="topnav_status">
 	
-            <?if ($this->session->userdata("valid")) { ?>
-	            <?=t("topnav-authorized",$this->session->userdata("user"))?>
+            <?if ($this->Auth_model->CheckAuth("web_admin")) { ?>
+	            <?=t("topnav-authorized",$this->session->userdata("realname"))?>
             <?} else {?>
 	            <?=t("topnav-not-authorized")?>
             <? } ?>

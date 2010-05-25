@@ -24,7 +24,7 @@ class Filemanager extends Controller{
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		$this->Auth_model->EnforceAuth();
+		$this->Auth_model->EnforceAuth('web_admin');
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
@@ -47,7 +47,7 @@ class Filemanager extends Controller{
 
 
 	function backup($strip=""){
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
 		$data["backupjobs"] = get_backupjobs($this->session->userdata("user"));
 		$data["backup"] = get_backupstatus();
@@ -60,7 +60,7 @@ class Filemanager extends Controller{
 	}
 
 	function restore($strip=""){
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
 		$data["backupjobs"] = get_backupjobs($this->session->userdata("user"));
 		$data["loc_fileinfo"] = "/home/".$this->session->userdata("user")."/.backup/";

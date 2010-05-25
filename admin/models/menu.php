@@ -408,7 +408,7 @@ class Menu extends Model {
 
 			$item_locked = " fn-login-state-nolock";
 			$lock_icon = $menu_value['lock-icon'][0];
-			if($menu_value["auth"] && !$this->session->userdata("valid")) {
+			if($menu_value["auth"] && !$this->Auth_model->CheckAuth("web_admin")) {
 				$item_locked = " fn-state-login-lock";
 				$lock_icon = $menu_value['lock-icon'][1];
 			}

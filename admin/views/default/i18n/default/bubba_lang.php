@@ -95,6 +95,7 @@ $lang["login-dialog-cancel"] = "Cancel";
 $lang['login-error-grantaccess'] = "Access not granted for user '%s'.";
 $lang['login-error-wanaccess'] = "Admin user not allowed to login on WAN interface.";
 $lang['login-error-wanaccess-quickstart'] = "Please read the users manual for advice.";
+$lang['login-error-noaccess'] = "User isn't allowed to login to web admin.";
 $lang['login-error-pwd'] = "Invalid user/password combination.";
 
 /* Menu bar texts */

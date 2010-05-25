@@ -48,6 +48,9 @@
 		<div id="fn-login-error-wanaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
 			<?=t('login-error-wanaccess')?><br/><?=t('login-error-wanaccess-quickstart')?>
 		</div>
+		<div id="fn-login-error-noaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
+			<?=t('login-error-noaccess')?>
+		</div>		
 		<?if(isset($redirect_user) && $redirect_user):?>
 			<div id="fn-login-error-redirect" class="ui-state-error-text ui-login-dialog-error ui-text-center">
 				<?=t('login-error-grantaccess',$redirect_user)?>

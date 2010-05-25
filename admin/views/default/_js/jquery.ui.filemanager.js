@@ -149,7 +149,8 @@ jQuery.widget("ui.filemanager", {
 	   mouseDownCallback: null,
 	   serverData: null,
 	   rowCallback: null,
-	   animationSpeed: 600
+	   animationSpeed: 600,
+	   animate: true
    },
    _create: function() {
 	   var self = this;
@@ -159,8 +160,8 @@ jQuery.widget("ui.filemanager", {
 		   cols = [
 		   { "sWidth": "0px", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
 		   { "sWidth": "auto", "aaSorting": [ "asc", "desc" ], "sClass": "ui-filemanager-column-name" },
-		   { "sWidth": "22ex", "sClass": "ui-filemanager-column-date" },
-		   { "sWidth": "10%", "aaSorting": [ "asc", "desc" ], "sType": "size", "sClass": "ui-filemanager-column-size" },
+		   { "sWidth": "200px", "sClass": "ui-filemanager-column-date" },
+		   { "sWidth": "100px", "aaSorting": [ "asc", "desc" ], "sType": "size", "sClass": "ui-filemanager-column-size" },
 		   { "sWidth": "30px", "bSortable": false, "sClass": "ui-filemanager-column-next" }
 	   ];
 	   }
@@ -486,8 +487,8 @@ jQuery.widget("ui.filemanager", {
 		   }
 	   );
    },
-   reload: function() {
-	   this._reloadAjax({data:{path:this.options.root}});
+   reload: function(callback) {
+	   this._reloadAjax({data:{path:this.options.root}}, callback);
    },
    getSelected: function() {
 	   return jQuery(".ui-filemanager-state-selected", this.element ).map(function(){ return jQuery(this).data('path') }).get();
@@ -500,6 +501,11 @@ jQuery.widget("ui.filemanager", {
    },
    _dirCallback: function( row, options ){
 	   var self = this;
+
+	   if( ! self.options.animate ) {
+		   self._reloadAjax( { path: self.element.data('path'), redraw: true, data: { path: options.path }  } );
+		   return;
+	   }
 
 	   options = jQuery.extend({direction: "left"},options);
 	   var orig_width = self.element.outerWidth();

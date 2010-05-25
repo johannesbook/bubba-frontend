@@ -11,6 +11,8 @@ function postlogin_callback(e) {
 			if(data.authfail) {
 				if(data.auth_err_remote) {
 					$("#fn-login-error-wanaccess").show();
+				} else if(data.noaccess) {
+					$("#fn-login-error-noaccess").show();
 				} else {
 					$("#fn-login-error-pwd").show();
 					$("#password").select();
@@ -99,7 +101,7 @@ function dialog_login(e) {
 
 $(document).ready(function(){
 	
-	<? if(!$this->session->userdata('valid')):?>
+	<? if(!$this->Auth_model->CheckAuth("web_admin")):?>
 		$('#fn-topnav-logout div:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
 		$('#s-topnav-logout').text($.message('topnav-login'));
 		

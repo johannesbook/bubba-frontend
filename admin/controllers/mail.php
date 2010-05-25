@@ -9,7 +9,7 @@ class Mail extends Controller{
 		require_once(ADMINFUNCS);
 
 		$this->load->helper('update_msg');
-		$this->Auth_model->EnforceAuth();
+		$this->Auth_model->EnforceAuth('web_admin');
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
@@ -29,7 +29,7 @@ class Mail extends Controller{
 
 	function _parse_mailcfg($mc) {
 
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
 		if(!query_service("postfix")){
 			$smtp["smtpstatus"]=true;
@@ -48,7 +48,7 @@ class Mail extends Controller{
 	}
 	function _get_receivesettings() {
 
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
 		$mc=get_mailcfg();
 		$domain=$mc[0];
@@ -236,7 +236,7 @@ class Mail extends Controller{
 
 	function server_update($strip=""){
 
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 	
 		$current_mc = $this->_parse_mailcfg(get_mailcfg());
 
@@ -328,7 +328,7 @@ class Mail extends Controller{
 	
 	function server_settings($strip="",$data = array()){
 
-		$this->Auth_model->RequireUser('admin');
+		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
 		$mc=get_mailcfg();
 		$data = array_merge($data,$this->_parse_mailcfg($mc));

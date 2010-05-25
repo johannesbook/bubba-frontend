@@ -39,27 +39,32 @@ class Login extends Controller{
 				}
 			}
 			if(!$data['authfail'] && $this->Auth_model->Login($myuser,$mypass)){
-				// show clock by default
-				$this->session->set_userdata("show_sideboard",true);
-				if(isset($conf) && is_array($conf)){
-					if(array_key_exists("theme",$conf)){
-						if(file_exists(APPPATH.'views/'.$conf["theme"])){
-							$this->session->set_userdata("theme", $conf["theme"]);
+				if( $this->Auth_model->policy( "web_admin", "access" ) ) {
+					// show clock by default
+					$this->session->set_userdata("show_sideboard",true);
+					if(isset($conf) && is_array($conf)){
+						if(array_key_exists("theme",$conf)){
+							if(file_exists(APPPATH.'views/'.$conf["theme"])){
+								$this->session->set_userdata("theme", $conf["theme"]);
+							}
+							unset($conf["theme"]);
 						}
-						unset($conf["theme"]);
+						foreach($conf as $key => $value) {
+							$this->session->set_userdata($key, $value);
+						}
 					}
-					foreach($conf as $key => $value) {
-						$this->session->set_userdata($key, $value);
+					$this->session->set_userdata("version",get_package_version("bubba-frontend"));
+					if($strip!="json"){
+						if($caller){
+							redirect($caller);
+						}else{
+							redirect('');
+						}
+						exit();
 					}
-				}
-				$this->session->set_userdata("version",get_package_version("bubba-frontend"));
-				if($strip!="json"){
-					if($caller){
-						redirect($caller);
-					}else{
-						redirect('');
-					}
-					exit();
+				} else {
+					$data['authfail'] = true;
+					$data['noaccess'] = true;
 				}
 			} else {
 				$data['authfail'] = true;
@@ -115,10 +120,9 @@ class Login extends Controller{
 	}
 	
 	function checkauth() {
-		if($json_data["valid_session"] = $this->Auth_model->CheckAuth()) {
+		if($json_data["valid_session"] = $this->Auth_model->CheckAuth("web_admin")) {
 			$json_data["user"] = $this->session->userdata('user');
 		}
 		echo json_encode($json_data);
 	}
 }
-?>

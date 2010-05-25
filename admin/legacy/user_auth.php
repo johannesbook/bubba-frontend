@@ -46,6 +46,7 @@ function get_userinfo() {
 			// parsing passwordfile
 			list($uname,$x,$uid,$gid,$realname,$homedir,$shell) = explode(":",$buffer);
 			// add user and password to list.
+			$userinfo[$uname]["uname"] = $uname;
 			$userinfo[$uname]["uid"] = $uid;
 			$userinfo[$uname]["gid"] = $gid;
 			$userinfo[$uname]["realname"] = $realname;
