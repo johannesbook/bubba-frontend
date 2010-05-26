@@ -131,7 +131,7 @@ class Ajax_session extends Controller {
 		$this->json_data['users'] = $this->Auth_model->get_user_list( $group );
 		
 		$this->json_data['success'] = true;
-	}	
+	}
 
 	public function user_exists() {
 		$this->load->model('auth_model');
@@ -149,5 +149,24 @@ class Ajax_session extends Controller {
 		$username = $this->input->post('username');
 
 		$this->json_data['success'] = $this->Auth_model->user_exists( $username );
-	}		
+	}
+	public function policy() {
+		$this->load->model('auth_model');
+		if( ! $this->Auth_model->CheckAuth() ) {
+			$this->json_data['success'] = false;
+			return;
+		}
+
+		$groups = $this->session->userdata('groups');
+		if( !is_array($groups) || !isset($groups['bubba']) || !$groups['bubba'] ) {
+			$this->json_data['success'] = false;
+			return;
+		}
+
+		$policy = $this->input->post('policy');
+		$method = $this->input->post('method');
+
+		$this->json_data['success'] = true;
+		$this->json_data['valid'] = $this->Auth_model->policy( $policy, $method );
+	}	
 }
