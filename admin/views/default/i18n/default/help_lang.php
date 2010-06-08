@@ -96,12 +96,12 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
 	<h3>Create a backup</h3>
 	<ol>
     <li>Fill in a <strong>job name </strong>for the backup in the text box to the left on the screen and click 'Create job'. The new backup job gets automatically highlighted in the 'Existing jobs' column.</li>
-    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the 'Browse' button under the 'Included directories' menu. Subdirectories will automatically be included.</li>
-    <li>If there are files in subdirectories that you want to <strong>exclude</strong>, click the 'Browse' button under the 'Excluded directories' menu and select the non wanted directories. </li>
-    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination directory will be created if it does not exist already.</li>
+    <li>Add the <strong>files you want to include</strong> in the backup job by clicking the 'Browse' button under the 'Included folders' menu. Subfolders will automatically be included.</li>
+    <li>If there are files in subfolders that you want to <strong>exclude</strong>, click the 'Browse' button under the 'Excluded folders' menu and select the non wanted folders. </li>
+    <li><strong>Select target </strong>for the backup job by clicking on the drop down menu to the right of 'Target'. If the destination folder will be created if it does not exist already.</li>
 		  <ul>
-		    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the 'Disk' drop down list. Fill in the 'Destination directory' (i.e. 'my_ backup_folder\important\') or leave it blank for saving backup in the root directory.</li>
-		    <li>If choosing remote SSH / FTP you have to fill in 'Host' (i.e. an IP-address), 'Destination directory' (i.e. 'my_ backup_folder/important/') or leave it blank for saving backup in the remote root directory, 'Remote user' and 'Remote password'.</li>
+		    <li>If choosing local USB / eSATA disk you have to select the disk by pressing the 'Disk' drop down list. Fill in the 'Destination folder' (i.e. 'my_ backup_folder\important\') or leave it blank for saving backup in the root folder.</li>
+		    <li>If choosing remote SSH / FTP you have to fill in 'Host' (i.e. an IP-address), 'Destination folder' (i.e. 'my_ backup_folder/important/') or leave it blank for saving backup in the remote root folder, 'Remote user' and 'Remote password'.</li>
 		  </ul>
     <li>Click '<strong>Backup schedule</strong>' to set the time and intensity to run the backup job. Also select how many full backups that should be saved.</li>
     <li>To increase security you have the option to<strong> encrypt the backup job</strong>. Click 'Data security', click 'Encrypt data' and select an encryption key.</li>
@@ -120,7 +120,7 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
     <li>Select the backup job you need to restore under 'Restore user data'. </li>
     <li>Select the 'Backup date' to restore from.</li>
     <li>Select the files or folders (with automatically included files) you need to restore. The files that will be restored will be highlighted in blue.</li>
-    <li>Choose in what way you want to restore the files: 'Restore missing files', 'Overwrite files' or 'Restore to directory'.</li>
+    <li>Choose in what way you want to restore the files: 'Restore missing files', 'Overwrite files' or 'Restore to folder'.</li>
     <li>Click 'Restore selection'</li>
   </ol>
   ";
@@ -154,7 +154,7 @@ $lang['help_box_services']="
 	<p><strong>Squeezebox Server </strong>- is a streaming audio server supported by Logitech that streams music to The Squeezebox product line.</p>
 	<h3>Email</h3>
 	<p><strong>Send and receive</strong> -  This is for postfix the smtp server: Sending and receiving emails.</p>
-	<p><strong>Imap (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required for the webmail access to be functional.</p>
+	<p><strong>IMAP (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required for the webmail access to be functional.</p>
 	<p><strong>Email retrieval </strong>- This is for fetchmail, a daemon that collects emails to Bubba</p>
 	<h3>Other</h3>
 	<p><strong>Printing</strong> - Bubba  print server.</p>
@@ -502,7 +502,7 @@ $lang['help_box_user_downloads']="
 <h3>Downloads</h3>
 <p>Use the Bubba download manager to download files directly to your Bubba, wherever you are. The only thing you need is a internet connection and a web browser.</p>
 <p>Surf to www.-your easyfind name-.bubbaserver.com. Of course if you already are in your home network browse to http://bubba/admin.</p>
-<p>Large, time consuming downloads are handled by Bubba while your computer is turned off. When you initiate your first download a catalogue is created in your /home/[username]/ directory: /home/[username]/downloads. </p>
+<p>Large, time consuming downloads are handled by Bubba while your computer is turned off. When you initiate your first download a catalogue is created in your /home/[username]/ folder: /home/[username]/downloads. </p>
 <h3>How to download</h3>
 <ol>
   <li>At home browse to http://bubba/admin or away from home www.-your easyfind name-.bubbaserver.com/admin.</li>

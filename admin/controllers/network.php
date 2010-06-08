@@ -685,8 +685,6 @@ class Network extends Controller{
 
 	function wlan($strip="",$msg=""){
 		$conf=parse_ini_file("/home/admin/.bubbacfg");
-		$data['allow_change']=isset($conf['allow_change']) && $conf['allow_change'];
-
 		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card() && $this->session->userdata("network_profile") != "custom";
 		
 		if($msg == "update") {

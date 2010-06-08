@@ -1,10 +1,27 @@
-bubba-frontend (2.0.0.8) claire; urgency=low
+bubba-frontend (2.0.0.10) claire; urgency=low
 
   * Adding group policies
   * show realname when logged in
   * ajax api primarly for album
 
  -- Carl Fürstenberg <carl@excito.com>  Tue, 25 May 2010 17:08:17 +0200
+
+bubba-frontend (2.0.0.9) claire estelle; urgency=low
+
+  * Remove usage of allow change, to make ieee802.11n possible for everyone
+    (Closes: #1454) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 31 May 2010 14:42:46 +0200
+
+bubba-frontend (2.0.0.8) claire estelle; urgency=low
+
+  * Rename all "directory" and "directories" to "folder/folders" 
+    (Closes: #1445)
+  * Rename "Imap" to "IMAP" (Closes: #1443) 
+  * Fix translation of "filemanager-perm-fail-message" (Closes: #1448)
+  * mark "Current restore operations" with black background (Closes: #1444)
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 26 May 2010 15:15:03 +0200
 
 bubba-frontend (2.0.0.7) claire estelle; urgency=high
 

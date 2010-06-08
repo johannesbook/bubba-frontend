@@ -451,7 +451,7 @@
 			to_be_included = '';
 			form = $('<form />');
 			form.addClass("treelayout");
-			form.append( $("<div />").addClass("backup_tree_header").text("<?=t("Select directory to include.")?>" ) );
+			form.append( $("<div />").addClass("backup_tree_header").text("<?=t("Select folder to include.")?>" ) );
 			tree = $('<div />');
 			form.append( tree );
 			doit = $('<input />');
@@ -516,7 +516,7 @@
 			to_be_excluded = '';
 			form = $('<form />');
 			form.addClass("treelayout");
-			form.append( $("<div />").addClass("backup_tree_header").text("<?=t("Select directory to exclude.")?>" ) );
+			form.append( $("<div />").addClass("backup_tree_header").text("<?=t("Select folder to exclude.")?>" ) );
 			tree = $('<div />');
 			form.append( tree );
 			doit = $('<input />');

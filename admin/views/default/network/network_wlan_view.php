@@ -69,7 +69,6 @@
 		
 		<table class="networksettings ui-table-outline">
 		
-		<?if($allow_change):?>
 		<tr>
 			
 			<td class="col2"><label for="band"><?=t("wlan_title_band")?></label></td>
@@ -154,15 +153,7 @@
 			</select>
 			</td>
 		</tr>
-		
-		<?else:?>
-		
-		<input type="hidden" name="band" id="band" value="1" />
-		<input type="hidden" name="mode" id="mode" value="legacy" />
-		<input type="hidden" name="width" id="width" value="20" />
-		
-		<?endif?>
-		
+
 		<tr>
 			
 			<td class="col2"><label for="encryption"><?=t("wlan_title_encryption")?></label></td>

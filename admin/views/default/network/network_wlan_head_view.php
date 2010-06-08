@@ -94,28 +94,7 @@ $(document).ready( function() {
             sel.append(opt);
         }
 	});
-<?if($allow_change):?>
 	$("input#band"+current_band+"").change();
-<?else:?>
-        band = 1;
-		current_selected_channel = current_channel;
-		sel=$("select#channel");
-		sel.empty();
-
-        for( i = 0; i < bands[band].length; ++i ) {
-            cur = bands[band][i];
-            if( cur["disabled"] == "true" || cur["radar_detection"] == "true" || cur["passive_scanning"] == "true" ) {
-                continue;
-            }
-            opt = $("<option/>");
-            opt.val(cur["channel"]);
-            opt.html("<?=t("Channel")?> " + cur["channel"] + " (" + cur["freq"] + " MHz)");
-            if( cur["channel"] == current_channel ) {
-                opt.attr("selected", "selected");
-            }
-            sel.append(opt);
-        }	
-<?endif?>
 
 	$('select#encryption').change(function() {
 		$('#password').rules("remove");

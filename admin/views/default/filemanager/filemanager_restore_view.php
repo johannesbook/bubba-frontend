@@ -316,7 +316,7 @@ function progressReport() {
 				$mypost["force"] = "overwrite";
 			} else if ($("#cb_rdir").attr('checked')) {
 				if(!$("#restore_dir").val()) {
-					$.alert("<?=t("The 'Restore to directory' field can not be empty.")?>","","<?=t("Restore target dirctory missing")?>");
+					$.alert("<?=t("The 'Restore to folder' field can not be empty.")?>","","<?=t("Restore target dirctory missing")?>");
 					return false;
 				}
 				$mypost["force"] = $("#restore_dir").val();
@@ -361,7 +361,7 @@ function progressReport() {
 			}
 			return false;
 		} else {
-			$.alert("<?=t("Please select files to restore from the list of included files.")?><br><?=t("Selecting a directory will also select all files within the directory.")?>","","<?=t("No files selected")?>");
+			$.alert("<?=t("Please select files to restore from the list of included files.")?><br><?=t("Selecting a folder will also select all files within the folder.")?>","","<?=t("No files selected")?>");
 			$("#backup_restore").removeAttr("disabled");
 		}
 	}
@@ -472,7 +472,7 @@ function progressReport() {
 			<div class="force_settings">
 				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_restore" checked="true"/><?=t("Restore missing files")?><br>
 				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_force"/><?=t("Overwrite files")?><br>
-				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_rdir" /><?=t("Restore to directory")?><input disabled="disabled" type="text" id="restore_dir" class="cb_force"/>(/home/<?=$this->session->userdata("user")?><span id="targetdir"></span>)
+				<input type="radio" name="force" class="checkbox_radio cb_force" id="cb_rdir" /><?=t("Restore to folder")?><input disabled="disabled" type="text" id="restore_dir" class="cb_force"/>(/home/<?=$this->session->userdata("user")?><span id="targetdir"></span>)
 				
 			</div>
 			<input type="submit" id="backup_restore" value="<?=t("Restore selection")?>" disabled="true"/>
@@ -480,7 +480,7 @@ function progressReport() {
 	</tr>
 </table>
 
-<fieldset class="expandable"><legend><?=t("Current restore operations")?></legend>
+<fieldset class="fld_settings expandable"><legend><?=t("Current restore operations")?></legend>
 		<div id="lock_header" ><?
 			if(isset($restore["lock"])) {
 				echo t("Restoring file(s) from backupjob: ");

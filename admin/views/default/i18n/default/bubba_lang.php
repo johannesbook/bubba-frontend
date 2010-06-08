@@ -360,23 +360,24 @@ $lang["filemanager-label-permission-other-read"] = "read";
 $lang["filemanager-label-permission-other-write"] = "write";
 $lang["filemanager-label-permission-other-execute"] = "execute";
 
-$lang["filemanager-mkdir-dialog-button-label"] = "Create directory";
-$lang["filemanager-mkdir-dialog-title"] = "Create a new directory";
+$lang["filemanager-mkdir-dialog-button-label"] = "Create folder";
+$lang["filemanager-mkdir-dialog-title"] = "Create a new folder";
 $lang["filemanager-delete-dialog-button-label"] = "Delete";
-$lang["filemanager-delete-dialog-title"] = "Delete files and directories";
-$lang["filemanager-delete-fail-message"] = "Failed to delete following files/directories: %s";
-$lang["filemanager-delete-dialog-message"] = "Delete selected files and/or directories?";
+$lang["filemanager-delete-dialog-title"] = "Delete files and folders";
+$lang["filemanager-delete-fail-message"] = "Failed to delete following files/folders: %s";
+$lang["filemanager-delete-dialog-message"] = "Delete selected files and/or folders?";
 $lang["filemanager-rename-dialog-title"] = "Rename";
 $lang["filemanager-permission-dialog-title"] = "Change permissions";
 $lang["filemanager-perm-dialog-button-label"] = "Change permissions";
 
-$lang['filemanager_mkdir_error_nodir'] = "Error creating directory, no name supplied";
-$lang['filemanager_mkdir_error_file_exists'] = "Error creating directory, name already exists";
-$lang['filemanager_mkdir_error_create'] = "Failed to create directory";
+$lang['filemanager_mkdir_error_nodir'] = "Error creating folder, no name supplied";
+$lang['filemanager_mkdir_error_file_exists'] = "Error creating folder, name already exists";
+$lang['filemanager_mkdir_error_create'] = "Failed to create folder";
 $lang['filemanager-rename-error'] = "Error renaming file '%s'";
-$lang["filemanager-copy-fail-message"] = "Failed to copy the following files and directories: %s";
-$lang["filemanager-move-fail-message"] = "Failed to move the following files and directories: %s";
-$lang["filemanager-album-dialog-message"] = "Add selected images/directories to photo album?";
+$lang["filemanager-copy-fail-message"] = "Failed to copy the following files and folders: %s";
+$lang["filemanager-move-fail-message"] = "Failed to move the following files and folders: %s";
+$lang["filemanager-perm-fail-message"] = "Failed to change permission for following files and folders: %s";
+$lang["filemanager-album-dialog-message"] = "Add selected images/folders to photo album?";
 
 $lang["help_box_header"] = "Bubba Help";
 

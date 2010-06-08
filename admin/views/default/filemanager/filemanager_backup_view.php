@@ -23,7 +23,7 @@
 	   <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('File backup')?></td></tr>
 		<tr id="filemanager-backup-head" class="ui-header">
 			<th class="filemanager-backup-border-right"><?=t('Existing jobs')?></th>
-			<th class="filemanager-backup-border-right"><?=t('Included directories')?></th>
+			<th class="filemanager-backup-border-right"><?=t('Included folder')?></th>
 			<th ><?=t('Job settings')?></th>
 		</tr>
 		<tr class="data">
@@ -81,7 +81,7 @@
 							<tr>
 								<td class="size1"><span id="disk_label" class="underline"><?=t('Disk')?></span> / <span id="host_label"><?=t('Host')?></span></td>
 								<td class="size1"><span id="target_host"><input type="text" name="target_host" value="" /></span><span id="target_disk" class="hidden"></span></td>
-								<td class="size1"><?=t('Destination directory')?></td>
+								<td class="size1"><?=t('Destination folder')?></td>
 								<td class="size_rest"><input type="text" name="target_path" id="target_path" value="" /></td>
 							</tr>
 							<tr>
@@ -232,7 +232,7 @@
 		</tr>
 
 		<tr class="data">
-			<th class="filemanager-backup-border-right"><?=t('Excluded directories')?></th>
+			<th class="filemanager-backup-border-right"><?=t('Excluded folders')?></th>
 		</tr>
 		<tr class="data">
 			<td class="filemanager-backup-border-right">

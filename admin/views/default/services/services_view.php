@@ -51,7 +51,7 @@
       <td ><input name="smtp_enabled" type="checkbox" class="slide" value="1" <?= $smtp_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>
-      <td><label for="">Imap (<?=t('Required for webmail access')?>)</label></td>
+      <td><label for="">IMAP (<?=t('Required for webmail access')?>)</label></td>
       <td ><input name="imap_enabled" type="checkbox" class="slide"value="1" <?= $imap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>

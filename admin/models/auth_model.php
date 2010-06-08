@@ -43,6 +43,14 @@ class Auth_model extends Model{
 				"allow"  => array("admin")
 			),
 		),
+		"album" => array(
+			"list" 		=> array(
+				"deny" => array("admin")
+			),
+			"set:disable_remote"     => array(
+				"allow"  => array("admin")
+			),
+		),
 		"web_admin" => array(
 			"access" => array(
 				"groups_allow" => array("bubba", "admin")
