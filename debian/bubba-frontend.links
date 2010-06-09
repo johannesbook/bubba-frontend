@@ -2,3 +2,6 @@
 /usr/share/bubba-frontend/lighttpd.conf /etc/lighttpd/conf-available/10-admin.conf
 /usr/share/bubba-frontend/apache.conf /etc/apache2/conf.d/admin.conf
 /usr/share/bubba-frontend/apache.site /etc/apache2/sites-available/bubba
+/usr/share/javascript/jquery/jquery.js /usr/share/web-admin/admin/views/default/_js/jquery.js
+/usr/share/javascript/jquery-ui/jquery-ui.js /usr/share/web-admin/admin/views/default/_js/jquery-ui.js
+

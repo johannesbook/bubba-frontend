@@ -1,3 +1,11 @@
+bubba-frontend (2.0.0.11) vincent; urgency=low
+
+  * modify to work on squeeze
+  * Switch to dpkg-source 3.0 (quilt) format
+  * remove convinience copy of jquery and jquery-ui 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 09 Jun 2010 12:43:14 +0200
+
 bubba-frontend (2.0.0.10) claire; urgency=low
 
   * Adding group policies
