@@ -1,3 +1,9 @@
+bubba-frontend (2.0.0.12) vincent; urgency=low
+
+  * drop dep to fireplay ( is included) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 09 Jun 2010 15:44:35 +0200
+
 bubba-frontend (2.0.0.11) vincent; urgency=low
 
   * modify to work on squeeze

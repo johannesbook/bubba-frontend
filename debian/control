@@ -21,7 +21,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
  libapache2-mod-php5,
  php5-cgi,
  lighttpd-spawnfcgi,
- fireplay,
  libjs-jquery (>= 1.4.2),
  libjs-jquery-ui (>= 1.8),
  libxml-libxml-perl (>= 1.66-1)
