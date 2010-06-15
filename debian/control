@@ -3,7 +3,7 @@ Section: web
 Priority: standard
 Maintainer: Tor Krill <tor@excito.com>
 Uploaders: Carl Fürstenberg <carl@excito.com>
-Build-Depends: debhelper (>= 7), cdbs, libphp-codeigniter-dev (>= 1.7.2-3)
+Build-Depends: debhelper (>= 7.2), libphp-codeigniter-dev (>= 1.7.2-3)
 Standards-Version: 3.8.4
 Homepage: http://www.excito.com
 
@@ -14,7 +14,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
  bubba-manual (>=1.0.0),
  bubba-album (>=0.99.1),
  bubba-networkmanager,
- libapache2-mod-fcgid | libapache2-mod-fastcgi,
+ libapache2-mod-fastcgi,
  apache2.2-common,
  apache2-utils,
  apache2-mpm-prefork (>= 2.2.9),

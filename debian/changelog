@@ -1,3 +1,15 @@
+bubba-frontend (2.0.0.14) vincent; urgency=low
+
+  * fastcgi back 
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 15 Jun 2010 13:17:43 +0200
+
+bubba-frontend (2.0.0.13) vincent; urgency=low
+
+  * dump cdbs 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 10 Jun 2010 12:18:41 +0200
+
 bubba-frontend (2.0.0.12) vincent; urgency=low
 
   * drop dep to fireplay ( is included) 
