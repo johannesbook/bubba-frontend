@@ -93,7 +93,11 @@ case "$1" in
 	if [ ! -e /etc/apache2/mods-enabled/ssl.load ]; then
 		a2enmod ssl
 	fi
-		
+
+	if [ ! -e /etc/apache2/mods-enabled/fastcgi.load ]; then
+		a2enmod fastcgi
+	fi
+
 	if [ ! -e /etc/apache2/cacert.pem ]; then
 		CERTNAME=/etc/apache2/cacert.pem
 		KEYNAME=//etc/apache2/privkey.pem
