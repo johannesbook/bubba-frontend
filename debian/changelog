@@ -1,3 +1,9 @@
+bubba-frontend (2.0.0.16) vincent; urgency=low
+
+  * Adding a ? to apache rewrite rule (hopefully resolve no such file error. 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 16 Jun 2010 14:46:48 +0200
+
 bubba-frontend (2.0.0.15) lucid; urgency=low
 
   * fix issue in browsecap and php 5.3.0 
