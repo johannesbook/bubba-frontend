@@ -343,37 +343,45 @@ class Auth_model extends Model{
 		if( ! $groups ) {
 			$groups = $this->session->userdata("groups");
 		}
-		$allowed = false;
-		$denied = false;
-		if(isset($this->policies[$policy][$method]["deny"])) {
-			if(in_array($user,$this->policies[$policy][$method]["deny"])) {
-				$denied = true;
-			}
-		}
-		if(isset($this->policies[$policy][$method]["groups_deny"])) {
-			foreach( array_keys($groups) as $group ) {
-				if(in_array($group,$this->policies[$policy][$method]["groups_deny"])) {
-					$denied = true;
-				}
-			}
-		}
-		if(isset($this->policies[$policy][$method]["allow"])) {
-			if(in_array($user,$this->policies[$policy][$method]["allow"])) {
-				$allowed = true;
-			}
-		}
-		if(isset($this->policies[$policy][$method]["groups_allow"])) {
-			foreach( array_keys($groups) as $group ) {
-				if(in_array($group,$this->policies[$policy][$method]["groups_allow"])) {
-					$allowed = true;
-				}
-			}
-		}				
 		if(!isset($this->policies[$policy][$method])) {
-			// if asked but no policy set, return false
-			$allowed = false;
+			return false;
 		}
-		return $allowed && !$denied;
+
+		$policy = $this->policies[$policy][$method];
+
+		# deny overrides allow
+		# default true if no allow has been set
+
+		if(isset($policy["deny"])) {
+			if(in_array($user,$policy["deny"])) {
+				return false;
+			}
+		}
+
+		if(isset($policy["groups_deny"])) {
+			foreach( array_keys($groups) as $group ) {
+				if(in_array($group,$policy["groups_deny"])) {
+					return false;
+				}
+			}
+		}
+
+		if(isset($policy["allow"])) {
+			if(in_array($user,$policy["allow"])) {
+				return true;
+			}
+		}
+
+		if(isset($policy["groups_allow"])) {
+			foreach( array_keys($groups) as $group ) {
+				if(in_array($group,$policy["groups_allow"])) {
+					return true;
+				}
+			}
+		}
+
+		# return true if neither allow or groups_allow was set
+		return !(isset($policy["allow"]) || isset($policy["groups_allow"]));
 	}
 	
 }

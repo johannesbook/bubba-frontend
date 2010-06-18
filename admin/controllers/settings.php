@@ -242,7 +242,7 @@ class Settings extends Controller{
 			$output = apt_query_progress();
 			break;
 		case 'get_versions':
-			$versions = get_package_version("bubba-frontend bubba-backend bubba-album filetransferdaemon squeezecenter");
+			$versions = get_package_version(array("bubba-frontend","bubba-backend","bubba-album","filetransferdaemon","squeezecenter"));
 			$this->session->set_userdata("version",$versions['bubba-frontend']);
 			$output = json_encode($versions);
 			break;

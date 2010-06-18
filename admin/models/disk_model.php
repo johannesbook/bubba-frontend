@@ -31,9 +31,9 @@ class Disk_model extends Model {
 
 	// snagged from http://se.php.net/manual/en/function.array-multisort.php#89918
 	// _array_sort(string $field, [options, ], string $field2, [options, ], .... , $array)
-	function array_sort() {
+	function array_sort(&$array /*, ...*/) {
 		$args  = func_get_args();
-		$array = array_pop($args);
+		$array = array_shift($args);
 		if (! is_array($array)) return false;
 		// Here we'll sift out the values from the columns we want to sort on, and put them in numbered 'subar' ("sub-array") arrays.
 		//   (So when sorting by two fields with two modifiers (sort options) each, this will create $subar0 and $subar3)
@@ -43,8 +43,12 @@ class Disk_model extends Model {
 					${"subar$akey"}[$key] = $row[$val];
 		// $multisort_args contains the arguments that would (/will) go into array_multisort(): sub-arrays, modifiers and the source array
 		$multisort_args = array();
-		foreach($args as $key => $val)
-			$multisort_args[] = (is_string($val) ? ${"subar$key"} : $val);
+		foreach($args as $key => $val) {
+			$arg = (is_string($val) ? ${"subar$key"} : $val);
+			$dummy[] = &$arg;
+			$multisort_args[] = &$arg;
+			unset($arg);
+		}
 		$multisort_args[] = &$array;   // finally add the source array, by reference
 		call_user_func_array("array_multisort", $multisort_args);
 		return $array;

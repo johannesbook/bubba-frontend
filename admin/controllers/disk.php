@@ -2,7 +2,7 @@
 
 class Disk extends Controller{
 
-	function Disk(){
+	function __construct(){
 		parent::Controller();
 
 		require_once(APPPATH."/legacy/defines.php");
@@ -196,8 +196,8 @@ class Disk extends Controller{
 			redirect("disk/progress");
 		}
 
-		$disks=$this->disk_model->array_sort( 'dev', $this->disk_model->list_disks() );
-		$indevices=$this->disk_model->array_sort( 'dev', $this->disk_model->list_devices() );
+		$disks=$this->disk_model->array_sort( $this->disk_model->list_disks(), 'dev' );
+		$indevices=$this->disk_model->array_sort( $this->disk_model->list_devices(), 'dev' );
 		$vgs=$this->disk_model->list_vgs();
 		$mds=$this->disk_model->list_mds();
 		$fstab=$this->disk_model->list_fstab();
@@ -281,7 +281,7 @@ class Disk extends Controller{
 		foreach( $disks as &$disk ) {
 			$disk['formatable'] = true;
 			if( array_key_exists( 'partitions', $disk ) ) {
-				$disk['partitions'] = $this->disk_model->array_sort( 'dev', $disk['partitions'] );
+				$disk['partitions'] = $this->disk_model->array_sort( $disk['partitions'], 'dev' );
 				foreach( $disk['partitions'] as &$partition ) {
 					switch( $partition['dev'] ) {
 					case '/dev/sda1':
@@ -336,7 +336,7 @@ class Disk extends Controller{
 			foreach( $disks as &$disk ) {
 				if( array_key_exists( 'partitions', $disk ) ) {
 					$parts = $disk['partitions'];
-					$this->disk_model->array_sort( 'dev', &$parts );
+					$this->disk_model->array_sort( $parts, 'dev' );
 				}
 			} }
 		else {

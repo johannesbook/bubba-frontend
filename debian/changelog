@@ -1,3 +1,10 @@
+bubba-frontend (2.1~pre2) vincent; urgency=low
+
+  * fix bug in policy handling
+  * fix known php 5.3 transition bugs
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 18 Jun 2010 14:54:19 +0200
+
 bubba-frontend (2.1~pre1) vincent; urgency=low
 
   * change version to pre-2.1-version 
