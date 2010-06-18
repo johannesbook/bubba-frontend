@@ -110,7 +110,7 @@ class Users extends Controller{
 			$password2=trim($this->input->post('password2'));
 			$shell=$this->input->post('shell');
 			if(
-				$this->Auth_model->policy("userdata","set:shell_access", $username) 
+				$this->Auth_model->policy("userdata","set:shell_access", $this->session->userdata("user")) 
 				&& $this->Auth_model->policy("userdata","shell_access", $username) 
 				&& $shell 
 			) {
