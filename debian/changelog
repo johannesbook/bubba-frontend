@@ -1,8 +1,8 @@
 bubba-frontend (2.1~pre3) vincent; urgency=low
 
-  * use own php5 xcache ini file for cgi 
+  * use own php5 xcache ini
 
- -- Carl Fürstenberg <carl@excito.com>  Mon, 21 Jun 2010 13:56:45 +0200
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 21 Jun 2010 14:11:37 +0200
 
 bubba-frontend (2.1~pre2) vincent; urgency=low
 
