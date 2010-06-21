@@ -64,9 +64,10 @@ case "$1" in
 		fi
 
 		if dpkg --compare-versions "$2" lt-nl 2.1; then
-			cp -a /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/apache2/conf.d/xcache.ini
-			cp -a /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/cli/conf.d/xcache.ini
-			cp -a /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/cgi/conf.d/xcache.ini
+			echo installing xcache.ini
+			cp --backup --suffix=.dpkg-old --archive /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/apache2/conf.d/xcache.ini
+			cp --backup --suffix=.dpkg-old --archive /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/cli/conf.d/xcache.ini
+			cp --backup --suffix=.dpkg-old --archive /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/cgi/conf.d/xcache.ini
 		fi
 
 
