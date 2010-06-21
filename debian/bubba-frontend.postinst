@@ -17,10 +17,9 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-
 case "$1" in
 	configure)
-	# Enact all probable php cfonfiguration script/modules
+		# Enact all probable php cfonfiguration script/modules
 		if dpkg --compare-versions "$2" le "1.0.13-21"; then
 			# Enact all probable php cfonfiguration script/modules
 
@@ -64,44 +63,51 @@ case "$1" in
 			mv -f /etc/php5/conf.d/admin.ini /etc/php5/cgi/conf.d/admin.ini;
 		fi
 
-	# removing leftovers
-	if dpkg --compare-versions "$2" lt 1.0.26; then
-		update-rc.d -f adminphp remove
-		rm -f /etc/init.d/adminphp
-	fi
+		if dpkg --compare-versions "$2" lt-nl 2.1; then
+			cp -a /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/apache2/conf.d/xcache.ini
+			cp -a /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/cli/conf.d/xcache.ini
+			cp -a /usr/share/bubba-frontend/php5-xcache.ini /etc/php5/cgi/conf.d/xcache.ini
+		fi
 
 
-	install --directory --group=root   --owner=root  --mode=0755 /var/log/web-admin
-	install --directory --group=root   --owner=root  --mode=0755 /var/cache/web-admin
+		# removing leftovers
+		if dpkg --compare-versions "$2" lt 1.0.26; then
+			update-rc.d -f adminphp remove
+			rm -f /etc/init.d/adminphp
+		fi
 
-	if [ ! -e /etc/apache2/mods-enabled/proxy.load ]; then
-		a2enmod proxy
-	fi	
 
-	if [ ! -e /etc/apache2/mods-enabled/proxy_http.load ]; then
-		a2enmod proxy_http
-	fi		
+		install --directory --group=root   --owner=root  --mode=0755 /var/log/web-admin
+		install --directory --group=root   --owner=root  --mode=0755 /var/cache/web-admin
 
-	if [ ! -e /etc/apache2/mods-enabled/actions.load ]; then
-		a2enmod actions
-	fi
-	
-	if [ ! -e /etc/apache2/mods-enabled/rewrite.load ]; then
-		a2enmod rewrite
-	fi
-	
-	if [ ! -e /etc/apache2/mods-enabled/ssl.load ]; then
-		a2enmod ssl
-	fi
+		if [ ! -e /etc/apache2/mods-enabled/proxy.load ]; then
+			a2enmod proxy
+		fi	
 
-	if [ ! -e /etc/apache2/mods-enabled/fastcgi.load ]; then
-		a2enmod fastcgi
-	fi
+		if [ ! -e /etc/apache2/mods-enabled/proxy_http.load ]; then
+			a2enmod proxy_http
+		fi		
 
-	if [ ! -e /etc/apache2/cacert.pem ]; then
-		CERTNAME=/etc/apache2/cacert.pem
-		KEYNAME=//etc/apache2/privkey.pem
-		openssl req -new -x509 -days 1000 -nodes -out $CERTNAME -keyout $KEYNAME 2>/dev/null<< EOF
+		if [ ! -e /etc/apache2/mods-enabled/actions.load ]; then
+			a2enmod actions
+		fi
+
+		if [ ! -e /etc/apache2/mods-enabled/rewrite.load ]; then
+			a2enmod rewrite
+		fi
+
+		if [ ! -e /etc/apache2/mods-enabled/ssl.load ]; then
+			a2enmod ssl
+		fi
+
+		if [ ! -e /etc/apache2/mods-enabled/fastcgi.load ]; then
+			a2enmod fastcgi
+		fi
+
+		if [ ! -e /etc/apache2/cacert.pem ]; then
+			CERTNAME=/etc/apache2/cacert.pem
+			KEYNAME=//etc/apache2/privkey.pem
+			openssl req -new -x509 -days 1000 -nodes -out $CERTNAME -keyout $KEYNAME 2>/dev/null<< EOF
 .
 .
 .
@@ -110,33 +116,33 @@ WEB
 localhost.localdomain
 .
 EOF
-	fi
+		fi
 
-	#if [ ! -e /etc/lighttpd/conf-enabled/50-admin.conf ]; then
-	#	lighttpd-enable-mod admin	
-	#	invoke-rc.d lighttpd reload
-	#fi
-	
-	if [ -e /etc/apache2/sites-enabled/000-default ]; then
+		#if [ ! -e /etc/lighttpd/conf-enabled/50-admin.conf ]; then
+		#	lighttpd-enable-mod admin	
+		#	invoke-rc.d lighttpd reload
+		#fi
+
+		if [ -e /etc/apache2/sites-enabled/000-default ]; then
+			a2dissite default
+		fi
+
+		if [ ! -e /etc/apache2/sites-enabled/bubba ]; then
+			a2ensite bubba
+		fi
+
+		invoke-rc.d apache2 restart
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
 		a2dissite default
-	fi
-	
-	if [ ! -e /etc/apache2/sites-enabled/bubba ]; then
 		a2ensite bubba
-	fi
+		;;
 
-	invoke-rc.d apache2 restart
-	;;
-
-    abort-upgrade|abort-remove|abort-deconfigure)
-	a2dissite default
-	a2ensite bubba
-    ;;
-
-    *)
-        echo "postinst called with unknown argument \`$1'" >&2
-        exit 1
-    ;;
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+		;;
 esac
 
 # dh_installdeb will replace this with shell code automatically
