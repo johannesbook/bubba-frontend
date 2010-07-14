@@ -23,7 +23,7 @@ class Ajax_disk extends Controller {
 
 	function partition_get_info() {
 		$this->load->model('disk_model');
-		$partition = json_decode($this->input->post("partition"));
+		$partition = $this->input->post("partition");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["data"] = $this->disk_model->partition_info($partition);
@@ -45,7 +45,7 @@ class Ajax_disk extends Controller {
 
 	function mount_partition() {
 		$this->load->model('disk_model');
-		$partition = json_decode($this->input->post("partition"));
+		$partition = $this->input->post("partition");
 		try{
 			$mount_path = $this->disk_model->mount_partition($partition);
 			$this->json_data['error'] = 0;
@@ -58,7 +58,7 @@ class Ajax_disk extends Controller {
 	}
 	function umount_partition() {
 		$this->load->model('disk_model');
-		$partition = json_decode($this->input->post("partition"));
+		$partition = $this->input->post("partition");
 		try{
 			$this->disk_model->umount_partition($partition);
 			$this->json_data['error'] = 0;
@@ -92,8 +92,8 @@ class Ajax_disk extends Controller {
 
 	function add_to_lvm() {
 		$this->load->model('disk_model');
-		$disk = json_decode($this->input->post("disk"));
-		$group = json_decode($this->input->post("group"));
+		$disk = $this->input->post("disk");
+		$group = $this->input->post("group");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["ret"] = $this->disk_model->add_to_lvm($disk, $group);
@@ -108,22 +108,22 @@ class Ajax_disk extends Controller {
 
 	function create_raid_internal_lvm_external() {
 		$this->load->model('disk_model');
-		$external = json_decode($this->input->post("external"));
-		$level = json_decode($this->input->post("level"));
+		$external = $this->input->post("external");
+		$level = $this->input->post("level");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["ret"] = $this->disk_model->create_raid_internal_lvm_external( $external, $level);
 	}
 	function recover_raid_broken_external() {
 		$this->load->model('disk_model');
-		$disk = json_decode($this->input->post("external"));
+		$disk = $this->input->post("external");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["ret"] = $this->disk_model->recover_raid_broken_external( $disk );
 	}
 	function recover_raid_broken_internal() {
 		$this->load->model('disk_model');
-		$disk = json_decode($this->input->post("external"));
+		$disk = $this->input->post("external");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["ret"] = $this->disk_model->recover_raid_broken_internal( $disk );
@@ -131,7 +131,7 @@ class Ajax_disk extends Controller {
 
 	function disk_got_mounts() {
 		$this->load->model('disk_model');
-		$disk = json_decode($this->input->post("disk"));
+		$disk = $this->input->post("disk");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["disk_got_mounts"] = $this->disk_model->disk_got_mounts( $disk );
@@ -139,8 +139,8 @@ class Ajax_disk extends Controller {
 
 	function format_disk() {
 		$this->load->model('disk_model');
-		$disk = json_decode($this->input->post("disk"));
-		$label = json_decode($this->input->post("label"));
+		$disk = $this->input->post("disk");
+		$label = $this->input->post("label");
 		$this->json_data['error'] = 0;
 		$this->json_data['html'] = "";
 		$this->json_data["ret"] = $this->disk_model->format_disk( $disk, $label );
@@ -155,7 +155,7 @@ class Ajax_disk extends Controller {
 
 	function remove_raid_disk() {
 		$this->load->model('disk_model');
-		$our_disk = json_decode($this->input->post("disk"));
+		$our_disk =$this->input->post("disk");
 		$mds = $this->disk_model->list_mds();
 		$our_md = null;
 		foreach( $mds as $md ) {
