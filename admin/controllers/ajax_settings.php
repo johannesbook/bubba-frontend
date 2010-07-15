@@ -21,11 +21,8 @@ class Ajax_Settings extends Controller {
   }
   
   function ajax_backup_settings() {
-		$user = json_decode($this->input->post("user"));
-		$jobname = json_decode($this->input->post("jobname"));
-		//print "Ajax returns user: $user Jobname: $jobname";
-		//$user = json_decode($this->input->post("user"));
-		//$jobname = json_decode($this->input->post("jobname"));
+		$user = $this->input->post("user");
+		$jobname = $this->input->post("jobname");
 		$this->json_data['files'] = get_backupfiles($user,$jobname);
 		$this->json_data['settings'] = get_backupsettings($user,$jobname);
 		$this->json_data['schedule'] = get_backupschedule($user,$jobname);
@@ -37,8 +34,8 @@ class Ajax_Settings extends Controller {
 		unset($this->json_data['html']);
 		unset($this->json_data['error']);
 
-		$user = json_decode($this->input->post("user"));
-		$jobname = json_decode($this->input->post("jobname"));
+		$user = $this->input->post("user");
+		$jobname = $this->input->post("jobname");
 		$file = $this->input->post("file");
 		echo backup_addfile($user,$jobname,$file);   // return value is json encoded.
 /*
@@ -53,8 +50,8 @@ class Ajax_Settings extends Controller {
 		unset($this->json_data['html']);
 		unset($this->json_data['error']);
 
-		$user = json_decode($this->input->post("user"));
-		$jobname = json_decode($this->input->post("jobname"));
+		$user = $this->input->post("user");
+		$jobname = $this->input->post("jobname");
 		$file = $this->input->post("file");
 		echo backup_rmfile($user,$jobname,$file);   // return value is json encoded.
 /*
@@ -73,9 +70,9 @@ class Ajax_Settings extends Controller {
 	}
 	function ajax_backup_current_filelist() {
 
-		// retruns json encoded data from perl backend.
-		$user = json_decode($this->session->userdata("user"));
-		$jobname = json_decode($this->input->post("jobname"));
+		// returns json encoded data from perl backend.
+		$user = $this->session->userdata("user");
+		$jobname = $this->input->post("jobname");
 		unset($this->json_data); // do not output using "_output" function.
 		return backup_current_filelist($user,$jobname);
 		
@@ -84,11 +81,11 @@ class Ajax_Settings extends Controller {
 		
 	  $this->json_data['html'] = "";
 
-		$user = json_decode($this->session->userdata("user"));
-		$jobname = json_decode($this->input->post("jobname"));
-		$time = json_decode($this->input->post("time"));
-		$force = json_decode($this->input->post("force"));
-		$file = json_decode($this->input->post("file"));
+		$user = $this->session->userdata("user");
+		$jobname = $this->input->post("jobname");
+		$time = $this->input->post("time");
+		$force = $this->input->post("force");
+		$file = $this->input->post("file");
 		$file = substr($file,strpos($file,"/")); // find "/"
 		if(!$force) {
 			$force = 0;
@@ -99,8 +96,8 @@ class Ajax_Settings extends Controller {
 
 	function ajax_backup_createjob() {
 
-		$user = json_decode($this->input->post("user"));
-		$jobname = json_decode($this->input->post("jobname"));
+		$user = $this->input->post("user");
+		$jobname = this->input->post("jobname");
 
 	  $this->json_data['html'] = "";
 	  $jobs = create_backupjob($user,$jobname);
@@ -111,8 +108,8 @@ class Ajax_Settings extends Controller {
 
 	function ajax_backup_deletejob() {
 
-		$user = json_decode($this->input->post("user"));
-		$jobname = json_decode($this->input->post("jobname"));
+		$user = $this->input->post("user");
+		$jobname = $this->input->post("jobname");
 
 	  $this->json_data['html'] = "";
 	  $this->json_data['error'] = delete_backupjob($user,$jobname);
@@ -120,7 +117,7 @@ class Ajax_Settings extends Controller {
 	}
 
 	function ajax_backup_listdates() {
-		$user = json_decode($this->input->post("user"));
+		$user = $this->input->post("user");
 		$jobname = $this->input->post("jobname");
 	  $this->json_data['html'] = "";
 	  
@@ -137,7 +134,7 @@ class Ajax_Settings extends Controller {
 
 	function ajax_backup_listfiles() {
 
-		$user = json_decode($this->input->post("user"));
+		$user = $this->input->post("user");
 		$jobname = $this->input->post("jobname");
 		$date = $this->input->post("date");
 
@@ -171,7 +168,7 @@ class Ajax_Settings extends Controller {
 
 	function ajax_backup_runjob() {
 
-		$user = json_decode($this->input->post("user"));
+		$user = $this->input->post("user");
 		$jobname = $this->input->post("jobname");
 
 		run_backupjob($user,$jobname);
@@ -183,7 +180,7 @@ class Ajax_Settings extends Controller {
 		
 	
 	function ajax_backup_getstatus() {
-		$file = json_decode($this->input->post("file"));
+		$file = $this->input->post("file");
 	  $this->json_data['error'] = 0;
 	  $this->json_data['html'] = "";
 		$this->json_data["info"] = backup_readerror($file);

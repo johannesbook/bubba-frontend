@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre6) vincent; urgency=low
+
+  * remove a couple of json_decode 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 15 Jul 2010 15:56:05 +0200
+
 bubba-frontend (2.1~pre5) vincent; urgency=low
 
   * dont treat empty version as later 

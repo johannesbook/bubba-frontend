@@ -72,8 +72,8 @@ class Ajax_album extends Controller {
 	}
 	function modify_user_access() {
 		$this->load->model('album_model');
-		$uid = json_decode($this->input->post( 'uid' ));
-		$album = json_decode($this->input->post( 'album' ));
+		$uid = $this->input->post( 'uid' );
+		$album = $this->input->post( 'album' );
 		$res = $this->album_model->modify_album_access( $album, $uid );
 
 		$this->json_data['html'] = $res["html"];
@@ -82,8 +82,8 @@ class Ajax_album extends Controller {
 	}
 	function set_public() {
 		$this->load->model('album_model');
-		$album = json_decode($this->input->post( 'album' ));
-		$public = json_decode($this->input->post('public'));
+		$album = $this->input->post( 'album' );
+		$public = $this->input->post('public');
 		$res = $this->album_model->album_set_public( $album, $public );
 
 		$this->json_data['html'] = $res;
@@ -92,7 +92,7 @@ class Ajax_album extends Controller {
 	}
 	function remove_user() {
 		$this->load->model('album_model');
-		$uid = json_decode($this->input->post( 'uid' ));
+		$uid = $this->input->post( 'uid' );
 		$res = $this->album_model->album_remove_user( $uid );
 
 		$this->json_data['html'] = $res;
@@ -101,9 +101,9 @@ class Ajax_album extends Controller {
 	}
 	function modify_user() {
 		$this->load->model('album_model');
-		$uid = json_decode($this->input->post( 'uid' ));
-		$username = json_decode($this->input->post( 'username' ));
-		$password = json_decode($this->input->post( 'password' ));
+		$uid = $this->input->post( 'uid' );
+		$username = $this->input->post( 'username' );
+		$password = $this->input->post( 'password' );
 		try {
 			$res = $this->album_model->album_modify_user( $uid, $username, $password );
 			$this->json_data['html'] = $res;
@@ -116,8 +116,8 @@ class Ajax_album extends Controller {
 	}
 	function add_user() {
 		$this->load->model('album_model');
-		$username = json_decode($this->input->post( 'username' ));
-		$password = json_decode($this->input->post( 'password' ));
+		$username = $this->input->post( 'username' );
+		$password = $this->input->post( 'password' );
 		if( $this->album_model->album_user_exists( $username ) ) {
 			$this->json_data['html'] = "$username allready exists";
 			return;
@@ -130,9 +130,9 @@ class Ajax_album extends Controller {
 	}
 	function move() {
 		$this->load->model('album_model');
-		$id = json_decode($this->input->post( 'id' ));
-		$target = json_decode($this->input->post('target'));
-		$album = json_decode($this->input->post( 'album' ));
+		$id = $this->input->post( 'id' );
+		$target = $this->input->post('target');
+		$album = $this->input->post( 'album' );
 		if( $album == 'true' ) {
 			$res = $this->album_model->move_album( $id, $target );
 		} else {
@@ -146,7 +146,7 @@ class Ajax_album extends Controller {
 
 	function delete_image() {
 		$this->load->model('album_model');
-		$id = json_decode($this->input->post( 'id' ));
+		$id = $this->input->post( 'id' );
 		$res = $this->album_model->album_delete_image( $id );
 
 		$this->json_data['html'] = $res;
@@ -156,7 +156,7 @@ class Ajax_album extends Controller {
 
 	function delete_album() {
 		$this->load->model('album_model');
-		$id = json_decode($this->input->post( 'id' ));
+		$id = $this->input->post( 'id' );
 		$res = $this->album_model->album_delete_album( $id );
 
 		$this->json_data['html'] = $res;
@@ -173,9 +173,9 @@ class Ajax_album extends Controller {
 	}
 	function update_image_metadata() {
 		$this->load->model('album_model');
-		$id = json_decode($this->input->post( 'id' ));
-		$name = json_decode($this->input->post('name'));
-		$caption = json_decode($this->input->post( 'caption' ));
+		$id = $this->input->post( 'id' );
+		$name = $this->input->post('name');
+		$caption = $this->input->post( 'caption' );
 		$res = $this->album_model->update_image_metadata( $id, $name, $caption );
 
 		$this->json_data['html'] = $res;
@@ -184,9 +184,9 @@ class Ajax_album extends Controller {
 	}
 	function update_album_metadata() {
 		$this->load->model('album_model');
-		$id = json_decode($this->input->post( 'id' ));
-		$name = json_decode($this->input->post('name'));
-		$caption = json_decode($this->input->post( 'caption' ));
+		$id = $this->input->post( 'id' );
+		$name = $this->input->post('name');
+		$caption = $this->input->post( 'caption' );
 		$res = $this->album_model->update_album_metadata( $id, $name, $caption );
 
 		$this->json_data['html'] = $res;
