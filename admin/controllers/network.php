@@ -514,7 +514,7 @@ class Network extends Controller{
 				}
 
 				if($new_port["source"]) { // only validate source if it is set.
-					$sourceip = split("\/",$new_port["source"]);
+					$sourceip = explode("\/",$new_port["source"]);
 					if(!validate_ip(parse_ip($sourceip[0]))) {
 						$errmsg["source"] = "Invalid source IP";
 					}

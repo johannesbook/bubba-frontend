@@ -10,7 +10,7 @@ class Help extends Controller{
 	}
 	
 	function load($strip="",$uri="") {
-		$a_manual_page = split("_",$uri);
+		$a_manual_page = explode("_",$uri);
 		if(sizeof($a_manual_page)>1) {
 			$manual_page = $a_manual_page[1];
 		} else {
