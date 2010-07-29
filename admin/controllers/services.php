@@ -25,7 +25,7 @@ class Services extends Controller{
 	
 		$ftp_enabled = $this->input->post('ftp_enabled');
 		$anon_ftp = $this->input->post('anon_ftp');
-		$ftp_status=!query_service("proftpd");
+		$ftp_status=query_service("proftpd");
 		$anon_status=ftp_check_anonymous();
 
    		$afp_enabled = $this->input->post('afp_enabled');

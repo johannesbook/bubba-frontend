@@ -1,3 +1,10 @@
+bubba-frontend (2.1~pre8) lucid; urgency=low
+
+  * add a 0.5s delay after chaning time to check if dovecot is running, due to
+    race condition (Closes: #1503)
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 29 Jul 2010 15:35:08 +0200
+
 bubba-frontend (2.1~pre7) vincent; urgency=low
 
   * fix invocations of split → explode (Closes: #1468)
