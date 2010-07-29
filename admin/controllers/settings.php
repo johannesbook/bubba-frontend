@@ -372,7 +372,7 @@ class Settings extends Controller{
 			}
 		}
 		
-		usleep(500000); # 0.5s
+		usleep(1000000); # 1s
 		if(query_service("dovecot") && !service_running("dovecot")) {
 			// restart dovecot
 			d_print_r("Restart dovecot\n");
