@@ -311,6 +311,7 @@ class Disk extends Controller{
 
 			# Assume sda is SATA and all other scsi are eSATA.
 			switch( $disk['bus'] ) {
+			case 'ata':
 			case 'scsi':
 				if( $disk['dev'] == '/dev/sda' ) {
 					$type = 'SATA';

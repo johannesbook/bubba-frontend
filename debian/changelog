@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre11) vincent; urgency=low
+
+  * Fix bus parsing. (Closes #1494)
+
+ -- Tor Krill <tor@excito.com>  Tue, 17 Aug 2010 12:27:36 +0200
+
 bubba-frontend (2.1~pre10) vincent; urgency=low
 
   * Fixed php-error in backup-page. (Closes: #1497)
