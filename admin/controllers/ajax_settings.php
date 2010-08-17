@@ -97,7 +97,7 @@ class Ajax_Settings extends Controller {
 	function ajax_backup_createjob() {
 
 		$user = $this->input->post("user");
-		$jobname = this->input->post("jobname");
+		$jobname = $this->input->post("jobname");
 
 	  $this->json_data['html'] = "";
 	  $jobs = create_backupjob($user,$jobname);

@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre10) vincent; urgency=low
+
+  * Fixed php-error in backup-page. (Closes: #1497)
+
+ -- PA Nilsson <pa@excito.com>  Tue, 17 Aug 2010 10:24:49 +0200
+
 bubba-frontend (2.1~pre9) vincent; urgency=low
 
   * Fixed admin rights for album.
