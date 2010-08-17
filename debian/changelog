@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre9) vincent; urgency=low
+
+  * Fixed admin rights for album.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 17 Aug 2010 09:18:05 +0200
+
 bubba-frontend (2.1~pre8) lucid; urgency=low
 
   * add a 1s delay after chaning time to check if dovecot is running, due to

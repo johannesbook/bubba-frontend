@@ -61,7 +61,8 @@ class Auth_model extends Model{
 		),
 		"album" => array(
 			"access" 	=> array(
-				"groups_deny" => array("admin"),
+//				"groups_deny" => array("admin"),
+				"groups_deny" => array(),
 				"groups_allow" => array("bubba", "album")
 			)
 		),
@@ -108,6 +109,7 @@ class Auth_model extends Model{
 			$this->groups['bubba'] = true;
 			if( $username == "admin" ) {
 				$this->groups['admin'] = true;
+				$this->groups['bubba'] = false;
 			}
 			$auth = true;
 		}
