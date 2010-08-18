@@ -192,7 +192,7 @@ class Disk_model extends Model {
 
 	function mount_partition( $partition ) {
 		$matches = array();
-		if( ! preg_match( '#TYPE="(.*?)"#', `blkid $partition -s TYPE`, $matches ) ) {
+		if( ! preg_match( '#TYPE="(.*?)"#', `blkid $partition -p -s TYPE`, $matches ) ) {
 			throw new Exception( sprintf( t("Failed to aquire suitable type of the filesystem on partition %s"), $partition ) );
 		}
 		$type = $matches[1];
