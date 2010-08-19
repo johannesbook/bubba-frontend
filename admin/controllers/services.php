@@ -24,9 +24,9 @@ class Services extends Controller{
 	function index($strip=""){
 	
 		$ftp_enabled = $this->input->post('ftp_enabled');
-		$anon_ftp = $this->input->post('anon_ftp');
+		$anon_ftp_enabled = $this->input->post('anon_ftp');
 		$ftp_status=query_service("proftpd");
-		$anon_status=ftp_check_anonymous();
+		$anon_status = ftp_check_anonymous();
 
    		$afp_enabled = $this->input->post('afp_enabled');
 		$afp_status = query_service("netatalk");
@@ -67,34 +67,26 @@ class Services extends Controller{
 			);
 			$reload_ftp=false;
 			
-			if($anon_ftp && !$anon_status){
-				ftp_set_anonymous(1);
-				if($ftp_status){
-					add_service("proftpd");
-					start_service("proftpd");
-					$ftp_status=0;
-					$ftp_enabled=1;
-				}
-				$anon_status=1;
-				$reload_ftp=true;
-			}else if(!$anon_ftp && $anon_status){
+			if(!$anon_ftp_enabled && $anon_status){
 				ftp_set_anonymous(0);
-				$anon_status=0;
+				$anon_status = ftp_check_anonymous();
+				$reload_ftp=true;
+			}else if($anon_ftp_enabled && !$anon_status){
+				ftp_set_anonymous(1);
+				$anon_status = ftp_check_anonymous();
 				$reload_ftp=true;
 			}
-
-			if($ftp_enabled && $ftp_status){
+			
+			if($ftp_enabled && !$ftp_status){
 				add_service("proftpd");
 				start_service("proftpd");
-				$ftp_status=0;
-			}else if(!$ftp_enabled && !$ftp_status){
+				$ftp_status=1;
+			}else if(!$ftp_enabled && $ftp_status){
 				remove_service("proftpd");
 				stop_service("proftpd");
-				ftp_set_anonymous(0);
-				$ftp_status=1;
+				$ftp_status=0;
 			}else if($reload_ftp){
-				stop_service("proftpd");
-				start_service("proftpd");
+				restart_service("proftpd");
 			}
         
 			if($afp_status && !$afp_enabled){

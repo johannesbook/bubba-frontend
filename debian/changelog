@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre12) vincent; urgency=low
+
+  * Fixed FTP status indication / reload problems. (Closes:# 1502)
+
+ -- PA Nilsson <pa@excito.com>  Thu, 19 Aug 2010 14:27:04 +0200
+
 bubba-frontend (2.1~pre11) vincent; urgency=low
 
   * Fix bus parsing. (Closes: #1494)

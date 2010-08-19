@@ -4,7 +4,7 @@
    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('File sharing')?></td></tr>
    <tr>
       <td><label for="">FTP</label></td>
-      <td ><input name="ftp_enabled" type="checkbox" class="slide" value="1" <?= $ftp_status?"":"checked=\"checked\""?>/></td>
+      <td ><input name="ftp_enabled" type="checkbox" class="slide" value="1" <?= $ftp_status?"checked=\"checked\"":""?>/></td>
    </tr>
    <tr>
       <td class="ui-indent1"><label for=""><?=t('Anonymous FTP access')?></td>
