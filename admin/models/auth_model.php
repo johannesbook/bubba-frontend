@@ -64,6 +64,9 @@ class Auth_model extends Model{
 //				"groups_deny" => array("admin"),
 				"groups_deny" => array(),
 				"groups_allow" => array("bubba", "album")
+			),
+			"add" => array(
+				"deny"  => array("admin")
 			)
 		),
 		"menu"				=> array(

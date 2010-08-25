@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre13) hugo vincent; urgency=low
+
+  * Allowing users to add images to album from file manager. (Closes: #1509)
+
+ -- PA Nilsson <pa@excito.com>  Wed, 25 Aug 2010 10:50:35 +0200
+
 bubba-frontend (2.1~pre12) vincent; urgency=low
 
   * Fixed FTP status indication / reload problems. (Closes:# 1502)
