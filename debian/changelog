@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre14) hugo vincent; urgency=low
+
+  * Added dep on libbubba-info-php
+
+ -- PA Nilsson <pa@excito.com>  Thu, 26 Aug 2010 09:09:52 +0200
+
 bubba-frontend (2.1~pre13) hugo vincent; urgency=low
 
   * Allowing users to add images to album from file manager. (Closes: #1509)
