@@ -104,7 +104,7 @@ function copy_fields(formid) {
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <table id="firewall" class="ui-table-outline">
 	<thead>
-    <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('Allow external (WAN) access Bubba services')?></td></tr>
+    <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('network-firewall-allow-wan')?></td></tr>
 	</thead>
 	<tbody>
 	<tr>
@@ -187,7 +187,7 @@ function copy_fields(formid) {
 				<?=t('Port forward to internal network')?>
 				<br>
 				<input id="B2public" type="radio" name="portforward" value=0 class="checkbox_radio" <? if(!$portforward) echo "checked=\"checked\"";?> onclick="disable_portforward()"/>&nbsp;&nbsp;
-				<?=t('Open Bubba|2 port')?>
+				<?=t('network-firewall-openport')?>
 		</td>
 		<td>
 		</td>

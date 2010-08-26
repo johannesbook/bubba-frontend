@@ -19,6 +19,12 @@ define("FORMPREFIX","/admin");
 define("FALLBACKIP","192.168.10.1");
 define("BUBBA_VERSION","/etc/bubba.version");
 
+if(isB3()) {
+	define("NAME","B3");
+} else {
+	define("NAME","Bubba|2");
+}
+
 if($this->session->userdata("language")){
 	define("LANGUAGE",$this->session->userdata("language"));
 }else{

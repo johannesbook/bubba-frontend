@@ -1,7 +1,7 @@
 <? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
 	<div class="ui-network-information-panel">
-	<?=t("These settings are locked")." (".t("Bubba is using automatic network settings").")"?>&nbsp;.&nbsp;<br />
-	<?=t("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
+	<?=t("network-settings-locked-1")." (".t("network-settings-locked-2").")"?>&nbsp;.&nbsp;<br />
+	<?=t("network-settings-locked-3")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
 	</div>
 <? endif ?>
 <form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">

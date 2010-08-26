@@ -12,7 +12,8 @@
 <meta http-equiv="Expires" content="0" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>Bubba|2 - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
+<title><?=NAME?> - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
+
 
 <!--[if IE]><link rel="shortcut icon" href="<?=FORMPREFIX.'/views/'.THEME?>/favicon_ie.ico"><![endif]-->
 <link rel="icon" type="image/png" href="<?=FORMPREFIX.'/views/'.THEME?>/favicon_64px.png" />
@@ -39,6 +40,18 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.throbber.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.pubsub.js?v='<?=$this->session->userdata('version')?>'"></script>
 
+<!-- Config -->
+<script type="text/javascript">
+config = <?=json_encode(
+	array(
+		'prefix' => FORMPREFIX,
+		'theme' => THEME,
+		'version' => $this->session->userdata('version'),
+		'ua' => $browser,
+		'name' => NAME
+	)
+)?>;
+</script>
 <!-- Internationalization -->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.sprintf.js?v='<?=$this->session->userdata('version')?>'"></script>
 <?if(file_exists(APPPATH.'views/'.THEME.'/i18n/'.LANGUAGE.'/messages.js')):?>
@@ -62,15 +75,6 @@
 
 
 <script type="text/javascript">
-
-config = <?=json_encode(
-	array(
-		'prefix' => FORMPREFIX,
-		'theme' => THEME,
-		'version' => $this->session->userdata('version'),
-		'ua' => $browser
-)
-)?>;
 
 var login_dialog;
 var window_music;
@@ -287,7 +291,12 @@ if(isset($head)) {
 		<td id="content_wrapper">	
             <div id="header">		
                 
-                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';"><img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
+                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';">
+                	<?if(isB3()) :?>
+                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/B3_logo.png" alt="<?=t("B3 start page")?>" title="<?=t("B3 start page")?>" /></a>
+						<?else:?>                	
+                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
+                	<?endif?>
                 <?=$navbar?>
             </div>	<!-- header -->		
             <?if(! (isset($wizard) && $wizard)):?>

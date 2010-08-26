@@ -1,3 +1,9 @@
+bubba-frontend (2.1~pre15) hugo vincent; urgency=low
+
+  * First commit of changing Bubba to B3 
+
+ -- PA Nilsson <pa@excito.com>  Thu, 26 Aug 2010 12:53:33 +0200
+
 bubba-frontend (2.1~pre14) hugo vincent; urgency=low
 
   * Added dep on libbubba-info-php

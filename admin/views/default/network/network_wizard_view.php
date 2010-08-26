@@ -40,7 +40,7 @@ $(document).ready(function(){
 	</h1>
 	<form action="<?=FORMPREFIX?>/network/wizard" method="post">
 		<table id="wizard">
-			<tr><td colspan="2"><?=t('Enjoy Bubba|2.')?></td></tr>
+			<tr><td colspan="2"><?=t('network-wizard-enjoy')?></td></tr>
 			<tr><td><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Finish setup')?>'/></td></tr>
 	</form>
 		
@@ -54,7 +54,7 @@ $(document).ready(function(){
 			</thead>
 			<tbody>
 				<tr class="ui-header">
-					<td><?=t("To locate Bubba|2 from the internet, use 'Easyfind' location service")?></td>
+					<td><?=t("network-wizard-easyfind")?></td>
 					<td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="slide" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"checked='checked'":""?>/></td>
 				</tr>
 				<tr class="ui-header">

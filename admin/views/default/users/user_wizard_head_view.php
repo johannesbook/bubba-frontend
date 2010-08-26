@@ -59,7 +59,7 @@ $(document).ready(function(){
 						add_validator.resetForm();
 						$("#fn-wizard-add")[0].reset();
 					} else {
-						update_status(0,"An unknown error has occured, please press the Bubba icon to return to main page.");
+						update_status(0,"An unknown error has occured, please press the home icon to return to main page.");
 					}
 				}
 			},

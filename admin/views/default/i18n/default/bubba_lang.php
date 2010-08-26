@@ -1,5 +1,8 @@
 <?php
 // $lang['']="";
+
+$lang["name"] = NAME;
+
 $lang['Login']="Login";
 $lang['Home']="Home";
 $lang['Users']="Users";
@@ -201,11 +204,18 @@ $lang['disk_raid_recover_broken_internal_button_label'] = "Recover internal disk
 $lang['disk_raid_recover_broken_internal_no_raid_message'] = "No disks with RAID data found";
 
 // Network
+
+$lang['network-settings-locked-1'] = "These settings are locked";
+$lang['network-settings-locked-2'] = NAME." is using automatic network settings";
+$lang['network-settings-locked-3'] = "To unlock, select Router or Server profile under the ";
+
+$lang['network-firewall-openport'] = "Open ".NAME." port";
+
 $lang['wlan_title'] = 'Wireless';
 $lang['wlan_title_ssid'] = 'Network name (SSID)';
-$lang['wlan_title_ssid_popup'] = 'The network name (also called SSID) is broadcast by Bubba and will show up on clients when browsing wireless networks.';
+$lang['wlan_title_ssid_popup'] = 'The network name (also called SSID) is broadcast by '.NAME.' and will show up on clients when browsing wireless networks.';
 $lang['wlan_title_enable'] = 'Wireless access point';
-$lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your Bubba';
+$lang['wlan_title_enable_popup'] = 'Check this checkbox to enable wireless functionallity for your '.NAME.'';
 
 $lang['wlan_title_advanced'] = 'Advanced wireless settings';
 
@@ -235,7 +245,7 @@ $lang['wlan_title_width_20MHz'] = '20MHz';
 $lang['wlan_title_width_40MHz'] = '40MHz';
 
 $lang['wlan_title_password'] = 'Password';
-$lang['wlan_title_password_popup'] = 'The password that will be required to connect to Bubba wirelessly';
+$lang['wlan_title_password_popup'] = 'The password that will be required to connect to '.NAME.' wirelessly';
 
 $lang['wlan_title_channel'] = 'Channel';
 $lang['wlan_title_channel_popup'] = 'The main channel to use';
@@ -259,6 +269,8 @@ $lang['printing_delete_success'] = "Printer <strong>%s</strong> was deleted succ
 $lang['service_update_success'] = "Services updated";
 
 # Settings
+$lang['settings-start-wizard'] = "To configure basic functionality of ".NAME.", press the button to start the setup wizard.";
+
 $lang['settings_traffic_success'] = "Traffic limit updated";
 $lang['settings_traffic_error_service_unavailable'] = "Traffic service is unavailable";
 $lang['settings_traffic_error_set_dl_throttle'] = "Failed to set download throttle";
@@ -351,7 +363,7 @@ $lang["filemanager-label-permission-owner"] = "Owner";
 $lang["filemanager-label-permission-owner-read"] = "read";
 $lang["filemanager-label-permission-owner-write"] = "write";
 $lang["filemanager-label-permission-owner-execute"] = "execute";
-$lang["filemanager-label-permission-group"] = "Bubba users";
+$lang["filemanager-label-permission-group"] = NAME." users";
 $lang["filemanager-label-permission-group-read"] = "read";
 $lang["filemanager-label-permission-group-write"] = "write";
 $lang["filemanager-label-permission-group-execute"] = "execute";
@@ -379,7 +391,7 @@ $lang["filemanager-move-fail-message"] = "Failed to move the following files and
 $lang["filemanager-perm-fail-message"] = "Failed to change permission for following files and folders: %s";
 $lang["filemanager-album-dialog-message"] = "Add selected images/folders to photo album?";
 
-$lang["help_box_header"] = "Bubba Help";
+$lang["help_box_header"] = NAME." Help";
 
 //  ----------- Mail --------
 
@@ -415,7 +427,23 @@ $lang["printing-list-edit-info-label"] = "Description";
 $lang["stat-shutdown-label"] = "Shutdown";
 $lang["stat-reboot-label"] = "Restart";
 
+// ----------- Shutdown view --------
+$lang["shutdown-shutdown-label"] = "Shutting down ".NAME;
+$lang["shutdown-restart-label"] = "To restart ".NAME.", press the power button";
+$lang["shutdown-restarting"] = "Restarting ".NAME;
+$lang["shutdown-LED-stopflash"] = "When the LED has stopped flashing, ".NAME." is ready to be used again";
+
 //  ---------- Album  -----
 $lang['album-users-edit-username-label'] = 'Viewer name';
 $lang['album-users-edit-password1-label'] = 'New password';
 $lang['album-users-edit-password2-label'] = 'Confirm password';
+
+// ------------------ Wizard -------------
+$lang['network-wizard-enjoy'] = 'Enjoy ' . NAME;
+$lang['network-wizard-easyfind'] = "To locate ".NAME." from the internet, use 'Easyfind' location service";
+$lang['network-firewall-allow-wan'] = "Allow external (WAN) access to ".NAME." services";
+
+$lang['wizard-title'] = "Welcome to ".NAME;
+$lang['wizard-msg1'] = "Please take a moment to set up basic functionality for ".NAME;
+$lang['wizard-msg1'] = "All entered values can easily be changed later using the administration interface.";
+

@@ -75,7 +75,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 			<table>
 				<tbody>
 				<tr><td>
-					<?=t('To configure basic functionality of Bubba|2, press the button to start the setup wizard.')?>					
+					<?=t('settings-start-wizard')?>					
 				</td></tr>
 				</tbody>
 				<tfoot>
