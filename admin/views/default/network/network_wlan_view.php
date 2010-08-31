@@ -1,3 +1,9 @@
+<? if(!$wlan_configurable): ?>
+	<div class="ui-network-information-panel">
+		<?=t("These settings are locked")?>&nbsp;.&nbsp;<br />
+		<?=t("Either no wireless network card is available or no valid timezone is set")?>
+	</div>
+<? endif ?>
 <form 
 	id="wLANCFG" 
 	action="<?=FORMPREFIX?>/network/wlanupdate" 

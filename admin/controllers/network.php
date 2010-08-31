@@ -685,7 +685,9 @@ class Network extends Controller{
 
 	function wlan($strip="",$msg=""){
 		$conf=parse_ini_file("/home/admin/.bubbacfg");
-		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card() && $this->session->userdata("network_profile") != "custom";
+		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card() 
+					&& $this->session->userdata("network_profile") != "custom"
+					&& get_current_tz() != "UTC";
 		
 		if($msg == "update") {
 			$data['update'] = 1; // indicate that the user has pressed update with green status bar.
