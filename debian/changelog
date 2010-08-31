@@ -1,3 +1,15 @@
+bubba-frontend (2.1~pre18) vincent hugo; urgency=low
+
+  * Don't set errexit on postinst 
+
+ -- Tor Krill <tor@excito.com>  Tue, 31 Aug 2010 13:49:09 +0200
+
+bubba-frontend (2.1~pre17) vincent hugo; urgency=low
+
+  * Debug 
+
+ -- Tor Krill <tor@excito.com>  Tue, 31 Aug 2010 13:32:39 +0200
+
 bubba-frontend (2.1~pre16) vincent hugo; urgency=low
 
   * Disable wlan settings if user has not set a timezone 

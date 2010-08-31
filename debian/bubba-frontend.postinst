@@ -3,7 +3,11 @@
 #
 # see: dh_installdeb(1)
 
-set -e
+#debug
+#exec 2>/tmp/bubba-frontend.log
+#set -x
+
+# dont set -e
 
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>
