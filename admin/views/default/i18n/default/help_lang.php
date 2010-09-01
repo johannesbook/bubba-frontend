@@ -73,7 +73,7 @@ $lang['help_box_stat']="
 ";
 
 $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
-<p>From the File manager you are able to reach your files on ".NAME." eaven if you are away from home.</p>
+<p>From the File manager you are able to reach your files on ".NAME." even if you are away from home.</p>
 <h3>Navigation</h3>
 <p>Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ line.</p>
 <h3>File and folder actions</h3>

@@ -251,7 +251,7 @@ $lang['wlan_title_channel'] = 'Channel';
 $lang['wlan_title_channel_popup'] = 'The main channel to use';
 
 $lang['wlan_title_broadcast'] = 'Broadcast SSID';
-$lang['wlan_title_broadcast_popup'] = 'Turning this of hides the network - users have to manually type the SSID on clients';
+$lang['wlan_title_broadcast_popup'] = 'Turning this off hides the network - users have to manually type the SSID on clients';
 
 $lang['fw_title_advanced'] = 'Advanced firewall settings';
 
