@@ -32,9 +32,9 @@ case "$1" in
 
 			php5_sapi="cgi cli apache2";
 
-			php5_cgi_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini";
-			php5_cli_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini";
-			php5_apache2_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini";
+			php5_cgi_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
+			php5_cli_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
+			php5_apache2_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
 
 
 			for sapi in $php5_sapi; do

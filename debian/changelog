@@ -1,3 +1,11 @@
+bubba-frontend (2.1~pre19) vincent hugo; urgency=low
+
+  * Migrate inifiles for libbubba-php-info as well
+    (This stopped image building)
+  * Fix some typos in language files
+
+ -- Tor Krill <tor@excito.com>  Wed, 01 Sep 2010 10:03:10 +0200
+
 bubba-frontend (2.1~pre18) vincent hugo; urgency=low
 
   * Don't set errexit on postinst 
