@@ -137,9 +137,9 @@ $lang['disk_format_warning_2'] = "Continue formatting the disk?";
 $lang['disk_format_format_progress_title'] = "Formatting disk";
 $lang['disk_format'] = "";
 
-$lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the data on the new, external device. Continue?</p> <p>Note: Removal of the new disk from the system will require a full reinstall.</p>";
-$lang['disk_lvm_extend_dialog_warning_title'] = "Extend default data partition";
-$lang['disk_lvm_extend_dialog_warning_button_label'] = "Extend partition";
+$lang['disk_lvm_extend_dialog_warning_message'] = "<p>This will erase all the data on the new, external device. Click 'Create LVM' to continue.</p> <p>Note: Removal of the new disk from the system will require a full system reinstallation.</p>";
+$lang['disk_lvm_extend_dialog_warning_title'] = "Extend Logical Volume";
+$lang['disk_lvm_extend_dialog_warning_button_label'] = "Create LVM";
 $lang['disk_lvm_extend_dialog_title'] = "Extending disk";
 
 /* RAID */
