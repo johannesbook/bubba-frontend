@@ -14,10 +14,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title><?=NAME?> - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
 
-
-<!--[if IE]><link rel="shortcut icon" href="<?=FORMPREFIX.'/views/'.THEME?>/favicon_ie.ico"><![endif]-->
-<link rel="icon" type="image/png" href="<?=FORMPREFIX.'/views/'.THEME?>/favicon_64px.png" />
-<!-- Stylesheets -->
 <? /* <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.css?v='<?=$this->session->userdata('version')?>'" /> */ ?>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.theme.default.css?v='<?=$this->session->userdata('version')?>'" />
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
@@ -291,11 +287,18 @@ if(isset($head)) {
 		<td id="content_wrapper">	
             <div id="header">		
                 
-                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>';">
                 	<?if(isB3()) :?>
-                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/B3_logo.png" alt="<?=t("B3 start page")?>" title="<?=t("B3 start page")?>" /></a>
-						<?else:?>                	
-                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" /></a>
+                		<div id="main-excito-logo">
+                			<a href="http://www.excito.com" class="ui-excito-link"><img id="ex_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/purple-X.png" alt="<?=t('Excito')?>" /></a>
+                			<span id="ui-main-byExcito">by Excito Sweden</span>
+                		</div>
+		                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>'">
+                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/B3_logo.png" alt="<?=t("B3 start page")?>" title="<?=t("B3 start page")?>" />
+                		</a>
+					<?else:?>                	
+		                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>'">
+                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/logo.png" alt="BUBBA | 2" title="BUBBA | 2" />
+                		</a>
                 	<?endif?>
                 <?=$navbar?>
             </div>	<!-- header -->		

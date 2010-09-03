@@ -1,3 +1,10 @@
+bubba-frontend (2.1.0) vincent hugo; urgency=low
+
+  * Updated main logotyp
+  * Bumped revision
+
+ -- PA Nilsson <pa@excito.com>  Fri, 03 Sep 2010 20:20:12 +0200
+
 bubba-frontend (2.1~pre19) vincent hugo; urgency=low
 
   * Migrate inifiles for libbubba-php-info as well

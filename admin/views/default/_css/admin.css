@@ -189,6 +189,22 @@ a {
   outline: none;
 }
 
+
+div#main-excito-logo {
+	position : absolute;
+	top : 23px;
+	left : 275px;
+}
+
+span#ui-main-byExcito {
+	position : absolute;
+	left : 50px;
+	top : 75px;
+	width : 150px;
+	font-size : 10px;
+	
+}
+
 button:hover {
   outline: none;
 }
@@ -349,7 +365,7 @@ body {
 #nav ul {
   font-size: 21px;
 	list-style: none;
-  margin: 1em 0 0;
+  margin: 0.5em 0 0;
 }
 
 #menu-trigger {
@@ -1011,10 +1027,6 @@ button.ui-button::-moz-focus-inner {
 
 .ui-filemanager-path-widget .ui-filemanager-path-divider {
   margin: .25em;
-}
-
-#body_filemanager ul {
-	padding-left : 15px;
 }
 
 .fg-toolbar {
