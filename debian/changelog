@@ -1,3 +1,9 @@
+bubba-frontend (2.1.2) vincent hugo; urgency=low
+
+  * Don't error if print info fields are missing 
+
+ -- Tor Krill <tor@excito.com>  Thu, 09 Sep 2010 17:44:38 +0200
+
 bubba-frontend (2.1.1) hugo vincent; urgency=low
 
   * Added missing image

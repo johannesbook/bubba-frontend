@@ -162,10 +162,10 @@ class Printing extends Controller{
 		foreach(get_installed_printers() as $name=>$cfg){
 			$installed_printers[] = array(
 				'name' => $name,
-				'info' => trim($cfg["Info"]," \""),
-				'state' => trim($cfg["State"]," \""),
-				'location' => trim($cfg['Location'], " \""),
-				'url' => trim($cfg['DeviceURI'], " \""),
+				'info' => @trim($cfg["Info"]," \""),
+				'state' => @trim($cfg["State"]," \""),
+				'location' => @trim($cfg['Location'], " \""),
+				'url' => @trim($cfg['DeviceURI'], " \""),
 			);
 		}
 	
