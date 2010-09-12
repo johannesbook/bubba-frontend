@@ -134,6 +134,7 @@ class Settings extends Controller{
 				'message' => t('settings_backup_error_no_path'),
 			);
 		} else {
+			set_time_limit(180);		
 			if(!backup_config($path)) {
 				$data['update'] = array(
 					'success' => true,
@@ -180,6 +181,7 @@ class Settings extends Controller{
 				'message' => t('settings_restore_error_no_path'),
 			);
 		} else {
+			set_time_limit(180);
 			if(!restore_config($path)) {
 				$data['update'] = array(
 					'success' => true,
