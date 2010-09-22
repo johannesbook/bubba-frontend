@@ -57,9 +57,14 @@ foreach my $str( sort keys %$ts ) {
 	}
 }
 
-print "<?php\n";
-foreach my $k( keys %$strings){
-	print "\$lang[\"$k\"]=\"".$strings->{$k}."\";\n";
+#print "<?php\n";
+#foreach my $k( keys %$strings){
+#	print "\$lang[\"$k\"]=\"".$strings->{$k}."\";\n";
+#}
+
+foreach my $k ( keys %$nf ){
+	print "\$lang[\"$k\"]=\"$k\";\n";
 }
+
 #say join "\n", keys %$nf;
 
