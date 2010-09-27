@@ -1,8 +1,9 @@
 bubba-frontend (2.1.4) lucid; urgency=low
 
   * Initial work on multiple language support
+  * Possibility to add user defined languages. 
 
- -- PA Nilsson <pa@excito.com>  Mon, 27 Sep 2010 14:43:06 +0200
+ -- PA Nilsson <pa@excito.com>  Mon, 27 Sep 2010 15:12:23 +0200
 
 bubba-frontend (2.1.3) vincent hugo; urgency=low
 

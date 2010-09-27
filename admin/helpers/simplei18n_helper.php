@@ -43,7 +43,9 @@ function get_languages() {
 		// print $lang_desc;
 		$desc = parse_ini_file($lang);
 		if(isset($desc['short_name'])) {
-			$available_langs[$desc['short_name']] = $desc;
+			if(isset($desc['status']) && ( $desc['status'] == 'official' || $desc['status'] == 'user') ) {
+				$available_langs[$desc['short_name']] = $desc;
+			}
 		}
 	}
 	ksort($available_langs);

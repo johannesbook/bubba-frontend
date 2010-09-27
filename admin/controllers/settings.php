@@ -55,11 +55,6 @@ class Settings extends Controller{
 		$data['date'] = date("Ymd");
 		$data['time'] = date("Hi");
 		
-		$data["available_languages"] = get_languages();
-		$conf = parse_ini_file(ADMINCONFIG);
-		if(isset($conf['default_lang'])) {
-			$data["available_languages"][$conf['default_lang']]['default'] = $conf['default_lang']; 
-		}
 		return $data;
 	}
 	function netupdate($strip=""){
@@ -439,6 +434,12 @@ class Settings extends Controller{
 
 	
 		$data = $this->_datetime($data);
+		
+		$data["available_languages"] = get_languages();
+		$conf = parse_ini_file(ADMINCONFIG);
+		if(isset($conf['default_lang'])) {
+			$data["available_languages"][$conf['default_lang']]['default'] = true; 
+		}
 		
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_datetime_view');		
