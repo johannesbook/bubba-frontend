@@ -18,6 +18,8 @@ define("VERSION","BUBBA_VERSION");
 define("FORMPREFIX","/admin");
 define("FALLBACKIP","192.168.10.1");
 define("BUBBA_VERSION","/etc/bubba.version");
+define("USER_CONFIG",".bubbacfg");
+define("ADMINCONFIG","/home/admin/".USER_CONFIG);
 
 if(isB3()) {
 	define("NAME","B3");
@@ -28,9 +30,18 @@ if(isB3()) {
 if($this->session->userdata("language")){
 	define("LANGUAGE",$this->session->userdata("language"));
 }else{
-	// Default
-	define("LANGUAGE","default");
-	//define("LANGUAGE","sv");
+	if(file_exists(ADMINCONFIG)) {
+		$conf = parse_ini_file(ADMINCONFIG);
+		if(isset($conf['default_lang'])) {
+			define("LANGUAGE",$conf['default_lang']);
+		} else {
+			// Default, make a guess?
+			define("LANGUAGE","en");
+		}	
+	} else {
+		// Default, make a guess?
+		define("LANGUAGE","en");
+	}
 }
 				
 if($this->session->userdata("theme")){

@@ -54,7 +54,12 @@ class Settings extends Controller{
 		}
 		$data['date'] = date("Ymd");
 		$data['time'] = date("Hi");
-
+		
+		$data["available_languages"] = get_languages();
+		$conf = parse_ini_file(ADMINCONFIG);
+		if(isset($conf['default_lang'])) {
+			$data["available_languages"][$conf['default_lang']]['default'] = $conf['default_lang']; 
+		}
 		return $data;
 	}
 	function netupdate($strip=""){
@@ -393,6 +398,16 @@ class Settings extends Controller{
 			$this->datetime( $strip, $data );
 		}
 	}	
+	function set_lang($strip=""){
+		//set default system language
+		$lang = $this->input->post("lang");
+		update_bubbacfg("admin","default_lang",$lang);
+		$data['update'] = array(
+				'success' => true,
+				'message' => t("settings_defaultlang_success"),
+		);
+		$this->datetime("", $data );
+	}
 	
 	function trafficsettings($strip=""){
 		$trafdata["ftd_enabled"]=query_service("filetransferdaemon");

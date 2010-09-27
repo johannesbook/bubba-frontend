@@ -84,6 +84,9 @@ class Auth_model extends Model{
 		),
 		"config"				=> array(
 			"show_sideboard" => array(
+			),
+			"edit_all" => array(
+				"allow" => array("admin")
 			)
 		)
 	);

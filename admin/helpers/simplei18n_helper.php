@@ -34,4 +34,22 @@ if (! function_exists('t'))
 	}
 }
 
+function get_languages() {
+
+	$i18n_dir = APPPATH.'views/'.THEME.'/i18n/*/description.ini';
+	$langs = glob($i18n_dir);
+	foreach($langs as $lang) {
+		//$lang_desc = $i18n_dir."/".$lang."/description.ini";
+		// print $lang_desc;
+		$desc = parse_ini_file($lang);
+		if(isset($desc['short_name'])) {
+			$available_langs[$desc['short_name']] = $desc;
+		}
+	}
+	ksort($available_langs);
+	return $available_langs;
+}
+
+
+
 ?>

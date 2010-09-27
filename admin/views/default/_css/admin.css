@@ -107,13 +107,13 @@ input:focus {
 }
 
 select {
-  -moz-border-radius: .3em;
-  -webkit-border-radius: .3em;
-  border: .1em solid #d5d5d5;
-  padding: .2em;
-  vertical-align: text-bottom;	
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+	border: .1em solid #d5d5d5;
+	padding: .2em;
+	vertical-align: text-bottom;	
 	background: #fff;
-	width : 165px;
+	width : 175px;
 }
 
 table {
@@ -1237,7 +1237,12 @@ div.hotfix {
 #package_versions td, #package_versions th{
   font-size : 12px;
 }
-#SETCLOCK select,#SETCLOCK input[type=text] {
+
+#settings td:first-child {
+	width : 400px;
+}
+
+#settings select,#settings input[type=text] {
 	width : 200px;
 }  
 

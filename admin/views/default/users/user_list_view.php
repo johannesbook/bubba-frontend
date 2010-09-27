@@ -57,6 +57,27 @@
 	   <td><label for="password2"><?=t('users-list-edit-password2-label')?></label></td>
 	   <td><input type="password" name="password2"/></td>
 	</tr>
+	<tr>
+	   <td>
+	   	<label for="system_language">
+			<?print t('system_language');?>
+   	   	</label>
+   	   </td>
+	   <td>
+	   	  <select name="lang"> 
+	   	  	
+	   	  	<?
+   	  		foreach($available_languages as $lang) {
+		 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'>";
+		 		print $lang["long_name"];
+		 		print "</option>\n";
+   	  			
+   	  		} 
+	   	  	?>
+		  </select>
+	   
+	   </td>
+	</tr>
 	<?
 	/*
 	<tr>

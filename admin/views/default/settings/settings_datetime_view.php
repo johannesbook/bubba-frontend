@@ -75,3 +75,35 @@
 		</tfoot>
 	</table>
 </form>
+<form id="DEFAULT_LANG" action="<?=FORMPREFIX?>/settings/set_lang" method="post">
+
+	<table class="ui-table-outline">
+		<thead>
+		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('settings-default-lang-header')?></td></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><?=t('settings-default-lang')?></td>
+				<td>
+				<select name="lang">
+	   	  		<?foreach($available_languages as $lang) {
+			 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'";
+			 		print (isset($lang['default']) && $lang['default'])?" selected='SELECTED'":"";
+			 		print ">";
+			 		print $lang["long_name"];
+			 		print "</option>\n";
+	   	  			
+	   	  		}?>
+				</select>
+				</td>
+			</tr>
+
+			<tfoot>
+			<tr>
+				<td colspan="2">
+					<input class='submitbutton' type='submit' name='set_time' value='<?=t('Update')?>'/>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</form>

@@ -14,6 +14,7 @@ $(document).ready(function(){
 			$('input[name=username]',source_edit_dialog).val(account.username);
 			$('#input_username',source_edit_dialog).html(account.username);
 			$('input[name=realname]',source_edit_dialog).val(account.realname);
+			$('#option_'+account.user_config.language,source_edit_dialog).attr("selected","selected");
 			var update_button = $('<button/>', {'class': 'submit',html: $.message("users-edit-single-button-label")}).appendTo(source_edit_dialog);
 			update_button.click(function(){	
 					if( ! edit_validator.form() ) {
@@ -122,6 +123,13 @@ $(document).ready(function(){
 			} else {
 				$('input[name=sideboard]', this).attr( 'checked', false).closest('tr').hide();
 			}
+			if(data.user_config && data.user_config.language) {
+				$('#option_'+data.user_config.language,this).attr("selected","selected");
+			} else {
+				// If this is not set, then prior to language support -> en.
+				$('#option_en',this).attr("selected","selected");
+			}
+
 			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
 				$('#fn-users-edit-dialog-delete-button').hide();
 			} else {
@@ -169,21 +177,25 @@ $(document).ready(function(){
 
 			$.throbber.show();
 			$.post( config.prefix + "/users/edit_user_account/json", $('form', this).serialize(), function(data){
-					if( data.error ) {
-						$.throbber.hide();
-						update_status( false, data.html );
+					if(data.redraw) {
+						window.location.reload();
 					} else {
-						update_status( true, $.message("users-list-edit-success-message") );
-						$.post( 
-							config.prefix + "/users/index/json", 
-							{},
-							function(data) {
-								$.throbber.hide();
-								update_user_table( edit_dialog, data.accounts );
-								edit_dialog.dialog('close');
-							}, 
-							'json' 
-						);
+						if( data.error ) {
+							$.throbber.hide();
+							update_status( false, data.html );
+						} else {
+							update_status( true, $.message("users-list-edit-success-message") );
+							$.post( 
+								config.prefix + "/users/index/json", 
+								{},
+								function(data) {
+									$.throbber.hide();
+									update_user_table( edit_dialog, data.accounts );
+									edit_dialog.dialog('close');
+								}, 
+								'json' 
+							);
+						}
 					}
 				}, 'json' 
 			);

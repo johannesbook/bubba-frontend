@@ -31,7 +31,7 @@ class Users extends Controller{
 		}
 		$this->load->view(THEME.'/main_view',$mdata);
 	}
-
+		
 	private function _get_uinfo() {
 
 		$userinfo=get_userinfo();
@@ -50,6 +50,9 @@ class Users extends Controller{
 				$value["remote"] = $this->session->userdata("AllowRemote");
 				$value["shell"] = trim($value["shell"])==='/bin/bash' && $value["shell_access"];
 				$value['username'] = $uname;
+				if(file_exists("/home/".$uname."/".USER_CONFIG)) {
+					$value['user_config'] = parse_ini_file("/home/".$uname."/".USER_CONFIG);
+				}
 				$result[] = $value;
 			}
 		}
@@ -88,6 +91,21 @@ class Users extends Controller{
 		return $result;
 	}
 
+	private	function update_cfg($parameter,$value,$user= null) {
+		if($user == null || $this->session->userdata("user") == $user) {
+			// update config for logged in user
+			update_bubbacfg($this->session->userdata("user"),$parameter,$value);
+		} else {
+			if($this->Auth_model->policy("config","edit_all")) {
+				update_bubbacfg($user,$parameter,$value);
+			}
+		}
+		if($this->session->userdata('user') == $user) {
+			// update currtent config if use is logged in.
+			$this->session->set_userdata($parameter,$value);
+		}
+	}
+
 	public function check_username($strip="") {
 		if( $strip == 'json' ) {
 			$username=strtolower(trim($this->input->post('input_username')));
@@ -101,48 +119,55 @@ class Users extends Controller{
 
 	public function add_user_account($strip=""){
 		if( $strip == 'json' ) {
-			require_once(APPPATH."/legacy/user_auth.php");
-			$error = false;
-
-			$username=strtolower(trim($this->input->post('username')));
-			$realname=trim($this->input->post('realname'));
-			$password1=trim($this->input->post('password1'));
-			$password2=trim($this->input->post('password2'));
-			$shell=$this->input->post('shell');
-			if(
-				$this->Auth_model->policy("userdata","set:shell_access", $this->session->userdata("user")) 
-				&& $this->Auth_model->policy("userdata","shell_access", $username) 
-				&& $shell 
-			) {
-				$shell = '/bin/bash';
-			} else {
-				$shell = '/usr/sbin/nologin'; 
-			}
-			$group = 'users'; // Static group for em all
-
-			$uinfo=get_userinfo();
-
-			if (
-				isset($userinfo[$username])
-				|| $username == "root"
-				|| $username == "storage"
-				|| $username == "web"
-				|| $username == ""
-				|| strpos($username, ' ') !== false
-				|| !preg_match('/^\w+$/',$password1)
-				|| !preg_match('/^[a-z0-9 _-]+$/',$username)
-				|| strlen($username) > 32
-				|| $username[0] == '-'
-				|| $password1 == ""
-				|| $password1 != $password2
-			) {
-				$error = t('users-add-account-validation-error');
-			} else {
-				if(add_user($realname,$group,$shell,$password1,$username)){
-					$error = t('users-add-account-error');
+			if( $this->Auth_model->policy("userdata","add")) {
+				require_once(APPPATH."/legacy/user_auth.php");
+				$error = false;
+	
+				$username=strtolower(trim($this->input->post('username')));
+				$realname=trim($this->input->post('realname'));
+				$password1=trim($this->input->post('password1'));
+				$password2=trim($this->input->post('password2'));
+				$shell=$this->input->post('shell');
+				$lang=$this->input->post('lang');
+				if(
+					$this->Auth_model->policy("userdata","set:shell_access", $this->session->userdata("user")) 
+					&& $this->Auth_model->policy("userdata","shell_access", $username) 
+					&& $shell 
+				) {
+					$shell = '/bin/bash';
+				} else {
+					$shell = '/usr/sbin/nologin'; 
 				}
+				$group = 'users'; // Static group for em all
+	
+				$uinfo=get_userinfo();
+	
+				if (
+					isset($userinfo[$username])
+					|| $username == "root"
+					|| $username == "storage"
+					|| $username == "web"
+					|| $username == ""
+					|| strpos($username, ' ') !== false
+					|| !preg_match('/^\w+$/',$password1)
+					|| !preg_match('/^[a-z0-9 _-]+$/',$username)
+					|| strlen($username) > 32
+					|| $username[0] == '-'
+					|| $password1 == ""
+					|| $password1 != $password2
+				) {
+					$error = t('users-add-account-validation-error');
+				} else {
+					if(add_user($realname,$group,$shell,$password1,$username)){
+						$error = t('users-add-account-error');
+					}
+				}
+				if(!$error) {
+					$this->update_cfg("language",$lang,$username);
+				}
+			} else {
+				$error = t('users-add-account-validation-error');
 			}
-
 			$data['success'] = !$error;
 			if( $error ) {
 				$data['error'] = true;
@@ -151,6 +176,7 @@ class Users extends Controller{
 			header("Content-type: application/json");
 			echo json_encode( $data );
 			return;
+			
 		}
 	}
 
@@ -166,7 +192,7 @@ class Users extends Controller{
 			$input_shell=$this->input->post('shell');
 			$remote = $this->input->post("remote");
 			$sideboard = $this->input->post("sideboard");
-
+			$lang=$this->input->post('lang');
 
 			if($this->Auth_model->policy("userdata","edit_allusers") || $this->session->userdata("user")==$username) {
 
@@ -214,12 +240,19 @@ class Users extends Controller{
 					&& $this->Auth_model->policy("userdata","set:disable_remote", $this->session->userdata("user")) 
 					&& $this->Auth_model->policy("userdata","disable_remote", $username)
 				) {
-					update_bubbacfg("admin","AllowRemote",$remote ? 'yes': 'no' );
-					$this->session->set_userdata("AllowRemote", $remote);
+					$this->update_cfg("AllowRemote",$remote ? 'yes': 'no',"admin" );
+				}
+				
+				if( !$error ) {
+					$this->update_cfg("language",$lang,$username);
+					if($this->session->userdata("user") == $username) {
+						$data['redraw'] = true;
+					}
+					
 				}
 				/*
 				if( !$error && $username == 'admin' ) {
-					update_bubbacfg("admin","default_sideboard", $sideboard ? "yes" : "no" );
+					$this->update_cfg("default_sideboard", $sideboard ? "yes" : "no","admin" );
 				}
 				*/
 				if( !$error && update_user($realname,$shell?'/bin/bash':'/usr/sbin/nologin',$username)){
@@ -228,7 +261,7 @@ class Users extends Controller{
 			} else {
 				$error = t("user_update_error_auth_fail");
 			}
-
+			
 			$data['success'] = !$error;
 			if( $error ) {
 				$data['error'] = true;
@@ -250,6 +283,7 @@ class Users extends Controller{
 	}	
 
 	public function delete_user_account($strip=""){
+
 		if( $strip == 'json' ) {
 			require_once(APPPATH."/legacy/user_auth.php");
 			$error = false;
@@ -296,7 +330,7 @@ class Users extends Controller{
 
 	public function index($strip="", $data = array()){
 		require_once(APPPATH."/legacy/user_auth.php");
-
+		
 		$update =  $this->session->flashdata('update');
 		if( $update ) {
 			$data['update'] = $update;
@@ -310,10 +344,11 @@ class Users extends Controller{
 			$data["show_adduser"] = $this->Auth_model->policy("userdata","add");	
 			$data["show_allusers"] = $this->Auth_model->policy("userdata","edit_allusers");	
 			$data["allow_delete"] = $this->Auth_model->policy("userdata","delete");	
-			$conf=parse_ini_file("/home/admin/.bubbacfg");
+			$conf=parse_ini_file("/home/admin/".USER_CONFIG);
 
 			$data["default_sideboard"] =  (!isset($conf["default_sideboard"]) || $conf["default_sideboard"]);
-
+			$data["available_languages"] = get_languages();	
+			
 			$this->_renderfull(
 				$this->load->view(THEME.'/users/user_list_view',$data,true),
 				$this->load->view(THEME.'/users/user_list_head_view',$data,true)
@@ -403,10 +438,7 @@ class Users extends Controller{
 
 	function config($strip="",$parameter,$value) {
 		if( $strip == 'json' ) {
-			if($this->Auth_model->policy("config",$parameter)) {
-				update_bubbacfg($this->session->userdata("user"),$parameter,$value);
-				$this->session->set_userdata($parameter,$value);
-			}
+			$this->update_cfg($parameter,$value);
 		}
 	}
 }
