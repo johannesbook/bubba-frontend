@@ -865,6 +865,10 @@ body {
 .ui-widget-wizard, .ui-widget-wizard input, .ui-widget-wizard select {
 
 }
+.ui-widget-wizard td:first-child {
+	width : 275px;
+}
+
 .ui-widget-wizard input[type=text]{
 	vertical-align : baseline;
 }

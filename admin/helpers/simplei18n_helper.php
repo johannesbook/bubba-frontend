@@ -48,10 +48,22 @@ function get_languages() {
 			}
 		}
 	}
+	if( $default_lang = _get_default_lang() ) {
+		$available_languages[$default_lang]['default'] = true; 
+	}
+	
 	ksort($available_langs);
 	return $available_langs;
 }
 
+function _get_default_lang() {
+	$conf = parse_ini_file(ADMINCONFIG);
+	if(isset($conf['default_lang'])) {
+		return $conf['default_lang'];
+	} else {
+		return null;
+	}
+}
 
 
 ?>

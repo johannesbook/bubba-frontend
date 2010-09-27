@@ -82,17 +82,13 @@
      			
 	     		foreach($user_languages as $lang) {
 	     			if($lang['status'] != 'user') continue;
-		 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'";
-		 		print (isset($lang['default']) && $lang['default'])?" selected='SELECTED'":"";
-		 		print ">";
+		 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'>";
 		 		print $lang["long_name"];
 		 		print "</option>\n";
 	     			
 	     		}
      			print "</optgroup>";
      		}?>
-   	  		
-	   	  	?>
 		  </select>
 	   
 	   </td>

@@ -436,10 +436,6 @@ class Settings extends Controller{
 		$data = $this->_datetime($data);
 		
 		$data["available_languages"] = get_languages();
-		$conf = parse_ini_file(ADMINCONFIG);
-		if(isset($conf['default_lang'])) {
-			$data["available_languages"][$conf['default_lang']]['default'] = true; 
-		}
 		
 		if($strip){
 			$this->load->view(THEME.'/settings/settings_datetime_view');		
@@ -625,6 +621,9 @@ class Settings extends Controller{
 
 				$data['wiz_data']['date'] = date("Ymd");
 				$data['wiz_data']['time'] = date("Hi");
+				$data['wiz_data']['available_languages'] = get_languages();
+				
+				
 			}
 
 			// --- LOADING view SETTINGS ----

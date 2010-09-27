@@ -19,9 +19,62 @@ $(document).ready(function(){
 <?
 if($this->session->userdata("run_wizard")): // wizard is running
 ?>
-	<h1 class="wizard-header"><?=t('Step 1/3: Date and time')?></h1>
+	<h1 class="wizard-header"><?=t('Step 1/3: Regional settings')?></h1>
 
 		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
+		<div id="ui-wizard-language">
+			<table>
+				<thead>
+				  <tr><th colspan="4"><h2><?=t('Default system language')?></h2></th></tr>
+			  </thead>
+			  <tbody>
+
+				<tr class="ui-header">
+				   <td>
+				   	<label for="system_language">
+						<?
+						print t('system_language');
+						?>
+			   	   	</label>
+			   	   </td>
+				   <td>
+				   	  <select name="lang"> 
+				   	  	
+				   	  	<?
+			   	  		foreach($wiz_data['available_languages'] as $lang) {
+			   				if($lang['status'] != 'official') {
+			   	  				$user_languages[] = $lang;
+			   	  				continue;
+			   	  			}
+					 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'";
+					 		print (isset($lang['default']) && $lang['default'])?" selected='SELECTED'":"";
+					 		print ">";
+					 		print $lang["long_name"];
+					 		print "</option>\n";
+			   	  						   	  			
+			   	  		}
+			     		if(sizeof($user_languages)) {
+			     			print "<optgroup label='".t("User contributed languages")."'>";
+			     			
+				     		foreach($user_languages as $lang) {
+				     			if($lang['status'] != 'user') continue;
+					 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'";
+					 		print (isset($lang['default']) && $lang['default'])?" selected='SELECTED'":"";
+					 		print ">";
+					 		print $lang["long_name"];
+					 		print "</option>\n";
+				     			
+				     		}
+			     			print "</optgroup>";
+			     		}?>
+					  </select>
+				   
+				   </td>
+				</tr>
+			</tbody>		
+			</table>
+		</div>
+		
 		<div id="ui-wizard-timezone">
 			<table>
 				<thead>
@@ -29,22 +82,25 @@ if($this->session->userdata("run_wizard")): // wizard is running
 			  </thead>
 			  <tbody>
 				<tr class="ui-header"><td><?=t('Current timezone is')?>:</td><td><?=$wiz_data['t_zone']?></td></tr>
-				<tr class="ui-header"><td>Select timezone:</td><td>
-					<select name="wiz_data[user_tz]">
-					<option value=""> --- <?=t('Change timezone')?> --- </option>
-					<?
-					foreach($wiz_data['t_zoneinfo'] as $region => $a_name) {
-						if($region != "other" && $region != "Etc" && $region != "US") {
-							print "\n";
-							foreach($a_name as $name) {
-								print "\t\t<option value=\"$region/$name\">$region - $name</option>\n";
+				<tr class="ui-header">
+					<td>Select timezone:</td><td>
+						<select name="wiz_data[user_tz]">
+						<option value=""> --- <?=t('Change timezone')?> --- </option>
+						<?
+						foreach($wiz_data['t_zoneinfo'] as $region => $a_name) {
+							if($region != "other" && $region != "Etc" && $region != "US") {
+								print "\n";
+								foreach($a_name as $name) {
+									print "\t\t<option value=\"$region/$name\">$region - $name</option>\n";
+								}
 							}
 						}
-					}
-					?>
-					</select>
-					<?=isset($err['timezone'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timezone'])."</div></td></tr>\n":""?>
-				</td></tr>
+						?>
+						</select>
+						<?=isset($err['timezone'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timezone'])."</div></td></tr>\n":""?>
+					</td>
+				</tr>
+				
 			</tbody>		
 			</table>
 		</div>
