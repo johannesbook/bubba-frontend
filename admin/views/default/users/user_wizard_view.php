@@ -1,6 +1,6 @@
 
 	<h1 class="wizard-header">
-		<?=t('Step 2/3: Create users')?>
+		<?=t('wizard-title-users')?>
 	</h1>
 <div id="ui-wizard-adduser">
 	<form id="fn-wizard-add">

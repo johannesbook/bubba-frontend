@@ -19,61 +19,9 @@ $(document).ready(function(){
 <?
 if($this->session->userdata("run_wizard")): // wizard is running
 ?>
-	<h1 class="wizard-header"><?=t('Step 1/3: Regional settings')?></h1>
+	<h1 class="wizard-header"><?=t('wizard-title-datetime')?></h1>
 
 		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
-		<div id="ui-wizard-language">
-			<table>
-				<thead>
-				  <tr><th colspan="4"><h2><?=t('Default system language')?></h2></th></tr>
-			  </thead>
-			  <tbody>
-
-				<tr class="ui-header">
-				   <td>
-				   	<label for="system_language">
-						<?
-						print t('system_language');
-						?>
-			   	   	</label>
-			   	   </td>
-				   <td>
-				   	  <select name="lang"> 
-				   	  	
-				   	  	<?
-			   	  		foreach($wiz_data['available_languages'] as $lang) {
-			   				if($lang['status'] != 'official') {
-			   	  				$user_languages[] = $lang;
-			   	  				continue;
-			   	  			}
-					 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'";
-					 		print (isset($lang['default']) && $lang['default'])?" selected='SELECTED'":"";
-					 		print ">";
-					 		print $lang["long_name"];
-					 		print "</option>\n";
-			   	  						   	  			
-			   	  		}
-			     		if(sizeof($user_languages)) {
-			     			print "<optgroup label='".t("User contributed languages")."'>";
-			     			
-				     		foreach($user_languages as $lang) {
-				     			if($lang['status'] != 'user') continue;
-					 		print "<option id='option_".$lang["short_name"]."' value='".$lang["short_name"]."'";
-					 		print (isset($lang['default']) && $lang['default'])?" selected='SELECTED'":"";
-					 		print ">";
-					 		print $lang["long_name"];
-					 		print "</option>\n";
-				     			
-				     		}
-			     			print "</optgroup>";
-			     		}?>
-					  </select>
-				   
-				   </td>
-				</tr>
-			</tbody>		
-			</table>
-		</div>
 		
 		<div id="ui-wizard-timezone">
 			<table>
@@ -114,9 +62,13 @@ if($this->session->userdata("run_wizard")): // wizard is running
 					<tr class="ui-header"><td>Date:</td><td><input type="text" class="timedate" name="wiz_data[date]" value="<?=$wiz_data['date']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('YYYYMMDD')?>)</span></td></tr>
 					<tr class="ui-header"><td>Time:</td><td><input type="text" class="timedate" name="wiz_data[time]" value="<?=$wiz_data['time']?>" <?=isset($wiz_data['use_ntp'])?"DISABLED":""?> /> <span>(<?=t('HHmm')?>)</span></td></tr>
 					<?=isset($err['timedate'])?"<tr><td></td><td><div class=\"highlight\">".t($err['timedate'])."</div></td></tr>\n":""?>
-					<tr ><td colspan="2"><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' id="wizard_next" name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
 				</tbody>
 			</table>
+			<input class='ui-wizard-prev' type='submit' name='wiz_data[back]' value='<?=t('Back')?>'/>
+			<input class='ui-wizard-exit' type='submit' name='wiz_data[cancel]' value='<?=t('Exit setup')?>'/>
+			<input class='ui-wizard-next' type='submit' name="wiz_data[postingpage]" value='<?=t('Next')?>'/>
+					
+	
 		</div>
 		</form>
 <?

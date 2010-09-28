@@ -439,6 +439,11 @@ $lang['album-users-edit-password1-label'] = 'New password';
 $lang['album-users-edit-password2-label'] = 'Confirm password';
 
 // ------------------ Wizard -------------
+$lang["wizard-title-lang"]="Step 1/4: Select default language";
+$lang["wizard-title-datetime"]="Step 2/4: Set time and date";
+$lang["wizard-title-users"]="Step 3/4:Create users";
+$lang["wizard-title-network"]="Step 4/4: Network setup";
+
 $lang['network-wizard-enjoy'] = 'Enjoy ' . NAME;
 $lang['network-wizard-easyfind'] = "To locate ".NAME." from the internet, use 'Easyfind' location service";
 $lang['network-firewall-allow-wan'] = "Allow external (WAN) access to ".NAME." services";
@@ -467,7 +472,6 @@ $lang["Home partition"]="Home partition";
 $lang["Drag and drop to move images/albums"]="Drag and drop to move images/albums";
 $lang["Excluded folders"]="Excluded folders";
 $lang["to install squeezecenter"]="to install squeezecenter";
-$lang["Step 1/3: Regional settings"]="Step 1/3: Regional settings";
 $lang["system_language"]="Language";
 $lang["HHmm"]="HHmm";
 $lang["Add viewer"]="Add viewer";

@@ -48,8 +48,9 @@ function get_languages() {
 			}
 		}
 	}
+	
 	if( $default_lang = _get_default_lang() ) {
-		$available_languages[$default_lang]['default'] = true; 
+		$available_langs[$default_lang]['default'] = true; 
 	}
 	
 	ksort($available_langs);

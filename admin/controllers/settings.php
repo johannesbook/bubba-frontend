@@ -393,9 +393,10 @@ class Settings extends Controller{
 			$this->datetime( $strip, $data );
 		}
 	}	
-	function set_lang($strip=""){
+	function set_lang($strip="",$lang){
 		//set default system language
-		$lang = $this->input->post("lang");
+		// called directly from reginal settings and indirectly with $lang argument from wizard
+		if(!$lang) $lang = $this->input->post("lang");
 		update_bubbacfg("admin","default_lang",$lang);
 		$data['update'] = array(
 				'success' => true,
@@ -560,7 +561,7 @@ class Settings extends Controller{
 	function index($strip=""){
 
 		if($this->session->userdata("run_wizard")) {
-			$this->wizard();
+			$this->wizard_lang();
 		} else {
 			$this->startwizard();
 		}
@@ -569,16 +570,18 @@ class Settings extends Controller{
 
 	function startwizard($strip="") {
 		if($strip){
-			$this->load->view(THEME.'/settings/settings_wizard_view',"");
+			$this->load->view(THEME.'/settings/settings_wizard_lang_view',"");
 		}else{
-			$this->_renderfull($this->load->view(THEME.'/settings/settings_wizard_view',"",true));
+			$this->_renderfull($this->load->view(THEME.'/settings/settings_wizard_lang_view',"",true));
 		}
 	}		
 
-	function wizard($strip="") {
+	
+	
+	function wizard_lang($strip="") {
 	
 		$data['wiz_data'] = $this->input->post('wiz_data');
-
+		
 		if(isset($data['wiz_data']['start'])) {
 			$this->session->set_userdata("run_wizard", true);
 		}
@@ -586,6 +589,58 @@ class Settings extends Controller{
 		// should not be needed, no back functions from first page.
 		if(isset($data['wiz_data']['back'])) {
 			redirect("/stat/wizard");
+		}
+
+		if(isset($data['wiz_data']['cancel'])) {
+			exit_wizard();
+		}
+		
+		if(!$this->session->userdata("run_wizard")) {
+			redirect("/stat");
+			
+		} else {
+			
+			// ------------ WIZARD START -------------
+			
+			if(isset($data['wiz_data']['postingpage'])) {
+				// --- POSTPROCESSING SETTINGS ----
+				//d_print_r("POSTPROCESS: settings");
+				$this->set_lang("",$data['wiz_data']['lang']);
+				
+			}
+			if(!isset($data['wiz_data']['postingpage'])) {
+				// --- PREPROCESSING SETTINGS ----
+				
+				$data['wiz_data']['available_languages'] = get_languages();
+			}
+
+			// --- LOADING view SETTINGS ----
+			$data["hide_sideboard"] = true;
+			if(isset($error) || (!isset($data['wiz_data']['postingpage'])) ) { // if error or called from "stat" controller load the same view again.
+				if($strip){
+					$this->load->view($this->load->view(THEME.'/settings/settings_wizard_lang_view',$data));
+				}else{
+					$this->_renderfull($this->load->view(THEME.'/settings/settings_wizard_lang_view',$data,true));
+				}
+			} else {
+				redirect("settings/wizard");
+			}
+		}
+	}
+	
+	
+	
+	function wizard($strip="") {
+	
+		$data['wiz_data'] = $this->input->post('wiz_data');
+		print_r($data);
+		if(isset($data['wiz_data']['start'])) {
+			$this->session->set_userdata("run_wizard", true);
+		}
+
+		// should not be needed, no back functions from first page.
+		if(isset($data['wiz_data']['back'])) {
+			redirect("/settings/wizard_lang");
 		}
 
 		if(isset($data['wiz_data']['cancel'])) {

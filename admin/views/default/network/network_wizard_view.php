@@ -45,7 +45,7 @@ $(document).ready(function(){
 	</form>
 		
 	<?else:?>
-	<h1 class="wizard-header"><?=t('Step 3/3: Network setup')?></h1>
+	<h1 class="wizard-header"><?=t('wizard-title-network')?></h1>
 
 	<form action="<?=FORMPREFIX?>/network/wizard" method="post" id="fn-network-wizard-form">
 		<table id="wizard">
