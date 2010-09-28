@@ -287,6 +287,9 @@ $lang['settings_restore_success'] = "System settings was sucessfully restored";
 $lang['settings_datetime_success'] = "Timezone, date and/or time was successfully updated";
 $lang['settings_datetime_error_set_timezone'] = "Failed to set timezone <strong>%s</strong>";
 $lang['settings_datetime_error_set_date_time'] = "Failed to set date <strong>%s</strong> and time <strong>%s</strong>";
+$lang['settings-default-lang'] = "System language";
+$lang['settings-default-lang-header'] = "Default system language";
+$lang['settings_defaultlang_success'] = "Default system language updated";
 
 $lang['settings_software_install_package'] = "Install %s";
 $lang['settings_software_update_software'] = "Software update";
@@ -325,6 +328,7 @@ $lang['users-label-realname'] = 'Real name';
 $lang['users-label-shell-login'] = 'Allow shell login';
 $lang['users-add-button-label'] = 'Add new user';
 $lang['users-edit-account-error'] = 'Failed to edit account for %s (%3$s) shell: %2$s';
+$lang['users-system-default-lang'] = 'System default';
 
 $lang['illegal'] = 'Illegal characters in password';
 $lang["mismatch"]='Passwords do not match';
@@ -353,7 +357,7 @@ $lang["mail_err_usrinvalid"] = "User not allowed to update account";
 $lang["mail_editok"] = "Account updated.";
 $lang["mail_delete_account_ok"] ="Account deleted";
 $lang["mail-server-domaincontroller"] ="Email domain";
-$lan['mail_server_userpwdmissing'] = "Missing mail server password";
+$lang['mail_server_userpwdmissing'] = "Missing mail server password";
 
 //  ----------- Filemanager --------
 

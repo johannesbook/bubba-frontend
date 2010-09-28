@@ -210,7 +210,7 @@ class Menu extends Model {
 				array( 
 					'id' => 'settings-date',
 					'uri' => 'settings/datetime',
-					'alias' => array( 'settings/setdate' ),
+					'alias' => array( 'settings/setdate', 'settings/set_lang'),
 				),
 				array(
 					'id' => 'settings-sysbackup',

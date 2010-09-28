@@ -347,7 +347,10 @@ class Users extends Controller{
 			$conf=parse_ini_file("/home/admin/".USER_CONFIG);
 
 			$data["default_sideboard"] =  (!isset($conf["default_sideboard"]) || $conf["default_sideboard"]);
-			$data["available_languages"] = get_languages();	
+			$data["available_languages"] = get_languages();
+			$data["available_languages"]["default"]["short_name"] = "";
+			$data["available_languages"]["default"]["long_name"] = t("System default");
+			$data["available_languages"]["default"]["status"] = "official";
 			
 			$this->_renderfull(
 				$this->load->view(THEME.'/users/user_list_view',$data,true),

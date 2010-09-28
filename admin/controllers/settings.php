@@ -393,15 +393,25 @@ class Settings extends Controller{
 			$this->datetime( $strip, $data );
 		}
 	}	
-	function set_lang($strip="",$lang){
+	function set_lang($strip="",$lang=null){
 		//set default system language
 		// called directly from reginal settings and indirectly with $lang argument from wizard
 		if(!$lang) $lang = $this->input->post("lang");
-		update_bubbacfg("admin","default_lang",$lang);
-		$data['update'] = array(
-				'success' => true,
-				'message' => t("settings_defaultlang_success"),
-		);
+		if($lang) {
+			update_bubbacfg("admin","default_lang",$lang);
+			$conf = parse_ini_file(ADMINCONFIG);
+			if(!isset($conf['language']) || !$conf['language']) {
+				$this->session->set_userdata('language',$lang);
+				redirect('settings/datetime');
+			}
+			$data['update'] = array(
+					'success' => true,
+					'message' => t("settings_defaultlang_success"),
+			);
+		} else {
+			// no update
+			$data = array();
+		}
 		$this->datetime("", $data );
 	}
 	
@@ -633,7 +643,6 @@ class Settings extends Controller{
 	function wizard($strip="") {
 	
 		$data['wiz_data'] = $this->input->post('wiz_data');
-		print_r($data);
 		if(isset($data['wiz_data']['start'])) {
 			$this->session->set_userdata("run_wizard", true);
 		}
