@@ -271,7 +271,20 @@ class Auth_model extends Model{
 
 	function Login($username, $password){
 		if($this->Auth($username,$password)){
-
+			if(file_exists("/home/$username/.bubbacfg")){
+				$conf=parse_ini_file("/home/$username/.bubbacfg");
+			}
+			if(isset($conf) && is_array($conf)){
+				if(array_key_exists("theme",$conf)){
+					if(file_exists(APPPATH.'views/'.$conf["theme"])){
+						$this->session->set_userdata("theme", $conf["theme"]);
+					}
+					unset($conf["theme"]);
+				}
+				foreach($conf as $key => $value) {
+					$this->session->set_userdata($key, $value);
+				}
+			}
 			return true;
 		}else{
 			/* Do nothing on a failed login */

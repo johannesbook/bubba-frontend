@@ -203,7 +203,7 @@ buttons = [
 		'id': 'fn-filemanager-button-create',
 		'disabled': false,
 		'type': 'ui-icons ui-icon-plusthick',
-		'alt': 'Create Folder',
+		'alt': $.message('filemanager-buttonbar-create'),
 		'callback': function() {
 			hide_status();
 			dialogs["mkdir"].dialog("open");
@@ -213,7 +213,7 @@ buttons = [
 		'id': 'fn-filemanager-button-upload',
 		'disabled': false,
 		'type': 'ui-icons ui-icon-upload',
-		'alt': 'Upload File',
+		'alt': $.message('filemanager-buttonbar-upload'),
 		'callback': function() {
 			hide_status();
 			window.open(config.prefix + "/upload/index" + $("#filetable").filemanager('option','root'), "", "width=500,height=250.menubar=no,toolbar=no,location=no,directories=no,personalbar=no,status=no,dialog=yes");
@@ -223,7 +223,7 @@ buttons = [
 		'id': 'fn-filemanager-button-download',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-download',
-		'alt': 'Download as ZIP',
+		'alt': $.message('filemanager-buttonbar-download'),
 		'callback': function() {
 			hide_status();
 			var files = $("#filetable").filemanager('getSelected');
@@ -244,7 +244,7 @@ buttons = [
 		'id': 'fn-filemanager-button-move',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-move',
-		'alt': 'Move files',
+		'alt': $.message('filemanager-buttonbar-move'),
 		'callback': function() { 
 			hide_status();
 			copymove_callback.apply(this,['move']);
@@ -254,7 +254,7 @@ buttons = [
 		'id': 'fn-filemanager-button-copy',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-copy',
-		'alt': 'Copy files',
+		'alt': $.message('filemanager-buttonbar-move'),
 		'callback': function() {
 			hide_status();
 			copymove_callback.apply(this,['copy']);
@@ -264,7 +264,7 @@ buttons = [
 		'id': 'fn-filemanager-button-rename',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-pencil',
-		'alt': 'Rename',
+		'alt': $.message('filemanager-buttonbar-rename'),
 		'callback': function() {
 			hide_status();
 			dialogs["rename"].dialog("open");
@@ -274,7 +274,7 @@ buttons = [
 		'id': 'fn-filemanager-button-perm',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-unlocked',
-		'alt': 'Change permissions',
+		'alt': $.message('filemanager-buttonbar-perm'),
 		'callback': function() {
 			hide_status();
 			dialogs["perm"].dialog("open");
@@ -284,7 +284,7 @@ buttons = [
 		'id': 'fn-filemanager-button-album',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-album',
-		'alt': 'Add to album',
+		'alt': $.message('filemanager-buttonbar-album'),
 		'callback': function() {
 			hide_status();
 			dialogs["album"].dialog("open");
@@ -294,7 +294,7 @@ buttons = [
 		'id': 'fn-filemanager-button-delete',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-trash ui-filemanager-buttonbar-last',
-		'alt': 'Delete',
+		'alt': $.message('filemanager-buttonbar-delete'),
 		'callback': function() {
 			hide_status();
 			dialogs["delete"].dialog("open");
@@ -388,7 +388,7 @@ $(document).ready(function() {
 
 	$.each( ['mkdir', 'delete', 'perm', 'rename', 'album'], function( index, value ) {
 
-		var options = { "autoOpen": false,
+		var options = { "width" : "400px", "autoOpen": false,
 			"open": function(event,ui) {
 				var current	= $("#fn-filemanager-" + value + "");
 				current.trigger("reset");

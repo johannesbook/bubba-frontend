@@ -10,12 +10,27 @@ messages = {
 	"topnav-login": "Login",
 
 	// Filemanager
+	// Filemangaer buttonbar
+	"filemanager-buttonbar-create" : "Create folder",	
+	"filemanager-buttonbar-upload" : "Upload file",
+	"filemanager-buttonbar-upload" : "Download as zip",
+	"filemanager-buttonbar-move" : 'Move files',
+	"filemanager-buttonbar-copy" : 'Copy files',
+	"filemanager-buttonbar-rename" : 'Rename files',
+	"filemanager-buttonbar-perm" : 'Change permissions',
+	"filemanager-buttonbar-album" : 'Add to album',
+	"filemanager-buttonbar-delete" : 'Delete',
+	"filemanager-label-name" : "Folder name", 
+	
+	// Filemanager dialogs
 	"filemanager-mkdir-dialog-button-label" : "Create folder",	
 	"filemanager-album-dialog-button-label" : "Add to album",	
 	"filemanager-rename-dialog-button-label" : "Rename",	
 	"filemanager-perm-dialog-button-label" : "Change permissions",
 	"filemanager-delete-dialog-button-label" : "Delete",
 	"filemanager-delete-dialog-title" : "Delete files and folders",
+
+	// Filemanager messages
 	"filemanager-delete-fail-message" : "Failed to delete following files and folders: %s",
 	"filemanager-delete-dialog-message" : "Are you certain that you want to delete selected files and folders?",
 	"filemanager-move-notice" : "You are about to move %d items. Go to the desired folder and press <span class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm move",

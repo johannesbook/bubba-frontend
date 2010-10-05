@@ -76,6 +76,29 @@ $lang['title_settings-update']="Softwareupdate";
 $lang['title_settings-logs']="Protokolle";
 $lang['title_photo-albums']="Fotoalben";
 
+/* Sidebar date and time */
+
+$lang['Monday']='Montag';
+$lang['Tuesday']='Dienstag';
+$lang['Wednesday']='Mittwoch';
+$lang['Thursday']='Donnerstag';
+$lang['Friday']='Freitag';
+$lang['Saturday']='Samstag';
+$lang['Sunday']='Sonntag';
+
+$lang['January'] = "Januar";
+$lang['February']='Februar';
+$lang['March']='März';
+$lang['April']='April';
+$lang['May']='Mai';
+$lang['June']='Juni';
+$lang['July']='Juli';
+$lang['August']='August';
+$lang['September']='September';
+$lang['October']='Oktober';
+$lang['November']='November';
+$lang['December']='Dezember';
+
 
 
 /* Generic button labels and texts */
@@ -356,6 +379,8 @@ $lang["mail-server-domaincontroller"] ="E-Mail-Domäne";
 $lan['mail_server_userpwdmissing'] = "Kennwort des E-Mail-Servers fehlt";
 
 //  ----------- Filemanager --------
+
+$lang["Date"] = "Datum";
 
 $lang["filemanager-label-name"] = "Name";
 $lang["filemanager-title-permissions"] = "Berechtigungen";

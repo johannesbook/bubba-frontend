@@ -18,13 +18,18 @@ class Ajax_session extends Controller {
 		echo json_encode($this->json_data);
 	}
 
+	public function get_language() {
+		$this->json_data['language'] = LANGUAGE;
+	}
+	
 	public function get_userinfo() {
 		$this->load->model('auth_model');
 		$this->json_data['logged_in'] = $this->Auth_model->CheckAuth();
 		$this->json_data['username'] = $this->session->userdata('user');
 		$this->json_data['realname'] = $this->session->userdata('realname');
 		$this->json_data['groups'] = $this->session->userdata('groups');
-
+		$this->json_data['language'] = LANGUAGE;
+		
 		if( !is_array($this->json_data['groups']) ) {
 			$this->json_data['groups'] = array();
 		}

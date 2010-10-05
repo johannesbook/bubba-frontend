@@ -5,9 +5,9 @@
 	<thead>
 		<tr class="ui-state-default ui-widget-header">
 			<th></th>
-			<th>Name</th>
-			<th>Date</th>
-			<th>Size</th>
+			<th><?=t("Name")?></th>
+			<th><?=t("Date")?></th>
+			<th><?=t("Size")?></th>
 			<th></th>
 		</tr>
 		<tr class="ui-header">

@@ -10,6 +10,10 @@ messages = {
 	"topnav-login": "Anmelden",
 
 	// Filemanager
+	// Filemangaer buttonbar
+	"filemanager-buttonbar-create" : "Ordner erstellen",	
+	"filemanager-buttonbar-upload" : "Hochladen",
+
 	"filemanager-mkdir-dialog-button-label" : "Ordner erstellen",	
 	"filemanager-album-dialog-button-label" : "Zum Album hinzufügen",	
 	"filemanager-rename-dialog-button-label" : "Umbenennen",	
