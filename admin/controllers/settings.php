@@ -7,12 +7,13 @@ class Settings extends Controller{
 
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
+		
 
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
 		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
-
+	
 	function _renderfull($content,$head=null){
 
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
@@ -394,15 +395,24 @@ class Settings extends Controller{
 		}
 	}	
 	function set_lang($strip="",$lang=null){
-		//set default system language
+		// set default system language
 		// called directly from reginal settings and indirectly with $lang argument from wizard
-		if(!$lang) $lang = $this->input->post("lang");
+		if(!$lang) {
+			$lang = $this->input->post("lang");
+			$wizard_call=false;
+			print "No Wizard";	
+		} else {
+			$wizard_call=true;	
+			print "Wizard";	
+		}
 		if($lang) {
 			update_bubbacfg("admin","default_lang",$lang);
 			$conf = parse_ini_file(ADMINCONFIG);
-			if(!isset($conf['language']) || !$conf['language']) {
+			if(! (isset($conf['language']) && $conf['language'])) {
 				$this->session->set_userdata('language',$lang);
-				redirect('settings/datetime');
+				if(!$wizard_call) {
+					redirect('settings/datetime');
+				}
 			}
 			$data['update'] = array(
 					'success' => true,
@@ -443,7 +453,6 @@ class Settings extends Controller{
 	
 	function datetime($strip="", $data = array()){
 
-	
 		$data = $this->_datetime($data);
 		
 		$data["available_languages"] = get_languages();
@@ -591,7 +600,6 @@ class Settings extends Controller{
 	function wizard_lang($strip="") {
 	
 		$data['wiz_data'] = $this->input->post('wiz_data');
-		
 		if(isset($data['wiz_data']['start'])) {
 			$this->session->set_userdata("run_wizard", true);
 		}
@@ -606,6 +614,7 @@ class Settings extends Controller{
 		}
 		
 		if(!$this->session->userdata("run_wizard")) {
+			
 			redirect("/stat");
 			
 		} else {
@@ -614,13 +623,12 @@ class Settings extends Controller{
 			
 			if(isset($data['wiz_data']['postingpage'])) {
 				// --- POSTPROCESSING SETTINGS ----
-				//d_print_r("POSTPROCESS: settings");
+				//print_r("POSTPROCESS: settings");
 				$this->set_lang("",$data['wiz_data']['lang']);
 				
-			}
-			if(!isset($data['wiz_data']['postingpage'])) {
+			} else {
 				// --- PREPROCESSING SETTINGS ----
-				
+				//print_r("PREPROCESS: settings");
 				$data['wiz_data']['available_languages'] = get_languages();
 			}
 
@@ -636,6 +644,7 @@ class Settings extends Controller{
 				redirect("settings/wizard");
 			}
 		}
+
 	}
 	
 	
@@ -685,7 +694,6 @@ class Settings extends Controller{
 
 				$data['wiz_data']['date'] = date("Ymd");
 				$data['wiz_data']['time'] = date("Hi");
-				$data['wiz_data']['available_languages'] = get_languages();
 				
 				
 			}
@@ -712,10 +720,12 @@ class Settings extends Controller{
 		$update = false;
 		$data['workgroup'] = $current_workgroup = get_workgroup();
 		$data['hostname'] = $current_hostname = php_uname('n');
-		$data['easyfind'] = $current_easyfind = $this->networkmanager->easyfind_get_name();
-		if(!$current_easyfind) {
-			$data['easyfind'] = t("your-easyfind-name");
+		$data['easyfind'] = $current_easyfind = $this->networkmanager->get_easyfind();
+		
+		if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['easyfind']['name'],$host)) {
+			$data['easyfind']['name'] = $host[1];
 		}
+
 
 		if( $this->input->post("samba_update") ) {
 			$update = true;
@@ -762,56 +772,55 @@ class Settings extends Controller{
 			}
 
 		} elseif( $this->input->post("easyfind_update") ) {
-			$update = true;
-
-			# we update easyfind
-
-			$easyfind = $this->input->post('easyfind_name');
+			$easyfind_name = $this->input->post('easyfind_name');
 			$easyfind_enable = $this->input->post('easyfind_enabled');
-			if( $easyfind_enable ) {
-				# easyfind selected to be enabled
-				if( $easyfind != $current_easyfind || $easyfind == "") {
-					# we have new easyfind name
-					if( $this->networkmanager->easyfind_validate( $easyfind ) ) {
-						# name is valid
-						if( $this->networkmanager->easyfind_set_name( $easyfind ) ) {
-							$data["easyfind"] = $easyfind;
+			if( isset($easyfind_name) && ( $easyfind_name  != $current_easyfind['name'] ) && $easyfind_enable) {
+				# we update easyfind
+				$update = true;
+				if( $easyfind_enable ) {
+					# easyfind selected to be enabled
+					$valid = $this->networkmanager->easyfind_validate($easyfind_name);
+					if($valid) {
+						if(isB3()) {
+							$domain = B3_EASYFINDDOMAIN;
 						} else {
-							# we failed to set the valid name
-							$errors["settings_identity_easyfind_error_fail_set_name"]=array($easyfind);
+							$domain = DEFAULT_EASYFINDDOMAIN;
 						}
+						$server_response = $this->networkmanager->easyfind_setname($easyfind_name.".".$domain);
+						if($server_response['error']) {
+							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
+							$errors[$msg] = true;
+						} else {
+							$data['easyfind'] = $server_response['record'];
+							// strip the domain from the name
+							if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['easyfind']['name'],$host)) {
+								$data['easyfind']['name'] = $host[1];
+							}
+						}
+						
 					} else {
-						# name isn't valid
-						$errors["settings_identity_easyfind_error_invalid_name"]=array($easyfind);
-
+						$msg = t("Name '%s' is not valid",$easyfind_name);
+						$data['easyfind']['name'] = $easyfind_name;
+						$errors[$msg] = true;
 					}
-				} elseif( ! $this->networkmanager->easyfind_is_enabled() ) {
-					# we havn't updated name, but easyfind wasn't enabled before
-					if( $this->networkmanager->easyfind_set_enable(true) ) {
-						$data["easyfind"] = $easyfind;
-					} else {
-						# we couldn't enable easyfind
-						$errors["settings_identity_easyfind_error_fail_enable"]=true;
-					}
-				} else {
-					# We just clicked on the update button
-					$update = false;
 				}
-			} elseif( $this->networkmanager->easyfind_is_enabled() ) {
-				# easyfind is enabled, and we want to disable it
-				if( $this->networkmanager->easyfind_set_enable(false) ) {
-					$data["easyfind"] = $current_easyfind;
+			} elseif (!$easyfind_enable) {
+				// disable easyfind
+				$update = true;
+			
+				$server_response = $this->networkmanager->easyfind_setname("");
+				if($data['easyfind']['error'] != "false") {
+					$msg = $this->networkmanager->decode_easyfindmsg($data['easyfind']);
+					$errors[$msg] = true;
 				} else {
-					# we failed to disable easyfind (how???)
-					$errors["settings_identity_easyfind_error_fail_disable"]=true;
+					$data['easyfind']['name'] = "";
 				}
 			} else {
 				# We just clicked on the update button
 				$update = false;
 			}
+			
 		}
-
-		$data['easyfind_enabled'] = $this->networkmanager->easyfind_is_enabled();
 
 		if( $update ) {
 			$data["update"] = create_updatemsg( $errors );

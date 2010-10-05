@@ -21,7 +21,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 ?>
 	<h1 class="wizard-header"><?=t('wizard-title-datetime')?></h1>
 
-		<form action="<?=FORMPREFIX?>/settings/wizard" method="post">
+		<form id="wizard_settings" action="<?=FORMPREFIX?>/settings/wizard" method="post">
 		
 		<div id="ui-wizard-timezone">
 			<table>

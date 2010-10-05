@@ -38,10 +38,11 @@ $(document).ready(function(){
 	<h1 class="wizard-header">
 		<?=t('Setup complete')?>
 	</h1>
-	<form action="<?=FORMPREFIX?>/network/wizard" method="post">
+	<form action="<?=FORMPREFIX?>/network/wizard" method="post" >
 		<table id="wizard">
 			<tr><td colspan="2"><?=t('network-wizard-enjoy')?></td></tr>
 			<tr><td><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Finish setup')?>'/></td></tr>
+		</table>
 	</form>
 		
 	<?else:?>
@@ -55,27 +56,44 @@ $(document).ready(function(){
 			<tbody>
 				<tr class="ui-header">
 					<td><?=t("network-wizard-easyfind")?></td>
-					<td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="slide" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"checked='checked'":""?>/></td>
+					<td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="slide" <?=(isset($wiz_data['easyfind']['name'])&&$wiz_data['easyfind']['name']) || (isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind'])?"checked='checked'":""?>/></td>
 				</tr>
+
+
+				<?
+				/*
 				<tr class="ui-header">
-					<td>
+					<td colspan="2"><?=print_r($wiz_data)?></td>
+				</tr>
+				*/
+				?>
+				<tr class="ui-header">
+					<td colspan="2">
 					<input
 						<?=(isset($wiz_data['err_easyfind'])&&$wiz_data['err_easyfind'])?"class='highlight'":""?>
 						id="easyfind_name" 
 						name="wiz_data[easyfind_name]" 
 						type="text" 
-						value="<?=isset($wiz_data['easyfind_name'])&&$wiz_data['easyfind_name']?$wiz_data['easyfind_name']:t("your-easyfind-name")?>" <?=isset($wiz_data['en_easyfind'])&&$wiz_data['en_easyfind']?"":"disabled='disabled'"?>/>
-					 (http://<span id="mybubba"><?=isset($wiz_data['easyfind_name'])&&$wiz_data['easyfind_name']?$wiz_data['easyfind_name']:t("your-easyfind-name")?></span>.bubbaserver.com)
-					 <?if(isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind']):?>
+						value="<?=(isset($wiz_data['easyfind']['name'])
+									&& $wiz_data['easyfind']['name']) 
+									|| (isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind'])
+								?$wiz_data['easyfind']['name']:t("your-easyfind-name")?>"
+						<?=(isset($wiz_data['easyfind']['name'])
+							&&$wiz_data['easyfind']['name']) 
+							|| (isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind'])
+													?"":" disabled='disabled' "?>/>
+					    (http://<span id="mybubba"><?=isset($wiz_data['easyfind']['name'])
+					    								&&$wiz_data['easyfind']['name']
+					    							?$wiz_data['easyfind']['name']:t("your-easyfind-name")?></span>.<?=$wiz_data['easyfind']['domain']?>)
+					    <?if(isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind']):?>
 					 	<br>
 					 		<?if(isset($wiz_data['err_easyfind_empty']) && $wiz_data['err_easyfind_empty']):?>
 					 			<span class='ui-state-error-text'><?=t("Empty name not allowed")?></span>
 					 		<?else:?>
-					 			<span class='ui-state-error-text'><?=t("Name not available or failed to validate request")?></span>
+					 			<span class='ui-state-error-text'><?=$wiz_data['err_easyfind']?></span>
 					 		<?endif?>
 					 <?endif?>
 					</td>
-					<td></td>
 				</tr>
 			</tbody>
 		</table>

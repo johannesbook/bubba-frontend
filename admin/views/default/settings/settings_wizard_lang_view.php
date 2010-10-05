@@ -21,7 +21,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 ?>
 	<h1 class="wizard-header"><?=t('wizard-title-lang')?></h1>
 
-		<form action="<?=FORMPREFIX?>/settings/wizard_lang" method="post">
+		<form id="wizard_settings" action="<?=FORMPREFIX?>/settings/wizard_lang" method="post">
 		<div id="ui-wizard-language">
 			<table>
 				<thead>

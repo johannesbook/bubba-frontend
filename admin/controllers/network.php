@@ -1030,6 +1030,11 @@ class Network extends Controller{
 		if(isset($data['wiz_data']['back'])) {
 			redirect("/users/wizard");
 		}
+		if(isB3()) {
+			$data['wiz_data']['easyfind']['domain'] = B3_EASYFINDDOMAIN;
+		} else {
+			$data['wiz_data']['easyfind']['domain'] = DEFAULT_EASYFINDDOMAIN;
+		}
 
 		if(isset($data['wiz_data']['cancel'])) {
 			exit_wizard();
@@ -1044,23 +1049,29 @@ class Network extends Controller{
 								
 				// try to set easyfind config.
 				if(isset($data['wiz_data']['en_easyfind'])) {
-					if($this->networkmanager->easyfind_get_name() == $data['wiz_data']['easyfind_name']) {
-						// just enable it.
-						$data['wiz_data']['err_easyfind'] = !$this->networkmanager->easyfind_set_enable();
-					} else {
-						if($this->networkmanager->easyfind_validate($data['wiz_data']['easyfind_name'])) {
-							$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind($data['wiz_data']['en_easyfind'],$data['wiz_data']['easyfind_name']);
-						} else {
-							if(!$data['wiz_data']['easyfind_name']) {
-								$data['wiz_data']['err_easyfind_empty'] = 1;
-							}
-							$data['wiz_data']['err_easyfind'] = 1;
+					if($this->networkmanager->easyfind_validate($data['wiz_data']['easyfind_name'])) {
+						$server_response = $this->networkmanager->easyfind_setname($data['wiz_data']['easyfind_name'].".".$data['wiz_data']['easyfind']['domain']);
+						if($server_response['error']) {
+							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
+							$data['wiz_data']['err_easyfind'] = $msg;
+							$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
 						}
+					} else {
+						if(!$data['wiz_data']['easyfind_name']) {
+							$data['wiz_data']['err_easyfind_empty'] = 1;
+						}
+						$data['wiz_data']['err_easyfind'] = t("Invalid characters in name %s",$data['wiz_data']['easyfind_name']);
+						$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
 					}
 				} else {
-					$data['wiz_data']['err_easyfind'] = !$this->networkmanager->set_easyfind(0,"");
+					$server_response = $this->networkmanager->easyfind_setname("");
+					if($server_response['error']) {
+						$msg = $this->networkmanager->decode_easyfindmsg($server_response);
+						$data['wiz_data']['err_easyfind'] = $msg;
+						$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
+					}
 				}
-				if(!$data['wiz_data']['err_easyfind']) {
+				if(!(isset($data['wiz_data']['err_easyfind']) && $data['wiz_data']['err_easyfind'])) {
 					// setup complete
 					$data['confirmed'] = true;
 				}
@@ -1070,15 +1081,22 @@ class Network extends Controller{
 				}else{
 					$this->_renderfull($this->load->view(THEME.'/network/network_wizard_view',$data,true));
 				}
-				if(!$data['wiz_data']['err_easyfind']) {
+				if(isset($data['wiz_data']['err_easyfind']) && !$data['wiz_data']['err_easyfind']) {
 					exit_wizard();
 				}
 			} else {
 				// --- PREPROCESSING NETWORK  ----
 
-				$data['wiz_data']['easyfind_name'] = $this->networkmanager->easyfind_get_name();
-				$data['wiz_data']['en_easyfind'] = $this->networkmanager->easyfind_is_enabled();
-
+				$data['wiz_data']['easyfind'] = $this->networkmanager->get_easyfind();
+				if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['wiz_data']['easyfind']['name'],$host)) {
+					$data['wiz_data']['easyfind']['name'] = $host[1];
+				}
+				if(isB3()) {
+					$data['wiz_data']['easyfind']['domain'] = B3_EASYFINDDOMAIN;
+				} else {
+					$data['wiz_data']['easyfind']['domain'] = DEFAULT_EASYFINDDOMAIN;
+				}
+				
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/network/network_wizard_view',$data));
 				}else{

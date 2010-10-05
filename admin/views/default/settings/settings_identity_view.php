@@ -58,7 +58,7 @@
 					type="checkbox"
 					class="slide"
 					name="easyfind_enabled"
-					<?if($easyfind_enabled):?>checked="checked"<?endif?>
+					<?if(isset($easyfind['name']) && $easyfind['name'] ):?>checked="checked"<?endif?>
 
 				/>
 			</td>
@@ -68,16 +68,28 @@
 		<tr>
 			
 			<td><?=t('Easyfind name')?>:</td>
+			<?
+			if(isB3()) {
+				$e_domain = B3_EASYFINDDOMAIN;
+			} else {
+				$e_domain = DEFAULT_EASYFINDDOMAIN;
+			}
+			if(isset($easyfind['name']) && $easyfind['name']) {
+				$e_name = $easyfind['name'];
+			} else {
+				$e_name = t("your-easyfind-name");
+			}
+			?>
 			<td>
 				<input
 					id="easyfind_name"
 					type="text"
 					name="easyfind_name"
-					value="<?=$easyfind?>"
-					<?if(!$easyfind_enabled):?>disabled="disabled"<?endif?>
+					value="<?=$e_name?>"
+					<?if(! (isset($easyfind['name']) && $easyfind['name']) ):?>disabled="disabled"<?endif?>
 
 				/>
-				(http://<span id="fn-settings-easyfind-url"><?=$easyfind?></span>.bubbaserver.com)
+				<br>(http://<span id="fn-settings-easyfind-url"><?=$e_name?></span>.<?=$e_domain?>)</br>
 			</td>
 		</tr>
 

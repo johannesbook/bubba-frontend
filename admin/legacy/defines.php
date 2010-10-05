@@ -23,7 +23,9 @@ define("ADMINCONFIG","/home/admin/".USER_CONFIG);
 
 if(isB3()) {
 	define("NAME","B3");
+	define("B3_EASYFINDDOMAIN","myownb3.com");
 } else {
+	define("DEFAULT_EASYFINDDOMAIN","bubbaserver.com");
 	define("NAME","Bubba|2");
 }
 

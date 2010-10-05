@@ -25,41 +25,63 @@ class NetworkManager extends Model {
 		}		
 	}
 
+	public function decode_easyfindmsg($server_response) {
+		
+		define("UPDATE", 0x1);
+		define("SETNAME", 0x2);
+		define("CHECKNAME", 0x4);
+		define("DISABLE", 0x8);
+		define("VALIDATE", 0x10);
+		define("CHANGENAME", 0x11);
+		define("GETRECORD", 0x12);
+
+		switch ($server_response['opcode']) {
+			case UPDATE:
+				$msg = t("Unable to update IP on server.");
+				break;
+
+			case SETNAME:
+				$msg = t("Unable to set nameon server.");
+				break;
+			
+			case CHECKNAME:
+				$msg = t("Name not avaialable");
+				break;
+			
+			case DISABLE:
+				$msg = t("Unable to disable 'easyfind' service");
+				break;
+			
+			case VALIDATE:
+				$msg = t("Name is not valid");
+				break;
+			
+			case CHANGENAME:
+				$msg = t("Unable to change name on server");
+				break;
+			
+			case GETRECORD:
+				$msg = t("Unable to get record data from server.");
+				break;
+		}
+		if(isset($server_response['msg']) && $server_response['msg']) {
+			$msg .= "<br>".t("Server responded: ") . $server_response['msg'];
+		}
+
+		return $msg;		
+	}
+	
 	public function easyfind_validate( $name ) {
 		if(!$name) return 0;
 		return preg_match( '#^[A-Za-z0-9-]+$#', $name );
 	}
 	
-	public function set_easyfind( $enable, $name ) {
-		
-		enable_easyfind( $enable );
-		if($name) {
-			return setname_easyfind($name);
-		} else {
-			return 1;
-		}
+	public function easyfind_setname( $name ) {
+		return set_easyfind($name);
 	}
 
-	public function easyfind_set_name( $name ) {
-		return setname_easyfind($name);
-	}
-
-	public function easyfind_set_enable( $enable = true ) {
-		enable_easyfind( $enable );
-		return 1;
-	}
-
-	public function easyfind_is_enabled() {
-		list($enabled, $ip, $name) = get_easyfind();
-		return $enabled == 'checked';
-	}
-	public function easyfind_get_ip() {
-		list($enabled, $ip, $name) = get_easyfind();
-		return $ip;
-	}
-	public function easyfind_get_name() {
-		list($enabled, $ip, $name) = get_easyfind();
-		return $name;
+	public function get_easyfind() {
+		return get_easyfind();
 	}
 
 	function set_auto($restart_lan = true, $restart_wan = true) {
