@@ -1,9 +1,15 @@
+bubba-frontend (2.1.6) vincent hugo; urgency=low
+
+  * Upload to correct repos
+
+ -- PA Nilsson <pa@excito.com>  Tue, 05 Oct 2010 12:02:31 +0200
+
 bubba-frontend (2.1.5) lucid; urgency=low
 
   * Added support for easyfind-pdns
-  * Added german language files
+  * Added german language files 
 
- -- PA Nilsson <pa@excito.com>  Tue, 05 Oct 2010 12:00:22 +0200
+ -- PA Nilsson <pa@excito.com>  Tue, 05 Oct 2010 12:01:43 +0200
 
 bubba-frontend (2.1.4) vincent hugo; urgency=low
 
