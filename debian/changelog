@@ -1,3 +1,9 @@
+bubba-frontend (2.1.9) vincent hugo; urgency=low
+
+  * Update for easyfind server error message
+
+ -- PA Nilsson <pa@excito.com>  Wed, 06 Oct 2010 12:14:13 +0200
+
 bubba-frontend (2.1.8) vincent hugo; urgency=low
 
   * Link to quickstart includes language setting

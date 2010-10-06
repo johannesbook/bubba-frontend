@@ -27,6 +27,7 @@ class NetworkManager extends Model {
 
 	public function decode_easyfindmsg($server_response) {
 		
+		define("DBCONNECT", 0x0);
 		define("UPDATE", 0x1);
 		define("SETNAME", 0x2);
 		define("CHECKNAME", 0x4);
@@ -36,6 +37,9 @@ class NetworkManager extends Model {
 		define("GETRECORD", 0x12);
 
 		switch ($server_response['opcode']) {
+			case DBCONNECT:
+				$msg = t("Failed to connect to database.");
+				break;
 			case UPDATE:
 				$msg = t("Unable to update IP on server.");
 				break;
