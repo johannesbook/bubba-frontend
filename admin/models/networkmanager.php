@@ -41,23 +41,23 @@ class NetworkManager extends Model {
 				break;
 
 			case SETNAME:
-				$msg = t("Unable to set nameon server.");
+				$msg = t("Unable to set name on server.");
 				break;
 			
 			case CHECKNAME:
-				$msg = t("Name not avaialable");
+				$msg = t("Name not available.");
 				break;
 			
 			case DISABLE:
-				$msg = t("Unable to disable 'easyfind' service");
+				$msg = t("Unable to disable 'easyfind' service.");
 				break;
 			
 			case VALIDATE:
-				$msg = t("Name is not valid");
+				$msg = t("Name is not valid.");
 				break;
 			
 			case CHANGENAME:
-				$msg = t("Unable to change name on server");
+				$msg = t("Unable to change name on server.");
 				break;
 			
 			case GETRECORD:

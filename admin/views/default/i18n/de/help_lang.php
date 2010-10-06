@@ -2,7 +2,7 @@
 
 // External links
 
-$lang["help_box_manual_link"] = NAME."-Bedienungsanleitung";
+$lang["help_box_manual_link"] = "Bedienungsanleitung";
 $lang["help_box_forum_link"] = "Forum";
 $lang["help_box_excito_link"] = "Excito-Website";
 $lang["help-box-further-info"] = "Weitere Ressourcen";

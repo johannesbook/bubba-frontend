@@ -1,3 +1,9 @@
+bubba-frontend (2.1.8) vincent hugo; urgency=low
+
+  * Link to quickstart includes language setting
+
+ -- PA Nilsson <pa@excito.com>  Wed, 06 Oct 2010 09:59:28 +0200
+
 bubba-frontend (2.1.7) vincent hugo; urgency=low
 
   * Updates needed for language support in album
