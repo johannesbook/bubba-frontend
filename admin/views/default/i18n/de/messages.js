@@ -13,10 +13,10 @@ messages = {
 	// Filemangaer buttonbar
 	"filemanager-buttonbar-create" : "Neuen Ordner anlegenr",	
 	"filemanager-buttonbar-upload" : "Dateien zu B3 hochladen",
-	"filemanager-buttonbar-upload" : "Als ZIP herunterladen",
+	"filemanager-buttonbar-download" : "Als ZIP herunterladen",
 	"filemanager-buttonbar-move" : "Dateien verschieben",
 	"filemanager-buttonbar-copy" : "Dateien kopieren",
-	"filemanager-buttonbar-rename" : 'Dateien umbenennen',
+	"filemanager-buttonbar-rename" : "Dateien umbenennen",
 	"filemanager-buttonbar-perm" : "Zugriffsrechte ändern",
 	"filemanager-buttonbar-album" : "Zu Fotoalben hinzufügen",
 	"filemanager-buttonbar-delete" : "Löschen",
