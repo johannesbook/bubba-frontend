@@ -11,11 +11,20 @@ messages = {
 
 	// Filemanager
 	// Filemangaer buttonbar
-	"filemanager-buttonbar-create" : "Ordner erstellen",	
-	"filemanager-buttonbar-upload" : "Hochladen",
+	"filemanager-buttonbar-create" : "Neuen Ordner anlegenr",	
+	"filemanager-buttonbar-upload" : "Dateien zu B3 hochladen",
+	"filemanager-buttonbar-upload" : "Als ZIP herunterladen",
+	"filemanager-buttonbar-move" : "Dateien verschieben",
+	"filemanager-buttonbar-copy" : "Dateien kopieren",
+	"filemanager-buttonbar-rename" : 'Dateien umbenennen',
+	"filemanager-buttonbar-perm" : "Zugriffsrechte ändern",
+	"filemanager-buttonbar-album" : "Zu Fotoalben hinzufügen",
+	"filemanager-buttonbar-delete" : "Löschen",
+	"filemanager-label-name" : "Ordner-Name", 
+
 
 	"filemanager-mkdir-dialog-button-label" : "Ordner erstellen",	
-	"filemanager-album-dialog-button-label" : "Zum Album hinzufügen",	
+	"filemanager-album-dialog-button-label" : "Zu Fotoalben hinzufügen",	
 	"filemanager-rename-dialog-button-label" : "Umbenennen",	
 	"filemanager-perm-dialog-button-label" : "Berechtigungen ändern",
 	"filemanager-delete-dialog-button-label" : "Löschen",

@@ -472,6 +472,15 @@ $lang['wizard-title'] = "Willkommen zu ".NAME;
 $lang['wizard-msg1'] = "Bitte nehmen Sie einen Moment, um die Basisfunktion für ".NAME. "einzurichten";
 $lang['wizard-msg1'] = "Alle eingegebenen Werte können später mithilfe der Verwaltungs-Interface einfach geändert werden.";
 
+$lang['Unable to update IP on server.']="IP wurde vom Server nicht akzeptiert";
+$lang['Unable to set name on server.']="Der Name wurde vom Server nicht akzeptiert";
+$lang['Name not available.']="Der Name ist nicht verfügbar";
+$lang['Unable to disable 'easyfind' service.']="EasyFind Service kann nicht abgeschaltet warden";
+$lang['Name is not valid.']="Der Name ist nicht gültig";
+$lang['Unable to change name on server.']="Der Name konnte auf dem Server nicht geändert warden";
+$lang['Unable to get record data from server.']="Unable to get record data from server.";
+$lang['Server responded:']="Server antwortet:";
+
 // ------ Misc unsorted extracted automatically ----
 $lang["Run every"]="Ausführen, alle";
 $lang["Every other hour"]="Jede andere Stunde";
