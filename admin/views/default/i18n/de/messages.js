@@ -11,7 +11,7 @@ messages = {
 
 	// Filemanager
 	// Filemangaer buttonbar
-	"filemanager-buttonbar-create" : "Neuen Ordner anlegenr",	
+	"filemanager-buttonbar-create" : "Neuen Ordner",	
 	"filemanager-buttonbar-upload" : "Dateien zu B3 hochladen",
 	"filemanager-buttonbar-download" : "Als ZIP herunterladen",
 	"filemanager-buttonbar-move" : "Dateien verschieben",
