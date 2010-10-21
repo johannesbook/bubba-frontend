@@ -4,8 +4,9 @@ bubba-frontend (2.1.11) vincent hugo; urgency=low
   * Fixed php error in easyfind section of wizard. (Closes: #1575) 
   * Removed debug print (Closes: #1577) 
   * Fixed wrong tooltip for english "download" button. (Closes: #1574) 
+  * Added german texts. 
 
- -- PA Nilsson <pa@excito.com>  Thu, 21 Oct 2010 15:47:36 +0200
+ -- PA Nilsson <pa@excito.com>  Thu, 21 Oct 2010 16:32:30 +0200
 
 bubba-frontend (2.1.10) lucid; urgency=low
 
