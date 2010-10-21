@@ -2,8 +2,9 @@ bubba-frontend (2.1.11) vincent hugo; urgency=low
 
   * Fixed wizard to auto start in with language selection. (Closes: #1573)
   * Fixed php error in easyfind section of wizard. (Closes: #1575) 
+  * Removed debug print (Closes: #1577) 
 
- -- PA Nilsson <pa@excito.com>  Thu, 21 Oct 2010 15:32:56 +0200
+ -- PA Nilsson <pa@excito.com>  Thu, 21 Oct 2010 15:41:30 +0200
 
 bubba-frontend (2.1.10) lucid; urgency=low
 

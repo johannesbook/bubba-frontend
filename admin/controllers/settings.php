@@ -400,10 +400,8 @@ class Settings extends Controller{
 		if(!$lang) {
 			$lang = $this->input->post("lang");
 			$wizard_call=false;
-			print "No Wizard";	
 		} else {
 			$wizard_call=true;	
-			print "Wizard";	
 		}
 		if($lang) {
 			update_bubbacfg("admin","default_lang",$lang);
