@@ -13,7 +13,7 @@ messages = {
 	// Filemangaer buttonbar
 	"filemanager-buttonbar-create" : "Create folder",	
 	"filemanager-buttonbar-upload" : "Upload file",
-	"filemanager-buttonbar-upload" : "Download as zip",
+	"filemanager-buttonbar-download" : "Download as zip",
 	"filemanager-buttonbar-move" : 'Move files',
 	"filemanager-buttonbar-copy" : 'Copy files',
 	"filemanager-buttonbar-rename" : 'Rename files',
