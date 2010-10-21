@@ -1064,12 +1064,16 @@ class Network extends Controller{
 						$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
 					}
 				} else {
-					$server_response = $this->networkmanager->easyfind_setname("");
-					if($server_response['error']) {
-						$msg = $this->networkmanager->decode_easyfindmsg($server_response);
-						$data['wiz_data']['err_easyfind'] = $msg;
-						$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
-					}
+					$current_easyfind = $this->networkmanager->get_easyfind();
+					if(isset($current_easyfind['name']) && $current_easyfind['name']) {
+						// disable easyfind
+						$server_response = $this->networkmanager->easyfind_setname("");
+						if($server_response['error']) {
+							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
+							$data['wiz_data']['err_easyfind'] = $msg;
+							$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
+						}
+					} // else do nothing.
 				}
 				if(!(isset($data['wiz_data']['err_easyfind']) && $data['wiz_data']['err_easyfind'])) {
 					// setup complete
