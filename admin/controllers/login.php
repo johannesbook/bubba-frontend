@@ -99,7 +99,7 @@ class Login extends Controller{
 			if( (!isset($conf["run_wizard"]) || $conf["run_wizard"]) && ($this->networkmanager->access_interface() != $this->networkmanager->get_wan_interface()) ) {
 				$data["show_login"] = true;
 				$data["required_user"] = "admin";
-				$data["redirect_uri"] = FORMPREFIX."/settings/wizard";
+				$data["redirect_uri"] = FORMPREFIX."/settings/wizard_lang";
 			}
 		}
 		
