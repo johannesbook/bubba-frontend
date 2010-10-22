@@ -1,3 +1,9 @@
+bubba-frontend (2.1.12) lucid; urgency=low
+
+  * Extended php timeout to 5min for backup/restore settings. (Closes: #1597) 
+
+ -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 13:44:30 +0200
+
 bubba-frontend (2.1.11) vincent hugo; urgency=low
 
   * Fixed wizard to auto start in with language selection. (Closes: #1573)
