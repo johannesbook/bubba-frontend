@@ -7,8 +7,7 @@ $(document).ready(function(){
 			source_edit_dialog.appendTo(source_edit_dialog.parent().parent());
 			source_edit_dialog.find('input[name=input_username]').closest('td').empty().append($("<span/>", {'id': 'input_username'}));
 			source_edit_dialog.find('input[name=realname]').addClass('fn-primary-field');
-			source_edit_dialog.find('input[name=sideboard], input[name=remote], input[name=shell], a#default-lang-link').closest('tr').remove();
-
+			source_edit_dialog.find('input[name=sideboard], input[name=remote], input[name=shell], a#fn-default-lang-link').closest('tr').remove();
 
 			var account = user_accounts[0];
 			$('input[name=username]',source_edit_dialog).val(account.username);

@@ -7,8 +7,9 @@ bubba-frontend (2.1.11) vincent hugo; urgency=low
   * Added german texts. 
   * More texts. (Closes: #1578) 
   * Removed language choice for admin (Closes: #1576,1582) 
+  * Fixed language choice for non-admin users. 
 
- -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 11:54:44 +0200
+ -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 12:04:53 +0200
 
 bubba-frontend (2.1.10) lucid; urgency=low
 
