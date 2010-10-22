@@ -136,10 +136,11 @@ $lang['help_box_users']="
 	<p>Click '<strong>Add new user</strong>' and fill in the information to add a new user.</p>
 	
 	<h3>Edit user</h3>
-	  <p><strong>Username</strong> - Changing the user name (login name) is not possible. To achieve this you will have to delete the user and add a new user with the correct name.</p>
+	  <p><strong>User name</strong> - Changing the user name (login name) is not possible. To achieve this you will have to delete the user and add a new user with the correct name.</p>
 	  <p><strong>Real name</strong> - To add the user's 'Real name'; fill in the information here.</p>
 	  <p><strong>Change password</strong> - The administrator can change every users password. Every user has the possibility to change their own password via their own log in. It is strongly suggested that the <strong>admin password is changed</strong> from the default password.</p>
-
+		<p><strong>Language</strong> - Link to the system language setting.</p>
+		<p><strong>User language</strong> - Change the user interface language for the selected user.</p>
 	  
 ";
 
@@ -356,12 +357,14 @@ $lang['help_box_printing']="
 
 $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 <h3>Setup wizard</h3>
-<p>Use the integrated Setup wizard to make the very first important settings on your ".NAME." such as time and date, add users and choose an Easyfind name. You can run the wizard at any time.</p>
-<p><strong>Step 1 - Date and time</strong></p>
+<p>Use the integrated Setup wizard to make the very first important settings on your ".NAME." such as language, time and date, add users and choose an Easyfind name. You can run the wizard at any time.</p>
+<p><strong>Step 1 - Select default language</strong></p>
+<p>Select the default system language. Click 'Next' to continue.</p>
+<p><strong>Step 2 - Time and date</strong></p>
 <p>Choose time zone and the date and time. You also have the possibility to use an Internet time server. By doing this the date and time is automatically set and updated and you do not have to do any manual time settings. Click 'Next' to continue.</p>
-<p><strong>Step 2 - Create user</strong></p>
+<p><strong>Step 3 - Create user</strong></p>
 <p>Create a user, or as many as you desire. Click 'Add user' after filling in the user information. Click 'Next' to continue.</p>
-<p><strong>Step 3 - Network setup</strong></p>
+<p><strong>Step 4 - Network setup</strong></p>
 <p>Choose if you would like to register for a free Easyfind name. You will reach your ".NAME." by surfing to www.-your easyfind name-.".NAME."server.com. Click 'Next' to continue.</p>
 <p><strong>Setup complete</strong></p>
 <p>Click 'Finish setup' to exit the wizard.</p>
@@ -392,6 +395,8 @@ $lang['help_box_settings_datetime']="
 <p><strong>Set time automatically</strong> - This enables ".NAME." to set the date and time automatically via an internet server.</p>
 <p><strong>Date</strong> - Set the system date manually.</p>
 <p><strong>Time</strong> - Set the system time manually.</p>
+<h3>Default system language</h3>
+<p><strong>System language</strong> - Select language for the user interface.</p>
 ";
  
 $lang['help_box_settings_backuprestore']=$lang['help_box_settings_backup']=$lang['help_box_settings_restore']="
@@ -458,8 +463,9 @@ $lang['help_box_settings_logs']="
 
 $lang['help_box_user_users']=$lang['help_box_user_users_edit']="
 <h3>User information</h3>
-<p>Here every user can change the personal information, such as 'Real name' and password. </p>
+<p>Here, users can change personal information such as 'Real name' and password.</p>
 <p>Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name.</p>
+<p>The user interface language may be changed here.</p>
 ";
 
 $lang['help_box_user_filemanager']="

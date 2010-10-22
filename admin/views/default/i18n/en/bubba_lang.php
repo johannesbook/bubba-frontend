@@ -320,7 +320,7 @@ $lang['users-list-edit-remote-label'] = 'Allow remote access to system settings'
 $lang['users-list-edit-password1-label'] = 'New password';
 $lang['users-list-edit-password2-label'] = 'Confirm password';
 $lang['users-list-edit-sideboard-label'] = 'Display sideboard for non-logged in users';
-$lang['users-list-edit-language'] = 'Language';
+$lang['users-list-edit-language'] = 'User language';
 $lang['users-list-edit-defaultlang'] = $lang['settings-default-lang-header'];
 $lang['users-title'] = 'Users';
 $lang['user-users-title'] = 'User information';
@@ -446,7 +446,7 @@ $lang['album-users-edit-password2-label'] = 'Confirm password';
 // ------------------ Wizard -------------
 $lang["wizard-title-lang"]="Step 1/4: Select default language";
 $lang["wizard-title-datetime"]="Step 2/4: Set time and date";
-$lang["wizard-title-users"]="Step 3/4:Create users";
+$lang["wizard-title-users"]="Step 3/4: Create users";
 $lang["wizard-title-network"]="Step 4/4: Network setup";
 
 $lang['network-wizard-enjoy'] = 'Enjoy ' . NAME;
