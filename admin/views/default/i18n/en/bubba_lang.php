@@ -320,7 +320,8 @@ $lang['users-list-edit-remote-label'] = 'Allow remote access to system settings'
 $lang['users-list-edit-password1-label'] = 'New password';
 $lang['users-list-edit-password2-label'] = 'Confirm password';
 $lang['users-list-edit-sideboard-label'] = 'Display sideboard for non-logged in users';
-
+$lang['users-list-edit-language'] = 'Language';
+$lang['users-list-edit-defaultlang'] = $lang['settings-default-lang-header'];
 $lang['users-title'] = 'Users';
 $lang['user-users-title'] = 'User information';
 $lang['users-label-username'] = 'User name';

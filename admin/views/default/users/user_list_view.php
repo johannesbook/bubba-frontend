@@ -57,10 +57,25 @@
 	   <td><label for="password2"><?=t('users-list-edit-password2-label')?></label></td>
 	   <td><input type="password" name="password2"/></td>
 	</tr>
+
+	<? // only view for admin ?>
+	<tr>
+		<td>
+			<label for="system_language">
+				<?=t('users-list-edit-language');?>
+			</label>
+		</td>
+		<td>
+			<a id="fn-default-lang-link" href="<?=FORMPREFIX?>/settings/datetime"><?=t("users-list-edit-defaultlang")?></a>
+		</td>
+	</tr>
+
+
+	<? // all but admin admin ?>
 	<tr>
 	   <td>
 	   	<label for="system_language">
-			<?print t('system_language');?>
+			<?=t('users-list-edit-language');?>
    	   	</label>
    	   </td>
 	   <td>

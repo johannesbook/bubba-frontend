@@ -6,8 +6,9 @@ bubba-frontend (2.1.11) vincent hugo; urgency=low
   * Fixed wrong tooltip for english "download" button. (Closes: #1574) 
   * Added german texts. 
   * More texts. (Closes: #1578) 
+  * Removed language choice for admin (Closes: #1576,1582) 
 
- -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 08:47:37 +0200
+ -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 11:54:44 +0200
 
 bubba-frontend (2.1.10) lucid; urgency=low
 

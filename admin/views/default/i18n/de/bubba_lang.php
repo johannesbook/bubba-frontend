@@ -343,7 +343,8 @@ $lang['users-list-edit-remote-label'] = 'Remotezugriff auf Systemeinstellungen e
 $lang['users-list-edit-password1-label'] = 'Neues Kennwort';
 $lang['users-list-edit-password2-label'] = 'Kennwort bestätigen';
 $lang['users-list-edit-sideboard-label'] = 'Sideboard für Benutzer anzeigen, die nicht angemeldet sind';
-
+$lang['users-list-edit-language'] = 'Sprache';
+$lang['users-list-edit-defaultlang'] = $lang['settings-default-lang-header'];
 $lang['users-title'] = 'Benutzer';
 $lang['user-users-title'] = 'Benutzerinformation';
 $lang['users-label-username'] = 'Benutzername';

@@ -2,12 +2,12 @@
 $(document).ready(function(){
 
 		if( ! is_priviledged_user ) {
-			var source_edit_dialog = $("#fn-users-list-edit");
 			var edit_validator;
+			var source_edit_dialog = $("#fn-users-list-edit");
 			source_edit_dialog.appendTo(source_edit_dialog.parent().parent());
 			source_edit_dialog.find('input[name=input_username]').closest('td').empty().append($("<span/>", {'id': 'input_username'}));
 			source_edit_dialog.find('input[name=realname]').addClass('fn-primary-field');
-			source_edit_dialog.find('input[name=sideboard], input[name=remote], input[name=shell]').closest('tr').remove();
+			source_edit_dialog.find('input[name=sideboard], input[name=remote], input[name=shell], a#default-lang-link').closest('tr').remove();
 
 
 			var account = user_accounts[0];
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 		var dialog_options = { 
 			"autoOpen": false,
-			"width": 400,
+			"width": 450,
 			"open": function(event,ui) {
 				$(".fn-primary-field", this).focus();
 			}
@@ -118,22 +118,27 @@ $(document).ready(function(){
 				$('input[name=remote]', this).attr( 'checked', true).closest('tr').hide();
 			}												
 
-			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
-				$('input[name=sideboard]', this).attr( 'checked', default_sideboard || false).closest('tr').show();
-			} else {
-				$('input[name=sideboard]', this).attr( 'checked', false).closest('tr').hide();
-			}
-			if(data.user_config && data.user_config.language) {
-				$('#option_'+data.user_config.language,this).attr("selected","selected");
+			if(data.user_config) {
+				if(data.user_config.language != "") {
+					$('#option_'+data.user_config.language,this).attr("selected","selected");
+				} else {
+					$('#option_',this).attr("selected","selected");
+				}
 			} else {
 				// If this is not set, then prior to language support -> en.
 				$('#option_en',this).attr("selected","selected");
 			}
 
 			if( data.username == 'admin' ) { // TODO MOVE THIS AWAY FROM HERE!!!
+				$('input[name=sideboard]', this).attr( 'checked', default_sideboard || false).closest('tr').show();
 				$('#fn-users-edit-dialog-delete-button').hide();
+				$('#fn-default-lang-link',this).closest('tr').show();
+				$('select[name=lang]', this).closest('tr').hide();
 			} else {
+				$('input[name=sideboard]', this).attr( 'checked', false).closest('tr').hide();
 				$('#fn-users-edit-dialog-delete-button').show();
+				$('#fn-default-lang-link',this).closest('tr').hide();
+				$('select[name=lang]', this).closest('tr').show();
 			}			
 			this.dialog("open");
 		};
@@ -257,7 +262,7 @@ $(document).ready(function(){
 		};
 
 		var add_source_edit_dialog = source_edit_dialog.clone().removeAttr('id');
-		add_source_edit_dialog.find('input[name=sideboard], input[name=remote]').closest('tr').remove();
+		add_source_edit_dialog.find('input[name=sideboard], input[name=remote], #fn-default-lang-link').closest('tr').remove();
 		add_source_edit_dialog.find('input[name=input_username]').addClass('fn-primary-field');
 		add_dialog  = $.dialog(
 			add_source_edit_dialog,

@@ -907,7 +907,7 @@ h1.wizard-header {
 	vertical-align : top;
 }
 
-#body_mail select,option,#body_printing select,option {
+#body_mail select,#body_mail option,#body_printing select,#body_printing option {
 	width : 83%;
 }
 
@@ -1803,6 +1803,13 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
 
 #backup table,#backup input,.ui-dialog label {
   font-size: 12px;
+}
+
+.ui-widget table.ui-table-outline tbody td {
+	font-size : 12px;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget option {
+	font-size : 12px;
 }
 
 #submitbutton {
