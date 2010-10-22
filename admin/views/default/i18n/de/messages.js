@@ -85,6 +85,7 @@ messages = {
 	"users-list-edit-dialog-delete-userdata-label":"Benutzerdaten löschen?",
 	"users-list-edit-dialog-delete-message":"Diesen Benutzer aus dem System löschen?",
 	"users-list-delete-success-message":"Benutzer gelöscht",
+	"users-delete-account-error":"Konnte nicht Benutzerkonto löschen",
 	"users-list-add-success-message":"Neuen Benutzer erfolgreich hinzugefügt",
 	"users-list-edit-success-message":"Die Benutzerinformation wurde aktualisiert",
 	

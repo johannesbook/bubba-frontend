@@ -1,8 +1,9 @@
 bubba-frontend (2.1.12) lucid; urgency=low
 
   * Extended php timeout to 5min for backup/restore settings. (Closes: #1597) 
+  * Fixed error message when failure to remove user account. (Closes: 1553)
 
- -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 13:44:30 +0200
+ -- PA Nilsson <pa@excito.com>  Fri, 22 Oct 2010 13:52:13 +0200
 
 bubba-frontend (2.1.11) vincent hugo; urgency=low
 
