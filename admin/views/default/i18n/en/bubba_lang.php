@@ -436,7 +436,7 @@ $lang["stat-reboot-label"] = "Restart";
 $lang["shutdown-shutdown-label"] = "Shutting down ".NAME;
 $lang["shutdown-restart-label"] = "To restart ".NAME.", press the power button";
 $lang["shutdown-restarting"] = "Restarting ".NAME;
-$lang["shutdown-LED-stopflash"] = "When the LED has stopped flashing, ".NAME." is ready to be used again";
+$lang["shutdown-LED-stopflash"] = "When the LED light is solid blue, ".NAME." is ready to be used again";
 
 //  ---------- Album  -----
 $lang['album-users-edit-username-label'] = 'Viewer name';
