@@ -70,7 +70,7 @@ $lang['title_disk-raid']="RAID";
 $lang['title_settings-wizard']="Setup-Assistent";
 $lang['title_settings-identity']="Identität";
 $lang['title_settings-traffic']="Torrent-Einschränkung";
-$lang['title_settings-date']="Datum und Uhrzeit";
+$lang['title_settings-date']="Datum und Sprache";
 $lang['title_settings-sysbackup']="Sicherungseinstellungen";
 $lang['title_settings-update']="Softwareupdate";
 $lang['title_settings-logs']="Protokolle";
@@ -479,6 +479,14 @@ $lang['network-firewall-allow-wan'] = "Externen (WAN) Zugriff auf ".NAME." Diens
 $lang['wizard-title'] = "Willkommen zu ".NAME;
 $lang['wizard-msg1'] = "Bitte nehmen Sie einen Moment, um die Basisfunktion für ".NAME. "einzurichten";
 $lang['wizard-msg1'] = "Alle eingegebenen Werte können später mithilfe der Verwaltungs-Interface einfach geändert werden.";
+
+//  ---------- First page  -----
+
+$lang['For more information'] = "Weitere Informationen";
+$lang['Support'] = "Support";
+$lang['Contact'] = "Kontakt";
+$lang['Manual'] = "Handbuch";
+
 
 $lang['Unable to update IP on server.']="IP wurde vom Server nicht akzeptiert";
 $lang['Unable to set name on server.']="Der Name wurde vom Server nicht akzeptiert";
