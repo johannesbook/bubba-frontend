@@ -376,7 +376,6 @@ $lang['help_box_settings_identity']="
 <p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or Internet connection. Use the same workgroup name on ".NAME." as on your computer.</p>
 <h3>Easyfind options</h3>
 <p><strong>Use 'Easyfind' to locate your ".NAME."</strong> - Using our free service Easyfind you will be able to reach your ".NAME." wherever you are. You will be able to find your ".NAME." wherever you are typing www.-your easyfind name-.".NAME."server.com.</p>
-<p><strong>Easyfind only works with http and https protocols</strong>.</p>
 <p><strong>Easyfind name</strong> - Choose a name for your ".NAME." on the Easyfind network.</p>
 ";
 
