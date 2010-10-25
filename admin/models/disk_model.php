@@ -258,10 +258,10 @@ class Disk_model extends Model {
 
 			switch( $type ) {
 			case 'ntfs':
-				$options = "defaults,ro,umask=0002,uid=$uid,gid=$gid";
+				$options = "defaults,ro,umask=0002,uid=$uid,gid=$gid,nls=utf8";
 				break;
 			case 'vfat':
-				$options = "defaults,umask=0002,uid=$uid,gid=$gid";
+				$options = "defaults,umask=0002,uid=$uid,gid=$gid,iocharset=utf8";
 				break;
 			default:
 				$options = 'defaults';
@@ -311,10 +311,10 @@ class Disk_model extends Model {
 
 				switch( $type ) {
 				case 'ntfs':
-					$options = "defaults,ro,umask=0002,uid=$uid,gid=$gid";
+					$options = "defaults,ro,umask=0002,uid=$uid,gid=$gid,nls=utf8";
 					break;
 				case 'vfat':
-					$options = "defaults,umask=0002,uid=$uid,gid=$gid";
+					$options = "defaults,umask=0002,uid=$uid,gid=$gid,iocharset=utf8";
 					break;
 				default:
 					$options = 'defaults';

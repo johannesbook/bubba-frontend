@@ -1,3 +1,9 @@
+bubba-frontend (2.1.13) vincent hugo; urgency=low
+
+  * Use utf8 charset by default on ntfs and vfat mounts 
+
+ -- Tor Krill <tor@excito.com>  Mon, 25 Oct 2010 16:05:00 +0200
+
 bubba-frontend (2.1.12) lucid; urgency=low
 
   * Extended php timeout to 5min for backup/restore settings. (Closes: #1597) 
