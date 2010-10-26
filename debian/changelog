@@ -1,3 +1,9 @@
+bubba-frontend (2.1.14) lucid; urgency=low
+
+  * Fixed default language to show correct lang when no default is set. (Closes: #1596) 
+
+ -- PA Nilsson <pa@excito.com>  Tue, 26 Oct 2010 14:28:09 +0200
+
 bubba-frontend (2.1.13) vincent hugo; urgency=low
 
   * Use utf8 charset by default on ntfs and vfat mounts 

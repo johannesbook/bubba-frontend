@@ -462,7 +462,7 @@ $lang['help_box_settings_logs']="
 
 $lang['help_box_user_users']=$lang['help_box_user_users_edit']="
 <h3>User information</h3>
-<p>Here, users can change personal information such as 'Real name' and password.</p>
+<p>Here users can change personal information such as 'Real name' and password.</p>
 <p>Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name.</p>
 <p>The user interface language may be changed here.</p>
 ";

@@ -62,7 +62,7 @@ function _get_default_lang() {
 	if(isset($conf['default_lang'])) {
 		return $conf['default_lang'];
 	} else {
-		return null;
+		return LANGUAGE;
 	}
 }
 
