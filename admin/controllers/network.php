@@ -676,7 +676,10 @@ class Network extends Controller{
 		}
 
 		$data["update"]=0;
-		if($strip){
+		if($strip=="json"){
+			header("Content-type: application/json");
+			print json_encode($data);			
+		}elseif($strip){
 			$this->load->view(THEME.'/network/network_lan_view.php',$data);
 		}else{
 			$this->_renderfull($this->load->view(THEME.'/network/network_lan_view.php',$data,true));

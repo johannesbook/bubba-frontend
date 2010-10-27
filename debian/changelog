@@ -1,3 +1,9 @@
+bubba-frontend (2.1.15) vincent hugo; urgency=low
+
+  * Add json return value for lan settings 
+
+ -- Tor Krill <tor@excito.com>  Wed, 27 Oct 2010 12:14:41 +0200
+
 bubba-frontend (2.1.14) lucid; urgency=low
 
   * Fixed default language to show correct lang when no default is set. (Closes: #1596) 
