@@ -367,7 +367,7 @@ $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
 <p><strong>Step 3 - Create user</strong></p>
 <p>Create a user, or as many as you desire. Click 'Add user' after filling in the user information. Click 'Next' to continue.</p>
 <p><strong>Step 4 - Network setup</strong></p>
-<p>Choose if you would like to register for a free Easyfind name. You will reach your ".NAME." by surfing to www.-your easyfind name-.".NAME."server.com. Click 'Next' to continue.</p>
+<p>Choose if you would like to register for a free Easyfind name. You will reach your ".NAME." by surfing to www.-your easyfind name-.myown".NAME.".com. Click 'Next' to continue.</p>
 <p><strong>Setup complete</strong></p>
 <p>Click 'Finish setup' to exit the wizard.</p>
 ";
@@ -377,7 +377,7 @@ $lang['help_box_settings_identity']="
 <p><strong>Hostname</strong> - is the unique name by which a network-attached device is known on a network.</p>
 <p><strong>Workgroup</strong> - Devices in the same Workgroup may allow each other access to their files, printers, or Internet connection. Use the same workgroup name on ".NAME." as on your computer.</p>
 <h3>Easyfind options</h3>
-<p><strong>Use 'Easyfind' to locate your ".NAME."</strong> - Using our free service Easyfind you will be able to reach your ".NAME." wherever you are. You will be able to find your ".NAME." wherever you are typing www.-your easyfind name-.".NAME."server.com.</p>
+<p><strong>Use 'Easyfind' to locate your ".NAME."</strong> - Using our free service Easyfind you will be able to reach your ".NAME." wherever you are. You will be able to find your ".NAME." wherever you are typing www.-your easyfind name-.myown".NAME.".com.</p>
 <p><strong>Easyfind name</strong> - Choose a name for your ".NAME." on the Easyfind network.</p>
 ";
 
@@ -509,11 +509,11 @@ $lang['help_box_user_mail_editfac']="
 $lang['help_box_user_downloads']="
 <h3>Downloads</h3>
 <p>Use the ".NAME." download manager to download files directly to your ".NAME.", wherever you are. The only thing you need is a internet connection and a web browser.</p>
-<p>Surf to www.-your easyfind name-.".NAME."server.com. Of course if you already are in your home network browse to http://".NAME."/admin.</p>
+<p>Surf to www.-your easyfind name-.myown".NAME.".com. Of course if you already are in your home network browse to http://".NAME."/admin.</p>
 <p>Large, time consuming downloads are handled by ".NAME." while your computer is turned off. When you initiate your first download a catalogue is created in your /home/[username]/ folder: /home/[username]/downloads. </p>
 <h3>How to download</h3>
 <ol>
-  <li>At home browse to http://".NAME."/admin or away from home www.-your easyfind name-.".NAME."server.com/admin.</li>
+  <li>At home browse to http://".NAME."/admin or away from home www.-your easyfind name-.myown".NAME.".com/admin.</li>
   <li>Log in as your standard user. </li>
   <li>Click 'Downloads'.</li>
   <li>To initiate a download you need to copy* the URL to the file (or torrent) you desire to download and paste it into the 'Location' field on your ".NAME." and click 'Add'. </li>
@@ -564,7 +564,7 @@ $lang['help_box_user_album_albums']="
   <li>To delete a picture, select the picture and press 'Remove from album'.</li>
 </ul>
 
-<p>Your photo albums will be visible by browsing to <a href='http://".NAME."/album' target='_blank'>http://".NAME."/album</a> (<a href='http://".NAME.".local/album' target='_blank'>http://".NAME.".local/album</a> if using Mac) from inside your home network, or by browsing to www.-your easyfind name-.".NAME."server.com from outside your network.</p>
+<p>Your photo albums will be visible by browsing to <a href='http://".NAME."/album' target='_blank'>http://".NAME."/album</a> (<a href='http://".NAME.".local/album' target='_blank'>http://".NAME.".local/album</a> if using Mac) from inside your home network, or by browsing to www.-your easyfind name-.myown".NAME.".com from outside your network.</p>
 ";
 
 $lang['help_box_user_album_users']="
