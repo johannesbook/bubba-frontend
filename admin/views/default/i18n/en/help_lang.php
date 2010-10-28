@@ -139,7 +139,6 @@ $lang['help_box_users']="
 	  <p><strong>User name</strong> - Changing the user name (login name) is not possible. To achieve this you will have to delete the user and add a new user with the correct name.</p>
 	  <p><strong>Real name</strong> - To add the user's 'Real name'; fill in the information here.</p>
 	  <p><strong>Change password</strong> - The administrator can change every users password. Every user has the possibility to change their own password via their own log in. It is strongly suggested that the <strong>admin password is changed</strong> from the default password.</p>
-		<p><strong>Language</strong> - Link to the system language setting.</p>
 		<p><strong>User language</strong> - Change the user interface language for the selected user.</p>
 	  
 ";
