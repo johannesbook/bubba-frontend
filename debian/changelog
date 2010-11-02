@@ -1,3 +1,9 @@
+bubba-frontend (2.1.16) vincent hugo; urgency=low
+
+  * Modified help texts. 
+
+ -- PA Nilsson <pa@excito.com>  Tue, 02 Nov 2010 09:43:14 +0100
+
 bubba-frontend (2.1.15) vincent hugo; urgency=low
 
   * Add json return value for lan settings 
