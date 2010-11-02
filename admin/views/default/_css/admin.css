@@ -1890,12 +1890,23 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 	background: transparent !important;
 
 }
-td.notification-type {
+#settings td.notification-type {
 	width: 50px;
+	padding-left: 150px;
 }
-td.notification-ack {
+#settings td.notification-ack {
 	width: 200px;
 }
+
+#settings div.notification-desc img {
+	margin-right: 10px;
+	vertical-align : middle;
+}
+
+#settings div.notification-desc {
+	margin-bottom : 10px;
+}
+
 .dataTables_empty {
 	display: none;
 }

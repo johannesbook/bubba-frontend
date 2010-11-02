@@ -1,3 +1,9 @@
+bubba-frontend (2.1.17) vincent hugo; urgency=low
+
+  * Fixed formatting of update notifications.
+
+ -- PA Nilsson <pa@excito.com>  Tue, 02 Nov 2010 11:41:16 +0100
+
 bubba-frontend (2.1.16) vincent hugo; urgency=low
 
   * Modified help texts. 

@@ -134,7 +134,7 @@ $(document).ready(function(){
                                   )
                                 );
                                 if( cur[j].Data ) {
-                                  pre = $('<pre/>').addClass('').text( cur[j].Data ).hide();
+                                  pre = $('<span/>').addClass('').text( cur[j].Data ).hide();
                                   img = $('<img/>').attr({src:"<?=FORMPREFIX.'/views/'.THEME?>/_img/plus16.png", alt:"toggle"});
                                   outer = $('<div/>').addClass('notification-data-outer');
                                   inner = $('<div/>');
