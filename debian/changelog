@@ -1,3 +1,10 @@
+bubba-frontend (2.1.18) vincent hugo; urgency=low
+
+  * Try removing failed and detached raid disks when pressing remove
+    in UI. 
+
+ -- Tor Krill <tor@excito.com>  Wed, 03 Nov 2010 14:21:55 +0100
+
 bubba-frontend (2.1.17) vincent hugo; urgency=low
 
   * Fixed formatting of update notifications.
@@ -13,8 +20,9 @@ bubba-frontend (2.1.16) vincent hugo; urgency=low
 bubba-frontend (2.1.15) vincent hugo; urgency=low
 
   * Add json return value for lan settings 
+  * Fix help texts 
 
- -- Tor Krill <tor@excito.com>  Wed, 27 Oct 2010 12:14:41 +0200
+ -- Tor Krill <tor@excito.com>  Thu, 28 Oct 2010 15:01:32 +0200
 
 bubba-frontend (2.1.14) lucid; urgency=low
 

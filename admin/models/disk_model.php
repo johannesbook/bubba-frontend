@@ -570,6 +570,14 @@ class Disk_model extends Model {
 			$ret = $this->_system( $this->manager, 'md', 'remove', $md, $disk );
 		}
 		if( ! $ret['status'] ) {
+			# Try removing all failed devices
+			$ret = $this->_system( $this->manager, 'md', 'remove', $md, "failed");
+		}
+		if( ! $ret['status'] ) {
+			# Try removing all detached devices
+			$ret = $this->_system( $this->manager, 'md', 'remove', $md, "detached");
+		}
+		if( ! $ret['status'] ) {
 			# try restarting whole array
 			$this->_raw_system( 'fuser', '-k', $md );
 			$this->_raw_system( 'umount', $md );
