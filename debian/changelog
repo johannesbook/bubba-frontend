@@ -1,3 +1,9 @@
+bubba-frontend (2.1.19) vincent hugo; urgency=low
+
+  * Fixed typo in filemanager tooltips. RT# 3558 
+
+ -- Tor Krill <tor@excito.com>  Fri, 26 Nov 2010 10:51:02 +0100
+
 bubba-frontend (2.1.18) vincent hugo; urgency=low
 
   * Try removing failed and detached raid disks when pressing remove

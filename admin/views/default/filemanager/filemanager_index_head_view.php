@@ -254,7 +254,7 @@ buttons = [
 		'id': 'fn-filemanager-button-copy',
 		'disabled': true,
 		'type': 'ui-icons ui-icon-copy',
-		'alt': $.message('filemanager-buttonbar-move'),
+		'alt': $.message('filemanager-buttonbar-copy'),
 		'callback': function() {
 			hide_status();
 			copymove_callback.apply(this,['copy']);
