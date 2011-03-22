@@ -258,8 +258,12 @@ class Disk extends Controller{
 					}
 
 					foreach( $lv['devices'] as $device ) {
-						preg_match( '#/dev/sd\w\d+#', $device, $matches );
-						$cid_devices[$matches[0]] = $c_cid;
+						preg_match( '#/dev/sd\w\d*#', $device, $matches );
+						if( $matches ) {
+							$cid_devices[$matches[0]] = $c_cid;
+						} else {
+							$cid_devices[$device] = $c_cid;
+						}
 					}
 				}
 		}

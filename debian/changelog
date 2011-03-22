@@ -1,3 +1,10 @@
+bubba-frontend (2.1.20) vincent hugo; urgency=low
+
+  * Handle errors if device doesn't contain partition information, i.e when
+    device is /dev/sdb and not /dev/sdb1 etc.. (Closes: 1615)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 22 Mar 2011 15:27:56 +0100
+
 bubba-frontend (2.1.19) vincent hugo; urgency=low
 
   * Fixed typo in filemanager tooltips. RT# 3558 
