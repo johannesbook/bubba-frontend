@@ -1,3 +1,11 @@
+bubba-frontend (2.1.21) vincent hugo; urgency=low
+
+  * Adding bubba-kernel to the list of installed packages (Closes: 1616) 
+  * Adding bubba package to list of installed packages, chaning session
+    userdata to use that version isntead of bubba-frontend version.
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 23 Mar 2011 12:23:23 +0100
+
 bubba-frontend (2.1.20) vincent hugo; urgency=low
 
   * Handle errors if device doesn't contain partition information, i.e when
