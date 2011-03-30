@@ -329,9 +329,9 @@ class NetworkManager extends Model {
 					sleep(1);
 	        start_service("mt-daapd");
 	    }  
-	    if(query_service("mediatomb")){
-		    stop_service("mediatomb");
-		    start_service("mediatomb");
+	    if(query_service("minidlna")){
+		    stop_service("minidlna");
+		    start_service("minidlna");
 	    }
 	}
 }

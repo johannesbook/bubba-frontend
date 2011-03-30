@@ -517,7 +517,7 @@ class Settings extends Controller{
 			'faillog' => 'faillog',
 			'kern.log' => 'kern.log',
 			'mail.log' => 'mail.log',
-			'mediatomb.log' => 'mediatomb.log',
+			'minidlna.log' => 'minidlna.log',
 			'user.log' => 'user.log',
 			'horde' => array(
 				'horde' => 'horde/horde3.log',

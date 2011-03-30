@@ -34,7 +34,7 @@ class Services extends Controller{
 		$daap_status=query_service("mt-daapd");
 		$daap_enabled=$this->input->post('daap_enabled');
 
-		$upnp_status=query_service("mediatomb");
+		$upnp_status=query_service("minidlna");
 		$upnp_enabled=$this->input->post('upnp_enabled');   
    
 		$squeezecenter_packagename='squeezecenter';
@@ -110,12 +110,12 @@ class Services extends Controller{
 			}           
 
 			if($upnp_status && !$upnp_enabled){
-				remove_service("mediatomb");
-				stop_service("mediatomb");
+				remove_service("minidlna");
+				stop_service("minidlna");
 				$upnp_status=0;
 			}else if(!$upnp_status && $upnp_enabled){
-				add_service("mediatomb", 26);
-				start_service("mediatomb");
+				add_service("minidlna", 26);
+				start_service("minidlna");
 				$upnp_status=1;        
 			}           
 			if($squeezecenter_status && !$squeezecenter_enabled){
