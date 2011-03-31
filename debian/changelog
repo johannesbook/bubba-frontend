@@ -1,3 +1,9 @@
+bubba-frontend (2.1.23) vincent hugo; urgency=low
+
+  * Fix some BUBBA|2 → B3 strings 
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 31 Mar 2011 11:34:23 +0200
+
 bubba-frontend (2.1.22) vincent hugo; urgency=low
 
   * Switching mediatomb to minidlna (Closes: 1638)
