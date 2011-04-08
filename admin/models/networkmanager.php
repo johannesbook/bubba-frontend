@@ -399,6 +399,8 @@ class NetworkManager extends Model {
 		_system( FIREWALL, 'set_lanif', $if );
 		_system( BACKEND, 'set_interface', $if );
 
+        $this->igd_set_interface($if);
+
 		// TODO: Refactor into separate function
 		$dnsmasqcfg=get_dnsmasq_settings();
 		$dnsmasqcfg["interface"]=$if;
@@ -830,7 +832,16 @@ class NetworkManager extends Model {
 		$data = query_network_manager( $cfg );
 		return $this->wanif = $data['wanif'];
 	}
+    function igd_set_interface( $if ) {
+        $conf = parse_ini_file("/etc/bubba-igd.conf");
+        $oldif = $conf["interface"];
+        $conf["interface"] = $if;
+        if( $oldif != $if ) {
+            write_ini_file("/etc/bubba-igd.conf", $conf);
+            invoke_rc_d("bubba-igd", "restart");
+        }
 
+    }
     function igd_easyfind_is_enabled() {
         $conf = parse_ini_file("/etc/bubba-igd.conf");
         return array_key_exists("enable-easyfind", $conf);
@@ -843,7 +854,6 @@ class NetworkManager extends Model {
 
     function enable_igd_easyfind( $enabled = true ) {
         $conf = parse_ini_file("/etc/bubba-igd.conf");
-        $update = true;
         if( $enabled ) {
             if( !array_key_exists("enabled-easyfind", $conf ) ) {
                 $conf["enable-easyfind"] = true;
