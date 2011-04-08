@@ -843,24 +843,37 @@ class NetworkManager extends Model {
 
     function enable_igd_easyfind( $enabled = true ) {
         $conf = parse_ini_file("/etc/bubba-igd.conf");
+        $update = true;
         if( $enabled ) {
-            $conf["enable-easyfind"] = true;
+            if( !array_key_exists("enabled-easyfind", $conf ) ) {
+                $conf["enable-easyfind"] = true;
+                write_ini_file("/etc/bubba-igd.conf", $conf);
+                invoke_rc_d("bubba-igd", "restart");
+            }
         } else {
-            delete $conf["enable-easyfind"];
+            if( array_key_exists("enabled-easyfind", $conf ) ) {
+                delete $conf["enable-easyfind"];
+                write_ini_file("/etc/bubba-igd.conf", $conf);
+                invoke_rc_d("bubba-igd", "restart");
+            }
         }
-        write_ini_file("/etc/bubba-igd.conf", $conf);
-        invoke_rc_d("bubba-igd", "restart");
     }
 
     function enable_igd_port_forward( $enabled = true ) {
         $conf = parse_ini_file("/etc/bubba-igd.conf");
         if( $enabled ) {
-            $conf["enable-port-forward"] = true;
+            if( !array_key_exists("enabled-port-forward", $conf ) ) {
+                $conf["enable-port-forward"] = true;
+                write_ini_file("/etc/bubba-igd.conf", $conf);
+                invoke_rc_d("bubba-igd", "restart");
+            }
         } else {
-            delete $conf["enable-port-forward"];
+            if( array_key_exists("enabled-port-forward", $conf ) ) {
+                delete $conf["enable-port-forward"];
+                write_ini_file("/etc/bubba-igd.conf", $conf);
+                invoke_rc_d("bubba-igd", "restart");
+            }
         }
-        write_ini_file("/etc/bubba-igd.conf", $conf);
-        invoke_rc_d("bubba-igd", "restart");
     }
 
 	function access_interface() {

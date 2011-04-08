@@ -1054,6 +1054,8 @@ class Network extends Controller{
 				if(isset($data['wiz_data']['en_easyfind'])) {
 					if($this->networkmanager->easyfind_validate($data['wiz_data']['easyfind_name'])) {
 						$server_response = $this->networkmanager->easyfind_setname($data['wiz_data']['easyfind_name'].".".$data['wiz_data']['easyfind']['domain']);
+                        $this->networkmanager->enable_igd_easyfind(true);
+
 						if($server_response['error']) {
 							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
 							$data['wiz_data']['err_easyfind'] = $msg;
@@ -1071,6 +1073,7 @@ class Network extends Controller{
 					if(isset($current_easyfind['name']) && $current_easyfind['name']) {
 						// disable easyfind
 						$server_response = $this->networkmanager->easyfind_setname("");
+                        $this->networkmanager->enable_igd_easyfind(false);
 						if($server_response['error']) {
 							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
 							$data['wiz_data']['err_easyfind'] = $msg;
