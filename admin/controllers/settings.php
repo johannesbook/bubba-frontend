@@ -785,6 +785,7 @@ class Settings extends Controller{
 							$domain = DEFAULT_EASYFINDDOMAIN;
 						}
 						$server_response = $this->networkmanager->easyfind_setname($easyfind_name.".".$domain);
+                        $this->networkmanager->enable_igd_easyfind(true);
 						if($server_response['error']) {
 							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
 							$errors[$msg] = true;
@@ -807,6 +808,7 @@ class Settings extends Controller{
 				$update = true;
 			
 				$server_response = $this->networkmanager->easyfind_setname("");
+                $this->networkmanager->enable_igd_easyfind(false);
 				if($data['easyfind']['error'] != "false") {
 					$msg = $this->networkmanager->decode_easyfindmsg($data['easyfind']);
 					$errors[$msg] = true;

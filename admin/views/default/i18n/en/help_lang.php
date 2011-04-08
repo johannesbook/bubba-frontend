@@ -160,6 +160,7 @@ $lang['help_box_services']="
 	<h3>Other</h3>
 	<p><strong>Printing</strong> - ".NAME."  print server.</p>
 	<p><strong>Up and downloads</strong> - possibility to up / download files on ".NAME.", i.e. filemanager and torrents.</p>
+    <p><strong>Remote access through other router</strong> - tries to open web ports (80 and 443) through your router, to allow for remote access.</p>
 ";
 
 $lang['help_box_mail']=$lang['help_box_mail_index']="

@@ -9,6 +9,7 @@ class NetworkManager extends Model {
 	public function __construct() {
 		parent::Model();
 		$this->load->helper('bubba_socket');
+		$this->load->helper('ini');
 		$this->ifcfg = array();
 	}
 
@@ -829,6 +830,38 @@ class NetworkManager extends Model {
 		$data = query_network_manager( $cfg );
 		return $this->wanif = $data['wanif'];
 	}
+
+    function igd_easyfind_is_enabled() {
+        $conf = parse_ini_file("/etc/bubba-igd.conf");
+        return array_key_exists("enable-easyfind", $conf);
+    }
+
+    function igd_port_forward_is_enabled() {
+        $conf = parse_ini_file("/etc/bubba-igd.conf");
+        return array_key_exists("enable-port-forward", $conf);
+    }
+
+    function enable_igd_easyfind( $enabled = true ) {
+        $conf = parse_ini_file("/etc/bubba-igd.conf");
+        if( $enabled ) {
+            $conf["enable-easyfind"] = true;
+        } else {
+            delete $conf["enable-easyfind"];
+        }
+        write_ini_file("/etc/bubba-igd.conf", $conf);
+        invoke_rc_d("bubba-igd", "restart");
+    }
+
+    function enable_igd_port_forward( $enabled = true ) {
+        $conf = parse_ini_file("/etc/bubba-igd.conf");
+        if( $enabled ) {
+            $conf["enable-port-forward"] = true;
+        } else {
+            delete $conf["enable-port-forward"];
+        }
+        write_ini_file("/etc/bubba-igd.conf", $conf);
+        invoke_rc_d("bubba-igd", "restart");
+    }
 
 	function access_interface() {
 		$wanif = $this->get_wan_interface();

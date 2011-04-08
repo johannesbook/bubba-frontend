@@ -22,6 +22,7 @@ class Services extends Controller{
 	}	
 	
 	function index($strip=""){
+        $this->load->model('networkmanager');
 	
 		$ftp_enabled = $this->input->post('ftp_enabled');
 		$anon_ftp_enabled = $this->input->post('anon_ftp');
@@ -47,6 +48,9 @@ class Services extends Controller{
 
 		$download_status=query_service("filetransferdaemon");
 		$download_enabled=$this->input->post('download_enabled');
+
+        $igd_status=$this->networkmanager->igd_port_forward_is_enabled();
+		$igd_enabled=$this->input->post('igd_enabled');
 
 		$imap_status=query_service("dovecot");
 		$imap_enabled=$this->input->post('imap_enabled');
@@ -148,6 +152,14 @@ class Services extends Controller{
 				$download_status=1;        
 			}
 
+            if($igd_status && !$igd_enabled){
+                $this->networkmanager->enable_igd_port_forward(false);
+				$igd_status=0;
+			}else if(!$igd_status && $igd_enabled){
+                $this->networkmanager->enable_igd_port_forward(true);
+				$igd_status=1;        
+			}
+
 			if($fetchmail_status && !$fetchmail_enabled){
 				remove_service("fetchmail");
 				stop_service("fetchmail");
@@ -200,6 +212,7 @@ class Services extends Controller{
 		$data["fetchmail_status"]=$fetchmail_status;
 		$data["print_status"]=$print_status;
 		$data["download_status"]=$download_status;
+		$data["igd_status"]=$igd_status;
 		$data["samba_status"]=$samba_status;
 
 		if($strip){
