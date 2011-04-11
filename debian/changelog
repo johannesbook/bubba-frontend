@@ -1,3 +1,9 @@
+bubba-frontend (2.1.26) vincent hugo; urgency=low
+
+  * config file parsing 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 11 Apr 2011 14:15:05 +0200
+
 bubba-frontend (2.1.25) vincent hugo; urgency=low
 
   * Accidentally used delete instead of unset 
