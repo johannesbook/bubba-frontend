@@ -852,7 +852,7 @@ class NetworkManager extends Model {
         } else {
             $data = preg_replace("#^$key.*\$#m", "", $data );
         }
-        file_put_contents( $file, $data );
+        file_put_contents( $this->_igd_conf, $data );
     }
 
     function igd_set_interface( $if ) {
