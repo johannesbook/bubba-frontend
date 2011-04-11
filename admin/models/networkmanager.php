@@ -836,17 +836,17 @@ class NetworkManager extends Model {
     private $_igd_conf = "/etc/bubba-igd.conf";
 
     private function _igd_ini_get($key) {
-        $data = file_get_contents($_igd_conf);
+        $data = file_get_contents($this->_igd_conf);
         preg_match("#^$key\\s*=\\s*(.*?)\s*\$#m", $data, $matches);
     }
 
     private function _igd_ini_exists($key) {
-        $data = file_get_contents($_igd_conf);
+        $data = file_get_contents($this->_igd_conf);
         return preg_match("#^$key#m", $data);
     }
 
     private function _igd_ini_update($key, $value) {
-        $data = file_get_contents($_igd_conf);
+        $data = file_get_contents($this->_igd_conf);
         if( $value ) {
             $data = preg_replace("#^$key.*\$#m", "key=$value", $data );
         } else {
