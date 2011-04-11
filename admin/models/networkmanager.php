@@ -862,7 +862,7 @@ class NetworkManager extends Model {
             }
         } else {
             if( array_key_exists("enabled-easyfind", $conf ) ) {
-                delete $conf["enable-easyfind"];
+                unset($conf["enable-easyfind"]);
                 write_ini_file("/etc/bubba-igd.conf", $conf);
                 invoke_rc_d("bubba-igd", "restart");
             }
@@ -879,7 +879,7 @@ class NetworkManager extends Model {
             }
         } else {
             if( array_key_exists("enabled-port-forward", $conf ) ) {
-                delete $conf["enable-port-forward"];
+                unset($conf["enable-port-forward"]);
                 write_ini_file("/etc/bubba-igd.conf", $conf);
                 invoke_rc_d("bubba-igd", "restart");
             }
