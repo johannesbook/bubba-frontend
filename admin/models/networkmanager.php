@@ -837,7 +837,8 @@ class NetworkManager extends Model {
 
     private function _igd_ini_get($key) {
         $data = file_get_contents($this->_igd_conf);
-        preg_match("#^$key\\s*=\\s*(.*?)\s*\$#m", $data, $matches);
+        preg_match("#^$key\\s*=\\s*(.*?)\s*\$#m", $data, $m);
+        return $m[1];
     }
 
     private function _igd_ini_exists($key) {
@@ -848,9 +849,13 @@ class NetworkManager extends Model {
     private function _igd_ini_update($key, $value) {
         $data = file_get_contents($this->_igd_conf);
         if( $value ) {
-            $data = preg_replace("#^$key.*\$#m", "key=$value", $data );
+            if( preg_match("#^$key#m", $data) ) {
+                $data = preg_replace("#^$key.*\$#m", "$key=$value", $data );
+            } else {
+                $data .= "$key=$value\n";
+            }
         } else {
-            $data = preg_replace("#^$key.*\$#m", "", $data );
+            $data = preg_replace("#^$key.*\n#m", "", $data );
         }
         file_put_contents( $this->_igd_conf, $data );
     }
