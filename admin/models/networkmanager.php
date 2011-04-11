@@ -878,13 +878,13 @@ class NetworkManager extends Model {
 
     function enable_igd_easyfind( $enabled = true ) {
         if( $enabled ) {
-            if( !$this->_igd_ini_exists("enabled-easyfind") ) {
-                $this->_igd_ini_update("enabled-easyfind", "yes");
+            if( !$this->_igd_ini_exists("enable-easyfind") ) {
+                $this->_igd_ini_update("enable-easyfind", "yes");
                 invoke_rc_d("bubba-igd", "restart");
             }
         } else {
-            if( $this->_igd_ini_exists("enabled-easyfind") ) {
-                $this->_igd_ini_update("enabled-easyfind", false);
+            if( $this->_igd_ini_exists("enable-easyfind") ) {
+                $this->_igd_ini_update("enable-easyfind", false);
                 invoke_rc_d("bubba-igd", "restart");
             }
         }
@@ -892,13 +892,13 @@ class NetworkManager extends Model {
 
     function enable_igd_port_forward( $enabled = true ) {
         if( $enabled ) {
-            if( !$this->_igd_ini_exists("enabled-port-forward") ) {
-                $this->_igd_ini_update("enabled-port-forward", "yes");
+            if( !$this->_igd_ini_exists("enable-port-forward") ) {
+                $this->_igd_ini_update("enable-port-forward", "yes");
                 invoke_rc_d("bubba-igd", "restart");
             }
         } else {
-            if( $this->_igd_ini_exists("enabled-port-forward") ) {
-                $this->_igd_ini_update("enabled-port-forward", false);
+            if( $this->_igd_ini_exists("enable-port-forward") ) {
+                $this->_igd_ini_update("enable-port-forward", false);
                 invoke_rc_d("bubba-igd", "restart");
             }
         }
