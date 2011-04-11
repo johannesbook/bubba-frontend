@@ -1,3 +1,9 @@
+bubba-frontend (2.1.25) vincent hugo; urgency=low
+
+  * Accidentally used delete instead of unset 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 11 Apr 2011 12:24:55 +0200
+
 bubba-frontend (2.1.24) vincent hugo; urgency=low
 
   * Adding igd functionallity
