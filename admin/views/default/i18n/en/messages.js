@@ -50,6 +50,10 @@ messages = {
 	"filemanager-success-mkdir" : "Successfully created a folder",
 	"filemanager-perm-fail-message" : "Failed to change permission for the file/folder",
 
+    // Backup
+    "backup-job-remove-button-label" : "Remove",
+    "backup-job-run-now-button-label" : "Run now",    
+
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",
 	"mail-dialog-delete-onserver" : "' on server '",

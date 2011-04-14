@@ -1913,3 +1913,11 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 .ui-filemanager-fake-updir {
 	cursor: default;
 }
+
+.ui-inline .submit{
+    display: inline-block;
+}
+
+.ui-backup-job-failed {
+    color: red;
+}

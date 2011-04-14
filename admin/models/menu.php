@@ -105,7 +105,13 @@ class Menu extends Model {
 					'uri' => 'filemanager/restore',
 				),
 			),
-		),
+        ),
+
+        array(
+            'id' => 'backup',
+            'uri' => 'backup',
+            'allow' => array('admin')
+        ),
 
 		array( 
 			'id' => 'users',

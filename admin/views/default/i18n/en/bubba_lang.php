@@ -12,6 +12,7 @@ $lang['Network']="Network";
 $lang['Printing']="Printing";
 $lang['Settings']="Settings";
 $lang['Filemanager']="File manager";
+$lang['Backup']="Backup";
 $lang['Album']="Photo album";
 $lang['Stat']="Home";
 $lang['Downloads']="Downloads";
@@ -30,6 +31,7 @@ $lang['title_network']=$lang['Network'];
 $lang['title_printing']=$lang['Printing'];
 $lang['title_settings']=$lang['Settings'];
 $lang['title_filemanager']=$lang['Filemanager'];
+$lang['title_backup']=$lang['Backup'];
 $lang['title_album']=$lang['Album'];
 $lang['title_stat']=$lang['Stat'];
 $lang['title_usermail']=$lang['Mail'];
@@ -413,6 +415,13 @@ $lang["mail-auth-error"] = "Authorization failed";
 $lang["mail-retrieve-title"] = "Retrieve email";
 $lang["mail-server-title"] = "Email server";
 $lang["SSL"] = "Encrypted";
+
+// ------------ Backup ----------
+
+$lang["backup-jobs-title"] = "List of backup job specifications for this machine";
+$lang["backup-job-runs-title"] = "List of executed runs for selected job specification above";
+$lang["backup-job-add-button-label"] = "Add new backup job";
+
 
 //  ----------- Printing --------
 
