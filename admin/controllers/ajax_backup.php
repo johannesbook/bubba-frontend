@@ -21,35 +21,100 @@ class Ajax_backup extends Controller {
         $this->output->set_header("Pragma: no-cache");
     }
     function get_backup_jobs() {
-        $this->json_data =
-            array(
-                array(
-                    "name" => "My Music", 
-                    "target" => "FTP", 
-                    "schedule" => "Daily", 
-                    "status" => "OK"  
-                ),
-                array( 
-                    "name" => "My email",
-                    "target" => "USB",
-                    "schedule" => "Hourly",
-                    "status" => "Failed",
-                    "failed" => true  
-                ),
-                array(
-                    "name" => "Testing",
-                    "target" => "USB",
-                    "schedule" => "Every monday",
-                    "status" => "Not run"
-                ),
-                array(
-                    "name" => "Carl's stuff",
-                    "target" => "SSH",
-                    "schedule" => "Every century",
-                    "status" => "Running", 
-                    "running" => true  
-                ),
+        $this->load->model("backup");
+        $data = array();
+        foreach( $this->backup->get_jobs() as $job ) {
+            try {
+                $settings = $this->backup->get_settings($job);
+                $schedule = $this->backup->get_schedule($job);
+                $status = $this->backup->get_status($job);
+
+            } catch( NoSettingsException $e ) {
+                # as we might have bad data, ignore the job for now
+                continue;
+            } catch( NoScheduleException $e ) {
+                $schedule = array(
+                    "type" => "disabled",
+                );
+            }
+            $date = "";
+            switch($schedule["type"]) {
+            case "hourly":
+                $date = t("Hourly");
+                break;
+            case "daily":
+                $date = t("Each day");
+                break;
+            case "weekly":
+                $date = t("Once a week");
+                break;
+            case "monthly":
+                $date = t("Every month");
+                break;
+            default:
+                $date = t("Once in a while");
+            }
+
+            $target = $settings["target_protocol"];
+
+            switch($target) {
+            case "file":
+                $target = "USB";
+                break;
+            case "FTP":
+            case "SSH":
+                break;
+            default:
+                $target = "???";
+            }
+            $cur = array(
+                "name" => $job,
+                "target" => $target,
+                "schedule" => $date,
+                "status" => "N/A",
+                #"a" => $settings,
+                #"b" => $schedule
             );
+
+            if( $status["running"] ) {
+                $cur["running"] = true;
+                $cur["status"] = t("Running");
+            }
+            $data[] = $cur;
+        }
+        $this->json_data = $data;
+        /*$this->json_data =
+        array(
+        array(
+        "name" => "My Music",
+        "target" => "FTP",
+        "schedule" => "Daily",
+        "status" => "OK"
+        ),
+        array(
+        "name" => "My email",
+        "target" => "USB",
+        "schedule" => "Hourly",
+        "status" => "Failed",
+        "failed" => true
+        ),
+        array(
+        "name" => "Testing",
+        "target" => "USB",
+        "schedule" => "Every monday",
+        "status" => "Not run"
+        ),
+        array(
+        "name" => "Carl's stuff",
+        "target" => "SSH",
+        "schedule" => "Every century",
+        "status" => "Running",
+        "running" => true,
+        'jobs' => $this->backup->get_jobs(),
+        'settings' => $this->backup->get_settings('aaa'),
+        'schedule' => $this->backup->get_schedule('aaa')
+        ),
+        );*/
     }
 
     function get_backup_job_information() {
