@@ -54,7 +54,7 @@ class Ajax_backup extends Controller {
                 $date = t("Every month");
                 break;
             case "disabled":
-                $date = t("Manual");
+                $date = t("Never");
                 break;
             default:
                 $date = t("Once in a while");
