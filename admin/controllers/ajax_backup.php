@@ -26,17 +26,19 @@ class Ajax_backup extends Controller {
         foreach( $this->backup->get_jobs() as $job ) {
             try {
                 $settings = $this->backup->get_settings($job);
-                $schedule = $this->backup->get_schedule($job);
-                $status = $this->backup->get_status($job);
 
             } catch( NoSettingsException $e ) {
                 # as we might have bad data, ignore the job for now
                 continue;
+            }
+            try {
+                $schedule = $this->backup->get_schedule($job);
             } catch( NoScheduleException $e ) {
                 $schedule = array(
                     "type" => "disabled",
                 );
             }
+            $status = $this->backup->get_status($job);
             $date = "";
             switch($schedule["type"]) {
             case "hourly":
@@ -50,6 +52,9 @@ class Ajax_backup extends Controller {
                 break;
             case "monthly":
                 $date = t("Every month");
+                break;
+            case "disabled":
+                $date = t("Manual");
                 break;
             default:
                 $date = t("Once in a while");
@@ -72,14 +77,27 @@ class Ajax_backup extends Controller {
                 "target" => $target,
                 "schedule" => $date,
                 "status" => "N/A",
-                #"a" => $settings,
-                #"b" => $schedule
+                "a" => $settings,
+                "b" => $schedule,
+                "c" => $status,
             );
 
             if( $status["running"] ) {
                 $cur["running"] = true;
                 $cur["status"] = t("Running");
+            } else {
+                if( $status["error"] ) {
+                    $cur["status"] = t("Failed");
+                    $cur["failed"] = true;
+                } elseif($status["done"]) {
+                    $cur["status"] = t("OK");
+                } else {
+                    $cur["status"] = t("Not run");
+                }
             }
+            unset($status);
+            unset($schedule);
+            unset($settings);
             $data[] = $cur;
         }
         $this->json_data = $data;

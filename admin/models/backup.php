@@ -25,9 +25,42 @@ class Backup extends Model {
     }
 
     public function get_status($job) {
+
         $running = $this->_get_running_job();
         $running = $running["running"] && $running["jobname"] == $job;
-        return array( "running" =>  $running );
+
+        $ret = array( 
+            "running" => $running,
+            "error" => false,
+            "done" => false
+        );
+        if(!$running) {
+            $logs = glob("/var/log/backup/admin/$job/*.log");
+
+            if( count($logs) ) {
+                $ret["done"] = true;
+                usort( $logs, function($a, $b) {
+                    preg_match('#(?P<date>\\d{4}-\\d{2}-\\d{2})-(?P<time>\\d{2}:\\d{2}:\\d{2})\.log#', $a, $da);
+                    preg_match('#(?P<date>\\d{4}-\\d{2}-\\d{2})-(?P<time>\\d{2}:\\d{2}:\\d{2})\.log#', $b, $db);
+
+                    $da = new DateTime("$da[date] $da[time]");
+                    $db = new DateTime("$db[date] $db[time]");
+
+                    if( $da == $db ) {
+                        return 0;
+                    }
+
+                    return $da < $db ? -1 : 1 ;
+                });
+
+                $latest_log = end($logs);
+                unset($logs);
+                $data = file_get_contents($latest_log);
+                $error = preg_match("#^ERROR#m", $data);
+                $ret["error"] = $error;
+            }
+        }
+        return $ret;
     }
 
     public function get_jobs() {
