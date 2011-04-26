@@ -26,7 +26,8 @@ $(function(){
         var row = $("<tr/>");
         $.each( jobs, function() {
             var data = $.extend({failed: false, running: false},this);
-            row.clone().appendTo(table).
+            var cur = row.clone();
+            cur.appendTo(table).
             append($('<td/>',{text: data.name})).
             append($('<td/>',{text: data.target})).
             append($('<td/>',{text: data.schedule})).
@@ -60,7 +61,7 @@ $(function(){
                 );
 
             });
-            row.find("button").attr('disabled', data.running ? 'disabled' : '').
+            cur.find("button").attr('disabled', data.running ? 'disabled' : '').
             toggleClass('disabled', data.running)
 
         }
