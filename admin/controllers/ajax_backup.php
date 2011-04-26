@@ -76,10 +76,7 @@ class Ajax_backup extends Controller {
                 "name" => $job,
                 "target" => $target,
                 "schedule" => $date,
-                "status" => "N/A",
-                "a" => $settings,
-                "b" => $schedule,
-                "c" => $status,
+                "status" => "N/A"
             );
 
             if( $status["running"] ) {
