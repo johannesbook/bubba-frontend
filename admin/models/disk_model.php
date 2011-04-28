@@ -387,6 +387,23 @@ class Disk_model extends Model {
 		return;
 	}
 
+    function usermount($uuid, $mountpath) {
+        $list = $this->list_devices();
+        foreach( $list as $entry ) {
+            if( isset( $entry['uuid']) && $entry['uuid'] == $uuid ) {
+                $dev = $entry['dev'];
+                break;
+            }
+        }
+        if( $dev ) {
+            $this->_system( $this->manager, 'user_mount', $dev, $mountpath );
+        }
+    }
+
+    function userumount($mountpath) {
+		$this->_system( $this->manager, 'user_umount', $mountpath );
+    }
+
 	function is_usb( $disk ){
 
 		return ($disk['bus']=="usb");

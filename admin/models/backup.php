@@ -2,8 +2,10 @@
 
 class NoSettingsException extends Exception {}
 class NoScheduleException extends Exception {}
+class DuplicityExecutionException extends Exception {}
 
 class Backup extends Model {
+	private $diskmanager = "/usr/sbin/diskmanager";
 
     public function list_backups($job) {
         // change this to read a history file with status of each job and time
@@ -28,8 +30,178 @@ class Backup extends Model {
     public function __construct() {
         parent::Model();
         require_once(APPPATH."/legacy/defines.php");
+        $this->load->model("disk_model");
+    }
+
+
+    public function old_list_backups($job) {
+        $settings = $this->get_settings($job);
+
+        $data = $this->_run_duplicity($job, 'collection-status', '--num-retries', 2);
+        $collection_status = $this->_grep_duplicity_log($data, 'INFO', 3);
+        if( count( $collection_status ) ) {
+            $collection_status = $collection_status[0];
+            preg_match_all("#^ (?P<type>inc|full) (?P<datetime>\\S+) (?P<count>\d+)#m", $collection_status, $m, PREG_SET_ORDER );
+            $m = array_map(function($a){
+                return array(
+                    'date' => date_create($a['datetime'])->format("r"),
+                    'type' => $a['type']
+                );
+
+            }, $m);
+
+            return $m;
+        } else {
+            return array();
+        }
+    }
+
+    private function _run_duplicity(/* $job, $args */) {
+        $args = func_get_args();
+        $job = array_shift($args);
+        $duplicity_opts = $this->_generate_duplicity_options($job);
+        $target_opts = $this->_target_opts($job);
+
+        $shell_cmd = escapeshellargs(
+            array_merge(
+                array('duplicity', '--log-fd', 3),
+                $duplicity_opts['cmd'],
+                $args,
+                array($target_opts['target'])
+            )
+        );
+        $descriptors = array(
+            3 => array("pipe", "w")
+        );
+        $data = '';
+        $proc = proc_open($shell_cmd, $descriptors, $pipes, "/", $duplicity_opts['env'] );
+        if( is_resource($proc) ) {
+            $data = stream_get_contents($pipes[3]);
+            fclose($pipes[3]);
+            $retval = proc_close($proc);
+            if( $retval != 0 ) {
+                #throw new DuplicityExecutionException("Process exited with non-zero return value");
+            }
+        } else {
+            throw new DuplicityExecutionException("Failed to open process");
+        }
+
+        if( $target_opts['mounted'] ) {
+            $this->disk_model->userumount( $target_opts['mountpath'] );
+            @rmdir( $target_opts['mount'] );
+        }
+        return $this->_parse_duplicity_log($data);
+    }
+
+    private function _target_opts($job) {
+
+        $settings = $this->get_settings($job);
+        $tmpdir = '';
+        if( $settings['target_protocol'] == 'file' ) {
+
+            $tmpdir = "/mnt/bubba-backup/admin/$job";
+            if(! file_exists($tmpdir) ) {
+                @mkdir($tmpdir, 0777, true);
+            }
+
+            $this->disk_model->usermount( $settings['disk_uuid'], $tmpdir );
+            $settings['target_path'] = $tmpdir . ($settings['target_path'] != '' ? '/'.$settings['target_path'] : '' );
+        }
+        $target = $settings['target_protocol'] . '://';
+
+        if( isset($settings['target_user']) && $settings['target_user'] != '' ) {
+            $target .= $settings['target_user'] . '@';
+        }
+
+        if( isset($settings['target_host']) && $settings['target_host'] != '' ) {
+            $target .= $settings['target_host'];
+        }
+
+        if( isset($settings['target_path']) && $settings['target_path'] != '' ) {
+            $target .= ($settings['target_protocol'] == 'file' ? '' : '/') . $settings['target_path'];
+        }
+
+        $target .= '/' . $settings['jobname'];
+
+        return array(
+            'mounted' => $settings['target_protocol'] == 'file',
+            'mountpath' => $tmpdir,
+            'target' => $target
+        );
 
     }
+    private function _generate_duplicity_options($job) {
+        $settings = $this->get_settings($job);
+        $ret = array(
+            'env' => array(),
+            'cmd' => array(),
+            'target' => ''
+        );
+        if(isset($settings["GPG_key"])) {
+            $ret['env']['PASSPHRASE'] = $settings["GPG_key"];
+        } else {
+            $ret['cmd'][] = '--no-encryption';
+        }
+
+        if(
+            $settings["target_protocol"] == 'scp' ||
+            $settings["target_protocol"] == 'FTP'
+        ){
+            if(isset($settings["target_keypath"])) {
+                $ret['cmd'][] = '--ssh-options';
+                $ret['cmd'][] = "-oIdentityFile='$settings[target_keypath]'";
+            } else {
+                $ret['env']['FTP_PASSWORD'] = $settings['target_FTPpasswd'];
+                if( $settings['target_protocol'] == 'ssh' ) {
+                    $ret['cmd'][] = '--ssh-askpass';
+                    $ret['cmd'][] = '--ssh-options';
+                    $ret['cmd'][] = "-oStrictHostKeyChecking='no' -oConnectTimeout='5'";
+                }
+            }
+        }
+
+        if( isset($settings['full_expiretime']) ) {
+            $ret['cmd'][] = "--full-if-older-than";
+            $ret['cmd'][] = $settings['full_expiretime'];
+        }
+
+        $ret['env']['TMPDIR'] = "/home/admin/.tmp";
+
+        return $ret;
+    }
+
+    private function _tempdir() {
+        $tempfile=tempnam('','bkup');
+        if (file_exists($tempfile)) {
+            unlink($tempfile);
+        }
+        mkdir($tempfile);
+        if (is_dir($tempfile)) {
+            return $tempfile;
+        }
+    }
+
+    private function _grep_duplicity_log($data, $keyword, $level) {
+        $data = array_filter($data, function($a) use ($keyword, $level){
+            return $a["keyword"] == $keyword && $a["level"] == $level;
+        });
+        return array_map(function($a){return $a["data"];}, array_values($data));
+    }
+
+    private function _parse_duplicity_log($data) {
+        preg_match_all("#^(?P<keyword>\\w+) (?P<level>\\d+)(?P<data>.*?)\\n\\n#ms", $data, $m, PREG_SET_ORDER );
+        $m = array_map(function($a){
+            return array(
+                'data' => trim(preg_replace('#^\\..*(?:\\n|$)#m', '', $a["data"])),
+                'keyword' => $a['keyword'],
+                'level' => $a["level"]
+            );
+
+        }, $m);
+
+        return $m;
+    }
+
     private function _get_running_job() {
 
         if( file_exists( BACKUP_LOCKFILE ) ) {
