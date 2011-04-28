@@ -4,6 +4,27 @@ class NoSettingsException extends Exception {}
 class NoScheduleException extends Exception {}
 
 class Backup extends Model {
+
+    public function list_backups($job) {
+        // change this to read a history file with status of each job and time
+        $path = "/home/admin/.backup/$job/fileinfo/*.info";
+        $files = glob($path);
+        $ret = array();
+        foreach($files as $file) {
+            unset($matches);
+            if(preg_match("/(?P<date>\d{4}-\d{2}-\d{2})-(?P<time>\d{2}:\d{2}:\d{2})\.(?P<error>[err]*)?.*/",$file,$matches)) {
+                $date = date_create("$matches[date] $matches[time]")->format('r');
+                if(!$matches['error']) {
+                    $ret[] = array(
+                        'date' => $date,
+                        'file' => $file
+                    );
+                }
+            }
+        }
+        return $ret;
+    }
+
     public function __construct() {
         parent::Model();
         require_once(APPPATH."/legacy/defines.php");
@@ -29,7 +50,7 @@ class Backup extends Model {
         $running = $this->_get_running_job();
         $running = $running["running"] && $running["jobname"] == $job;
 
-        $ret = array( 
+        $ret = array(
             "running" => $running,
             "error" => false,
             "done" => false

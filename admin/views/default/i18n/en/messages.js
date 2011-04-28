@@ -52,6 +52,7 @@ messages = {
 
     // Backup
     "backup-job-remove-button-label" : "Remove",
+    "backup-job-restore-button-label" : "Restore",
     "backup-job-run-now-button-label" : "Run now",    
 
 	// Mail

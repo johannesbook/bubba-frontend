@@ -8,6 +8,7 @@ class Ajax_backup extends Controller {
 
     function __construct() {
         parent::Controller();
+        $this->load->model("backup");
         require_once(APPPATH."/legacy/defines.php");
         require_once(ADMINFUNCS);
 
@@ -21,7 +22,6 @@ class Ajax_backup extends Controller {
         $this->output->set_header("Pragma: no-cache");
     }
     function get_backup_jobs() {
-        $this->load->model("backup");
         $data = array();
         foreach( $this->backup->get_jobs() as $job ) {
             try {
@@ -134,11 +134,13 @@ class Ajax_backup extends Controller {
 
     function get_backup_job_information() {
         $name = $this->input->post("name");
-        $this->json_data = array(
+        $this->json_data = $this->backup->list_backups($name);
+        /*array(
             array(
                 "date" => "Mon, 18 Apr 2011 12:16:42 +0200",
                 "type" => "Full",
-                "status" => "OK"
+                "status" => "OK",
+                "backups" => $this->backup->list_backups($name)
             ),
             array(
                 "date" => "Sun, 17 Apr 2011 12:13:32 +0200",
@@ -156,7 +158,7 @@ class Ajax_backup extends Controller {
                 "type" => "Full",
                 "status" => "OK"
             ),
-        );
+        );*/
     }
 
     function _output($output) {

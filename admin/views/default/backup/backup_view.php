@@ -27,8 +27,6 @@
 </tr>
 <tr class="ui-filemanager-state-header">
    <th><?=t('Date')?></th>
-   <th><?=t('Status')?></th>
-   <th><?=t('Status')?></th>
    <th>&nbsp;</th>
 </tr>
 </thead>

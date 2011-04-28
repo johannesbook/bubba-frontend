@@ -8,11 +8,9 @@ $(function(){
             row.clone().
             appendTo(table).
             append($('<td/>',{text: data.date})).
-            append($('<td/>',{text: data.type})).
-            append($('<td/>',{text: data.status}).toggleClass("ui-backup-job-failed", data.failed)).
             append($('<td/>').append( $('<button/>', {
                 'class' : "submit",
-                html: $.message('backup-job-remove-button-label'),
+                html: $.message('backup-job-restore-button-label'),
                 click: function(){}
             }).
             attr('disabled', data.failed ? 'disabled' : '').
