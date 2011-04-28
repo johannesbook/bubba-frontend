@@ -33,3 +33,75 @@
 <tbody>
 </tbody>
 </table>
+
+<div id="fn-templates" class="ui-helper-hidden">
+	<div id="fn-backup-create-dialog">
+    <h2 class="ui-text-center">
+		<?=t('backup-create-dialog-title')?>
+	</h2>
+
+	<form id="fn-backup-create">
+    <div class="ui-form-wrapper">
+
+    <div id="fn-backup-create-form-step-1" class="step">
+        <h3><?=t('backup-create-dialog-step1-title')?></h3>
+        <table>
+        <tr>
+        <td>
+            <label for="fn-backup-create-name"><?=t('backup-label-name')?>:</label>
+            <input 
+                type="text" 
+                id="fn-backup-create-name" 
+                name="name" 
+                class="ui-input-text fn-primary-field"
+                value="" 
+            />
+        </td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="fn-backup-create-form-step-2" class="step">
+        <h3><?=t('backup-create-dialog-step2-title')?></h3>
+        <table>
+        <tr>
+        <td>
+        </td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="fn-backup-create-form-step-3" class="step">
+        <h3><?=t('backup-create-dialog-step3-title')?></h3>
+        <table>
+        <tr>
+        <td>
+        </td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="fn-backup-create-form-step-4" class="step">
+        <h3><?=t('backup-create-dialog-step4-title')?></h3>
+        <table>
+        <tr>
+        <td>
+        </td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="fn-backup-create-form-step-5" class="step submit_step">
+        <h3><?=t('backup-create-dialog-step5-title')?></h3>
+        <table>
+        <tr>
+        <td>
+        </td>
+        </tr>
+        </table>
+    </div>
+
+    </div>
+    </form>
+    </div>
+</div>

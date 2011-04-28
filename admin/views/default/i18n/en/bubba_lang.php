@@ -421,6 +421,15 @@ $lang["SSL"] = "Encrypted";
 $lang["backup-jobs-title"] = "List of backup job specifications for this machine";
 $lang["backup-job-runs-title"] = "List of executed runs for selected job specification above";
 $lang["backup-job-add-button-label"] = "Add new backup job";
+$lang["backup-create-dialog-title"] = "Add new backup job";
+$lang["backup-create-dialog-step1-title"] = "Choose a name for this job (step 1 of 5)";
+$lang["backup-create-dialog-step2-title"] = "Select what you want to backup (step 2 of 5)";
+$lang["backup-create-dialog-step3-title"] = "Choose backup destination (step 3 of 5)";
+$lang["backup-create-dialog-step4-title"] = "Select backup schedule (step 4 of 5)";
+$lang["backup-create-dialog-step5-title"] = "Advanced settings (step 5 of 5)";
+$lang["backup-label-name"] = "Job name";
+//$lang[""] = "";
+//$lang[""] = "";
 
 
 //  ----------- Printing --------
