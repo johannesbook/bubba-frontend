@@ -1,6 +1,14 @@
 <?php
 // $lang['']="";
 
+$lang['weekday-1'] = "Monday";
+$lang['weekday-2'] = "Tuesday";
+$lang['weekday-3'] = "Wednesday";
+$lang['weekday-4'] = "Thursday";
+$lang['weekday-5'] = "Friday";
+$lang['weekday-6'] = "Saturday";
+$lang['weekday-7'] = "Sunday";
+
 $lang["name"] = NAME;
 
 $lang['Login']="Login";
@@ -442,6 +450,20 @@ $lang["backup-label-target-server-hostname"] = "Target server";
 $lang["backup-label-target-server-username"] = "Target server username";
 $lang["backup-label-target-server-password"] = "Target server password";
 $lang["backup-label-target-server-path"] = "Target server directory";
+
+$lang["backup-title-schedule-monthly-day"] = "Day of the month";
+$lang["backup-title-schedule-monthly-hour"] = "Hour of the day";
+$lang["backup-title-schedule-weekly-day"] = "Day of the week";
+$lang["backup-title-schedule-weekly-hour"] = "Hour of the day";
+$lang["backup-title-schedule-daily-hour"] = "Hour of the day";
+
+$lang["backup-label-schedule-monthly-day"] = "Monthly on the";
+$lang["backup-label-schedule-monthly-hour"] = "at";
+$lang["backup-label-schedule-weekly-day"] = "Weekly each";
+$lang["backup-label-schedule-weekly-hour"] = "at";
+$lang["backup-label-schedule-daily-hour"] = "Daily at";
+$lang["backup-label-schedule-hourly"] = "Hourly";
+$lang["backup-label-schedule-disabled"] = "Disabled (manually run by pressing \"Run now\")";
 //$lang[""] = "";
 
 

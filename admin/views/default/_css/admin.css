@@ -1731,8 +1731,13 @@ input[type=radio] {
 }
 
 .ui-dialog select,.ui-input-text,.ui-dialog-title {
-  width: 100% !important;
+  width: 100%;
 }
+.ui-dialog select.ui-inline {
+  width: auto;
+  vertical-align: baseline;
+}
+
 
 tbody > tr > th label,label,#traffic .ui-filemanager-state-header {
 

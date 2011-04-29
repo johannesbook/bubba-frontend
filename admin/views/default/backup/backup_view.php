@@ -1,3 +1,4 @@
+<?$this->load->helper("ordinal")?>
 <table id="fn-backup-jobs" class="ui-table-outline">
 <thead>
 <tr>
@@ -159,6 +160,119 @@
         <table>
         <tr>
         <td>
+            <input 
+                type="radio" 
+                id="fn-backup-schedule-disabled"
+                checked="checked"
+                name="schedule-type" 
+                value="disabled" 
+            />
+            <label for="fn-backup-schedule-disabled"><?=t("backup-label-schedule-disabled")?></label>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <input 
+                type="radio" 
+                id="fn-backup-schedule-monthly"
+                name="schedule-type" 
+                value="monthly" 
+            />
+            <label for="fn-backup-schedule-monthday"><?=t("backup-label-schedule-monthly-day")?></label>
+        <select
+            id="fn-backup-schedule-monthday"
+            name="monthday"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-monthly-day")?>"
+        >
+<?foreach(range(1,28) as $day):?>
+            <option value="<?=$day?>"><?=to_ordinal($day)?></option>
+<?endforeach?>
+        </select>
+            <label for="fn-backup-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
+        <select
+            id="fn-backup-schedule-monthhour"
+            name="monthhour"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-monthly-hour")?>"
+        >
+<?foreach(range(1,24) as $hour):?>
+            <option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+<?endforeach?>
+        </select>
+
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <input 
+                type="radio" 
+                id="fn-backup-schedule-weekly"
+                name="schedule-type" 
+                value="weekly" 
+            />
+            <label for="fn-backup-schedule-weekday"><?=t("backup-label-schedule-weekly-day")?></label>
+        <select
+            id="fn-backup-schedule-weekday"
+            name="weekday"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-weekly-day")?>"
+        >
+<?foreach(range(1,7) as $day):?>
+            <option value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
+<?endforeach?>
+        </select>
+            <label for="fn-backup-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
+        <select
+            id="fn-backup-schedule-weekhour"
+            name="weekhour"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-weekly-hour")?>"
+        >
+<?foreach(range(1,24) as $hour):?>
+            <option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+<?endforeach?>
+        </select>
+
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <input 
+                type="radio" 
+                id="fn-backup-schedule-daily"
+                name="schedule-type" 
+                value="daily" 
+            />
+            <label for="fn-backup-schedule-dayhour"><?=t("backup-label-schedule-daily-hour")?></label>
+        <select
+            id="fn-backup-schedule-dayhour"
+            name="dayhour"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-daily-hour")?>"
+        >
+<?foreach(range(1,24) as $hour):?>
+            <option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+<?endforeach?>
+        </select>
+
+        </td>
+        </tr>
+
+
+        <tr>
+        <td>
+            <input 
+                type="radio" 
+                id="fn-backup-schedule-hourly"
+                name="schedule-type" 
+                value="hourly" 
+            />
+            <label><?=t("backup-label-schedule-hourly")?></label>
+
         </td>
         </tr>
         </table>
