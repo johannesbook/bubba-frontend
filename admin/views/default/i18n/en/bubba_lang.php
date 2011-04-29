@@ -456,6 +456,7 @@ $lang["backup-title-schedule-monthly-hour"] = "Hour of the day";
 $lang["backup-title-schedule-weekly-day"] = "Day of the week";
 $lang["backup-title-schedule-weekly-hour"] = "Hour of the day";
 $lang["backup-title-schedule-daily-hour"] = "Hour of the day";
+$lang["backup-title-schedule-timeline"] = "Age of timeline";
 
 $lang["backup-label-schedule-monthly-day"] = "Monthly on the";
 $lang["backup-label-schedule-monthly-hour"] = "at";
@@ -464,6 +465,7 @@ $lang["backup-label-schedule-weekly-hour"] = "at";
 $lang["backup-label-schedule-daily-hour"] = "Daily at";
 $lang["backup-label-schedule-hourly"] = "Hourly";
 $lang["backup-label-schedule-disabled"] = "Disabled (manually run by pressing \"Run now\")";
+$lang["backup-label-schedule-timeline"] = "Keep timeline length of";
 //$lang[""] = "";
 
 

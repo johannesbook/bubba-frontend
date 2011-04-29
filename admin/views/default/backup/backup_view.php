@@ -276,6 +276,27 @@
         </td>
         </tr>
         </table>
+        <hr/>
+        <table>
+        <tr>
+        <td>
+        <label for="fn-backup-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
+        <select
+            id="fn-backup-schedule-timeline"
+            name="timeline"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-timeline")?>"
+        >
+            <option value="1D"><?=t("a day")?></option>
+            <option value="1W"><?=t("a week")?></option>
+            <option value="1M"><?=t("a month")?></option>
+            <option value="6M"><?=t("half a year")?></option>
+            <option value="1Y"><?=t("a year")?></option>
+            <option value="10Y"><?=t("a decade")?></option>
+        </select>
+        </td>
+        </tr>
+        </table>
     </div>
 
     <div id="fn-backup-create-form-step-5" class="step submit_step">
