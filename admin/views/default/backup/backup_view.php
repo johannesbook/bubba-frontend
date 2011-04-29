@@ -64,10 +64,20 @@
     <div id="fn-backup-create-form-step-2" class="step">
         <h3><?=t('backup-create-dialog-step2-title')?></h3>
         <table>
+<?foreach(array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom' ) as $key):?>
         <tr>
         <td>
+            <input 
+                type="radio" 
+                id="fn-backup-selection-<?=$key?>" 
+                name="selection" 
+                class="ui-input-text fn-primary-field"
+                value="<?=$key?>" 
+            />
+            <label for="fn-backup-selection-<?=$key?>"><?=t("backup-selection-$key")?></label>
         </td>
         </tr>
+<?endforeach?>
         </table>
     </div>
 

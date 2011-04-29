@@ -54,6 +54,7 @@ messages = {
     "backup-job-remove-button-label" : "Remove",
     "backup-job-restore-button-label" : "Restore",
     "backup-job-run-now-button-label" : "Run now",    
+    "backup-create-button-finish": "Complete",
 
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",

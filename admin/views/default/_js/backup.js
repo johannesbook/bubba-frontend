@@ -179,6 +179,9 @@ $(function(){
             'rules': {
                 'name': {
                     'required': true
+                },
+                'selection': {
+                    'required': true
                 }
             }
         },
