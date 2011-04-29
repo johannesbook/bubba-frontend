@@ -176,7 +176,7 @@ $(function(){
             showBackOnFirstStep: true
         },
         {
-            'rules': {
+      /*      'rules': {
                 'name': {
                     'required': true
                 },
@@ -186,7 +186,7 @@ $(function(){
                 'protocol': {
                     'required': true
                 }
-            }
+            }*/
         },
         {
             'url': config.prefix + "/create/json",
