@@ -428,6 +428,7 @@ $lang["backup-create-dialog-step3-title"] = "Choose backup destination (step 3 o
 $lang["backup-create-dialog-step4-title"] = "Select backup schedule (step 4 of 5)";
 $lang["backup-create-dialog-step5-title"] = "Advanced settings (step 5 of 5)";
 $lang["backup-label-name"] = "Job name";
+
 $lang["backup-selection-data"] = "All user's data (/home/<all users>)";
 $lang["backup-selection-email"] = "All user's email (/home/<all users>/Mail)";
 $lang["backup-selection-music"] = "All music (/home/storage/music)";
@@ -435,7 +436,12 @@ $lang["backup-selection-photo"] = "All photos (/home/storage/photos)";
 $lang["backup-selection-video"] = "All videos (/home/storage/video)";
 $lang["backup-selection-storage"] = "Storage (/home/storage)";
 $lang["backup-selection-custom"] = "Custom selection";
-//$lang[""] = "";
+
+$lang["backup-label-target-protocol"] = "Protocol";
+$lang["backup-label-target-server-hostname"] = "Target server";
+$lang["backup-label-target-server-username"] = "Target server username";
+$lang["backup-label-target-server-password"] = "Target server password";
+$lang["backup-label-target-server-path"] = "Target server directory";
 //$lang[""] = "";
 
 

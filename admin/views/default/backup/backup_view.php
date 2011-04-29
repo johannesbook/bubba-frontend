@@ -86,8 +86,71 @@
         <table>
         <tr>
         <td>
+        <label for="fn-backup-protocol"><?=t("backup-label-target-protocol")?></label>
+        <select
+            id="fn-backup-protocol"
+            name="protocol"
+            title="<?=t("backup-title-protocol")?>"
+        >
+            <option value="ftp">FTP</option>
+            <option value="ssh">SSH</option>
+            <option value="file">Local (USB/eSATA)</option>
+        </select>
         </td>
         </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-target-server-hostname"><?=t('backup-label-target-server-hostname')?>:</label>
+            <input 
+                type="text" 
+                id="fn-backup-target-server-hostname" 
+                name="remote-hostname" 
+                class="ui-input-text fn-primary-field"
+                value="" 
+            />
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-target-server-username"><?=t('backup-label-target-server-username')?>:</label>
+            <input 
+                type="text" 
+                id="fn-backup-target-server-username" 
+                name="username" 
+                class="ui-input-text"
+                value="" 
+            />
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-target-server-password"><?=t('backup-label-target-server-password')?>:</label>
+            <input 
+                type="password" 
+                id="fn-backup-target-server-password" 
+                name="password" 
+                class="ui-input-text"
+                value="" 
+            />
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-target-server-path"><?=t('backup-label-target-server-path')?>:</label>
+            <input 
+                type="test" 
+                id="fn-backup-target-server-path" 
+                name="path" 
+                class="ui-input-text"
+                value="" 
+            />
+        </td>
+        </tr>
+
         </table>
     </div>
 

@@ -182,6 +182,9 @@ $(function(){
                 },
                 'selection': {
                     'required': true
+                },
+                'protocol': {
+                    'required': true
                 }
             }
         },
