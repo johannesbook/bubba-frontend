@@ -437,8 +437,8 @@ $lang["backup-create-dialog-step4-title"] = "Select backup schedule (step 4 of 5
 $lang["backup-create-dialog-step5-title"] = "Security (step 5 of 5)";
 $lang["backup-label-name"] = "Job name";
 
-$lang["backup-selection-data"] = "All user's data (/home/<all users>)";
-$lang["backup-selection-email"] = "All user's email (/home/<all users>/Mail)";
+$lang["backup-selection-data"] = "All user's data (/home/&lt;all users&gt;)";
+$lang["backup-selection-email"] = "All user's email (/home/&lt;all users&gt;/Mail)";
 $lang["backup-selection-music"] = "All music (/home/storage/music)";
 $lang["backup-selection-photo"] = "All photos (/home/storage/photos)";
 $lang["backup-selection-video"] = "All videos (/home/storage/video)";
