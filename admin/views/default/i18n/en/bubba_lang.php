@@ -434,7 +434,7 @@ $lang["backup-create-dialog-step1-title"] = "Choose a name for this job (step 1 
 $lang["backup-create-dialog-step2-title"] = "Select what you want to backup (step 2 of 5)";
 $lang["backup-create-dialog-step3-title"] = "Choose backup destination (step 3 of 5)";
 $lang["backup-create-dialog-step4-title"] = "Select backup schedule (step 4 of 5)";
-$lang["backup-create-dialog-step5-title"] = "Advanced settings (step 5 of 5)";
+$lang["backup-create-dialog-step5-title"] = "Security (step 5 of 5)";
 $lang["backup-label-name"] = "Job name";
 
 $lang["backup-selection-data"] = "All user's data (/home/<all users>)";
@@ -467,6 +467,10 @@ $lang["backup-label-schedule-hourly"] = "Hourly";
 $lang["backup-label-schedule-disabled"] = "Disabled (manually run by pressing \"Run now\")";
 $lang["backup-label-schedule-timeline"] = "Keep timeline length of";
 $lang["backup-note-schedule-timeline"] = "The longer timeline the more space will be required on target";
+
+$lang["backup-label-security-enable"] = "Encrypt the backup on target for increased security";
+$lang["backup-label-security-password"] = "Password";
+$lang["backup-label-security-password2"] = "Repeat password";
 
 
 //  ----------- Printing --------

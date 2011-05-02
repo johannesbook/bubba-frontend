@@ -305,8 +305,40 @@
         <table>
         <tr>
         <td>
+            <input
+                type="checkbox"
+                id="fn-backup-security-enable"
+                name="security"
+                value="yes"
+            />
+            <label for="fn-backup-security-enable"><?=t("backup-label-security-enable")?></label>
         </td>
         </tr>
+        <tr>
+        <td>
+            <label for="fn-backup-security-password"><?=t('backup-label-security-password')?>:</label>
+            <input
+                type="password"
+                id="fn-backup-security-password"
+                name="password"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <label for="fn-backup-security-password2"><?=t('backup-label-security-password2')?>:</label>
+            <input
+                type="password"
+                id="fn-backup-security-password2"
+                name="password2"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+
         </table>
     </div>
 
