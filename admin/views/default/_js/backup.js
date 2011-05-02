@@ -4,9 +4,9 @@ $(function(){
     var dialog_options = {
         'create': {
             'width': 600,
-            'height': 500,
+//            'height': 500,
             'minWidth': 600,
-            'minHeight': 400,
+            'minHeight': 300,
             'resizable': true,
             'position': ['center',100]
         }
