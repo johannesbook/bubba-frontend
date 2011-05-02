@@ -1,6 +1,9 @@
 $(function(){
     var dialogs = {};
 
+	var filemanager = $('#fn-filemanager');
+    var filemanager_dialog;
+
     var dialog_options = {
         'create': {
             'width': 600,
@@ -173,7 +176,13 @@ $(function(){
             back: buttonpane.find('.ui-prev-button'),
             next: buttonpane.find('.ui-next-button'),
             textSubmit: $.message("backup-create-button-finish"),
-            showBackOnFirstStep: true
+            showBackOnFirstStep: true,
+            afterNext: function(wizardData) {
+                if (wizardData.currentStep == "fn-backup-create-form-step-2") {
+                    $("#fn-backup-selection-custom-browse").button('disable')
+                }
+            }
+
         },
         {
       /*      'rules': {
@@ -203,9 +212,57 @@ $(function(){
         }
     );
 
+    // Custom browse for selection button
+    $("#fn-backup-selection-custom-browse").button({'disabled': true});
+
+    $('.fn-backup-selection').change(function(){
+        if( $(this).is('#fn-backup-selection-custom') ) {
+            $("#fn-backup-selection-custom-browse").button('enable');
+        } else {
+            $("#fn-backup-selection-custom-browse").button('disable')
+        }
+    });
+    $("#fn-backup-selection-custom-browse").click(function(){
+        filemanager.filemanager('reload',function(){
+            filemanager_dialog.dialog('open');
+        });
+    });
+
     $("#fn-backup-job-add").click(function(){
         $("#fn-backup-create").formwizard('reset');
         dialogs["create"].dialog("open");
         dialogs['create'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
     });
+
+    filemanager_dialog = $.dialog(
+        filemanager,
+        "Directory selector",
+        [
+            {
+                'label': $.message("Select choosen directory"),
+                'callback': function() {},
+                options: {
+                    'class': 'ui-element-width-100'
+                }
+            }
+        ],
+        {
+            modal: false,
+            autoOpen: false,
+            open: function() {
+            },
+            close: function() {
+                var selected = filemanager.filemanager('getSelected');
+                $('#fn-backup-selection-custom-selection').text(selected.join(', ')).data('selection', selection);
+            }
+        }
+    );
+
+    filemanager.filemanager({
+        root: '/',
+        animate: false,
+        dirPostOpenCallback: function(){},
+        ajaxSource: config.prefix + "/ajax_backup/dirs"
+    });
+
 });

@@ -76,6 +76,16 @@
                 value="<?=$key?>" 
             />
             <label for="fn-backup-selection-<?=$key?>"><?=t("backup-selection-$key")?></label>
+<?if($key == 'custom'):?>
+            <button
+                id="fn-backup-selection-custom-browse"
+                class="ui-helper-inline"
+                disabled="disabled"
+            >
+            <?=t("backup-selection-custom-browse")?>
+            </button>
+            <span id="fn-backup-selection-custom-selection" class="ui-text-comment"></span>
+<?endif?>
         </td>
         </tr>
 <?endforeach?>
@@ -345,4 +355,33 @@
     </div>
     </form>
     </div>
+
+	<table id="fn-filemanager" class="ui-table-outline">
+		<thead>
+			<tr class="ui-state-default ui-widget-header">
+				<th></th>
+
+				<th>Name</th>
+
+				<th>Date</th>
+
+				<th>Size</th>
+
+				<th></th>
+			</tr>
+
+			<tr class="ui-header">
+				<td colspan="5" class="ui-filemanager-fake-updir"></td>
+			</tr>
+
+			<tr>
+				<td colspan="5" class=
+					"ui-helper-hidden ui-filemanager-permission-denied">
+					<?=t("Permission denied")?>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
 </div>

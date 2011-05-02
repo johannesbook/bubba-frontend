@@ -444,6 +444,7 @@ $lang["backup-selection-photo"] = "All photos (/home/storage/photos)";
 $lang["backup-selection-video"] = "All videos (/home/storage/video)";
 $lang["backup-selection-storage"] = "Storage (/home/storage)";
 $lang["backup-selection-custom"] = "Custom selection";
+$lang["backup-selection-custom-browse"] = "Browse";
 
 $lang["backup-label-target-protocol"] = "Protocol";
 $lang["backup-label-target-server-hostname"] = "Target server";
