@@ -98,67 +98,12 @@ class Ajax_backup extends Controller {
             $data[] = $cur;
         }
         $this->json_data = $data;
-        /*$this->json_data =
-        array(
-        array(
-        "name" => "My Music",
-        "target" => "FTP",
-        "schedule" => "Daily",
-        "status" => "OK"
-        ),
-        array(
-        "name" => "My email",
-        "target" => "USB",
-        "schedule" => "Hourly",
-        "status" => "Failed",
-        "failed" => true
-        ),
-        array(
-        "name" => "Testing",
-        "target" => "USB",
-        "schedule" => "Every monday",
-        "status" => "Not run"
-        ),
-        array(
-        "name" => "Carl's stuff",
-        "target" => "SSH",
-        "schedule" => "Every century",
-        "status" => "Running",
-        "running" => true,
-        'jobs' => $this->backup->get_jobs(),
-        'settings' => $this->backup->get_settings('aaa'),
-        'schedule' => $this->backup->get_schedule('aaa')
-        ),
-        );*/
     }
 
     function get_backup_job_information() {
         $name = $this->input->post("name");
         $this->json_data = $this->backup->list_backups($name);
-        /*array(
-            array(
-                "date" => "Mon, 18 Apr 2011 12:16:42 +0200",
-                "type" => "Full",
-                "status" => "OK",
-                "backups" => $this->backup->list_backups($name)
-            ),
-            array(
-                "date" => "Sun, 17 Apr 2011 12:13:32 +0200",
-                "type" => "Incremental",
-                "status" => "OK"
-            ),
-            array(
-                "date" => "Sat, 16 Apr 2011 12:21:13 +0200",
-                "type" => "Incremental",
-                "status" => "Failed [Why?]",
-                "failed" => true  
-            ),
-            array(
-                "date" => "Fri, 15 Apr 2011 12:32:01 +0200",
-                "type" => "Full",
-                "status" => "OK"
-            ),
-        );*/
+
     }
 
     function _output($output) {
