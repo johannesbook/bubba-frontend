@@ -72,7 +72,7 @@
                 type="radio" 
                 id="fn-backup-selection-<?=$key?>" 
                 name="selection" 
-                class="ui-input-text fn-primary-field"
+                class="ui-input-text fn-backup-selection"
                 value="<?=$key?>" 
             />
             <label for="fn-backup-selection-<?=$key?>"><?=t("backup-selection-$key")?></label>
