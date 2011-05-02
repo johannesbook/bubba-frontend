@@ -294,6 +294,7 @@
             <option value="1Y"><?=t("a year")?></option>
             <option value="10Y"><?=t("a decade")?></option>
         </select>
+        <span class="ui-text-comment">(<?=t("backup-note-schedule-timeline")?>)</span>
         </td>
         </tr>
         </table>

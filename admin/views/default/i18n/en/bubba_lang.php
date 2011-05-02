@@ -466,7 +466,7 @@ $lang["backup-label-schedule-daily-hour"] = "Daily at";
 $lang["backup-label-schedule-hourly"] = "Hourly";
 $lang["backup-label-schedule-disabled"] = "Disabled (manually run by pressing \"Run now\")";
 $lang["backup-label-schedule-timeline"] = "Keep timeline length of";
-//$lang[""] = "";
+$lang["backup-note-schedule-timeline"] = "The longer timeline the more space will be required on target";
 
 
 //  ----------- Printing --------
