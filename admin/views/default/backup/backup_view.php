@@ -186,7 +186,7 @@
             class="ui-inline"
             title="<?=t("backup-title-schedule-monthly-day")?>"
         >
-<?foreach(range(1,28) as $day):?>
+<?foreach(range(1,30) as $day):?>
             <option value="<?=$day?>"><?=to_ordinal($day)?></option>
 <?endforeach?>
         </select>
