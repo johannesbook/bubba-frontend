@@ -1547,11 +1547,6 @@ div.text label {
   padding: .3em 1em .8em .4em;
 }
 
-.ui-helper-inline {
-  display: inline-block;
-  vertical-align: bottom;
-}
-
 .ui-dialog h2 {
   font-size: 16px;
 
@@ -1925,4 +1920,9 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 
 .ui-backup-job-failed {
     color: red;
+}
+
+.ui-helper-inline {
+  display: inline-block !important;
+  vertical-align: bottom;
 }
