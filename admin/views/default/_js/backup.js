@@ -180,9 +180,15 @@ $(function(){
             afterNext: function(wizardData) {
                 if (wizardData.currentStep == "fn-backup-create-form-step-2") {
                     $("#fn-backup-selection-custom-browse").button('disable')
-                }
+				} else if( wizardData.currentStep == "fn-backup-create-form-step-4") {
+					$('.fn-backup-schedule').change();
+				}
+            },
+            afterBack: function(wizardData) {
+				if( wizardData.currentStep == "fn-backup-create-form-step-4") {
+					$('.fn-backup-schedule').change();
+				}
             }
-
         },
         {
       /*      'rules': {
@@ -232,6 +238,28 @@ $(function(){
         $("#fn-backup-create").formwizard('reset');
         dialogs["create"].dialog("open");
         dialogs['create'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
+    });
+
+	$('.fn-backup-schedule').change(function(){
+		var self = $('.fn-backup-schedule:checked');
+        if( self.is('#fn-backup-schedule-monthly') ) {
+			$('#fn-backup-schedule-monthday, #fn-backup-schedule-monthhour').removeAttr('disabled');
+		} else {
+			$('#fn-backup-schedule-monthday, #fn-backup-schedule-monthhour').attr('disabled', 'disabled');
+		}
+
+        if( self.is('#fn-backup-schedule-weekly') ) {
+			$('#fn-backup-schedule-weekday, #fn-backup-schedule-weekhour').removeAttr('disabled');
+		} else {
+			$('#fn-backup-schedule-weekday, #fn-backup-schedule-weekhour').attr('disabled', 'disabled');
+		}
+
+        if( self.is('#fn-backup-schedule-daily') ) {
+			$('#fn-backup-schedule-dayhour').removeAttr('disabled');
+		} else {
+			$('#fn-backup-schedule-dayhour').attr('disabled', 'disabled');
+		}
+
     });
 
     filemanager_dialog = $.dialog(

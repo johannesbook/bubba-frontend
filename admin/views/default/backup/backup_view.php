@@ -171,6 +171,7 @@
         <td>
             <input 
                 type="radio" 
+				class="fn-backup-schedule"
                 id="fn-backup-schedule-disabled"
                 checked="checked"
                 name="schedule-type" 
@@ -184,6 +185,7 @@
         <td>
             <input 
                 type="radio" 
+				class="fn-backup-schedule"
                 id="fn-backup-schedule-monthly"
                 name="schedule-type" 
                 value="monthly" 
@@ -218,6 +220,7 @@
         <td>
             <input 
                 type="radio" 
+				class="fn-backup-schedule"
                 id="fn-backup-schedule-weekly"
                 name="schedule-type" 
                 value="weekly" 
@@ -252,6 +255,7 @@
         <td>
             <input 
                 type="radio" 
+				class="fn-backup-schedule"
                 id="fn-backup-schedule-daily"
                 name="schedule-type" 
                 value="daily" 
@@ -276,6 +280,7 @@
         <td>
             <input 
                 type="radio" 
+				class="fn-backup-schedule"
                 id="fn-backup-schedule-hourly"
                 name="schedule-type" 
                 value="hourly" 
