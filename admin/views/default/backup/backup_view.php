@@ -79,7 +79,6 @@
 <?if($key == 'custom'):?>
             <button
                 id="fn-backup-selection-custom-browse"
-                class="ui-helper-inline"
                 disabled="disabled"
             >
             <?=t("backup-selection-custom-browse")?>

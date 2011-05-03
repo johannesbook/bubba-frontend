@@ -78,6 +78,25 @@ input[type=submit],input[type=button],button.submit {
   min-width : 80px;
   padding: 0px 8px 6px 8px;
 }
+.ui-dialog-content .ui-button.ui-state-default {
+  -moz-border-radius: 4px 4px 7px 7px;
+  -webkit-border-radius: 4px 4px 7px 7px;
+  background-image: url(../_img/label.png);
+  background-position: 0 0;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  border: 0;
+  color: #FFF;
+  display: block;
+  font-size: 12px;
+  height: 29px;
+  margin: 3px;
+  min-width : 80px;
+  padding: 0px 8px 6px 8px;
+  outline: none;
+  font-weight: bold;
+}
+
 input[type=submit]:hover,input[type=button]:hover, button.submit:hover {
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)!important;
   border: 0;
