@@ -1,6 +1,7 @@
 <?php
 function to_ordinal($number) {
-    switch(abs((int)$number) % 10) {
+	$absolute = abs((int)$number);
+    switch($absolute % 10) {
     case 1:
         $suffix = "st";
         break;
@@ -13,6 +14,10 @@ function to_ordinal($number) {
     default:
         $suffix = "th";
         break;
-    }
+	}
+	// special case
+	if( $absolute >= 11 && $absolute <= 13 ) {
+		$suffix = "th";
+	}
     return "$number$suffix";
 }
