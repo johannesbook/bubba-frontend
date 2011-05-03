@@ -240,7 +240,9 @@ $(function(){
         [
             {
                 'label': $.message("Select choosen directory"),
-                'callback': function() {},
+				'callback': function() {
+					filemanager_dialog.dialog('close');
+				},
                 options: {
                     'class': 'ui-element-width-100'
                 }
@@ -254,10 +256,14 @@ $(function(){
             modal: false,
             autoOpen: false,
             open: function() {
+				dialogs["create"].dialog('widget').hide();
+				return true;
             },
             close: function() {
                 var selected = filemanager.filemanager('getSelected');
-                $('#fn-backup-selection-custom-selection').text(selected.join(', ')).data('selection', selection);
+                $('#fn-backup-selection-custom-selection').text(selected.join(', ')).data('selection', selected);
+				dialogs["create"].dialog('widget').show();
+				return true;
             }
         }
     );
