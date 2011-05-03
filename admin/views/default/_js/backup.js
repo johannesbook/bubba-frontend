@@ -177,16 +177,21 @@ $(function(){
             next: buttonpane.find('.ui-next-button'),
             textSubmit: $.message("backup-create-button-finish"),
             showBackOnFirstStep: true,
-            afterNext: function(wizardData) {
-                if (wizardData.currentStep == "fn-backup-create-form-step-2") {
-                    $("#fn-backup-selection-custom-browse").button('disable')
-				} else if( wizardData.currentStep == "fn-backup-create-form-step-4") {
+			afterNext: function(wizardData) {
+				switch( wizardData.currentStep ) {
+				case "fn-backup-create-form-step-2":
+					$("#fn-backup-selection-custom-browse").button('disable')
+					break;
+				case "fn-backup-create-form-step-4":
 					$('.fn-backup-schedule').change();
+					break;
 				}
-            },
+			},
             afterBack: function(wizardData) {
-				if( wizardData.currentStep == "fn-backup-create-form-step-4") {
+				switch( wizardData.currentStep ) {
+				case "fn-backup-create-form-step-4":
 					$('.fn-backup-schedule').change();
+					break;
 				}
             }
         },
