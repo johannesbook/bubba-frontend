@@ -185,6 +185,9 @@ $(function(){
 				case "fn-backup-create-form-step-4":
 					$('.fn-backup-schedule').change();
 					break;
+				case "fn-backup-create-form-step-5":
+					$("#fn-backup-security-enable").change();
+					break;
 				}
 			},
             afterBack: function(wizardData) {
@@ -266,6 +269,13 @@ $(function(){
 		}
 
     });
+	$('#fn-backup-security-enable').change(function(){
+		if($(this).is(':checked')) {
+			$('#fn-backup-security-password, #fn-backup-security-password2').removeAttr('disabled');
+		} else {
+			$('#fn-backup-security-password, #fn-backup-security-password2').attr('disabled', 'disabled');
+		}
+	});
 
     filemanager_dialog = $.dialog(
         filemanager,
