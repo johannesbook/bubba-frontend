@@ -152,7 +152,7 @@
         <td>
             <label for="fn-backup-target-server-path"><?=t('backup-label-target-server-path')?>:</label>
             <input 
-                type="test" 
+                type="text"
                 id="fn-backup-target-server-path" 
                 name="path" 
                 class="ui-input-text"
