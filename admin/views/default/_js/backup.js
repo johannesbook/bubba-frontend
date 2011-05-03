@@ -11,7 +11,7 @@ $(function(){
             'minWidth': 600,
             'minHeight': 300,
             'resizable': true,
-            'position': ['center',100]
+            'position': ['center','center']
         }
     };
 
@@ -247,6 +247,10 @@ $(function(){
             }
         ],
         {
+            'width': 600,
+            'Height': 400,
+            'resizable': false,
+            'position': ['center','center'],
             modal: false,
             autoOpen: false,
             open: function() {
