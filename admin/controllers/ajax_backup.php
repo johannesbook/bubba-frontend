@@ -201,16 +201,16 @@ class Ajax_backup extends Controller {
 
     function create() {
         $name = $this->input->post("name");
-
         $selection = $this->input->post("selection");
-
         $protocol = $this->input->post("protocol");
+        $schedule_type = $this->input->post("schedule-type");
+        $security = $this->input->post("security");
+
         $target_hostname = $this->input->post("target-hostname");
         $target_username = $this->input->post("target-username");
         $target_password = $this->input->post("target-password");
         $target_device = $this->input->post("target-device");
 
-        $schedule_type = $this->input->post("schedule-type");
         $schedule_dayhour = $this->input->post("schedule-dayhour");
         $schedule_weekhour = $this->input->post("schedule-weekhour");
         $schedule_monthhour = $this->input->post("schedule-monthhour");
@@ -218,11 +218,80 @@ class Ajax_backup extends Controller {
         $schedule_monthday = $this->input->post("schedule-monthday");
         $schedule_timeline = $this->input->post("schedule-timeline");
 
-        $security = $this->input->post("security");
         $security_password = $this->input->post("security-password");
         $security_password2 = $this->input->post("security-password2");
+
+        /* Basic checks that all data is present and ok, content validation are client side */
+
+        if( !$name || !$selection || !$protocol || !$schedule_type ) {
+            return false;
+        }
+
+        if( !in_array($protocol, array('ftp', 'ssh', 'file')) ) {
+            return false;
+        }
+
+        if( $protocol == 'ftp' || $protocol == 'ssh' ) {
+            if( !$target_hostname || !$target_username || !$target_password ) {
+                return false;
+            }
+        }
+        if( !in_array($protocol, array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom')) ) {
+            return false;
+        }
+
+        if( $schedule == 'monthly' && (!$schedule_monthhour || ! $schedule_monthday) ) {
+            return false;
+        }
+
+        if( $schedule == 'weekly' && (!$schedule_weekhour || ! $schedule_weekday) ) {
+            return false;
+        }
+
+        if( $schedule == 'daily' && !$schedule_dayhour ) {
+            return false;
+        }
+
+        if( !$schedule_timeline ) {
+            return false;
+        }
+
+        if( $security && !$security_password ) {
+            return false;
+        }
+
+        try {
+            $this->backup->create_job($name);
+        } catch( Exception $e ) {
+            $this->err($e->getMessage());
+            return;
+        }
+
+        $dirs = array();
+        // TODO implement
+        switch( $selection ) {
+        case 'data':
+            break;
+        case 'email':
+            break;
+        case 'music':
+            break;
+        case 'photo':
+            break;
+        case 'video':
+            break;
+        case 'storage':
+            break;
+        case 'custom':
+            $dirs = $this->input->post('dirs');
+            break;
+        }
+
     }
 
+    function err($what) {
+        $this->json_data['html'] = $what;
+    }
     function _output($output) {
         echo json_encode($this->json_data);
     }

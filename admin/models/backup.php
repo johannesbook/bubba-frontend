@@ -3,6 +3,9 @@
 class NoSettingsException extends Exception {}
 class NoScheduleException extends Exception {}
 class DuplicityExecutionException extends Exception {}
+class DuplicateJobException extends Exception {}
+class IllegalJobNameException extends Exception {}
+class BackupPLException extends Exception {}
 
 class Backup extends Model {
 	private $diskmanager = "/usr/sbin/diskmanager";
@@ -348,6 +351,28 @@ class Backup extends Model {
             }
 
             return $schedules;
+        }
+    }
+
+    function create_job($jobname) {
+
+        $return_val["error"] = 0;
+        $return_val["status"] = "";
+
+        $jobs = $this->get_jobs($user);
+        foreach ($jobs as $existingjob) {
+            if($jobname == $existingjob) {
+                throw new DuplicityExecutionException();
+            }
+        }
+
+        if(preg_match("/[^\w-]/",$jobname)) {
+            throw new IllegalJobNameException();
+        }
+
+        $output = _system(BACKUP, "createjob", 'admin', $jobname);
+        if(preg_match("/Error/i",$output) ){
+            throw new BackupPLException($output);
         }
     }
 }
