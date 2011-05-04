@@ -1,3 +1,45 @@
+bubba-frontend (2.1.33) vincent hugo; urgency=low
+
+  * Adding new backup interface
+  * Implementing backup model
+  * Adding functionallity to identify the status of jobs
+  * remove debug code
+  * make it more disabled
+  * Listing of run jobs for a backup job
+  * The perl→php transition code, might be useful
+  * Backup job creation wizard
+  * Backup directory selection dialog
+  * target server settings
+  * disable validation for time beeing
+  * Backup schedule settings
+  * adding timeline code
+  * Wizard dialog: make height be more dynamic
+  * Wizard: adding timeline note
+  * Wizard: adding security step
+  * Backup ajax: remove old sample data code
+  * Escaping html special chars in messages
+  * CSS: make class ui-helper-inline important
+  * Selection fileds classes
+  * Change number of days in month
+  * Adding custom selection infrastructure
+  * updating size of popups and position
+  * Custom select dialog popup logic
+  * Make dialog content buttons look like other buttons
+  * fix typo: test → text
+  * special case for ordinal number 11 12 and 13
+  * Schedule: disable and enable per choice
+  * remove some ending line spaces
+  * change if statements to switch statement
+  * Security: enable/disable fields per checkbox
+  * adding select for local devices in target view
+  * adding disabling of impossible timeline options
+  * rename to gpg-password to differentate from target password
+  * submission updates
+  * prefix all names
+  * Handle custom dirs better
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 04 May 2011 16:42:53 +0200
+
 bubba-frontend (2.1.31) vincent hugo; urgency=low
 
   * typo in key names 
