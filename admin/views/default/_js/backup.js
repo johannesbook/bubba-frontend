@@ -43,6 +43,29 @@ $(function(){
         }
     }
 
+    var update_available_devices = function() {
+        $.throbber.show();
+        var $select = $('#fn-backup-target-device');
+        $select.empty();
+        $.post(
+            config.prefix + "/ajax_backup/get_available_devices",
+            {},
+            function(data) {
+                $.each(data['disks'], function(label, partitions) {
+                    var $group = $('<optgroup/>', {'label': label}).appendTo($select);
+                    $.each(partitions, function() {
+                        var partition = this;
+                        $('<option/>', {'value': partition['uuid'], 'html': partition['label']}).appendTo($group);
+                    });
+
+                });
+                $.throbber.hide();
+            },
+            "json"
+        );
+
+    }
+
     var update_backup_job_information = function(runs) {
         var table = $("#fn-backup-job-runs tbody");
         table.empty();
@@ -182,6 +205,9 @@ $(function(){
 				case "fn-backup-create-form-step-2":
 					$("#fn-backup-selection-custom-browse").button('disable')
 					break;
+				case "fn-backup-create-form-step-3":
+					$('#fn-backup-protocol').change();
+					break;
 				case "fn-backup-create-form-step-4":
 					$('.fn-backup-schedule').change();
 					break;
@@ -276,7 +302,24 @@ $(function(){
 			$('#fn-backup-security-password, #fn-backup-security-password2').attr('disabled', 'disabled');
 		}
 	});
-
+    $('#fn-backup-protocol').change(function(){
+        switch( $(this).val() ) {
+        case 'ftp':
+        case 'ssh':
+            $('#fn-backup-target-server-hostname').removeAttr('disabled').closest('tr').show()
+            $('#fn-backup-target-server-username').removeAttr('disabled').closest('tr').show()
+            $('#fn-backup-target-server-password').removeAttr('disabled').closest('tr').show()
+            $('#fn-backup-target-device').attr('disabled', 'disabled').closest('tr').hide()
+            break;
+        case 'file':
+            $('#fn-backup-target-server-hostname').attr('disabled', 'disabled').closest('tr').hide()
+            $('#fn-backup-target-server-username').attr('disabled', 'disabled').closest('tr').hide()
+            $('#fn-backup-target-server-password').attr('disabled', 'disabled').closest('tr').hide()
+            $('#fn-backup-target-device').removeAttr('disabled').closest('tr').show()
+            update_available_devices();
+            break;
+        }
+	});
     filemanager_dialog = $.dialog(
         filemanager,
         "Directory selector",

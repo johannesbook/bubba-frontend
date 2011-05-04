@@ -447,10 +447,12 @@ $lang["backup-selection-custom"] = "Custom selection";
 $lang["backup-selection-custom-browse"] = "Browse";
 
 $lang["backup-label-target-protocol"] = "Protocol";
+$lang["backup-label-target-device"] = "Target device";
+$lang["backup-title-target-device"] = "Device to use as target for the backup";
 $lang["backup-label-target-server-hostname"] = "Target server";
 $lang["backup-label-target-server-username"] = "Target server username";
 $lang["backup-label-target-server-password"] = "Target server password";
-$lang["backup-label-target-server-path"] = "Target server directory";
+$lang["backup-label-target-path"] = "Target directory";
 
 $lang["backup-title-schedule-monthly-day"] = "Day of the month";
 $lang["backup-title-schedule-monthly-hour"] = "Hour of the day";

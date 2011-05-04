@@ -111,12 +111,23 @@
 
         <tr>
         <td>
+            <label for="fn-backup-target-device"><?=t('backup-label-target-device')?>:</label>
+            <select
+                id="fn-backup-target-device"
+                name="device"
+                title="<?=t("backup-title-target-device")?>"
+            >
+            </select>
+        </td>
+        </tr>
+        <tr>
+        <td>
             <label for="fn-backup-target-server-hostname"><?=t('backup-label-target-server-hostname')?>:</label>
             <input
                 type="text"
                 id="fn-backup-target-server-hostname"
                 name="remote-hostname"
-                class="ui-input-text fn-primary-field"
+                class="ui-input-text"
                 value=""
             />
         </td>
@@ -150,10 +161,10 @@
 
         <tr>
         <td>
-            <label for="fn-backup-target-server-path"><?=t('backup-label-target-server-path')?>:</label>
+            <label for="fn-backup-target-path"><?=t('backup-label-target-path')?>:</label>
             <input
                 type="text"
-                id="fn-backup-target-server-path"
+                id="fn-backup-target-path"
                 name="path"
                 class="ui-input-text"
                 value=""

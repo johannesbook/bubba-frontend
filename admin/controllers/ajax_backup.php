@@ -149,6 +149,56 @@ class Ajax_backup extends Controller {
 
     }
 
+    function get_available_devices() {
+
+        $this->load->model("Disk_model");
+
+        $disks = $this->Disk_model->list_disks();
+
+        $usable_disks = array();
+
+        foreach($disks as $disk) {
+            if(preg_match("#/dev/sda#",$disk["dev"])) {
+                continue;
+            }
+            if(isset($disk["partitions"]) && is_array($disk["partitions"])) {
+                foreach($disk["partitions"] as $partition) {
+                    if( !strcmp($partition["usage"],"mounted") || !strcmp($partition["usage"],"unused") && $partition["uuid"]) {
+                        if($partition["label"]) {
+                            $diskdata["label"] = $partition["label"];
+                        } else {
+                            if(preg_match("#dev/\w+(\d+)#",$disk["dev"],$partition_number)) {
+                                $diskdata["label"] = "$disk[model]:$partition_number[1]";
+                            } else {
+                                $diskdata["label"] = "$disk[model]:1";
+                            }
+                        }
+                        $diskdata["uuid"] = $partition["uuid"];
+                        $usable_disks[$disk["model"]][]=$diskdata;
+                    } else {
+
+                    }
+                }
+            } else {
+                if( !strcmp($disk["usage"],"mounted") || !strcmp($disk["usage"],"unused") && $disk["uuid"]) {
+                    if($disk["label"]) {
+                        $diskdata["label"] = $disk["label"];
+                    } else {
+                        if(preg_match("#dev/\w+(\d+)#",$disk["dev"],$partition_number)) {
+                            $diskdata["label"] = "$disk[model]:$partition_number[1]";
+                        } else {
+                            $diskdata["label"] = "$disk[model]:1";
+                        }
+                    }
+                    $diskdata["uuid"] = $disk["uuid"];
+                    $usable_disks[$disk["model"]][]=$diskdata;
+                }
+            }
+        }
+
+        $this->json_data = array( "disks" => $usable_disks );
+    }
+
     function _output($output) {
         echo json_encode($this->json_data);
     }
