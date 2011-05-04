@@ -238,10 +238,19 @@ $(function(){
             }*/
         },
         {
-            'url': config.prefix + "/create/json",
+            'url': config.prefix + "/ajax_backup/create",
             'type': 'post',
             'dataType': 'json',
             'beforeSubmit': function(arr, $form, options) {
+                $.each(
+                    $('#fn-backup-selection-custom-selection').data('selection'),
+                    function() {
+                        arr.push({'name': 'dirs[]', 'value': this});
+                    }
+                );
+                console.log(arr);
+//               $.throbber.show();
+
                 return true;
             },
             'reset': true,
