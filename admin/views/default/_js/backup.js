@@ -276,6 +276,31 @@ $(function(){
 
 	$('.fn-backup-schedule').change(function(){
 		var self = $('.fn-backup-schedule:checked');
+        var $timeline = $('#fn-backup-schedule-timeline');
+        var val = $('#fn-backup-schedule-timeline option:selected').val();
+        $timeline.find('option').removeAttr('disabled');
+        switch(self.attr('id')) {
+        case 'fn-backup-schedule-hourly':
+        case 'fn-backup-schedule-daily':
+            break;
+        case 'fn-backup-schedule-weekly':
+            $timeline.find('option[value=1D]').attr('disabled', 'disabled');
+            if( val == '1D' ) {
+                $timeline.val('1W');
+            }
+            break;
+        case 'fn-backup-schedule-monthly':
+            $timeline.find('option[value=1D]').attr('disabled', 'disabled');
+            $timeline.find('option[value=1W]').attr('disabled', 'disabled');
+            if( val == '1D' || val == '1W' ) {
+                $timeline.val('1M');
+            }
+            break;
+        case 'fn-backup-schedule-disabled':
+            $timeline.find('option').attr('disabled', 'disabled');
+            break;
+        }
+
         if( self.is('#fn-backup-schedule-monthly') ) {
 			$('#fn-backup-schedule-monthday, #fn-backup-schedule-monthhour').removeAttr('disabled');
 		} else {
