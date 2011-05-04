@@ -242,12 +242,15 @@ $(function(){
             'type': 'post',
             'dataType': 'json',
             'beforeSubmit': function(arr, $form, options) {
-                $.each(
-                    $('#fn-backup-selection-custom-selection').data('selection'),
-                    function() {
-                        arr.push({'name': 'dirs[]', 'value': this});
-                    }
-                );
+                var $custom = $('#fn-backup-selection-custom-selection');
+                if( $custom.hasData('selection') ) {
+                    $.each(
+                        $custom.data('selection'),
+                        function() {
+                            arr.push({'name': 'dirs[]', 'value': this});
+                        }
+                    );
+                }
                 console.log(arr);
 //               $.throbber.show();
 
