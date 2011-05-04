@@ -199,6 +199,30 @@ class Ajax_backup extends Controller {
         $this->json_data = array( "disks" => $usable_disks );
     }
 
+    function create() {
+        $name = $this->input->post("name");
+
+        $selection = $this->input->post("selection");
+
+        $protocol = $this->input->post("protocol");
+        $target_hostname = $this->input->post("target-hostname");
+        $target_username = $this->input->post("target-username");
+        $target_password = $this->input->post("target-password");
+        $target_device = $this->input->post("target-device");
+
+        $schedule_type = $this->input->post("schedule-type");
+        $schedule_dayhour = $this->input->post("schedule-dayhour");
+        $schedule_weekhour = $this->input->post("schedule-weekhour");
+        $schedule_monthhour = $this->input->post("schedule-monthhour");
+        $schedule_weekday = $this->input->post("schedule-weekday");
+        $schedule_monthday = $this->input->post("schedule-monthday");
+        $schedule_timeline = $this->input->post("schedule-timeline");
+
+        $security = $this->input->post("security");
+        $security_password = $this->input->post("security-password");
+        $security_password2 = $this->input->post("security-password2");
+    }
+
     function _output($output) {
         echo json_encode($this->json_data);
     }
