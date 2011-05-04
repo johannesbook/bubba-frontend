@@ -243,14 +243,12 @@ $(function(){
             'dataType': 'json',
             'beforeSubmit': function(arr, $form, options) {
                 var $custom = $('#fn-backup-selection-custom-selection');
-                if( $custom.hasData('selection') ) {
-                    $.each(
-                        $custom.data('selection'),
-                        function() {
-                            arr.push({'name': 'dirs[]', 'value': this});
-                        }
-                    );
-                }
+                $.each(
+                    $custom.data('selection'),
+                    function() {
+                        arr.push({'name': 'dirs[]', 'value': this});
+                    }
+                );
                 console.log(arr);
 //               $.throbber.show();
 
@@ -282,6 +280,7 @@ $(function(){
 
     $("#fn-backup-job-add").click(function(){
         $("#fn-backup-create").formwizard('reset');
+        $('#fn-backup-selection-custom-selection').data('selection', []);
         dialogs["create"].dialog("open");
         dialogs['create'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
     });
