@@ -114,7 +114,7 @@
             <label for="fn-backup-target-device"><?=t('backup-label-target-device')?>:</label>
             <select
                 id="fn-backup-target-device"
-                name="device"
+                name="target-device"
                 title="<?=t("backup-title-target-device")?>"
             >
             </select>
@@ -126,7 +126,7 @@
             <input
                 type="text"
                 id="fn-backup-target-server-hostname"
-                name="remote-hostname"
+                name="target-hostname"
                 class="ui-input-text"
                 value=""
             />
@@ -139,7 +139,7 @@
             <input
                 type="text"
                 id="fn-backup-target-server-username"
-                name="username"
+                name="target-username"
                 class="ui-input-text"
                 value=""
             />
@@ -152,7 +152,7 @@
             <input
                 type="password"
                 id="fn-backup-target-server-password"
-                name="password"
+                name="target-password"
                 class="ui-input-text"
                 value=""
             />
@@ -165,7 +165,7 @@
             <input
                 type="text"
                 id="fn-backup-target-path"
-                name="path"
+                name="target-path"
                 class="ui-input-text"
                 value=""
             />
@@ -204,7 +204,7 @@
             <label for="fn-backup-schedule-monthday"><?=t("backup-label-schedule-monthly-day")?></label>
         <select
             id="fn-backup-schedule-monthday"
-            name="monthday"
+            name="schedule-monthday"
             class="ui-inline"
             title="<?=t("backup-title-schedule-monthly-day")?>"
         >
@@ -215,7 +215,7 @@
             <label for="fn-backup-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
         <select
             id="fn-backup-schedule-monthhour"
-            name="monthhour"
+            name="schedule-monthhour"
             class="ui-inline"
             title="<?=t("backup-title-schedule-monthly-hour")?>"
         >
@@ -239,7 +239,7 @@
             <label for="fn-backup-schedule-weekday"><?=t("backup-label-schedule-weekly-day")?></label>
         <select
             id="fn-backup-schedule-weekday"
-            name="weekday"
+            name="schedule-weekday"
             class="ui-inline"
             title="<?=t("backup-title-schedule-weekly-day")?>"
         >
@@ -250,7 +250,7 @@
             <label for="fn-backup-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
         <select
             id="fn-backup-schedule-weekhour"
-            name="weekhour"
+            name="schedule-weekhour"
             class="ui-inline"
             title="<?=t("backup-title-schedule-weekly-hour")?>"
         >
@@ -274,7 +274,7 @@
             <label for="fn-backup-schedule-dayhour"><?=t("backup-label-schedule-daily-hour")?></label>
         <select
             id="fn-backup-schedule-dayhour"
-            name="dayhour"
+            name="schedule-dayhour"
             class="ui-inline"
             title="<?=t("backup-title-schedule-daily-hour")?>"
         >
@@ -308,7 +308,7 @@
         <label for="fn-backup-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
         <select
             id="fn-backup-schedule-timeline"
-            name="timeline"
+            name="schedule-timeline"
             class="ui-inline"
             title="<?=t("backup-title-schedule-timeline")?>"
         >
@@ -345,7 +345,7 @@
             <input
                 type="password"
                 id="fn-backup-security-password"
-                name="gpg-password"
+                name="security-password"
                 class="ui-input-text"
                 value=""
             />
@@ -357,7 +357,7 @@
             <input
                 type="password"
                 id="fn-backup-security-password2"
-                name="gpg-password2"
+                name="security-password2"
                 class="ui-input-text"
                 value=""
             />
