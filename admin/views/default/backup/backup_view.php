@@ -345,7 +345,7 @@
             <input
                 type="password"
                 id="fn-backup-security-password"
-                name="password"
+                name="gpg-password"
                 class="ui-input-text"
                 value=""
             />
@@ -357,7 +357,7 @@
             <input
                 type="password"
                 id="fn-backup-security-password2"
-                name="password2"
+                name="gpg-password2"
                 class="ui-input-text"
                 value=""
             />
