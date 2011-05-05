@@ -275,6 +275,38 @@ class Ajax_backup extends Controller {
 
         $settins['jobname'] = $name;
 
+        /* Backup protocol */
+
+        $settings['target_protocol'] = $protocol;
+        if( $protocol == 'file' ) {
+            $settings['disk_uuid'] = $target_device;
+        } else {
+            $settings['target_host'] = $target_hostname;
+            $settings['target_user'] = $target_username;
+            $settings['target_FTPpasswd'] = $target_password;
+        }
+
+        /* Backup schedule */
+
+        $schedule['schedule_type'] = $schedule_type;
+        $this->backup->set_schedule(
+            $name,
+            $schedule_type,
+            $schedule_monthday,
+            $schedule_monthhour,
+            $schedule_weekday,
+            $schedule_weekhour,
+            $schedule_dayhour
+        );
+
+
+        if( $security ) {
+            $settings['GPG_key'] = $security_password;
+        }
+
+        $this->load->helper('ini');
+        write_ini_file("/home/admin/.backup/$name/jobdata", $settings);
+
         /* Backup file selection */
         $include = array();
         $exclude = array();
@@ -312,35 +344,6 @@ class Ajax_backup extends Controller {
         $settings['exclude'] = $exclude;
         $settings['selection_type'] = $selection;
         $this->backup->set_backup_files($name, $include, $exclude);
-
-        /* Backup protocol */
-
-        $settings['target_protocol'] = $protocol;
-        if( $protocol == 'file' ) {
-            $settings['disk_uuid'] = $target_device;
-        } else {
-            $settings['target_host'] = $target_hostname;
-            $settings['target_user'] = $target_username;
-            $settings['target_FTPpasswd'] = $target_password;
-        }
-
-        /* Backup schedule */
-
-        $schedule['schedule_type'] = $schedule_type;
-        $this->backup->set_schedule(
-            $name,
-            $schedule_type,
-            $schedule_monthday,
-            $schedule_monthhour,
-            $schedule_weekday,
-            $schedule_weekhour,
-            $schedule_dayhour
-        );
-
-
-        if( $security ) {
-            $settings['GPG_key'] = $security_password;
-        }
 
     }
 
