@@ -21,6 +21,7 @@ class Ajax_backup extends Controller {
         $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0");
         $this->output->set_header("Pragma: no-cache");
     }
+
     function get_backup_jobs() {
         $data = array();
         foreach( $this->backup->get_jobs() as $job ) {
@@ -198,7 +199,7 @@ class Ajax_backup extends Controller {
 
         $this->json_data = array( "disks" => $usable_disks );
     }
-
+//http://b3-carl/admin/ajax_backup/create?name=test2&protocol=ftp&schedule-dayhour=1&schedule-monthday=1&schedule-monthhour=1&schedule-timeline=1W&schedule-type=weekly&schedule-weekday=Monday&schedule-weekhour=1&security=yes&security-password=eee&security-password2=eee&selection=email&target-hostname=localhost&target-password=test&target-path=tee&target-username=test
     function create() {
         $name = $this->input->post("name");
         $selection = $this->input->post("selection");
@@ -221,70 +222,124 @@ class Ajax_backup extends Controller {
         $security_password = $this->input->post("security-password");
         $security_password2 = $this->input->post("security-password2");
 
+        $settings = array(
+            'local_user' => 'admin'
+        );
+
         /* Basic checks that all data is present and ok, content validation are client side */
 
         if( !$name || !$selection || !$protocol || !$schedule_type ) {
-            return false;
+            throw new Exception("jobname, selection, protocol, or schedule not defined");
         }
 
         if( !in_array($protocol, array('ftp', 'ssh', 'file')) ) {
-            return false;
+            throw new Exception("not valid protocol");
         }
 
         if( $protocol == 'ftp' || $protocol == 'ssh' ) {
             if( !$target_hostname || !$target_username || !$target_password ) {
-                return false;
+                throw new Exception("ftp or ssh without host and/or username/password combo");
             }
         }
-        if( !in_array($protocol, array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom')) ) {
-            return false;
+
+        if( $protocol == 'file' && !$target_device ) {
+            throw new Exception("file protocol without target disk");
         }
 
-        if( $schedule == 'monthly' && (!$schedule_monthhour || ! $schedule_monthday) ) {
-            return false;
+        if( !in_array($selection, array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom')) ) {
+            throw new Exception("invalid schedule type");
         }
 
-        if( $schedule == 'weekly' && (!$schedule_weekhour || ! $schedule_weekday) ) {
-            return false;
+        if( $schedule_type == 'monthly' && (!$schedule_monthhour || ! $schedule_monthday) ) {
+            throw new Exception("monthly schedule without day or hour");
         }
 
-        if( $schedule == 'daily' && !$schedule_dayhour ) {
-            return false;
+        if( $schedule_type == 'weekly' && (!$schedule_weekhour || ! $schedule_weekday) ) {
+            throw new Exception("weekly schedule without day or hour");
+        }
+
+        if( $schedule_type == 'daily' && !$schedule_dayhour ) {
+            throw new Exception("daily schedule without hour");
         }
 
         if( !$schedule_timeline ) {
-            return false;
+            throw new Exception("missing timeline");
         }
 
-        if( $security && !$security_password ) {
-            return false;
+        if( $security && (!$security_password || $security_password != $security_password2) ) {
+            throw new Exception("choosen security setting without specifying password, or password missmatch");
         }
 
-        try {
-            $this->backup->create_job($name);
-        } catch( Exception $e ) {
-            $this->err($e->getMessage());
+        /* Backup job name */
+        $this->backup->create_job($name);
+
+        $settins['jobname'] = $name;
+
+        /* Backup file selection */
+        $include = array();
+        $exclude = array();
+        switch( $selection ) {
+        case 'data':
+            $include[] = '/home/*';
+            $exclude[] = '/home/admin';
+            $exclude[] = '/home/storage';
+            $exclude[] = '/home/web';
+            break;
+        case 'email':
+            $include[] = '/home/*/Mail';
+            break;
+        case 'music':
+            $include[] = '/home/storage/music';
+            break;
+        case 'photo':
+            $include[] = '/home/storage/photo';
+            break;
+        case 'video':
+            $include[] = '/home/storage/video';
+            break;
+        case 'storage':
+            $include[] = '/home/storage';
+            break;
+        case 'custom':
+            $include = $this->input->post('dirs');
+            break;
+        default:
+            $this->err("Wrong selection type: $selection");
             return;
         }
 
-        $dirs = array();
-        // TODO implement
-        switch( $selection ) {
-        case 'data':
-            break;
-        case 'email':
-            break;
-        case 'music':
-            break;
-        case 'photo':
-            break;
-        case 'video':
-            break;
-        case 'storage':
-            break;
-        case 'custom':
-            $dirs = $this->input->post('dirs');
-            break;
+        $settings['include'] = $include;
+        $settings['exclude'] = $exclude;
+        $settings['selection_type'] = $selection;
+        $this->backup->set_backup_files($name, $include, $exclude);
+
+        /* Backup protocol */
+
+        $settings['target_protocol'] = $protocol;
+        if( $protocol == 'file' ) {
+            $settings['disk_uuid'] = $target_device;
+        } else {
+            $settings['target_host'] = $target_hostname;
+            $settings['target_user'] = $target_username;
+            $settings['target_FTPpasswd'] = $target_password;
+        }
+
+        /* Backup schedule */
+
+        $schedule['schedule_type'] = $schedule_type;
+        $this->backup->set_schedule(
+            $name,
+            $schedule_type,
+            $schedule_monthday,
+            $schedule_monthhour,
+            $schedule_weekday,
+            $schedule_weekhour,
+            $schedule_dayhour
+        );
+
+
+        if( $security ) {
+            $settings['GPG_key'] = $security_password;
         }
 
     }

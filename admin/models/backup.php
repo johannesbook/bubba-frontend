@@ -354,12 +354,9 @@ class Backup extends Model {
         }
     }
 
-    function create_job($jobname) {
+    public function create_job($jobname) {
 
-        $return_val["error"] = 0;
-        $return_val["status"] = "";
-
-        $jobs = $this->get_jobs($user);
+        $jobs = $this->get_jobs('admin');
         foreach ($jobs as $existingjob) {
             if($jobname == $existingjob) {
                 throw new DuplicityExecutionException();
@@ -374,5 +371,57 @@ class Backup extends Model {
         if(preg_match("/Error/i",$output) ){
             throw new BackupPLException($output);
         }
+    }
+
+    public function set_backup_files($job, $includes, $excludes) {
+        $inc = implode("\n", array_map(function($a){return "+ $a";}, $includes));
+        $exc = implode("\n", array_map(function($a){return "- $a";}, $excludes));
+        file_put_contents("/home/admin/.backup/$job/includeglob.list", $inc);
+        file_put_contents("/home/admin/.backup/$job/excludeglob.list", $exc);
+    }
+    public function set_schedule($jobname, $type, $monthday, $monthhour, $weekday, $weekhour, $dayhour) {
+        $schedule = array( 0, '*', '*', '*', '*' );
+
+        switch( $type ) {
+        case 'monthly':
+            $schedule[2] = $monthday;
+            $schedule[1] = $monthhour;
+            break;
+        case 'weekly':
+            $conv = array(
+                'monday' => 1,
+                'mon' => 1,
+                'tuesday' => 2,
+                'tue' => 2,
+                'wednesday' => 3,
+                'wed' => 3,
+                'thursday' => 4,
+                'thu' => 4,
+                'friday' => 5,
+                'fri' => 5,
+                'saturday' => 6,
+                'sat' => 6,
+                'sunday' => 7,
+                'sun' => 7,
+                'weekdays' => '1-5',
+                'weekend' => '6-7'
+            );
+            if( array_key_exists( strtolower($weekday), $conv ) ) {
+                $schedule[4] = $conv[strtolower($weekday)];
+            } else {
+                $schedule[4] = $weekday;
+            }
+            $schedule[1] = $weekhour;
+            break;
+        case 'daily':
+            $schedule[1] = $dayhour;
+            break;
+        }
+
+        $output = _system(BACKUP, "writeschedule", 'admin', $jobname, implode(' ', $schedule));
+        if(preg_match("/Error/i",$output) ){
+            throw new BackupPLException($output);
+        }
+
     }
 }
