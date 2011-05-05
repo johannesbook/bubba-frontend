@@ -9,15 +9,15 @@ function write_ini_file( $filename, $array )
 			foreach($val as $skey => $sval) {
 				if( is_array( $sval ) ) {
 					foreach($sval as $sskey => $ssval) {
-						$res[] = "  $sskey\[\] = " . ( is_numeric($ssval) ? $ssval : '"' . $ssval . '"' );
+						$res[] = "  $sskey\[\] = $ssval";
 					}
 				} else {
-					$res[] = "  $skey = " . ( is_numeric($sval) ? $sval : '"' . $sval . '"' );
+					$res[] = "  $skey = $sval";
 				}
 			}
 		} else {
-			$res[] = "$key = " . ( is_numeric($val) ? $val : '"' . $val . '"' );
+			$res[] = "$key = $val";
 		}
 	}
-	file_put_contents( $filename, $res, LOCK_EX );
+	file_put_contents( $filename, implode("\n",$res), LOCK_EX );
 }
