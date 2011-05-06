@@ -11,7 +11,7 @@ $(function(){
             'minWidth': 600,
             'minHeight': 300,
             'resizable': true,
-            'position': ['center','center']
+            'position': ['center',200]
         }
     };
 
@@ -315,9 +315,48 @@ $(function(){
         }
     });
     $("#fn-backup-selection-custom-browse").click(function(){
-        filemanager.filemanager('reload',function(){
-            filemanager_dialog.dialog('open');
-        });
+        $.dialog(
+            filemanager.clone(),
+            "Directory selector",
+            [
+                {
+                    'label': $.message("Select choosen directory"),
+                    'callback': function() {
+                        $(this).dialog('close');
+                    },
+                    options: {
+                        'class': 'ui-element-width-100'
+                    }
+                }
+            ],
+            {
+                'width': 600,
+                'Height': 400,
+                'resizable': false,
+                'position': ['center',200],
+                modal: false,
+                autoOpen: true,
+                open: function() {
+
+                    $(this).filemanager({
+                        root: '/',
+                        animate: false,
+                        dirPostOpenCallback: function(){},
+                        ajaxSource: config.prefix + "/ajax_backup/dirs"
+                    });
+
+
+                    dialogs["create"].dialog('widget').hide();
+                    return true;
+                },
+                close: function() {
+                    var selected = $(this).filemanager('getSelected');
+                    $('#fn-backup-selection-custom-selection').text(selected.join(', ')).data('selection', selected);
+                    dialogs["create"].dialog('widget').show();
+                    return true;
+                }
+            }
+        );
     });
 
     $("#fn-backup-job-add").click(function(){
@@ -398,45 +437,5 @@ $(function(){
             break;
         }
 	});
-    filemanager_dialog = $.dialog(
-        filemanager,
-        "Directory selector",
-        [
-            {
-                'label': $.message("Select choosen directory"),
-				'callback': function() {
-					filemanager_dialog.dialog('close');
-				},
-                options: {
-                    'class': 'ui-element-width-100'
-                }
-            }
-        ],
-        {
-            'width': 600,
-            'Height': 400,
-            'resizable': false,
-            'position': ['center','center'],
-            modal: false,
-            autoOpen: false,
-            open: function() {
-				dialogs["create"].dialog('widget').hide();
-				return true;
-            },
-            close: function() {
-                var selected = filemanager.filemanager('getSelected');
-                $('#fn-backup-selection-custom-selection').text(selected.join(', ')).data('selection', selected);
-				dialogs["create"].dialog('widget').show();
-				return true;
-            }
-        }
-    );
-
-    filemanager.filemanager({
-        root: '/',
-        animate: false,
-        dirPostOpenCallback: function(){},
-        ajaxSource: config.prefix + "/ajax_backup/dirs"
-    });
 
 });
