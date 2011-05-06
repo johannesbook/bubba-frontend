@@ -291,7 +291,7 @@ class Ajax_backup extends Controller {
 
         /* Backup schedule */
 
-        $schedule['schedule_type'] = $schedule_type;
+        $settings['schedule_type'] = $schedule_type;
         $this->backup->set_schedule(
             $name,
             $schedule_type,
