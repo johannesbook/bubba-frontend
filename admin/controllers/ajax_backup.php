@@ -202,8 +202,20 @@ class Ajax_backup extends Controller {
 
         $this->json_data = array( "disks" => $usable_disks );
     }
-//http://b3-carl/admin/ajax_backup/create?name=test2&protocol=ftp&schedule-dayhour=1&schedule-monthday=1&schedule-monthhour=1&schedule-timeline=1W&schedule-type=weekly&schedule-weekday=Monday&schedule-weekhour=1&security=yes&security-password=eee&security-password2=eee&selection=email&target-hostname=localhost&target-password=test&target-path=tee&target-username=test
-    function create() {
+
+    public function get_job_info() {
+        $name = $this->input->post('name');
+
+        // TODO implement
+        // return selection_type + custom, dest, schedule (if possible), and enc.
+    }
+    public function edit() {
+
+        // TODO implement
+        // should do almost the same as create (might be possible to combine it
+    }
+
+    public function create() {
         $name = $this->input->post("name");
         $selection = $this->input->post("selection");
         $protocol = $this->input->post("protocol");
