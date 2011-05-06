@@ -225,17 +225,58 @@ $(function(){
             }
         },
         {
-      /*      'rules': {
+            'rules': {
                 'name': {
-                    'required': true
+                    'required': true,
+                    'remote': {
+                        'type': 'POST',
+                        'url': config.prefix + "/ajax_backup/validate"
+                    }
+                },
+                'target-device': {
+                    'required': function(element) {
+                        return $('#fn-backup-protocol option:selected').val() == 'file';
+                    }
+                },
+                'target-hostname': {
+                    'required': function(element) {
+                        return $('#fn-backup-protocol option:selected').val() != 'file';
+                    }
+                },
+                'target-username': {
+                    'required': function(element) {
+                        return $('#fn-backup-protocol option:selected').val() != 'file';
+                    }
+                },
+                'target-password': {
+                    'required': function(element) {
+                        return $('#fn-backup-protocol option:selected').val() != 'file';
+                    }
                 },
                 'selection': {
                     'required': true
                 },
                 'protocol': {
                     'required': true
+                },
+                'schedule-type': {
+                    'required': true
+                },
+                'security-password': {
+                    'required': function(element) {
+                        return $('#fn-backup-security-enable').is(':checked');
+                    }
+                },
+                'security-password2': {
+                    'equalTo': '#fn-backup-security-password'
                 }
-            }*/
+
+            },
+            'messages': {
+                'name': {
+                    'remote': jQuery.format("{0} is already in use")
+                }
+            }
         },
         {
             'url': config.prefix + "/ajax_backup/create",

@@ -265,7 +265,7 @@ class Ajax_backup extends Controller {
             throw new Exception("daily schedule without hour");
         }
 
-        if( !$schedule_timeline ) {
+        if( $schedule_type == 'disabled' && !$schedule_timeline ) {
             throw new Exception("missing timeline");
         }
 
@@ -348,6 +348,16 @@ class Ajax_backup extends Controller {
         $settings['selection_type'] = $selection;
         $this->backup->set_backup_files($name, $include, $exclude);
 
+    }
+
+    public function validate() {
+        if($name = $this->input->post('name')) {
+            if( in_array( $name, $this->backup->get_jobs() ) ) {
+                $this->json_data = false;
+            } else {
+                $this->json_data = true;
+            }
+        }
     }
 
     function err($what) {
