@@ -276,7 +276,7 @@ class Ajax_backup extends Controller {
         /* Backup job name */
         $this->backup->create_job($name);
 
-        $settins['jobname'] = $name;
+        $settings['jobname'] = $name;
 
         /* Backup protocol */
 
