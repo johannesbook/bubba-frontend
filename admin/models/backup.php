@@ -374,8 +374,8 @@ class Backup extends Model {
     }
 
     public function set_backup_files($job, $includes, $excludes) {
-        $inc = implode("\n", array_map(function($a){return "+ $a";}, $includes));
-        $exc = implode("\n", array_map(function($a){return "- $a";}, $excludes));
+        $inc = is_array($includes) ? implode("\n", array_map(function($a){return "+ $a";}, $includes)) : '';
+        $exc = is_array($excludes) ? implode("\n", array_map(function($a){return "- $a";}, $excludes)) : '';
         file_put_contents("/home/admin/.backup/$job/includeglob.list", $inc);
         file_put_contents("/home/admin/.backup/$job/excludeglob.list", $exc);
     }
