@@ -437,6 +437,13 @@ $lang["backup-create-dialog-step4-title"] = "Select backup schedule (step 4 of 5
 $lang["backup-create-dialog-step5-title"] = "Security (step 5 of 5)";
 $lang["backup-label-name"] = "Job name";
 
+$lang["backup-edit-dialog-title"] = "Edit backup job";
+// Notice: skipping "step 1"
+$lang["backup-edit-dialog-step2-title"] = "Files to backup (step 1 of 4)";
+$lang["backup-edit-dialog-step3-title"] = "Backup destination (step 2 of 4)";
+$lang["backup-edit-dialog-step4-title"] = "Backup schedule (step 3 of 4)";
+$lang["backup-edit-dialog-step5-title"] = "Security (step 4 of 4)";
+
 $lang["backup-selection-data"] = "All user's data (/home/&lt;all users&gt;)";
 $lang["backup-selection-email"] = "All user's email (/home/&lt;all users&gt;/Mail)";
 $lang["backup-selection-music"] = "All music (/home/storage/music)";

@@ -70,20 +70,20 @@
         <td>
             <input
                 type="radio"
-                id="fn-backup-selection-<?=$key?>"
+                id="fn-backup-create-selection-<?=$key?>"
                 name="selection"
                 class="ui-input-text fn-backup-selection"
                 value="<?=$key?>"
             />
-            <label for="fn-backup-selection-<?=$key?>"><?=t("backup-selection-$key")?></label>
+            <label for="fn-backup-create-selection-<?=$key?>"><?=t("backup-selection-$key")?></label>
 <?if($key == 'custom'):?>
             <button
-                id="fn-backup-selection-custom-browse"
+                id="fn-backup-create-selection-custom-browse"
                 disabled="disabled"
             >
             <?=t("backup-selection-custom-browse")?>
             </button>
-            <span id="fn-backup-selection-custom-selection" class="ui-text-comment"></span>
+            <span id="fn-backup-create-selection-custom-selection" class="ui-text-comment"></span>
 <?endif?>
         </td>
         </tr>
@@ -96,9 +96,9 @@
         <table>
         <tr>
         <td>
-        <label for="fn-backup-protocol"><?=t("backup-label-target-protocol")?></label>
+        <label for="fn-backup-create-protocol"><?=t("backup-label-target-protocol")?></label>
         <select
-            id="fn-backup-protocol"
+            id="fn-backup-create-protocol"
             name="protocol"
             title="<?=t("backup-title-protocol")?>"
         >
@@ -111,9 +111,9 @@
 
         <tr>
         <td>
-            <label for="fn-backup-target-device"><?=t('backup-label-target-device')?>:</label>
+            <label for="fn-backup-create-target-device"><?=t('backup-label-target-device')?>:</label>
             <select
-                id="fn-backup-target-device"
+                id="fn-backup-create-target-device"
                 name="target-device"
                 title="<?=t("backup-title-target-device")?>"
             >
@@ -122,10 +122,10 @@
         </tr>
         <tr>
         <td>
-            <label for="fn-backup-target-server-hostname"><?=t('backup-label-target-server-hostname')?>:</label>
+            <label for="fn-backup-create-target-server-hostname"><?=t('backup-label-target-server-hostname')?>:</label>
             <input
                 type="text"
-                id="fn-backup-target-server-hostname"
+                id="fn-backup-create-target-server-hostname"
                 name="target-hostname"
                 class="ui-input-text"
                 value=""
@@ -135,10 +135,10 @@
 
         <tr>
         <td>
-            <label for="fn-backup-target-server-username"><?=t('backup-label-target-server-username')?>:</label>
+            <label for="fn-backup-create-target-server-username"><?=t('backup-label-target-server-username')?>:</label>
             <input
                 type="text"
-                id="fn-backup-target-server-username"
+                id="fn-backup-create-target-server-username"
                 name="target-username"
                 class="ui-input-text"
                 value=""
@@ -148,10 +148,10 @@
 
         <tr>
         <td>
-            <label for="fn-backup-target-server-password"><?=t('backup-label-target-server-password')?>:</label>
+            <label for="fn-backup-create-target-server-password"><?=t('backup-label-target-server-password')?>:</label>
             <input
                 type="password"
-                id="fn-backup-target-server-password"
+                id="fn-backup-create-target-server-password"
                 name="target-password"
                 class="ui-input-text"
                 value=""
@@ -161,10 +161,10 @@
 
         <tr>
         <td>
-            <label for="fn-backup-target-path"><?=t('backup-label-target-path')?>:</label>
+            <label for="fn-backup-create-target-path"><?=t('backup-label-target-path')?>:</label>
             <input
                 type="text"
-                id="fn-backup-target-path"
+                id="fn-backup-create-target-path"
                 name="target-path"
                 class="ui-input-text"
                 value=""
@@ -183,12 +183,12 @@
             <input
                 type="radio"
 				class="fn-backup-schedule"
-                id="fn-backup-schedule-disabled"
+                id="fn-backup-create-schedule-disabled"
                 checked="checked"
                 name="schedule-type"
                 value="disabled"
             />
-            <label for="fn-backup-schedule-disabled"><?=t("backup-label-schedule-disabled")?></label>
+            <label for="fn-backup-create-schedule-disabled"><?=t("backup-label-schedule-disabled")?></label>
         </td>
         </tr>
 
@@ -197,13 +197,13 @@
             <input
                 type="radio"
 				class="fn-backup-schedule"
-                id="fn-backup-schedule-monthly"
+                id="fn-backup-create-schedule-monthly"
                 name="schedule-type"
                 value="monthly"
             />
-            <label for="fn-backup-schedule-monthday"><?=t("backup-label-schedule-monthly-day")?></label>
+            <label for="fn-backup-create-schedule-monthday"><?=t("backup-label-schedule-monthly-day")?></label>
         <select
-            id="fn-backup-schedule-monthday"
+            id="fn-backup-create-schedule-monthday"
             name="schedule-monthday"
             class="ui-inline"
             title="<?=t("backup-title-schedule-monthly-day")?>"
@@ -212,9 +212,9 @@
             <option value="<?=$day?>"><?=to_ordinal($day)?></option>
 <?endforeach?>
         </select>
-            <label for="fn-backup-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
+            <label for="fn-backup-create-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
         <select
-            id="fn-backup-schedule-monthhour"
+            id="fn-backup-create-schedule-monthhour"
             name="schedule-monthhour"
             class="ui-inline"
             title="<?=t("backup-title-schedule-monthly-hour")?>"
@@ -232,13 +232,13 @@
             <input
                 type="radio"
 				class="fn-backup-schedule"
-                id="fn-backup-schedule-weekly"
+                id="fn-backup-create-schedule-weekly"
                 name="schedule-type"
                 value="weekly"
             />
-            <label for="fn-backup-schedule-weekday"><?=t("backup-label-schedule-weekly-day")?></label>
+            <label for="fn-backup-create-schedule-weekday"><?=t("backup-label-schedule-weekly-day")?></label>
         <select
-            id="fn-backup-schedule-weekday"
+            id="fn-backup-create-schedule-weekday"
             name="schedule-weekday"
             class="ui-inline"
             title="<?=t("backup-title-schedule-weekly-day")?>"
@@ -247,9 +247,9 @@
             <option value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
 <?endforeach?>
         </select>
-            <label for="fn-backup-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
+            <label for="fn-backup-create-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
         <select
-            id="fn-backup-schedule-weekhour"
+            id="fn-backup-create-schedule-weekhour"
             name="schedule-weekhour"
             class="ui-inline"
             title="<?=t("backup-title-schedule-weekly-hour")?>"
@@ -267,13 +267,13 @@
             <input
                 type="radio"
 				class="fn-backup-schedule"
-                id="fn-backup-schedule-daily"
+                id="fn-backup-create-schedule-daily"
                 name="schedule-type"
                 value="daily"
             />
-            <label for="fn-backup-schedule-dayhour"><?=t("backup-label-schedule-daily-hour")?></label>
+            <label for="fn-backup-create-schedule-dayhour"><?=t("backup-label-schedule-daily-hour")?></label>
         <select
-            id="fn-backup-schedule-dayhour"
+            id="fn-backup-create-schedule-dayhour"
             name="schedule-dayhour"
             class="ui-inline"
             title="<?=t("backup-title-schedule-daily-hour")?>"
@@ -292,7 +292,7 @@
             <input
                 type="radio"
 				class="fn-backup-schedule"
-                id="fn-backup-schedule-hourly"
+                id="fn-backup-create-schedule-hourly"
                 name="schedule-type"
                 value="hourly"
             />
@@ -305,9 +305,9 @@
         <table>
         <tr>
         <td>
-        <label for="fn-backup-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
+        <label for="fn-backup-create-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
         <select
-            id="fn-backup-schedule-timeline"
+            id="fn-backup-create-schedule-timeline"
             name="schedule-timeline"
             class="ui-inline"
             title="<?=t("backup-title-schedule-timeline")?>"
@@ -332,19 +332,19 @@
         <td>
             <input
                 type="checkbox"
-                id="fn-backup-security-enable"
+                id="fn-backup-create-security-enable"
                 name="security"
                 value="yes"
             />
-            <label for="fn-backup-security-enable"><?=t("backup-label-security-enable")?></label>
+            <label for="fn-backup-create-security-enable"><?=t("backup-label-security-enable")?></label>
         </td>
         </tr>
         <tr>
         <td>
-            <label for="fn-backup-security-password"><?=t('backup-label-security-password')?>:</label>
+            <label for="fn-backup-create-security-password"><?=t('backup-label-security-password')?>:</label>
             <input
                 type="password"
-                id="fn-backup-security-password"
+                id="fn-backup-create-security-password"
                 name="security-password"
                 class="ui-input-text"
                 value=""
@@ -353,10 +353,328 @@
         </tr>
         <tr>
         <td>
-            <label for="fn-backup-security-password2"><?=t('backup-label-security-password2')?>:</label>
+            <label for="fn-backup-create-security-password2"><?=t('backup-label-security-password2')?>:</label>
             <input
                 type="password"
-                id="fn-backup-security-password2"
+                id="fn-backup-create-security-password2"
+                name="security-password2"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+
+        </table>
+    </div>
+
+    </div>
+    </form>
+    </div>
+
+	<div id="fn-backup-edit-dialog">
+    <h2 class="ui-text-center">
+		<?=t('backup-edit-dialog-title')?>
+	</h2>
+
+	<form id="fn-backup-edit">
+    <input type="hidden" value="" name="name" id="fn-backup-edit-name" />
+    <div class="ui-form-wrapper">
+
+    <div id="fn-backup-edit-form-step-2" class="step">
+        <h3><?=t('backup-edit-dialog-step2-title')?></h3>
+        <table>
+<?foreach(array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom' ) as $key):?>
+        <tr>
+        <td>
+            <input
+                type="radio"
+                id="fn-backup-edit-selection-<?=$key?>"
+                name="selection"
+                class="ui-input-text fn-backup-selection"
+                value="<?=$key?>"
+            />
+            <label for="fn-backup-edit-selection-<?=$key?>"><?=t("backup-selection-$key")?></label>
+<?if($key == 'custom'):?>
+            <button
+                id="fn-backup-edit-selection-custom-browse"
+                disabled="disabled"
+            >
+            <?=t("backup-selection-custom-browse")?>
+            </button>
+            <span id="fn-backup-edit-selection-custom-selection" class="ui-text-comment"></span>
+<?endif?>
+        </td>
+        </tr>
+<?endforeach?>
+        </table>
+    </div>
+
+    <div id="fn-backup-edit-form-step-3" class="step">
+        <h3><?=t('backup-edit-dialog-step3-title')?></h3>
+        <table>
+        <tr>
+        <td>
+        <label for="fn-backup-edit-protocol"><?=t("backup-label-target-protocol")?></label>
+        <select
+            id="fn-backup-edit-protocol"
+            name="protocol"
+            title="<?=t("backup-title-protocol")?>"
+        >
+            <option value="ftp">FTP</option>
+            <option value="ssh">SSH</option>
+            <option value="file">Local (USB/eSATA)</option>
+        </select>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-edit-target-device"><?=t('backup-label-target-device')?>:</label>
+            <select
+                id="fn-backup-edit-target-device"
+                name="target-device"
+                title="<?=t("backup-title-target-device")?>"
+            >
+            </select>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <label for="fn-backup-edit-target-server-hostname"><?=t('backup-label-target-server-hostname')?>:</label>
+            <input
+                type="text"
+                id="fn-backup-edit-target-server-hostname"
+                name="target-hostname"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-edit-target-server-username"><?=t('backup-label-target-server-username')?>:</label>
+            <input
+                type="text"
+                id="fn-backup-edit-target-server-username"
+                name="target-username"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-edit-target-server-password"><?=t('backup-label-target-server-password')?>:</label>
+            <input
+                type="password"
+                id="fn-backup-edit-target-server-password"
+                name="target-password"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <label for="fn-backup-edit-target-path"><?=t('backup-label-target-path')?>:</label>
+            <input
+                type="text"
+                id="fn-backup-edit-target-path"
+                name="target-path"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+
+        </table>
+    </div>
+
+    <div id="fn-backup-edit-form-step-4" class="step">
+        <h3><?=t('backup-edit-dialog-step4-title')?></h3>
+        <table>
+        <tr>
+        <td>
+            <input
+                type="radio"
+				class="fn-backup-schedule"
+                id="fn-backup-edit-schedule-disabled"
+                checked="checked"
+                name="schedule-type"
+                value="disabled"
+            />
+            <label for="fn-backup-edit-schedule-disabled"><?=t("backup-label-schedule-disabled")?></label>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <input
+                type="radio"
+				class="fn-backup-schedule"
+                id="fn-backup-edit-schedule-monthly"
+                name="schedule-type"
+                value="monthly"
+            />
+            <label for="fn-backup-edit-schedule-monthday"><?=t("backup-label-schedule-monthly-day")?></label>
+        <select
+            id="fn-backup-edit-schedule-monthday"
+            name="schedule-monthday"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-monthly-day")?>"
+        >
+<?foreach(range(1,30) as $day):?>
+            <option value="<?=$day?>"><?=to_ordinal($day)?></option>
+<?endforeach?>
+        </select>
+            <label for="fn-backup-edit-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
+        <select
+            id="fn-backup-edit-schedule-monthhour"
+            name="schedule-monthhour"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-monthly-hour")?>"
+        >
+<?foreach(range(1,24) as $hour):?>
+            <option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+<?endforeach?>
+        </select>
+
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <input
+                type="radio"
+				class="fn-backup-schedule"
+                id="fn-backup-edit-schedule-weekly"
+                name="schedule-type"
+                value="weekly"
+            />
+            <label for="fn-backup-edit-schedule-weekday"><?=t("backup-label-schedule-weekly-day")?></label>
+        <select
+            id="fn-backup-edit-schedule-weekday"
+            name="schedule-weekday"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-weekly-day")?>"
+        >
+<?foreach(range(1,7) as $day):?>
+            <option value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
+<?endforeach?>
+        </select>
+            <label for="fn-backup-edit-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
+        <select
+            id="fn-backup-edit-schedule-weekhour"
+            name="schedule-weekhour"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-weekly-hour")?>"
+        >
+<?foreach(range(1,24) as $hour):?>
+            <option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+<?endforeach?>
+        </select>
+
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            <input
+                type="radio"
+				class="fn-backup-schedule"
+                id="fn-backup-edit-schedule-daily"
+                name="schedule-type"
+                value="daily"
+            />
+            <label for="fn-backup-edit-schedule-dayhour"><?=t("backup-label-schedule-daily-hour")?></label>
+        <select
+            id="fn-backup-edit-schedule-dayhour"
+            name="schedule-dayhour"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-daily-hour")?>"
+        >
+<?foreach(range(1,24) as $hour):?>
+            <option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+<?endforeach?>
+        </select>
+
+        </td>
+        </tr>
+
+
+        <tr>
+        <td>
+            <input
+                type="radio"
+				class="fn-backup-schedule"
+                id="fn-backup-edit-schedule-hourly"
+                name="schedule-type"
+                value="hourly"
+            />
+            <label><?=t("backup-label-schedule-hourly")?></label>
+
+        </td>
+        </tr>
+        </table>
+        <hr/>
+        <table>
+        <tr>
+        <td>
+        <label for="fn-backup-edit-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
+        <select
+            id="fn-backup-edit-schedule-timeline"
+            name="schedule-timeline"
+            class="ui-inline"
+            title="<?=t("backup-title-schedule-timeline")?>"
+        >
+            <option value="1D"><?=t("a day")?></option>
+            <option value="1W"><?=t("a week")?></option>
+            <option value="1M"><?=t("a month")?></option>
+            <option value="6M"><?=t("half a year")?></option>
+            <option value="1Y"><?=t("a year")?></option>
+            <option value="10Y"><?=t("a decade")?></option>
+        </select>
+        <span class="ui-text-comment">(<?=t("backup-note-schedule-timeline")?>)</span>
+        </td>
+        </tr>
+        </table>
+    </div>
+
+    <div id="fn-backup-edit-form-step-5" class="step submit_step">
+        <h3><?=t('backup-edit-dialog-step5-title')?></h3>
+        <table>
+        <tr>
+        <td>
+            <input
+                type="checkbox"
+                id="fn-backup-edit-security-enable"
+                name="security"
+                value="yes"
+            />
+            <label for="fn-backup-edit-security-enable"><?=t("backup-label-security-enable")?></label>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <label for="fn-backup-edit-security-password"><?=t('backup-label-security-password')?>:</label>
+            <input
+                type="password"
+                id="fn-backup-edit-security-password"
+                name="security-password"
+                class="ui-input-text"
+                value=""
+            />
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <label for="fn-backup-edit-security-password2"><?=t('backup-label-security-password2')?>:</label>
+            <input
+                type="password"
+                id="fn-backup-edit-security-password2"
                 name="security-password2"
                 class="ui-input-text"
                 value=""
