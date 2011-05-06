@@ -63,12 +63,15 @@ class Ajax_backup extends Controller {
 
             $target = $settings["target_protocol"];
 
-            switch($target) {
+            switch(strtolower($target)) {
             case "file":
-                $target = "USB";
+                $target = "USB/eSATA";
                 break;
-            case "FTP":
-            case "SSH":
+            case "ftp":
+                $target = 'FTP';
+                break;
+            case "ssh":
+                $target = 'SSH';
                 break;
             default:
                 $target = "???";
