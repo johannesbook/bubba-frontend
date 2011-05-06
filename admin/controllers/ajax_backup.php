@@ -302,10 +302,16 @@ class Ajax_backup extends Controller {
             $schedule_dayhour
         );
 
+        // XXX always only one fullbackup?
+        $settings['nbr_fullbackups'] = 1;
+        $settings['full_expiretime'] = $schedule_timeline;
+
 
         if( $security ) {
             $settings['GPG_key'] = $security_password;
         }
+
+        $settings['selection_type'] = $selection;
 
         $this->load->helper('ini');
         write_ini_file("/home/admin/.backup/$name/jobdata", $settings);
@@ -343,9 +349,6 @@ class Ajax_backup extends Controller {
             return;
         }
 
-        $settings['include'] = $include;
-        $settings['exclude'] = $exclude;
-        $settings['selection_type'] = $selection;
         $this->backup->set_backup_files($name, $include, $exclude);
 
     }
