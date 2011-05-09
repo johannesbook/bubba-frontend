@@ -592,7 +592,7 @@ $(function(){
     $.each(['create', 'edit'], function(key,value){
 
 
-        $("#fn-backup-'+value+'-selection-custom-browse").click(function(){
+        $('#fn-backup-'+value+'-selection-custom-browse').click(function(){
             $.dialog(
                 filemanager.clone(),
                 "Directory selector",
@@ -639,7 +639,7 @@ $(function(){
         // Custom browse for selection button
         $('#fn-backup-'+value+'-selection-custom-browse').button({'disabled': true});
 
-        $('.fn-backup-selection').change(function(){
+        $('#fn-backup-'+value+' .fn-backup-selection').change(function(){
             if( $(this).is('#fn-backup-'+value+'-selection-custom') ) {
                 $('#fn-backup-'+value+'-selection-custom-browse').button('enable');
             } else {
@@ -647,8 +647,8 @@ $(function(){
             }
         });
 
-        $('.fn-backup-schedule').change(function(){
-            var self = $('.fn-backup-schedule:checked');
+        $('#fn-backup-'+value+' .fn-backup-schedule').change(function(){
+            var self = $('#fn-backup-'+value+' .fn-backup-schedule:checked');
             var $timeline = $('#fn-backup-'+value+'-schedule-timeline');
             var val = $('#fn-backup-'+value+'-schedule-timeline option:selected').val();
             $timeline.find('option').removeAttr('disabled');

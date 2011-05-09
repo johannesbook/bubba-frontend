@@ -309,6 +309,7 @@
         <label for="fn-backup-create-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
         <select
             id="fn-backup-create-schedule-timeline"
+            class="fn-backup-schedule-timeline"
             name="schedule-timeline"
             class="ui-inline"
             title="<?=t("backup-title-schedule-timeline")?>"
@@ -628,6 +629,7 @@
         <label for="fn-backup-edit-schedule-timeline"><?=t("backup-label-schedule-timeline")?></label>
         <select
             id="fn-backup-edit-schedule-timeline"
+            class="fn-backup-schedule-timeline"
             name="schedule-timeline"
             class="ui-inline"
             title="<?=t("backup-title-schedule-timeline")?>"
