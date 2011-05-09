@@ -455,7 +455,7 @@ $(function(){
                 'schedule_weekday': 'Monday',
                 'schedule_weekhour': 1,
                 'schedule_dayhour': 1,
-                'schedule_timeline': '1M',
+                'full_expiretime': '1M',
                 'files': [],
                 'GPG_key': ''
 
@@ -487,7 +487,7 @@ $(function(){
             $('#fn-backup-edit-schedule-weekday').val(data['schedule_weekday']);
             $('#fn-backup-edit-schedule-weekhour').val(data['schedule_weekhour']);
             $('#fn-backup-edit-schedule-dayhour').val(data['schedule_dayhour']);
-            $('#fn-backup-edit-schedule-timeline').val(data['schedule_timeline']);
+            $('#fn-backup-edit-schedule-timeline').val(data['full_expiretime']);
 
             $('#fn-backup-edit-security-enable').attr('checked', data['GPG_key'] != '' ? 'checked' : '');
             $('#fn-backup-edit-security-password, #fn-backup-edit-security-password2').val(data['GPG_key']);
