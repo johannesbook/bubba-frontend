@@ -5,6 +5,8 @@ messages = {
 	"button-label-edit": "Edit",
 	"text-yes": "Yes",
 	"text-no": "No",
+    "next": "Next",
+    "back": "Back",
 	
 	// Topnav
 	"topnav-login": "Login",
