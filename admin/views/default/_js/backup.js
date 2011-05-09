@@ -70,7 +70,7 @@ $(function(){
 
     var update_available_devices = function() {
         $.throbber.show();
-        var $select = $('#fn-backup-target-device');
+        var $select = $('.fn-backup-target-device');
         $select.empty();
         $.post(
             config.prefix + "/ajax_backup/get_available_devices",
@@ -323,7 +323,7 @@ $(function(){
 
     $("#fn-backup-edit").formwizard(
         {
-            resetForm: true,
+            resetForm: !true,
             historyEnabled: !true,
             focusFirstInput: true,
             validationEnabled: true,
@@ -420,7 +420,7 @@ $(function(){
 
                 return true;
             },
-            'reset': true,
+            'reset': !true,
             'success': function( data ) {
                 $.throbber.hide();
                 dialogs['edit'].dialog('close');
@@ -432,21 +432,68 @@ $(function(){
 
     $("#fn-backup-job-add").click(function(){
         $("#fn-backup-create").formwizard('reset');
+
         $('#fn-backup-create-selection-custom-selection').data('selection', []);
         dialogs["create"].dialog("open");
         dialogs['create'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
     });
 
     $(".fn-job-edit").live('click', function(e){
-        e.stopPropagation();
-        // XXX retrieve parseable data?
-        var name = $(this).closest('tr').data('job');
-        console.log('edit');
-        $('#fn-backup-edit-name').val(name);
-        $("#fn-backup-edit").formwizard('reset');
-        $('#fn-backup-edit-selection-custom-selection').data('selection', []);
-        dialogs["edit"].dialog("open");
-        dialogs['edit'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
+        $.post(config.prefix + '/ajax_backup/get_job_info', { 'name': $(this).closest('tr').data('job') },
+        function(data){
+            e.stopPropagation();
+            data = $.extend({
+                'schedule_type': 'weekly',
+                'selection_type': 'custom',
+                'target_protocol': 'ftp',
+                'target_device': '',
+                'target_host': '',
+                'target_user': '',
+                'target_FTPpasswd': '',
+                'schedule_monthday': 1,
+                'schedule_monthhour': 1,
+                'schedule_weekday': 'Monday',
+                'schedule_weekhour': 1,
+                'schedule_dayhour': 1,
+                'schedule_timeline': '1M',
+                'files': [],
+                'GPG_key': ''
+
+            }, data);
+            // XXX retrieve parseable data?
+            var name = data.jobname;
+
+            $("#fn-backup-edit").formwizard('reset');
+            dialogs["edit"].dialog("open");
+
+            $('#fn-backup-edit-name').val(name);
+
+            $('#fn-backup-edit-selection-'+data['selection_type']).attr('checked', 'checked');
+            if(data['selection_type'] == 'custom') {
+                $('#fn-backup-edit-selection-custom-browse').removeAttr('disabled');
+            }
+            $('#fn-backup-edit-selection-custom-selection').data('selection', data.files).html(data.files.join(', '));
+
+            $('#fn-backup-edit-protocol option[value='+data['target_protocol']+']').attr('selected', 'selected');
+            $('#fn-backup-edit-target-device').val(data['dist_uuid']);
+            $('#fn-backup-edit-target-server-hostname').val(data['target_host']);
+            $('#fn-backup-edit-target-server-username').val(data['target_user']);
+            $('#fn-backup-edit-target-server-password').val(data['target_FTPpasswd']);
+            $('#fn-backup-edit-target-path').val(data['target_path']);
+
+            $('#fn-backup-edit-schedule-'+data['schedule_type']).attr('checked', 'checked');
+            $('#fn-backup-edit-schedule-monthday').val(data['schedule_monthday']);
+            $('#fn-backup-edit-schedule-monthhour').val(data['schedule_monthhour']);
+            $('#fn-backup-edit-schedule-weekday').val(data['schedule_weekday']);
+            $('#fn-backup-edit-schedule-weekhour').val(data['schedule_weekhour']);
+            $('#fn-backup-edit-schedule-dayhour').val(data['schedule_dayhour']);
+            $('#fn-backup-edit-schedule-timeline').val(data['schedule_timeline']);
+
+            $('#fn-backup-edit-security-enable').attr('checked', data['GPG_key'] != '' ? 'checked' : '');
+            $('#fn-backup-edit-security-password, #fn-backup-edit-security-password2').val(data['GPG_key']);
+            dialogs['edit'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
+        }, 'json');
+
         return false;
     });
 

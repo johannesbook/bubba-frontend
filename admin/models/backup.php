@@ -424,4 +424,31 @@ class Backup extends Model {
         }
 
     }
+    private function _read_backupfiles($file) {
+
+        if(file_exists($file)) {
+            $fh = fopen($file,'r');
+            if(filesize($file)) {
+                $data = fread($fh,filesize($file));
+            }
+            fclose($fh);
+            if(isset($data)) {
+                $data = rtrim($data);
+                $a_data = explode("\n",$data);
+                return array_map(create_function('$str','return substr($str,2);'),$a_data);
+            } else {
+                return array();
+            }
+        } else return array();
+    }
+
+    public function get_backupfiles($jobname) {
+        $files = array();
+
+        $files["include"] = $this->_read_backupfiles("/home/admin/.backup/".$jobname."/includeglob.list");
+        $files["exclude"] = $this->_read_backupfiles("/home/admin/.backup/".$jobname."/excludeglob.list");
+        return $files;
+    }
+
+
 }

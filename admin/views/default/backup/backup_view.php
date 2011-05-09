@@ -432,6 +432,7 @@
             <label for="fn-backup-edit-target-device"><?=t('backup-label-target-device')?>:</label>
             <select
                 id="fn-backup-edit-target-device"
+                class="fn-backup-target-device"
                 name="target-device"
                 title="<?=t("backup-title-target-device")?>"
             >

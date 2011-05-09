@@ -205,17 +205,26 @@ class Ajax_backup extends Controller {
 
     public function get_job_info() {
         $name = $this->input->post('name');
+        if(!$name) {
+            throw new Exception("Required parameter name not given");
+        }
 
-        // TODO implement
-        // return selection_type + custom, dest, schedule (if possible), and enc.
+        $settings = $this->backup->get_settings($name);
+        if( !array_key_exists('selection_type', $settings) || $settings['selection_type'] == 'custom' ) {
+            $settings['selection_type'] = 'custom';
+            $backupfiles = $this->backup->get_backupfiles($name);
+            $settings['files'] = $backupfiles['include'];
+        }
+
+        $this->json_data = $settings;
+
     }
     public function edit() {
 
-        // TODO implement
-        // should do almost the same as create (might be possible to combine it
+        $this->create(false);
     }
 
-    public function create() {
+    public function create($create = true) {
         $name = $this->input->post("name");
         $selection = $this->input->post("selection");
         $protocol = $this->input->post("protocol");
@@ -285,8 +294,10 @@ class Ajax_backup extends Controller {
             throw new Exception("choosen security setting without specifying password, or password missmatch");
         }
 
+        if( $create ) {
         /* Backup job name */
-        $this->backup->create_job($name);
+            $this->backup->create_job($name);
+        }
 
         $settings['jobname'] = $name;
 
@@ -313,6 +324,11 @@ class Ajax_backup extends Controller {
             $schedule_weekhour,
             $schedule_dayhour
         );
+        $settings['schedule_monthday'] = $schedule_monthday;
+        $settings['schedule_monthhour'] = $schedule_monthhour;
+        $settings['schedule_weekday'] = $schedule_weekday;
+        $settings['schedule_weekhour'] = $schedule_weekhour;
+        $settings['schedule_dayhour'] = $schedule_dayhour;
 
         // XXX always only one fullbackup?
         $settings['nbr_fullbackups'] = 1;
