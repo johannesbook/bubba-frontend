@@ -229,6 +229,16 @@ class Ajax_backup extends Controller {
         $this->json_data = array('error' => false);
 
     }
+
+    public function run() {
+        $name = $this->input->post('name');
+        if(!$name) {
+            throw new Exception("Required parameter name not given");
+        }
+        $this->backup->run($name);
+        $this->json_data = array('error' => false);
+    }
+
     public function edit() {
 
         $this->create(false);

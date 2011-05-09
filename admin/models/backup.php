@@ -456,8 +456,18 @@ class Backup extends Model {
         if(preg_match("/Error/i",implode("\n",(array)$output)) ){
             throw new BackupPLException($output);
         }
-
     }
+
+    public function run($jobname) {
+        $cmd = array(BACKUP, "backup", 'admin', $jobname);
+
+        $proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
+        if( !is_resource($proc) ) {
+            throw new Exception("Failed to execute command");
+        }
+        // we just wont close this process...
+    }
+
 
 
 }

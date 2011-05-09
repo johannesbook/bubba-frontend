@@ -533,11 +533,47 @@ $(function(){
         );
     });
 
+    $('.fn-job-run').live('click', function() {
+        job = $(this).closest('tr').data('job');
+        $.confirm(
+            $.message("backup-job-dialog-run-message"),
+            $.message("backup-job-dialog-run-header"),
+            [
+                {
+                    'label': $.message("backup-job-dialog-run-button-label"),
+                    'callback': function(){
+                        var confirm_dialog = $(this);
+                        $.throbber.show();
+                        $.post(
+                            config.prefix + "/ajax_backup/run",
+                            { 'name': job },
+                            function(data){
+                                if( data.error ) {
+                                    update_status( false, data.html );
+                                } else {
+                                    update_status(
+                                        true,
+                                        $.message("backup-job-run-success-message")
+                                    );
+                                }
+                                setTimeout(function(){
+                                    $.throbber.hide();
+                                    update_backup_jobs_table()
+                                    confirm_dialog.dialog('close');
+                                }, 2000);
+                            }, 'json'
+                        );
+
+                    },
+                    options: { id: 'fn-backup-job-dialog-run-confirm-button' }
+                }
+            ]
+        );
+    });
 
 
 
     $('.fn-backup-job-entry').live('click', function(){
-        console.log('entry');
         $.post(
             config.prefix + "/ajax_backup/get_backup_job_information",
             {name: $(this).data('job')},
