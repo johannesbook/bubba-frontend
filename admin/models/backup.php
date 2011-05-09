@@ -261,6 +261,7 @@ class Backup extends Model {
 
     public function get_jobs() {
         $dir = "/home/admin/.backup";
+        $jobs = array();
         foreach( scandir($dir) as $file ) {
             if( !is_dir( "$dir/$file" ) || $file == "." || $file == ".." ) {
                 continue;
@@ -368,7 +369,7 @@ class Backup extends Model {
         }
 
         $output = _system(BACKUP, "createjob", 'admin', $jobname);
-        if(preg_match("/Error/i",$output) ){
+        if(preg_match("/Error/i",implode("\n",(array)$output)) ){
             throw new BackupPLException($output);
         }
     }
@@ -419,7 +420,7 @@ class Backup extends Model {
         }
 
         $output = _system(BACKUP, "writeschedule", 'admin', $jobname, implode(' ', $schedule));
-        if(preg_match("/Error/i",$output) ){
+        if(preg_match("/Error/i",implode("\n",(array)$output)) ){
             throw new BackupPLException($output);
         }
 
@@ -448,6 +449,14 @@ class Backup extends Model {
         $files["include"] = $this->_read_backupfiles("/home/admin/.backup/".$jobname."/includeglob.list");
         $files["exclude"] = $this->_read_backupfiles("/home/admin/.backup/".$jobname."/excludeglob.list");
         return $files;
+    }
+
+    public function remove($jobname) {
+        $output = _system(BACKUP, "deletejob", 'admin', $jobname);
+        if(preg_match("/Error/i",implode("\n",(array)$output)) ){
+            throw new BackupPLException($output);
+        }
+
     }
 
 

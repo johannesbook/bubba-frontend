@@ -56,6 +56,10 @@ messages = {
     "backup-job-run-now-button-label" : "Run now",    
     "backup-create-button-finish": "Complete",
     "backup-edit-button-finish": "Complete",
+    "backup-job-dialog-remove-message": "Are you pretty sure you actually want to remove this particular backup job?",
+    "backup-job-dialog-remove-header": "Remove backup job",
+    "backup-job-dialog-remove-button-label": "Yea",
+    "backup-job-remove-success-message": "Backup job was removed from the system",
 
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",

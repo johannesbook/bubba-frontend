@@ -219,6 +219,16 @@ class Ajax_backup extends Controller {
         $this->json_data = $settings;
 
     }
+
+    public function remove() {
+        $name = $this->input->post('name');
+        if(!$name) {
+            throw new Exception("Required parameter name not given");
+        }
+        $this->backup->remove($name);
+        $this->json_data = array('error' => false);
+
+    }
     public function edit() {
 
         $this->create(false);

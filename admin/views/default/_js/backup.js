@@ -513,7 +513,6 @@ $(function(){
                             { 'name': job },
                             function(data){
                                 if( data.error ) {
-                                    $.throbber.hide();
                                     update_status( false, data.html );
                                 } else {
                                     update_status(
@@ -521,6 +520,7 @@ $(function(){
                                         $.message("backup-job-remove-success-message")
                                     );
                                 }
+                                $.throbber.hide();
                                 update_backup_jobs_table();
                                 confirm_dialog.dialog('close');
                             }, 'json'
