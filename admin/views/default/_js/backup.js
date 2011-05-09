@@ -497,7 +497,8 @@ $(function(){
         return false;
     });
 
-    $('.fn-job-remove').live('click', function() {
+    $('.fn-job-remove').live('click', function(e) {
+        e.stopPropagation();
         job = $(this).closest('tr').data('job');
         $.confirm(
             $.message("backup-job-dialog-remove-message"),
@@ -531,9 +532,11 @@ $(function(){
                 }
             ]
         );
+        return false;
     });
 
-    $('.fn-job-run').live('click', function() {
+    $('.fn-job-run').live('click', function(e) {
+        e.stopPropagation();
         job = $(this).closest('tr').data('job');
         $.confirm(
             $.message("backup-job-dialog-run-message"),
@@ -569,6 +572,7 @@ $(function(){
                 }
             ]
         );
+        return false;
     });
 
 
