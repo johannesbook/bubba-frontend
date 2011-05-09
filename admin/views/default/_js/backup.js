@@ -497,6 +497,44 @@ $(function(){
         return false;
     });
 
+    $('.fn-job-remove').live('click', function() {
+        job = $(this).closest('tr').data('job');
+        $.confirm(
+            $.message("backup-job-dialog-remove-message"),
+            $.message("backup-job-dialog-remove-header"),
+            [
+                {
+                    'label': $.message("backup-job-dialog-remove-button-label"),
+                    'callback': function(){
+                        var confirm_dialog = $(this);
+                        $.throbber.show();
+                        $.post(
+                            config.prefix + "/ajax_backup/remove",
+                            { 'name': job },
+                            function(data){
+                                if( data.error ) {
+                                    $.throbber.hide();
+                                    update_status( false, data.html );
+                                } else {
+                                    update_status(
+                                        true,
+                                        $.message("backup-job-remove-success-message")
+                                    );
+                                }
+                                update_backup_jobs_table();
+                                confirm_dialog.dialog('close');
+                            }, 'json'
+                        );
+
+                    },
+                    options: { id: 'fn-backup-job-dialog-remove-confirm-button' }
+                }
+            ]
+        );
+    });
+
+
+
 
     $('.fn-backup-job-entry').live('click', function(){
         console.log('entry');
