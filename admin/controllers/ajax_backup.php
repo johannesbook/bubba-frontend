@@ -276,8 +276,12 @@ class Ajax_backup extends Controller {
         if(!$name) {
             throw new Exception("Required parameter name not given");
         }
-        $this->backup->run($name);
-        $this->json_data = array('error' => false);
+		try {
+			$this->backup->run($name);
+			$this->json_data = array('error' => false);
+		} catch( Exception $e ) {
+			$this->json_data['html'] = $e->getMessage();
+		}
     }
 
 	public function restore() {
@@ -293,7 +297,12 @@ class Ajax_backup extends Controller {
 		}
 
 		$target = preg_replace('#(^|/)\.\./#', '/', $target);
-		$this->backup->restore($name, $date, $action, $target);
+		try {
+			$this->backup->restore($name, $date, $action, $target);
+			$this->json_data = array('error' => false);
+		} catch( Exception $e ) {
+			$this->json_data['html'] = $e->getMessage();
+		}
 	}
 
     public function edit() {

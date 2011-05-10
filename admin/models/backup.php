@@ -503,7 +503,7 @@ class Backup extends Model {
 
         $proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
         if( !is_resource($proc) ) {
-            throw new Exception("Failed to execute command");
+            throw new Exception(sprintf("Failed to execute command `%s`", escapeshellargs($cmd)));
         }
         // we just wont close this process...
     }
@@ -527,7 +527,7 @@ class Backup extends Model {
 
         $proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
         if( !is_resource($proc) ) {
-            throw new Exception("Failed to execute command");
+            throw new Exception(sprintf("Failed to execute command `%s`", escapeshellargs($cmd)));
         }
         // we just wont close this process...
     }
