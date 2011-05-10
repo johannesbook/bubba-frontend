@@ -578,11 +578,12 @@ $(function(){
 
 
     $('.fn-backup-job-entry').live('click', function(){
+        var name = $(this).data('job');
         $.post(
             config.prefix + "/ajax_backup/get_backup_job_information",
-            {name: $(this).data('job')},
+            {'name': name},
             function(data) {
-                update_backup_job_information(data);
+                update_backup_job_information(name, data);
             },
             "json"
         );
