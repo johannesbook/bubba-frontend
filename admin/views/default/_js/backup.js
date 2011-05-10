@@ -91,22 +91,23 @@ $(function(){
 
     }
 
-    var update_backup_job_information = function(runs) {
+    var update_backup_job_information = function(job, runs) {
         var table = $("#fn-backup-job-runs tbody");
         table.empty();
         var row = $("<tr/>");
         $.each(runs, function() {
             var data = $.extend({failed: false, running: false},this);
-            row.clone().
-            appendTo(table).
-            append($('<td/>',{text: data.date})).
-            append($('<td/>').append( $('<button/>', {
-                'class' : "submit",
-                html: $.message('backup-job-restore-button-label'),
-                click: function(){}
+            var $row = row.clone();
+            $row.appendTo(table);
+            $row.append($('<td/>',{text: data.date}));
+            $row.append($('<td/>').append( $('<button/>', {
+                'class' : "submit fn-job-restore",
+                html: $.message('backup-job-restore-button-label')
             }).
             attr('disabled', data.failed ? 'disabled' : '').
-            toggleClass('disabled', data.failed)))
+            toggleClass('disabled', data.failed)));
+            $row.data('job',job);
+            $row.data('date', data.date);
         });
     }
 
@@ -575,7 +576,92 @@ $(function(){
         return false;
     });
 
+    $('.fn-backup-restore-action').live('change', function(e) {
+        e.stopPropagation();
 
+		return false;
+	});
+
+    $('.fn-job-restore').live('click', function(e) {
+        e.stopPropagation();
+        var job = $(this).closest('tr').data('job');
+        var date = $(this).closest('tr').data('date');
+        var $obj = $("#fn-backup-restore").clone();
+        var $filemanager = $obj.find('.fn-restore-filemanager');
+        $.dialog(
+            $obj,
+            $.message("backup-dialog-restore-title"),
+            [
+                {
+                    'label': $.message("backup-dialog-restore-label"),
+					'callback': function() {
+						$.throbber.show();
+						var selected = $filemanager.filemanager('getSelected');
+						var action = $obj.find('.fn-backup-restore-action:checked').val();
+						var target = $obj.find('.fn-backup-restore-target').val();
+						$.post(config.prefix + "/ajax_backup/restore",
+							{
+								'name': job,
+								'date': date,
+								'action': action,
+								'target': target
+							},
+							function(data) {
+								update_status(true, "done");
+								$.throbber.hide();
+								$obj.dialog('close');
+							}, 'json');
+						switch($(this).val()) {
+						case 'missing':
+							break;
+						case 'overwrite':
+							break;
+						case 'newdir':
+							break;
+						}
+						$.alert(selected.join(" : "));
+                        $(this).dialog('close');
+                    },
+                    options: {
+                        'class': 'ui-element-width-100'
+                    }
+                }
+            ],
+            {
+                'width': 600,
+                'Height': 400,
+                'resizable': false,
+                'position': ['center',200],
+                modal: false,
+                autoOpen: true,
+                open: function() {
+
+                    $filemanager.filemanager({
+                        root: '/home',
+                        animate: false,
+                        dirPostOpenCallback: function(){},
+                        ajaxSource: config.prefix + "/ajax_backup/get_restore_data",
+                        ajaxExtraData: {'name': job, 'date': date},
+						multiSelect: false,
+                        columns: [
+                            { "sWidth": "0px", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
+                            { "sWidth": "auto", "aaSorting": [ "asc", "desc" ], "sClass": "ui-filemanager-column-name" },
+                            { "sWidth": "200px", "sClass": "ui-filemanager-column-date" },
+                            { "sWidth": "30px", "bSortable": false, "sClass": "ui-filemanager-column-next" }
+                        ]
+                    });
+
+
+                    return true;
+                },
+                close: function() {
+                    return true;
+                }
+            }
+        );
+
+        return false;
+    });
 
     $('.fn-backup-job-entry').live('click', function(){
         var name = $(this).data('job');

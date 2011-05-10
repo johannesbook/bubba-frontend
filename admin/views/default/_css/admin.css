@@ -1945,3 +1945,8 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
   display: inline-block !important;
   vertical-align: bottom;
 }
+
+.fn-restore-filemanager-wrapper {
+	overflow: auto;
+	max-height: 300px;
+}

@@ -109,6 +109,47 @@ class Ajax_backup extends Controller {
         $this->json_data = $this->backup->list_backups($name);
     }
 
+    public function get_restore_data() {
+        $this->load->helper('struct');
+
+	    $subpath = $this->input->post('path');
+        $name = $this->input->post('name');
+        $date = $this->input->post('date');
+        $orig = $subpath = preg_replace("#(^|\/)\.\.?(\/|$)#", '/', $subpath);
+        $subpath = preg_replace("#/home/?#", '', $subpath);
+
+        $data = array(
+            'meta' => array(),
+            'root' => $subpath != "" ? "/home/$subpath" : '/home',
+            'aaData'  => array()
+        );
+
+		$map = array();
+
+        foreach( $this->backup->get_restore_data_list($name, $date) as $entry ) {
+			if( preg_match("#^".preg_quote($subpath, "#")."(?P<given>.*)#", $entry['path'], $m) && $m['given'] != '' ) {
+				$map[$m['given']] = $entry['date'];
+			}
+        }
+
+		foreach(explodeTree($map, '/', true) as $k => $v) {
+			if(is_array($v)) {
+				$date = $v['__base_val'];
+				$type = 'dir';
+			} else {
+				$date = $v;
+				$type = 'file';
+			}
+			$data['aaData'][] = array(
+				$type,
+				$k,
+				date_create($date)->format("r")
+			);
+
+		}
+        $this->json_data = $data;
+    }
+
     function dirs() {
         function formatBytes($bytes, $precision = 2) {
             $units = array('B', 'KB', 'MB', 'GB', 'TB');
@@ -238,6 +279,22 @@ class Ajax_backup extends Controller {
         $this->backup->run($name);
         $this->json_data = array('error' => false);
     }
+
+	public function restore() {
+        $name = $this->input->post('name');
+        $date = $this->input->post('date');
+        $action = $this->input->post('action');
+        $target = $this->input->post('target');
+        if(!$name || !$date || !$action) {
+            throw new Exception("Required parameter name not given");
+		}
+		if( $action == 'newdir' && !$target ) {
+            throw new Exception("newdir action requires target");
+		}
+
+		$target = preg_replace('#(^|/)\.\./#', '/', $target);
+		$this->backup->restore($name, $date, $action, $target);
+	}
 
     public function edit() {
 

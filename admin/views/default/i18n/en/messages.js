@@ -66,7 +66,8 @@ messages = {
     "backup-job-dialog-run-header": "Run backup job now",
     "backup-job-dialog-run-button-label": "Yea",
     "backup-job-run-success-message": "Backup job has been initialized to be executed at this particlular moment in time.",
-
+	"backup-dialog-restore-title": "Restore backed up data",
+	"backup-dialog-restore-label": "Restore selected files and directories",
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",
 	"mail-dialog-delete-onserver" : "' on server '",

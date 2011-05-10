@@ -294,6 +294,46 @@ class Backup extends Model {
         return $settings;
     }
 
+    public function get_restore_data_list($job, $date) {
+
+        $date = new DateTime($date);
+        $dupdate = $date->format("Y-m-d-H:i:s");
+        $file = "/home/admin/.backup/$job/fileinfo/$dupdate.info";
+
+
+        if(file_exists($file)) {
+            $fh = fopen($file,'r');
+            if(filesize($file)) {
+                $data = fread($fh,filesize($file));
+            }
+            fclose($fh);
+        }
+        if(isset($data)) {
+            $filelist = array();
+            if(preg_match_all("/\sadmin\/(?!\.backup).*/",$data,$foo)) {
+                // then there is more than ".backup" in the users folder, then show all
+                $noshow_userfiles = "";
+            } else {
+                $noshow_userfiles = "|^admin";
+            }
+            $pattern = "/\.\$$noshow_userfiles/";  // show ".backup" folder if the folder is included.
+            $a_data = explode("\n",$data);
+            foreach($a_data as $line) {
+                preg_match("#(?P<date> \w{3} \s \w{3} \s{1,2} \d{1,2} \s \d{2}:\d{2}:\d{2} \s \d{4}) \s (?P<path>.*)#x",$line,$m);
+                if($m && ! preg_match($pattern, $m['path'])) {
+                    array_push( $filelist, array(
+                        'date' => $m['date'],
+                        'path' => $m['path']
+                    ));
+                }
+            }
+            return $filelist;
+        } else {
+            return array();
+        }
+
+    }
+
     public function get_schedule($job) {
         $schedules = $this->get_all_schedules(); # TODO cache
         if(array_key_exists($job, $schedules)) {
@@ -468,6 +508,29 @@ class Backup extends Model {
         // we just wont close this process...
     }
 
+    public function restore($jobname, $date, $action, $target) {
+
+		date_default_timezone_set(get_current_tz());
+		if($date) {
+			$date = date("c",strtotime($date));
+		}
+
+		if( $action == 'overwrite' ) {
+			$force = 'overwrite';
+		} elseif( $action == 'newdir' ) {
+			$force = $action;
+		} else {
+			$force = 0;
+		}
+
+		$cmd = array(BACKUP, "restorefiles", 'admin', $jobname, $force, $target);
+
+        $proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
+        if( !is_resource($proc) ) {
+            throw new Exception("Failed to execute command");
+        }
+        // we just wont close this process...
+    }
 
 
 }

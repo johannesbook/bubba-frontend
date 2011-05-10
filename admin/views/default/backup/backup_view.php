@@ -693,6 +693,92 @@
     </form>
     </div>
 
+    <div id="fn-restore">
+    <h2 class="ui-text-center">
+		<?=t('backup-edit-dialog-title')?>
+	</h2>
+
+    <form id="fn-backup-restore">
+    <table>
+    <tr>
+	<td>
+	<div class="fn-restore-filemanager-wrapper">
+	<table class="ui-table-outline fn-restore-filemanager">
+		<thead>
+			<tr class="ui-state-default ui-widget-header">
+				<th></th>
+
+				<th>Name</th>
+
+				<th>Date</th>
+
+				<th></th>
+			</tr>
+
+			<tr class="ui-header">
+				<td colspan="4" class="ui-filemanager-fake-updir"></td>
+			</tr>
+
+			<tr>
+                <td colspan="4" class=
+					"ui-helper-hidden ui-filemanager-permission-denied">
+					<?=t("Permission denied")?>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	</div>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+        <input
+            type="radio"
+			class="fn-backup-restore-action"
+            id="fn-backup-restore-action-missing"
+            checked="checked"
+            name="restore-action"
+            value="missing"
+        />
+        <label for="fn-backup-restore-action-missing"><?=t("backup-label-restore-missing")?></label>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+        <input
+            type="radio"
+			class="fn-backup-restore-action"
+            id="fn-backup-restore-action-overwrite"
+            checked="checked"
+            name="restore-action"
+            value="overwrite"
+        />
+        <label for="fn-backup-restore-action-overwrite"><?=t("backup-label-restore-overwrite")?></label>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+        <input
+            type="radio"
+			class="fn-backup-restore-action"
+            id="fn-backup-restore-action-newdir"
+            checked="checked"
+            name="restore-action"
+            value="newdir"
+        />
+        <label for="fn-backup-restore-action-newdir"><?=t("backup-label-restore-newdir")?></label>
+    </td>
+    </tr>
+
+    </table>
+
+    </div>
+
 	<table id="fn-filemanager" class="ui-table-outline">
 		<thead>
 			<tr class="ui-state-default ui-widget-header">
