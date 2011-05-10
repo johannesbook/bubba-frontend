@@ -523,7 +523,7 @@ class Backup extends Model {
 			$force = 0;
 		}
 
-		$cmd = array(BACKUP, "restorefiles", 'admin', $jobname, $force, $target);
+		$cmd = array(BACKUP, "restorefiles", 'admin', $jobname, $force, $date, $target);
 
         $proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
         if( !is_resource($proc) ) {
