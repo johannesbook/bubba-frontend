@@ -147,10 +147,12 @@ jQuery.widget("ui.filemanager", {
 	   dirDoubleClickCallback: null,
 	   fileDoubleClickCallback: null,
 	   mouseDownCallback: null,
+       ajaxExtraData: {},
 	   serverData: null,
 	   rowCallback: null,
 	   animationSpeed: 600,
-	   animate: true
+	   animate: true,
+	   multiSelect: true
    },
    _create: function() {
 	   var self = this;
@@ -200,12 +202,17 @@ jQuery.widget("ui.filemanager", {
 			   "bAutoWidth": false,
 			   "aoColumns": cols,
 			   "fnServerData": this.options.serverData ? jQuery.proxy(this.options.serverData,this) : function ( source, data, callback ) {
-				   jQuery.throbber.show();
+                   jQuery.throbber.show();
+                   if( jQuery.isEmptyObject(data) ) {
+                       data = { path: self.options.root };
+                   }
+
+                   data = jQuery.extend(data, self.options.ajaxExtraData);
 				   jQuery.ajax( {
 						   "dataType": 'json', 
 						   "type": "POST", 
 						   "url": source, 
-						   "data": jQuery.isEmptyObject(data) ? { path: self.options.root } : data, 
+						   "data": data,
 						   "success": function(data){
 							   self.options.root = data.root;
 							   jQuery.each(data.aaData, function( index, value ) {
@@ -334,63 +341,70 @@ jQuery.widget("ui.filemanager", {
 				   return false;
 			   }
 			   jQuery(this).siblings().andSelf().removeClass("ui-filemanager-state-dblckick");
-			   if( event.shiftKey ) {
-				   jQuery(this).siblings().andSelf().removeClass("ui-filemanager-state-selected");
-				   var last = self.last_selected;
-				   if( last ) {
-					   self.multiselect = true;
-					   var cur_idx = this.rowIndex;
-					   var last_idx = last.rowIndex;
-					   var objs;
+			   if( self.options.multiSelect ) {
+				   if( event.shiftKey ) {
+					   jQuery(this).siblings().andSelf().removeClass("ui-filemanager-state-selected");
+					   var last = self.last_selected;
+					   if( last ) {
+						   self.multiselect = true;
+						   var cur_idx = this.rowIndex;
+						   var last_idx = last.rowIndex;
+						   var objs;
 
-					   if( cur_idx < last_idx ) {
-						   objs = jQuery(this).siblings().andSelf().filter(function(){
+						   if( cur_idx < last_idx ) {
+							   objs = jQuery(this).siblings().andSelf().filter(function(){
 								   return this.rowIndex >= cur_idx && this.rowIndex <= last_idx;
 							   }
 						   );
-					   } else {
-						   objs = jQuery(this).siblings().andSelf().filter(function(){
+						   } else {
+							   objs = jQuery(this).siblings().andSelf().filter(function(){
 								   return this.rowIndex <= cur_idx && this.rowIndex >= last_idx;
 							   }
 						   );
+						   }
+						   objs.addClass('ui-filemanager-state-selected');
+						   if( ! self.was_shift_key ) {
+							   self.last_selected = this;
+						   }
+						   self.was_shift_key = true;
 					   }
-					   objs.addClass('ui-filemanager-state-selected');
-					   if( ! self.was_shift_key ) {
-						   self.last_selected = this;
-					   }
-					   self.was_shift_key = true;
-				   }
 
-			   } else if( event.ctrlKey ) {
-				   self.was_shift_key = true;
-				   self.multiselect = true;
-				   jQuery(this).toggleClass('ui-filemanager-state-selected');
-				   self.last_selected = this;
-			   } else {
-				   self.was_shift_key = true;
-				   if( self.multiselect ) {
-					   // We where in multi-select mode, 
-					   // thus we should act as there wasn't anything selected in the first place
-					   self.multiselect = false;
+				   } else if( event.ctrlKey ) {
+					   self.was_shift_key = true;
+					   self.multiselect = true;
+					   jQuery(this).toggleClass('ui-filemanager-state-selected');
 					   self.last_selected = this;
-					   jQuery("tr", self.element).removeClass('ui-filemanager-state-selected');
-					   jQuery(this).addClass('ui-filemanager-state-selected');
 				   } else {
-					   last = self.last_selected;
-					   if( last ) {
-						   if( last == this ) {
-							   jQuery(this).toggleClass('ui-filemanager-state-selected');
+					   self.was_shift_key = true;
+					   if( self.multiselect ) {
+						   // We where in multi-select mode,
+						   // thus we should act as there wasn't anything selected in the first place
+						   self.multiselect = false;
+						   self.last_selected = this;
+						   jQuery("tr", self.element).removeClass('ui-filemanager-state-selected');
+						   jQuery(this).addClass('ui-filemanager-state-selected');
+					   } else {
+						   last = self.last_selected;
+						   if( last ) {
+							   if( last == this ) {
+								   jQuery(this).toggleClass('ui-filemanager-state-selected');
+							   } else {
+								   jQuery(last).removeClass('ui-filemanager-state-selected');
+								   jQuery(this).addClass('ui-filemanager-state-selected');
+								   self.last_selected = this;
+							   }
 						   } else {
-							   jQuery(last).removeClass('ui-filemanager-state-selected');
 							   jQuery(this).addClass('ui-filemanager-state-selected');
 							   self.last_selected = this;
 						   }
-					   } else {
-						   jQuery(this).addClass('ui-filemanager-state-selected');
-						   self.last_selected = this;
 					   }
-				   }
 
+				   }
+			   } else {
+				   jQuery(this).siblings().andSelf().removeClass("ui-filemanager-state-selected");
+				   jQuery(this).addClass('ui-filemanager-state-selected');
+				   self.multiselect = false;
+				   self.last_selected = this;
 			   }
 
 			   if( self.options.mouseDownCallback ) {
