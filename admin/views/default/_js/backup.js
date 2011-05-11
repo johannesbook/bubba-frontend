@@ -593,16 +593,31 @@ $(function(){
         var date = $(this).closest('tr').data('date');
 		var $obj = $("#fn-backup-restore");
 		$obj[0].reset();
-        var $filemanager = $obj.find('.fn-restore-filemanager');
+		var $filemanager = $obj.find('.fn-restore-filemanager');
+		var $validator = $obj.validate({
+			'rules': {
+				'target': {
+					'required': '#fn-backup-restore-action-newdir:checked'
+				},
+				'selection': {
+					'required': true
+				}
+			}
+		});
+
         $.dialog(
             $obj,
             $.message("backup-dialog-restore-title"),
             [
                 {
                     'label': $.message("backup-dialog-restore-label"),
-					'callback': function() {
-						$.throbber.show();
-						var selected = $filemanager.filemanager('getSelected');
+					'callback': function(e) {
+						if( !$validator.form() ) {
+							$(e.target).closest('button').button('enable');
+							return false;
+						}
+
+						var selected = $obj.find('.fn-backup-restore-selection').val();
 						var action = $obj.find('.fn-backup-restore-action:checked').val();
 						var target = $obj.find('.fn-backup-restore-target').val();
 						$.post(config.prefix + "/ajax_backup/restore",
@@ -611,7 +626,7 @@ $(function(){
 								'date': date,
 								'action': action,
 								'target': target,
-								'selection': selected[0]
+								'selection': selected
 							},
 							function(data) {
 								update_status(true, "done");
@@ -648,6 +663,9 @@ $(function(){
                         ajaxSource: config.prefix + "/ajax_backup/get_restore_data",
                         ajaxExtraData: {'name': job, 'date': date},
 						multiSelect: false,
+						mouseDownCallback: function() {
+							$obj.find('.fn-backup-restore-selection').val($filemanager.filemanager('getSelected')[0]);
+						},
                         columns: [
                             { "sWidth": "0px", "bSortable": false, "aaSorting": [ "asc" ], "sClass": "ui-filemanager-column-type" },
                             { "sWidth": "auto", "aaSorting": [ "asc", "desc" ], "sClass": "ui-filemanager-column-name" },
