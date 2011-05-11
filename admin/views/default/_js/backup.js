@@ -639,7 +639,6 @@ $(function(){
 						case 'newdir':
 							break;
 						}
-						$.alert(selected.join(" : "));
                         $(this).dialog('close');
                     },
                     options: {
