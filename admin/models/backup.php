@@ -520,7 +520,7 @@ class Backup extends Model {
 		} elseif( $action == 'newdir' ) {
 			$force = $target;
 		} else {
-			$force = 0;
+			throw new Exception("action $action not valid");
 		}
 
 		$cmd = array(BACKUP, "restorefiles", 'admin', $jobname, $force, $date, $selection);

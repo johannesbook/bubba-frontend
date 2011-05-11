@@ -738,20 +738,6 @@
         <input
             type="radio"
 			class="fn-backup-restore-action"
-            id="fn-backup-restore-action-missing"
-            checked="checked"
-            name="restore-action"
-            value="missing"
-        />
-        <label for="fn-backup-restore-action-missing"><?=t("backup-label-restore-missing")?></label>
-    </td>
-    </tr>
-
-    <tr>
-    <td>
-        <input
-            type="radio"
-			class="fn-backup-restore-action"
             id="fn-backup-restore-action-overwrite"
             checked="checked"
             name="restore-action"

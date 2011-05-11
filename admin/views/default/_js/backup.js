@@ -613,8 +613,6 @@ $(function(){
 								$obj.dialog('close');
 							}, 'json');
 						switch($(this).val()) {
-						case 'missing':
-							break;
 						case 'overwrite':
 							break;
 						case 'newdir':
