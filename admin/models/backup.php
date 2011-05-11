@@ -508,7 +508,7 @@ class Backup extends Model {
         // we just wont close this process...
     }
 
-    public function restore($jobname, $date, $action, $target) {
+    public function restore($jobname, $date, $action, $target, $selection) {
 
 		date_default_timezone_set(get_current_tz());
 		if($date) {
@@ -518,18 +518,18 @@ class Backup extends Model {
 		if( $action == 'overwrite' ) {
 			$force = 'overwrite';
 		} elseif( $action == 'newdir' ) {
-			$force = $action;
+			$force = $target;
 		} else {
 			$force = 0;
 		}
 
-		$cmd = array(BACKUP, "restorefiles", 'admin', $jobname, $force, $date, $target);
+		$cmd = array(BACKUP, "restorefiles", 'admin', $jobname, $force, $date, $selection);
 
-        $proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
-        if( !is_resource($proc) ) {
-            throw new Exception(sprintf("Failed to execute command `%s`", escapeshellargs($cmd)));
-        }
-        // we just wont close this process...
+		$proc = proc_open(escapeshellargs($cmd)." &", array(), $pipes, '/');
+		if( !is_resource($proc) || true ) {
+			throw new Exception(sprintf("Failed to execute command `%s`", escapeshellargs($cmd)));
+		}
+		// we just wont close this process...
     }
 
 

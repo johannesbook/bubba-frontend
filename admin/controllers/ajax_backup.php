@@ -289,6 +289,7 @@ class Ajax_backup extends Controller {
         $date = $this->input->post('date');
         $action = $this->input->post('action');
         $target = $this->input->post('target');
+		$selection = $this->input->post('selection');
         if(!$name || !$date || !$action) {
             throw new Exception("Required parameter name not given");
 		}
@@ -298,7 +299,7 @@ class Ajax_backup extends Controller {
 
 		$target = preg_replace('#(^|/)\.\./#', '/', $target);
 		try {
-			$this->backup->restore($name, $date, $action, $target);
+			$this->backup->restore($name, $date, $action, $target, $selection);
 			$this->json_data = array('error' => false);
 		} catch( Exception $e ) {
 			$this->json_data['html'] = $e->getMessage();

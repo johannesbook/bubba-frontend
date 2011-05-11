@@ -604,7 +604,8 @@ $(function(){
 								'name': job,
 								'date': date,
 								'action': action,
-								'target': target
+								'target': target,
+								'selection': selected[0]
 							},
 							function(data) {
 								update_status(true, "done");
