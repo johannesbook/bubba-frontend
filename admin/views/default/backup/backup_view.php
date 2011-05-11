@@ -730,7 +730,7 @@
 		</tbody>
 	</table>
 	</div>
-	<input type="hidden" name="selection" id="fn-backup-restore-selection" />
+	<input type="hidden" name="selection" class="fn-backup-restore-selection" />
     </td>
     </tr>
 
