@@ -756,7 +756,15 @@
             name="restore-action"
             value="newdir"
         />
-        <label for="fn-backup-restore-action-newdir"><?=t("backup-label-restore-newdir")?></label>
+        <label for="fn-backup-restore-action-newdir"><?=t("backup-label-restore-newdir")?>:</label>
+		<input
+			type="text"
+			id="fn-backup-restore-target"
+			name="target"
+			class="ui-input-text fn-backup-restore-target"
+			disabled="disabled"
+			value=""
+		/>
     </td>
     </tr>
 
