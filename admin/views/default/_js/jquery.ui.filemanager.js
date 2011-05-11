@@ -624,7 +624,13 @@ jQuery.widget("ui.filemanager", {
    destroy: function() {
 
        jQuery.Widget.prototype.destroy.apply(this, arguments); // default destroy
-        // now do other stuff particular to this widget
+
+	   jQuery(window).unbind('resize.filemanager');
+	   jQuery("tbody", this.element).undelegate( 'tr', 'mousedown');
+	   jQuery("tbody", this.element).undelegate( 'tr', 'dblclick');
+	   this.pathWidget.remove();
+	   this.buttonBar.remove();
+	   this.element.fnDestroy();
    }
  });
 

@@ -655,6 +655,7 @@ $(function(){
                     return true;
                 },
                 close: function() {
+					$filemanager.filemanager('destroy');
                     return true;
                 }
             }
