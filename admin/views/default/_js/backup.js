@@ -586,7 +586,8 @@ $(function(){
         e.stopPropagation();
         var job = $(this).closest('tr').data('job');
         var date = $(this).closest('tr').data('date');
-        var $obj = $("#fn-backup-restore").clone();
+		var $obj = $("#fn-backup-restore");
+		$obj[0].reset();
         var $filemanager = $obj.find('.fn-restore-filemanager');
         $.dialog(
             $obj,

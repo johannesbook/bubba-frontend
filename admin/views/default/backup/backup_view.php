@@ -753,7 +753,6 @@
             type="radio"
 			class="fn-backup-restore-action"
             id="fn-backup-restore-action-newdir"
-            checked="checked"
             name="restore-action"
             value="newdir"
         />
