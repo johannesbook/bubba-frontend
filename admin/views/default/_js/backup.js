@@ -620,6 +620,7 @@ $(function(){
 						var selected = $obj.find('.fn-backup-restore-selection').val();
 						var action = $obj.find('.fn-backup-restore-action:checked').val();
 						var target = $obj.find('.fn-backup-restore-target').val();
+						$.throbber.show();
 						$.post(config.prefix + "/ajax_backup/restore",
 							{
 								'name': job,
@@ -633,12 +634,6 @@ $(function(){
 								$.throbber.hide();
 								$obj.dialog('close');
 							}, 'json');
-						switch($(this).val()) {
-						case 'overwrite':
-							break;
-						case 'newdir':
-							break;
-						}
                         $(this).dialog('close');
                     },
                     options: {
