@@ -651,7 +651,7 @@ $(function(){
                 'Height': 400,
                 'resizable': false,
                 'position': ['center',200],
-                modal: false,
+                modal: true,
                 autoOpen: true,
                 open: function() {
 
