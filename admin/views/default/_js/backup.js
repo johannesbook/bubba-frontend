@@ -125,7 +125,11 @@ $(function(){
                     cur.append($('<td/>',{text: data.name}));
                     cur.append($('<td/>',{text: data.target}));
                     cur.append($('<td/>',{text: data.schedule}));
-                    cur.append($('<td/>',{text: data.status}).toggleClass("ui-backup-job-failed", data.failed));
+					if( data.restoring ) {
+						cur.append($('<td/>',{text: data.status}).toggleClass("ui-backup-job-failed", data.failed));
+					} else {
+						cur.append($('<td/>',{text: data.status}).toggleClass("ui-backup-job-failed", data.failed));
+					}
 
                     cur.append($('<td/>').append($("<div/>", {'class': 'ui-inline'}).append(
                         $('<button/>', {
