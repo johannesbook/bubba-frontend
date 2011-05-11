@@ -1950,3 +1950,6 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 	overflow: auto;
 	max-height: 300px;
 }
+.fn-backup-job-entry:hover {
+	cursor: pointer!important;
+}

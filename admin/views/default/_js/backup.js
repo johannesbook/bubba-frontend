@@ -682,6 +682,8 @@ $(function(){
     });
 
     $('.fn-backup-job-entry').live('click', function(){
+		$('.fn-backup-job-entry').removeClass('ui-filemanager-state-selected');
+		$(this).addClass('ui-filemanager-state-selected');
         var name = $(this).data('job');
         $.post(
             config.prefix + "/ajax_backup/get_backup_job_information",
