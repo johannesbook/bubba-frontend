@@ -44,6 +44,7 @@ admin/views/default/network/network_wizard_view.php
 admin/views/default/network/network_wlan_head_view.php
 admin/views/default/network/network_wan_view.php
 admin/views/default/network/network_wlan_view.php
+admin/views/default/network/network_tor_view.php
 admin/views/default/network/network_head_view.php
 admin/views/default/backup/backup_view.php
 admin/views/default/settings/settings_identity_view.php

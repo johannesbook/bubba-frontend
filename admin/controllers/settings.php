@@ -543,6 +543,7 @@ class Settings extends Controller{
 				'xferlog' => 'proftpd/xferlog',
 				'xferreport' => 'proftpd/xferreport',
 			),
+            'tor' => 'tor/notices.log'
 
 
 		);

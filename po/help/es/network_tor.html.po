@@ -1,0 +1,310 @@
+# Spanish translations for bubba-frontend package
+# Copyright (C) 2011 Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-10-07 14:43+0300\n"
+"PO-Revision-Date: 2011-10-07 14:43+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:1
+msgid ""
+"B3 can act as either a bridge, non-exit relay or exit relay in the Tor "
+"network. The Tor network relies on volunteers to donate bandwidth. The more "
+"people who run bridges or relays, the faster the Tor network will be. If you "
+"have at least 20 kilobytes/s each way, please help out Tor by configuring "
+"your B3 to be either a bridge non-exit relay or exit relay."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_tor.html:8
+msgid "Relays"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:10
+msgid ""
+"The public servers in the Tor network are called relays. All of the relays "
+"are listed in public directories, which means that anyone can easily get a "
+"list of all the relays in the Tor network. A Tor relay can be either a non-"
+"exit relay or an exit relay. A non-exit relay will only forward traffic on "
+"to other relays in the Tor network. An exit relay can either forward traffic "
+"on to other relays in the Tor network, or to public Internet resources."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_tor.html:18
+msgid "Bridges"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:20
+msgid ""
+"Some Internet Service Providers (ISPs) attempt to prevent users from "
+"accessing the Tor network by blocking connections to known Tor relays.  "
+"Bridge relays (or <i>bridges</i> for short) are non-exit relays that help "
+"these censored users access the Tor network. Unlike other Tor relays, "
+"bridges are not listed in the same public directories as normal relays. "
+"Since there is no complete public list of them, even if your ISP is "
+"filtering connections to all the known Tor relays, they probably won't be "
+"able to block all the bridges."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_tor.html:29
+#, fuzzy
+#| msgid "Services settings"
+msgid "The settings"
+msgstr "Configuración de servicios"
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:31
+msgid "Tor"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:33
+msgid "Switch to enable or disable the Tor service on the B3."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:35
+msgid "Type of relay"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:37
+msgid ""
+"A dropdown that allows you to choose whether you want to set up and run a "
+"Tor bridge, non-exit relay or exit relay."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:40
+#, fuzzy
+#| msgid "MAC address"
+msgid "Bridge address"
+msgstr "Dirección MAC"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:42
+msgid ""
+"You can let others access your Tor bridge by giving them this line.  The "
+"bridge address consists of your external IP address and the relay port "
+"configured for Tor."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:46
+msgid "Nickname"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:48
+msgid ""
+"The name which your relay will be known as in the Tor network. An example of "
+"a relay nickname is \\\"MyB3Relay\\\"."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:51
+#, fuzzy
+#| msgid "More information"
+msgid "Contact information"
+msgstr "Mas información"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:53
+msgid ""
+"Contact info, such as an email address, to be published in relay "
+"directories, so that the Tor Project can contact you if your relay is "
+"misconfigured or something else goes wrong. You might also include your PGP "
+"or GPG key ID and fingerprint. Note that Google indexes the relay "
+"directories, so spammers might decide to collect this information."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:60
+msgid "Relay port"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:62
+msgid ""
+"The port on which your relay will listen for traffic from clients or other "
+"Tor relays."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:65
+msgid "Directory port"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:67
+msgid ""
+"The port on which your relay will listen for directory connections.  This "
+"enables your B3 to mirror Tor's directory of relays for others on the "
+"network."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:71
+msgid "Automatically distribute my bridge address"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:73
+msgid ""
+"If this option is selected, your bridge address will automatically be "
+"distributed to users around the world."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:76
+msgid "Bandwidth limits"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:78
+msgid ""
+"Running a Tor relay can consume a large amount of bandwidth; however, Tor "
+"allows you to limit the amount of bandwidth that you are willing to "
+"contribute to the Tor network. You can run a relay, while still keeping your "
+"network connection usable for your own use. A bridge will usually see less "
+"traffic than a bridge, and thus consume less bandwidth, but you can set a "
+"bandwidth limit if you want. You should select the option in the dropdown "
+"box that best matches your connection speed. If you select Custom, you will "
+"be able to specify your own limits."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:88
+msgid "Custom bandwidth limits"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:90
+msgid ""
+"The maximum rate is a pool of bytes used to fulfill requests during short "
+"periods of traffic higher than your specified average rate, but still "
+"maintains the average over a long period. A low average rate but a high "
+"maximum rate enforces a long-term average while still allowing more traffic "
+"during peak times if the average hasn't been reached lately. If your average "
+"rate is the same as your maximum rate, then Tor will never exceed the "
+"specified rate. Your maximum rate must always be greater than or equal to "
+"your average rate."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:99
+msgid ""
+"The average rate is the maximum long-term average bandwidth allowed (in "
+"kilobytes per second). For example, you might want to choose 2 megabytes per "
+"second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable "
+"connection). Tor requires a minimum of 20 kilobytes per second to run a "
+"relay."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:105
+msgid ""
+"It is important to remember that Tor measures bandwidth in bytes, not bits. "
+"Also, Tor only looks at incoming bytes instead of outgoing bytes. For "
+"example, if your relay acts as a directory mirror, you may be sending more "
+"outgoing bytes than incoming. If you find this is the case and is putting "
+"too much strain on your bandwidth, you should consider unchecking the "
+"checkbox labeled Mirror the relay directory."
+msgstr ""
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:113
+msgid "Exit policies"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:115
+msgid ""
+"Exit policies give you a way to specify what kinds of resources on the "
+"Internet you are willing let other Tor users access from your Tor relay. Tor "
+"uses a default list of exit policies that restrict some services, such as "
+"mail to prevent spam and some default file sharing ports to reduce abuse of "
+"the Tor network."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:121
+msgid ""
+"Each of the checkboxes represents a type of resource that you can allow Tor "
+"users to access through your relay. If you uncheck the box next to a "
+"particular type of resource, Tor users will not be allowed to access that "
+"resource from your relay. If the box labeled Misc Other Services is checked, "
+"Tor users will be able to access other services not covered by the other "
+"checkboxes or Tor's default exit policy."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:128
+msgid ""
+"For completeness, the following table lists the specific port numbers "
+"represented by each of the exit policy checkboxes. The Description column "
+"describes the resources Tor clients will be allowed to access through your "
+"relay, if the associated box is checked."
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_tor.html:134
+msgid "<strong>Websites</strong>, port 80, Normal, unencrypted Web browsing"
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_tor.html:135
+msgid "<strong>Secure Websites</strong>, port 443, Encrypted Web browsing"
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_tor.html:136
+msgid ""
+"<strong>Retrieve Mail</strong>, port 110, 143, 993, 995, Downloading email "
+"(does not permit sending email)"
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_tor.html:137
+msgid ""
+"<strong>Instant Messaging</strong>, port 703, 1863, 5050, 5190, 5222, 5223, "
+"8300, 8888, Instant messaging applications like MSN Messenger, AIM, ICQ, and "
+"Jabber"
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_tor.html:138
+msgid ""
+"<strong>Internet Relay Chat (IRC)</strong>, port 6660-6669, 6697, 7000-7001, "
+"IRC clients and servers"
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_tor.html:139
+msgid ""
+"<strong>Misc. Other Services</strong>, all ports, All other applications "
+"that aren't covered by the previous checkboxes"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:142
+msgid ""
+"If you do not want to let other Tor users make connections outside the Tor "
+"network from your relay, choose bridge or non-exit relay instead."
+msgstr ""

@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3.0.2-8-g99845c1\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-10-06 17:45+0200\n"
+        "POT-Creation-Date: 2011-10-07 14:44+0200\n"
         "PO-Revision-Date: 2011-10-06 14:12+0100\n"
         "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
         "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -16,6 +16,17 @@ msgstr  "Project-Id-Version: bubba-frontend 2.3.0.2-8-g99845c1\n"
         "Content-Transfer-Encoding: 8bit\n"
         "Plural-Forms: nplurals=2; plural=(n != 1);\n"
         "X-Generator: Lokalize 1.2\n"
+
+#: admin/views/default/_js/tor.js:169
+msgid   "<p>Enabling Tor means that your B3 will be a part of the Tor "
+        "anonymizing network. This will allow users all over the world to use "
+        "your B3 to protect their privacy and reach a free and open Internet. "
+        "To read more about Tor, please visit https://www.torproject.org/.</"
+        "p><p>Also note that enabling this service does not make your traffic "
+        "anonymous.</p><p>Before enabling Tor, it is recommended that you "
+        "read the Terms of Service from your Internet Service Provider. "
+        "<strong>Don't enable this service if you are hesitant</strong>.</p>"
+msgstr  ""
 
 #: admin/views/default/_js/filemanager.js:141
 #: admin/views/default/_js/filemanager.js:143
@@ -193,6 +204,11 @@ msgstr  "Benutzerdaten löschen?"
 msgid   "Delete viewer"
 msgstr  "Viewer löschen"
 
+#: admin/views/default/_js/tor.js:58
+msgctxt "validation message"
+msgid   "Directory port is required"
+msgstr  ""
+
 #: admin/views/default/_js/filemanager.js:292
 msgid   "Download as zip"
 msgstr  "Als ZIP herunterladen"
@@ -227,6 +243,12 @@ msgstr  "Fehler"
 
 #: admin/views/default/_js/backup.js:759
 msgid   "File/Directory selector"
+msgstr  ""
+
+#: admin/views/default/_js/tor.js:76
+msgid   "It might take up to 20 minutes for Tor to self-test if the "
+        "configuration is fully functional, please inspect the log file "
+        "(Settings→Logs→tor) for verification\""
 msgstr  ""
 
 #: admin/views/default/_js/login.js:55 admin/views/default/_js/login.js:113
@@ -265,12 +287,36 @@ msgstr  ""
 msgid   "Only alphanumreric values are allowed for the name"
 msgstr  ""
 
+#: admin/views/default/_js/tor.js:53 admin/views/default/_js/tor.js:59
+msgctxt "validation message"
+msgid   "Only digits are allowed"
+msgstr  ""
+
 #: admin/views/default/_js/filemanager.js:128
 msgid   "Pictures added"
 msgstr  "Bilder hinzugefügt"
 
 #: admin/views/default/_js/backup.js:245
 msgid   "Please enter a valid hostname or IPv4 address"
+msgstr  ""
+
+#: admin/views/default/_js/tor.js:172
+msgid   "Please note"
+msgstr  ""
+
+#: admin/views/default/_js/tor.js:55
+msgctxt "validation message"
+msgid   "Port is out of range"
+msgstr  ""
+
+#: admin/views/default/_js/tor.js:54 admin/views/default/_js/tor.js:60
+msgctxt "validation message"
+msgid   "Port {0} is not valid for usage"
+msgstr  ""
+
+#: admin/views/default/_js/tor.js:61
+msgctxt "validation message"
+msgid   "Port {0} is out of range"
 msgstr  ""
 
 #: admin/views/default/_js/stat.js:100
@@ -286,6 +332,11 @@ msgstr  ""
 #: admin/views/default/_js/main.js:150
 msgid   "Proceed with logout?"
 msgstr  "Mit Abmeldung fortfahren?"
+
+#: admin/views/default/_js/tor.js:52
+msgctxt "validation message"
+msgid   "Relay port is required"
+msgstr  ""
 
 #: admin/views/default/_js/backup.js:157
 msgid   "Remove"
@@ -467,6 +518,16 @@ msgid_plural    "You are about to move %d items. Go to the desired folder and "
         "to confirm move"
 msgstr[0]       ""
 msgstr[1]       ""
+
+#: admin/views/default/_js/tor.js:46
+msgctxt "validation message"
+msgid   "You need to specify a nickname"
+msgstr  ""
+
+#: admin/views/default/_js/tor.js:49
+msgctxt "validation message"
+msgid   "You need to specify contact information"
+msgstr  ""
 
 #: admin/views/default/_js/backup.js:57
 msgctxt "button"

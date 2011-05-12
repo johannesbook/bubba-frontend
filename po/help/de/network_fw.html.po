@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-10-07 14:43+0300\n"
 "PO-Revision-Date: 2011-10-05 15:38+0100\n"
 "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,29 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. type: Content of: <p>
-#: admin/views/default/help/en/network_lan.html:42
-#: admin/views/default/help/en/network_wlan.html:41
-#: admin/views/default/help/en/network_fw.html:58
-#: admin/views/default/help/en/network_wan.html:19
-#: admin/views/default/help/en/network.html:21
-#: admin/views/default/help/en/settings_trafficsettings.html:15
-#, fuzzy
-msgid "<i>Update</i> saves your changes."
-msgstr ""
-"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> - speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_fw.html:2
@@ -207,3 +184,26 @@ msgstr ""
 "Stiftsymbol rechts neben der Regel, um die Portweiterleitung zu bearbeiten. "
 "Drücken Sie das rote X rechts neben der Regel, um die Portweiterleitung zu "
 "löschen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> - speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen."

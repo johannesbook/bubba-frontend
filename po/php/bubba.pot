@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-10-05 18:31+0200\n"
+"POT-Creation-Date: 2011-10-07 14:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,11 @@ msgstr ""
 #: admin/views/default/filemanager/filemanager_index_view.php:41
 #, php-format
 msgid "%s users"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:140
+msgctxt "bwlimit"
+msgid "&gt; 1.5 Mbps"
 msgstr ""
 
 #: admin/views/default/settings/settings_identity_view.php:54
@@ -137,6 +142,10 @@ msgstr ""
 msgid "Administration"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:58
+msgid "Advanced Tor settings"
+msgstr ""
+
 #: admin/views/default/network/network_fw_view.php:178
 msgid "Advanced firewall settings"
 msgstr ""
@@ -150,7 +159,7 @@ msgstr ""
 msgid "Age of timeline"
 msgstr ""
 
-#: admin/models/menu.php:44 admin/models/menu.php:293
+#: admin/models/menu.php:44 admin/models/menu.php:299
 msgctxt "menu"
 msgid "Album"
 msgstr ""
@@ -172,7 +181,7 @@ msgstr ""
 msgid "Album updated"
 msgstr ""
 
-#: admin/models/menu.php:299 admin/models/menu.php:310
+#: admin/models/menu.php:305 admin/models/menu.php:316
 msgctxt "menu"
 msgid "Albums"
 msgstr ""
@@ -223,6 +232,10 @@ msgstr ""
 msgid "Allow shell login"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:13
+msgid "Allow your B3 to contribute to the Tor network"
+msgstr ""
+
 #: admin/views/default/services/services_view.php:10
 msgid "Anonymous FTP access"
 msgstr ""
@@ -259,6 +272,10 @@ msgstr ""
 
 #: admin/views/default/network/network_profile_view.php:19
 msgid "Automatic network settings"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:119
+msgid "Automatically distribute my bridge address"
 msgstr ""
 
 #: admin/views/default/stat/stat_view.php:23
@@ -309,8 +326,28 @@ msgstr ""
 msgid "Band"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:170
+msgid "Bandwidth burst"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:133
+msgid "Bandwidth limits"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:160
+msgid "Bandwidth rate"
+msgstr ""
+
 #: admin/views/default/settings/settings_traffic_view.php:7
 msgid "BitTorrent"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:69
+msgid "Bridge"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:85
+msgid "Bridge address"
 msgstr ""
 
 #: admin/views/default/network/network_wlan_view.php:205
@@ -322,12 +359,27 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:136
+msgctxt "bwlimit"
+msgid "Cable/DSL 256 Kbps"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:137
+msgctxt "bwlimit"
+msgid "Cable/DSL 512 Kbps"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:138
+msgctxt "bwlimit"
+msgid "Cable/DSL 768 Kbps"
+msgstr ""
+
 #: admin/views/default/disk/disk_head_view.php:19
 #: admin/views/default/disk/disk_head_view.php:55
 #: admin/views/default/disk/disk_head_view.php:58
 #: admin/views/default/disk/disk_raid_head_view.php:151
 #: admin/views/default/downloads/downloads_list_view.php:55
-#: admin/views/default/network/network_head_view.php:36
+#: admin/views/default/network/network_head_view.php:40
 msgid "Cancel"
 msgstr ""
 
@@ -398,7 +450,11 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: admin/views/default/network/network_head_view.php:32
+#: admin/views/default/network/network_tor_view.php:43
+msgid "Contact information"
+msgstr ""
+
+#: admin/views/default/network/network_head_view.php:36
 msgid "Continue"
 msgstr ""
 
@@ -468,6 +524,15 @@ msgstr ""
 
 #: admin/views/default/settings/settings_software_view.php:2
 msgid "Current version"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:141
+msgctxt "bwlimit"
+msgid "Custom"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:147
+msgid "Custom bandwidth limits"
 msgstr ""
 
 #: admin/views/default/backup/backup_view.php:89
@@ -560,6 +625,10 @@ msgstr ""
 msgid "Device to use as target for the backup"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:104
+msgid "Directory port"
+msgstr ""
+
 #: admin/views/default/backup/backup_view.php:218
 #: admin/views/default/backup/backup_view.php:565
 msgid "Disabled (manually run by pressing \"Run now\")"
@@ -575,7 +644,7 @@ msgstr ""
 msgid "Disk"
 msgstr ""
 
-#: admin/models/menu.php:183
+#: admin/models/menu.php:189
 msgctxt "menu"
 msgid "Disk"
 msgstr ""
@@ -588,7 +657,7 @@ msgstr ""
 msgid "Disk information"
 msgstr ""
 
-#: admin/models/menu.php:189
+#: admin/models/menu.php:195
 msgctxt "menu"
 msgid "Disk information"
 msgstr ""
@@ -630,7 +699,7 @@ msgstr ""
 msgid "Downloads"
 msgstr ""
 
-#: admin/models/menu.php:55 admin/models/menu.php:319
+#: admin/models/menu.php:55 admin/models/menu.php:325
 msgctxt "menu"
 msgid "Downloads"
 msgstr ""
@@ -670,7 +739,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: admin/models/menu.php:267 admin/models/menu.php:285
+#: admin/models/menu.php:273 admin/models/menu.php:291
 msgctxt "menu"
 msgid "Email"
 msgstr ""
@@ -700,6 +769,10 @@ msgstr ""
 msgid "Enable DNS service"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:16
+msgid "Enable Tor"
+msgstr ""
+
 #: admin/views/default/network/network_lan_view.php:340
 msgid "Enable jumbo frames."
 msgstr ""
@@ -720,6 +793,12 @@ msgstr ""
 #: admin/views/default/network/network_wizard_view.php:43
 #, php-format
 msgid "Enjoy %s"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:49
+msgid ""
+"Enter contact information in case the developers need to contact you about "
+"problems"
 msgstr ""
 
 #: admin/controllers/network.php:287
@@ -835,6 +914,14 @@ msgstr ""
 
 #: admin/views/default/album/album_users_view.php:4
 msgid "Existing viewers"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:73
+msgid "Exit node"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:178
+msgid "Exit policies"
 msgstr ""
 
 #: admin/views/default/settings/settings_wizard_view.php:68
@@ -992,6 +1079,13 @@ msgctxt "menu"
 msgid "Firewall"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:157
+#: admin/views/default/network/network_tor_view.php:167
+msgid ""
+"For Internet connections with fast download speed but slow upload speed, "
+"please select your upload speed here"
+msgstr ""
+
 #: admin/views/default/login_view.php:10
 msgid "For more information"
 msgstr ""
@@ -1082,9 +1176,15 @@ msgstr ""
 msgid "IP-address"
 msgstr ""
 
-#: admin/models/menu.php:219
+#: admin/models/menu.php:225
 msgctxt "menu"
 msgid "Identity"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:148
+msgid ""
+"If you wish to configure custom bandwidth limits, choose \"Custom\" from the "
+"dropdown above"
 msgstr ""
 
 #: admin/views/default/album/album_album_view.php:57
@@ -1111,6 +1211,16 @@ msgstr ""
 #: admin/views/default/settings/settings_software_view.php:28
 #, php-format
 msgid "Install package %s"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:202
+msgctxt "label"
+msgid "Instant Messaging (IM)"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:204
+msgctxt "label"
+msgid "Internet Relay Chat (IRC)"
 msgstr ""
 
 #: admin/views/default/settings/settings_netupdate_view.php:17
@@ -1191,7 +1301,7 @@ msgstr ""
 msgid "LAN is on"
 msgstr ""
 
-#: admin/models/menu.php:195
+#: admin/models/menu.php:201
 msgctxt "menu"
 msgid "LVM"
 msgstr ""
@@ -1237,6 +1347,10 @@ msgstr ""
 msgid "Legacy mode (802.11g)"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:86
+msgid "Let others access your bridge by giving them this line"
+msgstr ""
+
 #: admin/views/default/disk/disk_raid_view.php:95
 msgid "Level"
 msgstr ""
@@ -1275,7 +1389,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: admin/models/menu.php:248
+#: admin/models/menu.php:254
 msgctxt "menu"
 msgid "Logs"
 msgstr ""
@@ -1303,6 +1417,11 @@ msgstr ""
 
 #: admin/views/default/upload/upload_index_view.php:151
 msgid "Maximum total upload is 2GByte."
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:206
+msgctxt "label"
+msgid "Misc Other Services"
 msgstr ""
 
 #: admin/views/default/network/network_wlan_view.php:130
@@ -1345,7 +1464,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: admin/controllers/settings.php:803
+#: admin/controllers/settings.php:804
 #, php-format
 msgid "Name '%s' is not valid"
 msgstr ""
@@ -1368,7 +1487,7 @@ msgctxt "menu"
 msgid "Network"
 msgstr ""
 
-#: admin/views/default/network/network_head_view.php:30
+#: admin/views/default/network/network_head_view.php:34
 msgid "Network configuration"
 msgstr ""
 
@@ -1405,6 +1524,10 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:31
+msgid "Nickname"
+msgstr ""
+
 #: admin/views/default/filemanager/filemanager_index_view.php:46
 #: admin/views/default/filemanager/filemanager_index_view.php:56
 msgid "No access"
@@ -1428,6 +1551,14 @@ msgstr ""
 
 #: admin/views/default/disk/disk_raid_head_view.php:206
 msgid "No usable disk found"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:4
+msgid "No valid timezone set."
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:71
+msgid "Non-exit node"
 msgstr ""
 
 #: admin/views/default/network/network_wlan_view.php:185
@@ -1639,7 +1770,7 @@ msgstr ""
 msgid "Queued for checking"
 msgstr ""
 
-#: admin/models/menu.php:200
+#: admin/models/menu.php:206
 msgctxt "menu"
 msgid "RAID"
 msgstr ""
@@ -1722,6 +1853,10 @@ msgid ""
 "internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:92
+msgid "Relay port"
+msgstr ""
+
 #: admin/views/default/services/services_view.php:74
 msgid "Remote access through other router"
 msgstr ""
@@ -1789,6 +1924,11 @@ msgstr ""
 msgid "Retreiving package information"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:200
+msgctxt "label"
+msgid "Retrieve Mail (POP, IMAP)'"
+msgstr ""
+
 #: admin/views/default/mail/mail_retrieve_view.php:4
 msgid "Retrieve email"
 msgstr ""
@@ -1813,6 +1953,11 @@ msgstr ""
 
 #: admin/views/default/backup/backup_view.php:10
 msgid "Schedule"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:198
+msgctxt "label"
+msgid "Secure websites (SSL)'"
 msgstr ""
 
 #: admin/views/default/backup/backup_view.php:705
@@ -1871,13 +2016,17 @@ msgctxt "menu"
 msgid "Services"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:37
+msgid "Set a unique nickname for your Tor bridge or relay"
+msgstr ""
+
 #: admin/views/default/disk/disk_raid_view.php:5
 msgid ""
 "Set up the internal disk and one external disk into a RAID mirror solution "
 "(RAID 1)"
 msgstr ""
 
-#: admin/models/menu.php:207
+#: admin/models/menu.php:213
 msgctxt "menu"
 msgid "Settings"
 msgstr ""
@@ -1899,7 +2048,7 @@ msgstr ""
 msgid "Setup wizard"
 msgstr ""
 
-#: admin/models/menu.php:213
+#: admin/models/menu.php:219
 msgctxt "menu"
 msgid "Setup wizard"
 msgstr ""
@@ -1937,7 +2086,7 @@ msgstr ""
 msgid "Software update"
 msgstr ""
 
-#: admin/models/menu.php:243
+#: admin/models/menu.php:249
 msgctxt "menu"
 msgid "Software update"
 msgstr ""
@@ -2011,7 +2160,11 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: admin/models/menu.php:237
+#: admin/views/default/network/network_tor_view.php:23
+msgid "Switch to enable or disable the Tor bridge or Relay in B3"
+msgstr ""
+
+#: admin/models/menu.php:243
 msgctxt "menu"
 msgid "System backup"
 msgstr ""
@@ -2047,6 +2200,11 @@ msgstr ""
 
 #: admin/controllers/settings.php:188
 msgid "System settings was sucessfully restored"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:139
+msgctxt "bwlimit"
+msgid "T1/Cable/DSL 1.5 Mbps"
 msgstr ""
 
 #: admin/views/default/backup/backup_view.php:9
@@ -2146,6 +2304,10 @@ msgstr ""
 msgid "These settings are locked"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:3
+msgid "These settings are locked."
+msgstr ""
+
 #: admin/views/default/shutdown_view.php:10
 msgid "This page should not be reached"
 msgstr ""
@@ -2175,7 +2337,7 @@ msgstr ""
 msgid "Time and language"
 msgstr ""
 
-#: admin/models/menu.php:231
+#: admin/models/menu.php:237
 msgctxt "menu"
 msgid "Time and language"
 msgstr ""
@@ -2215,7 +2377,12 @@ msgstr ""
 msgid "To unlock, select Router or Server profile under the "
 msgstr ""
 
-#: admin/models/menu.php:225
+#: admin/models/menu.php:181
+msgctxt "menu"
+msgid "Tor"
+msgstr ""
+
+#: admin/models/menu.php:231
 msgctxt "menu"
 msgid "Torrent throttle"
 msgstr ""
@@ -2281,6 +2448,7 @@ msgstr ""
 #: admin/views/default/network/network_fw_view.php:273
 #: admin/views/default/network/network_wan_view.php:120
 #: admin/views/default/network/network_wlan_view.php:226
+#: admin/views/default/network/network_tor_view.php:220
 #: admin/views/default/settings/settings_traffic_view.php:20
 #: admin/views/default/settings/settings_datetime_view.php:72
 #: admin/views/default/settings/settings_datetime_view.php:122
@@ -2367,7 +2535,7 @@ msgstr ""
 msgid "User information"
 msgstr ""
 
-#: admin/models/menu.php:261 admin/models/menu.php:280
+#: admin/models/menu.php:267 admin/models/menu.php:286
 msgctxt "menu"
 msgid "User information"
 msgstr ""
@@ -2395,8 +2563,8 @@ msgstr ""
 msgid "User name validation failed"
 msgstr ""
 
-#: admin/models/menu.php:76 admin/models/menu.php:255
-#: admin/models/menu.php:274
+#: admin/models/menu.php:76 admin/models/menu.php:261
+#: admin/models/menu.php:280
 msgctxt "menu"
 msgid "User settings"
 msgstr ""
@@ -2415,7 +2583,7 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: admin/models/menu.php:117 admin/models/menu.php:305
+#: admin/models/menu.php:117 admin/models/menu.php:311
 msgctxt "menu"
 msgid "Users"
 msgstr ""
@@ -2482,9 +2650,22 @@ msgstr ""
 msgid "Was unabler to remove the home directory for user %s"
 msgstr ""
 
+#: admin/views/default/network/network_tor_view.php:196
+msgctxt "label"
+msgid "Websites"
+msgstr ""
+
 #: admin/views/default/backup/backup_view.php:266
 #: admin/views/default/backup/backup_view.php:613
 msgid "Weekly each"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:98
+msgid "What port to advertise for incoming Tor connections"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:111
+msgid "What port to use when mirroring directory information"
 msgstr ""
 
 #: admin/views/default/shutdown_view.php:8
@@ -2518,6 +2699,10 @@ msgstr ""
 #: admin/views/default/settings/settings_wizard_view.php:62
 #: admin/views/default/settings/settings_datetime_view.php:52
 msgid "YYYYMMDD"
+msgstr ""
+
+#: admin/views/default/network/network_tor_view.php:63
+msgid "Your B3 can be either a bridge, non-exit relay or exit relay"
 msgstr ""
 
 #: admin/views/default/backup/backup_view.php:344

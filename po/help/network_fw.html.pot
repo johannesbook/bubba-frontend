@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-10-07 14:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,16 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. type: Content of: <p>
-#: admin/views/default/help/en/network_lan.html:42
-#: admin/views/default/help/en/network_wlan.html:41
-#: admin/views/default/help/en/network_fw.html:58
-#: admin/views/default/help/en/network_wan.html:19
-#: admin/views/default/help/en/network.html:21
-#: admin/views/default/help/en/settings_trafficsettings.html:15
-msgid "<i>Update</i> saves your changes."
-msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_fw.html:2
@@ -152,4 +142,14 @@ msgid ""
 "This shows the enabled port forwards. Press the pen symbol to the right of "
 "the rule to edit the port forward. Press the red X to the right of the rule "
 "to delete the port forward."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+msgid "<i>Update</i> saves your changes."
 msgstr ""

@@ -1979,3 +1979,21 @@ input.ui-input-text, .ui-dialog-title {
 .ui-printer-unplugged {
 	color: #333;
 }
+#content table.inline {
+    margin-bottom: 0;
+}
+#content table.inline > tbody > tr {
+    border-top: 0 none;
+}
+
+table.ui-table-form input[type=text], table.ui-table-form select {
+    width: 100%;
+}
+
+td.ui-cell-table {
+    padding: 0;
+}
+
+.ro-text-field {
+    padding: .3em;
+}

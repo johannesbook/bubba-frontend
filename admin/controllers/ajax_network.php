@@ -92,4 +92,23 @@ class Ajax_network extends Controller {
             break;
         }      
     }
+
+    public function tor_update() {
+        $enabled = $this->input->post('enabled');
+        $relay_port = $this->input->post('relay_port');
+
+        if($enabled) {
+            $this->networkmanager->enable_tor();
+        } else {
+            $this->networkmanager->disable_tor();
+        }
+
+        $relay_port = $this->input->post('relay_port');
+        $dir_port = $this->input->post('dir_port');
+
+        $this->networkmanager->tor_trigger_ports($relay_port, $dir_port, $enabled);
+        $this->networkmanager->tor_setconfig($_POST);
+
+        $this->json_data['error'] = false;
+    }
 }

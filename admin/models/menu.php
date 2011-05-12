@@ -177,6 +177,12 @@ class Menu extends Model {
                         'id' => 'network-firewall',
                         'uri' => 'network/fw',
                     ),
+					array(
+                        'label' => pgettext('menu',"Tor"),
+						'id' => 'network-tor',
+						'uri' => 'network/tor',
+					),
+
                 ),
             ),
             array(

@@ -8,3 +8,4 @@ admin/views/default/_js/mail_server.js
 admin/views/default/_js/stat.js
 admin/views/default/_js/main.js
 admin/views/default/_js/user.js
+admin/views/default/_js/tor.js

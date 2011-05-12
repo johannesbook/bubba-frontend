@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-10-07 14:43+0300\n"
 "PO-Revision-Date: 2011-10-05 15:27+0100\n"
 "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,6 +15,89 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/filemanager.html:5
+#: admin/views/default/help/en/user_filemanager.html:5
+msgid "Navigation"
+msgstr "Navigation"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/filemanager.html:11
+#: admin/views/default/help/en/user_filemanager.html:11
+msgid "File and folder actions"
+msgstr "Datei- und Ordnerfunktionen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:14
+#: admin/views/default/help/en/user_filemanager.html:14
+msgid ""
+"Click files or folders and use the icons in the file function bar to perform "
+"different actions. The functions from left to right are:"
+msgstr ""
+"Klicken Sie auf Dateien oder Ordner und verwenden Sie die Symbole in der "
+"Dateifunktionsleiste, um verschiedene Aktionen durchzuführen. Folgende "
+"Funktionen stehen zur Verfügung (von links nach rechts):"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:17
+#: admin/views/default/help/en/user_filemanager.html:17
+msgid "Create folder"
+msgstr "Ordner erstellen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:19
+#: admin/views/default/help/en/user_filemanager.html:19
+msgid "Upload file"
+msgstr "Datei hochladen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:21
+#: admin/views/default/help/en/user_filemanager.html:21
+msgid "Download as zip"
+msgstr "Als ZIP herunterladen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:23
+#: admin/views/default/help/en/user_filemanager.html:23
+msgid "Move files"
+msgstr "Dateien verschieben"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:25
+#: admin/views/default/help/en/user_filemanager.html:25
+msgid "Copy files"
+msgstr "Dateien kopieren"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:27
+#: admin/views/default/help/en/user_filemanager.html:27
+msgid "Rename"
+msgstr "Umbenennen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:29
+#: admin/views/default/help/en/user_filemanager.html:29
+msgid "Change permissions"
+msgstr "Rechte ändern"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:31
+#: admin/views/default/help/en/user_filemanager.html:31
+msgid "Add to album"
+msgstr "Zum Fotoalbum hinzufügen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:33
+#: admin/views/default/help/en/user_filemanager.html:33
+msgid "Delete"
+msgstr "Löschen"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/filemanager.html:37
+#: admin/views/default/help/en/user_filemanager.html:37
+msgid "Photo album"
+msgstr "Fotoalbum"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:2
@@ -24,12 +107,6 @@ msgid ""
 msgstr ""
 "Im Dateimanager können Sie auf Ihre Dateien auf {PLATFORM} zugreifen - sogar "
 "von unterwegs."
-
-#. type: Content of: <h3>
-#: admin/views/default/help/en/user_filemanager.html:5
-#: admin/views/default/help/en/filemanager.html:5
-msgid "Navigation"
-msgstr "Navigation"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:8
@@ -42,83 +119,6 @@ msgstr ""
 "Ordnernamen anklicken oder auf den Ordnernamen doppelklicken, und navigieren "
 "Sie eine Ebene nach oben, indem Sie den Pfeil links anklicken oder in die "
 "Zeile /home/username/ klicken."
-
-#. type: Content of: <h3>
-#: admin/views/default/help/en/user_filemanager.html:11
-#: admin/views/default/help/en/filemanager.html:11
-msgid "File and folder actions"
-msgstr "Datei- und Ordnerfunktionen"
-
-#. type: Content of: <p>
-#: admin/views/default/help/en/user_filemanager.html:14
-#: admin/views/default/help/en/filemanager.html:14
-msgid ""
-"Click files or folders and use the icons in the file function bar to perform "
-"different actions. The functions from left to right are:"
-msgstr ""
-"Klicken Sie auf Dateien oder Ordner und verwenden Sie die Symbole in der "
-"Dateifunktionsleiste, um verschiedene Aktionen durchzuführen. Folgende "
-"Funktionen stehen zur Verfügung (von links nach rechts):"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:17
-#: admin/views/default/help/en/filemanager.html:17
-msgid "Create folder"
-msgstr "Ordner erstellen"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:19
-#: admin/views/default/help/en/filemanager.html:19
-msgid "Upload file"
-msgstr "Datei hochladen"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:21
-#: admin/views/default/help/en/filemanager.html:21
-msgid "Download as zip"
-msgstr "Als ZIP herunterladen"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:23
-#: admin/views/default/help/en/filemanager.html:23
-msgid "Move files"
-msgstr "Dateien verschieben"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:25
-#: admin/views/default/help/en/filemanager.html:25
-msgid "Copy files"
-msgstr "Dateien kopieren"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:27
-#: admin/views/default/help/en/filemanager.html:27
-msgid "Rename"
-msgstr "Umbenennen"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:29
-#: admin/views/default/help/en/filemanager.html:29
-msgid "Change permissions"
-msgstr "Rechte ändern"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:31
-#: admin/views/default/help/en/filemanager.html:31
-msgid "Add to album"
-msgstr "Zum Fotoalbum hinzufügen"
-
-#. type: Content of: <ul><li>
-#: admin/views/default/help/en/user_filemanager.html:33
-#: admin/views/default/help/en/filemanager.html:33
-msgid "Delete"
-msgstr "Löschen"
-
-#. type: Content of: <h3>
-#: admin/views/default/help/en/user_filemanager.html:37
-#: admin/views/default/help/en/filemanager.html:37
-msgid "Photo album"
-msgstr "Fotoalbum"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:40
