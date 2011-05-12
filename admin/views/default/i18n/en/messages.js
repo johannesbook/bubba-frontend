@@ -68,6 +68,8 @@ messages = {
     "backup-job-run-success-message": "Backup job has been initialized to be executed at this particlular moment in time.",
 	"backup-dialog-restore-title": "Restore backed up data",
 	"backup-dialog-restore-label": "Restore selected files and directories",
+    'backup-restore-overwrite-confirm-message': 'Are you absolutely certain you want to restore given files? This will overwrite all current files with the content of the bakcup',
+    'backup-restore-overwrite-confirm-header': 'Confirm restoration',
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",
 	"mail-dialog-delete-onserver" : "' on server '",

@@ -621,24 +621,42 @@ $(function(){
 							return false;
 						}
 
-						var selected = $obj.find('.fn-backup-restore-selection').val();
-						var action = $obj.find('.fn-backup-restore-action:checked').val();
-						var target = $obj.find('.fn-backup-restore-target').val();
-						$.throbber.show();
-						$.post(config.prefix + "/ajax_backup/restore",
-							{
-								'name': job,
-								'date': date,
-								'action': action,
-								'target': target,
-								'selection': selected
-							},
-							function(data) {
-								update_status(true, "done");
-								$.throbber.hide();
-								$obj.dialog('close');
-							}, 'json');
-                        $(this).dialog('close');
+                        var selected = $obj.find('.fn-backup-restore-selection').val();
+                        var action = $obj.find('.fn-backup-restore-action:checked').val();
+                        var target = $obj.find('.fn-backup-restore-target').val();
+                        $obj.dialog('close');
+
+                        $.confirm(
+                            $.message("backup-restore-overwrite-confirm-message"),
+                            $.message("backup-restore-overwrite-confirm-header"),
+                            [
+                                {
+                                    'label': $.message("text-yes"),
+                                    'callback': function(e) {
+                                        $.throbber.show();
+                                        $.post(config.prefix + "/ajax_backup/restore",
+                                            {
+                                                'name': job,
+                                                'date': date,
+                                                'action': action,
+                                                'target': target,
+                                                'selection': selected
+                                            },
+                                            function(data) {
+                                                update_status(true, "done");
+                                                $.throbber.hide();
+                                                $(this).dialog('close');
+                                            }, 'json');
+                                    }
+                                },
+                                {
+                                    'label': $.message("text-no"),
+                                    'callback': function(e) {
+                                        $(this).dialog('close');
+                                    }
+                                }
+                            ]
+                        );
                     },
                     options: {
                         'class': 'ui-element-width-100'
