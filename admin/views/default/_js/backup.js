@@ -620,7 +620,7 @@ $(function(){
                         var selected = $obj.find('.fn-backup-restore-selection').val();
                         var action = $obj.find('.fn-backup-restore-action:checked').val();
                         var target = $obj.find('.fn-backup-restore-target').val();
-                        $obj.dialog('close');
+                        $(this).dialog('close');
 
                         $.confirm(
                             $.message("backup-restore-overwrite-confirm-message"),
