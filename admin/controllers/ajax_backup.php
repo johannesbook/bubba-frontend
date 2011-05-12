@@ -40,7 +40,6 @@ class Ajax_backup extends Controller {
                 );
             }
             $status = $this->backup->get_status($job);
-            $restore_status = $this->backup->get_restorestatus();
             $date = "";
             switch($schedule["type"]) {
             case "hourly":
@@ -87,10 +86,6 @@ class Ajax_backup extends Controller {
             if( $status["running"] ) {
                 $cur["running"] = true;
                 $cur["status"] = t("Running");
-			} elseif($restore_status['jobname']) {
-				$cur['restoring'] = true;
-                $cur["status"] = $restore_status['html'];
-                $cur["failed"] = !$restore_status['error'];
             } else {
                 if( $status["error"] ) {
                     $cur["status"] = t("Failed");
@@ -108,12 +103,6 @@ class Ajax_backup extends Controller {
         }
         $this->json_data = $data;
     }
-
-	function get_runstatus() {
-		$this->json_data = array(
-			'restore' => $this->backup->get_restorestatus(),
-		);
-	}
 
     function get_backup_job_information() {
         $name = $this->input->post("name");
