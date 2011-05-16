@@ -460,6 +460,9 @@ class Backup extends Model {
         case 'daily':
             $schedule[1] = $dayhour;
             break;
+		case 'disabled':
+			$schedule = array('disabled');
+			break;
         }
 
         $output = _system(BACKUP, "writeschedule", 'admin', $jobname, implode(' ', $schedule));
