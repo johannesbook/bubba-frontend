@@ -88,7 +88,7 @@ class Ajax_backup extends Controller {
                 $cur["status"] = t("Running");
             } else {
                 if( $status["error"] ) {
-                    $cur["status"] = t("Failed");
+                    $cur["status"] = nl2br($status['error']);
                     $cur["failed"] = true;
                 } elseif($status["done"]) {
                     $cur["status"] = t("OK");

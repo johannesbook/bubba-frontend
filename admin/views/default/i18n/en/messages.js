@@ -70,6 +70,9 @@ messages = {
 	"backup-dialog-restore-label": "Restore selected files and directories",
     'backup-restore-overwrite-confirm-message': 'Are you absolutely certain you want to restore given files? This will overwrite all current files with the content of the bakcup',
     'backup-restore-overwrite-confirm-header': 'Confirm restoration',
+	'backup-job-failed-label': 'Failed',
+	'backup-job-failed-why-label': 'why?',
+	'backup-job-failed-alert-title': 'Backup job %s failed',
 	// Mail
 	"mail-dialog-delete-foruser" : "Delete account for user '",
 	"mail-dialog-delete-onserver" : "' on server '",

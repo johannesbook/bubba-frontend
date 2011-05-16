@@ -252,8 +252,11 @@ class Backup extends Model {
                 $latest_log = end($logs);
                 unset($logs);
                 $data = file_get_contents($latest_log);
-                $error = preg_match("#^ERROR#m", $data);
-                $ret["error"] = $error;
+				if( preg_match("#^ERROR.*?\n(.*?)\n\n#ms", $data, $m) ) {
+					$ret['error'] = preg_replace("#^. #m", '', $m[1]);
+				} else {
+					$ret['error'] = false;
+				}
             }
         }
         return $ret;

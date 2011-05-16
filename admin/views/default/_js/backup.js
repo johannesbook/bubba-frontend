@@ -119,15 +119,37 @@ $(function(){
                 var row = $("<tr/>", { 'class': 'fn-backup-job-entry'});
                 $.each( jobs, function() {
                     var data = $.extend({failed: false, running: false},this);
-                    var cur = row.clone();
-                    cur.data('job', data.name);
-                    cur.appendTo(table);
-                    cur.append($('<td/>',{text: data.name}));
-                    cur.append($('<td/>',{text: data.target}));
-                    cur.append($('<td/>',{text: data.schedule}));
-                    cur.append($('<td/>',{text: data.status}).toggleClass("ui-backup-job-failed", data.failed));
+                    var $cur = row.clone();
+                    $cur.data('job', data.name);
+                    $cur.appendTo(table);
+                    $cur.append($('<td/>',{text: data.name}));
+                    $cur.append($('<td/>',{text: data.target}));
+                    $cur.append($('<td/>',{text: data.schedule}));
+					if( data.failed ) {
+						$node = $('<td/>',{'class': 'ui-backup-job-failed'}).appendTo($cur);
 
-                    cur.append($('<td/>').append($("<div/>", {'class': 'ui-inline'}).append(
+						$node.append($.message('backup-job-failed-label') + ' (');
+						$('<a/>', {
+							'href': '#',
+							'html': $.message('backup-job-failed-why-label'),
+							'click': function(e){
+								e.preventDefault();
+								$.alert(
+									data.status,
+									$.message('backup-job-failed-alert-title', data.name),
+									null,
+									null,
+									{'width': 500, 'height': 300}
+								);
+								return false;
+							}
+						}).appendTo($node);
+						$node.append(')');
+					} else {
+						$cur.append($('<td/>',{text: data.status}));
+					}
+
+                    $cur.append($('<td/>').append($("<div/>", {'class': 'ui-inline'}).append(
                         $('<button/>', {
                             'class' : "submit fn-job-remove",
                             html: $.message('backup-job-remove-button-label')
@@ -143,7 +165,7 @@ $(function(){
                         )
                         );
 
-                    cur.find("button").attr('disabled', data.running ? 'disabled' : '').
+                    $cur.find("button").attr('disabled', data.running ? 'disabled' : '').
                     toggleClass('disabled', data.running)
 
                 }
