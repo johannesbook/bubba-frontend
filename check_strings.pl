@@ -21,11 +21,11 @@
 use strict;
 use warnings;
 use JSON;
-use Perl6::Say;
+use v5.10;
 use File::Slurp;
 use Data::Dumper;
 
-my $strings = from_json(`php -r "require_once(\\\"admin/views/default/i18n/default/bubba_lang.php\\\");echo json_encode(\\\$lang);"`);
+my $strings = from_json(`php -r "define('NAME', 'b3');require_once(\\\"admin/views/default/i18n/en/bubba_lang.php\\\");echo json_encode(\\\$lang);"`);
 my $ts = ();
 my $nf = ();
 
@@ -48,5 +48,9 @@ foreach my $str( keys %$ts ) {
 		$nf->{$str}++;
 	}
 }
-say join "\n", keys %$nf;
-
+foreach my $file( `find admin/views/default/ -name \\\*.php` ) {
+	chomp $file;
+	foreach my $str ( keys %$nf ) {
+		system('grep', '-E', '-n', '-H', '--color', "t\\( ?(\"\|\')$str(\"\|\') ?\\)", $file );
+	}
+}
