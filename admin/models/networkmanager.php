@@ -23,11 +23,11 @@ class NetworkManager extends Model {
 			return true;
 		} else {
 			return false;
-		}		
+		}
 	}
 
 	public function decode_easyfindmsg($server_response) {
-		
+
 		define("DBCONNECT", 0x0);
 		define("UPDATE", 0x1);
 		define("SETNAME", 0x2);
@@ -48,23 +48,23 @@ class NetworkManager extends Model {
 			case SETNAME:
 				$msg = t("Unable to set name on server.");
 				break;
-			
+
 			case CHECKNAME:
 				$msg = t("Name not available.");
 				break;
-			
+
 			case DISABLE:
 				$msg = t("Unable to disable 'easyfind' service.");
 				break;
-			
+
 			case VALIDATE:
 				$msg = t("Name is not valid.");
 				break;
-			
+
 			case CHANGENAME:
 				$msg = t("Unable to change name on server.");
 				break;
-			
+
 			case GETRECORD:
 				$msg = t("Unable to get record data from server.");
 				break;
@@ -73,14 +73,14 @@ class NetworkManager extends Model {
 			$msg .= "<br>".t("Server responded: ") . $server_response['msg'];
 		}
 
-		return $msg;		
+		return $msg;
 	}
-	
+
 	public function easyfind_validate( $name ) {
 		if(!$name) return 0;
 		return preg_match( '#^[A-Za-z0-9-]+$#', $name );
 	}
-	
+
 	public function easyfind_setname( $name ) {
 		return set_easyfind($name);
 	}
@@ -129,7 +129,7 @@ class NetworkManager extends Model {
 
 		if($restart_lan) $this->ifrestart($this->get_lan_interface());
 		if($restart_wan) $this->ifrestart($this->get_wan_interface());
-		
+
 		if($restart_lan) {
 			$this->_restart_services($this->get_lan_interface());
 		} else {
@@ -213,7 +213,7 @@ class NetworkManager extends Model {
 				// if here, something has gone wrong, really wrong.
 				throw new Exception("$old_profile and $profile isn't valid and cant be handled");
 				break;
-			}            
+			}
 			break;
 		}
 	}
@@ -261,8 +261,8 @@ class NetworkManager extends Model {
 
 	private function _setpromisc($interface, $promisc){
 		$data = query_network_manager( array(
-			"cmd" => "setpromisc", 
-			"ifname" => $interface, 
+			"cmd" => "setpromisc",
+			"ifname" => $interface,
 			"promisc"=>$promisc ) );
 
 		if($data["status"]){
@@ -329,7 +329,7 @@ class NetworkManager extends Model {
 	        stop_service("mt-daapd");
 					sleep(1);
 	        start_service("mt-daapd");
-	    }  
+	    }
 	    if(query_service("minidlna")){
 		    stop_service("minidlna");
 		    start_service("minidlna");
@@ -339,7 +339,7 @@ class NetworkManager extends Model {
 
 	public function ifrestart($interface){
 		$data = query_network_manager( array(
-			"cmd"=>"ifrestart", 
+			"cmd"=>"ifrestart",
 			"ifname"=>$interface));
 		if( query_service("hostapd") && service_running("hostapd") && ( $interface == $this->get_lan_interface() ) ) {
 			invoke_rc_d("hostapd","restart");  // check return value?
@@ -359,14 +359,14 @@ class NetworkManager extends Model {
 
 	public function setns($config){
 		$data = query_network_manager( array(
-			"cmd"=>"setnameservers", 
+			"cmd"=>"setnameservers",
 			"resolv"=>$config));
 		return $data["status"];
 	}
 
 	public function setdynamic($interface, $config=null){
 		$cmd= array(
-			"cmd"=>"setdynamiccfg", 
+			"cmd"=>"setdynamiccfg",
 			"ifname"=>$interface,
 			"config"=>$config);
 		$data = query_network_manager($cmd);
@@ -375,7 +375,7 @@ class NetworkManager extends Model {
 
 	public function setstatic($interface, $config){
 		$data = query_network_manager( array(
-			"cmd"=>"setstaticcfg", 
+			"cmd"=>"setstaticcfg",
 			"ifname"=>$interface,
 			"config"=>$config));
 
@@ -405,7 +405,7 @@ class NetworkManager extends Model {
 		$dnsmasqcfg=get_dnsmasq_settings();
 		$dnsmasqcfg["interface"]=$if;
 		configure_dnsmasq($dnsmasqcfg);
-		
+
 		$cfg = array(
 			'cmd'		=> 'setlanif',
 			'lanif'		=> $if
@@ -462,7 +462,7 @@ class NetworkManager extends Model {
 		$data = $this->_getifcfg( $this->get_wlan_interface() );
 		if( isset( $data['config']['wlan']['config']['ssidbroadcast'] ) ) {
 			return $data['config']['wlan']['config']['ssidbroadcast'];
-		}        
+		}
 		return true;
 	}
 
@@ -573,7 +573,7 @@ class NetworkManager extends Model {
 
 	public function set_wlan_ht_capab( $capab ) {
 		$cmd = array(
-			"cmd" => "setaphtcapab", 
+			"cmd" => "setaphtcapab",
 			"capab" => $capab,
 			"ifname" => $this->get_wlan_interface()
 		);
@@ -610,7 +610,7 @@ class NetworkManager extends Model {
 		if( $data ) {
 			return isset($data["HT40+"]) || isset($data["HT40-"]);
 		}
-		return false;		
+		return false;
 	}
 	public function wlan_greenfield_active() {
 		$data = $this->_get_ht_capab($this->get_wlan_interface());
@@ -728,36 +728,36 @@ class NetworkManager extends Model {
 			$cap = $data['cap'];
 			$result = array();
 			$result['RX_LDPC'] = (bool)($cap & $this->_bit(0));
-			
+
 			$result['HT40'] =  (bool)($cap & $this->_bit(1));
-			
+
 			$result['SMPC'] = ($cap >> 2) & 0x3; // bit 2 and 3
-			
+
 			$result['RX_GF'] =  (bool)($cap & $this->_bit(4));
-			
+
 			$result['HT20_CGI'] =  (bool)($cap & $this->_bit(5));
 			$result['HT40_CGI'] =  (bool)($cap & $this->_bit(6));
-			
+
 			$result['TX_STBC'] =  (bool)($cap & $this->_bit(7));
 
 			$result['RX_STBC'] = ($cap >> 8) & 0x3; // bit 8 and 9
-			
+
 			$result['HT_DELAYED_BA'] =  (bool)($cap & $this->_bit(10));
-			
+
 			$result['AMSDU_LENGTH'] =  $cap & $this->_bit(11) ? 3839 : 7935;
 
 			$result['DSSS_CCK_HT40'] =  (bool)($cap & $this->_bit(12));
 
 			// bit 13 reserved
-			
+
 			$result['INTOLERANT_40MHZ'] =  (bool)($cap & $this->_bit(14));
 
 			$result['L_SIG_TXOP'] =  (bool)($cap & $this->_bit(15));
 
 			return $result;
 		} else {
-			throw new Exception($data["error"]); 
-		} 
+			throw new Exception($data["error"]);
+		}
 
 	}
 	public function get_wlan_bands( $phy = 'phy0' ) {
@@ -769,8 +769,8 @@ class NetworkManager extends Model {
 		if( $data['status'] ) {
 			return $data['bands'];
 		} else {
-			throw new Exception($data["error"]); 
-		} 
+			throw new Exception($data["error"]);
+		}
 	}
 
 	public function get_wlan_current_channel() {
