@@ -167,7 +167,6 @@ jQuery.fn.iCheckbox = function(options) {
 							return e;
 						}
 						input.attr('checked', !input.is(':checked'));
-						input.change();
 						image.blur();
 						return e;
 					}
