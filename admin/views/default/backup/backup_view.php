@@ -773,7 +773,7 @@
 
     </div>
 
-	<table id="fn-filemanager" class="ui-table-outline">
+	<table class="ui-table-outline ui-custom-select-filemanager">
 		<thead>
 			<tr class="ui-state-default ui-widget-header">
 				<th></th>

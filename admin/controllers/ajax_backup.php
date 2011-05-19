@@ -163,14 +163,16 @@ class Ajax_backup extends Controller {
             return round($bytes, $precision) . ' ' . $units[$pow];
         }
 	    $subpath = $this->input->post('path');
-        $modified_subpath = preg_replace("#(^|\/)\.\.?(\/|$)#", '/', $subpath);
-		$path = "/home/$modified_subpath";
+        $orig = $subpath = preg_replace("#(^|\/)\.\.?(\/|$)#", '/', $subpath);
+        $subpath = preg_replace("#/home/?#", '', $subpath);
+        $path = $subpath != "" ? "/home/$subpath" : '/home';
 
         $data = array(
             'meta' => array(),
-            'root' => $modified_subpath,
+            'root' => $path,
             'aaData'  => array()
         );
+
         if (file_exists($path) && is_dir($path) && is_readable($path)) {
             if ($dh = opendir($path)) {
                 while (($file = readdir($dh)) !== false) {

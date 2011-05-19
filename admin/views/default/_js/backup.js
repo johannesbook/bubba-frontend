@@ -1,9 +1,6 @@
 $(function(){
     var dialogs = {};
 
-    var filemanager = $('#fn-filemanager');
-    var filemanager_dialog;
-
     var dialog_options = {
         'create': {
             'width': 600,
@@ -740,8 +737,9 @@ $(function(){
 
 
         $('#fn-backup-'+value+'-selection-custom-browse').click(function(){
+            $filemanager = $(".ui-custom-select-filemanager");
             $.dialog(
-                filemanager.clone(),
+                $filemanager,
                 "Directory selector",
                 [
                     {
@@ -763,8 +761,8 @@ $(function(){
                     autoOpen: true,
                     open: function() {
 
-                        $(this).filemanager({
-                            root: '/',
+                        $filemanager.filemanager({
+                            root: '/home/',
                             animate: false,
                             dirPostOpenCallback: function(){},
                             ajaxSource: config.prefix + "/ajax_backup/dirs"
@@ -775,7 +773,8 @@ $(function(){
                         return true;
                     },
                     close: function() {
-                        var selected = $(this).filemanager('getSelected');
+                        var selected = $filemanager.filemanager('getSelected');
+                        $filemanager.filemanager("destroy");
                         $('#fn-backup-'+value+'-selection-custom-selection').text(selected.join(', ')).data('selection', selected);
                         dialogs["create"].dialog('widget').show();
                         return true;
