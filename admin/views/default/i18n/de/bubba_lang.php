@@ -480,6 +480,7 @@ $lang['network-firewall-allow-wan'] = "Externen (WAN) Zugriff auf ".NAME." Diens
 $lang['wizard-title'] = "Willkommen zu ".NAME;
 $lang['wizard-msg1'] = "Bitte nehmen Sie einen Moment, um die Basisfunktion für ".NAME. "einzurichten";
 $lang['wizard-msg1'] = "Alle eingegebenen Werte können später mithilfe der Verwaltungs-Interface einfach geändert werden.";
+$lang["system_language"] = "System sprache";
 
 //  ---------- First page  -----
 
