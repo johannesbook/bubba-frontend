@@ -31,11 +31,7 @@ class Filemanager extends Controller{
 
 	function _renderfull($content, $head=true){
 		if(!is_null($head)) {
-			if( $head === true ) {
-				$mdata["head"] = $this->load->view(THEME.'/filemanager/filemanager_head_view','',true);
-			} else {
-				$mdata['head'] = $head;
-			}
+            $mdata['head'] = $head;
 		}
 		$navdata["show_level1"] = $this->Auth_model->policy("menu","show_level1");
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
@@ -44,53 +40,6 @@ class Filemanager extends Controller{
 		$mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	
-
-
-	function backup($strip=""){
-		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
-
-		$data["backupjobs"] = get_backupjobs($this->session->userdata("user"));
-		$data["backup"] = get_backupstatus();
-		//only send jobfile, all settings are retreived using ajax.
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_backup_view',$data);		
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_backup_view',$data,true));
-		}
-	}
-
-	function restore($strip=""){
-		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
-
-		$data["backupjobs"] = get_backupjobs($this->session->userdata("user"));
-		$data["loc_fileinfo"] = "/home/".$this->session->userdata("user")."/.backup/";
-		
-		if(file_exists(RESTORE_LOCKFILE)) {
-			$data["restore"]["lock"] = true;
-			$data["restore"]["user"] = "";
-			$data["restore"]["jobname"] = "";
-
-			$fh_lockfile = fopen(RESTORE_LOCKFILE,"r");
-			$line = fgets($fh_lockfile);
-			fclose($fh_lockfile);
-
-			$line = rtrim($line);
-			$rdata = explode(" ",$line);
-			if(isset($rdata[0])) {
-				$data["restore"]["user"] = $rdata[0];
-			}
-			if(isset($rdata[1])) {
-				$data["restore"]["jobname"] = $rdata[1];
-			}
-		} else {
-		}
-
-		if($strip){
-			$this->load->view(THEME.'/filemanager/filemanager_restore_view',$data);		
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/filemanager/filemanager_restore_view',$data,true));
-		}
-	}
 	
 	function delete($strip=""){
 

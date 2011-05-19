@@ -65,8 +65,6 @@ $lang['title_album-users'] = "Album viewers";
 
 /* Sub navigation categories  */
 $lang['title_filemanager-browse']="Browse";
-$lang['title_filemanager-backup']="Backup";
-$lang['title_filemanager-restore']="Restore";
 $lang['title_mail-retrieve']="Retreive email";
 $lang['title_mail-server_settings']="Server settings";
 $lang['title_network-profile']="Profile";
@@ -121,11 +119,6 @@ $lang['menubar-link-filemanager'] = "File&nbsp;manager";
 $lang['menubar-link-backup'] = "File&nbsp;backup";
 $lang['menubar-link-systemsettings'] = "System&nbsp;settings";
 $lang['menubar-link-downloads'] = "Downloads";
-
-
-// backup field translations
-$lang['current_job'] = "Job name";
-$lang['target_protocol'] = "Target";
 
 // disk
 $lang['disk_action_title_extend_lvm'] = 'Extending user storage space';

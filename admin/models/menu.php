@@ -88,23 +88,7 @@ class Menu extends Model {
 		),
 		array( 
 			'id' => 'filemanager',
-			'uri' => 'filemanager',
-			'allow' => array( 'admin' ),
-			'children' => array(
-				array(
-					'id' => 'filemanager-browse',
-					'uri' => 'filemanager/',
-					'default' => true,
-				),
-				array(
-					'id' => 'filemanager-backup',
-					'uri' => 'filemanager/backup',
-				),
-				array(
-					'id' => 'filemanager-restore',
-					'uri' => 'filemanager/restore',
-				),
-			),
+			'uri' => 'filemanager'
         ),
 
         array(
