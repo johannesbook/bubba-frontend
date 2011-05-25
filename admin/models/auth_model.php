@@ -3,20 +3,6 @@
 class Auth_model extends Model{
 
 	private $policies = array(
-		"printing" 		=> array(
-			"list" 		=> array(
-				"allow" => array("admin")
-			),
-			"startstop" => array(
-				"allow" => array("admin")
-			),
-			"add"  		=> array(
-				"allow" => array("admin")
-			),
-			"delete"    => array( 
-				"allow" => array("admin")
-			)
-		),
 		"userdata" 		=> array(
 			"list" 		=> array(
 				"allow" => array("admin")

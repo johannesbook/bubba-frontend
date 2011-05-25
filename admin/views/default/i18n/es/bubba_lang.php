@@ -27,7 +27,6 @@ $lang['title_users']=$lang['Users'];
 $lang['title_services']=$lang['Services'];
 $lang['title_mail']=$lang['Mail'];
 $lang['title_network']=$lang['Network'];
-$lang['title_printing']=$lang['Printing'];
 $lang['title_settings']=$lang['Settings'];
 $lang['title_filemanager']=$lang['Filemanager'];
 $lang['title_album']=$lang['Album'];
@@ -255,16 +254,6 @@ $lang['wlan_title_broadcast_popup'] = 'Desactiv&Aacute;ndolo oculta la red - los
 
 $lang['fw_title_advanced'] = 'Configuraci&oacute;n avanzada de cortafuegos';
 
-
-# Printing
-$lang['printing_add_error_invalid_characters'] = "Caracteres inv&Aacute;lidos en nombre compartido, s&oacute;lo se permiten <strong>A-Z</strong>,<strong>a-z</strong> y <strong>_</strong>";
-$lang['printing_add_error_no_name'] = "Falta nombre";
-$lang['printing_add_error_no_printer_name'] = "Falta poner nombre de impresora";
-$lang['printing_add_error_no_printer_path'] = "Falta poner ruta de impresora";
-$lang['printing_add_operation_fail'] = "Fallo al a&ntilde;adir impresora";
-$lang['printing_add_success'] = "La impresora <strong>%s</strong> ha sido a&ntilde;adida";
-$lang['printing_delete_success'] = "La impresora <strong>%s</strong> ha sido eliminada";
-
 # Services
 $lang['service_update_success'] = "Servicios actualizados";
 
@@ -413,19 +402,6 @@ $lang["mail-auth-error"] = "Fallo de autorizaci&oacute;n";
 $lang["mail-retrieve-title"] = "Recuperar correo";
 $lang["mail-server-title"] = "Servidor de correo";
 $lang["SSL"] = "Encriptado";
-
-//  ----------- Printing --------
-
-$lang["printing-add-button-label"] = "A&ntilde;adir nueva impresora";
-$lang["printing-title"] = "Impresoras";
-$lang["printing-label-share"] = "Nombre";
-$lang["printing-label-info"] = "Descripci&oacute;n";
-$lang["printing-label-location"] = "Ubicaci&oacute;n f&iacute;sica";
-$lang["printing-label-state"] = "Estado";
-$lang["printing-list-edit-printer-label"] = "Impresora";
-$lang["printing-list-edit-name-label"] = "Nombre";
-$lang["printing-list-edit-location-label"] = "Ubicaci&oacute;n f&iacute;sica";
-$lang["printing-list-edit-info-label"] = "Descripci&oacute;n";
 
 //  ----------- Stat --------
 

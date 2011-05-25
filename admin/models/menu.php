@@ -173,11 +173,6 @@ class Menu extends Model {
 			),			
 		),
 		array(
-			'id' => 'printing',
-			'uri' => 'printing',
-			'allow' => array( 'admin' ),
-		),
-		array(
 			'id' => 'settings',
 			'uri' => 'settings',
 			'allow' => array( 'admin' ),

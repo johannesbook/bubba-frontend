@@ -36,7 +36,6 @@ $lang['title_users']=$lang['Users'];
 $lang['title_services']=$lang['Services'];
 $lang['title_mail']=$lang['Mail'];
 $lang['title_network']=$lang['Network'];
-$lang['title_printing']=$lang['Printing'];
 $lang['title_settings']=$lang['Settings'];
 $lang['title_filemanager']=$lang['Filemanager'];
 $lang['title_backup']=$lang['Backup'];
@@ -258,16 +257,6 @@ $lang['wlan_title_broadcast_popup'] = 'Turning this off hides the network - user
 
 $lang['fw_title_advanced'] = 'Advanced firewall settings';
 
-
-# Printing
-$lang['printing_add_error_invalid_characters'] = "Invalid characters in share name, only <strong>A-Z</strong>,<strong>a-z</strong> and <strong>_</strong> is allowed";
-$lang['printing_add_error_no_name'] = "No name was provided";
-$lang['printing_add_error_no_printer_name'] = "No printer name was provided";
-$lang['printing_add_error_no_printer_path'] = "No printer path was provided";
-$lang['printing_add_operation_fail'] = "Adding printer failed";
-$lang['printing_add_success'] = "Printer <strong>%s</strong> was added successfully";
-$lang['printing_delete_success'] = "Printer <strong>%s</strong> was deleted successfully";
-
 # Services
 $lang['service_update_success'] = "Services updated";
 
@@ -478,21 +467,6 @@ $lang["backup-label-security-password2"] = "Repeat password";
 $lang["backup-label-restore-missing"] = "Restore those files which aint anymore available on the B3. This without overwriting existing files";
 $lang["backup-label-restore-overwrite"] = "Revert the content of the files on the B3 to what is given in this backup";
 $lang["backup-label-restore-newdir"] = "Restore the files to an separate directory for further manual analysis (relative to /home/admin)";
-
-
-
-//  ----------- Printing --------
-
-$lang["printing-add-button-label"] = "Add new printer";
-$lang["printing-title"] = "Printers";
-$lang["printing-label-share"] = "Name";
-$lang["printing-label-info"] = "Description";
-$lang["printing-label-location"] = "Physical Location";
-$lang["printing-label-state"] = "State";
-$lang["printing-list-edit-printer-label"] = "Printer";
-$lang["printing-list-edit-name-label"] = "Name";
-$lang["printing-list-edit-location-label"] = "Physical Location";
-$lang["printing-list-edit-info-label"] = "Description";
 
 //  ----------- Stat --------
 

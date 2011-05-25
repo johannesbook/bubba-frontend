@@ -27,7 +27,6 @@ $lang['title_users']=$lang['Users'];
 $lang['title_services']=$lang['Services'];
 $lang['title_mail']=$lang['Mail'];
 $lang['title_network']=$lang['Network'];
-$lang['title_printing']=$lang['Printing'];
 $lang['title_settings']=$lang['Settings'];
 $lang['title_filemanager']=$lang['Filemanager'];
 $lang['title_album']=$lang['Album'];
@@ -278,16 +277,6 @@ $lang['wlan_title_broadcast_popup'] = 'Das Ausschalten dieser Option verbirgt da
 
 $lang['fw_title_advanced'] = 'Erweiterte Firewall-Einstellungen';
 
-
-# Printing
-$lang['printing_add_error_invalid_characters'] = "Ungültige Zeichen im Freigabename, nur <strong>A-Z</strong>, <strong>a-z</strong> und <strong>_</strong> sind erlaubt";
-$lang['printing_add_error_no_name'] = "Es wurde kein Name eingegeben";
-$lang['printing_add_error_no_printer_name'] = "Es wurde kein Druckername eingegeben";
-$lang['printing_add_error_no_printer_path'] = "Es wurde kein Druckerpfad eingegeben";
-$lang['printing_add_operation_fail'] = "Hinzufügen des Druckers fehlgeschlagen";
-$lang['printing_add_success'] = "Drucker <strong>%s</strong> wurde erfolgreich hinzugefügt";
-$lang['printing_delete_success'] = "Drucker <strong>%s</strong> wurde erfolgreich gelöscht";
-
 # Services
 $lang['service_update_success'] = "Dienste aktualisiert";
 
@@ -437,19 +426,6 @@ $lang["mail-auth-error"] = "Autorisierung fehlgeschlagen";
 $lang["mail-retrieve-title"] = "E-Mail abrufen";
 $lang["mail-server-title"] = "E-Mail-Server";
 $lang["SSL"] = "Verschlüsselt";
-
-//  ----------- Printing --------
-
-$lang["printing-add-button-label"] = "Neuen Drucker hinzufügen";
-$lang["printing-title"] = "Drucker";
-$lang["printing-label-share"] = "Name";
-$lang["printing-label-info"] = "Beschreibung";
-$lang["printing-label-location"] = "Tatsächlicher Standort";
-$lang["printing-label-state"] = "Zustand";
-$lang["printing-list-edit-printer-label"] = "Drucker";
-$lang["printing-list-edit-name-label"] = "Name";
-$lang["printing-list-edit-location-label"] = "Tatsächlicher Standort";
-$lang["printing-list-edit-info-label"] = "Beschreibung";
 
 //  ----------- Stat --------
 

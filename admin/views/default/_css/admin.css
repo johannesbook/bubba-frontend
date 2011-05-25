@@ -926,7 +926,7 @@ h1.wizard-header {
 	vertical-align : top;
 }
 
-#body_mail select,#body_mail option,#body_printing select,#body_printing option {
+#body_mail select,#body_mail option {
 	width : 83%;
 }
 

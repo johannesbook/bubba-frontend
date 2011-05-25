@@ -26,7 +26,6 @@ $lang['help_fw']="?page=administrator.html#NETWORK_Firewall";
 $lang['help_disk']="?page=administrator.html#DISK";
 $lang['help_lvm']="?page=administrator.html#DISK_LVM";
 $lang['help_raid']="?page=administrator.html#DISK_RAID";
-$lang['help_printing']="?page=administrator.html#PRINTING";
 $lang['help_settings']="?page=administrator.html#SETTINGS";
 $lang['help_backup']="?page=backup.html";
 $lang['help_restore']="?page=backup.html#RESTORE";
@@ -338,20 +337,6 @@ $lang['help_box_disk_raid']="
   	<li>Press 'Close' to continue working with ".NAME.". The synchronization is in progress and will take a while.</li>
   </ol>
   
-";
-
-$lang['help_box_printing']="
-<h3>Printer server</h3>
-<p>With the Print Server you will get easy and comfortable printer access. ".NAME." gives you a more efficient way of using your printer in your home- or in your office-networks. The print server allows multiple users to share a printer from anywhere on the network without sharing one PC. All you need is a USB printer and its drivers.</p>
-<h3>Installation</h3>
-<ol>
-  <li>Connect your USB printer to ".NAME."'s USB connector.</li>
-  <li>Press 'Add new printer'.</li>
-  <li>The printer name shows, add this printer and fill out  the requested information.</li>
-  <li>From your PC, browse via samba (use for example Explorer in Windows) to <a href='file:///\\".NAME."\'>\\".NAME."\</a>. </li>
-  <li>The printer will now show up next to the home and  storage folders. Double click the printer icon.  </li>
-  <li>You will be prompted for the printer driver, follow  the instructions and install the printer. When this is done, the printer is ready to be used. Repeat steps 4-6 for all computers using the printer.</li>
-</ol>
 ";
 
 $lang['help_box_settings']=$lang['help_box_settings_startwizard']="

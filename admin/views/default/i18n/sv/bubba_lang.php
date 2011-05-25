@@ -72,7 +72,6 @@ $lang['title_users']=$lang['Users'];
 $lang['title_services']=$lang['Services'];
 $lang['title_mail']=$lang['Mail'];
 $lang['title_network']=$lang['Network'];
-$lang['title_printing']=$lang['Printing'];
 $lang['title_settings']=$lang['Settings'];
 $lang['title_filemanager']=$lang['Filemanager'];
 $lang['title_stat']=$lang['Stat'];

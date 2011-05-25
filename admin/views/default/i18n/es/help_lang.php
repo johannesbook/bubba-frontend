@@ -26,7 +26,6 @@ $lang['help_fw']="?page=administrator.html#NETWORK_Firewall";
 $lang['help_disk']="?page=administrator.html#DISK";
 $lang['help_lvm']="?page=administrator.html#DISK_LVM";
 $lang['help_raid']="?page=administrator.html#DISK_RAID";
-$lang['help_printing']="?page=administrator.html#PRINTING";
 $lang['help_settings']="?page=administrator.html#SETTINGS";
 $lang['help_backup']="?page=backup.html";
 $lang['help_restore']="?page=backup.html#RESTORE";
@@ -341,20 +340,6 @@ $lang['help_box_disk_raid']="
 	<li>Pulsa 'Cerrar' para continuar trabajando con ".NAME.". La sincronizaci&oacute;n est&aacute; en progreso y le llevar&aacute; un buen rato.</li>
   </ol>
 
-";
-
-$lang['help_box_printing']="
-<h3>Servidor de impresi&oacute;n</h3>
-<p>Con el Servidor de Impresi&oacute;n tienes una manera f&aacute;cil y c&oacute;moda de acceder a la impresora. ".NAME." te facilita una manera m&aacute;s eficiente de usas la impresora en tu casa- o en la red de tu oficina. El servidor de impersi&oacute;n permite a m&uacute;ltiples usuarios compartir una impresora desde cualquier punto de la red sin compartir un PC. S&oacute;lo necesitas una impresora USB y sus drivers.</p>
-<h3>Instalaci&oacute;n</h3>
-<ol>
-  <li>Conecta tu impresora USB a la entrada USB de ".NAME.".</li>
-  <li>Pulsa 'A&ntilde;adir nueva impresora'.</li>
-  <li>Se muestra el nombre de la impresora, y a&ntilde;adeadd this impresora and fill out  the requested information.</li>
-  <li>Desde tu PC, navega mediante samba (mediante el Explorador de Windows) a <a href='file:///\\".NAME."\'>\\".NAME."\</a>. </li>
-  <li>La impresora aparecer&aacute; junto a las carpetas home y storage. Haz doble clic en el icono de la impresora.  </li>
-  <li>Se te pedir&aacute; el driver de la impresora, sigue las instrucciones e instala la impresora. Una vez realizado, la  impresora est&aacute; lista para usar. Repite los pasos 4 a 6 para todos los ordenadores que utilicen la impresora.</li>
-</ol>
 ";
 
 $lang['help_box_settings']=$lang['help_box_settings_startwizard']="

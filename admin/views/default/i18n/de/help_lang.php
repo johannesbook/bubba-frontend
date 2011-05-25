@@ -26,7 +26,6 @@ $lang['help_fw']="?page=administrator.html#NETWORK_Firewall";
 $lang['help_disk']="?page=administrator.html#DISK";
 $lang['help_lvm']="?page=administrator.html#DISK_LVM";
 $lang['help_raid']="?page=administrator.html#DISK_RAID";
-$lang['help_printing']="?page=administrator.html#PRINTING";
 $lang['help_settings']="?page=administrator.html#SETTINGS";
 $lang['help_backup']="?page=backup.html";
 $lang['help_restore']="?page=backup.html#RESTORE";
@@ -338,20 +337,6 @@ $lang['help_box_disk_raid']="
   	<li>Drücken Sie auf \'Schließen\', um die Arbeit mit ".NAME." fortzusetzen. Die Synchronisation wird durchgeführt und nimmt einige Zeit in Anspruch.</li>
   </ol>
   
-";
-
-$lang['help_box_printing']="
-<h3>Druckerserver</h3>
-<p>Mit dem Druckserver erhalten Sie einfach und bequem Zugang zum Drucker. ".NAME." bietet Ihnen die Möglichkeit, Ihre Drucker in Ihrem Heim- oder Büronetzwerk noch effizienter einzusetzen. Der Druckserver erlaubt mehreren Benutzern die gemeinsame Nutzung eines Druckers aus dem gesamten Netzwerk, d. h. ohne von einem gemeinsamen PC zu arbeiten. Sie benötigen lediglich einen USB-Drucker und die entsprechenden Treiber.</p>
-<h3>Installation</h3>
-<ol>
-  <li>Schließen Sie Ihren USB-Drucker am USB-Anschluss von ".NAME." an.</li>
-  <li>Drücken Sie auf \'Neuen Drucker hinzufügen\'.</li>
-  <li>Der Name des Druckers erscheint. Fügen Sie diesen Drucker hinzu und machen Sie die erforderlichen Angaben.</li>
-  <li>Navigieren Sie vom PC über Samba (z. B. mit dem Explorer von Windows) zu <a href='file:///\\".NAME."\'>\\".NAME."\</a>. </li>
-  <li>Der Drucker erscheint neben dem Home- und dem Speicher-Ordner. Doppelklicken Sie auf das Druckersymbol.  </li>
-  <li>Das System fragt nach dem Druckertreiber; befolgen Sie die Anweisungen und installieren Sie den Drucker. Nach Abschluss der Installation ist der Drucker einsatzbereit. Wiederholen Sie die Schritte 4 bis 6 für alle Computer, die den Drucker verwenden.</li>
-</ol>
 ";
 
 $lang['help_box_settings']=$lang['help_box_settings_startwizard']="
