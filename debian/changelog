@@ -1,3 +1,15 @@
+bubba-frontend (2.1.34) vincent hugo; urgency=low
+
+  * Removing old Filemanager backup/restore interface
+  * Adding German translation of system language
+  * bump session expiration from tho hours to 24 hours
+  * open link to www.excito.com in new tab (closes: #1656)
+  * Adding Spanish translation
+  * adding git buildpackage config file
+  * Remove the printing interface
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 25 May 2011 15:42:25 +0200
+
 bubba-frontend (2.1.33) vincent hugo; urgency=low
 
   * Adding new backup interface
