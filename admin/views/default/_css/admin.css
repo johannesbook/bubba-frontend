@@ -1953,3 +1953,7 @@ table.ui-table-two-col tbody td, table.ui-table-two-col tbody th {
 .fn-backup-job-entry:hover {
 	cursor: pointer!important;
 }
+
+.ui-input-text, .ui-dialog-title {
+  width: 100%;
+}
