@@ -23,7 +23,7 @@
 <table class="ui-table-outline">      
    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Streaming')?></td></tr>
    <tr>
-      <td><label for=""><?=t('UPNP streaming')?></label></td>
+      <td><label for=""><?=t('DLNA streaming')?></label></td>
       <td ><input name="upnp_enabled" type="checkbox" class="slide" value="1" <?= $upnp_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>

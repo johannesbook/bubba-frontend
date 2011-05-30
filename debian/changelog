@@ -1,3 +1,9 @@
+bubba-frontend (2.1.36) vincent hugo; urgency=low
+
+  * Change UPNP to DLNA in strings
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 30 May 2011 13:23:45 +0200
+
 bubba-frontend (2.1.35) vincent hugo; urgency=low
 
   * Try show version of bubba3-kernel instead of bubba-kernel
