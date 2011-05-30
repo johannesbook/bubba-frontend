@@ -21,6 +21,10 @@
 						<? if($uptime[0]>0) print($uptime[0]." ".t('days')." "); ?>
 						<? printf("%02d",$uptime[1])?>:<? printf("%02d",$uptime[2])?>:<? printf("%02d",$uptime[3])?>
 				</td><td /></tr>
+                <tr>
+                <td><?=t("Attached printers")?></td>
+                <td><?=implode(', ', array_map(function($a){return $a['info']}, $printers))?></td>
+                </tr>
 				<tr>
 					<td><?=t('Software version')?></td>
 					<td><?=$version?></td><td />

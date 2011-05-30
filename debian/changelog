@@ -1,3 +1,9 @@
+bubba-frontend (2.1.38) vincent hugo; urgency=low
+
+  * List attached printers
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 30 May 2011 18:10:22 +0200
+
 bubba-frontend (2.1.37) vincent hugo; urgency=low
 
   * add type input to the class declaration ui-input-text

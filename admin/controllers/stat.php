@@ -41,7 +41,12 @@ class Stat extends Controller{
 		$res=array();
 		$res["temp"]=get_hdtemp($dev);
 		return $res;
-	}
+    }
+
+    function _getprinters() {
+        $json =  _system('cups-list-printers');
+        return json_decode($json,true);
+    }
 
 	function info(){
 
@@ -50,6 +55,7 @@ class Stat extends Controller{
 		$sdata['partitions']["home"]=$this->_getvolume("/home/");
 		$sdata['partitions']["system"]=$this->_getvolume("/");
 		$sdata['disks']["sda"]=$this->_getdisk("/dev/sda");
+        $sdata['printers'] = $this->_getprinters();
 
 		header("Content-type: application/json");
 		print json_encode($sdata);
