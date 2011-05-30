@@ -15,19 +15,28 @@
 		</td>
 		<td>
 			<table class="ui-table-outline" id="ui-stat-list">
-				<tr><td class="ui-stat-list-col1"><?=t('Disk capacity')?></td><td class="ui-stat-list-col2"><?=$totalspace?> MB</td><td /></tr>
-				<tr><td><?=t('Available')?></td><td><?=$freespace?> MB</td><td /></tr>
-				<tr><td><?=t('Uptime')?></td><td>
+                <tr>
+                    <td class="ui-stat-list-col1"><?=t('Disk capacity')?></td>
+                    <td><?=$totalspace?> MB</td>
+                </tr>
+                <tr>
+                    <td class="ui-stat-list-col1"><?=t('Available')?></td>
+                    <td><?=$freespace?> MB</td>
+                </tr>
+                <tr>
+                    <td class="ui-stat-list-col1"><?=t('Uptime')?></td>
+                    <td>
 						<? if($uptime[0]>0) print($uptime[0]." ".t('days')." "); ?>
 						<? printf("%02d",$uptime[1])?>:<? printf("%02d",$uptime[2])?>:<? printf("%02d",$uptime[3])?>
-				</td><td /></tr>
+                    </td>
+                </tr>
                 <tr>
-                <td><?=t("Attached printers")?></td>
-                <td><?=implode(', ', array_map(function($a){return $a['info']}, $printers))?></td>
+                    <td class="ui-stat-list-col1"><?=t("Attached printers")?></td>
+                    <td><?=implode(', ', array_map(function($a){return $a['info'];}, $printers))?></td>
                 </tr>
 				<tr>
-					<td><?=t('Software version')?></td>
-					<td><?=$version?></td><td />
+					<td class="ui-stat-list-col1"><?=t('Software version')?></td>
+					<td><?=$version?></td>
 				</tr>
 			</table>
 				<form action="settings/software" method="post">

@@ -45,7 +45,7 @@ class Stat extends Controller{
 
     function _getprinters() {
         $json =  _system('cups-list-printers');
-        return json_decode($json,true);
+        return json_decode(implode($json),true);
     }
 
 	function info(){
@@ -85,6 +85,7 @@ class Stat extends Controller{
 		$sdata['totalspace']=number_format($totalspace,0,' ',' ');
 		$sdata['percentused']=intval(100*(($totalspace-$freespace)/$totalspace));
 		$sdata['notifications'] = $this->notify->list_all();
+        $sdata['printers'] = $this->_getprinters();
 
 		if($strip){
 			$this->load->view(THEME.'/stat/stat_view',$sdata);
