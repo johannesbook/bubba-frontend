@@ -339,7 +339,7 @@ class Backup extends Model {
 
     public function get_schedule($job) {
         $schedules = $this->get_all_schedules(); # TODO cache
-        if(array_key_exists($job, $schedules)) {
+        if(!is_null($schedules) && array_key_exists($job, $schedules)) {
             return $schedules[$job];
         } else {
             throw new NoScheduleException("No schedule found for job $job");
