@@ -375,7 +375,7 @@ class Ajax_backup extends Controller {
             throw new Exception("daily schedule without hour");
         }
 
-        if( $schedule_type == 'disabled' && !$schedule_timeline ) {
+        if( $schedule_type != 'disabled' && !$schedule_timeline ) {
             throw new Exception("missing timeline");
         }
 
