@@ -1,3 +1,9 @@
+bubba-frontend (2.1.40) vincent hugo; urgency=low
+
+  * Set the cookies garbage collector to session timeout + 6min
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 03 Jun 2011 13:41:32 +0200
+
 bubba-frontend (2.1.39) vincent hugo; urgency=low
 
   * Actually fix the stat view

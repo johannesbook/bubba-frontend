@@ -154,6 +154,7 @@ class CI_Session {
 			{
 				$this->session_id_ttl = (60*60*24*365*2);
 			}
+            ini_set("session.gc_maxlifetime", $this->session_id_ttl + 600); // the ttl plus six minutes
 		}
 
 		// check if session id needs regeneration
