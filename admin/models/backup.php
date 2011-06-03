@@ -1,11 +1,53 @@
 <?php
 
-class NoSettingsException extends Exception {}
-class NoScheduleException extends Exception {}
-class DuplicityExecutionException extends Exception {}
-class DuplicateJobException extends Exception {}
-class IllegalJobNameException extends Exception {}
-class BackupPLException extends Exception {}
+class NoSettingsException extends Exception {
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+    public function __toString() {
+        return __CLASS__ . ": {$this->message}\n";
+    }
+}
+class NoScheduleException extends Exception {
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+    public function __toString() {
+        return __CLASS__ . ": {$this->message}\n";
+    }
+}
+class DuplicityExecutionException extends Exception {
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+    public function __toString() {
+        return __CLASS__ . ": {$this->message}\n";
+    }
+}
+class DuplicateJobException extends Exception {
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+    public function __toString() {
+        return __CLASS__ . ": {$this->message}\n";
+    }
+}
+class IllegalJobNameException extends Exception {
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+    public function __toString() {
+        return __CLASS__ . ": {$this->message}\n";
+    }
+}
+class BackupPLException extends Exception {
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+    public function __toString() {
+        return __CLASS__ . ": {$this->message}\n";
+    }
+}
 
 class Backup extends Model {
 	private $diskmanager = "/usr/sbin/diskmanager";

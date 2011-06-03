@@ -112,7 +112,7 @@ class Ajax_backup extends Controller {
     public function get_restore_data() {
         $this->load->helper('struct');
 
-	    $subpath = $this->input->post('path');
+        $subpath = $this->input->post('path');
         $name = $this->input->post('name');
         $date = $this->input->post('date');
         $orig = $subpath = preg_replace("#(^|\/)\.\.?(\/|$)#", '/', $subpath);
@@ -124,29 +124,29 @@ class Ajax_backup extends Controller {
             'aaData'  => array()
         );
 
-		$map = array();
+        $map = array();
 
         foreach( $this->backup->get_restore_data_list($name, $date) as $entry ) {
-			if( preg_match("#^".preg_quote($subpath, "#")."(?P<given>.*)#", $entry['path'], $m) && $m['given'] != '' ) {
-				$map[$m['given']] = $entry['date'];
-			}
+            if( preg_match("#^".preg_quote($subpath, "#")."(?P<given>.*)#", $entry['path'], $m) && $m['given'] != '' ) {
+                $map[$m['given']] = $entry['date'];
+            }
         }
 
-		foreach(explodeTree($map, '/', true) as $k => $v) {
-			if(is_array($v)) {
-				$date = $v['__base_val'];
-				$type = 'dir';
-			} else {
-				$date = $v;
-				$type = 'file';
-			}
-			$data['aaData'][] = array(
-				$type,
-				$k,
-				date_create($date)->format("r")
-			);
+        foreach(explodeTree($map, '/', true) as $k => $v) {
+            if(is_array($v)) {
+                $date = $v['__base_val'];
+                $type = 'dir';
+            } else {
+                $date = $v;
+                $type = 'file';
+            }
+            $data['aaData'][] = array(
+                $type,
+                $k,
+                date_create($date)->format("r")
+            );
 
-		}
+        }
         $this->json_data = $data;
     }
 
@@ -162,7 +162,7 @@ class Ajax_backup extends Controller {
 
             return round($bytes, $precision) . ' ' . $units[$pow];
         }
-	    $subpath = $this->input->post('path');
+        $subpath = $this->input->post('path');
         $orig = $subpath = preg_replace("#(^|\/)\.\.?(\/|$)#", '/', $subpath);
         $subpath = preg_replace("#/home/?#", '', $subpath);
         $path = $subpath != "" ? "/home/$subpath" : '/home';
@@ -278,35 +278,35 @@ class Ajax_backup extends Controller {
         if(!$name) {
             throw new Exception("Required parameter name not given");
         }
-		try {
-			$this->backup->run($name);
-			$this->json_data = array('error' => false);
-		} catch( Exception $e ) {
-			$this->json_data['html'] = $e->getMessage();
-		}
+        try {
+            $this->backup->run($name);
+            $this->json_data = array('error' => false);
+        } catch( Exception $e ) {
+            $this->json_data['html'] = $e->getMessage();
+        }
     }
 
-	public function restore() {
+    public function restore() {
         $name = $this->input->post('name');
         $date = $this->input->post('date');
         $action = $this->input->post('action');
         $target = $this->input->post('target');
-		$selection = $this->input->post('selection');
+        $selection = $this->input->post('selection');
         if(!$name || !$date || !$action) {
             throw new Exception("Required parameter name not given");
-		}
-		if( $action == 'newdir' && !$target ) {
+        }
+        if( $action == 'newdir' && !$target ) {
             throw new Exception("newdir action requires target");
-		}
+        }
 
-		$target = preg_replace('#(^|/)\.\./#', '/', $target);
-		try {
-			$this->backup->restore($name, $date, $action, $target, $selection);
-			$this->json_data = array('error' => false);
-		} catch( Exception $e ) {
-			$this->json_data['html'] = $e->getMessage();
-		}
-	}
+        $target = preg_replace('#(^|/)\.\./#', '/', $target);
+        try {
+            $this->backup->restore($name, $date, $action, $target, $selection);
+            $this->json_data = array('error' => false);
+        } catch( Exception $e ) {
+            $this->json_data['html'] = $e->getMessage();
+        }
+    }
 
     public function edit() {
 
@@ -341,133 +341,141 @@ class Ajax_backup extends Controller {
 
         /* Basic checks that all data is present and ok, content validation are client side */
 
-        if( !$name || !$selection || !$protocol || !$schedule_type ) {
-            throw new Exception("jobname, selection, protocol, or schedule not defined");
-        }
+        try {
 
-        if( !in_array($protocol, array('ftp', 'ssh', 'file')) ) {
-            throw new Exception("not valid protocol");
-        }
-
-        if( $protocol == 'ftp' || $protocol == 'ssh' ) {
-            if( !$target_hostname || !$target_username || !$target_password ) {
-                throw new Exception("ftp or ssh without host and/or username/password combo");
+            if( !$name || !$selection || !$protocol || !$schedule_type ) {
+                throw new Exception("jobname, selection, protocol, or schedule not defined");
             }
+
+            if( !in_array($protocol, array('ftp', 'ssh', 'file')) ) {
+                throw new Exception("not valid protocol");
+            }
+
+            if( $protocol == 'ftp' || $protocol == 'ssh' ) {
+                if( !$target_hostname || !$target_username || !$target_password ) {
+                    throw new Exception("ftp or ssh without host and/or username/password combo");
+                }
+            }
+
+            if( $protocol == 'file' && !$target_device ) {
+                throw new Exception("file protocol without target disk");
+            }
+
+            if( !in_array($selection, array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom')) ) {
+                throw new Exception("invalid schedule type");
+            }
+
+            if( $schedule_type == 'monthly' && (!$schedule_monthhour || ! $schedule_monthday) ) {
+                throw new Exception("monthly schedule without day or hour");
+            }
+
+            if( $schedule_type == 'weekly' && (!$schedule_weekhour || ! $schedule_weekday) ) {
+                throw new Exception("weekly schedule without day or hour");
+            }
+
+            if( $schedule_type == 'daily' && !$schedule_dayhour ) {
+                throw new Exception("daily schedule without hour");
+            }
+
+            if( $schedule_type != 'disabled' && !$schedule_timeline ) {
+                throw new Exception("missing timeline");
+            }
+
+            if( $security && (!$security_password || $security_password != $security_password2) ) {
+                throw new Exception("choosen security setting without specifying password, or password missmatch");
+            }
+
+            if( $create ) {
+                /* Backup job name */
+                $this->backup->create_job($name);
+            }
+
+            $settings['jobname'] = $name;
+
+            /* Backup protocol */
+
+            $settings['target_protocol'] = $protocol;
+            if( $protocol == 'file' ) {
+                $settings['disk_uuid'] = $target_device;
+            } else {
+                $settings['target_host'] = $target_hostname;
+                $settings['target_user'] = $target_username;
+                $settings['target_FTPpasswd'] = $target_password;
+            }
+
+            /* Backup schedule */
+
+            $settings['schedule_type'] = $schedule_type;
+            $this->backup->set_schedule(
+                $name,
+                $schedule_type,
+                $schedule_monthday,
+                $schedule_monthhour,
+                $schedule_weekday,
+                $schedule_weekhour,
+                $schedule_dayhour
+            );
+            $settings['schedule_monthday'] = $schedule_monthday;
+            $settings['schedule_monthhour'] = $schedule_monthhour;
+            $settings['schedule_weekday'] = $schedule_weekday;
+            $settings['schedule_weekhour'] = $schedule_weekhour;
+            $settings['schedule_dayhour'] = $schedule_dayhour;
+
+            // XXX always only one fullbackup?
+            $settings['nbr_fullbackups'] = 1;
+            $settings['full_expiretime'] = $schedule_timeline;
+
+
+            if( $security ) {
+                $settings['GPG_key'] = $security_password;
+            }
+
+            $settings['selection_type'] = $selection;
+
+            $this->load->helper('ini');
+            write_ini_file("/home/admin/.backup/$name/jobdata", $settings);
+
+            /* Backup file selection */
+            $include = array();
+            $exclude = array();
+            switch( $selection ) {
+            case 'data':
+                $include[] = '/home/*';
+                $exclude[] = '/home/admin';
+                $exclude[] = '/home/storage';
+                $exclude[] = '/home/web';
+                break;
+            case 'email':
+                $include[] = '/home/*/Mail';
+                break;
+            case 'music':
+                $include[] = '/home/storage/music';
+                break;
+            case 'photo':
+                $include[] = '/home/storage/photo';
+                break;
+            case 'video':
+                $include[] = '/home/storage/video';
+                break;
+            case 'storage':
+                $include[] = '/home/storage';
+                break;
+            case 'custom':
+                $include = $this->input->post('dirs');
+                break;
+            default:
+                $this->err("Wrong selection type: $selection");
+                return;
+            }
+
+            $this->backup->set_backup_files($name, $include, $exclude);
+            $this->json_data = true;
+        } catch ( Exception $e ) {
+            $this->json_data = array(
+                'error' => true,
+                'html' => $e->getMessage()
+            );
         }
-
-        if( $protocol == 'file' && !$target_device ) {
-            throw new Exception("file protocol without target disk");
-        }
-
-        if( !in_array($selection, array('data', 'email', 'music', 'photo', 'video', 'storage', 'custom')) ) {
-            throw new Exception("invalid schedule type");
-        }
-
-        if( $schedule_type == 'monthly' && (!$schedule_monthhour || ! $schedule_monthday) ) {
-            throw new Exception("monthly schedule without day or hour");
-        }
-
-        if( $schedule_type == 'weekly' && (!$schedule_weekhour || ! $schedule_weekday) ) {
-            throw new Exception("weekly schedule without day or hour");
-        }
-
-        if( $schedule_type == 'daily' && !$schedule_dayhour ) {
-            throw new Exception("daily schedule without hour");
-        }
-
-        if( $schedule_type != 'disabled' && !$schedule_timeline ) {
-            throw new Exception("missing timeline");
-        }
-
-        if( $security && (!$security_password || $security_password != $security_password2) ) {
-            throw new Exception("choosen security setting without specifying password, or password missmatch");
-        }
-
-        if( $create ) {
-        /* Backup job name */
-            $this->backup->create_job($name);
-        }
-
-        $settings['jobname'] = $name;
-
-        /* Backup protocol */
-
-        $settings['target_protocol'] = $protocol;
-        if( $protocol == 'file' ) {
-            $settings['disk_uuid'] = $target_device;
-        } else {
-            $settings['target_host'] = $target_hostname;
-            $settings['target_user'] = $target_username;
-            $settings['target_FTPpasswd'] = $target_password;
-        }
-
-        /* Backup schedule */
-
-        $settings['schedule_type'] = $schedule_type;
-        $this->backup->set_schedule(
-            $name,
-            $schedule_type,
-            $schedule_monthday,
-            $schedule_monthhour,
-            $schedule_weekday,
-            $schedule_weekhour,
-            $schedule_dayhour
-        );
-        $settings['schedule_monthday'] = $schedule_monthday;
-        $settings['schedule_monthhour'] = $schedule_monthhour;
-        $settings['schedule_weekday'] = $schedule_weekday;
-        $settings['schedule_weekhour'] = $schedule_weekhour;
-        $settings['schedule_dayhour'] = $schedule_dayhour;
-
-        // XXX always only one fullbackup?
-        $settings['nbr_fullbackups'] = 1;
-        $settings['full_expiretime'] = $schedule_timeline;
-
-
-        if( $security ) {
-            $settings['GPG_key'] = $security_password;
-        }
-
-        $settings['selection_type'] = $selection;
-
-        $this->load->helper('ini');
-        write_ini_file("/home/admin/.backup/$name/jobdata", $settings);
-
-        /* Backup file selection */
-        $include = array();
-        $exclude = array();
-        switch( $selection ) {
-        case 'data':
-            $include[] = '/home/*';
-            $exclude[] = '/home/admin';
-            $exclude[] = '/home/storage';
-            $exclude[] = '/home/web';
-            break;
-        case 'email':
-            $include[] = '/home/*/Mail';
-            break;
-        case 'music':
-            $include[] = '/home/storage/music';
-            break;
-        case 'photo':
-            $include[] = '/home/storage/photo';
-            break;
-        case 'video':
-            $include[] = '/home/storage/video';
-            break;
-        case 'storage':
-            $include[] = '/home/storage';
-            break;
-        case 'custom':
-            $include = $this->input->post('dirs');
-            break;
-        default:
-            $this->err("Wrong selection type: $selection");
-            return;
-        }
-
-        $this->backup->set_backup_files($name, $include, $exclude);
-        $this->json_data = true;
 
 
     }
