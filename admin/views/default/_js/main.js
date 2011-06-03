@@ -38,11 +38,11 @@ function update_status($success,$msg) {
 		console.trace();
 		console.groupEnd();
 	}
-	var update_status = $("#update_status");
-	update_status.html($msg)
+	var $obj = $("#update_status");
+	$obj.html($msg);
 
-	update_status.width($("#content_wrapper").outerWidth());
-	update_status.position({
+	$obj.width($("#content_wrapper").outerWidth());
+	$obj.position({
 			'my': 'bottom',
 			'at': 'bottom',
 			'of': window,
@@ -51,19 +51,19 @@ function update_status($success,$msg) {
 	);
 
 	if($success > 0) {
-		update_status.removeClass("ui-state-error");
-		update_status.show( 'slide', { direction: 'down' }, 200 );
+		$obj.removeClass("ui-state-error");
+		$obj.show( 'slide', { direction: 'down' }, 200 );
 		if(statustimer) {
 			clearTimeout(statustimer);
 		}
 		statustimer = setTimeout(function(){
-				update_status.hide( 'slide', { direction: 'down' }, 500 );
+				$obj.hide( 'slide', { direction: 'down' }, 500 );
 
 			},3000
 		);
 	} else {
-		update_status.addClass("ui-state-error");
-		update_status.show( 'slide', { direction: 'down' }, 200 );
+		$obj.addClass("ui-state-error");
+		$obj.show( 'slide', { direction: 'down' }, 200 );
 	}
 }
 
@@ -82,7 +82,7 @@ $.throbber = {
 			globalThrobber.throbber('hide');
 		}
 	}
-}
+};
 
 // TODO remove usage
 function cursor_wait() {
@@ -93,14 +93,15 @@ function cursor_ready() {
 }		
 
 function display_menu() {
+    var width;
+    var speed = 300;
 	if(! menu_dialog.dialog('isOpen') ) {
 		menu_dialog.dialog('open');
-		var width = menu_dialog.outerWidth(true);
+		width = menu_dialog.outerWidth(true);
 		if( config.ua.Browser == 'Safari' ) {
 			width = 575 + 3; // possible bug in safari
 		}
 		console.log( width );
-		var speed = 300;
 		var left = $(window).width()/2 - width / 2;
 		menu_dialog.parent().hide().animate( 
 			{
@@ -114,7 +115,7 @@ function display_menu() {
 				}
 			});
 	} else {
-		var width = menu_dialog.outerWidth(true);
+		width = menu_dialog.outerWidth(true);
 		if( config.ua.Browser == 'Safari' ) {
 			width = 575 + 3; // possible bug in safari
 		}
@@ -128,7 +129,10 @@ function display_menu() {
 					'left': 'swing',
 					'opacity': 'easeOutQuint'
 				}
-			}).queue(function(){ menu_dialog.dialog('close'), $(this).dequeue()});
+            }).queue(function(){
+                menu_dialog.dialog('close');
+                $(this).dequeue();
+        });
 	}
 }
 
@@ -150,7 +154,7 @@ function logout_dialog() {
 
 function exit_wizard() {
 	$.post(config.prefix+"/stat/dialog_wizard_exit",{},function(){
-			window.location.href = config.prefix+"/settings"
+			window.location.href = config.prefix+"/settings";
 		},'json');
 }
 
@@ -230,8 +234,8 @@ $(document).ready( function() {
 				buttons: buttons,
 				position: ['center', 200],
 				beforeclose: function(event, ui) { $.throbber.hide(); }
-			}
-			if( override_options != undefined ) {
+			};
+			if( override_options !== undefined ) {
 				$.extend( options, override_options );
 			}
 
@@ -242,25 +246,7 @@ $(document).ready( function() {
 			div.dialog( options );
 			return div;
 		};
-/*
- * Usage:
- * $.confirm( 
- * 		message, // html message to be shown
- *		"<?=t("Title")?>", {
- *		 // button label : callback,
- *			<?=t('button_label_continue')?>: function() { // continue button
- *				$(this).dialog('close');
- *				// continue execution here
- *			},
- *			<?=t('button_label_cancel')?>: function() { // cancel button
- *				$(this).dialog('close');
- * 				// eventual cancel logic heoverride_re
- *			}
- *			 // , ... more buttons if wanted
- *		}
- *	);
- *
- */
+
 		$.confirm = function( message, header, buttons, override_options ) {
 			if(!buttons) {
 				buttons = {
@@ -270,9 +256,9 @@ $(document).ready( function() {
 					'Cancel': function() {
 						$(this).dialog('close');
 					}
-				}
+				};
 			}
-			var options = {dialogClass:'ui-dialog-confirm', close: function(){$(this).remove()}};
+			var options = {dialogClass:'ui-dialog-confirm', close: function(){$(this).remove();}};
 			$.extend( options, override_options );
 			message = $("<div/>",{html:message});
 			message.prepend($('<h2/>',{html:header}));
@@ -290,7 +276,7 @@ $(document).ready( function() {
 					callback.apply( this, [] );
 				}
 			};
-			var options = {dialogClass:'ui-dialog-alert', close: function(){$(this).remove()} };
+			var options = {dialogClass:'ui-dialog-alert', close: function(){$(this).remove();}};
 			$.extend( options, override_options );
 			message = $("<div/>",{html:message});
 			message.prepend($('<h2/>',{html:header}));

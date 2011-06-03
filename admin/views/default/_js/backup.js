@@ -63,7 +63,7 @@ $(function(){
         },
         'edit': function() {
         }
-    }
+    };
 
     var update_available_devices = function() {
         $.throbber.show();
@@ -73,11 +73,11 @@ $(function(){
             config.prefix + "/ajax_backup/get_available_devices",
             {},
             function(data) {
-                $.each(data['disks'], function(label, partitions) {
+                $.each(data.disks, function(label, partitions) {
                     var $group = $('<optgroup/>', {'label': label}).appendTo($select);
                     $.each(partitions, function() {
                         var partition = this;
-                        $('<option/>', {'value': partition['uuid'], 'html': partition['label']}).appendTo($group);
+                        $('<option/>', {'value': partition.uuid, 'html': partition.label}).appendTo($group);
                     });
 
                 });
@@ -86,7 +86,7 @@ $(function(){
             "json"
         );
 
-    }
+    };
 
     var update_backup_job_information = function(job, runs) {
         var table = $("#fn-backup-job-runs tbody");
@@ -106,7 +106,7 @@ $(function(){
             $row.data('job',job);
             $row.data('date', data.date);
         });
-    }
+    };
 
     var update_backup_jobs_table = function() {
         $.post( config.prefix + "/ajax_backup/get_backup_jobs", {},
@@ -163,7 +163,7 @@ $(function(){
                         );
 
                     $cur.find("button").attr('disabled', data.running ? 'disabled' : '').
-                    toggleClass('disabled', data.running)
+                    toggleClass('disabled', data.running);
 
                 }
             );
@@ -193,13 +193,14 @@ $(function(){
                 }
             }
         );
+        var buttons;
         if (dialog_buttons[value]) {
-            var buttons = dialog_buttons[value];
+            buttons = dialog_buttons[value];
         } else {
-            var buttons = [{
+            buttons = [{
                 'label': $.message("backup-" + value + "-dialog-button-label"),
                 'callback': function() {
-                    dialog_callbacks[value].apply(dialogs[value], arguments)
+                    dialog_callbacks[value].apply(dialogs[value], arguments);
                 },
                 options: {
                     id: 'fn-' + value + '-dialog-button',
@@ -208,7 +209,7 @@ $(function(){
             }];
         }
         if( dialog_onclose[value] ) {
-            options['close'] = dialog_onclose[value];
+            options.close = dialog_onclose[value];
         }
         dialogs[value] = $.dialog(
             $("#fn-backup-" + value + "-dialog"), "", buttons, options
@@ -223,8 +224,8 @@ $(function(){
     });
 
 
-    var create_buttonpane = dialogs['create'].dialog('widget').children('.ui-dialog-buttonpane');
-    var edit_buttonpane = dialogs['edit'].dialog('widget').children('.ui-dialog-buttonpane');
+    var create_buttonpane = dialogs.create.dialog('widget').children('.ui-dialog-buttonpane');
+    var edit_buttonpane = dialogs.edit.dialog('widget').children('.ui-dialog-buttonpane');
 
     $("#fn-backup-create").formwizard(
         {
@@ -240,7 +241,7 @@ $(function(){
             afterNext: function(wizardData) {
                 switch( wizardData.currentStep ) {
                 case "fn-backup-create-form-step-2":
-                    $("#fn-backup-create-selection-custom-browse").button('disable')
+                    $("#fn-backup-create-selection-custom-browse").button('disable');
                     break;
                 case "fn-backup-create-form-step-3":
                     $('#fn-backup-create-protocol').change();
@@ -254,10 +255,8 @@ $(function(){
                 }
             },
             afterBack: function(wizardData) {
-                switch( wizardData.currentStep ) {
-                case "fn-backup-create-form-step-4":
+                if( wizardData.currentStep === "fn-backup-create-form-step-4" ) {
                     $('.fn-backup-schedule').change();
-                    break;
                 }
             }
         },
@@ -335,7 +334,7 @@ $(function(){
             'reset': true,
             'success': function( data ) {
                 $.throbber.hide();
-                dialogs['create'].dialog('close');
+                dialogs.create.dialog('close');
                 update_backup_jobs_table();
             }
         }
@@ -355,7 +354,7 @@ $(function(){
             afterNext: function(wizardData) {
                 switch( wizardData.currentStep ) {
                 case "fn-backup-edit-form-step-2":
-                    $("#fn-backup-edit-selection-custom-browse").button('disable')
+                    $("#fn-backup-edit-selection-custom-browse").button('disable');
                     break;
                 case "fn-backup-edit-form-step-3":
                     $('#fn-backup-edit-protocol').change();
@@ -369,10 +368,8 @@ $(function(){
                 }
             },
             afterBack: function(wizardData) {
-                switch( wizardData.currentStep ) {
-                case "fn-backup-edit-form-step-4":
+                if( wizardData.currentStep ===  "fn-backup-edit-form-step-4" ) {
                     $('.fn-backup-schedule').change();
-                    break;
                 }
             }
         },
@@ -443,7 +440,7 @@ $(function(){
             'reset': !true,
             'success': function( data ) {
                 $.throbber.hide();
-                dialogs['edit'].dialog('close');
+                dialogs.edit.dialog('close');
                 update_backup_jobs_table();
             }
         }
@@ -454,8 +451,8 @@ $(function(){
         $("#fn-backup-create").formwizard('reset');
 
         $('#fn-backup-create-selection-custom-selection').data('selection', []);
-        dialogs["create"].dialog("open");
-        dialogs['create'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
+        dialogs.create.dialog("open");
+        dialogs.create.dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
     });
 
     $(".fn-job-edit").live('click', function(e){
@@ -484,34 +481,34 @@ $(function(){
             var name = data.jobname;
 
             $("#fn-backup-edit").formwizard('reset');
-            dialogs["edit"].dialog("open");
+            dialogs.edit.dialog("open");
 
             $('#fn-backup-edit-name').val(name);
 
-            $('#fn-backup-edit-selection-'+data['selection_type']).attr('checked', 'checked');
-            if(data['selection_type'] == 'custom') {
+            $('#fn-backup-edit-selection-'+data.selection_type).attr('checked', 'checked');
+            if(data.selection_type == 'custom') {
                 $('#fn-backup-edit-selection-custom-browse').removeAttr('disabled');
             }
             $('#fn-backup-edit-selection-custom-selection').data('selection', data.files).html(data.files.join(', '));
 
-            $('#fn-backup-edit-protocol option[value='+data['target_protocol']+']').attr('selected', 'selected');
-            $('#fn-backup-edit-target-device').val(data['dist_uuid']);
-            $('#fn-backup-edit-target-server-hostname').val(data['target_host']);
-            $('#fn-backup-edit-target-server-username').val(data['target_user']);
-            $('#fn-backup-edit-target-server-password').val(data['target_FTPpasswd']);
-            $('#fn-backup-edit-target-path').val(data['target_path']);
+            $('#fn-backup-edit-protocol option[value='+data.target_protocol+']').attr('selected', 'selected');
+            $('#fn-backup-edit-target-device').val(data.dist_uuid);
+            $('#fn-backup-edit-target-server-hostname').val(data.target_host);
+            $('#fn-backup-edit-target-server-username').val(data.target_user);
+            $('#fn-backup-edit-target-server-password').val(data.target_FTPpasswd);
+            $('#fn-backup-edit-target-path').val(data.target_path);
 
-            $('#fn-backup-edit-schedule-'+data['schedule_type']).attr('checked', 'checked');
-            $('#fn-backup-edit-schedule-monthday').val(data['schedule_monthday']);
-            $('#fn-backup-edit-schedule-monthhour').val(data['schedule_monthhour']);
-            $('#fn-backup-edit-schedule-weekday').val(data['schedule_weekday']);
-            $('#fn-backup-edit-schedule-weekhour').val(data['schedule_weekhour']);
-            $('#fn-backup-edit-schedule-dayhour').val(data['schedule_dayhour']);
-            $('#fn-backup-edit-schedule-timeline').val(data['full_expiretime']);
+            $('#fn-backup-edit-schedule-'+data.schedule_type).attr('checked', 'checked');
+            $('#fn-backup-edit-schedule-monthday').val(data.schedule_monthday);
+            $('#fn-backup-edit-schedule-monthhour').val(data.schedule_monthhour);
+            $('#fn-backup-edit-schedule-weekday').val(data.schedule_weekday);
+            $('#fn-backup-edit-schedule-weekhour').val(data.schedule_weekhour);
+            $('#fn-backup-edit-schedule-dayhour').val(data.schedule_dayhour);
+            $('#fn-backup-edit-schedule-timeline').val(data.full_expiretime);
 
-            $('#fn-backup-edit-security-enable').attr('checked', data['GPG_key'] != '' ? 'checked' : '');
-            $('#fn-backup-edit-security-password, #fn-backup-edit-security-password2').val(data['GPG_key']);
-            dialogs['edit'].dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
+            $('#fn-backup-edit-security-enable').attr('checked', data.GPG_key !== '' ? 'checked' : '');
+            $('#fn-backup-edit-security-password, #fn-backup-edit-security-password2').val(data.GPG_key);
+            dialogs.edit.dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
         }, 'json');
 
         return false;
@@ -534,9 +531,9 @@ $(function(){
                             { 'name': job },
                             function(data){
                                 if( data.error ) {
-                                    update_status( false, data.html );
+                                    $obj( false, data.html );
                                 } else {
-                                    update_status(
+                                    $obj(
                                         true,
                                         $.message("backup-job-remove-success-message")
                                     );
@@ -572,16 +569,16 @@ $(function(){
                             { 'name': job },
                             function(data){
                                 if( data.error ) {
-                                    update_status( false, data.html );
+                                    $obj( false, data.html );
                                 } else {
-                                    update_status(
+                                    $obj(
                                         true,
                                         $.message("backup-job-run-success-message")
                                     );
                                 }
                                 setTimeout(function(){
                                     $.throbber.hide();
-                                    update_backup_jobs_table()
+                                    update_backup_jobs_table();
                                     confirm_dialog.dialog('close');
                                 }, 2000);
                             }, 'json'
@@ -658,7 +655,7 @@ $(function(){
                                                 'selection': selected
                                             },
                                             function(data) {
-                                                update_status(true, "done");
+                                                $obj(true, "done");
                                                 $.throbber.hide();
                                                 $(this).dialog('close');
                                             }, 'json');
@@ -769,14 +766,14 @@ $(function(){
                         });
 
 
-                        dialogs["create"].dialog('widget').hide();
+                        dialogs.create.dialog('widget').hide();
                         return true;
                     },
                     close: function() {
                         var selected = $filemanager.filemanager('getSelected');
                         $filemanager.filemanager("destroy");
                         $('#fn-backup-'+value+'-selection-custom-selection').text(selected.join(', ')).data('selection', selected);
-                        dialogs["create"].dialog('widget').show();
+                        dialogs.create.dialog('widget').show();
                         return true;
                     }
                 }
@@ -789,7 +786,7 @@ $(function(){
             if( $(this).is('#fn-backup-'+value+'-selection-custom') ) {
                 $('#fn-backup-'+value+'-selection-custom-browse').button('enable');
             } else {
-                $('#fn-backup-'+value+'-selection-custom-browse').button('disable')
+                $('#fn-backup-'+value+'-selection-custom-browse').button('disable');
             }
         });
 
@@ -852,16 +849,16 @@ $(function(){
             switch( $(this).val() ) {
             case 'ftp':
             case 'ssh':
-                $('#fn-backup-'+value+'-target-server-hostname').removeAttr('disabled').closest('tr').show()
-                $('#fn-backup-'+value+'-target-server-username').removeAttr('disabled').closest('tr').show()
-                $('#fn-backup-'+value+'-target-server-password').removeAttr('disabled').closest('tr').show()
-                $('#fn-backup-'+value+'-target-device').attr('disabled', 'disabled').closest('tr').hide()
+                $('#fn-backup-'+value+'-target-server-hostname').removeAttr('disabled').closest('tr').show();
+                $('#fn-backup-'+value+'-target-server-username').removeAttr('disabled').closest('tr').show();
+                $('#fn-backup-'+value+'-target-server-password').removeAttr('disabled').closest('tr').show();
+                $('#fn-backup-'+value+'-target-device').attr('disabled', 'disabled').closest('tr').hide();
                 break;
             case 'file':
-                $('#fn-backup-'+value+'-target-server-hostname').attr('disabled', 'disabled').closest('tr').hide()
-                $('#fn-backup-'+value+'-target-server-username').attr('disabled', 'disabled').closest('tr').hide()
-                $('#fn-backup-'+value+'-target-server-password').attr('disabled', 'disabled').closest('tr').hide()
-                $('#fn-backup-'+value+'-target-device').removeAttr('disabled').closest('tr').show()
+                $('#fn-backup-'+value+'-target-server-hostname').attr('disabled', 'disabled').closest('tr').hide();
+                $('#fn-backup-'+value+'-target-server-username').attr('disabled', 'disabled').closest('tr').hide();
+                $('#fn-backup-'+value+'-target-server-password').attr('disabled', 'disabled').closest('tr').hide();
+                $('#fn-backup-'+value+'-target-device').removeAttr('disabled').closest('tr').show();
                 update_available_devices();
                 break;
             }
