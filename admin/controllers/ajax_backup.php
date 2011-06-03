@@ -467,6 +467,8 @@ class Ajax_backup extends Controller {
         }
 
         $this->backup->set_backup_files($name, $include, $exclude);
+        $this->json_data = true;
+
 
     }
 
