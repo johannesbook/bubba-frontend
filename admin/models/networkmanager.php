@@ -268,7 +268,7 @@ class NetworkManager extends Model {
 		if($data["status"]){
 			return $data["status"];
 		}else{
-			return Fales;
+			return false;
 		}
 	}
 
