@@ -535,9 +535,9 @@ $(function(){
                             { 'name': job },
                             function(data){
                                 if( data.error ) {
-                                    $obj( false, data.html );
+                                    update_status( false, data.html );
                                 } else {
-                                    $obj(
+                                    update_status(
                                         true,
                                         $.message("backup-job-remove-success-message")
                                     );
@@ -573,9 +573,9 @@ $(function(){
                             { 'name': job },
                             function(data){
                                 if( data.error ) {
-                                    $obj( false, data.html );
+                                    update_status( false, data.html );
                                 } else {
-                                    $obj(
+                                    update_status(
                                         true,
                                         $.message("backup-job-run-success-message")
                                     );
@@ -660,7 +660,7 @@ $(function(){
                                                 'selection': selected
                                             },
                                             function(data) {
-                                                $obj(true, "done");
+                                                update_status(true, "done");
                                                 $.throbber.hide();
                                                 $(self).dialog('close');
                                             }, 'json');
