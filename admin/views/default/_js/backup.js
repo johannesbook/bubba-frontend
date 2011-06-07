@@ -646,6 +646,7 @@ $(function(){
                                     'label': $.message("text-yes"),
                                     'callback': function(e) {
                                         $.throbber.show();
+										var self = this;
                                         $.post(config.prefix + "/ajax_backup/restore",
                                             {
                                                 'name': job,
@@ -657,7 +658,7 @@ $(function(){
                                             function(data) {
                                                 $obj(true, "done");
                                                 $.throbber.hide();
-                                                $(this).dialog('close');
+                                                $(self).dialog('close');
                                             }, 'json');
                                     }
                                 },
