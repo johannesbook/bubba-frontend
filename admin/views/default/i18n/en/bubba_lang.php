@@ -408,8 +408,8 @@ $lang["SSL"] = "Encrypted";
 
 // ------------ Backup ----------
 
-$lang["backup-jobs-title"] = "List of backup job specifications for this machine";
-$lang["backup-job-runs-title"] = "List of executed runs for selected job specification above";
+$lang["backup-jobs-title"] = "Backup jobs";
+$lang["backup-job-runs-title"] = "Timeline";
 $lang["backup-job-add-button-label"] = "Add new backup job";
 $lang["backup-create-dialog-title"] = "Add new backup job";
 $lang["backup-create-dialog-step1-title"] = "Choose a name for this job (step 1 of 5)";
@@ -466,7 +466,7 @@ $lang["backup-label-security-password2"] = "Repeat password";
 
 $lang["backup-label-restore-missing"] = "Restore those files which aint anymore available on the B3. This without overwriting existing files";
 $lang["backup-label-restore-overwrite"] = "Revert the content of the files on the B3 to what is given in this backup";
-$lang["backup-label-restore-newdir"] = "Restore the files to an separate directory for further manual analysis (relative to /home/admin)";
+$lang["backup-label-restore-newdir"] = "Restore to other place (/home/admin/[textfield])";
 
 //  ----------- Stat --------
 
