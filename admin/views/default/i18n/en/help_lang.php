@@ -90,6 +90,33 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
 <p>Logged in as administrator you are not able to add photos to the ".NAME." photo album. Log in with your standard user to add and manage photos and your albums.</p>
 ";
 
+$lang['help_box_backup'] = "
+<p>This backup service allows you to backup any data on your B3 to a USB disk, an eSATA disk or to a remote server supporting FTP or SSH protocols. For instance you can create a backup from one B3 to another using the SSH protocol, and using the EasyFind name as the “target server”.</p>
+
+<p>The backup service is timelined, hence you can choose to restore your data from any of the backup occasions. For instance if you create a backup job you run hourly, and need to restore a file to the state it had four hours earlier, this is possible.</p>
+
+<p>The backup can also be run differentially. This means that it will only send changes that might have taken place in your data. If no changes are made, no data is being sent and no additional storage space is used on the target.</p>
+
+<p>You can also choose to encrypt the backup. If you choose this, the backup is encrypted both during transfer to target and on the actual target. This allows you to send backups to untrusted servers without worrying that someone might read your backup data.</p>
+
+<p><em>Note: If you misplace the password you use to create an encrypted backup, you will not be able to restore this backup!</em></p>
+
+<h3>Create a backup</h3>
+
+<p>Click the button “Add new backup job” and follow the wizard</p>
+
+<h3>Restore a backup</h3>
+
+<p>Click the button “Restore” next to the date or time you wish to restore from.</p>
+
+<h3>Restore a backup not using B3</h3>
+
+<p>If you in the future would like to restore a backup not using B3, this is possible, but only with full backups, and only if the backups are not encrypted. Browse to your backup target. The full backups are available as “snapshots” and compressed using gzip. Use any gzip uncompressor to directly access your data.</p>
+
+<h3>Save your backup jobs</h3>
+
+<p>As a security measure, perform a settings backup to save your backup jobs if you have to reinstall your B3. Click Settings in the menu and then Backup settings </p>
+";
 $lang['help_box_users']="
 	<h3>Users</h3>
 	<p>Here you find all the registered users on your ".NAME.". Click on 'Edit user' to change user information.</p>
