@@ -1,3 +1,10 @@
+bubba-frontend (2.1.42) vincent hugo; urgency=low
+
+  * Syntax error in php file, Fales → false
+  * More message updates (Closes: #1685)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 07 Jun 2011 18:14:14 +0200
+
 bubba-frontend (2.1.41) vincent hugo; urgency=low
 
   * Check for nullness
