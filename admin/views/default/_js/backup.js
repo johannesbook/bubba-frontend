@@ -738,10 +738,10 @@ $(function(){
             $filemanager = $(".ui-custom-select-filemanager");
             $.dialog(
                 $filemanager,
-                "Directory selector",
+                $.message("File/Directory selector"),
                 [
                     {
-                        'label': $.message("Select choosen directory"),
+                        'label': $.message("Select"),
                         'callback': function() {
                             $(this).dialog('close');
                         },
