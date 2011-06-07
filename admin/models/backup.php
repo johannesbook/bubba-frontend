@@ -1,7 +1,7 @@
 <?php
 
 class NoSettingsException extends Exception {
-    public function __construct($message, $code = 0, Exception $previous = null) {
+    public function __construct($message = '', $code = 0, Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
     public function __toString() {
@@ -9,7 +9,7 @@ class NoSettingsException extends Exception {
     }
 }
 class NoScheduleException extends Exception {
-    public function __construct($message, $code = 0, Exception $previous = null) {
+    public function __construct($message = '', $code = 0, Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
     public function __toString() {
@@ -17,7 +17,7 @@ class NoScheduleException extends Exception {
     }
 }
 class DuplicityExecutionException extends Exception {
-    public function __construct($message, $code = 0, Exception $previous = null) {
+    public function __construct($message = '', $code = 0, Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
     public function __toString() {
@@ -25,7 +25,7 @@ class DuplicityExecutionException extends Exception {
     }
 }
 class DuplicateJobException extends Exception {
-    public function __construct($message, $code = 0, Exception $previous = null) {
+    public function __construct($message = '', $code = 0, Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
     public function __toString() {
@@ -33,7 +33,7 @@ class DuplicateJobException extends Exception {
     }
 }
 class IllegalJobNameException extends Exception {
-    public function __construct($message, $code = 0, Exception $previous = null) {
+    public function __construct($message = '', $code = 0, Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
     public function __toString() {
@@ -41,7 +41,7 @@ class IllegalJobNameException extends Exception {
     }
 }
 class BackupPLException extends Exception {
-    public function __construct($message, $code = 0, Exception $previous = null) {
+    public function __construct($message = '', $code = 0, Exception $previous = null) {
         parent::__construct($message, $code, $previous);
     }
     public function __toString() {
