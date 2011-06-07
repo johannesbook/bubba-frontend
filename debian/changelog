@@ -1,3 +1,24 @@
+bubba-frontend (2.1.41) vincent hugo; urgency=low
+
+  * Check for nullness
+  * Return true on backup creation
+  * wrong logic for timeline
+  * Passing backup and main through jshint
+  * Make sure create doesn't result in internal error
+  * Change system backup menu text (Closes: #1674)
+  * Adding translation check script
+  * Make restore conformation close the dialog (Closes: #1675)
+  * Fix missing end tag in backup view (Closes: #1680)
+  * Message changes for custom select of backup job (Closes: #1677)
+  * Remove fn-input-text class from radio buttons (Closes: #1676)
+  * Updating message strings (Closes: #1679)
+  * Enforce alphanumreric backup name only
+  * Adding help text to backup (Closes: #1682)
+  * Add default message to exceptions in backup
+  * Partial revert "Passing backup and main through jshint" (Closes: #1686)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 07 Jun 2011 18:02:13 +0200
+
 bubba-frontend (2.1.40) vincent hugo; urgency=low
 
   * Set the cookies garbage collector to session timeout + 6min
