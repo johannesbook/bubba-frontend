@@ -226,6 +226,9 @@ $(function(){
 
     var create_buttonpane = dialogs.create.dialog('widget').children('.ui-dialog-buttonpane');
     var edit_buttonpane = dialogs.edit.dialog('widget').children('.ui-dialog-buttonpane');
+	jQuery.validator.addMethod("alnum", function(value, element, params) {
+		return this.optional(element) || /^[a-z0-9]+$/i.test(value);
+	}, "Only alphanumreric values are allowed for the name");
 
     $("#fn-backup-create").formwizard(
         {
@@ -263,6 +266,7 @@ $(function(){
         {
             'rules': {
                 'name': {
+					'alnum': true,
                     'required': true,
                     'remote': {
                         'type': 'POST',
