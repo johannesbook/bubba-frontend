@@ -125,6 +125,33 @@ $lang['help_box_filemanager']=$lang['help_box_filemanager_cd']="
   </ol>
   ";
 
+$lang['help_box_backup']="
+<p>Dieser Backup Dienst ermöglicht die Sicherung aller Daten Ihres B3 auf eine externe USB- oder eSATA-Festplatte oder auf einen entfernten Fileserver, der FTP oder SSH Protokolle unterstützt. So kann z.B. unter Angabe des EasyFind Namen als Ziel, ein Backup eines B3 auf einen Zweiten per SSH erstellt werden.</p>
+
+<p>Der Backup Service speichert die aufeinanderfolgenden Sicherungen zeitlich gegliedert, sodass die Daten verschiedener Sicherungen wiederhergestellt werden können. Wenn Sie z.B. stündlich eine Datensicherung fahren und den Stand einer Datei von vor 4 Stunden wiederherstellen wollen, so ist dies möglich.</p>
+
+<p>Die Datensicherung kann auch inkrementell erfolgen. In diesem Modus werden nur Änderungen gesichert. Wenn keine Änderungen stattgefunden haben, so werden auch keine Daten gespeichert und kein überflüssiger Speicherplatz belegt.</p>
+
+<p>Sie haben die Wahl, die Datensicherung zu verschlüsseln. Dies betrifft sowohl die Übertragung der Daten, als auch die Speicherung der Datensicherung auf dem Zielspeicher. Somit können Sie eine Datensicherung auch auf Servern ablegen, dessen Vertrauenswürdigkeit Sie nicht einschätzen können. Achtung: Geht das Password einer verschlüsselten Datensicherung verloren, so können diese Daten nicht wiederhergestellt werden. </p>
+
+<h3>Datensicherung erstellen</h3>
+
+<p>Wählen Sie die Funktion „Neues Backup erstellen“ und folgen Sie dem Ablauf.</p>
+
+<h3>Datensicherung wiederherstellen</h3>
+
+<p>Klicken Sie auf die Funktion „Wiederherstellen“ und neben den Daten oder der Zeit, die Sie wiederherstellen wollen. </p>
+
+<h3>Datensicherungen ohne B3 wiederherstellen</h3>
+
+<p>Sie können aus einem Backup auch Daten wiederherstellen ohne dazu den B3 zu verwenden.
+Dies ist aber nur mit vollständigen (keinen inkrementellen) Backups möglich und nur, wenn diese nicht verschlüsselt wurden. Wählen Sie dazu die Datensicherung aus. Diese liegen als „Snapshot“ im gzip Format vor. Um die Daten wiederherzustellen können Sie ein gzip fähiges Kompressionsprogramm verwenden.</p>
+
+<h3>Sicherung ihrer backup planugen</h3>
+
+<p>Die Einstellungen zu geplanten Datensicherungen (Backup jobs) können ebenfalls gespeichert werden, um Sie nicht zu verlieren, falls das Betriebssystem des B3 wiederhergestellt werden soll. Wählen Sie dazu „Einstellungen“ und dann „Backup Einstellungen“.</p>
+";
+
 $lang['help_box_users']="
 	<h3>Benutzer</h3>
 	<p>Hier finden Sie alle Benutzer, die für Ihr ".NAME." registriert sind. Klicken Sie auf \'Benutzer bearbeiten\', wenn Sie die Daten eines Benutzers ändern möchten.</p>
