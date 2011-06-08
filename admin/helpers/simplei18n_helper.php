@@ -7,7 +7,7 @@ if (! function_exists('load_lang') ){
 		if( !isset($lang) ){
             if( $language != THEME.'/i18n/en' ) {
                 /* Include the english language file for base filling of untranslated strings*/
-				include(APPPATH.'views/'.THEME.'/i18n/en'.$langfile."_lang.php");
+				include(APPPATH.'views/'.THEME.'/i18n/en/'.$langfile."_lang.php");
             }
 			if(file_exists(APPPATH.'views/'.$language.'/'.$langfile."_lang.php")){
 				include(APPPATH.'views/'.$language.'/'.$langfile."_lang.php");
