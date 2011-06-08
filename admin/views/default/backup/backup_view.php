@@ -745,26 +745,27 @@
 					</td>
 				</tr>
 
-				<tr>
-					<td>
-						<input
-						type="radio"
-						class="fn-backup-restore-action"
-						id="fn-backup-restore-action-newdir"
-						name="restore-action"
-						value="newdir"
-						/>
-						<label for="fn-backup-restore-action-newdir"><?=t("backup-label-restore-newdir")?>:</label>
-						<input
-						type="text"
-						id="fn-backup-restore-target"
-						name="target"
-						class="ui-input-text fn-backup-restore-target"
-						disabled="disabled"
-						value=""
-						/>
-					</td>
-				</tr>
+                <tr>
+                    <td>
+                        <input
+                        type="radio"
+                        class="fn-backup-restore-action"
+                        id="fn-backup-restore-action-newdir"
+                        name="restore-action"
+                        value="newdir"
+                        />
+                        <label for="fn-backup-restore-action-newdir"><?=t("backup-label-restore-newdir")?>: </label>
+                        <tt>/home/admin/</tt>
+                        <input
+                        type="text"
+                        id="fn-backup-restore-target"
+                        name="target"
+                        class="ui-inline fn-backup-restore-target"
+                        disabled="disabled"
+                        value=""
+                        />
+                    </td>
+                </tr>
 
 			</table>
 

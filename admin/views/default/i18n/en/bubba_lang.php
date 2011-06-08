@@ -464,9 +464,8 @@ $lang["backup-label-security-enable"] = "Encrypt the backup on target for increa
 $lang["backup-label-security-password"] = "Password";
 $lang["backup-label-security-password2"] = "Repeat password";
 
-$lang["backup-label-restore-missing"] = "Restore those files which aint anymore available on the B3. This without overwriting existing files";
-$lang["backup-label-restore-overwrite"] = "Revert the content of the files on the B3 to what is given in this backup";
-$lang["backup-label-restore-newdir"] = "Restore to other place (/home/admin/[textfield])";
+$lang["backup-label-restore-overwrite"] = "Restore file to it’s original place";
+$lang["backup-label-restore-newdir"] = "Restore to other place";
 
 //  ----------- Stat --------
 
