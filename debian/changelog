@@ -1,3 +1,9 @@
+bubba-frontend (2.1.46) vincent hugo; urgency=low
+
+  * Adding more german translations (Closes: #1690)
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 16 Jun 2011 15:28:44 +0200
+
 bubba-frontend (2.1.45) vincent hugo; urgency=low
 
   * Inline text field and updated text

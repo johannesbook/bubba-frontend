@@ -121,7 +121,7 @@ $(function(){
                     $cur.appendTo(table);
                     $cur.append($('<td/>',{text: data.name}));
                     $cur.append($('<td/>',{text: data.target}));
-                    $cur.append($('<td/>',{text: data.schedule}));
+                    $cur.append($('<td/>',{text: $.message(data.schedule)}));
 					if( data.failed ) {
 						$node = $('<td/>',{'class': 'ui-backup-job-failed'}).appendTo($cur);
 
@@ -228,7 +228,7 @@ $(function(){
     var edit_buttonpane = dialogs.edit.dialog('widget').children('.ui-dialog-buttonpane');
 	jQuery.validator.addMethod("alnum", function(value, element, params) {
 		return this.optional(element) || /^[a-z0-9]+$/i.test(value);
-	}, "Only alphanumreric values are allowed for the name");
+	}, $.message("Only alphanumreric values are allowed for the name"));
 
     $("#fn-backup-create").formwizard(
         {
@@ -420,7 +420,7 @@ $(function(){
             },
             'messages': {
                 'name': {
-                    'remote': jQuery.format("{0} is already in use")
+                    'remote': jQuery.format($.message("{0} is already in use"))
                 }
             }
         },

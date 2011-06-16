@@ -4,8 +4,9 @@ messages = {
 	"button-label-cancel": "Abbrechen",
 	"button-label-edit": "Bearbeiten",
 	"text-yes": "Ja",
-	"text-no": "Nein",
-	
+    "text-no": "Nein",
+    "back": "Zurück",
+    "next": "Weiter",
 	// Topnav
 	"topnav-login": "Anmelden",
 
@@ -111,7 +112,7 @@ messages = {
     "album-users-edit-success-message":"Viewer aktualisiert",
 
     "next" : "Weiter",
-    "backup-job-failed-alert-title" : "Backup abgebrochen",
+    "backup-job-failed-alert-title" : "Datensicherung abgebrochen",
     "backup-create-button-finish" : "Fertigstellen",
     "backup-job-failed-why-label" : "Warum?",
     "backup-job-dialog-run-header" : "Backup starten",
@@ -131,5 +132,11 @@ messages = {
     "backup-job-restore-button-label" : "Wiederherstellen",
     "backup-job-dialog-run-button-label" : "Yea",
     "backup-job-dialog-run-message" : "Sind Sie sicher, dass Sie das Backup nun starten wollen?",
-    "backup-job-failed-label" : "Fehler"
+    "backup-job-failed-label" : "Fehler",
+    "Only alphanumeric values are allowed for the name": "Für den Namen der geplanten Datensicherung bitte nur Buchstaben verwenden",
+    "Running": "Datensicherung läuft",
+    "Not run": "Noch offen",
+    "Never": "Nicht terminiert",
+    "File/Directory selector": "Datenauswahl",
+    "Select": "Auswahl"
 }
