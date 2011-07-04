@@ -39,9 +39,9 @@ class Ajax_network extends Controller {
         $this->json_data['show_alert'] = true;
         $this->json_data['alert_msg'] = "";
 
-				$server_restart_msg = t("This will set network configuration to server mode and restart the network on B3.")."<br/>".t("Changing network parameters may requrie a restart of your computer.")."<br/><br/>".t("Please see the manual on how to connect your computer to B3.");
-		$router_restart_msg = t("This will set network configuration to router mode and restart the network on B3.")."<br/>".t("Changing network parameters may requrie a restart of your computer.")."<br/><br/>".t("Please see the manual on how to connect your computer to B3.");
-				$auto_restart_msg = t("This will restore default network configuration aswell as restarting the network on B3.")."<br/>".t("Changing network parameters may requrie a restart of your computer.")."<br/><br/>".t("Please see the manual on how to connect your computer to B3.");
+				$server_restart_msg = t("This will set network configuration to server mode and restart the network on B3.")."<br/>".t("Changing network parameters may require a restart of your computer.")."<br/><br/>".t("Please see the manual on how to connect your computer to B3.");
+		$router_restart_msg = t("This will set network configuration to router mode and restart the network on B3.")."<br/>".t("Changing network parameters may require a restart of your computer.")."<br/><br/>".t("Please see the manual on how to connect your computer to B3.");
+				$auto_restart_msg = t("This will restore default network configuration aswell as restarting the network on B3.")."<br/>".t("Changing network parameters may require a restart of your computer.")."<br/><br/>".t("Please see the manual on how to connect your computer to B3.");
 				
         switch ($old_profile) {
         case "router":
