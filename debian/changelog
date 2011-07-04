@@ -1,3 +1,9 @@
+bubba-frontend (2.1.48) vincent hugo; urgency=low
+
+  * Mark selected options as pre-selected (Closes: 1681)
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 04 Jul 2011 14:13:49 +0200
+
 bubba-frontend (2.1.47) vincent hugo; urgency=low
 
   * Fix tyop, requrie → require

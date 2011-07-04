@@ -102,7 +102,7 @@
 									name="protocol"
 									title="<?=t("backup-title-protocol")?>"
 									>
-									<option value="ftp"><?=t("FTP")?></option>
+									<option value="ftp" selected="selected"><?=t("FTP")?></option>
 									<option value="ssh"><?=t("SSH")?></option>
 									<option value="file"><?=t("Local (USB/eSATA)")?></option>
 								</select>
@@ -318,7 +318,7 @@
 									<option value="1W"><?=t("a week")?></option>
 									<option value="1M"><?=t("a month")?></option>
 									<option value="6M"><?=t("half a year")?></option>
-									<option value="1Y"><?=t("a year")?></option>
+									<option value="1Y" selected="selected"><?=t("a year")?></option>
 									<option value="10Y"><?=t("a decade")?></option>
 								</select>
 								<span class="ui-text-comment">(<?=t("backup-note-schedule-timeline")?>)</span>
@@ -422,7 +422,7 @@
 									name="protocol"
 									title="<?=t("backup-title-protocol")?>"
 									>
-									<option value="ftp">FTP</option>
+									<option value="ftp" selected="selected">FTP</option>
 									<option value="ssh">SSH</option>
 									<option value="file">Local (USB/eSATA)</option>
 								</select>
@@ -636,7 +636,7 @@
 									>
 									<option value="1D"><?=t("a day")?></option>
 									<option value="1W"><?=t("a week")?></option>
-									<option value="1M"><?=t("a month")?></option>
+									<option value="1M" selected="selected"><?=t("a month")?></option>
 									<option value="6M"><?=t("half a year")?></option>
 									<option value="1Y"><?=t("a year")?></option>
 									<option value="10Y"><?=t("a decade")?></option>
