@@ -234,7 +234,6 @@ $(function(){
         {
             resetForm: true,
             historyEnabled: !true,
-            focusFirstInput: true,
             validationEnabled: true,
             formPluginEnabled: true,
             back: create_buttonpane.find('.ui-prev-button'),
@@ -348,7 +347,6 @@ $(function(){
         {
             resetForm: !true,
             historyEnabled: !true,
-            focusFirstInput: true,
             validationEnabled: true,
             formPluginEnabled: true,
             back: edit_buttonpane.find('.ui-prev-button'),
