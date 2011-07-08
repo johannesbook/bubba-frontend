@@ -26,7 +26,18 @@ $(document).ready(function() {
                 return false;
             }
             $.throbber.show();
-            $.post(config.prefix + "/users/edit_user_account/json", $('form', source_edit_dialog).serialize() + '&flashdata=on', function(data) {
+            form = $(source_edit_dialog).find('form');
+            post_data = {
+                username:  form.find('input[name=username]').val(),
+                realname:  form.find('input[name=realname]').val(),
+                password1: form.find('input[name=password1]').val(),
+                password2: form.find('input[name=password2]').val(),
+                lang:      form.find('input[name=lang]').val(),
+                remote:    form.find('input[name=remote]').is(':checked') ? 'on' : '',
+                shell:     form.find('input[name=shell]').is(':checked') ? 'on' : '',
+                flashdata: 'on'
+            };
+            $.post(config.prefix + "/users/edit_user_account/json", post_data, function(data) {
                 $.throbber.hide();
                 if (data.error) {
                     update_status(false, data.html);
@@ -152,7 +163,17 @@ $(document).ready(function() {
         }
         $('input[name=username]', this).val($('input[name=input_username]', this).val());
         $.throbber.show();
-        $.post(config.prefix + "/users/add_user_account/json", $('form', this).serialize(), function(data) {
+        form = $(this).find('form');
+        post_data = {
+            username:  form.find('input[name=username]').val(),
+            realname:  form.find('input[name=realname]').val(),
+            password1: form.find('input[name=password1]').val(),
+            password2: form.find('input[name=password2]').val(),
+            lang:      form.find('input[name=lang]').val(),
+            remote:    form.find('input[name=remote]').is(':checked') ? 'on' : '',
+            shell:     form.find('input[name=shell]').is(':checked') ? 'on' : ''
+        };
+        $.post(config.prefix + "/users/add_user_account/json", post_data, function(data) {
             if (data.error) {
                 $.throbber.hide();
                 update_status(false, data.html);
@@ -180,7 +201,17 @@ $(document).ready(function() {
         default_sideboard = $('input[name=sideboard]', this).attr('checked');
 
         $.throbber.show();
-        $.post(config.prefix + "/users/edit_user_account/json", $('form', this).serialize(), function(data) {
+        form = $(this).find('form');
+        post_data = {
+            username:  form.find('input[name=username]').val(),
+            realname:  form.find('input[name=realname]').val(),
+            password1: form.find('input[name=password1]').val(),
+            password2: form.find('input[name=password2]').val(),
+            lang:      form.find('input[name=lang]').val(),
+            remote:    form.find('input[name=remote]').is(':checked') ? 'on' : '',
+            shell:     form.find('input[name=shell]').is(':checked') ? 'on' : ''
+        };
+        $.post(config.prefix + "/users/edit_user_account/json", post_data, function(data) {
             if (data.redraw) {
                 window.location.reload();
             } else {
