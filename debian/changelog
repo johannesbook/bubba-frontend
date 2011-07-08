@@ -1,3 +1,10 @@
+bubba-frontend (2.3~rc2) vincent hugo; urgency=low
+
+  * Cleanup indentation and formating, no logic change
+  * Manually setup the post data so shell and remote works under IE8
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 08 Jul 2011 16:53:44 +0200
+
 bubba-frontend (2.3~rc1) vincent hugo; urgency=low
 
   * Remove Explain link for hotfix
