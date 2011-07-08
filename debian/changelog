@@ -1,3 +1,10 @@
+bubba-frontend (2.3~rc1) vincent hugo; urgency=low
+
+  * Remove Explain link for hotfix
+  * Remove the focus first input flaga (Closes: 1703)
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 08 Jul 2011 15:27:55 +0200
+
 bubba-frontend (2.1.48) vincent hugo; urgency=low
 
   * Mark selected options as pre-selected (Closes: 1681)
