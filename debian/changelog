@@ -1,3 +1,12 @@
+bubba-frontend (2.3~rc3) vincent hugo; urgency=low
+
+  * Updating jquery.form and jquery.form.wizard
+  * Applying our changes to jquery.form.wizard
+  * Set default checks in select menues
+  * Update the backup javascript code to use new jquery.form.wizard
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 11 Jul 2011 17:36:30 +0200
+
 bubba-frontend (2.3~rc2) vincent hugo; urgency=low
 
   * Cleanup indentation and formating, no logic change
