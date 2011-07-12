@@ -210,7 +210,7 @@
 									title="<?=t("backup-title-schedule-monthly-day")?>"
 									>
 									<?foreach(range(1,30) as $day):?>
-									<option value="<?=$day?>"><?=to_ordinal($day)?></option>
+                                    <option <?if($day===1):?>selected="selected"<?endif?> value="<?=$day?>"><?=to_ordinal($day)?></option>
 									<?endforeach?>
 								</select>
 								<label for="fn-backup-create-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
@@ -221,7 +221,7 @@
 									title="<?=t("backup-title-schedule-monthly-hour")?>"
 									>
 									<?foreach(range(1,24) as $hour):?>
-									<option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+									<option  <?if($hour===1):?>selected="selected"<?endif?> value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
 									<?endforeach?>
 								</select>
 
@@ -245,7 +245,7 @@
 									title="<?=t("backup-title-schedule-weekly-day")?>"
 									>
 									<?foreach(range(1,7) as $day):?>
-									<option value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
+									<option <?if($day===1):?>selected="selected"<?endif?> value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
 									<?endforeach?>
 								</select>
 								<label for="fn-backup-create-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
@@ -256,7 +256,7 @@
 									title="<?=t("backup-title-schedule-weekly-hour")?>"
 									>
 									<?foreach(range(1,24) as $hour):?>
-									<option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+									<option <?if($hour===1):?>selected="selected"<?endif?> value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
 									<?endforeach?>
 								</select>
 
@@ -280,7 +280,7 @@
 									title="<?=t("backup-title-schedule-daily-hour")?>"
 									>
 									<?foreach(range(1,24) as $hour):?>
-									<option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+									<option <?if($hour===1):?>selected="selected"<?endif?> value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
 									<?endforeach?>
 								</select>
 
@@ -530,7 +530,7 @@
 									title="<?=t("backup-title-schedule-monthly-day")?>"
 									>
 									<?foreach(range(1,30) as $day):?>
-									<option value="<?=$day?>"><?=to_ordinal($day)?></option>
+									<option <?if($day===1):?>selected="selected"<?endif?> value="<?=$day?>"><?=to_ordinal($day)?></option>
 									<?endforeach?>
 								</select>
 								<label for="fn-backup-edit-schedule-monthhour"><?=t("backup-label-schedule-monthly-hour")?></label>
@@ -541,7 +541,7 @@
 									title="<?=t("backup-title-schedule-monthly-hour")?>"
 									>
 									<?foreach(range(1,24) as $hour):?>
-									<option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+									<option <?if($hour===1):?>selected="selected"<?endif?> value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
 									<?endforeach?>
 								</select>
 
@@ -565,7 +565,7 @@
 									title="<?=t("backup-title-schedule-weekly-day")?>"
 									>
 									<?foreach(range(1,7) as $day):?>
-									<option value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
+									<option <?if($day===1):?>selected="selected"<?endif?> value="<?=t("weekday-$day")?>"><?=t("weekday-$day")?></option>
 									<?endforeach?>
 								</select>
 								<label for="fn-backup-edit-schedule-weekhour"><?=t("backup-label-schedule-weekly-hour")?></label>
@@ -576,7 +576,7 @@
 									title="<?=t("backup-title-schedule-weekly-hour")?>"
 									>
 									<?foreach(range(1,24) as $hour):?>
-									<option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+									<option <?if($hour===1):?>selected="selected"<?endif?> value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
 									<?endforeach?>
 								</select>
 
@@ -600,7 +600,7 @@
 									title="<?=t("backup-title-schedule-daily-hour")?>"
 									>
 									<?foreach(range(1,24) as $hour):?>
-									<option value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
+									<option <?if($hour===1):?>selected="selected"<?endif?> value="<?=$hour?>"><?=sprintf("%02d:00",$hour)?></option>
 									<?endforeach?>
 								</select>
 
