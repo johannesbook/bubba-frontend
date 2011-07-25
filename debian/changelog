@@ -1,3 +1,9 @@
+bubba-frontend (2.3~rc5) vincent hugo; urgency=low
+
+  * Indicating if printer is still connectet or not
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 25 Jul 2011 16:58:23 +0200
+
 bubba-frontend (2.3~rc4) vincent hugo; urgency=low
 
   * Set default selected in backup wizard

@@ -32,7 +32,16 @@
                 </tr>
                 <tr>
                     <td class="ui-stat-list-col1"><?=t("Attached printers")?></td>
-                    <td><?=implode(', ', array_map(function($a){return $a['info'];}, $printers))?></td>
+					<td>
+						<?=implode(', ', array_map(function($a){
+							$info = $a['info'];
+							if(!$a['enabled']) {
+								$info .= " (".t($a['state']).")";
+								$info = "<span class=\"ui-printer-unplugged\">$info</span>";
+							}
+							return $info;
+						}, $printers))?>
+					</td>
                 </tr>
 				<tr>
 					<td class="ui-stat-list-col1"><?=t('Software version')?></td>
