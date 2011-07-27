@@ -1,4 +1,5 @@
 /usr/share/bubba-frontend/php5-cgi.conf /etc/php5/cgi/conf.d/admin.ini
+/usr/share/bubba-frontend/php5-apache.conf /etc/php5/apache2/conf.d/bubba.ini
 /usr/share/bubba-frontend/lighttpd.conf /etc/lighttpd/conf-available/10-admin.conf
 /usr/share/bubba-frontend/apache.conf /etc/apache2/conf.d/admin.conf
 /usr/share/bubba-frontend/apache.site /etc/apache2/sites-available/bubba

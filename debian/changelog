@@ -1,3 +1,9 @@
+bubba-frontend (2.3~rc7) vincent hugo; urgency=low
+
+  * PHP5 apache config file
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 27 Jul 2011 15:18:16 +0200
+
 bubba-frontend (2.3~rc6) vincent hugo; urgency=low
 
   * Need to set the garbage collecting parameter statically
