@@ -1,3 +1,9 @@
+bubba-frontend (2.3~rc6) vincent hugo; urgency=low
+
+  * Need to set the garbage collecting parameter statically
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 27 Jul 2011 13:40:05 +0200
+
 bubba-frontend (2.3~rc5) vincent hugo; urgency=low
 
   * Indicating if printer is still connectet or not
