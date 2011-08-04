@@ -324,6 +324,7 @@ class Ajax_backup extends Controller {
         $target_username = $this->input->post("target-username");
         $target_password = $this->input->post("target-password");
         $target_device = $this->input->post("target-device");
+        $target_path = $this->input->post("target-path");
 
         $schedule_dayhour = $this->input->post("schedule-dayhour");
         $schedule_weekhour = $this->input->post("schedule-weekhour");
@@ -401,7 +402,8 @@ class Ajax_backup extends Controller {
                 $settings['target_host'] = $target_hostname;
                 $settings['target_user'] = $target_username;
                 $settings['target_FTPpasswd'] = $target_password;
-            }
+			}
+			$settings['target_path'] = $target_path;
 
             /* Backup schedule */
 

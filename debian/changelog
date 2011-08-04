@@ -1,3 +1,9 @@
+bubba-frontend (2.3.0.1) vincent hugo; urgency=low
+
+  * Saving target-path
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 04 Aug 2011 17:58:02 +0200
+
 bubba-frontend (2.3) vincent hugo; urgency=low
 
   * Bumping version for release
