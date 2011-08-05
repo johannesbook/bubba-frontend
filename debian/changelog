@@ -1,3 +1,10 @@
+bubba-frontend (2.3.0.2) vincent hugo; urgency=low
+
+  * Backup schedule day fix
+  * Validator check for hostname
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 05 Aug 2011 14:34:44 +0200
+
 bubba-frontend (2.3.0.1) vincent hugo; urgency=low
 
   * Saving target-path
