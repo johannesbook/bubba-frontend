@@ -230,6 +230,12 @@ $(function(){
 		return this.optional(element) || /^[a-z0-9]+$/i.test(value);
 	}, $.message("Only alphanumreric values are allowed for the name"));
 
+	jQuery.validator.addMethod("hostname", function(value, element, params) {
+        return this.optional(element) ||
+        /^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])(\.([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9]))*$/i.test(value) ||
+        /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/.test(value);
+    }, $.message("Please enter a valid hostname or IPv4 address"));
+
     $("#fn-backup-create").formwizard(
         {
             resetForm: true,
@@ -278,6 +284,7 @@ $(function(){
                     }
                 },
                 'target-hostname': {
+                    'hostname': true,
                     'required': function(element) {
                         return $('#fn-backup-create-protocol option:selected').val() != 'file';
                     }
@@ -383,6 +390,7 @@ $(function(){
                     }
                 },
                 'target-hostname': {
+                    'hostname': true,
                     'required': function(element) {
                         return $('#fn-backup-edit-protocol option:selected').val() != 'file';
                     }
