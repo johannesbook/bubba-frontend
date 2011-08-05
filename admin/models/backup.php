@@ -429,6 +429,8 @@ class Backup extends Model {
                         } elseif( preg_match("#^\\d+$#", $day_of_month) ) {
                             $schedule["type"] = "monthly";
                             $schedule["day_of_month"] = $day_of_month;
+                        } elseif(preg_match("#^\\*$#", $day_of_week)) {
+                            $schedule["type"] = "daily";
                         }
                     }
                 }
