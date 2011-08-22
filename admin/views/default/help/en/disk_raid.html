@@ -1,0 +1,86 @@
+<p>
+  The RAID function in {PLATFORM} combines the /home partition and one external hard disk into a single logical unit.
+</p>
+<h3>
+  Important
+</h3>
+<ul>
+  <li>
+    <strong>Warning!</strong> The process will destroy all user data - both on the internal and external disk.
+  </li>
+  <li>An old RAID disk will automatically be connected and included into the {PLATFORM} system upon boot, even though you have not set up your {PLATFORM} for a RAID extension. It is impossible to remove the
+  extension without reinstallation. To format an old external RAID extended disk, connect the disk to a already running {PLATFORM}. Then choose 'Format' in the 'Disk -&gt; Information' menu.
+  </li>
+  <li>To get out the most of your disks, use an external disk in the same size as your internal disk in {PLATFORM}.
+  </li>
+  <li>Total capacity of the array equals the capacity of the smallest disk in the array.
+  </li>
+  <li>It will take some time to create or restore a RAID array. For a 1TB disk it will take about 4 hours. This is handheld in the background of the {PLATFORM} system and will not be indicated to the user.
+  </li>
+  <li>To reuse your {PLATFORM} standalone without the RAID setup you have to reinstall your {PLATFORM} system.
+  </li>
+</ul>
+<h3>
+  Create RAID array
+</h3>
+<ol>
+  <li>Attach an eSATA disk. Please notice that the disk should be pre formatted, without old RAID or LVM systems.
+  </li>
+  <li>Click 'Create RAID array'
+  </li>
+  <li>Select which external disk to include in the array.
+  </li>
+  <li>Warning! All data on both disks will be erased. Click 'Create RAID'.
+  </li>
+  <li>Wait for the progress bar to complete. Be patient, it will take some time to create a RAID array if you are using large disks.
+  </li>
+  <li>When finished, your external disk has been included in your RAID array.
+  </li>
+</ol>
+<h3>
+  RAID status
+</h3>
+<p>
+  <strong>List of RAID arrays</strong> - shows the total disk space, i.e. the smallest available disk (the {PLATFORM} /home partition or the external eSATA disk) in the array.
+</p>
+<p>
+  <strong>List of RAID disks</strong> - shows the disks attached to the RAID system.
+</p>
+<h3>
+  Recover an external disk
+</h3>
+<p>
+  If you have a disc failure on your external disk or if you have by mistake disconnected the external disk you will need to do the following.
+</p>
+<ol>
+  <li>Disconnect the broken external disk from the backside of {PLATFORM}.
+  </li>
+  <li>Attach a new external disk (or reconnect the by mistake disconnected one).
+  </li>
+  <li>Click on '<strong>Recover RAID array</strong>'.
+  </li>
+  <li>Select which external disk to add to RAID array. Click 'Recover array'.
+  </li>
+  <li>Warning! All data will be erased from the external disk. Click 'Recover array'.
+  </li>
+  <li>Press 'Close' to continue working with {PLATFORM}. The synchronization is in progress and will take a while.
+  </li>
+</ol>
+<h3>
+  Recover an internal disk
+</h3>
+<p>
+  If you have a disk failure on your internal disk in {PLATFORM} you have to start by exchanging the disk and reinstalling via an USB memory. Then update {PLATFORM} to the latest software.
+</p>
+<ol>
+  <li>Attach the external RAID disk that is containing your data.
+  </li>
+  <li>Click on '<strong>Recover RAID array</strong>'.
+  </li>
+  <li>Select the external disk to add to RAID array. Click 'Recover array'.
+  </li>
+  <li>Warning! All user data and the storage area will be erased from the internal disk. Click 'Recover array'.
+  </li>
+  <li>Press 'Close' to continue working with {PLATFORM}. The synchronization is in progress and will take a while.
+  </li>
+</ol>

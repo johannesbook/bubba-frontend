@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:2
+#: admin/views/default/help/en/services.html:30
+#: admin/views/default/help/en/user_mail.html:2
+msgid "Email"
+msgstr "E-Mail"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:5
+#: admin/views/default/help/en/user_mail.html:5
+#, fuzzy
+msgid ""
+"{PLATFORM} will fetch your email from all your different external email "
+"accounts you may have. The email will be stored on {PLATFORM} and available "
+"via IMAP or webmail, wherever you are."
+msgstr ""
+"#-#-#-#-#  mail.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"{PLATFORM} kann Ihre E-Mail von allen externen E-Mail-Konten abrufen, die "
+"Sie besitzen. Die E-Mails werden auf {PLATFORM} gespeichert und sind per "
+"IMAP oder Webmail von überall aus zugänglich.\n"
+"#-#-#-#-#  user_mail.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"{PLATFORM} kann Ihre E-Mails von allen externen E-Mail-Konten abrufen, die "
+"Sie besitzen. Die E-Mails werden auf {PLATFORM} gespeichert und sind per "
+"IMAP oder Webmail von überall aus zugänglich."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:8
+#: admin/views/default/help/en/user_mail.html:8
+msgid "Active email accounts will be shown here."
+msgstr "Aktive E-Mail-Konten werden hier angezeigt."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:11
+#: admin/views/default/help/en/user_mail.html:11
+#, fuzzy
+msgid "Set up {PLATFORM} for retrieving email"
+msgstr "{PLATFORM} für E-Mail-Abruf einrichten"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:14
+#: admin/views/default/help/en/user_mail.html:14
+#, fuzzy
+msgid ""
+"<strong>Add new email account</strong> - To start fetching email from an "
+"external account, click here. Fill in the information given to you by your "
+"email account provider."
+msgstr ""
+"- Klicken Sie hier, um mit dem Abrufen von externen E-Mail-Konten zu "
+"beginnen. Geben Sie die Daten ein, die Sie vom Provider für Ihr E-Mail-Konto "
+"erhalten haben."

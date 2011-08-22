@@ -18,7 +18,7 @@ $(document).ready(function() {
 
         var update_button = $('<button/>', {
             'class': 'submit',
-            html: $.message("users-edit-single-button-label")
+            html: _("Update settings")
         }).appendTo(source_edit_dialog);
 
         update_button.click(function() {
@@ -93,11 +93,11 @@ $(document).ready(function() {
             })).append($('<td/>', {
                 text: data.realname
             })).append($('<td/>', {
-                text: $.message(data.shell ? 'text-yes': 'text-no')
+                text: data.shell ? _('Yes') : _('No')
             })).append(
                 $('<td/>', {
                     html: $('<button/>', {
-                        html: $.message('button-label-edit'),
+                        html: _("Edit"),
                         click: function() {
                             open_edit_dialog_callback.apply(dialog, [data])
                         },
@@ -109,7 +109,7 @@ $(document).ready(function() {
 
     // This callback is fired each time click on "edit" is performed
     var open_edit_dialog_callback = function(data) {
-        $("h2.fn-dialog-header", this).html($.message("users-list-edit-dialog-header", data.server));
+        $("h2.fn-dialog-header", this).html($.sprintf(_("Edit user"), data.server));
         $('form', this).trigger('reset');
         edit_validator.resetForm();
         $('input[name=username],input[name=input_username]', this).val(data.username);
@@ -178,7 +178,7 @@ $(document).ready(function() {
                 $.throbber.hide();
                 update_status(false, data.html);
             } else {
-                update_status(true, $.message("users-list-add-success-message"));
+                update_status(true, _("Successfully added new user"));
                 $.post(
                     config.prefix + "/users/index/json", {},
                     function(data) {
@@ -219,7 +219,7 @@ $(document).ready(function() {
                     $.throbber.hide();
                     update_status(false, data.html);
                 } else {
-                    update_status(true, $.message("users-list-edit-success-message"));
+                    update_status(true, _("User information updated"));
                     $.post(
                         config.prefix + "/users/index/json", {},
                         function(data) {
@@ -242,7 +242,7 @@ $(document).ready(function() {
         };
         var body = $('<div/>');
         body.append($('<div/>', {
-            text: $.message("users-list-edit-dialog-delete-message")
+            text: _("Delete this user from the system?")
         }));
         var userdata_delete = $('<input/>', {
             'type': 'checkbox',
@@ -251,11 +251,11 @@ $(document).ready(function() {
         body.append(userdata_delete);
         body.append($('<label/>', {
             'for': 'userdata',
-            text: $.message("users-list-edit-dialog-delete-userdata-label")
+            text: _("Delete userdata?")
         }));
         $.confirm(
-            body, $.message("users-list-edit-dialog-delete-header"), [{
-                'label': $.message("users-list-edit-dialog-delete-button-label"),
+            body, _("Delete user"), [{
+                'label': _("Delete user"),
                 'callback': function() {
                     if (userdata_delete.is(':checked')) {
                         post_data.userdata = 'on';
@@ -277,7 +277,7 @@ $(document).ready(function() {
                 $.throbber.hide();
                 update_status(false, data.html);
             } else {
-                update_status(true, $.message("users-list-delete-success-message"));
+                update_status(true, _("User deleted"));
                 $.post(
                     config.prefix + "/users/index/json", {},
                     function(data) {
@@ -297,7 +297,7 @@ $(document).ready(function() {
     add_source_edit_dialog.find('input[name=input_username]').addClass('fn-primary-field');
     add_dialog = $.dialog(
         add_source_edit_dialog, '', [{
-            'label': $.message("users-list-add-dialog-button-label"),
+            'label': _("Add new user"),
             'callback': add_dialog_button_callback,
             options: {
                 id: 'fn-users-add-dialog-button'
@@ -310,7 +310,7 @@ $(document).ready(function() {
     edit_source_edit_dialog.find('input[name=realname]').addClass('fn-primary-field');
 
     edit_dialog_buttons = [{
-        'label': $.message("users-list-edit-dialog-button-label"),
+        'label': _("Update"),
         'callback': edit_dialog_button_update_callback,
         options: {
             id: 'fn-users-edit-dialog-button'
@@ -319,7 +319,7 @@ $(document).ready(function() {
 
     if (allowed_to_delete) {
         edit_dialog_buttons.push({
-            'label': $.message("users-list-edit-dialog-delete-button-label"),
+            'label': _("Delete user"),
             'callback': open_delete_dialog_callback,
             options: {
                 id: 'fn-users-edit-dialog-delete-button'
@@ -385,7 +385,7 @@ $(document).ready(function() {
             }
         }
     });
-    $("h2.fn-dialog-header", add_dialog).html($.message("users-list-add-dialog-header"));
+    $("h2.fn-dialog-header", add_dialog).html(_("Add new user to the system"));
 
     update_user_table(edit_dialog, user_accounts);
 

@@ -14,20 +14,20 @@ $(document).ready(function(){
 	});
 </script>
 
-<div class="ui-state-default ui-div-header"><?=t('Downloads')?></div>
+<div class="ui-state-default ui-div-header"><?=_("Downloads")?></div>
 <div style="height: 300px; overflow: auto; " id="downloadcontent"></div>
 
-<div class="ui-state-default ui-div-header"><?=t('Add new download')?></div>
+<div class="ui-state-default ui-div-header"><?=_('Add new download')?></div>
 <form action="<?=FORMPREFIX?>/downloads/add" method="post" id="add_download">
 <table class="ui-table-outline">
 <tr>
-   <td style="width: 10%; text-align: left; "><?=t('Location')?></td>
+   <td style="width: 10%; text-align: left; "><?=_("Location")?></td>
    <td style="width: 90%; text-align: center; "><input id="download-addurl" type="text" name="url"/></td>
 </tr>
 <tr>
 <td>
 	<input type="hidden" name="uuid" value="<?=$uuid?>" />
-	<input type="submit" name="add_download" value="<?=t('Add')?>" />
+	<input type="submit" name="add_download" value="<?=_("Add")?>" />
 </td>
 </tr>
 </table>

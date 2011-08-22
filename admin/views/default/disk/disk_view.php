@@ -1,13 +1,13 @@
 
 <table class="disks ui-table-outline">
-<tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Disk information')?></td></tr>
+<tr><td colspan="6" class="ui-state-default ui-widget-header"><?=_('Disk information')?></td></tr>
 <tr class="ui-header">
 	<th></th>
-	<th class="col1"><?=t('Disk')?></th>
-	<th><?=t('Device')?></th>
-	<th><?=t('Disk size')?></th>
-	<th><?=t('Type')?></th>
-	<th><?=t('Partitions')?></th>
+	<th class="col1"><?=_("Disk")?></th>
+	<th><?=_("Device")?></th>
+	<th><?=_('Disk size')?></th>
+	<th><?=_("Type")?></th>
+	<th><?=_("Partitions")?></th>
 </tr>
 <?foreach($disks as $disk):?>
 <tr>
@@ -18,7 +18,7 @@
 			name="<?=$disk['model']?>"
 			rel="<?=$disk['dev']?>"
 			class="button format"
-			value="<?=t('Format')?>"
+			value="<?=_("Format")?>"
 		/>
 		<?endif?>
 	</td>
@@ -57,13 +57,13 @@
 </table>
 
 <table class="typetable ui-table-outline">
-<tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('Partition information')?></td></tr>
+<tr><td colspan="6" class="ui-state-default ui-widget-header"><?=_('Partition information')?></td></tr>
 <tr class="ui-header">
 	<th class="colorcode"></th>
-	<th><?=t('Partition')?></th>
-	<th><?=t('Partition label')?></th>
-	<th><?=t('Partition size')?></th>
-	<th class="path"><?=t('Mount path')?></th>
+	<th><?=_("Partition")?></th>
+	<th><?=_('Partition label')?></th>
+	<th><?=_('Partition size')?></th>
+	<th class="path"><?=_('Mount path')?></th>
 	<th></th>
 </tr>
 
@@ -73,11 +73,11 @@
 	<td><?
 		switch($legend['name']) {
 			case "/dev/md0":
-				print t("Home partition");
+				print _("Home partition");
 				print " (RAID /dev/md0)";
 				break;
 			case "bubba-storage":
-				print t("Home partition");
+				print _("Home partition");
 				print " (LVM)";
 				break;
 			default:
@@ -92,13 +92,13 @@
 	<?endif?></td>
 	<td>
 		<? if( isset($devices[$legend['name']]) ):?>
-		<input type="button" rel="<?=$legend['name']?>" class="button mount <?=$devices[$legend['name']]['mounted']?'mounted':''?>" value="<?=$devices[$legend['name']]['mounted']?t('Disconnect'):t('Connect')?>" /></td>
+		<input type="button" rel="<?=$legend['name']?>" class="button mount <?=$devices[$legend['name']]['mounted']?'mounted':''?>" value="<?=$devices[$legend['name']]['mounted']?_("Disconnect"):_("Connect")?>" /></td>
 		<?endif?>
 </tr>
 <?endforeach?>
 <tr>
 	<td><div class="colorcode partition-system"></div></td>
-	<td><?=t("System partitions")?></td>
+	<td><?=_("System partitions")?></td>
 	<td />
 	<td />
 	<td />

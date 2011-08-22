@@ -36,26 +36,26 @@ $(document).ready(function(){
 
 	<? if(isset($confirmed)): ?>
 	<h1 class="wizard-header">
-		<?=t('Setup complete')?>
+		<?=_('Setup complete')?>
 	</h1>
 	<form action="<?=FORMPREFIX?>/network/wizard" method="post" >
 		<table id="wizard">
-			<tr><td colspan="2"><?=t('network-wizard-enjoy')?></td></tr>
-			<tr><td><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=t('Finish setup')?>'/></td></tr>
+			<tr><td colspan="2"><?=sprintf(_("Enjoy %s"), NAME)?></td></tr>
+			<tr><td><input class='submitbutton' type='submit' name='wiz_data[cancel]' value='<?=_('Finish setup')?>'/></td></tr>
 		</table>
 	</form>
 		
 	<?else:?>
-	<h1 class="wizard-header"><?=t('wizard-title-network')?></h1>
+	<h1 class="wizard-header"><?=_("Step 4/4: Network setup")?></h1>
 
 	<form action="<?=FORMPREFIX?>/network/wizard" method="post" id="fn-network-wizard-form">
 		<table id="wizard">
 			<thead>
-				<tr><th class="ui-wizard-label-header"><h2><?=t("Easyfind")?></h2></th></tr>
+				<tr><th class="ui-wizard-label-header"><h2><?=_("Easyfind")?></h2></th></tr>
 			</thead>
 			<tbody>
 				<tr class="ui-header">
-					<td><?=t("network-wizard-easyfind")?></td>
+					<td><?=sprintf(_("To locate %s from the internet, use 'Easyfind' location service"), NAME)?></td>
 					<td><input id="en_easyfind" name="wiz_data[en_easyfind]" type="checkbox" class="slide" <?=(isset($wiz_data['easyfind']['name'])&&$wiz_data['easyfind']['name']) || (isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind'])?"checked='checked'":""?>/></td>
 				</tr>
 
@@ -77,18 +77,18 @@ $(document).ready(function(){
 						value="<?=(isset($wiz_data['easyfind']['name'])
 									&& $wiz_data['easyfind']['name']) 
 									|| (isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind'])
-								?$wiz_data['easyfind']['name']:t("your-easyfind-name")?>"
+								?$wiz_data['easyfind']['name']:_("your-easyfind-name")?>"
 						<?=(isset($wiz_data['easyfind']['name'])
 							&&$wiz_data['easyfind']['name']) 
 							|| (isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind'])
 													?"":" disabled='disabled' "?>/>
 					    (http://<span id="mybubba"><?=isset($wiz_data['easyfind']['name'])
 					    								&&$wiz_data['easyfind']['name']
-					    							?$wiz_data['easyfind']['name']:t("your-easyfind-name")?></span>.<?=$wiz_data['easyfind']['domain']?>)
+												?$wiz_data['easyfind']['name']:_("your-easyfind-name")?></span>.<?=$wiz_data['easyfind']['domain']?>)
 					    <?if(isset($wiz_data['err_easyfind']) && $wiz_data['err_easyfind']):?>
 					 	<br>
 					 		<?if(isset($wiz_data['err_easyfind_empty']) && $wiz_data['err_easyfind_empty']):?>
-					 			<span class='ui-state-error-text'><?=t("Empty name not allowed")?></span>
+								<span class='ui-state-error-text'><?=_("Empty name not allowed")?></span>
 					 		<?else:?>
 					 			<span class='ui-state-error-text'><?=$wiz_data['err_easyfind']?></span>
 					 		<?endif?>
@@ -98,9 +98,9 @@ $(document).ready(function(){
 			</tbody>
 		</table>
 		<div class="ui-wizard-controls">
-			<input class='submitbutton' type='submit' id="wizard_back" name='wiz_data[back]' value='<?=t('Back')?>'/>
+			<input class='submitbutton' type='submit' id="wizard_back" name='wiz_data[back]' value='<?=_("Back")?>'/>
 			<span class="wiz_spacer">&nbsp;</span>
-			<input class='submitbutton' type='submit' id="wizard_next" value='<?=t('Next')?>'/>
+			<input class='submitbutton' type='submit' id="wizard_next" value='<?=_("Next")?>'/>
 			<input type="hidden" value="0" name="wiz_data[postingpage]" id="post_value"/>
 		</div>
 	</form>

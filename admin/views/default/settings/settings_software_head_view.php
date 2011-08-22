@@ -35,7 +35,7 @@ $(document).ready(function(){
           data.package = package;
         }
         meter = new $.progress();
-        meter.update( 0, '<?=t('Preparing to')?> <?=$action=='install'?t("install $package"):t("update system")?>' );
+        meter.update( 0, '<?=_('Preparing to')?> <?=$action=='install'?_("install $package"):_("update system")?>' );
         $("#updater").remove();
 		$("#progress").append( meter.root() );
 		function upgrade() {

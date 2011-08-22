@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_datetime.html:2
+msgid "Date and time"
+msgstr "FEcha y hora"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:5
+#, fuzzy
+#| msgid "- Shows the selected timezon."
+msgid "<strong>Current timezone is</strong> - Shows the selected timezon."
+msgstr "- Muestra el uso horario selecionado."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:8
+#, fuzzy
+#| msgid "- Select your timezone in the drop down list."
+msgid ""
+"<strong>Select timezone</strong> - Select your timezone in the drop down "
+"list."
+msgstr "- Selecciona tu huso horario en la lista desplegable."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:11
+#, fuzzy
+#| msgid ""
+#| "- This enables {PLATFORM} to set the date and time automatically via an "
+#| "internet server."
+msgid ""
+"<strong>Set time automatically</strong> - This enables {PLATFORM} to set the "
+"date and time automatically via an internet server."
+msgstr ""
+"- Esto permite a {PLATFORM} establecer la fecha y hora a través de un "
+"servidor de internet."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:14
+#, fuzzy
+#| msgid "- Set the system date manually."
+msgid "<strong>Date</strong> - Set the system date manually."
+msgstr "- Establece manualmente la fecha del sistema."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:17
+#, fuzzy
+#| msgid "- Set the system time manually."
+msgid "<strong>Time</strong> - Set the system time manually."
+msgstr "- Establece manualmente la hora del sistema."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_datetime.html:20
+msgid "Default system language"
+msgstr "Idioma por defecto"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:23
+#, fuzzy
+#| msgid "- Select language for the user interface."
+msgid ""
+"<strong>System language</strong> - Select language for the user interface."
+msgstr "- Selecciona idioma para la interface de usuario."

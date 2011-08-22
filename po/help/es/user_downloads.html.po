@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:2
+msgid "Downloads"
+msgstr "Descargas"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:5
+#, fuzzy
+#| msgid ""
+#| "Use the {PLATFORM} download manager to download files directly to your "
+#| "{PLATFORM}, wherever you are. The only thing you need is a internet "
+#| "connection and a web browser."
+msgid ""
+"Use the {PLATFORM} download manager to download files directly to your "
+"{PLATFORM}, wherever you are. The only thing you need is a internet "
+"connection and a web browser."
+msgstr ""
+"Usa el gestor de descargas de {PLATFORM} para descargar ficheros "
+"directamente a tu {PLATFORM}, desde donde estés. Lo único que necesitas es "
+"una conexión a internet y un navegador."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:8
+#, fuzzy
+#| msgid ""
+#| "Surf to www.-your easyfind name-.myown{PLATFORM}.com. Of course if you "
+#| "already are in your home network browse to http://{PLATFORM}/admin."
+msgid ""
+"Surf to www.-your easyfind name-.{EASYFIND}. Of course if you already are in "
+"your home network browse to http://{DEFAULT_HOST}/admin."
+msgstr ""
+"Navega a tu www.-tu nombre easyfind-.myown{PLATFORM}.com. Por supuesto si ya "
+"estás en tu red doméstica vete a http://{PLATFORM}/admin."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:11
+#, fuzzy
+#| msgid ""
+#| "Large, time consuming downloads are handled by {PLATFORM} while your "
+#| "computer is turned off. When you initiate your first download a catalogue "
+#| "is created in your /home/[username]/ folder: /home/[username]/downloads."
+msgid ""
+"Large, time consuming downloads are handled by {PLATFORM} while your "
+"computer is turned off. When you initiate your first download a catalogue is "
+"created in your /home/[username]/ folder: /home/[username]/downloads."
+msgstr ""
+"Las enormes y lentas descargas se manejan por {PLATFORM} mientras tu "
+"ordenador está apagado. Cuando inicias tu primera descarga se crea un "
+"catálogo en tu carpeta /home/[usuario]/ folder: /home/[usuarioname]/"
+"downloads."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:15
+msgid "How to download"
+msgstr "Como descargar"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:18
+#, fuzzy
+#| msgid ""
+#| "At home browse to http://{PLATFORM}/admin or away from home www.-your "
+#| "easyfind name-.myown{PLATFORM}.com/admin."
+msgid ""
+"At home browse to http://{DEFAULT_HOST}/admin or away from home www.-your "
+"easyfind name-.{EASYFIND}/admin."
+msgstr ""
+"En casa accede a http://{PLATFORM}/admin o si fuera www.-tu nombre easyfind "
+"name-.myown{PLATFORM}.com/admin."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:20
+msgid "Log in as your standard user."
+msgstr "Conéctate con tu usuario normal."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:22
+msgid "Click 'Downloads'."
+msgstr "Selecciona 'Descargas'."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:24
+#, fuzzy
+#| msgid ""
+#| "To initiate a download you need to copy* the URL to the file (or torrent) "
+#| "you desire to download and paste it into the 'Location' field on your "
+#| "{PLATFORM} and click 'Add'."
+msgid ""
+"To initiate a download you need to copy* the URL to the file (or torrent) "
+"you desire to download and paste it into the 'Location' field on your "
+"{PLATFORM} and click 'Add'."
+msgstr ""
+"Para iniciar una descarga necesitas copiar* la URL del fichero (o torrent) "
+"que deseas descargar y pegarla en el campo 'Ubicación' de tu {PLATFORM} "
+"pulsando 'Añadir'."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:26
+msgid "When the progress bar reaches 100% your download is completed."
+msgstr "Cuando la barra de progreso alcanza el 100% tu descarga está completa."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:30
+msgid ""
+"*To copy the URL simply right click on the file (or torrent). Depending on "
+"which browser you use and what type of file you desire to download select "
+"the appropriate in the right click menu: 'Copy Shortcut', 'Copy Link "
+"Location', 'Copy Image Location'"
+msgstr ""
+"*Para copiar la URL simplemente selecciona con el botón de la derecha sobre "
+"el fichero (o torrent). Dependiendo del navegador que uses y el tipo de "
+"fichero que desees descargar selecciona lo adecuado en el menú del click "
+"derecho: 'Copiar Acceso directo', 'Copiar dirección del Enlace', 'Copiar "
+"dirección de la imagen'"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:34
+msgid "More information"
+msgstr "Mas información"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:37
+#, fuzzy
+#| msgid ""
+#| "As you add files for download, {PLATFORM} allocates disk space for the "
+#| "files. If you look in the /home/[username]/downloads/ catalogue it seems "
+#| "as if the files exist but as long as the progress bar still not has "
+#| "reached 100% the files are not complete."
+msgid ""
+"As you add files for download, {PLATFORM} allocates disk space for the "
+"files. If you look in the /home/[username]/downloads/ catalogue it seems as "
+"if the files exist but as long as the progress bar still not has reached "
+"100% the files are not complete."
+msgstr ""
+"Según añades ficheros para descarga, {PLATFORM} habilita espacio en disco "
+"para los ficheros. Si miras en el catálogo /home/[usuario]/downloads/ parece "
+"como si los ficheros existen pero en tanto la barra de progreso no alcance "
+"el 100% los ficheros no están completos."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:41
+msgid ""
+"Currently the download manager support the standards HTTP, FTP and "
+"bittorrent downloads. You don't need to open any ports in your firewall when "
+"using the download manager, but for torrent downloads it is recommended to "
+"open the ports 10000-14000 in the Firewall settings."
+msgstr ""
+"Actualmente el gestor de descargas soporta los estándares HTTP, FTP y "
+"bittorrent. No necesitas abrir puertos en tu cortafuegos cuando utilizas el "
+"gestor de descargas, pero para las descargas Bit-torrent se recomienda abrir "
+"los puertos 10000-14000 en la configuración del Cortafuegos."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:45
+msgid ""
+"NOTE: When downloading bittorrents, note that the download manager will "
+"continue to share the file until you press 'Cancel' or 'Clear'."
+msgstr ""
+"NOTA: Al descargar bittorrents, ten en cuenta que el gestor de descargas "
+"continuará compartiendo el fichero hasta que pulses 'Cancelar' o 'Limpiar'."

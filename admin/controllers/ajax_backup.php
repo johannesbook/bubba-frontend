@@ -14,7 +14,6 @@ class Ajax_backup extends Controller {
 
         $this->Auth_model->EnforceAuth('web_admin');
         $this->Auth_model->enforce_policy('web_admin','administer', 'admin');
-        load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 
         $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
         $this->output->set_header('Expires: '.gmdate('D, d M Y H:i:s', time()).' GMT');
@@ -43,22 +42,22 @@ class Ajax_backup extends Controller {
             $date = "";
             switch($schedule["type"]) {
             case "hourly":
-                $date = t("Hourly");
+                $date = _("Hourly");
                 break;
             case "daily":
-                $date = t("Each day");
+                $date = _("Each day");
                 break;
             case "weekly":
-                $date = t("Once a week");
+                $date = _("Once a week");
                 break;
             case "monthly":
-                $date = t("Every month");
+                $date = _("Every month");
                 break;
             case "disabled":
-                $date = t("Never");
+                $date = _("Never");
                 break;
             default:
-                $date = t("Once in a while");
+                $date = _("Once in a while");
             }
 
             $target = $settings["target_protocol"];
@@ -85,15 +84,15 @@ class Ajax_backup extends Controller {
 
             if( $status["running"] ) {
                 $cur["running"] = true;
-                $cur["status"] = t("Running");
+                $cur["status"] = _("Running");
             } else {
                 if( $status["error"] ) {
                     $cur["status"] = nl2br($status['error']);
                     $cur["failed"] = true;
                 } elseif($status["done"]) {
-                    $cur["status"] = t("OK");
+                    $cur["status"] = _("OK");
                 } else {
-                    $cur["status"] = t("Not run");
+                    $cur["status"] = _("Not run");
                 }
             }
             unset($status);

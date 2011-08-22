@@ -5,7 +5,6 @@ class Login extends Controller{
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 		$this->load->model('networkmanager');
 	
 		$myuser=$this->input->post('username');

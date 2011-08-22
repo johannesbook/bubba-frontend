@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_filemanager.html:5
+#: admin/views/default/help/en/filemanager.html:5
+msgid "Navigation"
+msgstr "Navigation"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_filemanager.html:11
+#: admin/views/default/help/en/filemanager.html:11
+msgid "File and folder actions"
+msgstr "Datei- und Ordnerfunktionen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:14
+#: admin/views/default/help/en/filemanager.html:14
+msgid ""
+"Click files or folders and use the icons in the file function bar to perform "
+"different actions. The functions from left to right are:"
+msgstr ""
+"Klicken Sie auf Dateien oder Ordner und verwenden Sie die Symbole in der "
+"Dateifunktionsleiste, um verschiedene Aktionen durchzuführen. Folgende "
+"Funktionen stehen zur Verfügung (von links nach rechts):"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:17
+#: admin/views/default/help/en/filemanager.html:17
+msgid "Create folder"
+msgstr "Ordner erstellen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:19
+#: admin/views/default/help/en/filemanager.html:19
+msgid "Upload file"
+msgstr "Datei hochladen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:21
+#: admin/views/default/help/en/filemanager.html:21
+msgid "Download as zip"
+msgstr "Als ZIP herunterladen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:23
+#: admin/views/default/help/en/filemanager.html:23
+msgid "Move files"
+msgstr "Dateien verschieben"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:25
+#: admin/views/default/help/en/filemanager.html:25
+msgid "Copy files"
+msgstr "Dateien kopieren"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:27
+#: admin/views/default/help/en/filemanager.html:27
+msgid "Rename"
+msgstr "Umbenennen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:29
+#: admin/views/default/help/en/filemanager.html:29
+msgid "Change permissions"
+msgstr "Rechte ändern"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:31
+#: admin/views/default/help/en/filemanager.html:31
+#, fuzzy
+msgid "Add to album"
+msgstr ""
+"#-#-#-#-#  filemanager.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"Zum Fotoalbum hinzufügen\n"
+"#-#-#-#-#  user_filemanager.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"Zum Album hinzufügen"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:33
+#: admin/views/default/help/en/filemanager.html:33
+msgid "Delete"
+msgstr "Löschen"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_filemanager.html:37
+#: admin/views/default/help/en/filemanager.html:37
+msgid "Photo album"
+msgstr "Fotoalbum"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:2
+#, fuzzy
+#| msgid ""
+#| "From the File manager you are able to reach your files on {PLATFORM} even "
+#| "if you are away from home."
+msgid ""
+"From the File manager you are able to reach your files on {PLATFORM} even if "
+"you are away from home."
+msgstr ""
+"Im Dateimanager können Sie auf Ihre Dateien auf {PLATFORM} zugreifen - sogar "
+"von unterwegs."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:8
+msgid ""
+"Navigate into a folder by clicking the arrow to the right of the folder name "
+"or double clicking it, navigate up one level by clicking the left arrow or "
+"click the /home/username/ line."
+msgstr ""
+"Navigieren Sie zu einem Ordner, indem Sie auf den Pfeil rechts neben dem "
+"Ordnernamen anklicken oder auf den Ordnernamen doppelklicken, und navigieren "
+"Sie eine Ebene nach oben, indem Sie den Pfeil links anklicken oder in die "
+"Zeile /home/username/ klicken."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:40
+#, fuzzy
+#| msgid ""
+#| "Logged in as administrator you are not able to add photos to the "
+#| "{PLATFORM} photo album. Log in with your standard user to add and manage "
+#| "photos and your albums."
+msgid ""
+"Logged in as administrator you are not able to add photos to the {PLATFORM} "
+"photo album. Log in with your standard user to add and manage photos and "
+"your albums."
+msgstr ""
+"Als Administrator sind Sie nicht berechtigt, Fotos in das{PLATFORM}-"
+"Fotoalbum einzufügen. Loggen Sie sich als Ihr Standardbenutzer ein, um Fotos "
+"hinzuzufügen und Fotos und Alben zu verwalten."

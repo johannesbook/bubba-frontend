@@ -9,7 +9,6 @@ class Services extends Controller{
 
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	function _renderfull($content){

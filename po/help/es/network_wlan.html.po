@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_fw.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_wlan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_lan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_wan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salve tus cambios.\n"
+"#-#-#-#-#  settings_trafficsettings.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:2
+#, fuzzy
+#| msgid ""
+#| "{PLATFORM} can act as your access point, both in 'Router + Firewall + "
+#| "Server' or in 'Server only' mode."
+msgid ""
+"{PLATFORM} can act as your access point, both in 'Router + Firewall + "
+"Server' or in 'Server only' mode."
+msgstr ""
+"{PLATFORM} can act as your access point, both in 'Router + Firewall + "
+"Server' or in 'Server only' mode."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wlan.html:5
+msgid "Wireless"
+msgstr "Inalámbrico"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:8
+#, fuzzy
+#| msgid "- Switch to enable the wireless access point in {PLATFORM}."
+msgid ""
+"<strong>Wireless access point</strong> - Switch to enable the wireless "
+"access point in {PLATFORM}."
+msgstr "- Switch to enable the wireless access point in {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:11
+#, fuzzy
+#| msgid ""
+#| "- This is the name that identifies a particular wireless network. The "
+#| "SSID can be up to 32 characters long."
+msgid ""
+"<strong>Network name (SSID)</strong> - This is the name that identifies a "
+"particular wireless network. The SSID can be up to 32 characters long."
+msgstr ""
+"- This is the name that identifies a particular wireless network. The SSID "
+"can be up to 32 characters long."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:14
+#, fuzzy
+#| msgid ""
+#| "- The password (aka pass phrase) is a set of characters that must be "
+#| "entered exactly the same in both your {PLATFORM} and your network "
+#| "clients. Enter the password in ASCII characters. The length must be "
+#| "between 8 to 63 for WPA and 5 or 13 characters for WEP."
+msgid ""
+"<strong>Password</strong> - The password (aka pass phrase) is a set of "
+"characters that must be entered exactly the same in both your {PLATFORM} and "
+"your network clients. Enter the password in ASCII characters. The length "
+"must be between 8 to 63 for WPA and 5 or 13 characters for WEP."
+msgstr ""
+"- La contraseña (o palabra de paso) es un conjunto de caracéres que deben "
+"coincidir tanto en tu {PLATFORM} como en tu cliente de red. Introduce la "
+"contraseña en caracteres ASCII. La longitud debe estar entre 8 a 63 para WPA "
+"y 5 o 13 caractéres para WEP."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wlan.html:18
+msgid "Advanced wireless settings"
+msgstr "Configuración inalámbrica avanzada"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:21
+#, fuzzy
+#| msgid ""
+#| "- Choose what frequency band to use. 802.11n operates at two frequencies: "
+#| "5 GHz and 2.4 GHz. Only devices which operate in the same frequency band "
+#| "can communicate with one another."
+msgid ""
+"<strong>Band</strong> - Choose what frequency band to use. 802.11n operates "
+"at two frequencies: 5 GHz and 2.4 GHz. Only devices which operate in the "
+"same frequency band can communicate with one another."
+msgstr ""
+"- Elige la banda de frecuencia a utilizar. 802.11n opera en dos frecuencias: "
+"5 GHz y 2.4 GHz. Sólo los dispositivos que operan en la misma banda de "
+"frecuencia pueden comunicarse entre sí."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:25
+#, fuzzy
+#| msgid ""
+#| "- Select which 802.11 mode to operate in. Modes are as follows: 'Legacy "
+#| "mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode (802.11n + 802.11a/"
+#| "g)' - up to 300 Mbit/s."
+msgid ""
+"<strong>Mode</strong> - Select which 802.11 mode to operate in. Modes are as "
+"follows: 'Legacy mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode "
+"(802.11n + 802.11a/g)' - up to 300 Mbit/s."
+msgstr ""
+"- Selecciona en que modo 802.11 operar. Los modos son los siguientes: 'Modo "
+"compatibilidad (802.11a/g)' - hasta 54 Mbit/s y 'Modo mixto (802.11n + "
+"802.11a/g)' - hasta 300 Mbit/s."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:28
+#, fuzzy
+#| msgid ""
+#| "- Maximum transfer rate for 20 MHz is 130 Mbit/s. Maximum transfer rate "
+#| "for 40 MHz is 270 Mbit/s."
+msgid ""
+"<strong>Channel width</strong> - Maximum transfer rate for 20 MHz is 130 "
+"Mbit/s. Maximum transfer rate for 40 MHz is 270 Mbit/s."
+msgstr ""
+"- El ratio de transferencia máximo para 20 MHz es 130 Mbit/s. Para 40 MHz es "
+"270 Mbit/s."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:31
+#, fuzzy
+#| msgid ""
+#| "- Choose between WEP, WPA1 or WPA2. WEP is not recommended due to low "
+#| "security."
+msgid ""
+"<strong>Encryption</strong> - Choose between WEP, WPA1 or WPA2. WEP is not "
+"recommended due to low security."
+msgstr ""
+"- Elige entre WEP, WPA1 or WPA2. WEP no se recomienda debido a su baja "
+"seguridad."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:34
+#, fuzzy
+#| msgid ""
+#| "- Select the channel on your wireless access point in {PLATFORM}. In "
+#| "areas with several wireless networks, lower transfer speeds may be "
+#| "experienced. Then try a different channel. Channel availability is "
+#| "different for different countries due to regulations."
+msgid ""
+"<strong>Channel</strong> - Select the channel on your wireless access point "
+"in {PLATFORM}. In areas with several wireless networks, lower transfer "
+"speeds may be experienced. Then try a different channel.  Channel "
+"availability is different for different countries due to regulations."
+msgstr ""
+"- Selecciona el canal de tu punto de acceso inalámbrico en {PLATFORM}. En "
+"zonas con muchas redes inalámbricas, se pueden experimentar velocidades de "
+"trasferencia menores. En ese caso prueba con un canal diferente. La "
+"disponibilidad de canales difiere debido a las regulaciones de los distintos "
+"países."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:38
+#, fuzzy
+#| msgid ""
+#| "- Show or hide {PLATFORM}s SSID for wireless devices. By default the SSID "
+#| "is broadcasted."
+msgid ""
+"<strong>Broadcast SSID</strong> - Show or hide {PLATFORM}s SSID for wireless "
+"devices. By default the SSID is broadcasted."
+msgstr ""
+"- Mostrar u ocultar el SSID de {PLATFORM} a los dispositivos inalámbricos. "
+"Por defecto el se muestra el SSID."

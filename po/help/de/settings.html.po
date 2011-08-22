@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings.html:2
+msgid "Setup wizard"
+msgstr "Setup-Assistent"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:5
+#, fuzzy
+#| msgid ""
+#| "Use the integrated Setup wizard to make the very first important settings "
+#| "on your {PLATFORM} such as language, time and date, add users and choose "
+#| "an Easyfind name. You can run the wizard at any time."
+msgid ""
+"Use the integrated Setup wizard to make the very first important settings on "
+"your {PLATFORM} such as language, time and date, add users and choose an "
+"Easyfind name. You can run the wizard at any time."
+msgstr ""
+"Verwenden Sie den integrierten Setup-Assistenten für die ersten, wichtigen "
+"Einstellungen Ihres {PLATFORM} vorzunehmen, z. B. die Einstellung von Datum "
+"und Uhrzeit, das Hinzufügen von Benutzern oder die Auswahl eines Easyfind-"
+"Namen. Der Assistent kann jederzeit durchgeführt werden."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:8
+#, fuzzy
+#| msgid "Step 1 - Select default language"
+msgid "<strong>Step 1 - Select default language</strong>"
+msgstr "Schritt 1 - Wählen Sie Standard-Sprache"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:11
+msgid "Select the default system language. Click 'Next' to continue."
+msgstr ""
+"Wählen Sie das Standard-System-Sprache. Klicken Sie auf \"Weiter\", um "
+"fortzufahren."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:14
+#, fuzzy
+#| msgid "Step 2 - Time and date"
+msgid "<strong>Step 2 - Time and date</strong>"
+msgstr "Schritt 2 - Datum und Uhrzeit"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:17
+msgid ""
+"Choose time zone and the date and time. You also have the possibility to use "
+"an Internet time server. By doing this the date and time is automatically "
+"set and updated and you do not have to do any manual time settings. Click "
+"'Next' to continue."
+msgstr ""
+"Wählen Sie die Zeitzone sowie Datum und Uhrzeit. Sie haben auch die "
+"Möglichkeit, einen Timeserver im Internet zu benutzen, um das Datum und die "
+"Uhrzeit automatisch einzustellen und zu aktualisieren. In diesem Fall müssen "
+"Sie keine manuellen Einstellungen vornehmen. Klicken Sie auf \\'Weiter\\', "
+"um fortzufahren."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:21
+#, fuzzy
+#| msgid "Step 3 - Create user"
+msgid "<strong>Step 3 - Create user</strong>"
+msgstr "Schritt 3 - Benutzer erstellen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:24
+msgid ""
+"Create a user, or as many as you desire. Click 'Add user' after filling in "
+"the user information. Click 'Next' to continue."
+msgstr ""
+"Erstellen Sie einen oder mehrere Benutzer. Machen Sie alle erforderlichen "
+"Angaben und klicken Sie dann auf \\'Benutzer hinzufügen\\'. Klicken Sie auf "
+"\\'Weiter\\', um fortzufahren."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:27
+#, fuzzy
+#| msgid "Step 4 - Network setup"
+msgid "<strong>Step 4 - Network setup</strong>"
+msgstr "Schritt 4 - Netzwerk einrichten"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:30
+#, fuzzy
+#| msgid ""
+#| "Choose if you would like to register for a free Easyfind name. You will "
+#| "reach your {PLATFORM} by surfing to www.-your easyfind name-."
+#| "myown{PLATFORM}.com. Click 'Next' to continue."
+msgid ""
+"Choose if you would like to register for a free Easyfind name. You will "
+"reach your {PLATFORM} by surfing to www.-your easyfind name-.{EASYFIND}. "
+"Click 'Next' to continue."
+msgstr ""
+"Entscheiden Sie, ob Sie einen kostenlosen Easyfind-Namen registrieren "
+"möchten. Sie erreichen Ihr {PLATFORM} dann über www.-your easyfind name-."
+"myownb3.com. Klicken Sie auf \\'Weiter\\', um fortzufahren."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:33
+#, fuzzy
+#| msgid "Setup complete"
+msgid "<strong>Setup complete</strong>"
+msgstr "Die Einrichtung ist fertig"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:36
+msgid "Click 'Finish setup' to exit the wizard."
+msgstr ""
+"Klicken Sie auf \\'Setup fertig stellen\\', um den Assistenten zu beenden."

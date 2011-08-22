@@ -1,23 +1,33 @@
 <?php
 function to_ordinal($number) {
-	$absolute = abs((int)$number);
-    switch($absolute % 10) {
-    case 1:
-        $suffix = "st";
-        break;
-    case 2:
-        $suffix = "nd";
-        break;
-    case 3:
-        $suffix = "rd";
-        break;
-    default:
-        $suffix = "th";
-        break;
+	$nf = new NumberFormatter(textdomain(null), NumberFormatter::ORDINAL);
+	return $nf->format($number);
+}
+
+function get_weekday($nbr) {
+	switch($nbr){
+	case 1:
+		return _('Monday');
+		break;
+	case 2:
+		return _('Tuesday');
+		break;
+	case 3:
+		return _('Wednesday');
+		break;
+	case 4:
+		return _('Thursday');
+		break;
+	case 5:
+		return _('Friday');
+		break;
+	case 6:
+		return _('Saturday');
+		break;
+	case 7:
+	case 0:
+		return _('Sunday');
+		break;
 	}
-	// special case
-	if( $absolute >= 11 && $absolute <= 13 ) {
-		$suffix = "th";
-	}
-    return "$number$suffix";
+	return '';
 }

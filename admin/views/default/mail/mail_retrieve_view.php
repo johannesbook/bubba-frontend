@@ -1,15 +1,15 @@
 <table id="fn-mail-retrieve" class="ui-table-outline">
 <thead>
 <tr>
-	<th colspan="7" class="ui-state-default ui-widget-header"><?=t('mail-retrieve-title')?></th>
+	<th colspan="7" class="ui-state-default ui-widget-header"><?=_("Retrieve email")?></th>
 </tr>
 <tr class="ui-filemanager-state-header">
-   <th><?=t('Host')?></th>
-   <th><?=t('Protocol')?></th>
-   <th><?=t('Username')?></th>
-   <th><?=t('Local user')?></th>
-   <th><?=t('SSL')?></th>
-   <th><?=t('Leave copy')?></th>
+   <th><?=_("Host")?></th>
+   <th><?=_("Protocol")?></th>
+   <th><?=_("Username")?></th>
+   <th><?=_('Local user')?></th>
+   <th><?=_("Encrypted")?></th>
+   <th><?=_('Leave copy')?></th>
    <th>&nbsp;</th>
 </tr>
 </thead>
@@ -17,7 +17,7 @@
 </tbody>
 <tfoot>
 <tr><td colspan="7">
-<button class="submit" id="fn-retrieve-add"><?=t("mail-retrieve-add-button-label")?></button>
+<button class="submit" id="fn-retrieve-add"><?=_("Add new email account")?></button>
 </td></tr>
 </tfoot>
 </table>
@@ -36,11 +36,11 @@
 <h2 class="fn-dialog-header"></h2>
 	<table>
 	<tr>
-	   <td><label for="server"><?=t('mail-retrieve-edit-host-label')?></label></td>
+	   <td><label for="server"><?=_("Host")?></label></td>
 	   <td><input class="fn-primary-field" type="text" name="server"/></td>
 	</tr>
 	<tr>
-	   <td><label for="protocol"><?=t('mail-retrieve-edit-protocol-label')?></label></td>
+	   <td><label for="protocol"><?=_("Protocol")?></label></td>
 	   <td>
 		  <select name="protocol">
 			 <option value="POP3" selected="selected">POP3</option>
@@ -53,16 +53,16 @@
 	   </td>
 	</tr>
 	<tr>
-	   <td><label for="ruser"><?=t('mail-retrieve-edit-ruser-label')?></label></td>
+	   <td><label for="ruser"><?=_("Remote user")?></label></td>
 	   <td><input type="text" name="ruser"/></td>
 	</tr>
 	<tr>
-	   <td><label for="password"><?=t('mail-retrieve-edit-password-label')?></label></td>
+	   <td><label for="password"><?=_("Password")?></label></td>
 	   <td><input type="password" name="password"/></td>
 	</tr>
 <?if($edit_allusers):?>
 	<tr>
-	   <td><label for="luser"><?=t('mail-retrieve-edit-luser-label')?></label></td>
+	   <td><label for="luser"><?=_("Local user")?></label></td>
 	   <td>
 		  <select name="luser" size="1">
 
@@ -75,11 +75,11 @@
 	</tr>
 <?endif?>
 	<tr>
-	   <td><label for="usessl"><?=t('mail-retrieve-edit-usessl-label')?></label></td>
+	   <td><label for="usessl"><?=_("Use encryption")?></label></td>
 	   <td><input type="checkbox" class="checkbox_radio" name="usessl"/></td>
 	</tr>
 	<tr>
-	   <td><label for="keep"><?=t('mail-retrieve-edit-keep-label')?></label></td>
+	   <td><label for="keep"><?=_("Leave email copy on server")?></label></td>
 	   <td><input type="checkbox" class="checkbox_radio" name="keep"/></td>
 	</tr>
 

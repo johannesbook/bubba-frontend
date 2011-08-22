@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_identity.html:2
+msgid "System identity"
+msgstr "Identidad del sistema"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_identity.html:5
+#, fuzzy
+#| msgid ""
+#| "- is the unique name by which a network-attached device is known on a "
+#| "network."
+msgid ""
+"<strong>Hostname</strong> - is the unique name by which a network-attached "
+"device is known on a network."
+msgstr ""
+"- es el nombre único por el que un dispositivo conectado a la red es "
+"conocido en la misma."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_identity.html:8
+#, fuzzy
+#| msgid ""
+#| "- Devices in the same Workgroup may allow each other access to their "
+#| "files, printers, or Internet connection. Use the same workgroup name on "
+#| "{PLATFORM} as on your computer."
+msgid ""
+"<strong>Workgroup</strong> - Devices in the same Workgroup may allow each "
+"other access to their files, printers, or Internet connection. Use the same "
+"workgroup name on {PLATFORM} as on your computer."
+msgstr ""
+"- Los dispositivos del mismo grupo de trabajo pueden permitir mutuo acceso a "
+"sus ficheros, impresoras, o conexión a Internet. Utiliza el mismo nombre de "
+"grupo de trabajo en {PLATFORM} que en tus ordenadores."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_identity.html:11
+msgid "Easyfind options"
+msgstr "Opciones Easyfind"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_identity.html:14
+#, fuzzy
+#| msgid ""
+#| "- Using our free service Easyfind you will be able to reach your "
+#| "{PLATFORM} wherever you are. You will be able to find your {PLATFORM} "
+#| "wherever you are typing www.-your easyfind name-.myown{PLATFORM}.com."
+msgid ""
+"<strong>Use 'Easyfind' to locate your {PLATFORM}</strong> - Using our free "
+"service Easyfind you will be able to reach your {PLATFORM} wherever you are. "
+"You will be able to find your {PLATFORM} wherever you are typing www.-your "
+"easyfind name-.{EASYFIND}."
+msgstr ""
+"- Usando nuestro servicio gratuíto Easyfind podrás acceder a tu {PLATFORM} "
+"dondequiera que estés. Encontrarás tu {PLATFORM} desde cualquier parte "
+"tecleando www.-tu nombre easyfind-.myown{PLATFORM}.com."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_identity.html:18
+#, fuzzy
+#| msgid "- Choose a name for your {PLATFORM} on the Easyfind network."
+msgid ""
+"<strong>Easyfind name</strong> - Choose a name for your {PLATFORM} on the "
+"Easyfind network."
+msgstr "- Elige un nombre para tu {PLATFORM} en la red Easyfind."

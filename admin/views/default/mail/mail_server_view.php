@@ -6,13 +6,13 @@
 			colspan="2"
 			class="ui-state-default ui-widget-header"
 		>
-			<?=t('mail-server-title')?>
+			<?=_("Email server")?>
 		</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
-		<th><label><?=t('Outgoing email server')?> (SMTP)</label></th>
+		<th><label><?=_('Outgoing email server')?> (SMTP)</label></th>
 		<td>
 			<input
 				type="text"
@@ -24,7 +24,7 @@
 
 	<tr>
 		<? // indent this and the below "hidden" section" ?>
-		<th><label><?=t('Use authentication')?></label></th>
+		<th><label><?=_('Use authentication')?></label></th>
 		<td>
 			<input
 				type="checkbox"
@@ -41,8 +41,8 @@
 	<? // -----  this should be a hidden section until "use auth" is selected. --- ?>
 	<tr>
 		<th>
-			<label><?=t('Use plain text authentication')?></label>
-			<div class="ui-text-comment"><?=t("(Not recommended, passwords will be sent unencrypted.)")?></div>
+			<label><?=_('Use plain text authentication')?></label>
+			<div class="ui-text-comment"><?=_("(Not recommended, passwords will be sent unencrypted.)")?></div>
 		</th>
 		<td>
 			<input
@@ -57,7 +57,7 @@
 		</td>
 	</tr>
 	<tr>
-		<th><label><?=t('User')?></label></th>
+		<th><label><?=_("User")?></label></th>
 		<td>
 			<input
 				type="text"
@@ -67,7 +67,7 @@
 		</td>
 	</tr>
 	<tr>
-		<th><label><?=t('Password')?></label></th>
+		<th><label><?=_("Password")?></label></th>
 		<td>
 			<input
 				type="password"
@@ -83,7 +83,7 @@
 <input
 	type="submit"
 	name="update"
-	value="<?=t('Update')?>"
+	value="<?=_("Update")?>"
 />
 </td>
 </tr>
@@ -100,13 +100,13 @@
 			colspan="2"
 			class="ui-state-default ui-widget-header"
 		>
-			<?=t('mail-server-domaincontroller')?>
+			<?=_("Email domain")?>
 		</th>
 	</tr>
 	</thead>
 	<tbody>
    <tr>
-	  <th><label><?=t('Handle email for domain')?></label></th>
+	  <th><label><?=_('Handle email for domain')?></label></th>
 	  <td>
 			<input
 				type="text"
@@ -122,7 +122,7 @@
 <input
 	type="submit"
 	name="update"
-	value="<?=t('Update')?>"
+	value="<?=_("Update")?>"
 />
 </td>
 </tr>

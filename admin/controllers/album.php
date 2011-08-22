@@ -8,7 +8,6 @@ class Album extends Controller {
 
 		$this->Auth_model->EnforceAuth('web_admin');
 		$this->Auth_model->DenyUser('admin');
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 	private function _renderfull($content, $head = ''){
 		if( ! $head ) {
@@ -89,7 +88,7 @@ class Album extends Controller {
 				|| $password1 != $password2
 				|| $this->album_model->album_user_exists( $username )
 			) {
-				$error = t('album-users-add-account-validation-error');
+				$error = _('album-users-add-account-validation-error');
 			} else {
 				$res = $this->album_model->album_add_user( $username, $password1 );
 			}
@@ -119,7 +118,7 @@ class Album extends Controller {
 			if (
 				$password1 != $password2
 			) {
-				$error = t('album-users-add-account-validation-error');
+				$error = _('album-users-add-account-validation-error');
 			} else {
 				try {
 					$res = $this->album_model->album_modify_user( $uid, $username, $password1 );

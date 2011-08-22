@@ -11,7 +11,6 @@ class Stat extends Controller{
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 		$this->Auth_model->EnforceAuth('web_admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	function _renderfull($content){

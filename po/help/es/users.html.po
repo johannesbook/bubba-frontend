@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/users.html:2
+msgid "Users"
+msgstr "Usuarios"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:5
+#, fuzzy
+#| msgid ""
+#| "Here you find all the registered users on your {PLATFORM}. Click on 'Edit "
+#| "user' to change user information."
+msgid ""
+"Here you find all the registered users on your {PLATFORM}. Click on 'Edit "
+"user' to change user information."
+msgstr ""
+"Aquí están todos los usuarios registrados en tu {PLATFORM}. Marca en 'Editar "
+"usuario' para cambiar la información del mismo."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:8
+#, fuzzy
+#| msgid ""
+#| "To allow the administrator to lok in remote (via the WAN port) edit the "
+#| "adminitrator user and click '"
+msgid ""
+"To allow the administrator to lok in remote (via the WAN port) edit the "
+"adminitrator user and click '<strong>Allow remote access to system settings</"
+"strong>'."
+msgstr ""
+"Para permitir al administrador acceso remoto (via el puerto WAN) edita el "
+"usuario administrador marca '"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:11
+#, fuzzy
+#| msgid "permitts a user to log in via SSH"
+msgid "<strong>Allow shell login</strong> permitts a user to log in via SSH."
+msgstr "permite a un usuario conexión mediante SSH"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/users.html:14
+msgid "Add user"
+msgstr "Añadir usuarior"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:17
+#, fuzzy
+#| msgid "' and fill in the information to add a new user."
+msgid ""
+"Click '<strong>Add new user</strong>' and fill in the information to add a "
+"new user."
+msgstr "' y rellena la información para añadir al nuevo usuario."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/users.html:20
+msgid "Edit user"
+msgstr "Editar usuario"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:23
+#, fuzzy
+#| msgid ""
+#| "- Changing the user name (login name) is not possible. To achieve this "
+#| "you will have to delete the user and add a new user with the correct name."
+msgid ""
+"<strong>User name</strong> - Changing the user name (login name) is not "
+"possible. To achieve this you will have to delete the user and add a new "
+"user with the correct name."
+msgstr ""
+"- No se puede cambiar el nombre de usuario (nombre de conexión). Para "
+"realizarlo tienes que borrar el usuario y añadir uno nuevo conel nombre "
+"correcto."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:26
+#, fuzzy
+#| msgid "- To add the user's 'Real name'; fill in the information here."
+msgid ""
+"<strong>Real name</strong> - To add the user's 'Real name'; fill in the "
+"information here."
+msgstr ""
+"- Para añadir el auténtico nombre del usuario; rellena ésta información."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:29
+#, fuzzy
+#| msgid ""
+#| "- The administrator can change every users password. Every user has the "
+#| "possibility to change their own password via their own log in. It is "
+#| "strongly suggested that the"
+msgid ""
+"<strong>Change password</strong> - The administrator can change every users "
+"password. Every user has the possibility to change their own password via "
+"their own log in. It is strongly suggested that the <strong>admin password "
+"is changed</strong> from the default password."
+msgstr ""
+"- El administrador puede cambiar la contraseña de todos los usuarios. Cada "
+"usuario puede cambiar su propia contraseña una vez conectado. Se sugiere "
+"vívamente que la"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:33
+#, fuzzy
+#| msgid "- Change the user interface language for the selected user."
+msgid ""
+"<strong>User language</strong> - Change the user interface language for the "
+"selected user."
+msgstr "- Cambia el idioma de la interface para el usuario seleccionado."

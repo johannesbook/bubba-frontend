@@ -97,19 +97,19 @@ function copy_fields(formid) {
 </script>
 <? if(isset($disable_fw) && $disable_fw): ?>
 	<div class="ui-network-information-panel">
-	<?=t("These settings are locked")?> (<?=t("no valid WAN port connection")?>).
+	<?=_("These settings are locked")?> (<?=_("no valid WAN port connection")?>).
 	</div>
 <? endif ?>
 
 <form id="FWCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
 <table id="firewall" class="ui-table-outline">
 	<thead>
-    <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=t('network-firewall-allow-wan')?></td></tr>
+    <tr><td colspan="3" class="ui-state-default ui-widget-header"><?=sprintf(_("Allow external (WAN) access to %s services"), NAME)?></td></tr>
 	</thead>
 	<tbody>
 	<tr>
 		<td>
-			<?=t('SSH')?> (Port 22)
+			<?=_("SSH")?> (Port 22)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowSSH" <?if($allowSSH) echo "checked=\"checked\""?>/>
@@ -117,7 +117,7 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('Email server')?> (Port 25)
+			<?=_('Email server')?> (Port 25)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowMail" <?if($allowMail) echo "checked=\"checked\""?>/>
@@ -125,7 +125,7 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('WWW')?> (HTTP / HTTPS Ports 80 / 443)
+			<?=_("WWW")?> (HTTP / HTTPS Ports 80 / 443)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowWWW" <?if($allowWWW) echo "checked=\"checked\""?>/>
@@ -133,7 +133,7 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('Email')?> (IMAP / IMAPS Ports 143 / 993)
+			<?=_("Email")?> (IMAP / IMAPS Ports 143 / 993)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowIMAP" <?if($allowIMAP) echo "checked=\"checked\""?>/>
@@ -141,7 +141,7 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('FTP')?> (Port 21)
+			<?=_("FTP")?> (Port 21)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowFTP" <?if($allowFTP) echo "checked=\"checked\""?>/>
@@ -149,7 +149,7 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('Downloader')?> (Ports 10000-14000)
+			<?=_("Downloader")?> (Ports 10000-14000)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowTorrent" <?if($allowTorrent) echo "checked=\"checked\""?>/>
@@ -157,7 +157,7 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td>
-			<?=t('Respond to ping')?> (ICMP type 8)
+			<?=_('Respond to ping')?> (ICMP type 8)
 		</td>
 		<td>
 			<input class="slide" type="checkbox" name="allowPing" <?if($allowPing) echo "checked=\"checked\""?>/>
@@ -166,7 +166,7 @@ function copy_fields(formid) {
 	</tbody>
 	<tfoot>
 	<tr><td>
-		<button class="submit fn-network-button_submit"><?=t('Update')?></button>
+		<button class="submit fn-network-button_submit"><?=_("Update")?></button>
 		<input type="hidden" value='1' name='update'/>
 	</td></tr>
 	</tfoot>
@@ -175,7 +175,7 @@ function copy_fields(formid) {
 
 </form>
 
-<div class="ui-expandable ui-state-default ui-widget-header ui-div-header"><?=t('fw_title_advanced')?></div>
+<div class="ui-expandable ui-state-default ui-widget-header ui-div-header"><?=_("Advanced firewall settings")?></div>
 <div id="network-firewall-advanced" class="ui-helper-hidden">
 
 <form id="PORTCFG" action="<?=FORMPREFIX?>/network/fwupdate" method="post">
@@ -184,10 +184,10 @@ function copy_fields(formid) {
 	<tr>
 		<td colspan="4">
 				<input id="p_forward" type="radio" name="portforward" value=1 class="checkbox_radio" <? if($portforward) echo "checked=\"checked\"";?> onclick="enable_portforward()"/>&nbsp;&nbsp;
-				<?=t('Port forward to internal network')?>
+				<?=_('Port forward to internal network')?>
 				<br>
 				<input id="B2public" type="radio" name="portforward" value=0 class="checkbox_radio" <? if(!$portforward) echo "checked=\"checked\"";?> onclick="disable_portforward()"/>&nbsp;&nbsp;
-				<?=t('network-firewall-openport')?>
+				<?=sprintf(_("Open %s port"), NAME)?>
 		</td>
 		<td>
 		</td>
@@ -199,23 +199,23 @@ function copy_fields(formid) {
 				if(!$new_port["source"])
 					$new_port["source"] = "all";
 			?>
-			<?=t('Source IP')?><br>
+			<?=_('Source IP')?><br>
 			<input type="text" name="source" size="15" <?=isset($err_portforward["source"])?"class=\"err\" ":""?><?=isset($new_port["source"])?"value=\"".$new_port["source"]."\"":"value=\"all\""?>/>
 		</td>
 		<td>
-			<?=t('Public port')?><br>
+			<?=_('Public port')?><br>
 			<input type="text" name="dport" size="11" <?=isset($err_portforward["dport"])?"class=\"err\" ":""?><?=isset($new_port["dport"])?"value=\"".$new_port["dport"]."\"":""?>/>
 		</td>
 		<td>
-			<?=t('Private port')?><br>
+			<?=_('Private port')?><br>
 			<input type="text" name="to_port" size="11" <?=$disabled?> <?=isset($err_portforward["to_port"])?"class=\"err\" ":""?><?=isset($new_port["to_port"])?"value=\"".$new_port["to_port"]."\"":""?>/>
 		</td>
 		<td>
-			<?=t('Private IP')?><br>
+			<?=_('Private IP')?><br>
 			<input type="text" name="to_ip" size="15" <?=$disabled?> <?=isset($err_portforward["to_ip"])?"class=\"err\" ":""?><?=isset($new_port["to_ip"])?"value=\"".$new_port["to_ip"]."\"":""?>/>
 		</td>
 		<td>
-			<?=t('Protocol')?><br>
+			<?=_("Protocol")?><br>
 			<select name="protocol">
 				<option value="tcp">TCP</option>
 				<option value="udp">UDP</option>
@@ -224,8 +224,8 @@ function copy_fields(formid) {
 	</tr>
 	<tr>
 		<td colspan="5" class="ui-text-comment">
-			<?=t('Public port range accepted as start-port:stop-port')?><br />
-			<?=t('Private port is start port if public port range entered')?><br />
+			<?=_('Public port range accepted as start-port:stop-port')?><br />
+			<?=_('Private port is start port if public port range entered')?><br />
 			<input type="hidden" name="o_source" />
 			<input type="hidden" name="o_dport" />
 			<input type="hidden" name="o_to_port" />
@@ -270,7 +270,7 @@ function copy_fields(formid) {
 	</tbody>
 	<tfoot>
 	<tr><td colspan="6">
-		<button class="submit fn-network-button_submit"><?=t('Update')?></button>
+		<button class="submit fn-network-button_submit"><?=_("Update")?></button>
 		<input type="hidden" value='1' name='newport'/>
 	</td></tr>
 	</tfoot>
@@ -281,13 +281,13 @@ function copy_fields(formid) {
 
 <table  class="ui-firewall-defined ui-table-outline">
 	<thead>
-    <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=t('User defined open / forwarded ports')?></td></tr>
+    <tr><td colspan="6" class="ui-state-default ui-widget-header"><?=_('User defined open / forwarded ports')?></td></tr>
 	<tr class="ui-header">
-		<th><?=t('Source IP')?></th>
-		<th><?=t('Public port')?></th>
-		<th><?=t('Private port')?></th>
-		<th><?=t('Private IP')?></th>
-		<th><?=t('Protocol')?></th>
+		<th><?=_('Source IP')?></th>
+		<th><?=_('Public port')?></th>
+		<th><?=_('Private port')?></th>
+		<th><?=_('Private IP')?></th>
+		<th><?=_("Protocol")?></th>
 		<th></th>
 	</tr>
 	</thead>

@@ -19,13 +19,13 @@ $(document).ready(function(){
 <?
 if($this->session->userdata("run_wizard")): // wizard is running
 ?>
-	<h1 class="wizard-header"><?=t('wizard-title-lang')?></h1>
+	<h1 class="wizard-header"><?=_("Step 1/4: Select default language")?></h1>
 
 		<form id="wizard_settings" action="<?=FORMPREFIX?>/settings/wizard_lang" method="post">
 		<div id="ui-wizard-language">
 			<table>
 				<thead>
-				  <tr><th colspan="4"><h2><?=t('Default system language')?></h2></th></tr>
+				  <tr><th colspan="4"><h2><?=_('Default system language')?></h2></th></tr>
 			  </thead>
 			  <tbody>
 
@@ -33,7 +33,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 				   <td>
 				   	<label for="system_language">
 						<?
-						print t('system_language');
+						print _("Language");
 						?>
 			   	   	</label>
 			   	   </td>
@@ -55,7 +55,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 			   	  						   	  			
 			   	  		}
 			     		if(sizeof($user_languages)) {
-			     			print "<optgroup label='".t("User contributed languages")."'>";
+						print "<optgroup label='"._("User contributed languages")."'>";
 			     			
 				     		foreach($user_languages as $lang) {
 				     			if($lang['status'] != 'user') continue;
@@ -72,7 +72,7 @@ if($this->session->userdata("run_wizard")): // wizard is running
 				   
 				   </td>
 				</tr>
-				<tr ><td colspan="2"><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' id="wizard_next" name="wiz_data[postingpage]" value='<?=t('Next')?>'/></td></tr>
+				<tr ><td colspan="2"><span class="wiz_spacer">&nbsp;</span><input class='submitbutton' type='submit' id="wizard_next" name="wiz_data[postingpage]" value='<?=_("Next")?>'/></td></tr>
 			</tbody>		
 			</table>
 		</div>
@@ -84,18 +84,18 @@ if($this->session->userdata("run_wizard")): // wizard is running
 		<form action="<?=FORMPREFIX?>/settings/wizard_lang" method="post">
 			<table class="ui-table-outline">
 				<thead>
-			    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('Setup wizard')?></td></tr>
+			    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=_('Setup wizard')?></td></tr>
 				</thead>
 			</table>
 			<table>
 				<tbody>
 				<tr><td>
-					<?=t('settings-start-wizard')?>					
+					<?=sprintf(_("To configure basic functionality of %s, press the button to start the setup wizard."), NAME)?>
 				</td></tr>
 				</tbody>
 				<tfoot>
 				<tr><td>
-					<input type="submit" class="submitbutton"  name='wiz_data[start]' value="<?=t('Start setup wizard')?>"/>
+					<input type="submit" class="submitbutton"  name='wiz_data[start]' value="<?=_('Start setup wizard')?>"/>
 				</td></tr>
 				</tfoot>
 			</table>
