@@ -310,5 +310,7 @@ $config['time_reference'] = 'local';
 */
 $config['rewrite_short_tags'] = FALSE;
 
+$config['textdomain'] = "bubba";
+$config['lang_path'] = APPPATH."/locale";
 
 ?>

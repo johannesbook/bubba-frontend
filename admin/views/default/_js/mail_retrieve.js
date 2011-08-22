@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var edit_validator, add_validator;
 
 		var open_edit_dialog_callback = function(data) {
-			$("h2.fn-dialog-header", this).html($.message("mail-retrieve-edit-dialog-header", data.server));
+			$("h2.fn-dialog-header", this).html($.sprintf(_("Edit email account information for host <em>%s</em>"), data.server));
 			$("form",this).trigger("reset");
 			edit_validator.resetForm();
 			$('input[name=server]', this).val(data.server);
@@ -40,7 +40,7 @@ $(document).ready(function(){
 						update_status( false, data.html );
 						$.throbber.hide();
 					} else {
-						update_status( true, $.message("mail-retrieve-add-success-message") );
+						update_status( true, _("Successfully added new email account") );
 						$.post(
 							config.prefix + "/mail/viewfetchmail/json",
 							{},
@@ -66,7 +66,7 @@ $(document).ready(function(){
 						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
-						update_status( true, $.message("mail-retrieve-edit-success-message") );
+						update_status( true, _("Email account updated") );
 						$.post( 
 							config.prefix + "/mail/viewfetchmail/json", 
 							{},
@@ -90,7 +90,7 @@ $(document).ready(function(){
 						$.throbber.hide();
 						update_status( false, data.html );
 					} else {
-						update_status( true, $.message("mail-retrieve-delete-success-message") );
+						update_status( true, _("Successfully deleted email account") );
 						$.post( 
 							config.prefix + "/mail/viewfetchmail/json", 
 							{},
@@ -116,11 +116,11 @@ $(document).ready(function(){
 				'luser': $('input[name=old_luser]', this).val()
 			};
 			$.confirm(
-				$.message("mail-retrieve-edit-dialog-delete-message"),
-				$.message("mail-retrieve-edit-dialog-delete-header"),
+				"",
+				_("Delete email account?"),
 				[
 					{
-						'label': $.message("mail-retrieve-edit-dialog-delete-button-label"),
+						'label': _("Delete"),
 						'callback': function(){edit_dialog_delete_dialog_callback.apply(this,[post_data])},
 						options: { id: 'fn-mail-edit-dialog-delete-confirm-button' }
 					}
@@ -139,15 +139,15 @@ $(document).ready(function(){
 					.append($('<td/>',{text: data.protocol}))
 					.append($('<td/>',{text: data.ruser}))
 					.append($('<td/>',{text: data.luser}))
-					.append($('<td/>',{text: data.ssl != "" ? $.message('text-yes') : $.message('text-no') }))
-					.append($('<td/>',{text: data.keep != "" ? $.message('text-yes') : $.message('text-no') }))
+					.append($('<td/>',{text: data.ssl != "" ? _("Yes") : _("No") }))
+					.append($('<td/>',{text: data.keep != "" ? _("Yes") : _("No") }))
 					.append(
 						$('<td/>',
 							{
 								html: $('<button/>',
 									{ 
 										'class' : "submit",
-										html: $.message('button-label-edit'),
+										html: _("Edit"),
 										click: function(){open_edit_dialog_callback.apply(dialog, [data])}
 									}
 								)
@@ -164,7 +164,7 @@ $(document).ready(function(){
 			'',
 			[
 				{
-					'label': $.message("mail-retrieve-add-dialog-button-label"),
+					'label': _("Add email account"),
 					'callback': add_dialog_button_callback,
 					options: { id: 'fn-mail-add-dialog-button' }
 				}	
@@ -177,12 +177,12 @@ $(document).ready(function(){
 			'',
 			[
 				{
-					'label': $.message("mail-retrieve-edit-dialog-button-label"),
+					'label': _("Update"),
 					'callback': edit_dialog_button_update_callback,
 					options: { id: 'fn-mail-edit-dialog-button' }
 				},
 				{
-					'label': $.message("mail-retrieve-edit-dialog-delete-button-label"),
+					'label': _("Delete"),
 					'callback': edit_dialog_button_delete_callback,
 					options: { id: 'fn-mail-edit-dialog-delete-button' }
 				}		
@@ -229,7 +229,7 @@ $(document).ready(function(){
 				}
 			}
 		);
-		$("h2.fn-dialog-header", add_dialog).html($.message("mail-retrieve-add-dialog-header"));
+		$("h2.fn-dialog-header", add_dialog).html(_("Add new email account"));
 
 		update_mail_table( edit_dialog, mail_accounts );
 

@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 14:09+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_lvm.html:2
+msgid "Extending your disk"
+msgstr "Disk erweitern"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_lvm.html:5
+msgid ""
+"Extend your home partition with an attached external disk. This will create "
+"a single logical volume of the internal home partition and an attached disk. "
+"In other words, you will experience one big disk instead of two smaller. The "
+"total disk size will be the external disk size added to home partition size."
+msgstr ""
+"Erweitern Sie Ihre Home-Partition mit einer externen Disk. Die interne Home-"
+"Partition und eine angeschlossenen Disk werden dann zu einem logischen "
+"Volume zusammengefasst. Mit anderen Worten, Sie erhalten eine große Disk "
+"anstelle von zwei kleinen. Die Gesamtgröße der Disk ist die Größe der Home-"
+"Partition plus die Größe der externen Disk."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_lvm.html:9
+msgid "Warning"
+msgstr "Warnung"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_lvm.html:12
+msgid ""
+"<strong>Please notice that this is a non reversible operation. After your "
+"system has been extended together with the external drive, your system will "
+"always need to be connected to the external drive - and will not function "
+"without it. To be able to use your {PLATFORM} standalone again, you will "
+"need to reinstall the whole system.</strong>"
+msgstr ""
+"<strong>Beachten Sie bitte, das dieser Vorgang nicht rückgängig gemacht "
+"werden kann. Systeme, die mit einem externen Laufwerk erweitert wurden, "
+"müssen immer mit diesem externen Laufwerk verbunden bleiben, andernfalls "
+"funktionieren sie nicht mehr. Erst durch eine Neuinstallation des gesamten "
+"Systems kann {PLATFORM} wieder allein benutzt werden.</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_lvm.html:16
+msgid ""
+"<strong>An old LVM disk will automatically be connected and included into "
+"the {PLATFORM} system upon boot, even though you have not set up your "
+"{PLATFORM} for an LVM extension. It is impossible to remove the extension "
+"without reinstallation. To format an old external LVM extended disk, connect "
+"the disk to a already running {PLATFORM}. Then choose 'Format' in the 'Disk -"
+"&gt; Information' menu.</strong>"
+msgstr ""
+"<strong>Alte LVM-Disks werden automatisch verbunden und beim Hochfahren in "
+"das {PLATFORM}-System eingeschlossen, selbst wenn {PLATFORM} nicht für eine "
+"LVM-Erweiterung konfiguriert ist. Die Erweiterung kann nur durch eine "
+"Neuinstallation entfernt werden. Um eine alte, externe LVM-Disk, die als "
+"Erweiterung verwendet wurde, zu formatieren, verbinden Sie die Disk mit dem "
+"hochgefahrenen {PLATFORM}. Wählen Sie dann im Menü 'Disk -&gt; "
+"Informationen' die Option 'Formatieren'.</strong>"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_lvm.html:20
+msgid "Create Extended disk (LVM)"
+msgstr "Erweiterte Disk (LVM) erstellen"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_lvm.html:23
+msgid ""
+"Attach a external disk, USB or eSATA. Please notice that the disk should be "
+"pre formatted, without old RAID or LVM systems."
+msgstr ""
+"Schließen Sie eine externe Disk oder ein USB- oder eSATA-Laufwerk an. "
+"Beachten Sie, dass die Disk bereits formatiert sein sollte und keine alten "
+"RAID- oder LVM-Systeme enthalten sollte."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_lvm.html:25
+msgid ""
+"Select the 'Home partition' and the partition from the external disk (for "
+"example /dev/sdb)."
+msgstr ""
+"Wählen Sie 'Home-Partition' und die Partition der externen Disk (z. B. /dev/"
+"sdb)."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_lvm.html:27
+msgid "Click 'Extend partition'."
+msgstr "Klicken Sie auf 'Partition erweitern'."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_lvm.html:29
+msgid "Wait for the progress bar to complete."
+msgstr "Warten Sie, bis die Fortschrittsanzeige beendet ist."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_lvm.html:31
+msgid ""
+"When finished, your system has been extended together with the external "
+"drive."
+msgstr "Ihr System wurde jetzt auf das externe Laufwerk erweitert."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_lvm.html:35
+msgid "Remove Extended disk (LVM)"
+msgstr "Erweiterte Disk (LVM) entfernen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_lvm.html:38
+msgid ""
+"To remove Extended disk (LVM) from your system you need to reinstall the "
+"whole system."
+msgstr ""
+"Eine erweiterte Disk (LVM) kann nur durch eine komplette Neuinstallation des "
+"Systems entfernt werden."

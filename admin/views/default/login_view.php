@@ -7,20 +7,20 @@
 </div>
 
 <div id="login_more_info">
-    <span><?=t("For more information")?>:</span>
-    <a href="/manual/index.php?lang=<?=LANGUAGE?>" target="_blank"><?=t("Manual")?></a>|
+    <span><?=_("For more information")?>:</span>
+    <a href="/manual/index.php?lang=<?=LANGUAGE?>" target="_blank"><?=_("Manual")?></a>|
     <a href="http://forum.excito.net" target="_blank">Forum</a>|
-    <a href="http://www.excito.com/bubba/support/" target="_blank"><?=t("Support")?> &amp; <?=t("Contact")?></a>
+    <a href="http://www.excito.com/bubba/support/" target="_blank"><?=_("Support")?> &amp; <?=_("Contact")?></a>
     <a href="http://www.excito.com" alt="Excito homepage" target="_blank"><img id="" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/bubba_heart.png"/></a>
 </div>
 
 <div id="div-login-dialog">
 <form method="post" class="ui-form-login-dialog" id="fn-login-dialog-form">
-	<h2 class="ui-text-center"><?=t('login-dialog-header')?></h2>
+	<h2 class="ui-text-center"><?=_("Login required")?></h2>
 	<table>
 		<tr>
 			<td>
-				<label for="username"><?=t("Username")?>:</label><br>
+				<label for="username"><?=_("Username")?>:</label><br>
 				<div id="login-dialog-required-user"><?isset($required_user)?$required_user:""?></div>
 				<input
 					type="text" 
@@ -32,7 +32,7 @@
 		</tr>
 		<tr>
 			<td>
-				<label for="password"><?=t("Password")?>:</label><br>
+				<label for="password"><?=_("Password")?>:</label><br>
 				<input
 					type="password" 
 					name="password"
@@ -43,22 +43,22 @@
 	</table>
 	<div id="fn-login-error">
 		<div id="fn-login-error-pwd" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
-			<?=t('login-error-pwd')?>
+			<?=_("Invalid user/password combination.")?>
 		</div>
 		<div id="fn-login-error-wanaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
-			<?=t('login-error-wanaccess')?><br/><?=t('login-error-wanaccess-quickstart')?>
+			<?=_("Admin user not allowed to login on WAN interface.")?><br/><?=_("Please read the users manual for advice.")?>
 		</div>
 		<div id="fn-login-error-noaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
-			<?=t('login-error-noaccess')?>
+			<?=_("User isn't allowed to login to web admin.")?>
 		</div>		
 		<?if(isset($redirect_user) && $redirect_user):?>
 			<div id="fn-login-error-redirect" class="ui-state-error-text ui-login-dialog-error ui-text-center">
-				<?=t('login-error-grantaccess',$redirect_user)?>
+				<?=sprintf(_("Access not granted for user '%s'."), $redirect_user)?>
 			</div>
 		<?endif?>
 		<div id="fn-login-error-grantaccess" class="ui-state-error-text ui-helper-hidden ui-login-dialog-error ui-text-center">
 			<?if(isset($valid_user) && $valid_user):?>
-				<?=t('login-error-grantaccess',$valid_user)?>
+				<?=sprintf(_("Access not granted for user '%s'."), $valid_user)?>
 			<?endif?>
 		</div>
 	</div>

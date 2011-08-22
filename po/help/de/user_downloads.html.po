@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 15:26+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:2
+msgid "Downloads"
+msgstr "Downloads"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:5
+msgid ""
+"Use the {PLATFORM} download manager to download files directly to your "
+"{PLATFORM}, wherever you are. The only thing you need is a internet "
+"connection and a web browser."
+msgstr ""
+"Verwenden Sie den Download-Manager von {PLATFORM}, um Dateien von überall "
+"direkt auf Ihr {PLATFORM} herunterzuladen. Sie benötigen lediglich eine "
+"Internetverbindung und einen Webbrowser."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:8
+msgid ""
+"Surf to www.-your easyfind name-.{EASYFIND}. Of course if you already are in "
+"your home network browse to http://{DEFAULT_HOST}/admin."
+msgstr ""
+"Surfen Sie zu www.-your easyfind name-.{EASYFIND}. Wenn Sie sich bereits in "
+"Ihrem Heimnetzwerk befinden, navigieren Sie zu http://{DEFAULT_HOST}/admin."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:11
+msgid ""
+"Large, time consuming downloads are handled by {PLATFORM} while your "
+"computer is turned off. When you initiate your first download a catalogue is "
+"created in your /home/[username]/ folder: /home/[username]/downloads."
+msgstr ""
+"Große, zeitintensive Downloads werden von {PLATFORM} abgearbeitet, während "
+"der Computer ausgeschaltet ist. Wenn Sie den ersten Download starten, wird "
+"in Ihrem /home/[username]/ Ordner ein Katalog erstellt: /home/[username]/"
+"downloads."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:15
+msgid "How to download"
+msgstr "So können Sie etwas downloaden:"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:18
+msgid ""
+"At home browse to http://{DEFAULT_HOST}/admin or away from home www.-your "
+"easyfind name-.{EASYFIND}/admin."
+msgstr ""
+"Navigieren Sie zu http://{DEFAULT_HOST}/admin (im Heimnetzwerk) oder zu www.-"
+"your easyfind name-.{EASYFIND}/admin."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:20
+msgid "Log in as your standard user."
+msgstr "Melden Sie sich als Standardbenutzer bei {PLATFORM} an."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:22
+msgid "Click 'Downloads'."
+msgstr "Klicken Sie auf 'Downloads'."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:24
+msgid ""
+"To initiate a download you need to copy* the URL to the file (or torrent) "
+"you desire to download and paste it into the 'Location' field on your "
+"{PLATFORM} and click 'Add'."
+msgstr ""
+"Um einen Download zu starten, müssen Sie die URL zu der Datei (oder "
+"torrent), den Sie herunterladen möchten, kopieren* und in das Feld "
+"'Speicherort' auf Ihrem {PLATFORM} einfügen und auf 'Hinzufügen' klicken."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:26
+msgid "When the progress bar reaches 100% your download is completed."
+msgstr ""
+"Wenn die Fortschrittleiste 100 % erreicht, ist der Download abgeschlossen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:30
+msgid ""
+"*To copy the URL simply right click on the file (or torrent). Depending on "
+"which browser you use and what type of file you desire to download select "
+"the appropriate in the right click menu: 'Copy Shortcut', 'Copy Link "
+"Location', 'Copy Image Location'"
+msgstr ""
+"*Zum Kopieren der URL klicken Sie einfach mit der rechten Maustaste auf die "
+"Datei (oder torrent). Je nach Browser und Datei wählen Sie im Rechtsklick-"
+"Menü die entsprechende Option: 'Shortcut kopieren', 'Link-Ort kopieren', "
+"'Bildort kopieren'"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:34
+msgid "More information"
+msgstr "Weitere Informationen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:37
+msgid ""
+"As you add files for download, {PLATFORM} allocates disk space for the "
+"files. If you look in the /home/[username]/downloads/ catalogue it seems as "
+"if the files exist but as long as the progress bar still not has reached "
+"100% the files are not complete."
+msgstr ""
+"Wenn Sie Dateien zum Downloaden hinzufügen, weist {PLATFORM} den Dateien "
+"einen Speicherort zu. Im /home/[username]/downloads/ Katalog kann es deshalb "
+"so aussehen, als wären die Dateien bereits heruntergeladen. Solange aber die "
+"Fortschrittleiste nicht 100 % erreicht hat, sind die Dateien noch nicht "
+"vollständig übertragen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:41
+msgid ""
+"Currently the download manager support the standards HTTP, FTP and "
+"bittorrent downloads. You don't need to open any ports in your firewall when "
+"using the download manager, but for torrent downloads it is recommended to "
+"open the ports 10000-14000 in the Firewall settings."
+msgstr ""
+"Der Download-Manager unterstützt die HTTP, FTP und bittorrent-"
+"Standarddownloads. Bei Verwendung des Download-Manager müssen in der "
+"Firewall keine Ports geöffnet werden; lediglich für torrent-Downloads wird "
+"empfohlen, die Ports 10000-14000 in den Einstellungen für die Firewall zu "
+"öffnen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:45
+msgid ""
+"NOTE: When downloading bittorrents, note that the download manager will "
+"continue to share the file until you press 'Cancel' or 'Clear'."
+msgstr ""
+"HINWEIS: Beachten Sie beim Herunterladen von bittorrents, dass der Download-"
+"Manager die Dateien freigibt, bis Sie 'Abbrechen' oder 'Löschen' drücken."

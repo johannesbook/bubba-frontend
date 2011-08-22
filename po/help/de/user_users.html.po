@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 15:40+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_users.html:2
+msgid "User information"
+msgstr "Benutzerdaten"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_users.html:5
+msgid ""
+"Here users can change personal information such as 'Real name' and password."
+msgstr ""
+"Hier kann jeder Benutzer seine persönlichen Daten wie z. B. 'Echter Name' "
+"und sein Passwort ändern."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_users.html:8
+msgid ""
+"Changing the user name (login name) is not possible. To achieve this you "
+"will have to delete the user via the administrator login and add a new user "
+"with the correct name."
+msgstr ""
+"Der Benutzername (Login-Name) kann nicht verändert werden. Sie müssen sich "
+"dazu als Administrator anmelden, den Benutzer löschen und mit seinem "
+"korrekten Namen neu anlegen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_users.html:11
+msgid "The user interface language may be changed here."
+msgstr "Die Sprache der Benutzeroberfläche kann hier verändert werden."

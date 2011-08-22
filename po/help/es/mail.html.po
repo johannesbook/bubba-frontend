@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-06 15:42+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:2
+#: admin/views/default/help/en/services.html:30
+#: admin/views/default/help/en/user_mail.html:2
+msgid "Email"
+msgstr "Correo"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:5
+#: admin/views/default/help/en/user_mail.html:5
+msgid ""
+"{PLATFORM} will fetch your email from all your different external email "
+"accounts you may have. The email will be stored on {PLATFORM} and available "
+"via IMAP or webmail, wherever you are."
+msgstr ""
+"{PLATFORM} se encargará de recuperar tu correo desde todas las cuentas de "
+"correo externas que puedas tener. El correo se almacenará en {PLATFORM} y "
+"está disponible vía IMAP o webmail, donde quiera que estés."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:8
+#: admin/views/default/help/en/user_mail.html:8
+msgid "Active email accounts will be shown here."
+msgstr "Las cuentas de correo activas se mostrarán aquí."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:11
+#: admin/views/default/help/en/user_mail.html:11
+msgid "Set up {PLATFORM} for retrieving email"
+msgstr "Configura {PLATFORM} para recuperar correo electrónico"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:14
+#: admin/views/default/help/en/user_mail.html:14
+#, fuzzy
+msgid ""
+"<strong>Add new email account</strong> - To start fetching email from an "
+"external account, click here. Fill in the information given to you by your "
+"email account provider."
+msgstr ""
+"#-#-#-#-#  user_mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<strong>Añade nueva cuenta de correo</strong> - Para comenzar a recuperar "
+"correo de una cuenta externa, Haz clic aquí. Rellena la información "
+"facilitada por el proveedor de tu cuenta de correo.\n"
+"#-#-#-#-#  mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<strong>Añade nueva cuenta de correo</strong> - Para comenzar a descargar el "
+"correo desde una cuenta externa, entra aquí. Rellena la información "
+"facilitada por tu proveedor de correo."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:17
+msgid ""
+"You must select to which user the retrieved email should be directed, this "
+"must be done for every added email account. Prior to this you must have "
+"added a {PLATFORM} user."
+msgstr ""
+"Debes seleccionar a que usuario dirigir el correo descargado, en cada una de "
+"las cuentas de correo añadidas. Previamente has debido añadir un usuario a "
+"{PLATFORM}."

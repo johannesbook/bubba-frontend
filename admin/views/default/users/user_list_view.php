@@ -2,12 +2,12 @@
 <table id="fn-users-list" class="ui-table-outline">
 <thead>
 <tr>
-	<th colspan="4" class="ui-state-default ui-widget-header"><?=t('users-title')?></th>
+	<th colspan="4" class="ui-state-default ui-widget-header"><?=_("Users")?></th>
 </tr>
 <tr class="ui-header">
-   <th><?=t('users-label-username')?></th>
-   <th><?=t('users-label-realname')?></th>
-   <th><?=t('users-label-shell-login')?></th>
+   <th><?=_("User name")?></th>
+   <th><?=_("Real name")?></th>
+   <th><?=_("Allow shell login")?></th>
    <th>&nbsp;</th>
 </tr>
 </thead>
@@ -16,7 +16,7 @@
 <tfoot>
 <?if($show_adduser):?>
 <tr><td colspan="4">
-<button class="submit" id="fn-users-list-add"><?=t("users-add-button-label")?></button>
+<button class="submit" id="fn-users-list-add"><?=_("Add new user")?></button>
 </td></tr>
 <?endif?>
 </tfoot>
@@ -26,7 +26,7 @@
 <table id="fn-users-list">
 <thead>
 <tr>
-	<th colspan="4" class="ui-state-default ui-widget-header"><?=t('user-users-title')?></th>
+	<th colspan="4" class="ui-state-default ui-widget-header"><?=_("User information")?></th>
 </tr>
 </table>
 
@@ -42,19 +42,19 @@
 <?endif?>
 	<table class="ui-table-outline">
 	<tr>
-	   <td><label for="username"><?=t('users-list-edit-username-label')?></label></td>
+	   <td><label for="username"><?=_("User name")?></label></td>
 	   <td><input type="text" name="input_username"><span id="fn-user-username-text"></span></td>
 	</tr>
 	<tr>
-	   <td><label for="realname"><?=t('users-list-edit-realname-label')?></label></td>
+	   <td><label for="realname"><?=_("Real name")?></label></td>
 	   <td><input type="text" name="realname"/></td>
 	</tr>
 	<tr>
-	   <td><label for="password1"><?=t('users-list-edit-password1-label')?></label></td>
+	   <td><label for="password1"><?=_("New password")?></label></td>
 	   <td><input type="password" name="password1"/></td>
 	</tr>
 	<tr>
-	   <td><label for="password2"><?=t('users-list-edit-password2-label')?></label></td>
+	   <td><label for="password2"><?=_("Confirm password")?></label></td>
 	   <td><input type="password" name="password2"/></td>
 	</tr>
 
@@ -62,11 +62,11 @@
 	<tr>
 		<td>
 			<label for="system_language">
-				<?=t('users-list-edit-language');?>
+				<?=_("User language");?>
 			</label>
 		</td>
 		<td>
-			<a id="fn-default-lang-link" href="<?=FORMPREFIX?>/settings/datetime"><?=t("users-list-edit-defaultlang")?></a>
+			<a id="fn-default-lang-link" href="<?=FORMPREFIX?>/settings/datetime"><?=_("Default system language")?></a>
 		</td>
 	</tr>
 
@@ -75,7 +75,7 @@
 	<tr>
 	   <td>
 	   	<label for="system_language">
-			<?=t('users-list-edit-language');?>
+			<?=_("User language");?>
    	   	</label>
    	   </td>
 	   <td>
@@ -93,7 +93,7 @@
    	  			
    	  		}
      		if(sizeof($user_languages)) {
-     			print "<optgroup label='".t("User contributed languages")."'>";
+			print "<optgroup label='"._("User contributed languages")."'>";
      			
 	     		foreach($user_languages as $lang) {
 	     			if($lang['status'] != 'user') continue;
@@ -111,17 +111,17 @@
 	<?
 	/*
 	<tr>
-	   <td><label for="sideboard"><?=t('users-list-edit-sideboard-label')?></label></td>
+	   <td><label for="sideboard"><?=_("Display sideboard for non-logged in users")?></label></td>
 	   <td><input type="checkbox" name="sideboard"/></td>
 	</tr>
 	*/
 	?>
 	<tr>
-	   <td><label for="remote"><?=t('users-list-edit-remote-label')?></label></td>
+	   <td><label for="remote"><?=_("Allow remote access to system settings")?></label></td>
 	   <td><input type="checkbox" name="remote"/></td>
 	</tr>
 	<tr>
-	   <td><label for="shell"><?=t('users-list-edit-shell-label')?></label></td>
+	   <td><label for="shell"><?=_("Shell login")?></label></td>
 	   <td><input type="checkbox" name="shell"/></td>
 	</tr>
 	</table>

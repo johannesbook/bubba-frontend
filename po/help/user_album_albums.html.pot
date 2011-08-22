@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:2
+msgid ""
+"Share your digital photos with friends and family! With {PLATFORM} you get "
+"easy to use, out of the box photo album! All you need is your digital "
+"pictures!"
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_album_albums.html:5
+msgid "Add Album viewers"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:8
+msgid ""
+"Click the menu item <b>Album viewers</b> to add users for private viewing of "
+"photo albums."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_album_albums.html:11
+msgid "Add albums"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:14
+msgid ""
+"Every user on {PLATFORM} can create and publish photo albums, except for the "
+"administrator."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:17
+msgid ""
+"Copy the folders containing your pictures to \\{PLATFORM}\\storage"
+"\\pictures, with for example the built in Filemanager or Windows Explorer."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:19
+msgid "Log in as your standard user on {PLATFORM}."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:21
+msgid "Click 'Filemanager'."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:23
+msgid "Browse to /home/storage/pictures."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:25
+msgid "Select the folders or pictures you wish to add as photo albums."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:27
+msgid ""
+"Select the <strong>'Add to album'</strong> icon in the file function bar."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:29
+msgid ""
+"Open the <strong>Album manager</strong>. Decide if the added albums should "
+"be public or private. By default all added albums are private."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:31
+msgid "Click your album, on the left side of the screen."
+msgstr ""
+
+#. type: Content of: <ol><li><ul><li>
+#: admin/views/default/help/en/user_album_albums.html:33
+msgid ""
+"Ether select the users who you would like to share the album with, then "
+"click Update."
+msgstr ""
+
+#. type: Content of: <ol><li><ul><li>
+#: admin/views/default/help/en/user_album_albums.html:35
+msgid ""
+"Or click 'Public' if you want the album to be open to anyone who can access "
+"your {PLATFORM}, then click Update."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:39
+msgid "Done!"
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_album_albums.html:43
+msgid "Edit albums"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:46
+msgid "Click the album you wish to edit."
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_album_albums.html:49
+msgid ""
+"To edit album- or picture caption select the object, enter text and click "
+"'Update'."
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_album_albums.html:51
+msgid "To delete an album, select the album and press 'Delete album'."
+msgstr ""
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_album_albums.html:53
+msgid "To delete a picture, select the picture and press 'Remove from album'."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:57
+msgid ""
+"Your photo albums will be visible by browsing to <a href='http://"
+"{DEFAULT_HOST}/album' target='_blank'>http://{DEFAULT_HOST}/album</a> (<a "
+"href='http://{DEFAULT_HOST}.local/album' target='_blank'>http://"
+"{DEFAULT_HOST}.local/album</a> if using Mac) from inside your home network, "
+"or by browsing to www.-your easyfind name-.{EASYFIND} from outside your "
+"network."
+msgstr ""

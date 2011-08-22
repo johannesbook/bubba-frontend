@@ -26,7 +26,6 @@ class Filemanager extends Controller{
 
 		$this->Auth_model->EnforceAuth('web_admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	function _renderfull($content, $head=true){
@@ -60,7 +59,7 @@ class Filemanager extends Controller{
 
 			if( !empty($errors) ) {
 				$data['error'] = true;
-				$data['html'] = t("filemanager-delete-fail-message",implode(', ',$errors));
+				$data['html'] = sprintf(_("Failed to delete following files/folders: %s"), implode(', ',$errors));
 			}
 			header("Content-type: application/json");
 			echo json_encode( $data );
@@ -77,13 +76,13 @@ class Filemanager extends Controller{
 			$root = $this->input->post('root');
 			$newname = $this->input->post('name');
 			if( ! file_exists( $path ) ) {
-				$error = t("filemanager-rename-file-not-exists-error");
+				$error = sprintf(_("Requested file %s to rename doesn't exists"), $path);
 			}
 			if(!$error){
 				$user=$this->session->userdata("user");
 				$newpath = "$root/$newname";
 				if(mv($path,$newpath,$user)) { // true == false
-					$error = t("filemanager-rename-error",$path);
+					$error = sprintf(_("Error renaming file '%s'"), $path);
 				}
 			}
 			$data["success"]=!$error;
@@ -105,7 +104,7 @@ class Filemanager extends Controller{
 		if( $strip == 'json' ) {
 			$error = false;
 			if(!$this->Auth_model->policy("album","add")) {
-				$error = t("generic-permission-denied");
+				$error = _("Permission denied");
 			} else {
 				$files = $this->input->post('files');
 				$user=$this->session->userdata("user");
@@ -187,7 +186,7 @@ class Filemanager extends Controller{
 
 				if( !empty($errors) ) {
 					$data['error'] = true;
-					$data['html'] = t("filemanager-perm-fail-message",implode(', ',$errors));
+					$data['html'] = sprintf(_("Failed to change permission for following files and folders: %s"), implode(', ',$errors));
 				}
 				header("Content-type: application/json");
 				echo json_encode( $data );
@@ -205,12 +204,12 @@ class Filemanager extends Controller{
 			$user=$this->session->userdata("user");
 
 			if( ! $directory ) {
-				$error = t("filemanager_mkdir_error_nodir");
+				$error = _("Error creating folder, no name supplied");
 			}
 
 			$realpath = "$root/$directory";
 			if( !$error && file_exists( $realpath ) ) {
-				$error = t("filemanager_mkdir_error_file_exists");
+				$error = _("Error creating folder, name already exists");
 			}
 
 			if( ! $error ) {
@@ -221,7 +220,7 @@ class Filemanager extends Controller{
 				}
 
 				if( !md($root."/".$directory,$mask,$user) ) {
-					$error = t("filemanager_mkdir_error_create");
+					$error = _("Failed to create folder");
 				}
 
 			}
@@ -258,7 +257,7 @@ class Filemanager extends Controller{
 
 			if( !empty($errors) ) {
 				$data['error'] = true;
-				$data['html'] = t("filemanager-move-fail-message",implode(', ',$errors));
+				$data['html'] = sprintf(_("Failed to move the following files and folders: %s"), implode(', ',$errors));
 			}
 			header("Content-type: application/json");
 			echo json_encode( $data );
@@ -289,7 +288,7 @@ class Filemanager extends Controller{
 
 			if( !empty($errors) ) {
 				$data['error'] = true;
-				$data['html'] = t("filemanager-copy-fail-message",implode(', ',$errors));
+				$data['html'] = sprintf(_("Failed to copy the following files and folders: %s"), implode(', ',$errors));
 			}
 			header("Content-type: application/json");
 			echo json_encode( $data );

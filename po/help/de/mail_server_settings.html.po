@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 14:24+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail_server_settings.html:2
+msgid "Email server"
+msgstr "E-Mail-Server"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail_server_settings.html:5
+msgid ""
+"Leave fields empty to let {PLATFORM} handle your outgoing emails. If your "
+"ISP blocks your outgoing traffic on port 25 you must use an alternative SMTP "
+"server than {PLATFORM}, fill in the information provided to you by your ISP."
+msgstr ""
+"Lassen Sie die Felder leer, wenn {PLATFORM} Ihre ausgehenden E-Mails "
+"verarbeiten soll. Wenn Ihr ISP ausgehenden Traffic an Port 25 blockiert, "
+"müssen Sie einen anderen SMTP-Server als {PLATFORM} verwenden; geben Sie die "
+"Daten an, die Sie von Ihrem ISP erhalten haben."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail_server_settings.html:9
+msgid "Email domain"
+msgstr "E-Mail-Domäne"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail_server_settings.html:12
+msgid ""
+"If you have your own domain name {PLATFORM} will handle your incoming and "
+"outgoing email."
+msgstr ""
+"Wenn Sie einen eigenen Domänennamen besitzen, verarbeitet {PLATFORM} Ihre "
+"ein- und ausgehenden E-Mails."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail_server_settings.html:15
+msgid ""
+"<strong>Handle email for domain</strong> - Enter your domain name here. If "
+"you have several domains, just type them in the text field space separated."
+msgstr ""
+"<strong>E-Mail für Domäne verarbeiten</strong> - Geben Sie hier den Namen "
+"Ihrer Domäne ein. Mehrere Domänennamen können durch ein Leerzeichen getrennt "
+"eingegeben werden."

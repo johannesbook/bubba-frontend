@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 15:19+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_software.html:2
+msgid "Software update"
+msgstr "Software-Aktualisierung"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:5
+msgid ""
+"{PLATFORM}'s software can easily be updated to gain new functionality. Press "
+"'Update system', and the update is automatically performed. Please have "
+"patient, it might take a while to perform an update."
+msgstr ""
+"Für neue Funktionalität haben Sie die Möglichkeit, die {PLATFORM}-Software "
+"zu aktualisieren. Drücken Sie einfach auf 'System aktualisieren', um die "
+"Aktualisierung automatisch durchzuführen. Die Aktualisierung kann einige "
+"Zeit in Anspruch nehmen - bitte seien Sie geduldig."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:8
+msgid ""
+"After an update, status information is shown. Press the '+' sign to show the "
+"complete message."
+msgstr ""
+"Nach der Aktualisierung werden Statusinformationen angezeigt. Drücken Sie "
+"das '+' Zeichen, um die Fertigstellungsmeldung anzuzeigen."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_software.html:11
+msgid "Hotfixes"
+msgstr "Hotfixes"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:14
+msgid ""
+"This feature collects status information from your {PLATFORM} and sends to "
+"Excito for automated analysis. The update server can then take appropriate "
+"actions if your system has problems. The system information is sent to "
+"Excito via an encrypted connection, and server responses are GPG signed to "
+"ensure the security and that the content is distributed by Excito."
+msgstr ""
+"Diese Funktion erfasst Statusinformationen von Ihrem {PLATFORM} und sendet "
+"sie für eine automatische Analyse an Excito. Der Aktualisierungsserver kann "
+"dann ggf. die erforderlichen Maßnahmen durchführen, wenn es auf Ihrem System "
+"Probleme gibt. Die Systeminformationen werden über eine verschlüsselte "
+"Verbindung gesendet und die Antworten des Servers sind GPG-signiert, um die "
+"Sicherheit zu gewährleisten und zu bestätigen, dass die Inhalte von Excito "
+"stammen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:18
+msgid ""
+"By default this feature is enabled. Use the switch to disable Hotfixes. If "
+"doing so you might not get the most important updates to your {PLATFORM}."
+msgstr ""
+"Diese Funktion ist standardmäßig aktiviert. Verwenden Sie den Schalter, um "
+"Hotfixes zu deaktivieren. Wenn Hotfixes deaktiviert sind, können Sie "
+"wichtige Aktualisierungen für {PLATFORM} unter Umständen nicht erhalten."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:21
+msgid ""
+"<strong>Any information collected by Excito will never be exposed to any "
+"other party than Excito. The information will only be used to pin point "
+"errors and perform the best matched updates for your {PLATFORM}.</strong>"
+msgstr ""
+"<strong>Von Excito erfasste Informationen werden auf keinen Fall an Dritte "
+"weitergegeben. Die Informationen werden nur verwendet, um Fehler aufzuspüren "
+"und die am besten geeigneten Aktualisierungen für Ihr {PLATFORM} "
+"durchzuführen.</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:25
+msgid "All information that is collected is listed below."
+msgstr "Folgende Informationen werden erfasst."
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:28
+msgid "MAC address"
+msgstr "MAC-Adresse"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:30
+msgid "IP addresses"
+msgstr "IP-Adresse"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:32
+msgid "Serial number and key"
+msgstr "Seriennummer und Code"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:34
+msgid "RAM memory size"
+msgstr "Größe des RAM-Speichers"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:36
+msgid "CPU model"
+msgstr "CPU-Modell"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:38
+msgid "Status for the installed {PLATFORM} specific packages"
+msgstr "Status der installierten, {PLATFORM}-spezifischen Pakete"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:40
+msgid "The log file /tmp/{PLATFORM}-apt.log if existing"
+msgstr "Sofern vorhanden, die Protokolldatei /tmp/bubba-apt.log"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:42
+msgid "Current software release version"
+msgstr "Aktuelle Softwareversion"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:44
+msgid "Current running kernel"
+msgstr "Aktuell ausgeführtes Kernel"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:46
+msgid "Root disc partition usage"
+msgstr "Nutzung der Root-Disk-Partition"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:48
+msgid "Disc partition setup (LVM/RAID)"
+msgstr "Disk-Partition-Setup (LVM/RAID)"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_software.html:52
+msgid "Current package versions"
+msgstr "Aktuelle Paketversionen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:55
+msgid "Detailed information about {PLATFORM} software versions is shown here."
+msgstr ""
+"Detaillierte Informationen über die {PLATFORM}-Software-Versionen werden "
+"hier angezeigt."

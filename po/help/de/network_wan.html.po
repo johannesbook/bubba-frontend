@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 14:37+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> - speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wan.html:2
+msgid "WAN"
+msgstr "WAN"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wan.html:5
+msgid ""
+"Here you configure how your {PLATFORM} will handle your Wide Area Network "
+"(WAN) port. The default setting is to Obtain an IP address."
+msgstr ""
+"Hier können Sie konfigurieren, wie {PLATFORM} Ihren Wide Area Network (WAN)-"
+"Port behandelt. Die Standardeinstellung lautet IP-Adresse beziehen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wan.html:8
+msgid ""
+"<strong>Obtain IP-address automatically (DHCP)</strong> - The Dynamic Host "
+"Configuration Protocol (DHCP) automates the assignment of IP address, "
+"Netmask, Default gateway, and other IP parameters.  Use this option if your "
+"internet provider requires you to use DHCP. This is the default and most "
+"common option."
+msgstr ""
+"<strong>IP-Adresse automatisch beziehen (DHCP)</strong> - Das Dynamic Host "
+"Configuration Protocol (DHCP) automatisiert die Zuweisung von IP-Adresse, "
+"Netmask, Default Gateway und anderen IP-Parametern. Verwenden Sie diese "
+"Option, wenn Ihr Internetprovider die Verwendung von DHCP verlangt. Dies ist "
+"die Standardeinstellung und zugleich die gängigste Option."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wan.html:12
+msgid ""
+"<strong>Use static IP address settings</strong> - Static IP address, "
+"Netmask, Default gateway and Primary DNS are manually assigned to {PLATFORM} "
+"by the administrator. Use this option if your internet provider requires you "
+"to manually enter the values."
+msgstr ""
+"<strong>Statische IP-Adresse verwenden</strong> - Statische IP-Adresse, "
+"Netmask, Default Gateway und Primary DNS werden vom Administrator manuell zu "
+"{PLATFORM} zugewiesen. Verwenden Sie diese Option, wenn Ihr Internetprovider "
+"die manuelle Eingabe dieser Daten verlangt."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wan.html:16
+msgid ""
+"Please notice that the WAN settings are not editable in the profile "
+"'Automatic network settings', shown for information only."
+msgstr ""
+"Bitte beachten Sie, dass die WAN-Einstellungen im Profil 'Automatische "
+"Netzwerkeinstellungen' nicht bearbeitet werden können; sie können nur "
+"gelesen werden."

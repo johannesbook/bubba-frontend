@@ -9,7 +9,6 @@ class Network extends Controller{
 		require_once(ADMINFUNCS);
 
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 		$this->load->helper('network');
 		$this->load->model('networkmanager');
 	}
@@ -285,9 +284,9 @@ class Network extends Controller{
 
 		$data["dhcpd"]=!$data['dhcp'];
 		if(!$data["success"]) {
-			$data['update_msg'] = t("Error applying settings");
+			$data['update_msg'] = _("Error applying settings");
 		} else {
-			$data['update_msg'] = t("LAN configuration updated");
+			$data['update_msg'] = _("LAN configuration updated");
 		}
 		if($strip){
 			$this->load->view(THEME.'/network/network_lan_view.php',$data);
@@ -492,7 +491,7 @@ class Network extends Controller{
 						$oct_index=0;
 						foreach($ip as $oct) {
 							if(!( ((int)$oct & (int)$mask[$oct_index]) == ((int)$port_ip[$oct_index] & (int)$mask[$oct_index])) ) {
-								$errmsg["to_ip"] = t("Invalid private IP.")."<br>".t("LAN is on")." "."$ifc[0] / $ifc[1]";
+								$errmsg["to_ip"] = _("Invalid private IP.")."<br>"._("LAN is on")." "."$ifc[0] / $ifc[1]";
 								break;
 							}
 							$oct_index++;
@@ -1065,7 +1064,7 @@ class Network extends Controller{
 						if(!$data['wiz_data']['easyfind_name']) {
 							$data['wiz_data']['err_easyfind_empty'] = 1;
 						}
-						$data['wiz_data']['err_easyfind'] = t("Invalid characters in name %s",$data['wiz_data']['easyfind_name']);
+						$data['wiz_data']['err_easyfind'] = sprintf(_("Invalid characters in name %s"), $data['wiz_data']['easyfind_name']);
 						$data['wiz_data']['easyfind']['name'] = $data['wiz_data']['easyfind_name']; 
 					}
 				} else {

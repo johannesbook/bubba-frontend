@@ -2,18 +2,18 @@
 	
 	<table class="ui-table-outline">
 		<thead>
-		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Date and time')?></td></tr>
+		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=_('Date and time')?></td></tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td><?=t('Current timezone is')?>:</td>
+				<td><?=_('Current timezone is')?>:</td>
 				<td><?=$t_zone?></td>
 			</tr>
 			<tr>
 				<td>Select timezone:</td>
 				<td>
 				<select name="user_tz">
-				<option selected="selected" disabled="disabled" value=""> --- <?=t('Change timezone')?> --- </option>
+				<option selected="selected" disabled="disabled" value=""> --- <?=_('Change timezone')?> --- </option>
 <?foreach($t_zoneinfo as $region => $a_name):?>
 				<optgroup label="<?=$region?>">
 	<?foreach($a_name as $name):?>
@@ -27,7 +27,7 @@
 				</td>
 			</tr>		
 			<tr>
-				<td><?=t('Auto adjust date and time')?></td>
+				<td><?=_('Auto adjust date and time')?></td>
 				<td>
 					<input
 						id="ntp" 
@@ -49,7 +49,7 @@
 						<?if(isset($use_ntp)):?>disabled="disabled"<?endif?>
 
 					/> 
-					(<?=t('YYYYMMDD')?>)
+					(<?=_("YYYYMMDD")?>)
 				</td>
 			</tr>
 			<tr>
@@ -62,14 +62,14 @@
 						<?if(isset($use_ntp)):?>disabled="disabled"<?endif?>
 
 					/> 
-					(<?=t('HHmm')?>)
+					(<?=_("HHmm")?>)
 				</td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
 				<td colspan="2">
-					<input class='submitbutton' type='submit' name='set_time' value='<?=t('Update')?>'/>
+					<input class='submitbutton' type='submit' name='set_time' value='<?=_("Update")?>'/>
 				</td>
 			</tr>
 		</tfoot>
@@ -79,11 +79,11 @@
 
 	<table class="ui-table-outline">
 		<thead>
-		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('settings-default-lang-header')?></td></tr>
+		    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=_("Default system language")?></td></tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td><?=t('settings-default-lang')?></td>
+				<td><?=_("System language")?></td>
 				<td>
 				<select name="lang">
 	   	  		<?foreach($available_languages as $lang) {
@@ -99,7 +99,7 @@
 	   	  			
 	   	  		}
 	   	  		if(sizeof($user_languages)) {
-	   	  			print "<optgroup label='".t("User contributed languages")."'>";
+					print "<optgroup label='"._("User contributed languages")."'>";
 	   	  			
 		   	  		foreach($user_languages as $lang) {
 		   	  			if($lang['status'] != 'user') continue;
@@ -119,7 +119,7 @@
 			<tfoot>
 			<tr>
 				<td colspan="2">
-					<input class='submitbutton' type='submit' name='set_time' value='<?=t('Update')?>'/>
+					<input class='submitbutton' type='submit' name='set_time' value='<?=_("Update")?>'/>
 				</td>
 			</tr>
 		</tfoot>

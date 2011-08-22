@@ -1,0 +1,2604 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-10-05 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin/views/default/main_view.php:113
+#, php-format
+msgid "%s Help"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:3
+#: admin/views/default/network/network_wan_view.php:3
+#, php-format
+msgid "%s is using automatic network settings"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:41
+#, php-format
+msgid "%s users"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:54
+msgid "'Easyfind' location service"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:45
+msgid "(Not recommended, passwords will be sent unencrypted.)"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:340
+msgid "(Please read manual before enabling)"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:89
+#: admin/views/default/network/network_wlan_view.php:92
+msgid "2.4GHz band used by 802.11g"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:156
+msgid "20MHz"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:159
+msgid "40MHz"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:101
+#: admin/views/default/network/network_wlan_view.php:104
+msgid "5GHz band used by 802.11a"
+msgstr ""
+
+#: admin/views/default/disk/disk_lvm_head_view.php:11
+msgid ""
+"<p>This will erase all the data on the new, external device. Click 'Create "
+"LVM' to continue.</p> <p>Note: Removal of the new disk from the system will "
+"require a full system reinstallation.</p>"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:292
+msgid "Access allowed"
+msgstr ""
+
+#: admin/views/default/login_view.php:56 admin/views/default/login_view.php:61
+#, php-format
+msgid "Access not granted for user '%s'."
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:79
+msgid "Acknowledge"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_index_view.php:30
+msgid "Add"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:42
+#: admin/views/default/disk/disk_raid_head_view.php:55
+msgid "Add disk to RAID array"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:153
+msgid "Add entry"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:19
+#: admin/views/default/backup/backup_view.php:41
+msgid "Add new backup job"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_index_view.php:20
+msgid "Add new download"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:20
+msgid "Add new email account"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:19
+msgid "Add new user"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:95
+msgid "Add selected images/folders to photo album?"
+msgstr ""
+
+#: admin/views/default/users/user_wizard_view.php:57
+msgid "Add user"
+msgstr ""
+
+#: admin/views/default/album/album_users_view.php:11
+msgid "Add viewer"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:416
+msgid "Adding images is done using the"
+msgstr ""
+
+#: admin/views/default/login_view.php:49
+msgid "Admin user not allowed to login on WAN interface."
+msgstr ""
+
+#: admin/views/default/main_view.php:284
+msgid "Administration"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:178
+msgid "Advanced firewall settings"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:72
+msgid "Advanced wireless settings"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:342
+#: admin/views/default/backup/backup_view.php:689
+msgid "Age of timeline"
+msgstr ""
+
+#: admin/models/menu.php:44 admin/models/menu.php:293
+msgctxt "menu"
+msgid "Album"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:337
+#: admin/views/default/album/album_album_view.php:364
+msgid "Album access rights updated"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:206
+msgid "Album deleted"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:160
+msgid "Album name"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:151
+msgid "Album updated"
+msgstr ""
+
+#: admin/models/menu.php:299 admin/models/menu.php:310
+msgctxt "menu"
+msgid "Albums"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:77
+#: admin/views/default/backup/backup_view.php:424
+msgid "All music (/home/storage/music)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:80
+#: admin/views/default/backup/backup_view.php:427
+msgid "All photos (/home/storage/photos)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:71
+#: admin/views/default/backup/backup_view.php:418
+msgid "All user's data (/home/&lt;all users&gt;)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:74
+#: admin/views/default/backup/backup_view.php:421
+msgid "All user's email (/home/&lt;all users&gt;/Mail)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:83
+#: admin/views/default/backup/backup_view.php:430
+msgid "All videos (/home/storage/video)"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:36
+msgid "Allocating disk"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:248
+msgid "Allow anonymous access"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:107
+#, php-format
+msgid "Allow external (WAN) access to %s services"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:120
+msgid "Allow remote access to system settings"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:10
+msgid "Allow shell login"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:10
+msgid "Anonymous FTP access"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:274
+msgid "Anonymous access not granted to parent album."
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:94
+msgid "Array name"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:34
+msgid "Attached printers"
+msgstr ""
+
+#: admin/controllers/users.php:168
+msgid "Authorization denied"
+msgstr ""
+
+#: admin/controllers/mail.php:105 admin/controllers/mail.php:148
+#: admin/controllers/mail.php:191
+msgid "Authorization failed"
+msgstr ""
+
+#: admin/controllers/users.php:261
+msgid "Authorization failure"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:61
+#: admin/views/default/settings/settings_datetime_view.php:30
+msgid "Auto adjust date and time"
+msgstr ""
+
+#: admin/views/default/network/network_profile_view.php:19
+msgid "Automatic network settings"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:23
+msgid "Available"
+msgstr ""
+
+#: admin/views/default/main_view.php:303
+msgid "B3 start page"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:101
+#: admin/views/default/settings/settings_wizard_view.php:67
+#: admin/views/default/settings/settings_netupdate_view.php:24
+#: admin/views/default/users/user_wizard_view.php:66
+msgid "Back"
+msgstr ""
+
+#: admin/views/default/settings/settings_backuprestore_view.php:31
+msgid "Backup"
+msgstr ""
+
+#: admin/models/menu.php:110
+msgctxt "menu"
+msgid "Backup"
+msgstr ""
+
+#: admin/views/default/settings/settings_backuprestore_view.php:3
+msgid "Backup and restore settings"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:468
+msgid "Backup destination (step 2 of 4)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:5
+msgid "Backup jobs"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:553
+msgid "Backup schedule (step 3 of 4)"
+msgstr ""
+
+#: admin/controllers/users.php:297
+msgid "Bad username"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:80
+msgid "Band"
+msgstr ""
+
+#: admin/views/default/settings/settings_traffic_view.php:7
+msgid "BitTorrent"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:205
+msgid "Broadcast SSID"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:110
+#: admin/views/default/backup/backup_view.php:457
+msgid "Browse"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:19
+#: admin/views/default/disk/disk_head_view.php:55
+#: admin/views/default/disk/disk_head_view.php:58
+#: admin/views/default/disk/disk_raid_head_view.php:151
+#: admin/views/default/downloads/downloads_list_view.php:55
+#: admin/views/default/network/network_head_view.php:36
+msgid "Cancel"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:28
+msgid "Change permissions"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:36
+#: admin/views/default/settings/settings_datetime_view.php:16
+msgid "Change timezone"
+msgstr ""
+
+#: admin/controllers/ajax_network.php:41 admin/controllers/ajax_network.php:42
+#: admin/controllers/ajax_network.php:43
+msgid "Changing network parameters may require a restart of your computer."
+msgstr ""
+
+#: admin/views/default/network/network_wlan_head_view.php:90
+#: admin/views/default/network/network_wlan_view.php:196
+msgid "Channel"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:147
+msgid "Channel width"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:24
+#, php-format
+msgid "Check this checkbox to enable wireless functionallity for your %s"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:26
+msgid "Checking existing files"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:48
+msgid "Choose a name for this job (step 1 of 5)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:121
+msgid "Choose backup destination (step 3 of 5)"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:75
+#: admin/views/default/disk/disk_raid_head_view.php:82
+#: admin/views/default/disk/disk_raid_head_view.php:137
+#: admin/views/default/disk/disk_raid_head_view.php:207
+#: admin/views/default/upload/upload_index_view.php:186
+msgid "Close"
+msgstr ""
+
+#: admin/views/default/album/album_users_view.php:31
+#: admin/views/default/users/user_list_view.php:57
+#: admin/views/default/users/user_wizard_view.php:45
+msgid "Confirm password"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:79
+#: admin/views/default/disk/disk_view.php:95
+msgid "Connect"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:28
+msgid "Connecting to tracker"
+msgstr ""
+
+#: admin/views/default/login_view.php:13
+msgid "Contact"
+msgstr ""
+
+#: admin/views/default/network/network_head_view.php:32
+msgid "Continue"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:37
+msgid "Continue formatting the disk?"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:181
+msgid "Continue to create RAID?"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:50
+#: admin/views/default/disk/disk_raid_head_view.php:111
+msgid "Continue to recover RAID?"
+msgstr ""
+
+#: admin/controllers/disk.php:62
+msgid "Converting system to RAID"
+msgstr ""
+
+#: admin/views/default/disk/disk_lvm_head_view.php:14
+msgid "Create LVM"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:172
+#: admin/views/default/disk/disk_raid_head_view.php:186
+msgid "Create RAID"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:143
+#: admin/views/default/disk/disk_raid_view.php:8
+msgid "Create RAID array"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:65
+msgid "Create a new folder"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:425
+msgid "Create empty album"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:179
+msgid ""
+"Creating the RAID array will <strong>destroy all content</strong> on your "
+"internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage') and erase the "
+"selected external disk"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:38
+#, php-format
+msgid ""
+"Current recover progress is %d%% and is estimated to finish in %d hours %d "
+"minutes"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:42
+#, php-format
+msgid ""
+"Current recover progress is %d%% and is estimated to finish in %d minutes"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:32
+#: admin/views/default/settings/settings_datetime_view.php:9
+msgid "Current timezone is"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:2
+msgid "Current version"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:89
+#: admin/views/default/backup/backup_view.php:436
+msgid "Custom selection"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:30
+msgid "DAAP streaming"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:368
+msgid "DHCP leases"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:26
+msgid "DLNA streaming"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:302
+#: admin/views/default/backup/backup_view.php:649
+msgid "Daily at"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:9
+#: admin/views/default/backup/backup_view.php:30
+#: admin/views/default/backup/backup_view.php:765
+#: admin/views/default/backup/backup_view.php:834
+msgid "Date"
+msgstr ""
+
+#: admin/views/default/settings/settings_datetime_view.php:5
+msgid "Date and time"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:236
+#: admin/views/default/backup/backup_view.php:583
+msgid "Day of the month"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:271
+#: admin/views/default/backup/backup_view.php:618
+msgid "Day of the week"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:137
+#: admin/views/default/network/network_wan_view.php:39
+msgid "Default gateway"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:28
+#: admin/views/default/settings/settings_datetime_view.php:82
+#: admin/views/default/users/user_list_view.php:69
+msgid "Default system language"
+msgstr ""
+
+#: admin/controllers/settings.php:421
+msgid "Default system language updated"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:183
+#: admin/views/default/album/album_album_view.php:189
+msgid "Delete album"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:92
+msgid "Delete selected files and/or folders?"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:67
+#: admin/views/default/album/album_album_view.php:170
+msgid "Description"
+msgstr ""
+
+#: admin/views/default/settings/settings_backuprestore_view.php:7
+msgid "Destination"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:87
+#: admin/views/default/settings/settings_software_view.php:6
+msgid "Detailed information"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:7
+msgid "Device"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:145
+#: admin/views/default/backup/backup_view.php:492
+msgid "Device to use as target for the backup"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:218
+#: admin/views/default/backup/backup_view.php:565
+msgid "Disabled (manually run by pressing \"Run now\")"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:93
+#: admin/views/default/disk/disk_view.php:95
+msgid "Disconnect"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:6
+#: admin/views/default/disk/disk_raid_view.php:116
+msgid "Disk"
+msgstr ""
+
+#: admin/models/menu.php:183
+msgctxt "menu"
+msgid "Disk"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:19
+msgid "Disk capacity"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:3
+msgid "Disk information"
+msgstr ""
+
+#: admin/models/menu.php:189
+msgctxt "menu"
+msgid "Disk information"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:52
+#, php-format
+msgid "Disk missing in RAID array '%s'"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:8
+msgid "Disk size"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:31
+msgid "Done downloading (But missing data)"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:40
+msgid "Download failed"
+msgstr ""
+
+#: admin/controllers/ajax_upload.php:38
+msgid "Download not found"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:46
+msgid "Download speed"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:152
+msgid "Downloader"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:21
+msgid "Downloading"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_index_view.php:17
+msgid "Downloads"
+msgstr ""
+
+#: admin/models/menu.php:55 admin/models/menu.php:319
+msgctxt "menu"
+msgid "Downloads"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:426
+msgid "Drag and drop to move images/albums"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:48
+msgid "Each day"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:54
+msgid "Easyfind"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:70
+msgid "Easyfind name"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:49
+msgid "Easyfind options"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:405
+#: admin/views/default/backup/backup_view.php:752
+msgid "Edit backup job"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:4
+msgid ""
+"Either no wireless network card is available or no valid timezone is set"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:48
+#: admin/views/default/network/network_fw_view.php:136
+msgid "Email"
+msgstr ""
+
+#: admin/models/menu.php:267 admin/models/menu.php:285
+msgctxt "menu"
+msgid "Email"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:103
+msgid "Email domain"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:58
+msgid "Email retrieval"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:9
+#: admin/views/default/network/network_fw_view.php:120
+msgid "Email server"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:91
+msgid "Empty name not allowed"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:235
+msgid "Enable DHCP server"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:217
+msgid "Enable DNS service"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:340
+msgid "Enable jumbo frames."
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:368
+#: admin/views/default/backup/backup_view.php:715
+msgid "Encrypt the backup on target for increased security"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:11
+msgid "Encrypted"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:167
+msgid "Encryption"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:43
+#, php-format
+msgid "Enjoy %s"
+msgstr ""
+
+#: admin/controllers/network.php:287
+msgid "Error applying settings"
+msgstr ""
+
+#: admin/controllers/filemanager.php:212
+msgid "Error creating folder, name already exists"
+msgstr ""
+
+#: admin/controllers/filemanager.php:207
+msgid "Error creating folder, no name supplied"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:204
+msgid "Error deleting album"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:96
+msgid "Error removing image"
+msgstr ""
+
+#: admin/controllers/filemanager.php:85
+#, php-format
+msgid "Error renaming file '%s'"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:248
+msgid "Error starting/stopping DHCP server"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:229
+msgid "Error starting/stopping DNS service"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:149
+msgid "Error updating album"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:41
+msgid "Error updating image"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:362
+msgid "Error updating user access"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:335
+msgid "Error updating user access to public"
+msgstr ""
+
+#: admin/controllers/users.php:408
+msgid "Error, illegal characters in password"
+msgstr ""
+
+#: admin/controllers/users.php:404
+msgid "Error, illegal characters in username"
+msgstr ""
+
+#: admin/controllers/users.php:400
+msgid "Error, no username"
+msgstr ""
+
+#: admin/controllers/users.php:410
+msgid "Error, passwords do not match"
+msgstr ""
+
+#: admin/controllers/users.php:402
+msgid "Error, space in username"
+msgstr ""
+
+#: admin/controllers/users.php:398
+msgid "Error, uppercase letters in username"
+msgstr ""
+
+#: admin/controllers/users.php:396
+msgid "Error, user exists"
+msgstr ""
+
+#: admin/controllers/users.php:406
+msgid "Error, username too long"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:58
+msgid "Error: External disk has malfunctioned"
+msgstr ""
+
+#: admin/controllers/help.php:56
+#, php-format
+msgid "Error: No help text was found for entry %s"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:54
+msgid "Every month"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:19
+#: admin/views/default/disk/disk_raid_head_view.php:144
+msgid "Examining existing disks"
+msgstr ""
+
+#: admin/views/default/main_view.php:299
+msgid "Excito"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:413
+msgid "Existing albums"
+msgstr ""
+
+#: admin/views/default/users/user_wizard_view.php:11
+msgid "Existing users"
+msgstr ""
+
+#: admin/views/default/album/album_users_view.php:4
+msgid "Existing viewers"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:68
+#: admin/views/default/users/user_wizard_view.php:67
+msgid "Exit setup"
+msgstr ""
+
+#: admin/views/default/disk/disk_lvm_view.php:4
+#: admin/views/default/disk/disk_lvm_view.php:26
+msgid "Extend"
+msgstr ""
+
+#: admin/views/default/disk/disk_lvm_head_view.php:12
+#: admin/views/default/disk/disk_lvm_view.php:1
+msgid "Extend Logical Volume"
+msgstr ""
+
+#: admin/views/default/disk/disk_lvm_head_view.php:15
+msgid "Extending disk"
+msgstr ""
+
+#: admin/controllers/disk.php:59
+msgid "Extending user storage space"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:144
+#: admin/views/default/backup/backup_view.php:131
+msgid "FTP"
+msgstr ""
+
+#: admin/controllers/ajax_disk.php:169
+#, php-format
+msgid "Failed to aquire an RAID array containing the disk %s"
+msgstr ""
+
+#: admin/models/disk_model.php:196
+#, php-format
+msgid "Failed to aquire suitable type of the filesystem on partition %s"
+msgstr ""
+
+#: admin/controllers/filemanager.php:189
+#, php-format
+msgid "Failed to change permission for following files and folders: %s"
+msgstr ""
+
+#: admin/models/networkmanager.php:42
+msgid "Failed to connect to database."
+msgstr ""
+
+#: admin/controllers/filemanager.php:291
+#, php-format
+msgid "Failed to copy the following files and folders: %s"
+msgstr ""
+
+#: admin/controllers/filemanager.php:223
+msgid "Failed to create folder"
+msgstr ""
+
+#: admin/models/disk_model.php:327
+#, php-format
+msgid "Failed to create fstab entry for %s with %s"
+msgstr ""
+
+#: admin/controllers/filemanager.php:62
+#, php-format
+msgid "Failed to delete following files/folders: %s"
+msgstr ""
+
+#: admin/models/disk_model.php:246 admin/models/disk_model.php:298
+#, php-format
+msgid "Failed to find suitable mount path for partition %s"
+msgstr ""
+
+#: admin/models/disk_model.php:344
+#, php-format
+msgid "Failed to mount %s"
+msgstr ""
+
+#: admin/models/disk_model.php:273
+#, php-format
+msgid "Failed to mount %s on %s"
+msgstr ""
+
+#: admin/controllers/filemanager.php:260
+#, php-format
+msgid "Failed to move the following files and folders: %s"
+msgstr ""
+
+#: admin/models/disk_model.php:384
+#, php-format
+msgid "Failed to remove fstab entry for %s with %s"
+msgstr ""
+
+#: admin/controllers/settings.php:360
+#, php-format
+msgid "Failed to set date <strong>%s</strong> and time <strong>%s</strong>"
+msgstr ""
+
+#: admin/controllers/settings.php:341
+#, php-format
+msgid "Failed to set timezone <strong>%s</strong>"
+msgstr ""
+
+#: admin/controllers/settings.php:134
+msgid "Failed to set up mount point for backup"
+msgstr ""
+
+#: admin/controllers/settings.php:181
+msgid "Failed to set up mount point for restore"
+msgstr ""
+
+#: admin/models/disk_model.php:375
+#, php-format
+msgid "Failed to unmount %s"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:55
+#: admin/views/default/upload/upload_index_view.php:78
+msgid "Failed to upload file(s), aborting."
+msgstr ""
+
+#: admin/controllers/users.php:161
+msgid "Fatal error when adding user"
+msgstr ""
+
+#: admin/controllers/users.php:311
+#, php-format
+msgid "Fatal error when trying to purge horde configurations for user %s"
+msgstr ""
+
+#: admin/controllers/users.php:315
+#, php-format
+msgid "Fatal error when trying to remove the user %s"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:4
+msgid "File sharing"
+msgstr ""
+
+#: admin/models/menu.php:25 admin/models/menu.php:104
+msgctxt "menu"
+msgid "Filemanager"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:413
+msgid "Files to backup (step 1 of 4)"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:44
+msgid "Finish setup"
+msgstr ""
+
+#: admin/models/menu.php:176
+msgctxt "menu"
+msgid "Firewall"
+msgstr ""
+
+#: admin/views/default/login_view.php:10
+msgid "For more information"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:21
+msgid "Format"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:13
+#: admin/views/default/disk/disk_head_view.php:30
+#: admin/views/default/disk/disk_head_view.php:42
+msgid "Format disk"
+msgstr ""
+
+#: admin/controllers/disk.php:68
+#: admin/views/default/disk/disk_head_view.php:44
+msgid "Formatting disk"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:36
+msgid "Formatting disk will destroy all data on disk"
+msgstr ""
+
+#: admin/models/disk_model.php:332
+#, php-format
+msgid "Found entry for device %s in fstab, but contained no path to mount at"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:63
+#: admin/views/default/settings/settings_datetime_view.php:65
+msgid "HHmm"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:109
+msgid "Handle email for domain"
+msgstr ""
+
+#: admin/views/default/main_view.php:285
+msgid "Help"
+msgstr ""
+
+#: admin/views/default/main_view.php:283
+msgid "Home"
+msgstr ""
+
+#: admin/models/menu.php:97
+msgctxt "menu"
+msgid "Home"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:76
+#: admin/views/default/disk/disk_view.php:80
+#: admin/views/default/disk/disk_lvm_view.php:10
+msgid "Home partition"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:7
+#: admin/views/default/mail/mail_retrieve_view.php:39
+msgid "Host"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:370
+#: admin/views/default/settings/settings_identity_view.php:10
+msgid "Hostname"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:247
+#: admin/views/default/backup/backup_view.php:283
+#: admin/views/default/backup/backup_view.php:307
+#: admin/views/default/backup/backup_view.php:594
+#: admin/views/default/backup/backup_view.php:630
+#: admin/views/default/backup/backup_view.php:654
+msgid "Hour of the day"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:45
+#: admin/views/default/backup/backup_view.php:327
+#: admin/views/default/backup/backup_view.php:674
+msgid "Hourly"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:47
+#: admin/views/default/network/network_wan_view.php:29
+msgid "IP"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:370
+msgid "IP-address"
+msgstr ""
+
+#: admin/models/menu.php:219
+msgctxt "menu"
+msgid "Identity"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:57
+msgid "Image name"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:98
+msgid "Image removed from album"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:43
+msgid "Image updated"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:85
+msgid "Initializing"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:33
+#, php-format
+msgid "Install %s"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:28
+#, php-format
+msgid "Install package %s"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:17
+msgid "Invalid DNS address"
+msgstr ""
+
+#: admin/views/default/network/network_wan_view.php:115
+msgid "Invalid DNS setting"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:85
+#: admin/views/default/network/network_wan_view.php:30
+msgid "Invalid IP"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:11
+msgid "Invalid IP address"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:331
+msgid "Invalid IP range entered"
+msgstr ""
+
+#: admin/controllers/network.php:1067
+#, php-format
+msgid "Invalid characters in name %s"
+msgstr ""
+
+#: admin/views/default/network/network_wan_view.php:75
+msgid "Invalid gateway"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:14
+msgid "Invalid gateway address"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:8
+msgid "Invalid hostname"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:129
+#: admin/views/default/network/network_wan_view.php:35
+#: admin/views/default/settings/settings_netupdate_view.php:20
+msgid "Invalid netmask"
+msgstr ""
+
+#: admin/controllers/network.php:494
+msgid "Invalid private IP."
+msgstr ""
+
+#: admin/views/default/login_view.php:46
+msgid "Invalid user/password combination."
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:52
+msgid "Job name"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:336
+#: admin/views/default/backup/backup_view.php:683
+msgid "Keep timeline length of"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:9
+msgid "LAN"
+msgstr ""
+
+#: admin/models/menu.php:166
+msgctxt "menu"
+msgid "LAN"
+msgstr ""
+
+#: admin/controllers/network.php:289
+msgid "LAN configuration updated"
+msgstr ""
+
+#: admin/controllers/network.php:494
+msgid "LAN is on"
+msgstr ""
+
+#: admin/models/menu.php:195
+msgctxt "menu"
+msgid "LVM"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:24
+msgid "Label"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:36
+msgid "Language"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:370
+msgid "Lease expires"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:294
+msgid "Lease range end"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:256
+msgid "Lease range start"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:12
+msgid "Leave copy"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:82
+msgid "Leave email copy on server"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:123
+#, php-format
+msgid "Legacy mode (%s)"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_head_view.php:12
+msgid "Legacy mode (802.11a)"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_head_view.php:13
+msgid "Legacy mode (802.11g)"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:95
+msgid "Level"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:91
+msgid "List of RAID arrays"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:113
+msgid "List of RAID disks"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:133
+msgid "Local (USB/eSATA)"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:10
+#: admin/views/default/mail/mail_retrieve_view.php:65
+msgid "Local user"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_index_view.php:24
+msgid "Location"
+msgstr ""
+
+#: admin/views/default/main_view.php:277
+#, php-format
+msgid "Logged in as '%s'"
+msgstr ""
+
+#: admin/views/default/login_view.php:19
+msgid "Login required"
+msgstr ""
+
+#: admin/views/default/main_view.php:282
+msgid "Logout"
+msgstr ""
+
+#: admin/models/menu.php:248
+msgctxt "menu"
+msgid "Logs"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:370
+msgid "MAC-address"
+msgstr ""
+
+#: admin/models/menu.php:129
+msgctxt "menu"
+msgid "Mail"
+msgstr ""
+
+#: admin/views/default/login_view.php:11
+msgid "Manual"
+msgstr ""
+
+#: admin/views/default/settings/settings_traffic_view.php:13
+msgid "Max download speed"
+msgstr ""
+
+#: admin/views/default/settings/settings_traffic_view.php:9
+msgid "Max upload speed"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:151
+msgid "Maximum total upload is 2GByte."
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:130
+#, php-format
+msgid "Mixed mode (802.11n + %s)"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_head_view.php:14
+msgid "Mixed mode (802.11n + 802.11a)"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_head_view.php:15
+msgid "Mixed mode (802.11n + 802.11g)"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:110
+msgid "Mode"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:231
+#: admin/views/default/backup/backup_view.php:578
+msgid "Monthly on the"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:66
+msgid "Mount path"
+msgstr ""
+
+#: admin/models/menu.php:34
+msgctxt "menu"
+msgid "Music"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:8
+#: admin/views/default/filemanager/filemanager_index_view.php:70
+#: admin/views/default/filemanager/filemanager_index_view.php:83
+#: admin/views/default/backup/backup_view.php:8
+#: admin/views/default/backup/backup_view.php:764
+#: admin/views/default/backup/backup_view.php:833
+msgid "Name"
+msgstr ""
+
+#: admin/controllers/settings.php:803
+#, php-format
+msgid "Name '%s' is not valid"
+msgstr ""
+
+#: admin/models/networkmanager.php:61
+msgid "Name is not valid."
+msgstr ""
+
+#: admin/models/networkmanager.php:53
+msgid "Name not available."
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:91
+#: admin/views/default/network/network_wan_view.php:34
+msgid "Netmask"
+msgstr ""
+
+#: admin/models/menu.php:149
+msgctxt "menu"
+msgid "Network"
+msgstr ""
+
+#: admin/views/default/network/network_head_view.php:30
+msgid "Network configuration"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:32
+msgid "Network name (SSID)"
+msgstr ""
+
+#: admin/views/default/network/network_profile_view.php:8
+msgid "Network profile"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:1
+msgid "Network settings"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:57
+msgid "Never"
+msgstr ""
+
+#: admin/views/default/album/album_users_view.php:27
+#: admin/views/default/users/user_list_view.php:53
+#: admin/views/default/users/user_wizard_view.php:41
+msgid "New password"
+msgstr ""
+
+#: admin/views/default/users/user_wizard_view.php:10
+msgid "New user"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:103
+#: admin/views/default/settings/settings_wizard_lang_view.php:75
+#: admin/views/default/settings/settings_wizard_view.php:69
+#: admin/views/default/users/user_wizard_view.php:68
+msgid "Next"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:46
+#: admin/views/default/filemanager/filemanager_index_view.php:56
+msgid "No access"
+msgstr ""
+
+#: admin/views/default/settings/settings_backuprestore_view.php:15
+msgid "No backup medium found"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:136
+msgid "No disks with RAID data found"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:42
+msgid "No info"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:85
+msgid "No system messages available"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:206
+msgid "No usable disk found"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:185
+msgid "None"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:77
+msgid "Normal operation"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:51
+#: admin/views/default/main_view.php:279
+msgid "Not logged in"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:95
+msgid "Not run"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:93
+msgid "OK"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:24
+#: admin/views/default/network/network_wan_view.php:16
+msgid "Obtain IP-address automatically"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:51
+msgid "Once a week"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:60
+msgid "Once in a while"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:8
+msgid "Only A-Z,a-z,0-9 and \\\"-\\\" allowed"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:190
+#, php-format
+msgid "Open %s port"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:64
+msgid "Other"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:15
+msgid "Outgoing email server"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:32
+msgid "Owner"
+msgstr ""
+
+#: admin/models/menu.php:65
+msgctxt "menu"
+msgid "PIM"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:12
+msgid "Package name"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:13
+msgid "Package version"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:117
+msgid "Parent"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:63
+msgid "Partition"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:60
+msgid "Partition information"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:64
+msgid "Partition label"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:65
+msgid "Partition size"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:10
+msgid "Partitions"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:70
+#: admin/views/default/mail/mail_retrieve_view.php:60
+#: admin/views/default/network/network_wlan_view.php:54
+#: admin/views/default/backup/backup_view.php:373
+#: admin/views/default/backup/backup_view.php:720
+#: admin/views/default/login_view.php:35
+msgid "Password"
+msgstr ""
+
+#: admin/controllers/users.php:318 admin/controllers/filemanager.php:107
+#: admin/views/default/filemanager/filemanager_index_view.php:17
+#: admin/views/default/backup/backup_view.php:776
+#: admin/views/default/backup/backup_view.php:846
+msgid "Permission denied"
+msgstr ""
+
+#: admin/views/default/shutdown_view.php:3
+msgid "Please do not remove power until all leds are turned off"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:180
+msgid "Please make sure that you have backup of all files"
+msgstr ""
+
+#: admin/views/default/login_view.php:49
+msgid "Please read the users manual for advice."
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:65
+msgid ""
+"Please replace the disk (also press \"Remove\" below to acknowledge the "
+"removal of the disk)"
+msgstr ""
+
+#: admin/controllers/ajax_network.php:41 admin/controllers/ajax_network.php:42
+#: admin/controllers/ajax_network.php:43
+#, php-format
+msgid "Please see the manual on how to connect your computer to %s."
+msgstr ""
+
+#: admin/views/default/network/network_profile_view.php:13
+msgid "Please select profile"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:21
+msgid "Please specify label for your new partition"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:47
+#: admin/views/default/disk/disk_raid_head_view.php:60
+#: admin/views/default/disk/disk_raid_head_view.php:121
+#: admin/views/default/disk/disk_raid_head_view.php:191
+#: admin/views/default/disk/disk_lvm_head_view.php:18
+msgid "Please wait..."
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:187
+msgid "Port forward to internal network"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:177
+#: admin/views/default/network/network_wan_view.php:79
+msgid "Primary DNS"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:66
+msgid "Printing"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:214
+#: admin/views/default/network/network_fw_view.php:289
+msgid "Private IP"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:210
+#: admin/views/default/network/network_fw_view.php:288
+msgid "Private port"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:228
+msgid "Private port is start port if public port range entered"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:4
+#: admin/views/default/network/network_wan_view.php:4
+msgid "Profile"
+msgstr ""
+
+#: admin/models/menu.php:155
+msgctxt "menu"
+msgid "Profile"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:8
+#: admin/views/default/mail/mail_retrieve_view.php:43
+#: admin/views/default/network/network_fw_view.php:218
+#: admin/views/default/network/network_fw_view.php:290
+#: admin/views/default/backup/backup_view.php:125
+#: admin/views/default/backup/backup_view.php:129
+#: admin/views/default/backup/backup_view.php:472
+#: admin/views/default/backup/backup_view.php:476
+msgid "Protocol"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:206
+#: admin/views/default/network/network_fw_view.php:287
+msgid "Public port"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:227
+msgid "Public port range accepted as start-port:stop-port"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:24
+msgid "Queued for checking"
+msgstr ""
+
+#: admin/models/menu.php:200
+msgctxt "menu"
+msgid "RAID"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:19
+msgid "RAID Status"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:48
+msgid "RAID array degraded"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:81
+msgid "RAID not activated"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:35
+#: admin/views/default/filemanager/filemanager_index_view.php:44
+#: admin/views/default/filemanager/filemanager_index_view.php:54
+msgid "Read and write"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:36
+#: admin/views/default/filemanager/filemanager_index_view.php:45
+#: admin/views/default/filemanager/filemanager_index_view.php:55
+msgid "Read only"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:9
+#: admin/views/default/users/user_list_view.php:49
+#: admin/views/default/users/user_wizard_view.php:22
+#: admin/views/default/users/user_wizard_view.php:37
+msgid "Real name"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:18
+#: admin/views/default/disk/disk_raid_view.php:14
+msgid "Recover RAID array"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:103
+#: admin/views/default/disk/disk_raid_head_view.php:116
+msgid "Recover internal disk"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:11
+msgid "Recover internal disk or add a new external disk to existing RAID array"
+msgstr ""
+
+#: admin/controllers/disk.php:65
+msgid "Recovering RAID"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:188
+msgid "Recovering RAID array"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:34
+#, php-format
+msgid "Recovering RAID array '%s'"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:57
+msgid "Recovering external disk in RAID array"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:118
+msgid "Recovering internal disk in RAID array"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:49
+msgid ""
+"Recovering the RAID array will <strong>destroy all content</strong> on the "
+"selected extenal disk"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:110
+msgid ""
+"Recovering the RAID array will <strong>destroy all content</strong> on your "
+"internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:74
+msgid "Remote access through other router"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:56
+msgid "Remote user"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:130
+msgid "Remove"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:81
+msgid "Remove from album"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:83
+msgid "Remove selected image from album?"
+msgstr ""
+
+#: admin/views/default/filemanager/filemanager_index_view.php:78
+msgid "Rename"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:385
+#: admin/views/default/backup/backup_view.php:732
+msgid "Repeat password"
+msgstr ""
+
+#: admin/controllers/filemanager.php:79
+#, php-format
+msgid "Requested file %s to rename doesn't exists"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:54
+msgid "Required for webmail access"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:160
+msgid "Respond to ping"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:93
+msgid "Restart"
+msgstr ""
+
+#: admin/views/default/shutdown_view.php:7
+#, php-format
+msgid "Restarting %s"
+msgstr ""
+
+#: admin/views/default/settings/settings_backuprestore_view.php:26
+msgid "Restore"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:798
+msgid "Restore file to it’s original place"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:811
+msgid "Restore to other place"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:18
+msgid "Retreiving package information"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:4
+msgid "Retrieve email"
+msgstr ""
+
+#: admin/models/menu.php:135
+msgctxt "menu"
+msgid "Retrieve email"
+msgstr ""
+
+#: admin/views/default/network/network_profile_view.php:24
+msgid "Router + Firewall + Server"
+msgstr ""
+
+#: admin/controllers/ajax_backup.php:87
+msgid "Running"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:112
+#: admin/views/default/backup/backup_view.php:132
+msgid "SSH"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:10
+msgid "Schedule"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:705
+msgid "Security (step 4 of 4)"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:358
+msgid "Security (step 5 of 5)"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:33
+msgid "Seeding"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:206
+msgid "Select backup schedule (step 4 of 5)"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:25
+msgid "Select external disk to add to RAID array"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:66
+msgid "Select what you want to backup (step 2 of 5)"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:155
+msgid ""
+"Select which external disk to include in the array. An external disk with "
+"the same size is recommended"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:85
+msgid "Select which external disk to recover RAID data from"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:50
+msgid "Send and recieve"
+msgstr ""
+
+#: admin/views/default/network/network_profile_view.php:27
+msgid "Server only"
+msgstr ""
+
+#: admin/models/networkmanager.php:73
+msgid "Server responded: "
+msgstr ""
+
+#: admin/models/menu.php:141
+msgctxt "menu"
+msgid "Server settings"
+msgstr ""
+
+#: admin/models/menu.php:123
+msgctxt "menu"
+msgid "Services"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:5
+msgid ""
+"Set up the internal disk and one external disk into a RAID mirror solution "
+"(RAID 1)"
+msgstr ""
+
+#: admin/models/menu.php:207
+msgctxt "menu"
+msgid "Settings"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:3
+msgid "Settings updated successfully"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:2
+msgid "Setup RAID array"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:39
+msgid "Setup complete"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:87
+#: admin/views/default/settings/settings_wizard_view.php:80
+msgid "Setup wizard"
+msgstr ""
+
+#: admin/models/menu.php:213
+msgctxt "menu"
+msgid "Setup wizard"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:124
+msgid "Shell login"
+msgstr ""
+
+#: admin/views/default/settings/settings_logs_view.php:21
+msgid "Show"
+msgstr ""
+
+#: admin/views/default/settings/settings_logs_view.php:3
+msgid "Show logs"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:92
+msgid "Shutdown"
+msgstr ""
+
+#: admin/views/default/shutdown_view.php:2
+#, php-format
+msgid "Shutting down %s"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:98
+#: admin/views/default/disk/disk_raid_view.php:119
+#: admin/views/default/downloads/downloads_list_view.php:50
+#: admin/views/default/filemanager/filemanager_index_view.php:10
+#: admin/views/default/backup/backup_view.php:835
+msgid "Size"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:52
+msgid "Software update"
+msgstr ""
+
+#: admin/models/menu.php:243
+msgctxt "menu"
+msgid "Software update"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:47
+msgid "Software version"
+msgstr ""
+
+#: admin/views/default/settings/settings_backuprestore_view.php:7
+msgid "Source"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:202
+#: admin/views/default/network/network_fw_view.php:286
+msgid "Source IP"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:34
+msgid "Squeezebox Server"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:37
+msgid "Squeezebox server isn't installed, please click"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:98
+#: admin/views/default/settings/settings_wizard_view.php:91
+msgid "Start setup wizard"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:155
+msgid "Start upload"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:96
+#: admin/views/default/disk/disk_raid_view.php:118
+msgid "State"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:4
+#: admin/views/default/backup/backup_view.php:11
+msgid "Status"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:22
+msgid "Step 1/4: Select default language"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:22
+msgid "Step 2/4: Set time and date"
+msgstr ""
+
+#: admin/views/default/users/user_wizard_view.php:3
+msgid "Step 3/4: Create users"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:49
+msgid "Step 4/4: Network setup"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:86
+#: admin/views/default/backup/backup_view.php:433
+msgid "Storage (/home/storage)"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:24
+msgid "Streaming"
+msgstr ""
+
+#: admin/views/default/login_view.php:13
+msgid "Support"
+msgstr ""
+
+#: admin/models/menu.php:237
+msgctxt "menu"
+msgid "System backup"
+msgstr ""
+
+#: admin/controllers/users.php:354
+msgid "System default"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:5
+msgid "System identity"
+msgstr ""
+
+#: admin/views/default/settings/settings_datetime_view.php:86
+msgid "System language"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:60
+msgid "System messages"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:101
+msgid "System partitions"
+msgstr ""
+
+#: admin/models/menu.php:12
+msgctxt "menu"
+msgid "System settings"
+msgstr ""
+
+#: admin/controllers/settings.php:141
+msgid "System settings backup was sucessfully created"
+msgstr ""
+
+#: admin/controllers/settings.php:188
+msgid "System settings was sucessfully restored"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:9
+msgid "Target"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:140
+#: admin/views/default/backup/backup_view.php:487
+msgid "Target device"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:191
+#: admin/views/default/backup/backup_view.php:538
+msgid "Target directory"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:152
+#: admin/views/default/backup/backup_view.php:499
+msgid "Target server"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:178
+#: admin/views/default/backup/backup_view.php:525
+msgid "Target server password"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:165
+#: admin/views/default/backup/backup_view.php:512
+msgid "Target server username"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:168
+msgid "The encryption to use"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:62
+#, php-format
+msgid ""
+"The external RAID disk (<strong>%s</strong>) in the RAID array has "
+"malfunctioned"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:351
+#: admin/views/default/backup/backup_view.php:698
+msgid "The longer timeline the more space will be required on target"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:198
+msgid "The main channel to use"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:40
+#, php-format
+msgid ""
+"The network name (also called SSID) is broadcast by %s and will show up on "
+"clients when browsing wireless networks."
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:116
+msgid "The operation mode for selected band"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:64
+#, php-format
+msgid "The password that will be required to connect to %s wirelessly"
+msgstr ""
+
+#: admin/controllers/settings.php:146
+msgid "The system was unable to create a backup"
+msgstr ""
+
+#: admin/controllers/settings.php:193
+msgid "The system was unable to restore the system from an backup"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:153
+msgid "The targeted width of the channel in MHz"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_head_view.php:74
+msgid ""
+"There are no usable external disks attached, please add an external e-SATA "
+"disk and try again"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:18
+#: admin/views/default/disk/disk_raid_head_view.php:81
+#: admin/views/default/disk/disk_raid_head_view.php:150
+msgid "There seem to be disks mounted, please unmount these and try again"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:3
+#: admin/views/default/network/network_fw_view.php:100
+#: admin/views/default/network/network_wan_view.php:3
+#: admin/views/default/network/network_wlan_view.php:3
+#, php-format
+msgid "These settings are locked"
+msgstr ""
+
+#: admin/views/default/shutdown_view.php:10
+msgid "This page should not be reached"
+msgstr ""
+
+#: admin/controllers/ajax_network.php:43
+#, php-format
+msgid ""
+"This will restore default network configuration aswell as restarting the "
+"network on %s."
+msgstr ""
+
+#: admin/controllers/ajax_network.php:42
+#, php-format
+msgid ""
+"This will set network configuration to router mode and restart the network "
+"on %s."
+msgstr ""
+
+#: admin/controllers/ajax_network.php:41
+#, php-format
+msgid ""
+"This will set network configuration to server mode and restart the network "
+"on %s."
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:58
+msgid "Time and language"
+msgstr ""
+
+#: admin/models/menu.php:231
+msgctxt "menu"
+msgid "Time and language"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:27
+msgid "Timeline"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:29
+msgid "Timezone"
+msgstr ""
+
+#: admin/controllers/settings.php:386
+msgid "Timezone, date and/or time was successfully updated"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:93
+#: admin/views/default/settings/settings_wizard_view.php:86
+#, php-format
+msgid ""
+"To configure basic functionality of %s, press the button to start the setup "
+"wizard."
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:58
+#, php-format
+msgid "To locate %s from the internet, use 'Easyfind' location service"
+msgstr ""
+
+#: admin/views/default/shutdown_view.php:5
+#, php-format
+msgid "To restart %s, press the power button"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:4
+#: admin/views/default/network/network_wan_view.php:4
+msgid "To unlock, select Router or Server profile under the "
+msgstr ""
+
+#: admin/models/menu.php:225
+msgctxt "menu"
+msgid "Torrent throttle"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:170
+msgid "Total Speed"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:166
+msgid "Total Upload"
+msgstr ""
+
+#: admin/views/default/settings/settings_traffic_view.php:4
+msgid "Traffic"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:210
+msgid ""
+"Turning this off hides the network - users have to manually type the SSID on "
+"clients"
+msgstr ""
+
+#: admin/views/default/disk/disk_view.php:9
+msgid "Type"
+msgstr ""
+
+#: admin/models/networkmanager.php:65
+msgid "Unable to change name on server."
+msgstr ""
+
+#: admin/models/networkmanager.php:57
+msgid "Unable to disable 'easyfind' service."
+msgstr ""
+
+#: admin/models/networkmanager.php:69
+msgid "Unable to get record data from server."
+msgstr ""
+
+#: admin/models/networkmanager.php:49
+msgid "Unable to set name on server."
+msgstr ""
+
+#: admin/models/networkmanager.php:45
+msgid "Unable to update IP on server."
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:38
+msgid "Unknown state"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:70
+msgid "Up and downloads"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:79
+#: admin/views/default/album/album_album_view.php:107
+#: admin/views/default/album/album_album_view.php:185
+#: admin/views/default/mail/mail_server_view.php:86
+#: admin/views/default/mail/mail_server_view.php:125
+#: admin/views/default/network/network_lan_view.php:355
+#: admin/views/default/network/network_profile_view.php:37
+#: admin/views/default/network/network_fw_view.php:169
+#: admin/views/default/network/network_fw_view.php:273
+#: admin/views/default/network/network_wan_view.php:120
+#: admin/views/default/network/network_wlan_view.php:226
+#: admin/views/default/settings/settings_traffic_view.php:20
+#: admin/views/default/settings/settings_datetime_view.php:72
+#: admin/views/default/settings/settings_datetime_view.php:122
+msgid "Update"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:102
+msgid "Update Easyfind"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:36
+msgid "Update hostname and workgroup"
+msgstr ""
+
+#: admin/views/default/settings/settings_software_view.php:28
+#: admin/views/default/settings/settings_software_view.php:37
+msgid "Update system"
+msgstr ""
+
+#: admin/views/default/settings/settings_netupdate_view.php:5
+msgid "Updating settings falied"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:9
+msgid "Upload"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:91
+msgid "Upload complete"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:144
+msgid "Upload to"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:100
+msgid "Uploading"
+msgstr ""
+
+#: admin/views/default/upload/upload_index_view.php:163
+msgid "Uploading to"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:27
+msgid "Uptime"
+msgstr ""
+
+#: admin/views/default/settings/settings_traffic_view.php:7
+msgid "Use -1 for unlimited traffic"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:27
+msgid "Use authentication"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:78
+msgid "Use encryption"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:44
+msgid "Use plain text authentication"
+msgstr ""
+
+#: admin/views/default/network/network_lan_view.php:41
+#: admin/views/default/network/network_wan_view.php:24
+msgid "Use static IP address settings"
+msgstr ""
+
+#: admin/views/default/mail/mail_server_view.php:60
+msgid "User"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_lang_view.php:58
+#: admin/views/default/settings/settings_datetime_view.php:102
+#: admin/views/default/users/user_list_view.php:96
+msgid "User contributed languages"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:284
+msgid "User defined open / forwarded ports"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:29
+msgid "User information"
+msgstr ""
+
+#: admin/models/menu.php:261 admin/models/menu.php:280
+msgctxt "menu"
+msgid "User information"
+msgstr ""
+
+#: admin/controllers/users.php:274
+msgid "User information updated"
+msgstr ""
+
+#: admin/views/default/login_view.php:52
+msgid "User isn't allowed to login to web admin."
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:65
+#: admin/views/default/users/user_list_view.php:78
+msgid "User language"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:8
+#: admin/views/default/users/user_list_view.php:45
+#: admin/views/default/users/user_wizard_view.php:16
+msgid "User name"
+msgstr ""
+
+#: admin/controllers/users.php:158
+msgid "User name validation failed"
+msgstr ""
+
+#: admin/models/menu.php:76 admin/models/menu.php:255
+#: admin/models/menu.php:274
+msgctxt "menu"
+msgid "User settings"
+msgstr ""
+
+#: admin/views/default/mail/mail_retrieve_view.php:9
+#: admin/views/default/login_view.php:23
+#: admin/views/default/users/user_wizard_view.php:22
+msgid "Username"
+msgstr ""
+
+#: admin/models/album_model.php:143
+msgid "Username allready exists"
+msgstr ""
+
+#: admin/views/default/users/user_list_view.php:5
+msgid "Users"
+msgstr ""
+
+#: admin/models/menu.php:117 admin/models/menu.php:305
+msgctxt "menu"
+msgid "Users"
+msgstr ""
+
+#: admin/controllers/album.php:91
+msgid "Validation failed when adding user account"
+msgstr ""
+
+#: admin/controllers/album.php:121
+msgid "Validation failed when editing user account"
+msgstr ""
+
+#: admin/controllers/mail.php:113 admin/controllers/mail.php:167
+#: admin/controllers/mail.php:199
+msgid "Validation of input failed"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:288
+msgid "Viewer"
+msgstr ""
+
+#: admin/views/default/album/album_users_view.php:23
+msgid "Viewer name"
+msgstr ""
+
+#: admin/views/default/network/network_wan_view.php:10
+msgid "WAN"
+msgstr ""
+
+#: admin/models/menu.php:161
+msgctxt "menu"
+msgid "WAN"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:173
+msgid "WEP"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:176
+msgid "WPA1"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:182
+msgid "WPA1 or WPA2"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:179
+msgid "WPA2"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:128
+msgid "WWW"
+msgstr ""
+
+#: admin/views/default/disk/disk_head_view.php:34
+#: admin/views/default/disk/disk_raid_head_view.php:47
+#: admin/views/default/disk/disk_raid_head_view.php:108
+#: admin/views/default/disk/disk_raid_head_view.php:177
+msgid "Warning"
+msgstr ""
+
+#: admin/controllers/users.php:306
+#, php-format
+msgid "Was unabler to remove the home directory for user %s"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:266
+#: admin/views/default/backup/backup_view.php:613
+msgid "Weekly each"
+msgstr ""
+
+#: admin/views/default/shutdown_view.php:8
+#, php-format
+msgid "When the LED light is solid blue, %s is ready to be used again"
+msgstr ""
+
+#: admin/views/default/disk/disk_raid_view.php:68
+msgid ""
+"When the disk has been replaced, press \"Recover RAID array\" to add the new "
+"disk to the array"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:13
+msgid "Wireless"
+msgstr ""
+
+#: admin/models/menu.php:171
+msgctxt "menu"
+msgid "Wireless"
+msgstr ""
+
+#: admin/views/default/network/network_wlan_view.php:16
+msgid "Wireless access point"
+msgstr ""
+
+#: admin/views/default/settings/settings_identity_view.php:21
+msgid "Workgroup"
+msgstr ""
+
+#: admin/views/default/settings/settings_wizard_view.php:62
+#: admin/views/default/settings/settings_datetime_view.php:52
+msgid "YYYYMMDD"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:344
+#: admin/views/default/backup/backup_view.php:691
+msgid "a day"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:349
+#: admin/views/default/backup/backup_view.php:696
+msgid "a decade"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:346
+#: admin/views/default/backup/backup_view.php:693
+msgid "a month"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:345
+#: admin/views/default/backup/backup_view.php:692
+msgid "a week"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:348
+#: admin/views/default/backup/backup_view.php:695
+msgid "a year"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:242
+#: admin/views/default/backup/backup_view.php:278
+#: admin/views/default/backup/backup_view.php:589
+#: admin/views/default/backup/backup_view.php:625
+msgid "at"
+msgstr ""
+
+#: admin/views/default/stat/stat_view.php:29
+msgid "days"
+msgstr ""
+
+#: admin/views/default/album/album_album_view.php:416
+msgid "filemanager"
+msgstr ""
+
+#: admin/views/default/backup/backup_view.php:347
+#: admin/views/default/backup/backup_view.php:694
+msgid "half a year"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:37
+msgid "here"
+msgstr ""
+
+#: admin/controllers/settings.php:446 admin/controllers/settings.php:447
+msgid "n/a"
+msgstr ""
+
+#: admin/views/default/network/network_fw_view.php:100
+msgid "no valid WAN port connection"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:21
+#: admin/views/default/downloads/downloads_list_view.php:28
+#: admin/views/default/downloads/downloads_list_view.php:33
+msgid "peers"
+msgstr ""
+
+#: admin/views/default/downloads/downloads_list_view.php:21
+#: admin/views/default/downloads/downloads_list_view.php:28
+#: admin/views/default/downloads/downloads_list_view.php:33
+msgid "seeds"
+msgstr ""
+
+#: admin/views/default/services/services_view.php:37
+msgid "to install squeezecenter"
+msgstr ""
+
+#: admin/views/default/disk/disk_lvm_view.php:19
+msgid "with"
+msgstr ""
+
+#: admin/views/default/network/network_wizard_view.php:80
+#: admin/views/default/network/network_wizard_view.php:87
+#: admin/views/default/settings/settings_identity_view.php:80
+msgid "your-easyfind-name"
+msgstr ""

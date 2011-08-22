@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-06 15:42+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:27
+#: admin/views/default/help/en/settings_backuprestore.html:33
+msgid "Restore a backup"
+msgstr "Restaurar un respaldo"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_backuprestore.html:2
+msgid "Backup and restore settings"
+msgstr "Configuración de Respaldo y recuperación"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_backuprestore.html:5
+msgid ""
+"'Backup settings' will backup all your {PLATFORM} settings, nice to have in "
+"case you reinstall {PLATFORM} or move the settings to another {PLATFORM} "
+"unit. The following settings will be saved :"
+msgstr ""
+"'Configuración de respaldo' respaldará toda la configuración de tu "
+"{PLATFORM}, resulta muy útil en caso de que tengas que reinstalar {PLATFORM} "
+"o muevas la configuración a otra unidad {PLATFORM}. Se salva la siguiente "
+"configuración :"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_backuprestore.html:8
+msgid ""
+"User accounts (including admin login via WAN setting, passwords) but no user "
+"data"
+msgstr ""
+"Cuentas de usuario (incluyendo conexión de admin mediante WAN, contraseñas) "
+"pero no datos de usuario"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_backuprestore.html:10
+msgid "Backup jobs"
+msgstr "Tareas de respaldo"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_backuprestore.html:12
+msgid "Services settings"
+msgstr "Configuración de servicios"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_backuprestore.html:14
+msgid "Email account settings"
+msgstr "Configuración de cuentas de correo"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_backuprestore.html:16
+msgid ""
+"Network setup (all settings i.e. profile, hostname, wireless settings, "
+"firewall rules etc)"
+msgstr ""
+"Ajustes de red (toda la configuración p.e. perfil, hostname, configuración "
+"inalámbrica, reglas de cortafuefos etc)"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_backuprestore.html:18
+msgid "Printers"
+msgstr "Impresoras"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_backuprestore.html:22
+msgid "Perform a backup"
+msgstr "Realizar un respaldo"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:25
+msgid ""
+"Insert an external storage device (USB memory or USB disk) into {PLATFORM}."
+msgstr ""
+"Inserta un dispositivo de almacenamiento externo (memoria USB o disco USB) "
+"en {PLATFORM}."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:27
+msgid "Choose the Source/Destination and press Backup."
+msgstr "Elige la Fuente/Destino y pulda Respaldo."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:29
+msgid ""
+"All settings are now saved on a file on the chosen external storage device."
+msgstr ""
+"Toda la configuración queda salvada en un fichero del almacenamiento externo "
+"elegido."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:36
+msgid "Insert the storage device containing the backup file into {PLATFORM}."
+msgstr ""
+"Inserta el dispositivo de almacenamiento que contiene el fichero de respaldo "
+"en {PLATFORM}."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:38
+msgid ""
+"Observe that the current users on {PLATFORM} will be removed and the users "
+"stored in the backup file will be restored. Although the user data from "
+"current users on {PLATFORM} will be left intact in the /home/[user] "
+"catalogue."
+msgstr ""
+"Observa que los actuales usuarios en {PLATFORM} serán eliminados y los "
+"usuarios almacenados en el fichero de respaldo serán restaurados. Aunque los "
+"datos de usuario de los usuarios actuales en {PLATFORM} permanecerán "
+"intactos en el catálogo /home/[usuario]."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:41
+msgid "Press restore."
+msgstr "Pulsa restaurar."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/settings_backuprestore.html:43
+msgid ""
+"You might need to reconnect your {PLATFORM} depending on how your restored "
+"network settings are configured."
+msgstr ""
+"Puede que tengas que reconectar tu {PLATFORM} en función de la configuración "
+"de red restaurada."

@@ -1,5 +1,5 @@
 <?php
-
+$CI =& get_instance();
 define("BACKEND","/usr/lib/web-admin/backend.pl");
 define("BACKUP","/usr/lib/web-admin/backup.pl");
 define("RESTORE_LOCKFILE","/var/lock/restore.lock");
@@ -23,14 +23,17 @@ define("ADMINCONFIG","/home/admin/".USER_CONFIG);
 
 if(isB3()) {
 	define("NAME","B3");
-	define("B3_EASYFINDDOMAIN","myownb3.com");
+    define("EASYFIND", "myownb3.com");
+    define("DEFAULT_HOST", "b3");
 } else {
-	define("DEFAULT_EASYFINDDOMAIN","bubbaserver.com");
+    define("EASYFIND", "bubbaserver.com");
 	define("NAME","Bubba|2");
+    define("DEFAULT_HOST", "bubba");
 }
 
-if($this->session->userdata("language")){
-	define("LANGUAGE",$this->session->userdata("language"));
+if($CI->session->userdata("language")){
+	define("LANGUAGE",$CI->session->userdata("language"));
+	define("CURRENT_LOCALE",$CI->session->userdata("locale"));
 }else{
 	if(file_exists(ADMINCONFIG)) {
 		$conf = parse_ini_file(ADMINCONFIG);
@@ -39,22 +42,30 @@ if($this->session->userdata("language")){
 		} else {
 			// Default, make a guess?
 			define("LANGUAGE","en");
+        }
+		if(isset($conf['default_locale'])) {
+			define("CURRENT_LOCALE",$conf['default_locale']);
+		} else {
+			// Default, make a guess?
+			define("CURRENT_LOCALE","en_US");
 		}	
+
 	} else {
 		// Default, make a guess?
 		define("LANGUAGE","en");
+        define("CURRENT_LOCALE","en_US");
 	}
 }
 				
-if($this->session->userdata("theme")){
-	define("THEME",$this->session->userdata("theme"));
+if($CI->session->userdata("theme")){
+	define("THEME",$CI->session->userdata("theme"));
 }else{
 	// Default
 	define("THEME","default");
 }
 
-if($this->session->userdata("user")){
-	define("USER",$this->session->userdata("user"));
+if($CI->session->userdata("user")){
+	define("USER",$CI->session->userdata("user"));
 }else{
 	// Default - should not be possible
 	define("USER","none");

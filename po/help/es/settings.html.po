@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-06 15:42+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings.html:2
+msgid "Setup wizard"
+msgstr "Asistente de configuración"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:5
+msgid ""
+"Use the integrated Setup wizard to make the very first important settings on "
+"your {PLATFORM} such as language, time and date, add users and choose an "
+"Easyfind name. You can run the wizard at any time."
+msgstr ""
+"Utiliza el asistente de configuración integrado para establecer la "
+"configuración inicial de tu {PLATFORM} tal como idioma, hora y fecha, añadir "
+"usuarios y elegir un nombre Easyfind. Puedes ejecutar el asistente en "
+"cualquier momento."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:8
+msgid "<strong>Step 1 - Select default language</strong>"
+msgstr "<strong>Paso 1 - Selecciona el idioma por defecto</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:11
+msgid "Select the default system language. Click 'Next' to continue."
+msgstr ""
+"Selecciona el idioma por defecto del sistema. Haz clic en 'Siguiente' para "
+"continuar."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:14
+msgid "<strong>Step 2 - Time and date</strong>"
+msgstr "<strong>Paso 2 - Hora y fecha</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:17
+msgid ""
+"Choose time zone and the date and time. You also have the possibility to use "
+"an Internet time server. By doing this the date and time is automatically "
+"set and updated and you do not have to do any manual time settings. Click "
+"'Next' to continue."
+msgstr ""
+"Elije el huso horario y la fecha y hora. También tienes la posibilidad de "
+"utilizar un servidor de hora de Internet. De esta manera la fecha y hora se "
+"establece y actualiza automáticamente y no tienes que realizar ajustes "
+"manuales. Haz clic en 'Siguiente' para continuar."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:21
+msgid "<strong>Step 3 - Create user</strong>"
+msgstr "<strong>Paso 3 - Crear usuarios</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:24
+msgid ""
+"Create a user, or as many as you desire. Click 'Add user' after filling in "
+"the user information. Click 'Next' to continue."
+msgstr ""
+"Crea un usuario, o tantos como desees. Haz clic en 'Añadir usuario' tras "
+"rellenar la información de usuario. Haz clic en 'Siguiente' para continuar."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:27
+msgid "<strong>Step 4 - Network setup</strong>"
+msgstr "<strong>Paso 4 - Configuración de red</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:30
+msgid ""
+"Choose if you would like to register for a free Easyfind name. You will "
+"reach your {PLATFORM} by surfing to www.-your easyfind name-.{EASYFIND}. "
+"Click 'Next' to continue."
+msgstr ""
+"Elige si quieres register un nombre Easyfind gratuíto. Podrás acceder a "
+"{PLATFORM} navegando a www.-tu nombre easyfind-.myown{PLATFORM}.com. Haz "
+"clic en 'Siguiente' para continuar."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:33
+msgid "<strong>Setup complete</strong>"
+msgstr "<strong>Configuración finalizada</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings.html:36
+msgid "Click 'Finish setup' to exit the wizard."
+msgstr "Haz clic en 'Terminar configuración' para salir del asistente."

@@ -19,7 +19,7 @@ foreach($menu as $level) {
 	}
 
 	$navbar .= "'>";
-	$navbar .= "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>".t("title_" . $level["id"]) . "</span></a>";
+	$navbar .= "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>$level[label]</span></a>";
 	$navbar .= "</li>\n";
 }
 $navbar .= "\t</ul>\n";
@@ -39,7 +39,7 @@ foreach($children as $level) {
 	}
 
 	$subnav .= "'>";
-	$subnav .= "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>".t("title_" . $level["id"]) . "</span></a>";
+	$subnav .= "	<a href=\"" . FORMPREFIX . "/" . $level["uri"] . "\"><span>$level[label]</span></a>";
 	$subnav .= "</li>\n";
 }
 

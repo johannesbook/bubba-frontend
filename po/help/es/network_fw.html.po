@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-06 15:42+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Actualiza</i> salva tus cambios.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Actualiza</i> salva tus cambios.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Actualiza</i> salva tus cambios.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Actualizar</i> salva tus cambios.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Actualiza</i> salva tus cambios.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Actualiza</i>  salva tus cambios."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:2
+msgid ""
+"{PLATFORM} has an built in firewall to protect your internal network and "
+"{PLATFORM} itself."
+msgstr ""
+"{PLATFORM} tiene integrado un cortafuegos para proteger tu red interna y al "
+"mismo {PLATFORM}."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_fw.html:5
+msgid "<strong>Allow external (WAN) access {PLATFORM} services</strong>"
+msgstr ""
+"<strong>Permitir servicios de acceso externo (WAN) a {PLATFORM}</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:8
+msgid ""
+"<strong><strong>SSH (Port 22)</strong> - Enables Secure Shell (SSH) to "
+"{PLATFORM} from WAN.</strong>"
+msgstr ""
+"<strong><strong>SSH (Puerto 22)</strong> - Permite Secure Shell (SSH) a "
+"{PLATFORM} desde WAN.</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:11
+msgid ""
+"<strong>Email server (Port 25)</strong> - Enables access from WWW to "
+"{PLATFORM}'s port 25. This is the default email server port for sending and "
+"receiving email."
+msgstr ""
+"<strong>Servidor de correo (Puerto 25)</strong> - Permite el acceso desde "
+"WWW al puerto 25 de {PLATFORM}. Es el puerto del servidor de correo por "
+"defecto para enviar y recibir correos."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:14
+msgid ""
+"<strong>WWW (HTTP / HTTPS Ports 80 / 443)</strong> - Enables WWW traffic to "
+"{PLATFORM} from WAN."
+msgstr ""
+"<strong>WWW (HTTP / HTTPS Puertos 80 / 443)</strong> - Permite tráfico WWW "
+"hacia {PLATFORM} desde WAN."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:17
+msgid ""
+"<strong>Email (IMAP / IMAPS Ports 143 / 993)</strong> - Enables access from "
+"WWW to {PLATFORM}'s ports 143 and 993. These ports are used for sending and "
+"receiving email."
+msgstr ""
+"<strong>Correo (IMAP / IMAPS Puertos 143 / 993)</strong> - Permite acceso "
+"desde WWW a los puertos 143 y 993 de {PLATFORM}. Estos puertos se utilizan "
+"para enviar y recibir correo."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:20
+msgid ""
+"<strong>FTP (Port 21)/strong&gt; - Enables FTP connections from WAN to "
+"{PLATFORM}'s port 21.</strong>"
+msgstr ""
+"<strong>FTP (Puerto 21)</strong> - Permite conexiones FTP desde WAN al "
+"puerto 21 de {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:23
+msgid ""
+"<strong><strong>Downloader (Ports 10000-14000)</strong> - Enables faster "
+"torrent download. This rule opens the ports 10000-14000.</strong>"
+msgstr ""
+"<strong><strong>Descargador (Puertos 10000-14000)</strong> - Permite "
+"acelerar la descarga de torrents. Esta regla abre los puertos 10000-14000.</"
+"strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:26
+msgid ""
+"<strong>Respond to ping (ICMP type 8)</strong> - Enables ping from WAN. The "
+"default setting disables computers on the Internet to get a reply back from "
+"{PLATFORM} when it is being 'pinged'. This increases the security."
+msgstr ""
+"<strong>Responder a ping (ICMP tipo 8)</strong> - Permite el ping desde WAN. "
+"La configuración por defecto impide que las computadoras de internet "
+"obtengan respuesta desde {PLATFORM} cuando esta siendo 'pingado'. Esto "
+"incrementa la seguridad."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_fw.html:30
+msgid "Advanced firewall settings"
+msgstr "Configuración avanzada del cortafuegos"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:33
+msgid ""
+"Choose 'Port forward to internal network' or 'Open {PLATFORM}|2 port' with "
+"the radio buttons. The first will open a port from Internet (WAN) to a "
+"network device in your internal network (LAN). The later one will open a "
+"port from Internet (WAN) to {PLATFORM}."
+msgstr ""
+"Elige 'Redirige puerto a red interna' o 'Abrir puerto {PLATFORM}|2' con los "
+"selectores. El primero abrirá un puerto desde Internet (WAN) a un "
+"dispositivo de tu red interna (LAN). El último abrirá un puerto desde "
+"Internet (WAN) a {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:37
+msgid ""
+"<strong>Source IP</strong> - The source IP on the WAN side that the port "
+"forward will be directed to. Enter 'all' if all the port forward are not "
+"directed to a specific IP address."
+msgstr ""
+"<strong>IP origen</strong> - La dirección IP origen en el lado WAN a la que "
+"apuntará la redirección. Entra 'todos' si la redirección no está restringida "
+"a una dirección IP específica."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:40
+msgid ""
+"<strong>Public port</strong> - The port number on the WAN side. You can "
+"input a single port or a range of ports (ex. 4001:4005)."
+msgstr ""
+"<strong>Puerto público</strong> - El número de puerto en el lado WAN. Puedes "
+"poner un puerto único o un rango de puertos (p.e. 4001:4005)."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:43
+msgid ""
+"<strong>Private port</strong> - The port number on the LAN side. Enter a "
+"single start port if range is used in Public port (ex. 4001)."
+msgstr ""
+"<strong>Puerto privado</strong> - El número de puerto en el lado LAN. Entra "
+"un único puerto de comienzosi se utiliza rango en el Puerto público (p.e. "
+"4001)."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:46
+msgid ""
+"<strong>Private IP</strong> - The destination IP on the LAN side network "
+"that will be providing the virtual services (desired port forward)."
+msgstr ""
+"<strong>IP privada</strong> - La IP destino en la red LAN que va a dispensar "
+"los servicios virtuales (redirección de puerto deseada)."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:49
+msgid ""
+"<strong>Protocol</strong> - The protocol used for the virtual service: TCP "
+"or UDP."
+msgstr ""
+"<strong>Protocolo</strong> - El protocolo utilizado por el servicio virtual: "
+"TCP or UDP."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_fw.html:52
+msgid "User defined open / forwarded ports"
+msgstr "Puertos abiertos / redirigidos definidos por el usuario"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:55
+msgid ""
+"This shows the enabled port forwards. Press the pen symbol to the right of "
+"the rule to edit the port forward. Press the red X to the right of the rule "
+"to delete the port forward."
+msgstr ""
+"Aquí se muestran las redirecciones habilitadas. Pulsa en el símbolo de lápiz "
+"a la derecha de la regla para editar la redirección del puerto. Pulsa la x "
+"roja a la derecha de la regla para eliminar la redirección del puerto."

@@ -1,6 +1,6 @@
 <table class="ui-table-outline">
 <thead>
-    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=t('Show logs')?></td></tr>
+    <tr><td colspan="2" class="ui-state-default ui-widget-header"><?=_('Show logs')?></td></tr>
 </thead>
 </table>
 <div class="ui-inset">
@@ -18,7 +18,7 @@
 		<?endif?>
 	<?endforeach?>
 	</select>
-	<input type="submit" value="<?=t('Show')?>"/>
+	<input type="submit" value="<?=_("Show")?>"/>
 	</form>
 <?if(isset($log_name)):?>
 	<h3><?=$log_name?></h3>

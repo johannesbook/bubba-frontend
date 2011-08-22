@@ -11,7 +11,6 @@ class Mail extends Controller{
 		$this->load->helper('update_msg');
 		$this->Auth_model->EnforceAuth('web_admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	function _renderfull($content,$head = ""){
@@ -103,7 +102,7 @@ class Mail extends Controller{
 			$keep = $keep == 'on' ? 'keep' : 'NONE';
 			$ssl = $ssl == 'on' ? 'ssl' : 'NONE';
 			if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
-				$error = t('mail-auth-error');
+				$error = _("Authorization failed");
 			} else {
 				if($server && $protocol && $ruser && $pwd && $luser ){
 					add_fetchmailaccount($server,$protocol,$ruser,$pwd,$luser,$ssl,$keep);
@@ -111,7 +110,7 @@ class Mail extends Controller{
 						start_service("fetchmail");
 					}
 				} else {
-					$error = t('mail-validation-error');
+					$error = _("Validation of input failed");
 				}
 			}
 			$data['success'] = !$error;
@@ -146,7 +145,7 @@ class Mail extends Controller{
 				$pwd = "\"\"";
 			}
 			if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
-				$error = t('mail-auth-error');
+				$error = _("Authorization failed");
 			} else {
 				if($server && $protocol && $ruser && $pwd && $luser ){
 					update_fetchmailaccount(
@@ -165,7 +164,7 @@ class Mail extends Controller{
 						start_service("fetchmail");
 					}
 				} else {
-					$error = t('mail-validation-error');
+					$error = _("Validation of input failed");
 				}
 			}
 			$data['success'] = !$error;
@@ -189,7 +188,7 @@ class Mail extends Controller{
 			$luser=$this->input->post('luser');
 
 			if( ($this->session->userdata("user")!="admin")&&($this->session->userdata("user")!=$luser) ) {
-				$error = t('mail-auth-error');
+				$error = _("Authorization failed");
 			} else {
 				if($server && $protocol && $ruser ){ // XXX luser?
 					delete_fetchmailaccount($server,$protocol,$ruser);
@@ -197,7 +196,7 @@ class Mail extends Controller{
 						start_service("fetchmail");
 					}
 				} else {
-					$error = t('mail-validation-error');
+					$error = _("Validation of input failed");
 				}
 			}
 			$data['success'] = !$error;

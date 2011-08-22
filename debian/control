@@ -3,7 +3,13 @@ Section: web
 Priority: standard
 Maintainer: Tor Krill <tor@excito.com>
 Uploaders: Carl Fürstenberg <carl@excito.com>
-Build-Depends: debhelper (>= 7.2), libphp-codeigniter-dev (>= 1.7.2-3)
+Build-Depends: debhelper (>= 7.2),
+ libphp-codeigniter-dev (>= 1.7.2-3),
+ libgetopt-long-descriptive-perl,
+ libfile-slurp-perl,
+ liblocale-po-perl,
+ gettext,
+ po4a
 Standards-Version: 3.8.4
 Homepage: http://www.excito.com
 

@@ -18,41 +18,41 @@
 		<? 	if($dl["info"]["type"]=="torrent"){
 					$dt=$dl["info"];
 					if($dt["state"]=="downloading"){ ?>
-			<small><b><?=t('Downloading')?></b> (<?=$dt["num_seeds"]?> <?=t('seeds')?> <?=$dt["num_peers"]?> <?=t('peers')?>)<br/>
+			<small><b><?=_("Downloading")?></b> (<?=$dt["num_seeds"]?> <?=_("seeds")?> <?=$dt["num_peers"]?> <?=_("peers")?>)<br/>
 			DL: <?=sizetohuman($dt["download_payload_rate"])?>B/s (<?=sizetohuman($dt["total_payload_download"])?>B) UL: <?=sizetohuman($dt["upload_payload_rate"])?>B/s (<?=sizetohuman($dt["total_payload_upload"])?>B) </small>			
 		<?			}elseif($dt["state"]=="queued_for_checking"){ ?>
-			<small><b><?=t('Queued for checking')?></b></small>
+			<small><b><?=_('Queued for checking')?></b></small>
 		<?			}elseif($dt["state"]=="checking_files"){ ?>
-			<small><b><?=t('Checking existing files')?></b></small>
+			<small><b><?=_('Checking existing files')?></b></small>
 		<?			}elseif($dt["state"]=="connecting_to_tracker"){ ?>
-			<small><b><?=t('Connecting to tracker')?></b> (<?=$dt["num_seeds"]?> <?=t('seeds')?> <?=$dt["num_peers"]?> <?=t('peers')?>)<br/>
+			<small><b><?=_('Connecting to tracker')?></b> (<?=$dt["num_seeds"]?> <?=_("seeds")?> <?=$dt["num_peers"]?> <?=_("peers")?>)<br/>
 			DL: <?=sizetohuman($dt["download_payload_rate"])?>B/s (<?=sizetohuman($dt["total_payload_download"])?>B) UL: <?=sizetohuman($dt["upload_payload_rate"])?>B/s (<?=sizetohuman($dt["total_payload_upload"])?>B) </small>
 		<?			}elseif($dt["state"]=="finished"){ ?>
-			<small><b><?=t('Done downloading (But missing data)')?></b></small>
+			<small><b><?=_('Done downloading (But missing data)')?></b></small>
 		<?			}elseif($dt["state"]=="seeding"){ ?>
-			<small><b><?=t('Seeding')?></b> (<?=$dt["num_seeds"]?> <?=t('seeds')?> <?=$dt["num_peers"]?> <?=t('peers')?>)<br/>
+			<small><b><?=_("Seeding")?></b> (<?=$dt["num_seeds"]?> <?=_("seeds")?> <?=$dt["num_peers"]?> <?=_("peers")?>)<br/>
 			DL: <?=sizetohuman($dt["download_payload_rate"])?>B/s (<?=sizetohuman($dt["total_payload_download"])?>B) UL: <?=sizetohuman($dt["upload_payload_rate"])?>B/s (<?=sizetohuman($dt["total_payload_upload"])?>B) </small>
 		<?			}elseif($dt["state"]=="allocating"){ ?>
-			<small><b><?=t('Allocating disk')?></b></small>
+			<small><b><?=_('Allocating disk')?></b></small>
 		<?			}elseif($dt["state"]=="unknown"){ ?>
-			<small><b><?=t('Unknown state')?></b></small>
+			<small><b><?=_('Unknown state')?></b></small>
 		<?			}elseif($dt["state"]=="failed"){ ?>
-			<small><b><?=t('Download failed')?></b> - <?=$dt["errmsg"]?></small>
+			<small><b><?=_('Download failed')?></b> - <?=$dt["errmsg"]?></small>
 		<?			}elseif($dt["state"]=="no_info"){ ?>
-			<small><b><?=t('No info')?></b></small>
+			<small><b><?=_('No info')?></b></small>
 		<?			}else{ ?>
 		<?			}?>
 		<?	} elseif($dl["info"]["type"]=="curl"){ ?>
-			<small><?=t('Download speed')?>: <?=sizetohuman($dl["info"]["speed"])?>B/s</small>
+			<small><?=_('Download speed')?>: <?=sizetohuman($dl["info"]["speed"])?>B/s</small>
 		<? 	} else { ?>
 		<? 	} ?>
 			</td>
-			<td style="text-align: right;"><?=t("Size")?>: <?=sizetohuman($dl["size"])?></td>
+			<td style="text-align: right;"><?=_("Size")?>: <?=sizetohuman($dl["size"])?></td>
 			<td style="width: 15%;text-align: right; padding: 0px; vertical-align: top; ">
 				<form action="<?=FORMPREFIX?>/downloads/remove" method="post">
 					<input type="hidden" name="url" value="<?=$dl["url"]?>"/>
 					<input type="hidden" name="uuid" value="<?=$dl["uuid"]?>"/>
-					<input type="submit" name="do" value="<?=t('Cancel')?>"/>
+					<input type="submit" name="do" value="<?=_("Cancel")?>"/>
 				</form>
 			</td>
 		</tr>

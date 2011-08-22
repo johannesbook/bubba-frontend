@@ -1,0 +1,11 @@
+admin/views/default/help/de
+admin/views/default/help/es
+po4a.stamp
+
+po/*/*.mo
+po/js/*.json
+debian/*.debhelper
+debian/*.debhelper.log
+debian/*.substvars
+debian/files
+debian/bubba-frontend

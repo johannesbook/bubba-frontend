@@ -23,13 +23,13 @@ $(function(){
     var dialog_buttons = {
         'create': [
             {
-                'label': $.message("next"),
+                'label': _("Next"),
                 options: {
                     'class': 'ui-next-button ui-element-width-50'
                 }
             },
             {
-                'label': $.message("back"),
+                'label': _("Back"),
                 options: {
                     'class': 'ui-prev-button ui-element-width-50'
                 }
@@ -37,19 +37,24 @@ $(function(){
         ],
         'edit': [
             {
-                'label': $.message("next"),
+                'label': _("Next"),
                 options: {
                     'class': 'ui-next-button ui-element-width-50'
                 }
             },
             {
-                'label': $.message("back"),
+                'label': _("Back"),
                 options: {
                     'class': 'ui-prev-button ui-element-width-50'
                 }
             }
         ]
 
+    };
+
+    button_labels = {
+        'create': pgettext('button', 'Create'),
+        'edit': pgettext('button', 'edit')
     };
 
     var dialog_onclose = {
@@ -99,7 +104,7 @@ $(function(){
             $row.append($('<td/>',{text: data.date}));
             $row.append($('<td/>').append( $('<button/>', {
                 'class' : "submit fn-job-restore",
-                html: $.message('backup-job-restore-button-label')
+                html: _("Restore")
             }).
             attr('disabled', data.failed ? 'disabled' : '').
             toggleClass('disabled', data.failed)));
@@ -121,19 +126,19 @@ $(function(){
                     $cur.appendTo(table);
                     $cur.append($('<td/>',{text: data.name}));
                     $cur.append($('<td/>',{text: data.target}));
-                    $cur.append($('<td/>',{text: $.message(data.schedule)}));
+                    $cur.append($('<td/>',{text: data.schedule}));
 					if( data.failed ) {
 						$node = $('<td/>',{'class': 'ui-backup-job-failed'}).appendTo($cur);
 
-						$node.append($.message('backup-job-failed-label') + ' (');
+						$node.append(_("Failed") + ' (');
 						$('<a/>', {
 							'href': '#',
-							'html': $.message('backup-job-failed-why-label'),
+							'html': _("why?"),
 							'click': function(e){
 								e.preventDefault();
 								$.alert(
 									data.status,
-									$.message('backup-job-failed-alert-title', data.name),
+									$.sprintf(_("Backup job %s failed"), data.name),
 									null,
 									null,
 									{'width': 500, 'height': 300}
@@ -149,15 +154,15 @@ $(function(){
                     $cur.append($('<td/>').append($("<div/>", {'class': 'ui-inline'}).append(
                         $('<button/>', {
                             'class' : "submit fn-job-remove",
-                            html: $.message('backup-job-remove-button-label')
+                            html: _("Remove")
                         }),
                         $('<button/>', {
                             'class' : "submit fn-job-edit",
-                            html: $.message('button-label-edit')
+                            html: _("Edit")
                         }),
                         $('<button/>', {
                             'class' : "submit fn-job-run",
-                            html: $.message('backup-job-run-now-button-label')
+                            html: _("Run now")
                         }))
                         )
                         );
@@ -198,7 +203,7 @@ $(function(){
             buttons = dialog_buttons[value];
         } else {
             buttons = [{
-                'label': $.message("backup-" + value + "-dialog-button-label"),
+                'label': button_labels[value],
                 'callback': function() {
                     dialog_callbacks[value].apply(dialogs[value], arguments);
                 },
@@ -228,13 +233,13 @@ $(function(){
     var edit_buttonpane = dialogs.edit.dialog('widget').children('.ui-dialog-buttonpane');
 	jQuery.validator.addMethod("alnum", function(value, element, params) {
 		return this.optional(element) || /^[a-z0-9]+$/i.test(value);
-	}, $.message("Only alphanumreric values are allowed for the name"));
+	}, _("Only alphanumreric values are allowed for the name"));
 
 	jQuery.validator.addMethod("hostname", function(value, element, params) {
         return this.optional(element) ||
         /^([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])(\.([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9]))*$/i.test(value) ||
         /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/.test(value);
-    }, $.message("Please enter a valid hostname or IPv4 address"));
+    }, _("Please enter a valid hostname or IPv4 address"));
 
     $("#fn-backup-create").formwizard(
         {
@@ -244,7 +249,7 @@ $(function(){
             formPluginEnabled: true,
             back: create_buttonpane.find('.ui-prev-button'),
             next: create_buttonpane.find('.ui-next-button'),
-            textSubmit: $.message("backup-create-button-finish"),
+            textSubmit: _("Complete"),
             showBackOnFirstStep: true,
             afterNext: function(wizardData) {
                 switch( wizardData.currentStep ) {
@@ -358,7 +363,7 @@ $(function(){
             formPluginEnabled: true,
             back: edit_buttonpane.find('.ui-prev-button'),
             next: edit_buttonpane.find('.ui-next-button'),
-            textSubmit: $.message("backup-edit-button-finish"),
+            textSubmit: _("Complete"),
             showBackOnFirstStep: true,
             afterNext: function(wizardData) {
                 switch( wizardData.currentStep ) {
@@ -426,7 +431,7 @@ $(function(){
             },
             'messages': {
                 'name': {
-                    'remote': jQuery.format($.message("{0} is already in use"))
+                    'remote': jQuery.format(_("{0} is already in use"))
                 }
             }
         },
@@ -528,11 +533,11 @@ $(function(){
         e.stopPropagation();
         job = $(this).closest('tr').data('job');
         $.confirm(
-            $.message("backup-job-dialog-remove-message"),
-            $.message("backup-job-dialog-remove-header"),
+            _("Are you sure you want to permanently remove this backup job?"),
+            _("Remove backup job"),
             [
                 {
-                    'label': $.message("backup-job-dialog-remove-button-label"),
+                    'label': _("Remove backup job"),
                     'callback': function(){
                         var confirm_dialog = $(this);
                         $.throbber.show();
@@ -545,7 +550,7 @@ $(function(){
                                 } else {
                                     update_status(
                                         true,
-                                        $.message("backup-job-remove-success-message")
+                                        _("Backup job was removed from the system")
                                     );
                                 }
                                 $.throbber.hide();
@@ -566,11 +571,11 @@ $(function(){
         e.stopPropagation();
         job = $(this).closest('tr').data('job');
         $.confirm(
-            $.message("backup-job-dialog-run-message"),
-            $.message("backup-job-dialog-run-header"),
+            _("Are you sure you want to run this backup job now?"),
+            _("Run backup job now"),
             [
                 {
-                    'label': $.message("backup-job-dialog-run-button-label"),
+                    'label': _("Run backup job"),
                     'callback': function(){
                         var confirm_dialog = $(this);
                         $.throbber.show();
@@ -583,7 +588,7 @@ $(function(){
                                 } else {
                                     update_status(
                                         true,
-                                        $.message("backup-job-run-success-message")
+                                        _("Backup job has been initialized to be executed at this particlular moment in time.")
                                     );
                                 }
                                 setTimeout(function(){
@@ -633,10 +638,10 @@ $(function(){
 
         $.dialog(
             $obj,
-            $.message("backup-dialog-restore-title"),
+            _("Restore backed up data"),
             [
                 {
-                    'label': $.message("backup-dialog-restore-label"),
+                    'label': _("Restore selected files and directories"),
 					'callback': function(e) {
 						if( !$validator.form() ) {
 							$(e.target).closest('button').button('enable');
@@ -649,11 +654,11 @@ $(function(){
                         $(this).dialog('close');
 
                         $.confirm(
-                            $.message("backup-restore-overwrite-confirm-message"),
-                            $.message("backup-restore-overwrite-confirm-header"),
+                            _("Are you sure? Any existing files will be overwritten."),
+                            _("Confirm restore"),
                             [
                                 {
-                                    'label': $.message("text-yes"),
+                                    'label': _("Yes"),
                                     'callback': function(e) {
                                         $.throbber.show();
 										var self = this;
@@ -673,7 +678,7 @@ $(function(){
                                     }
                                 },
                                 {
-                                    'label': $.message("text-no"),
+                                    'label': _("No"),
                                     'callback': function(e) {
                                         $(this).dialog('close');
                                     }
@@ -748,10 +753,10 @@ $(function(){
             $filemanager = $(".ui-custom-select-filemanager");
             $.dialog(
                 $filemanager,
-                $.message("File/Directory selector"),
+                _("File/Directory selector"),
                 [
                     {
-                        'label': $.message("Select"),
+                        'label': pgettext("button","Select"),
                         'callback': function() {
                             $(this).dialog('close');
                         },

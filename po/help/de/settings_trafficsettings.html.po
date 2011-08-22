@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 15:20+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> - speichert Ihre Änderungen.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Aktualisieren</i> speichert Ihre Änderungen."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_trafficsettings.html:2
+msgid "Traffic"
+msgstr "Traffic"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_trafficsettings.html:5
+msgid ""
+"To control the maximum upload / download speed on your torrents adjust the "
+"'Traffic' setting."
+msgstr ""
+"Ändern Sie die 'Traffic'-Einstellungen, um die maximalen Upload-/Download-"
+"Geschwindigkeiten für Ihre Torrents einzustellen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_trafficsettings.html:8
+msgid ""
+"For example if you have a limited broadband connection you do not want to "
+"fill your uplink completely. Then set the 'Max upload speed' to a preferred "
+"value. Use 'Max download speed' in the same manner."
+msgstr ""
+"Bei einer beschränkten Breitbandverbindung sollte z. B. der Uplink nicht "
+"vollständig belegt werden. Stellen Sie dann die 'Max. Upload-"
+"Geschwindigkeit' auf den gewünschten Wert ein. Verwenden Sie 'Max. Download-"
+"Geschwindigkeit' analog."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_trafficsettings.html:12
+msgid "Using -1 as value = no speed limit."
+msgstr "Eingabe von -1 = keine Geschwindigkeitsbeschränkung."

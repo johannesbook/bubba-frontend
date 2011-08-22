@@ -27,13 +27,13 @@ $(document).ready(function(){
 				if( data.show_alert ) {
 					$.confirm( 
 						data.alert_msg, 
-						"<?=t("Network configuration")?>", {
+						"<?=_("Network configuration")?>", {
 
-						<?=t('button_label_continue')?>: function() {
+						<?=_("Continue")?>: function() {
 								$(this).dialog('close');
 								cursor_wait();
 								$("#OTHCFG").submit(); 
-							},<?=t('button_label_cancel')?>: function() {
+							},<?=_("Cancel")?>: function() {
 								$(this).dialog('close');
 							}
 						}

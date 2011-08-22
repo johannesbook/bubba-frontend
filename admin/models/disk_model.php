@@ -193,7 +193,7 @@ class Disk_model extends Model {
 	function mount_partition( $partition ) {
 		$matches = array();
 		if( ! preg_match( '#TYPE="(.*?)"#', `blkid $partition -p -s TYPE`, $matches ) ) {
-			throw new Exception( sprintf( t("Failed to aquire suitable type of the filesystem on partition %s"), $partition ) );
+			throw new Exception( sprintf( _("Failed to aquire suitable type of the filesystem on partition %s"), $partition ) );
 		}
 		$type = $matches[1];
 
@@ -243,7 +243,7 @@ class Disk_model extends Model {
 			}
 
 			if( ! $mountpath ) {
-				throw new Exception( sprintf( t("Failed to find suitable mount path for partition %s"), $partition ) );
+				throw new Exception( sprintf( _("Failed to find suitable mount path for partition %s"), $partition ) );
 			}
 
 			$mountpath = str_replace( ' ', '_', $mountpath );
@@ -270,7 +270,7 @@ class Disk_model extends Model {
 
 
 			if(is_null($this->_raw_system('mount', $partition, $mountpath, '-o', $options ))) {
-				throw new Exception( sprintf( t("Failed to mount %s on %s"), $partition, $mountpath ) );
+				throw new Exception( sprintf( _("Failed to mount %s on %s"), $partition, $mountpath ) );
 			}
 
 		} else {
@@ -295,7 +295,7 @@ class Disk_model extends Model {
 				}
 
 				if( ! $mountpath ) {
-					throw new Exception( sprintf( t("Failed to find suitable mount path for partition %s"), $partition ) );
+					throw new Exception( sprintf( _("Failed to find suitable mount path for partition %s"), $partition ) );
 				}
 
 				$mountpath = str_replace( ' ', '_', $mountpath );
@@ -324,12 +324,12 @@ class Disk_model extends Model {
 				$ret = $this->_system( $this->manager, 'fstab', 'add_by_uuid', $partition, $mountpath, $options );
 
 				if( ! $ret['status'] ) {
-					throw new Exception( sprintf(t("Failed to create fstab entry for %s with %s"), $partition, $mountpath) );
+					throw new Exception( sprintf(_("Failed to create fstab entry for %s with %s"), $partition, $mountpath) );
 				}
 			} else {
 				$cur = $uuids[$devinfo['uuid']];
 				if( ! isset($cur['mount']) || !$cur['mount'] ) {
-					throw new Exception( sprintf(t("Found entry for device %s in fstab, but contained no path to mount at"), $partition) );
+					throw new Exception( sprintf(_("Found entry for device %s in fstab, but contained no path to mount at"), $partition) );
 				}
 				$mountpath = $cur['mount'];
 				$mountpath = str_replace( ' ', '_', $mountpath );
@@ -341,7 +341,7 @@ class Disk_model extends Model {
 			$ret = $this->_system( $this->manager, 'fstab', 'mount', $partition );
 
 			if( ! $ret['status'] ) {
-				throw new Exception( sprintf( t("Failed to mount %s"), $partition ) );
+				throw new Exception( sprintf( _("Failed to mount %s"), $partition ) );
 			}
 
 		}
@@ -364,7 +364,7 @@ class Disk_model extends Model {
 
 
 		if( ! $mountpath ) {
-			throw new Exception(t("mount path not found for partition $partition"));
+			throw new Exception(_("mount path not found for partition $partition"));
 		}
 
 		$mountpath = str_replace( ' ', '_', $mountpath );
@@ -372,7 +372,7 @@ class Disk_model extends Model {
 		$ret = $this->_system( $this->manager, 'fstab', 'umount', $mountpath );
 
 		if( ! $ret['status'] ) { 
-			throw new Exception( sprintf( t("Failed to unmount %s"), $mountpath ) );
+			throw new Exception( sprintf( _("Failed to unmount %s"), $mountpath ) );
 		}
 
 		$in_fstab = count(array_filter( $this->list_fstab(), create_function('$a','return ($a["device"] == "'.quotemeta($partition).'");') )) > 0;
@@ -381,7 +381,7 @@ class Disk_model extends Model {
 			$ret = $this->_system( $this->manager, 'fstab', 'remove', $mountpath );
 
 			if( ! $ret['status'] ) { 
-				throw new Exception( sprintf(t("Failed to remove fstab entry for %s with %s"), $partition, $mountpath) );
+				throw new Exception( sprintf(_("Failed to remove fstab entry for %s with %s"), $partition, $mountpath) );
 			}
 		}
 		return;

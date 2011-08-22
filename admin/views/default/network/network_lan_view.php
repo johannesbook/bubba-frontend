@@ -1,12 +1,12 @@
 <? if($this->session->userdata("network_profile") == "auto" || $this->session->userdata("network_profile") == "custom"): ?>
 	<div class="ui-network-information-panel">
-	<?=t("network-settings-locked-1")." (".t("network-settings-locked-2").")"?>&nbsp;.&nbsp;<br />
-	<?=t("network-settings-locked-3")?><a href="<?=FORMPREFIX?>/network/profile"><?=t("Profile")?></a> tab
+	<?=sprintf(_("These settings are locked")." ("._("%s is using automatic network settings"), NAME).")"?>&nbsp;.&nbsp;<br />
+	<?=_("To unlock, select Router or Server profile under the ")?><a href="<?=FORMPREFIX?>/network/profile"><?=_("Profile")?></a> tab
 	</div>
 <? endif ?>
 <form id="LANCFG" action="<?=FORMPREFIX?>/network/lanupdate" method="post">
 <table id="table-network-lan" class="ui-table-outline">
-    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=t('LAN')?></td></tr>
+    <tr><td colspan="4" class="ui-state-default ui-widget-header"><?=_("LAN")?></td></tr>
 
 	<tr>
 		<td>
@@ -21,7 +21,7 @@
         />
 		</td>
 		<td colspan="3">
-			<label for=""><?=t('Obtain IP-address automatically')?> (DHCP)</label>
+			<label for=""><?=_('Obtain IP-address automatically')?> (DHCP)</label>
 		</td>
 	</tr>
 	
@@ -38,13 +38,13 @@
             />
 		</td>
 		<td colspan="3">
-			<label for=""><?=t('Use static IP address settings')?></label>:
+			<label for=""><?=_('Use static IP address settings')?></label>:
 		</td>
 	</tr>
 
 	<tr id="tr-network-ip">
 		<td></td>
-		<td><label for=""><?=t('IP')?></label>:</td>
+		<td><label for=""><?=_("IP")?></label>:</td>
         <td>
             <input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
@@ -82,13 +82,13 @@
         </td>
 		<td>
 <? if($update && $err_ip){ ?>
-		* <?=t("Invalid IP")?>
+		* <?=_("Invalid IP")?>
 <? } ?>
 		</td>
 	</tr>
 	<tr id="tr-network-netmask">
 		<td></td>
-		<td><label for=""><?=t('Netmask')?></label>:</td>	
+		<td><label for=""><?=_("Netmask")?></label>:</td>
         <td>
             <input 
                 <?if(!$dhcpd):?>disabled="disabled"<?endif?> 
@@ -126,7 +126,7 @@
         </td>
 		<td>
 <? if($update && $err_netmask){ ?>
-		* <?=t("Invalid netmask")?>
+		* <?=_("Invalid netmask")?>
 <? } ?>
 	</td>
 	</tr>
@@ -134,7 +134,7 @@
 
 	<tr id="tr-network-gateway">
 		<td></td>
-		<td><label for=""><?=t('Default gateway')?></label>:</td>	
+		<td><label for=""><?=_('Default gateway')?></label>:</td>
         <td>
             <input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
@@ -174,7 +174,7 @@
 	</tr>
 	<tr id="tr-network-dns">
 		<td></td>
-		<td><label for=""><?=t('Primary DNS')?></label>:</td>	
+		<td><label for=""><?=_('Primary DNS')?></label>:</td>
         <td>
             <input 
                 <?if($disable_gw || $dhcp):?>disabled="disabled"<?endif?> 
@@ -214,7 +214,7 @@
 	</tr>
 	<tr>
 		<td />
-		<td><label for="cb_dns"><?=t('Enable DNS service')?></label></td>
+		<td><label for="cb_dns"><?=_('Enable DNS service')?></label></td>
 		<td>
         <input 
             type="checkbox" 
@@ -226,13 +226,13 @@
         />
 		</td>
 <? if($update && $err_dnsmasq["dns"]){ ?>
-		<td>* <?=t("Error starting/stopping DNS service")?></td>
+		<td>* <?=_("Error starting/stopping DNS service")?></td>
 <? } ?>
 	</tr>
 
 	<tr>
 		<td />
-		<td class="ui-indent1"><label for="dhcpd"><?=t('Enable DHCP server')?></label></td>
+		<td class="ui-indent1"><label for="dhcpd"><?=_('Enable DHCP server')?></label></td>
 		<td>
         <input 
             type="checkbox" 
@@ -245,7 +245,7 @@
 		</td>
 		<td>
 <? if($update && $err_dnsmasq["dhcpd"]){ ?>
-		* <?=t("Error starting/stopping DHCP server")?>
+		* <?=_("Error starting/stopping DHCP server")?>
 <? } ?>
 		</td>
 
@@ -253,7 +253,7 @@
 
 	<tr>
 		<td></td>
-		<td class="ui-indent1"><label for=""><?=t('Lease range start')?></label></td>
+		<td class="ui-indent1"><label for=""><?=_('Lease range start')?></label></td>
         <td>
             <input 
                 class="dnsmasq ip" 
@@ -291,7 +291,7 @@
       </tr>
 		 	<tr>
 				<td></td>
-				<td class="ui-indent1"><label for=""><?=t('Lease range end')?></label></td>
+				<td class="ui-indent1"><label for=""><?=_('Lease range end')?></label></td>
         <td>
 
         <input
@@ -328,7 +328,7 @@
             maxlength='3'
         />
 <? if($update && $err_dnsmasq["dhcpdrange"]){ ?>
-	<?="* ".t("Invalid IP range entered")?>
+	<?="* "._("Invalid IP range entered")?>
 <? } ?>
 		</td>
 		<td />
@@ -337,7 +337,7 @@
 	<tr>
         <td>
         </td>
-		<td><label for="jumbo"><?=t('Enable jumbo frames.')?> <span class="ui-text-comment"><?=t('(Please read manual before enabling)')?></span></label></td>
+		<td><label for="jumbo"><?=_('Enable jumbo frames.')?> <span class="ui-text-comment"><?=_('(Please read manual before enabling)')?></span></label></td>
 		<td>
 			<input 
 				id="jumbo"
@@ -352,7 +352,7 @@
 
 	<tr>
 	<td colspan="4">
-		<button class="submit .fn-network-button_submit"><?=t('Update')?></button>
+		<button class="submit .fn-network-button_submit"><?=_("Update")?></button>
 		<input type="hidden" value='1' name='update'/>
 	</td>
 </tr>
@@ -365,9 +365,9 @@
 <table class="ui-table-outline">
 	<thead>
 
-    <tr><th colspan="4" class="ui-state-default ui-widget-header"><?=t('DHCP leases')?></td></tr>
+    <tr><th colspan="4" class="ui-state-default ui-widget-header"><?=_('DHCP leases')?></td></tr>
 		<tr class="ui-header">
-			<th><?=t("Hostname")?></th><th><?=t("IP-address")?></th><th><?=t("MAC-address")?></th><th><?=t("Lease expires")?></th>
+			<th><?=_("Hostname")?></th><th><?=_("IP-address")?></th><th><?=_("MAC-address")?></th><th><?=_("Lease expires")?></th>
 		</tr>
 	</thead>
 	<tbody>

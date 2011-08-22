@@ -1,0 +1,9 @@
+The translation system is split up to three parts, each with it's own area of work.
+
+Under the "po" directory, there are three directories, "help",	"js", and "php".
+
+"php" is the main translations of all php files.
+"js" are all translations that are using by javascript files
+"help" is separate from "php" as they are used by po4a instead of the normal translations routines, thus creating static translated files.
+
+To translate, there are numerous applications available to help with the translation work, for example: poedit, gtranslator, lokalize etc...

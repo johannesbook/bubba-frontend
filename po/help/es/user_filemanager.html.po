@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-06 16:16+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:2
+msgid ""
+"From the File manager you are able to reach your files on {PLATFORM} eaven "
+"if you are away from home."
+msgstr ""
+"Desde el Administrador de archivos puedes acceder a tus ficheros en "
+"{PLATFORM} incluso desde fuera de casa."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_filemanager.html:5
+#: admin/views/default/help/en/filemanager.html:5
+msgid "Navigation"
+msgstr "Navegación"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:8
+msgid ""
+"Navigate into a folder by clicking the arrow to the right of the folder name "
+"or double clicking it, navigate up one level by clicking the left arrow or "
+"click the /home/username/ raw."
+msgstr ""
+"Entra en una carpeta haciendo clic en la flecha de la derecha de la carpeta "
+"o haciéndole doble clic, asciende un nivel haciendo clic en la flecha "
+"izquierda o el la línea /home/usuario/"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_filemanager.html:11
+#: admin/views/default/help/en/filemanager.html:11
+msgid "File and folder actions"
+msgstr "Acciones de fichero y carpeta"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:14
+#: admin/views/default/help/en/filemanager.html:14
+msgid ""
+"Click files or folders and use the icons in the file function bar to perform "
+"different actions. The functions from left to right are:"
+msgstr ""
+"Haz clic en ficheros or carpetas y utiliza los iconos de la barra de "
+"funcioón de fichero para realizar diferentes acciones. Las funciones de "
+"izquierda a derecha son:"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:17
+#: admin/views/default/help/en/filemanager.html:17
+msgid "Create folder"
+msgstr "Crear carpeta"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:19
+#: admin/views/default/help/en/filemanager.html:19
+msgid "Upload file"
+msgstr "Subir fichero"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:21
+#: admin/views/default/help/en/filemanager.html:21
+msgid "Download as zip"
+msgstr "Descargar como zip"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:23
+#: admin/views/default/help/en/filemanager.html:23
+msgid "Move files"
+msgstr "Mover ficheros"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:25
+#: admin/views/default/help/en/filemanager.html:25
+msgid "Copy files"
+msgstr "Copiar ficheros"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:27
+#: admin/views/default/help/en/filemanager.html:27
+msgid "Rename"
+msgstr "Renombrar"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:29
+#: admin/views/default/help/en/filemanager.html:29
+msgid "Change permissions"
+msgstr "Cambiar permisos"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:31
+#: admin/views/default/help/en/filemanager.html:31
+msgid "Add to album"
+msgstr "Añadir a álbum"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_filemanager.html:33
+#: admin/views/default/help/en/filemanager.html:33
+msgid "Delete"
+msgstr "Eliminar"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_filemanager.html:37
+#: admin/views/default/help/en/filemanager.html:37
+msgid "Photo album"
+msgstr "álbum de fotos"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:40
+msgid ""
+"To view your photos in {PLATFORM}s photo album you have to place the photos "
+"in the home/storage/pictures catalog."
+msgstr ""
+"Para ver tus fotos en el álbum de fotos de {PLATFORM} tienes que poner tus "
+"fotos en el catálogo home/storage/pictures."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:43
+msgid ""
+"Then select the files or folders and use the \"Add to album\" icon in the "
+"file function bar to add your photos to the {PLATFORM} photo album."
+msgstr ""
+"Entonces seleccionas los ficheros o carpetas y utilizas el icono \"Añadir a "
+"álbum\" en la barra de funciones para añadir tus fotos al álbum de fotos de "
+"{PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_filemanager.html:46
+msgid ""
+"Continue to the Album manager (via {PLATFORM}s start page) to publish the "
+"photos."
+msgstr ""
+"Sigue con el gestor de álbum (mediante la página de inicio de {PLATFORM}) "
+"para publicar las fotos."

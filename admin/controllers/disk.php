@@ -9,7 +9,6 @@ class Disk extends Controller{
 		require_once(ADMINFUNCS);
 
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	function _renderfull($content, $head = '/disk/disk_head_view', $data = ''){
@@ -55,7 +54,20 @@ class Disk extends Controller{
 			$type = $this->disk_model->diskdaemon_type_of_action();
 			$data['type'] = $type;
 			$data['progress'] = $this->disk_model->query_progress();
-			$data['title'] = t( "disk_action_title_".$type );
+            switch($type) {
+            case 'lvm':
+                $data['title'] = _("Extending user storage space");
+                break;
+            case 'create_raid':
+                $data['title'] = _("Converting system to RAID");
+                break;
+            case 'restore_raid':
+                $data['title'] = _("Recovering RAID");
+                break;
+            case 'format':
+                $data['title'] = _("Formatting disk");
+                break;
+            }
 			$this->_renderfull($this->load->view(THEME.'/disk/disk_progress_view.php',$data,true), '/disk/disk_progress_head_view', $data);
 		} else {
 			redirect("disk");

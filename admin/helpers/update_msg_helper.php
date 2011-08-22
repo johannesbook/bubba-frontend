@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-	function create_updatemsg( $errors, $ok_string = "Update successful" ) {
+	function create_updatemsg( $errors ) {
 		
 		/*-----------------------
 		  * First argument is an array with the key to be translated.
@@ -29,7 +29,7 @@
 			} else {
 				// clear all data
 				$update["success"]=true;
-				$update["message"]=t($ok_string);
+				$update["message"]=_("Update successful");
 			}
 		} else {
 			$update["success"]=false;

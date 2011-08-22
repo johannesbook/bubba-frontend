@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-10-05 14:50+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_logs.html:2
+msgid "Logs"
+msgstr "Protokolle"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_logs.html:5
+msgid ""
+"To fault trace on your {PLATFORM} without logging in with SSH use the Logs "
+"function. Select the desired log file in the drop down menu and click 'Show'."
+msgstr ""
+"Verwenden Sie die Protokollfunktionen, wenn Sie Fehler Ihres {PLATFORM} ohne "
+"SSH nachverfolgen möchten. Wählen Sie die gewünschte Protokolldatei und "
+"klicken Sie auf 'Zeigen'."

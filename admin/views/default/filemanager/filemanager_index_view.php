@@ -5,16 +5,16 @@
 	<thead>
 		<tr class="ui-state-default ui-widget-header">
 			<th></th>
-			<th><?=t("Name")?></th>
-			<th><?=t("Date")?></th>
-			<th><?=t("Size")?></th>
+			<th><?=_("Name")?></th>
+			<th><?=_("Date")?></th>
+			<th><?=_("Size")?></th>
 			<th></th>
 		</tr>
 		<tr class="ui-header">
 			<td colspan="5" class="ui-filemanager-fake-updir"></td>
 		</tr>
 		<tr>
-		<td colspan="5" class="ui-helper-hidden ui-filemanager-permission-denied"><?=t("Permission denied")?></td>
+		<td colspan="5" class="ui-helper-hidden ui-filemanager-permission-denied"><?=_("Permission denied")?></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -25,35 +25,35 @@
 <div id="fn-dialogs" class="ui-helper-hidden">
 
 <div id="fn-filemanager-perm-dialog">
-<h2 class="ui-text-center"><?=t('filemanager-permission-dialog-title')?></h2>
+<h2 class="ui-text-center"><?=_("Change permissions")?></h2>
 <form id="fn-filemanager-perm">
 <table>
 	<tr>
-        <th><?=t('filemanager-label-permission-owner')?></th>
+        <th><?=_("Owner")?></th>
         <td>
         	<select name="permission-owner" id="fn-filemanager-perm-permission-owner">
-        		<option value="rw"><?=t('Read and write')?></option>
-        		<option value="r"><?=t('Read only')?></option>
+			<option value="rw"><?=_('Read and write')?></option>
+			<option value="r"><?=_('Read only')?></option>
         	</select>
         </td>
 	</tr>		
     <tr>
-        <th><?=t('filemanager-label-permission-group')?></th>
+        <th><?=sprintf(_("%s users"), NAME)?></th>
         <td>
         	<select name="permission-group" id="fn-filemanager-perm-permission-group">
-        		<option value="rw"><?=t('Read and write')?></option>
-        		<option value="r"><?=t('Read only')?></option>
-        		<option value="n"><?=t('No access')?></option>
+			<option value="rw"><?=_('Read and write')?></option>
+			<option value="r"><?=_('Read only')?></option>
+			<option value="n"><?=_('No access')?></option>
         	</select>
         </td>
     </tr>
     <tr>
-        <th><?=t('filemanager-label-permission-other')?></th>
+        <th><?=_("Not logged in")?></th>
         <td>
         	<select name="permission-other" id="fn-filemanager-perm-permission-other">
-        		<option value="rw"><?=t('Read and write')?></option>
-        		<option value="r"><?=t('Read only')?></option>
-        		<option value="n"><?=t('No access')?></option>
+			<option value="rw"><?=_('Read and write')?></option>
+			<option value="r"><?=_('Read only')?></option>
+			<option value="n"><?=_('No access')?></option>
         	</select>
         </td>
     </tr>
@@ -62,12 +62,12 @@
 </div>
 
 <div id="fn-filemanager-mkdir-dialog">
-<h2 class="ui-text-center"><?=t('filemanager-mkdir-dialog-title')?></h2>
+<h2 class="ui-text-center"><?=_("Create a new folder")?></h2>
 <form id="fn-filemanager-mkdir">
 <table>
 <tr>
 <td colspan="2">
-<label for="name"><?=t('filemanager-label-name')?>:</label>
+<label for="name"><?=_("Name")?>:</label>
 <input type="text" id="fn-filemanager-mkdir-name" name="name" class="ui-input-text fn-primary-field"/></td>
 </tr>
 </table>
@@ -75,12 +75,12 @@
 </div>
 
 <div id="fn-filemanager-rename-dialog">
-    <h2 class="ui-text-center"><?=t('filemanager-rename-dialog-title')?></h2>
+    <h2 class="ui-text-center"><?=_("Rename")?></h2>
     <form id="fn-filemanager-rename">
     <table>
         <tr>
             <td>
-                <label for="name"><?=t('filemanager-label-name')?>:</label>
+                <label for="name"><?=_("Name")?>:</label>
                 <input type="text" id="fn-filemanager-rename-name" name="name" class="ui-input-text fn-primary-field"/>
             </td>
         </tr>
@@ -89,9 +89,9 @@
 </div>
 
 <div id="fn-filemanager-delete-dialog">
-    <h2><?=t('filemanager-delete-dialog-message')?></h2>
+    <h2><?=_("Delete selected files and/or folders?")?></h2>
 </div>
 <div id="fn-filemanager-album-dialog">
-    <h2><?=t('filemanager-album-dialog-message')?></h2>
+    <h2><?=_("Add selected images/folders to photo album?")?></h2>
 </div>
 </div>

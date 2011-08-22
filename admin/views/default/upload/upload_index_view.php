@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/admin.css?v='<?=$this->session->userdata('version')?>'" />
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.js?v='<?=$this->session->userdata('version')?>'"></script>
 
-<title><?=t('Upload')?>: <?= $path ?></title>
+<title><?=_("Upload")?>: <?= $path ?></title>
 <script type="text/javascript">
 var index=1;
 
@@ -52,7 +52,7 @@ function queryProgress( uuid, startdate ) {
 					if ( queryProgress.TIMER ){
 						clearTimeout( queryProgress.TIMER );
 					}
-					$("#pg_item").html("<?=t('Failed to upload file(s), aborting.')?>");
+					$("#pg_item").html("<?=_('Failed to upload file(s), aborting.')?>");
 					$("#b_close").removeAttr( 'disabled' );
 					return;
 				}
@@ -75,20 +75,20 @@ function queryProgress( uuid, startdate ) {
 					if ( queryProgress.TIMER ){
 						clearTimeout( queryProgress.TIMER );
 					}
-					$("#pg_item").html("<?=t('Failed to upload file(s), aborting.')?>");
+					$("#pg_item").html("<?=_('Failed to upload file(s), aborting.')?>");
 					$("#b_close").removeAttr( 'disabled' );
 					return;
 				}
 				if( queryProgress.STATE == queryProgress.STATE_START ){
 					queryProgress.STATE  = queryProgress.STATE_INIT;
 					$("#styledprogress").width(0+"%");
-					$("#pg_item").html("<?=t('Initializing')?>");
+					$("#pg_item").html("<?=_("Initializing")?>");
 				}
 				if( queryProgress.STATE == queryProgress.STATE_UPLOADING ){
 					queryProgress.STATE = queryProgress.STATE_FINISH;
 					$("#styledprogress").width(100+"%");
 					$("#b_close").removeAttr( 'disabled' );
-					$("#pg_item").html("<?=t('Upload complete')?>");
+					$("#pg_item").html("<?=_('Upload complete')?>");
 				}
 			} else {
 				if( queryProgress.STATE == queryProgress.STATE_START || queryProgress.STATE == queryProgress.STATE_INIT ){
@@ -97,7 +97,7 @@ function queryProgress( uuid, startdate ) {
 				}
 				$("#styledprogress").width( Math.floor( 100 * data.downloaded / data.size ) + "%" );
 				$("#pg_speed").html( Math.floor( ( 1000 * data.downloaded / ( (new Date()).getTime() - startdate.getTime() ) ) / 1024 ) + " KB/s" );
-				$("#pg_item").html("<?=t('Uploading')?>: "+data.info);
+				$("#pg_item").html("<?=_("Uploading")?>: "+data.info);
 			}
 			if ( queryProgress.TIMER ){
 				clearTimeout( queryProgress.TIMER );
@@ -141,18 +141,18 @@ $(document).ready( function(){
 
 <div id="uploaddiv">
 <form action="/cgi-bin/upload.cgi" method="post" enctype="multipart/form-data" target="uploadframe"  id="uploadform"> 
-    <label><?=t('Upload to')?>: <?= $path ?></label>
+    <label><?=_('Upload to')?>: <?= $path ?></label>
 	<input type="hidden" name="uuid"  id="uuid" value="<? echo uniqid("upl");  ?>" />
 	<input type="hidden" name="uploadpath" value='<?= rawurlencode($path) ?>'/>
 	
 	<div id="uploads">
 		<div><input type="file" name="file1" id="file1" size="40"/></div>
 	</div>
-	<span><?=t("Maximum total upload is 2GByte.")?></span>
+	<span><?=_("Maximum total upload is 2GByte.")?></span>
 	<div id="pg_adder">
-		<input type="button" id="addmore" value="<?=t('Add entry')?>"/>
+		<input type="button" id="addmore" value="<?=_('Add entry')?>"/>
 	</div>	
-	<input type="submit" id="submitbutton" value="<?=t('Start upload')?>" disabled="disabled"  />
+	<input type="submit" id="submitbutton" value="<?=_('Start upload')?>" disabled="disabled"  />
 </form>
 <div id="progress"></div>
 </div>
@@ -160,14 +160,14 @@ $(document).ready( function(){
 <iframe name="uploadframe" id="uploadframe"></iframe>
 
 <div id="progressbar" style="display: none;">
-<span><?=t('Uploading to')?>: <?= $path ?></span>
+<span><?=_('Uploading to')?>: <?= $path ?></span>
 <table border="0" cellspacing="0" width="100%">
 	<tr>
-		<td style="font-size: smaller; font-weight: bold;"><?=t('Total Upload')?></td>
+		<td style="font-size: smaller; font-weight: bold;"><?=_('Total Upload')?></td>
 		<td style="text-align: left;" id="pg_size"></td>
 	</tr>
 	<tr>
-		<td style="font-size: smaller; font-weight: bold;"><?=t('Total Speed')?></td>
+		<td style="font-size: smaller; font-weight: bold;"><?=_('Total Speed')?></td>
 		<td style="text-align: left;" id="pg_speed"></td>
 	</tr>
 </table>
@@ -183,7 +183,7 @@ $(document).ready( function(){
 		<td style="font-size: smaller; font-weight: bold; text-align: center; " id="pg_item"></td>
 	</tr>
 	<tr>
-		<td><input type="button" value="<?=t('Close')?>" id="b_close" disabled="disabled"/></td>
+		<td><input type="button" value="<?=_("Close")?>" id="b_close" disabled="disabled"/></td>
 	</tr>
 </table>
 </div>
