@@ -1,8 +1,8 @@
-bubba-frontend (2.3.99.1) vincent; urgency=low
+bubba-frontend (2.3.99.2) vincent; urgency=low
 
   * Gettext support
 
- -- Carl Fürstenberg <carl@excito.com>  Mon, 22 Aug 2011 21:18:40 +0200
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 22 Aug 2011 21:26:36 +0200
 
 bubba-frontend (2.3.0.4) hugo; urgency=low
 
