@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: 2011-08-09 16:24+0100\n"
+"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:2
+#, fuzzy
+#| msgid ""
+#| "This backup service allows you to backup any data on your {PLATFORM} to a "
+#| "USB disk, an eSATA disk or to a remote server supporting FTP or SSH "
+#| "protocols. For instance you can create a backup from one {PLATFORM} to "
+#| "another using the SSH protocol, and using the EasyFind name as the "
+#| "“target server”."
+msgid ""
+"This backup service allows you to backup any data on your {PLATFORM} to a "
+"USB disk, an eSATA disk or to a remote server supporting FTP or SSH "
+"protocols. For instance you can create a backup from one {PLATFORM} to "
+"another using the SSH protocol, and using the EasyFind name as the “target "
+"server”."
+msgstr ""
+"Dieser Backup Dienst ermöglicht die Sicherung aller Daten Ihres {PLATFORM} "
+"auf eine externe USB- oder eSATA-Festplatte oder auf einen entfernten "
+"Fileserver, der FTP oder SSH Protokolle unterstützt. So kann z.B. unter "
+"Angabe des EasyFind Namen als Ziel, ein Backup eines {PLATFORM} auf einen "
+"Zweiten per SSH erstellt werden."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:6
+msgid ""
+"The backup service is timelined, hence you can choose to restore your data "
+"from any of the backup occasions. For instance if you create a backup job "
+"you run hourly, and need to restore a file to the state it had four hours "
+"earlier, this is possible."
+msgstr ""
+"Der Backup Service speichert die aufeinanderfolgenden Sicherungen zeitlich "
+"gegliedert, sodass die Daten verschiedener Sicherungen wiederhergestellt "
+"werden können. Wenn Sie z.B. stündlich eine Datensicherung fahren und den "
+"Stand einer Datei von vor 4 Stunden wiederherstellen wollen, so ist dies "
+"möglich."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:10
+msgid ""
+"The backup can also be run differentially. This means that it will only send "
+"changes that might have taken place in your data. If no changes are made, no "
+"data is being sent and no additional storage space is used on the target."
+msgstr ""
+"Die Datensicherung kann auch inkrementell erfolgen. In diesem Modus werden "
+"nur Änderungen gesichert. Wenn keine Änderungen stattgefunden haben, so "
+"werden auch keine Daten gespeichert und kein überflüssiger Speicherplatz "
+"belegt."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:14
+msgid ""
+"You can also choose to encrypt the backup. If you choose this, the backup is "
+"encrypted both during transfer to target and on the actual target. This "
+"allows you to send backups to untrusted servers without worrying that "
+"someone might read your backup data."
+msgstr ""
+"Sie haben die Wahl, die Datensicherung zu verschlüsseln. Dies betrifft "
+"sowohl die Übertragung der Daten, als auch die Speicherung der "
+"Datensicherung auf dem Zielspeicher. Somit können Sie eine Datensicherung "
+"auch auf Servern ablegen, dessen Vertrauenswürdigkeit Sie nicht einschätzen "
+"können."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:18
+msgid ""
+"<em>Note: If you misplace the password you use to create an encrypted "
+"backup, you will not be able to restore this backup!</em>"
+msgstr ""
+"<em>Achtung: Geht das Password einer verschlüsselten Datensicherung "
+"verloren, so können diese Daten nicht wiederhergestellt werden.</em>"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:21
+msgid "Create a backup"
+msgstr "Datensicherung erstellen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:24
+#, fuzzy
+#| msgid "Click the button “Add new backup job” and follow the wizard"
+msgid "Click the button “Add new backup job” and follow the wizard"
+msgstr ""
+"Wählen Sie die Funktion „Neues Backup erstellen“ und folgen Sie dem Ablauf"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:27
+#: admin/views/default/help/en/settings_backuprestore.html:33
+msgid "Restore a backup"
+msgstr "Datensicherung wiederherstellen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:30
+#, fuzzy
+#| msgid ""
+#| "Click the button “Restore” next to the date or time you wish to restore "
+#| "from."
+msgid ""
+"Click the button “Restore” next to the date or time you wish to restore from."
+msgstr ""
+"Klicken Sie auf die Funktion „Wiederherstellen“ und neben den Daten oder der "
+"Zeit, die Sie wiederherstellen wollen."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:33
+msgid "Restore a backup not using {PLATFORM}"
+msgstr "Datensicherungen ohne {PLATFORM} wiederherstellen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:36
+#, fuzzy
+#| msgid ""
+#| "If you in the future would like to restore a backup not using {PLATFORM}, "
+#| "this is possible, but only with full backups, and only if the backups are "
+#| "not encrypted. Browse to your backup target. The full backups are "
+#| "available as “snapshots” and compressed using gzip. Use any gzip "
+#| "uncompressor to directly access your data."
+msgid ""
+"If you in the future would like to restore a backup not using {PLATFORM}, "
+"this is possible, but only with full backups, and only if the backups are "
+"not encrypted. Browse to your backup target. The full backups are available "
+"as “snapshots” and compressed using gzip. Use any gzip uncompressor to "
+"directly access your data."
+msgstr ""
+"Sie können aus einem Backup auch Daten wiederherstellen ohne dazu den "
+"{PLATFORM} zu verwenden. Dies ist aber nur mit vollständigen (keinen "
+"inkrementellen) Backups möglich und nur, wenn diese nicht verschlüsselt "
+"wurden. Wählen Sie dazu die Datensicherung aus. Diese liegen als „Snapshot“ "
+"im gzip Format vor. Um die Daten wiederherzustellen können Sie ein gzip "
+"fähiges Kompressionsprogramm verwenden."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:40
+msgid "Save your backup jobs"
+msgstr "Sicherung ihrer backup planugen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:43
+msgid ""
+"As a security measure, perform a settings backup to save your backup jobs if "
+"you have to reinstall your {PLATFORM}. Click Settings in the menu and then "
+"Backup settings"
+msgstr ""
+"Die Einstellungen zu geplanten Datensicherungen (Backup jobs) können "
+"ebenfalls gespeichert werden, um Sie nicht zu verlieren, falls das "
+"Betriebssystem des {PLATFORM} wiederhergestellt werden soll. Wählen Sie dazu "
+"„Einstellungen“ und dann „Backup Einstellungen“."

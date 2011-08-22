@@ -27,7 +27,7 @@ $(document).ready(function(){
 								html: $('<button/>',
 									{ 
 										'class' : "submit",
-										html: $.message('button-label-edit'),
+										html: _("Edit"),
 										click: function(){open_edit_dialog_callback.apply(dialog, [data])}
 									}
 								)
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 		// This callback is fired each time click on "edit" is performed
 		var open_edit_dialog_callback = function(data) {
-			$("h2.fn-dialog-header", this).html($.message("album-users-edit-dialog-header", data.server));
+			$("h2.fn-dialog-header", this).html($.sprintf(_("Edit album viewer"), data.server));
 			$('form', this).trigger('reset');
 			edit_validator.resetForm();
 			$('input[name=username]', this).val(data.username);
@@ -62,7 +62,7 @@ $(document).ready(function(){
 					if( data.error ) {
 						update_status( false, data.html );
 					} else {
-						update_status( true, $.message("album-users-add-success-message") );
+						update_status( true, _("Viewer added") );
 						$.post(
 							config.prefix + "/album/users/json",
 							{},
@@ -87,7 +87,7 @@ $(document).ready(function(){
 					if( data.error ) {
 						update_status( false, data.html );
 					} else {
-						update_status( true, $.message("album-users-edit-success-message") );
+						update_status( true, _("Viewer updated") );
 						$.post( 
 							config.prefix + "/album/users/json", 
 							{},
@@ -109,11 +109,11 @@ $(document).ready(function(){
 				'uid': $('input[name=uid]', this).val()
 			};
 			$.confirm(
-				$.message("album-users-edit-dialog-delete-message"),
-				$.message("album-users-edit-dialog-delete-header"),
+				_("Delete this photo album viewer?"),
+				_("Delete photo album viewer"),
 				[
 					{
-						'label': $.message("album-users-edit-dialog-delete-button-label"),
+						'label': _("Delete viewer"),
 						'callback': function(){
 							delete_dialog_button_confirm_callback.apply(this, [post_data])
 						},
@@ -130,7 +130,7 @@ $(document).ready(function(){
 					if( data.error ) {
 						update_status( false, data.html );
 					} else {
-						update_status( true, $.message("album-users-delete-success-message") );
+						update_status( true, _("Viewer deleted") );
 						$.post( 
 							config.prefix + "/album/users/json", 
 							{},
@@ -153,7 +153,7 @@ $(document).ready(function(){
 			'',
 			[
 				{
-					'label': $.message("album-users-add-dialog-button-label"),
+					'label': _("Add new viewer"),
 					'callback': add_dialog_button_callback,
 					options: { id: 'fn-users-add-dialog-button' }
 				}	
@@ -166,7 +166,7 @@ $(document).ready(function(){
 
 		edit_dialog_buttons = [
 			{
-				'label': $.message("album-users-edit-dialog-button-label"),
+				'label': _("Update viewer"),
 				'callback': edit_dialog_button_update_callback,
 				options: { id: 'fn-users-edit-dialog-button' }
 			}
@@ -175,7 +175,7 @@ $(document).ready(function(){
 		if( allowed_to_delete ) {
 			edit_dialog_buttons.push(
 				{
-					'label': $.message("album-users-edit-dialog-delete-button-label"),
+					'label': _("Delete viewer"),
 					'callback': open_delete_dialog_callback,
 					options: { id: 'fn-users-edit-dialog-delete-button' }
 				}		
@@ -242,7 +242,7 @@ $(document).ready(function(){
 				}
 			}
 		);
-		$("h2.fn-dialog-header", add_dialog).html($.message("album-users-add-dialog-header"));
+		$("h2.fn-dialog-header", add_dialog).html(_("Add new viewer to the photo album"));
 
 		update_user_table( edit_dialog, user_accounts );
 

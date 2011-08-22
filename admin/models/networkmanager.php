@@ -39,38 +39,38 @@ class NetworkManager extends Model {
 
 		switch ($server_response['opcode']) {
 			case DBCONNECT:
-				$msg = t("Failed to connect to database.");
+				$msg = _("Failed to connect to database.");
 				break;
 			case UPDATE:
-				$msg = t("Unable to update IP on server.");
+				$msg = _("Unable to update IP on server.");
 				break;
 
 			case SETNAME:
-				$msg = t("Unable to set name on server.");
+				$msg = _("Unable to set name on server.");
 				break;
 
 			case CHECKNAME:
-				$msg = t("Name not available.");
+				$msg = _("Name not available.");
 				break;
 
 			case DISABLE:
-				$msg = t("Unable to disable 'easyfind' service.");
+				$msg = _("Unable to disable 'easyfind' service.");
 				break;
 
 			case VALIDATE:
-				$msg = t("Name is not valid.");
+				$msg = _("Name is not valid.");
 				break;
 
 			case CHANGENAME:
-				$msg = t("Unable to change name on server.");
+				$msg = _("Unable to change name on server.");
 				break;
 
 			case GETRECORD:
-				$msg = t("Unable to get record data from server.");
+				$msg = _("Unable to get record data from server.");
 				break;
 		}
 		if(isset($server_response['msg']) && $server_response['msg']) {
-			$msg .= "<br>".t("Server responded: ") . $server_response['msg'];
+			$msg .= "<br>"._("Server responded: ") . $server_response['msg'];
 		}
 
 		return $msg;

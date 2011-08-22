@@ -29,7 +29,7 @@
 			} else {
 				// clear all data
 				$update["success"]=true;
-				$update["message"]=t($ok_string);
+				$update["message"]=_($ok_string);
 			}
 		} else {
 			$update["success"]=false;

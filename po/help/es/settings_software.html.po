@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_software.html:2
+msgid "Software update"
+msgstr "Actualización de software"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:5
+#, fuzzy
+#| msgid ""
+#| "{PLATFORM}'s software can easily be updated to gain new functionality. "
+#| "Press 'Update system', and the update is automatically performed. Please "
+#| "have patient, it might take a while to perform an update."
+msgid ""
+"{PLATFORM}'s software can easily be updated to gain new functionality. Press "
+"'Update system', and the update is automatically performed. Please have "
+"patient, it might take a while to perform an update."
+msgstr ""
+"El software de {PLATFORM} puede ser actualizado fácilmente para obtener "
+"nuevas funcionalidades. Pulsa 'Actualizar sistema', y la actualización se "
+"realiza automáticamente. Por favor ten paciencia, puede llevar un rato "
+"realizar una actualización."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:8
+msgid ""
+"After an update, status information is shown. Press the '+' sign to show the "
+"complete message."
+msgstr ""
+"Tras la actualización, se muestra información de estado. Pulsa el signo '+' "
+"para mostrar el mensaje completo."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_software.html:11
+msgid "Hotfixes"
+msgstr "Parches"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:14
+#, fuzzy
+#| msgid ""
+#| "This feature collects status information from your {PLATFORM} and sends "
+#| "to Excito for automated analysis. The update server can then take "
+#| "appropriate actions if your system has problems. The system information "
+#| "is sent to Excito via an encrypted connection, and server responses are "
+#| "GPG signed to ensure the security and that the content is distributed by "
+#| "Excito."
+msgid ""
+"This feature collects status information from your {PLATFORM} and sends to "
+"Excito for automated analysis. The update server can then take appropriate "
+"actions if your system has problems. The system information is sent to "
+"Excito via an encrypted connection, and server responses are GPG signed to "
+"ensure the security and that the content is distributed by Excito."
+msgstr ""
+"Esta opción recoge información de estado de tu {PLATFORM} y la envía a "
+"Excito para un análisis automatizado. El servidor de actualizaciones puede "
+"decidir las acciones adecuadas si tu sistena tiene problemas. La información "
+"del sistema se envía a Excito mediante una conexión cifrada, y las "
+"respuestas del servidor se certifican con GPG para asegurar que el contenido "
+"es distribuído por Excito."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:18
+#, fuzzy
+#| msgid ""
+#| "By default this feature is enabled. Use the switch to disable Hotfixes. "
+#| "If doing so you might not get the most important updates to your "
+#| "{PLATFORM}."
+msgid ""
+"By default this feature is enabled. Use the switch to disable Hotfixes. If "
+"doing so you might not get the most important updates to your {PLATFORM}."
+msgstr ""
+"Por defecto ésta facilidad está activada. Utiliza el interruptor para "
+"desactivar los Parches. En este caso puede que no obtengas actualizaciones "
+"primordiales para tu {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:21
+#, fuzzy
+#| msgid ""
+#| "Any information collected by Excito will never be exposed to any other "
+#| "party than Excito. The information will only be used to pin point errors "
+#| "and perform the best matched updates for your {PLATFORM}."
+msgid ""
+"<strong>Any information collected by Excito will never be exposed to any "
+"other party than Excito. The information will only be used to pin point "
+"errors and perform the best matched updates for your {PLATFORM}.</strong>"
+msgstr ""
+"Cualquier información recogida por Excito no se facilitará nunca a otra "
+"compañia distita de Excito. La información solo se utilizará para recabar "
+"errores y facilitar las actualizaciones más pertinentes para tu {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:25
+msgid "All information that is collected is listed below."
+msgstr "Abajo se lista toda la información recogida."
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:28
+msgid "MAC address"
+msgstr "Dirección MAC"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:30
+msgid "IP addresses"
+msgstr "Direcciones IP"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:32
+msgid "Serial number and key"
+msgstr "Número de serie y clave"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:34
+msgid "RAM memory size"
+msgstr "Tamaño de memoria RAM"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:36
+msgid "CPU model"
+msgstr "Modelo de CPU"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:38
+#, fuzzy
+#| msgid "Status for the installed {PLATFORM} specific packages"
+msgid "Status for the installed {PLATFORM} specific packages"
+msgstr "Estado de los paquetes instalados específicamente en {PLATFORM}"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:40
+#, fuzzy
+#| msgid "The log file /tmp/{PLATFORM}-apt.log if existing"
+msgid "The log file /tmp/{PLATFORM}-apt.log if existing"
+msgstr "El fichero de log /tmp/{PLATFORM}-apt.log de existir"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:42
+msgid "Current software release version"
+msgstr "Actual versión de software distribuído"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:44
+msgid "Current running kernel"
+msgstr "Actual kernel en ejecución"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:46
+msgid "Root disc partition usage"
+msgstr "Uso de la partición raíz del disco"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/settings_software.html:48
+msgid "Disc partition setup (LVM/RAID)"
+msgstr "Configuración de particiones (LVM/RAID)"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_software.html:52
+msgid "Current package versions"
+msgstr "Versiones actuales de paquetes"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_software.html:55
+#, fuzzy
+#| msgid ""
+#| "Detailed information about {PLATFORM} software versions is shown here."
+msgid "Detailed information about {PLATFORM} software versions is shown here."
+msgstr ""
+"Aquí se muestra información detallada sobre las versiones de software de "
+"{PLATFORM}."

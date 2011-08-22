@@ -10,7 +10,6 @@ class Upload extends Controller{
 
 		$this->Auth_model->EnforceAuth('web_admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}		
 
 	function index(){

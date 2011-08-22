@@ -1,0 +1,59 @@
+<p>
+  {PLATFORM} has an built in firewall to protect your internal network and {PLATFORM} itself.
+</p>
+<h3>
+  <strong>Allow external (WAN) access {PLATFORM} services</strong>
+</h3>
+<p>
+  <strong><strong>SSH (Port 22)</strong> - Enables Secure Shell (SSH) to {PLATFORM} from WAN.</strong>
+</p>
+<p>
+  <strong>Email server (Port 25)</strong> - Enables access from WWW to {PLATFORM}'s port 25. This is the default email server port for sending and receiving email.
+</p>
+<p>
+  <strong>WWW (HTTP / HTTPS Ports 80 / 443)</strong> - Enables WWW traffic to {PLATFORM} from WAN.
+</p>
+<p>
+  <strong>Email (IMAP / IMAPS Ports 143 / 993)</strong> - Enables access from WWW to {PLATFORM}'s ports 143 and 993. These ports are used for sending and receiving email.
+</p>
+<p>
+  <strong>FTP (Port 21)/strong&gt; - Enables FTP connections from WAN to {PLATFORM}'s port 21.</strong>
+</p>
+<p>
+  <strong><strong>Downloader (Ports 10000-14000)</strong> - Enables faster torrent download. This rule opens the ports 10000-14000.</strong>
+</p>
+<p>
+  <strong>Respond to ping (ICMP type 8)</strong> - Enables ping from WAN. The default setting disables computers on the Internet to get a reply back from {PLATFORM} when it is being 'pinged'. This
+  increases the security.
+</p>
+<h3>
+  Advanced firewall settings
+</h3>
+<p>
+  Choose 'Port forward to internal network' or 'Open {PLATFORM}|2 port' with the radio buttons. The first will open a port from Internet (WAN) to a network device in your internal network (LAN). The later
+  one will open a port from Internet (WAN) to {PLATFORM}.
+</p>
+<p>
+  <strong>Source IP</strong> - The source IP on the WAN side that the port forward will be directed to. Enter 'all' if all the port forward are not directed to a specific IP address.
+</p>
+<p>
+  <strong>Public port</strong> - The port number on the WAN side. You can input a single port or a range of ports (ex. 4001:4005).
+</p>
+<p>
+  <strong>Private port</strong> - The port number on the LAN side. Enter a single start port if range is used in Public port (ex. 4001).
+</p>
+<p>
+  <strong>Private IP</strong> - The destination IP on the LAN side network that will be providing the virtual services (desired port forward).
+</p>
+<p>
+  <strong>Protocol</strong> - The protocol used for the virtual service: TCP or UDP.
+</p>
+<h3>
+  User defined open / forwarded ports
+</h3>
+<p>
+  This shows the enabled port forwards. Press the pen symbol to the right of the rule to edit the port forward. Press the red X to the right of the rule to delete the port forward.
+</p>
+<p>
+  <i>Update</i> saves your changes.
+</p>

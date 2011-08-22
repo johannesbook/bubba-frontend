@@ -15,14 +15,14 @@ $(document).ready( function() {
 		});
 	});
 	$('#recover_md').click(function() {
-		var dialog_element = $.dialog("", "<?=t("disk_raid_recover_title")?>", {});
-		dialog_element.text("<?=t("disk-examine-disks")?>.");
+		var dialog_element = $.dialog("", "<?=_("Recover RAID array")?>", {});
+		dialog_element.text("<?=_("Examining existing disks")?>.");
 		$.post(	'<?=site_url("ajax_disk/get_raid_disks")?>', {}, function(data) {
 			dialog_element.empty();
 			if( data.internal ) {
 				if( data.clean_disks.length > 0 ) {
 					// we got disks that can be used in RAID array
-					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_recover_broken_external_message")?>."}) );
+					dialog_element.html($('<p/>',{html:"<?=_("Select external disk to add to RAID array")?>."}) );
 
 					// Creating the dropdown of all available external disks
 					var select = $('<select/>', {id: 'external'});
@@ -39,25 +39,25 @@ $(document).ready( function() {
 					// Updating the buttons in the dialog
 					dialog_element.dialog(
 						'option','buttons', {
-							"<?=t('disk_raid_recover_broken_external_button_label')?>": function() {
+							"<?=_("Add disk to RAID array")?>": function() {
 								// Callback when choosing to create RAID
 								var external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
-								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=_("Warning")?>."}) );
 								dialog_element
-									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_external_warning_1")?>"}))
-									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_external_warning_2")?>"}));
+									.append($('<p/>',{html:"<?=_("Recovering the RAID array will <strong>destroy all content</strong> on the selected extenal disk")?>"}))
+									.append($('<p/>',{html:"<?=_("Continue to recover RAID?")?>"}));
 
 								// Updating the buttons in the dialog
 								dialog_element.dialog(
 									'option','buttons', {
-										"<?=t('disk_raid_recover_broken_external_button_label')?>": function() {
+										"<?=_("Add disk to RAID array")?>": function() {
 											// Callback when confirming creation of RAID
-											dialog_element.dialog('option', 'title', '<?=t("disk_raid_recover_broken_external_progress_title")?>');
+											dialog_element.dialog('option', 'title', '<?=_("Recovering external disk in RAID array")?>');
 											dialog_element.dialog('option', 'buttons', {}); // remove buttons
 											dialog_element.dialog('option', 'beforeclose', function(){return false;}); // prevent closing of dialog
-											dialog_element.html($("<p/>",{html:'<?=t("generic_dialog_text_please_wait")?>'}));
+											dialog_element.html($("<p/>",{html:'<?=_("Please wait...")?>'}));
 
 											// calling the actual RAID recovery, point of no return
 											$.post('<?=site_url("ajax_disk/recover_raid_broken_external")?>',{ external: external_device },
@@ -71,18 +71,18 @@ $(document).ready( function() {
 					);
 				} else {
 					// We have no disks to use as RAID array
-					dialog_element.html($("<p/>",{html:"<?=t("disk_raid_recover_broken_external_no_disks_message")?>."}) );
-					dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
+					dialog_element.html($("<p/>",{html:"<?=_("There are no usable external disks attached, please add an external e-SATA disk and try again")?>."}) );
+					dialog_element.dialog('option','buttons', {"<?=_("Close")?>": function() {dialog_element.dialog('close');}});
 				}
 
 			} else if(data.disks.length > 0) {
 				if( data.internal_got_mounts ) {
 					// There exists mounts under /home 
-					dialog_element.html($("<p/>",{html:"<?=t("disk_raid_recover_broken_internal_mount_exists_message")?>."}) );
-					dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
+					dialog_element.html($("<p/>",{html:"<?=_("There seem to be disks mounted, please unmount these and try again")?>."}) );
+					dialog_element.dialog('option','buttons', {"<?=_("Close")?>": function() {dialog_element.dialog('close');}});
 				} else {
 					// we got disks that can be used in RAID array
-					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_message")?>."}) );
+					dialog_element.html($('<p/>',{html:"<?=_("Select which external disk to recover RAID data from")?>."}) );
 
 					// Creating the dropdown of all available external disks
 					var select = $('<select/>', {id: 'external'});
@@ -100,25 +100,25 @@ $(document).ready( function() {
 					// Updating the buttons in the dialog
 					dialog_element.dialog(
 						'option','buttons', {
-							"<?=t('disk_raid_recover_broken_internal_button_label')?>": function() {
+							"<?=_("Recover internal disk")?>": function() {
 								// Callback when choosing to create RAID
 								var external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
-								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=_("Warning")?>."}) );
 								dialog_element
-									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_warning_1")?>"}))
-									.append($('<p/>',{html:"<?=t("disk_raid_recover_broken_internal_warning_2")?>"}));
+									.append($('<p/>',{html:"<?=_("Recovering the RAID array will <strong>destroy all content</strong> on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')")?>"}))
+									.append($('<p/>',{html:"<?=_("Continue to recover RAID?")?>"}));
 
 								// Updating the buttons in the dialog
 								dialog_element.dialog(
 									'option','buttons', {
-										"<?=t('disk_raid_recover_broken_internal_button_label')?>": function() {
+										"<?=_("Recover internal disk")?>": function() {
 											// Callback when confirming creation of RAID
-											dialog_element.dialog('option', 'title', '<?=t("disk_raid_recover_broken_internal_progress_title")?>');
+											dialog_element.dialog('option', 'title', '<?=_("Recovering internal disk in RAID array")?>');
 											dialog_element.dialog('option', 'buttons', {}); // remove buttons
 											dialog_element.dialog('option', 'beforeclose', function(){return false;}); // prevent closing of dialog
-											dialog_element.html($("<p/>",{html:'<?=t("generic_dialog_text_please_wait")?>'}));
+											dialog_element.html($("<p/>",{html:'<?=_("Please wait...")?>'}));
 
 											// calling the actual RAID recovery, point of no return
 											$.post('<?=site_url("ajax_disk/recover_raid_broken_internal")?>',{ external: external_device },
@@ -133,26 +133,26 @@ $(document).ready( function() {
 				};
 			} else {
 				// We have no disks to use as RAID array
-				dialog_element.html($("<p/>",{html:"<?=t("disk_raid_recover_broken_internal_no_raid_message")?>."}) );
-				dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
+				dialog_element.html($("<p/>",{html:"<?=_("No disks with RAID data found")?>."}) );
+				dialog_element.dialog('option','buttons', {"<?=_("Close")?>": function() {dialog_element.dialog('close');}});
 			}
 		}, 'json' );
 	});
 
 	$('#create_md_internal_external_mirror').click(function() {
-		var dialog_element = $.dialog("", "<?=t("disk_raid_create_title")?>", {});
-		dialog_element.text("<?=t("disk-examine-disks")?>.");
+		var dialog_element = $.dialog("", "<?=_("Create RAID array")?>", {});
+		dialog_element.text("<?=_("Examining existing disks")?>.");
 
 		$.post(	'<?=site_url("ajax_disk/get_external_disks")?>', { removable: !false, raid: false, usb: false }, function(data) {
 			dialog_element.empty();
 			if( data.internal_got_mounts ) {
 				// There exists mounts under /home 
-				dialog_element.html($("<p/>",{html:"<?=t("disk_raid_create_error_mounts_exists_message")?>."}) );
-				dialog_element.dialog('option','buttons', {"<?=t('button_label_cancel')?>": function() {dialog_element.dialog('close');}});
+				dialog_element.html($("<p/>",{html:"<?=_("There seem to be disks mounted, please unmount these and try again")?>."}) );
+				dialog_element.dialog('option','buttons', {"<?=_("Cancel")?>": function() {dialog_element.dialog('close');}});
 			} else {
 				if(data.disks.length) {
 					// we got disks that can be used in RAID array
-					dialog_element.html($('<p/>',{html:"<?=t("disk_raid_create_select_disk_message")?>."}) );
+					dialog_element.html($('<p/>',{html:"<?=_("Select which external disk to include in the array. An external disk with the same size is recommended")?>."}) );
 
 					// Creating the dropdown of all available external disks
 					var select = $('<select/>', {id: 'external'});
@@ -169,26 +169,26 @@ $(document).ready( function() {
 					// Updating the buttons in the dialog
 					dialog_element.dialog(
 						'option','buttons', {
-							"<?=t('disk_raid_create_button_label')?>": function() {
+							"<?=_("Create RAID")?>": function() {
 								// Callback when choosing to create RAID
 								external_device = select.val();
 
 								// The warning that now we are going to destroy any data on external disk
-								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=t("generic_dialog_text_warning")?>."}) );
+								dialog_element.html($("<h2/>",{'class':"ui-warning-highlight",html:"<?=_("Warning")?>."}) );
 								dialog_element
-									.append($('<p/>',{html:"<?=t("disk_raid_create_warning_1")?>"}))
-									.append($('<p/>',{html:"<?=t("disk_raid_create_warning_2")?>"}))
-									.append($('<p/>',{html:"<?=t("disk_raid_create_warning_3")?>"}));
+									.append($('<p/>',{html:"<?=_("Creating the RAID array will <strong>destroy all content</strong> on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage') and erase the selected external disk")?>"}))
+									.append($('<p/>',{html:"<?=_("Please make sure that you have backup of all files")?>"}))
+									.append($('<p/>',{html:"<?=_("Continue to create RAID?")?>"}));
 
 								// Updating the buttons in the dialog
 								dialog_element.dialog(
 									'option','buttons', {
-										"<?=t('disk_raid_create_button_label')?>": function() {
+										"<?=_("Create RAID")?>": function() {
 											// Callback when confirming creation of RAID
-											dialog_element.dialog('option', 'title', '<?=t("disk_raid_create_progress_title")?>');
+											dialog_element.dialog('option', 'title', '<?=_("Recovering RAID array")?>');
 											dialog_element.dialog('option', 'buttons', {}); // remove buttons
 											dialog_element.dialog('option', 'beforeclose', function(){return false;}); // prevent closing of dialog
-											dialog_element.html($("<p/>",{html:'<?=t("generic_dialog_text_please_wait")?>'}));
+											dialog_element.html($("<p/>",{html:'<?=_("Please wait...")?>'}));
 
 											// calling the actual RAID creation, point of no return
 											$.post('<?=site_url("ajax_disk/create_raid_internal_lvm_external")?>',{ level: 1, external: external_device },
@@ -203,8 +203,8 @@ $(document).ready( function() {
 
 				} else {
 					// We have no disks to use as RAID array
-					dialog_element.html($("<p/>",{html:"<?=t("disk_raid_create_error_no_disks_found_message")?>."}) );
-					dialog_element.dialog('option','buttons', {"<?=t('disk_raid_nodisk_label_cancel')?>": function() {dialog_element.dialog('close');}});
+					dialog_element.html($("<p/>",{html:"<?=_("No usable disk found")?>."}) );
+					dialog_element.dialog('option','buttons', {"<?=_("Close")?>": function() {dialog_element.dialog('close');}});
 				}
 			}
 

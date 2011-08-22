@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network.html:2
+msgid "Network profile"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:5
+msgid ""
+"Automatic settings will work in most cases, you do probably not need to "
+"change this. Read the technical manual if you need further information."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:8
+msgid ""
+"<strong>Automatic network settings</strong> - {PLATFORM} will automatically "
+"try to set an appropriate network configuration."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:11
+msgid ""
+"<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically "
+"try to retrieve network settings on WAN (internet), and use fixed network "
+"settings on the local network providing other computers with network "
+"information."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:15
+msgid ""
+"<strong>Server only</strong> - {PLATFORM} will automatically try to retreive "
+"network settings on LAN (local network) and the WAN port should be left "
+"unconnected."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:18
+msgid ""
+"After editing the network settings you might need to reboot your computers "
+"and other network devices in your LAN."
+msgstr ""

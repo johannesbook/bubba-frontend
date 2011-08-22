@@ -7,7 +7,6 @@ class Ajax_session extends Controller {
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 
 		$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
 		$this->output->set_header('Expires: '.gmdate('D, d M Y H:i:s', time()).' GMT');

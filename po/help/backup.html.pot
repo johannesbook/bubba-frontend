@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:2
+msgid ""
+"This backup service allows you to backup any data on your {PLATFORM} to a "
+"USB disk, an eSATA disk or to a remote server supporting FTP or SSH "
+"protocols. For instance you can create a backup from one {PLATFORM} to "
+"another using the SSH protocol, and using the EasyFind name as the “target "
+"server”."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:6
+msgid ""
+"The backup service is timelined, hence you can choose to restore your data "
+"from any of the backup occasions. For instance if you create a backup job "
+"you run hourly, and need to restore a file to the state it had four hours "
+"earlier, this is possible."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:10
+msgid ""
+"The backup can also be run differentially. This means that it will only send "
+"changes that might have taken place in your data. If no changes are made, no "
+"data is being sent and no additional storage space is used on the target."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:14
+msgid ""
+"You can also choose to encrypt the backup. If you choose this, the backup is "
+"encrypted both during transfer to target and on the actual target. This "
+"allows you to send backups to untrusted servers without worrying that "
+"someone might read your backup data."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:18
+msgid ""
+"<em>Note: If you misplace the password you use to create an encrypted "
+"backup, you will not be able to restore this backup!</em>"
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:21
+msgid "Create a backup"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:24
+msgid "Click the button “Add new backup job” and follow the wizard"
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:27
+#: admin/views/default/help/en/settings_backuprestore.html:33
+msgid "Restore a backup"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:30
+msgid ""
+"Click the button “Restore” next to the date or time you wish to restore from."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:33
+msgid "Restore a backup not using {PLATFORM}"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:36
+msgid ""
+"If you in the future would like to restore a backup not using {PLATFORM}, "
+"this is possible, but only with full backups, and only if the backups are "
+"not encrypted. Browse to your backup target. The full backups are available "
+"as “snapshots” and compressed using gzip. Use any gzip uncompressor to "
+"directly access your data."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:40
+msgid "Save your backup jobs"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:43
+msgid ""
+"As a security measure, perform a settings backup to save your backup jobs if "
+"you have to reinstall your {PLATFORM}. Click Settings in the menu and then "
+"Backup settings"
+msgstr ""

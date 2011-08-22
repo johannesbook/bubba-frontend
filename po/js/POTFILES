@@ -1,0 +1,10 @@
+admin/views/default/_js/album_users.js
+admin/views/default/_js/backup.js
+admin/views/default/_js/disk_progress.js
+admin/views/default/_js/filemanager.js
+admin/views/default/_js/login.js
+admin/views/default/_js/mail_retrieve.js
+admin/views/default/_js/mail_server.js
+admin/views/default/_js/stat.js
+admin/views/default/_js/main.js
+admin/views/default/_js/user.js

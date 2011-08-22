@@ -140,7 +140,7 @@ class Album_model extends Model {
 		$query = $this->DB->select('id')->from('users')->where( array( 'username' => $username ) )->get();
 		if( $query->num_rows() > 0 ) {
 			if( $uid != $query->row()->id ) {
-				throw new Exception(t("Username allready exists"));
+				throw new Exception(_("Username allready exists"));
 			}
 		}
 		if( $password == '' ) {

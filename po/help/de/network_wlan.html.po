@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr "speichert Ihre Änderungen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:2
+#, fuzzy
+#| msgid ""
+#| "{PLATFORM} can act as your access point, both in 'Router + Firewall + "
+#| "Server' or in 'Server only' mode."
+msgid ""
+"{PLATFORM} can act as your access point, both in 'Router + Firewall + "
+"Server' or in 'Server only' mode."
+msgstr ""
+"{PLATFORM} kann sowohl im \\'Router + Firewall + Server\\'-Modus als auch im "
+"\\'Nur Server\\'-Modus als Zugangspunkt fungieren."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wlan.html:5
+msgid "Wireless"
+msgstr "Wireless"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:8
+#, fuzzy
+#| msgid "- Switch to enable the wireless access point in {PLATFORM}."
+msgid ""
+"<strong>Wireless access point</strong> - Switch to enable the wireless "
+"access point in {PLATFORM}."
+msgstr "- Für die Aktivierung des Wireless-Accesspoint in {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:11
+#, fuzzy
+#| msgid ""
+#| "- This is the name that identifies a particular wireless network. The "
+#| "SSID can be up to 32 characters long."
+msgid ""
+"<strong>Network name (SSID)</strong> - This is the name that identifies a "
+"particular wireless network. The SSID can be up to 32 characters long."
+msgstr ""
+"- Dies ist der Name, der ein bestimmtes Netzwerk identifiziert. Die SSID "
+"darf max. 32 Zeichen lang sein."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:14
+#, fuzzy
+#| msgid ""
+#| "- The password (aka pass phrase) is a set of characters that must be "
+#| "entered exactly the same in both your {PLATFORM} and your network "
+#| "clients. Enter the password in ASCII characters. The length must be "
+#| "between 8 to 63 for WPA and 5 or 13 characters for WEP."
+msgid ""
+"<strong>Password</strong> - The password (aka pass phrase) is a set of "
+"characters that must be entered exactly the same in both your {PLATFORM} and "
+"your network clients. Enter the password in ASCII characters. The length "
+"must be between 8 to 63 for WPA and 5 or 13 characters for WEP."
+msgstr ""
+"- Das Passwort (Aka-Passphrase) ist eine Zeichenfolge, die sowohl bei "
+"{PLATFORM} als auch bei Ihren Netzwerk-Clienten exakt gleich eingegeben "
+"werden muss. Geben Sie das Passwort in ASCII-Zeichen ein. Das Passwort muss "
+"für WPA zwischen 8 und 63 Zeichen und für WEP 5 oder 13 Zeichen lang sein."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wlan.html:18
+msgid "Advanced wireless settings"
+msgstr "Erweiterte Wireless-Einstellungen"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:21
+#, fuzzy
+#| msgid ""
+#| "- Choose what frequency band to use. 802.11n operates at two frequencies: "
+#| "5 GHz and 2.4 GHz. Only devices which operate in the same frequency band "
+#| "can communicate with one another."
+msgid ""
+"<strong>Band</strong> - Choose what frequency band to use. 802.11n operates "
+"at two frequencies: 5 GHz and 2.4 GHz. Only devices which operate in the "
+"same frequency band can communicate with one another."
+msgstr "- dummy"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:25
+#, fuzzy
+#| msgid ""
+#| "- Select which 802.11 mode to operate in. Modes are as follows: 'Legacy "
+#| "mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode (802.11n + 802.11a/"
+#| "g)' - up to 300 Mbit/s."
+msgid ""
+"<strong>Mode</strong> - Select which 802.11 mode to operate in. Modes are as "
+"follows: 'Legacy mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode "
+"(802.11n + 802.11a/g)' - up to 300 Mbit/s."
+msgstr "- dummy"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:28
+#, fuzzy
+#| msgid ""
+#| "- Maximum transfer rate for 20 MHz is 130 Mbit/s. Maximum transfer rate "
+#| "for 40 MHz is 270 Mbit/s."
+msgid ""
+"<strong>Channel width</strong> - Maximum transfer rate for 20 MHz is 130 "
+"Mbit/s. Maximum transfer rate for 40 MHz is 270 Mbit/s."
+msgstr "- dummy"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:31
+#, fuzzy
+#| msgid ""
+#| "- Choose between WEP, WPA1 or WPA2. WEP is not recommended due to low "
+#| "security."
+msgid ""
+"<strong>Encryption</strong> - Choose between WEP, WPA1 or WPA2. WEP is not "
+"recommended due to low security."
+msgstr ""
+"- Wählen Sie zwischen WEP, WPA1 oder WPA2. WEP wird aufgrund der geringen "
+"Sicherheit nicht empfohlen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:34
+#, fuzzy
+#| msgid ""
+#| "- Select the channel on your wireless access point in {PLATFORM}. In "
+#| "areas with several wireless networks, lower transfer speeds may be "
+#| "experienced. Then try a different channel. Channel availability is "
+#| "different for different countries due to regulations."
+msgid ""
+"<strong>Channel</strong> - Select the channel on your wireless access point "
+"in {PLATFORM}. In areas with several wireless networks, lower transfer "
+"speeds may be experienced. Then try a different channel.  Channel "
+"availability is different for different countries due to regulations."
+msgstr ""
+"- Wählen Sie den Kanal für Ihren Wireless-Accesspoint in {PLATFORM}. In "
+"Gebieten mit mehreren Wireless-Netzwerken kann sich die "
+"Übertragungsgeschwindigkeit verlangsamen. Probieren Sie dann einen anderen "
+"Kanal. Die Kanalverfügbarkeit ist aufgrund der unterschiedlichen "
+"Regulierungen in jedem Land anders."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:38
+#, fuzzy
+#| msgid ""
+#| "- Show or hide {PLATFORM}s SSID for wireless devices. By default the SSID "
+#| "is broadcasted."
+msgid ""
+"<strong>Broadcast SSID</strong> - Show or hide {PLATFORM}s SSID for wireless "
+"devices. By default the SSID is broadcasted."
+msgstr ""
+"- SSID von {PLATFORM} für Wireless-Geräte ein- oder ausblenden. Die "
+"Standardeinstellung ist SSID zeigen."

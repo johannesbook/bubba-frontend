@@ -1,13 +1,13 @@
-    <div class="ui-state-default ui-widget-header ui-div-header"><?=t('Extend Logical Volume')?></div>
+    <div class="ui-state-default ui-widget-header ui-div-header"><?=_('Extend Logical Volume')?></div>
 	<div id="lvm">
 		<div class="ui-disk-lvm-content">
-			<label for="logical_volume"><?=t("Extend")?></label>
+			<label for="logical_volume"><?=_("Extend")?></label>
 			<select  <?= sizeof( $lvs ) == 0 ? 'disabled="disabled"' : '' ?> id="logical_volume" class="volume">
 				<?foreach( $lvs as $lv ):?>
 					<option value="<?=$lv?>"><?
 						switch($lv) {
 							case "bubba-storage":
-								print t("Home partition");
+								print _("Home partition");
 								break;
 							default:
 								print $lv;
@@ -16,13 +16,13 @@
 						?></option>
 				<?endforeach?>
 			</select> 
-			<?=t("with")?>
+			<?=_("with")?>
 			<select  <?=sizeof( $disks ) == 0 ? 'disabled="disabled"' : '' ?>  id="disk" class="disk">
 				<?foreach( $disks as $disk ):?>
 					<option value="<?=$disk?>"><?=$disk?></option>
 				<?endforeach?>
 			</select>
 		</div>
-		<input <?=(sizeof( $disks ) == 0 or sizeof( $lvs ) == 0) ? 'disabled="disabled"' : '' ?> type="button" class="button" id="extend" value="<?=t("Extend")?>" />
+		<input <?=(sizeof( $disks ) == 0 or sizeof( $lvs ) == 0) ? 'disabled="disabled"' : '' ?> type="button" class="button" id="extend" value="<?=_("Extend")?>" />
 	</div>
 

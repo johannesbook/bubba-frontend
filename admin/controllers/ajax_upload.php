@@ -12,7 +12,6 @@ class Ajax_upload extends Controller {
 		require_once(ADMINFUNCS);
 
 		$this->Auth_model->EnforceAuth('web_admin');
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 
 		$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
 		$this->output->set_header('Expires: '.gmdate('D, d M Y H:i:s', time()).' GMT');
@@ -36,7 +35,7 @@ class Ajax_upload extends Controller {
 			$res["info"] = $res["info"]["name"];
 		}
 		if( is_null($res) ) {
-			$this->json_data['html'] = t('Download not found');
+			$this->json_data['html'] = _('Download not found');
 			$this->json_data['user'] = $user;
 			$this->json_data['uuid'] = $uuid;
 		} else {

@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_fw.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_wlan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_lan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_wan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salve tus cambios.\n"
+"#-#-#-#-#  settings_trafficsettings.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network.html:2
+msgid "Network profile"
+msgstr "Perfil de red"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:5
+msgid ""
+"Automatic settings will work in most cases, you do probably not need to "
+"change this. Read the technical manual if you need further information."
+msgstr ""
+"La configuración automática funcionará en la mayoría de los casos, y no "
+"necesitarás cambiar esto. Lee el manual técnico si necesitas mayor "
+"información."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:8
+#, fuzzy
+#| msgid ""
+#| "- {PLATFORM} will automatically try to set an appropriate network "
+#| "configuration."
+msgid ""
+"<strong>Automatic network settings</strong> - {PLATFORM} will automatically "
+"try to set an appropriate network configuration."
+msgstr "- {PLATFORM} intentará establecer una configuración de red adecuada."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:11
+#, fuzzy
+#| msgid ""
+#| "- {PLATFORM} will automatically try to retrieve network settings on WAN "
+#| "(internet), and use fixed network settings on the local network providing "
+#| "other computers with network information."
+msgid ""
+"<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically "
+"try to retrieve network settings on WAN (internet), and use fixed network "
+"settings on the local network providing other computers with network "
+"information."
+msgstr ""
+"- {PLATFORM} obtendrá automáticamente la configuración de red para WAN "
+"(internet), y utiliza configuración de red fija en la red local poveyendo "
+"otros equipos con con información de red."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:15
+#, fuzzy
+#| msgid ""
+#| "- {PLATFORM} will automatically try to retreive network settings on LAN "
+#| "(local network) and the WAN port should be left unconnected."
+msgid ""
+"<strong>Server only</strong> - {PLATFORM} will automatically try to retreive "
+"network settings on LAN (local network) and the WAN port should be left "
+"unconnected."
+msgstr ""
+"- {PLATFORM} obtendrá automáticamente la configuración de red para LAN "
+"(local network) y el puerto WAN debe quedar desconectado."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:18
+msgid ""
+"After editing the network settings you might need to reboot your computers "
+"and other network devices in your LAN."
+msgstr ""
+"Tras editar la configuración de red puede ser necesario reiniciar tus "
+"ordenadores y otros dispositivos de tu LAN."

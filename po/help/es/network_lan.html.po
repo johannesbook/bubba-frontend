@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_lan.html:2
+msgid "LAN"
+msgstr "LAN"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:5
+#, fuzzy
+#| msgid ""
+#| "Here you configure how you reach your {PLATFORM} from computers in your "
+#| "Local Area Network (LAN). Your {PLATFORM} has an auto detect function on "
+#| "the LAN port. This means that when connected, {PLATFORM} will search the "
+#| "LAN for a DHCP server. If a DHCP server is found, {PLATFORM} will "
+#| "configure itself to obtain an IP address on the LAN port."
+msgid ""
+"Here you configure how you reach your {PLATFORM} from computers in your "
+"Local Area Network (LAN). Your {PLATFORM} has an auto detect function on the "
+"LAN port. This means that when connected, {PLATFORM} will search the LAN for "
+"a DHCP server. If a DHCP server is found, {PLATFORM} will configure itself "
+"to obtain an IP address on the LAN port."
+msgstr ""
+"Aquí configuras como acceder a {PLATFORM} desde ordenadores en tu LAN. Tu "
+"{PLATFORM} tiene una función de autodetección en el puerto LAN. Esto "
+"significa que al conectarse, {PLATFORM} buscará un servidor DHCP en la LAN. "
+"Si encuentra un servidor DHCP, {PLATFORM} se autoconfigura para obtener una "
+"dirección IP en el puerto LAN. Si no encuentra servidor DHCP."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:9
+#, fuzzy
+#| msgid ""
+#| "- Use this option if you use another DHCP server than {PLATFORM} in your "
+#| "LAN, for example a router or gateway. {PLATFORM} will obtain an IP "
+#| "address automatically."
+msgid ""
+"<strong>Obtain IP-address automatically</strong> - Use this option if you "
+"use another DHCP server than {PLATFORM} in your LAN, for example a router or "
+"gateway. {PLATFORM} will obtain an IP address automatically."
+msgstr ""
+"- Usa esta opción si utilizas otro servidor DHCP que {PLATFORM} en tu LAN, "
+"por ejemplo un router o gateway. {PLATFORM} obtendrá una dirección IP "
+"automáticamente."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:13
+#, fuzzy
+#| msgid ""
+#| "Your {PLATFORM} will be reached on this static IP address in your LAN. "
+#| "The default fall back IP is :"
+msgid ""
+"<strong>Use static IP address settings -</strong> Your {PLATFORM} will be "
+"reached on this static IP address in your LAN. The default fall back IP is : "
+"<a href='http://192.168.10.1' target= '_blank'>192.168.10.1</a>."
+msgstr ""
+"Tu {PLATFORM} es accesible en esta dirección IP en tu LAN. La IP último "
+"recurso es:"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_lan.html:18
+#, fuzzy
+#| msgid ""
+#| "- The Domain Name System (DNS) translates domain names into IP addresses. "
+#| "When you type in a domain name, the DNS server translates the name into "
+#| "the corresponding IP address."
+msgid ""
+"<strong>Enable DNS service</strong> - The Domain Name System (DNS) "
+"translates domain names into IP addresses. When you type in a domain name, "
+"the DNS server translates the name into the corresponding IP address."
+msgstr ""
+"- The Domain Name System (DNS) translates domain names into IP addresses. "
+"Cuando entras un nombre de dominio, el servidor DNS traduce el nombre a la "
+"dirección IP correspondiente."
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_lan.html:22
+#, fuzzy
+#| msgid ""
+#| "- The DHCP server gives out IP addresses when a device, connected into "
+#| "{PLATFORM}'s LAN port, is starting up and requests an IP address. The "
+#| "device must be set as a DHCP client to 'Obtain IP address automatically'."
+msgid ""
+"<strong>Enable DHCP server</strong> - The DHCP server gives out IP addresses "
+"when a device, connected into {PLATFORM}'s LAN port, is starting up and "
+"requests an IP address. The device must be set as a DHCP client to 'Obtain "
+"IP address automatically'."
+msgstr ""
+"- El servidor DHCP facilita direcciones IP cuando un dispositivo, conectado "
+"al puerto LAN de {PLATFORM}, se inicializa y solicita una dirección IP. El "
+"dispositivo debe estar configurado como un cliente DHCP para 'Obtener "
+"dirección IP automáticamente'."
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/network_lan.html:26
+#, fuzzy
+#| msgid ""
+#| "- The DHCP address pool (Lease range) contains the range of the IP "
+#| "address that will automatically be assigned to the clients (for example "
+#| "computers, media players) on the network."
+msgid ""
+"<strong>Lease range</strong> - The DHCP address pool (Lease range) contains "
+"the range of the IP address that will automatically be assigned to the "
+"clients (for example computers, media players)  on the network."
+msgstr ""
+"- El pool de direcciones DHCP(Lease range) contiene el rango de las "
+"direcciones IP que serán asignadas automáticamente a los clientes (por "
+"ejemplo ordenadores, difusores de media) en la red."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:31
+#, fuzzy
+#| msgid ""
+#| "- this requires that all equipment on the LAN works in this environment. "
+#| "Use with caution. That said, this feature can improve performance on file "
+#| "transfers between {PLATFORM} and Gigabit capable devices."
+msgid ""
+"<strong>Enable Jumbo frames</strong> - This option enables transmissions of "
+"larger data chunks on the LAN interface. <strong>WARNING</strong> - this "
+"requires that all equipment on the LAN works in this environment. Use with "
+"caution. That said, this feature can improve performance on file transfers "
+"between {PLATFORM} and Gigabit capable devices."
+msgstr ""
+"- esto requiere que todo el equipamiento de la LAN trabaja en este entorno. "
+"Usar con cuidado. Si es así, esta opción puede mejorar el rendimiento de la "
+"transferencia de ficheros entre {PLATFORM} y los dispositivos con capacidad "
+"Gigabit."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:35
+#, fuzzy
+#| msgid ""
+#| "- Shows the current network devices in your LAN when having {PLATFORM} as "
+#| "your router. If several network devices has the same hostname the last "
+#| "connected will be shown as a *."
+msgid ""
+"<strong>DHCP leases</strong> - Shows the current network devices in your LAN "
+"when having {PLATFORM} as your router. If several network devices has the "
+"same hostname the last connected will be shown as a *."
+msgstr ""
+"- Muestra los actuales dispositivos de red en tu LAN que tienen {PLATFORM} "
+"como tu router. Si varios dispositivos de red tienen el mismo hostname, el "
+"último conectado se verá como un *."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:39
+msgid ""
+"Please notice that the LAN settings are not editable in the profile "
+"'Automatic network settings', shown for information only."
+msgstr ""
+"Observa que la configuración de LAN no es editable en el perfil "
+"'Configuración automática de red', es mostrada a nivel informativo."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_fw.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_wlan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_lan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios.\n"
+"#-#-#-#-#  network_wan.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salve tus cambios.\n"
+"#-#-#-#-#  settings_trafficsettings.php.po (PACKAGE VERSION)  #-#-#-#-#\n"
+"salva tus cambios."

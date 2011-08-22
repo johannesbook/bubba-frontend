@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/users.html:2
+msgid "Users"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:5
+msgid ""
+"Here you find all the registered users on your {PLATFORM}. Click on 'Edit "
+"user' to change user information."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:8
+msgid ""
+"To allow the administrator to lok in remote (via the WAN port) edit the "
+"adminitrator user and click '<strong>Allow remote access to system settings</"
+"strong>'."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:11
+msgid "<strong>Allow shell login</strong> permitts a user to log in via SSH."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/users.html:14
+msgid "Add user"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:17
+msgid ""
+"Click '<strong>Add new user</strong>' and fill in the information to add a "
+"new user."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/users.html:20
+msgid "Edit user"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:23
+msgid ""
+"<strong>User name</strong> - Changing the user name (login name) is not "
+"possible. To achieve this you will have to delete the user and add a new "
+"user with the correct name."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:26
+msgid ""
+"<strong>Real name</strong> - To add the user's 'Real name'; fill in the "
+"information here."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:29
+msgid ""
+"<strong>Change password</strong> - The administrator can change every users "
+"password. Every user has the possibility to change their own password via "
+"their own log in. It is strongly suggested that the <strong>admin password "
+"is changed</strong> from the default password."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/users.html:33
+msgid ""
+"<strong>User language</strong> - Change the user interface language for the "
+"selected user."
+msgstr ""

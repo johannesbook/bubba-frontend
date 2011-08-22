@@ -140,14 +140,14 @@ function logout_dialog() {
 	
 	var buttons = [
         {
-            'label': $.message("logout-dialog-button-logout"),
+            'label': _("Logout"),
 			'callback': function(){window.location.href = config.prefix+"/logout";},
 			options: { 'id': 'fn-logout-dialog-button', 'class' : 'ui-element-width-100' }
 		}
 	];
 	$.confirm( 
-			$.message("logout-dialog-message"),
-			$.message("logout-dialog-title"),
+			"",
+			_("Proceed with logout?"),
 			buttons
 	);
 }

@@ -1,0 +1,469 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: admin/views/default/_js/mail_server.js:20
+msgid "' on server '"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:141
+#: admin/views/default/_js/filemanager.js:143
+msgctxt "button"
+msgid "Abort"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:167
+msgid "Add email account"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:232
+msgid "Add new email account"
+msgstr ""
+
+#: admin/views/default/_js/user.js:300
+msgid "Add new user"
+msgstr ""
+
+#: admin/views/default/_js/user.js:388
+msgid "Add new user to the system"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:156
+msgid "Add new viewer"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:245
+msgid "Add new viewer to the photo album"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:364
+msgid "Add to album"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:147
+msgctxt "button"
+msgid "Add to album"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:536
+msgid "Are you sure you want to permanently remove this backup job?"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:574
+msgid "Are you sure you want to run this backup job now?"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:657
+msgid "Are you sure? Any existing files will be overwritten."
+msgstr ""
+
+#: admin/views/default/_js/backup.js:32 admin/views/default/_js/backup.js:46
+msgid "Back"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:141
+#, javascript-format
+msgid "Backup job %s failed"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:591
+msgid ""
+"Backup job has been initialized to be executed at this particlular moment in "
+"time."
+msgstr ""
+
+#: admin/views/default/_js/backup.js:553
+msgid "Backup job was removed from the system"
+msgstr ""
+
+#: admin/views/default/_js/mail_server.js:14
+msgid "Cancel"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:354
+msgid "Change permissions"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:148
+msgctxt "button"
+msgid "Change permissions"
+msgstr ""
+
+#: admin/views/default/_js/disk_progress.js:41
+#: admin/views/default/_js/filemanager.js:128
+msgid "Close"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:252 admin/views/default/_js/backup.js:366
+msgid "Complete"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:658
+msgid "Confirm restore"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:142
+msgctxt "button"
+msgid "Copy"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:334
+msgid "Copy files"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:56
+msgctxt "button"
+msgid "Create"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:272
+msgid "Create folder"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:144
+msgctxt "button"
+msgid "Create folder"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:374
+#: admin/views/default/_js/mail_retrieve.js:123
+#: admin/views/default/_js/mail_retrieve.js:185
+msgid "Delete"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:145
+msgctxt "button"
+msgid "Delete"
+msgstr ""
+
+#: admin/views/default/_js/mail_server.js:13
+msgid "Delete account"
+msgstr ""
+
+#: admin/views/default/_js/mail_server.js:20
+msgid "Delete account for user '"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:120
+msgid "Delete email account?"
+msgstr ""
+
+#: admin/views/default/_js/mail_server.js:20
+msgid "Delete mail account"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:113
+msgid "Delete photo album viewer"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:112
+msgid "Delete this photo album viewer?"
+msgstr ""
+
+#: admin/views/default/_js/user.js:245
+msgid "Delete this user from the system?"
+msgstr ""
+
+#: admin/views/default/_js/user.js:257 admin/views/default/_js/user.js:258
+#: admin/views/default/_js/user.js:322
+msgid "Delete user"
+msgstr ""
+
+#: admin/views/default/_js/user.js:254
+msgid "Delete userdata?"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:116
+#: admin/views/default/_js/album_users.js:178
+msgid "Delete viewer"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:292
+msgid "Download as zip"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:30
+#: admin/views/default/_js/backup.js:161
+#: admin/views/default/_js/mail_retrieve.js:150
+#: admin/views/default/_js/user.js:100
+msgid "Edit"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:44
+msgid "Edit album viewer"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:14
+#, javascript-format
+msgid "Edit email account information for host <em>%s</em>"
+msgstr ""
+
+#: admin/views/default/_js/user.js:112
+msgid "Edit user"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:69
+msgid "Email account updated"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:133
+msgid "Failed"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:756
+msgid "File/Directory selector"
+msgstr ""
+
+#: admin/views/default/_js/login.js:55 admin/views/default/_js/login.js:113
+msgid "Login"
+msgstr ""
+
+#: admin/views/default/_js/main.js:143
+msgid "Logout"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:140
+msgctxt "button"
+msgid "Move"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:324
+msgid "Move files"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:26 admin/views/default/_js/backup.js:40
+msgid "Next"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:681
+#: admin/views/default/_js/mail_retrieve.js:142
+#: admin/views/default/_js/mail_retrieve.js:143
+#: admin/views/default/_js/user.js:96
+msgid "No"
+msgstr ""
+
+#: admin/views/default/_js/stat.js:79
+msgid "No more system messages available"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:236
+msgid "Only alphanumreric values are allowed for the name"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:128
+msgid "Pictures added"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:242
+msgid "Please enter a valid hostname or IPv4 address"
+msgstr ""
+
+#: admin/views/default/_js/stat.js:100
+msgid "Proceed to restart {PLATFORM}?"
+msgstr ""
+
+#: admin/views/default/_js/stat.js:96
+msgid "Proceed to shut down {PLATFORM}?"
+msgstr ""
+
+#: admin/views/default/_js/main.js:150
+msgid "Proceed with logout?"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:157
+msgid "Remove"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:537 admin/views/default/_js/backup.js:540
+msgid "Remove backup job"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:146
+msgctxt "button"
+msgid "Rename"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:344
+msgid "Rename files"
+msgstr ""
+
+#: admin/views/default/_js/stat.js:99 admin/views/default/_js/stat.js:101
+msgid "Restart"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:107
+msgid "Restore"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:641
+msgid "Restore backed up data"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:644
+msgid "Restore selected files and directories"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:578
+msgid "Run backup job"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:575
+msgid "Run backup job now"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:165
+msgid "Run now"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:759
+msgctxt "button"
+msgid "Select"
+msgstr ""
+
+#: admin/views/default/_js/stat.js:95 admin/views/default/_js/stat.js:97
+msgid "Shut down"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:210
+msgid "Succeeded to copy the file or folder"
+msgid_plural "Succeeded to copy the files and folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/default/_js/filemanager.js:212
+msgid "Succeeded to move the file or folder"
+msgid_plural "Succeeded to move the files and folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/default/_js/mail_retrieve.js:43
+msgid "Successfully added new email account"
+msgstr ""
+
+#: admin/views/default/_js/user.js:181
+msgid "Successfully added new user"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:88
+msgid "Successfully changed permission on the given files/folders"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:57
+msgid "Successfully created a folder"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:93
+msgid "Successfully deleted email account"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:105
+msgid "Successfully deleted the files/folders"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:73
+msgid "Successfully renamed the file/folder"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:128
+#, javascript-format
+msgid "Sucessfully added %d pictures to the album"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:121
+msgid "Sucessfully added pictures to the album"
+msgstr ""
+
+#: admin/views/default/_js/mail_retrieve.js:180
+#: admin/views/default/_js/user.js:313
+msgid "Update"
+msgstr ""
+
+#: admin/views/default/_js/user.js:21
+msgid "Update settings"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:169
+msgid "Update viewer"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:282
+msgid "Upload file"
+msgstr ""
+
+#: admin/views/default/_js/user.js:280
+msgid "User deleted"
+msgstr ""
+
+#: admin/views/default/_js/user.js:222
+msgid "User information updated"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:65
+msgid "Viewer added"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:133
+msgid "Viewer deleted"
+msgstr ""
+
+#: admin/views/default/_js/album_users.js:90
+msgid "Viewer updated"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:661
+#: admin/views/default/_js/mail_retrieve.js:142
+#: admin/views/default/_js/mail_retrieve.js:143
+#: admin/views/default/_js/user.js:96
+msgid "Yes"
+msgstr ""
+
+#: admin/views/default/_js/filemanager.js:255
+#, javascript-format
+msgid ""
+"You are about to copy one item. Go to the desired folder and press <span "
+"class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm copy"
+msgid_plural ""
+"You are about to copy %d items. Go to the desired folder and press <span "
+"class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm copy"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/default/_js/filemanager.js:251
+#, javascript-format
+msgid ""
+"You are about to move one item. Go to the desired folder and press <span "
+"class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm move"
+msgid_plural ""
+"You are about to move %d items. Go to the desired folder and press <span "
+"class=\"ui-icon ui-icon-check ui-helper-inline\"></span> to confirm move"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/default/_js/backup.js:57
+msgctxt "button"
+msgid "edit"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:136
+msgid "why?"
+msgstr ""
+
+#: admin/views/default/_js/backup.js:434
+msgid "{0} is already in use"
+msgstr ""

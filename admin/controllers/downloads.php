@@ -15,7 +15,6 @@ class Downloads extends Controller{
 		$this->Auth_model->EnforceAuth('web_admin');
 		$this->Auth_model->DenyUser('admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}		
 
 	function _renderfull($content){

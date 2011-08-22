@@ -1,0 +1,34 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_login.html:2
+#, fuzzy
+#| msgid "Welcome to {PLATFORM}!"
+msgid "Welcome to {PLATFORM}!"
+msgstr "Willkommen bei Excito {PLATFORM}!"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_login.html:5
+msgid ""
+"Listen to music, look at your photos, and access your emails and files. You "
+"have all your important information and fun just a mouse click away!"
+msgstr ""
+"Hören Sie Musik, betrachten Sie Ihre Fotos und greifen Sie auf Ihre E-Mails "
+"und Dateien zu. Ein einziger Mausklick bringt Sie zu allen wichtigen "
+"Informationen oder sorgt für unterhaltsame Abwechslung!"

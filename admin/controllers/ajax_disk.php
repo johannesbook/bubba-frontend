@@ -13,7 +13,6 @@ class Ajax_disk extends Controller {
 
 		$this->Auth_model->EnforceAuth('web_admin');
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 
 		$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s', time()).' GMT');
 		$this->output->set_header('Expires: '.gmdate('D, d M Y H:i:s', time()).' GMT');
@@ -167,7 +166,7 @@ class Ajax_disk extends Controller {
 			}
 		}
 		if( $our_md == null ) {
-			$this->json_data['html'] = t("Failed to aquire an RAID array containing the disk %s", $our_disk);
+			$this->json_data['html'] = sprintf(_("Failed to aquire an RAID array containing the disk %s"), $our_disk);
 		} else {
 			$this->json_data['error'] = 0;
 			$this->json_data['html'] = "";

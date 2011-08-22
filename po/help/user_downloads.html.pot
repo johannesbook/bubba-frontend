@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:2
+msgid "Downloads"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:5
+msgid ""
+"Use the {PLATFORM} download manager to download files directly to your "
+"{PLATFORM}, wherever you are. The only thing you need is a internet "
+"connection and a web browser."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:8
+msgid ""
+"Surf to www.-your easyfind name-.{EASYFIND}. Of course if you already are in "
+"your home network browse to http://{DEFAULT_HOST}/admin."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:11
+msgid ""
+"Large, time consuming downloads are handled by {PLATFORM} while your "
+"computer is turned off. When you initiate your first download a catalogue is "
+"created in your /home/[username]/ folder: /home/[username]/downloads."
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:15
+msgid "How to download"
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:18
+msgid ""
+"At home browse to http://{DEFAULT_HOST}/admin or away from home www.-your "
+"easyfind name-.{EASYFIND}/admin."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:20
+msgid "Log in as your standard user."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:22
+msgid "Click 'Downloads'."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:24
+msgid ""
+"To initiate a download you need to copy* the URL to the file (or torrent) "
+"you desire to download and paste it into the 'Location' field on your "
+"{PLATFORM} and click 'Add'."
+msgstr ""
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_downloads.html:26
+msgid "When the progress bar reaches 100% your download is completed."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:30
+msgid ""
+"*To copy the URL simply right click on the file (or torrent). Depending on "
+"which browser you use and what type of file you desire to download select "
+"the appropriate in the right click menu: 'Copy Shortcut', 'Copy Link "
+"Location', 'Copy Image Location'"
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_downloads.html:34
+msgid "More information"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:37
+msgid ""
+"As you add files for download, {PLATFORM} allocates disk space for the "
+"files. If you look in the /home/[username]/downloads/ catalogue it seems as "
+"if the files exist but as long as the progress bar still not has reached "
+"100% the files are not complete."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:41
+msgid ""
+"Currently the download manager support the standards HTTP, FTP and "
+"bittorrent downloads. You don't need to open any ports in your firewall when "
+"using the download manager, but for torrent downloads it is recommended to "
+"open the ports 10000-14000 in the Firewall settings."
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_downloads.html:45
+msgid ""
+"NOTE: When downloading bittorrents, note that the download manager will "
+"continue to share the file until you press 'Cancel' or 'Clear'."
+msgstr ""

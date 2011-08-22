@@ -12,7 +12,7 @@
 <meta http-equiv="Expires" content="0" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title><?=NAME?> - <?=t('title_'.$this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
+<title><?=NAME?> - <?=$this->menu->resolve($this->uri->segment(1))?> (<?=php_uname("n")?>)</title>
 
 <? /* <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.css?v='<?=$this->session->userdata('version')?>'" /> */ ?>
 <link rel="stylesheet" type="text/css" href="<?=FORMPREFIX.'/views/'.THEME?>/_css/jquery.ui.theme.default.css?v='<?=$this->session->userdata('version')?>'" />
@@ -50,11 +50,8 @@ config = <?=json_encode(
 </script>
 <!-- Internationalization -->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.sprintf.js?v='<?=$this->session->userdata('version')?>'"></script>
-<?if(file_exists(APPPATH.'views/'.THEME.'/i18n/'.LANGUAGE.'/messages.js')):?>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME.'/i18n/'.LANGUAGE.'/messages.js'?>?v='<?=$this->session->userdata('version')?>'"></script>
-<?else :?>
-<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME.'/i18n/default/messages.js'?>?v='<?=$this->session->userdata('version')?>'"></script>
-<?endif?>
+<script type="text/javascript" src="<?=FORMPREFIX.'/locale/'.LANGUAGE.'/LC_MESSAGES/bubba.json'?>?v='<?=$this->session->userdata('version')?>'"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/Gettext.js?v='<?=$this->session->userdata('version')?>'"></script>
 
 <!-- Sideboard gadgets -->
 <!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.compiled.js"></script><![endif]-->
@@ -71,6 +68,16 @@ config = <?=json_encode(
 
 
 <script type="text/javascript">
+
+    var gt = new Gettext({
+        'domain': 'bubba',
+        'locale_data': json_locale_data
+	});
+    function _ (msgid) { return gt.gettext(msgid); }
+    function gettext (msgid) { return gt.gettext(msgid); }
+    function ngettext (msgid, msgid_plural, n) { return gt.ngettext(msgid, msgid_plural, n); }
+    function npgettext (msgctxt, msgid, msgid_plural, n) { return gt.npgettext(msgctxt, msgid, msgid_plural, n); }
+    function pgettext (msgctxt, msgid) { return gt.pgettext(msgctxt, msgid); }
 
 var login_dialog;
 var window_music;
@@ -103,7 +110,7 @@ $(document).ready(function(){
 
 	help_dialog = $.dialog(
 		$('#fn-help-dialog').show(),
-		"<?=t('help_box_header')?>",
+		"<?=sprintf(_("%s Help"), NAME)?>",
 		{},
 		{autoOpen: false, 'modal' : false, dialogClass : "ui-help-box", position : ['right','top']});
 
@@ -213,7 +220,7 @@ $(document).ready(function(){
 
 	update_status(
 		<?=( isset($update['success']) && $update['success'] ) ? "true" : "false"?>,
-		"<?=isset($update['message']) ? t($update['message']) : ""?>"
+		"<?=isset($update['message']) ? _($update['message']) : ""?>"
 	);
 
 <?endif?>
@@ -267,15 +274,15 @@ if(isset($head)) {
 				<span id="topnav_status">
 	
             <?if ($this->Auth_model->CheckAuth("web_admin")) { ?>
-	            <?=t("topnav-authorized",$this->session->userdata("realname"))?>
+	            <?=sprintf(_("Logged in as '%s'"), $this->session->userdata("realname"))?>
             <?} else {?>
-	            <?=t("topnav-not-authorized")?>
+	            <?=_("Not logged in")?>
             <? } ?>
         </span>
-            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text"><?=t("topnav-logout")?></div></button>
-            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text"><?=t("topnav-home")?></div></button>
-            <button id="fn-topnav-settings" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-settings"></div><div id="s-topnav-settings" class="ui-button-text"><?=t("topnav-settings")?></div></button>
-            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text"><?=t("topnav-help")?></div></button>
+            <button id="fn-topnav-logout" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-logout"></div><div id="s-topnav-logout" class="ui-button-text"><?=_("Logout")?></div></button>
+            <button id="fn-topnav-home" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-home"></div><div id="s-topnav-home" class="ui-button-text"><?=_("Home")?></div></button>
+            <button id="fn-topnav-settings" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-settings"></div><div id="s-topnav-settings" class="ui-button-text"><?=_("Administration")?></div></button>
+            <button id="fn-topnav-help" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-help"></div><div id="s-topnav-help" class="ui-button-text"><?=_("Help")?></div></button>
 		</div>
 		</div>
             <a id="sideboard_switch" href="#" class="ui-icons ui-icon-open"></a>
@@ -289,11 +296,11 @@ if(isset($head)) {
                 
                 	<?if(isB3()) :?>
                 		<div id="main-excito-logo">
-					<a href="http://www.excito.com" target="_tab" class="ui-excito-link"><img id="ex_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/purple-X.png" alt="<?=t('Excito')?>" /></a>
+					<a href="http://www.excito.com" target="_tab" class="ui-excito-link"><img id="ex_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/purple-X.png" alt="<?=_("Excito")?>" /></a>
                 			<span id="ui-main-byExcito">by Excito Sweden</span>
                 		</div>
 		                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>'">
-                		<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/B3_logo.png" alt="<?=t("B3 start page")?>" title="<?=t("B3 start page")?>" />
+				<img id="img_logo" src="<?=FORMPREFIX.'/views/'.THEME?>/_img/B3_logo.png" alt="<?=_("B3 start page")?>" title="<?=_("B3 start page")?>" />
                 		</a>
 					<?else:?>                	
 		                <a href="#" id="a_logo" onclick="location.href='<?=FORMPREFIX?>'">
@@ -321,7 +328,7 @@ if(isset($head)) {
 <?/*
     <?if( $this->uri->total_segments() && ($this->uri->segment(1) != "login") ) :?>
 	    <div id="menu-trigger">
-	    	<button id="fn-menu-trigger" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-menu-trigger"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=t("Menu")?></div></button>
+		<button id="fn-menu-trigger" class="ui-button" role="button" aria-disabled="false"><div class="ui-icons ui-icon-menu-trigger"></div><div id="s-topnav-home" class="ui-button-text" style="display:none"><?=_("Menu")?></div></button>
 	    </div>
 	  <?endif?>
 */?>

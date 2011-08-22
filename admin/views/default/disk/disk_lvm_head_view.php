@@ -8,14 +8,14 @@ $(document).ready( function() {
 			return;
 		}
 		$.confirm( 
-			"<?=t("disk_lvm_extend_dialog_warning_message")?>", 
-			"<?=t("disk_lvm_extend_dialog_warning_title")?>", {
+			"<?=_("<p>This will erase all the data on the new, external device. Click 'Create LVM' to continue.</p> <p>Note: Removal of the new disk from the system will require a full system reinstallation.</p>")?>",
+			"<?=_("Extend Logical Volume")?>", {
 
-				"<?=t('disk_lvm_extend_dialog_warning_button_label')?>": function() {
-					$(this).dialog('option', 'title', '<?=t("disk_lvm_extend_dialog_title")?>');
+				"<?=_("Create LVM")?>": function() {
+					$(this).dialog('option', 'title', '<?=_("Extending disk")?>');
 					$(this).dialog('option', 'buttons', {}); // remove buttons
 					$(this).dialog('option', 'beforeclose', function(){return false;}); // prevent closing of dialog
-					$(this).html('<?=t("generic_dialog_text_please_wait")?>');
+					$(this).html('<?=_("Please wait...")?>');
 					$.post('<?=site_url("ajax_disk/add_to_lvm")?>',{ disk: disk, group: lv },
 						function(data) {
 							location.assign("/admin/disk/progress");

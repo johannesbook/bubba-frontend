@@ -9,10 +9,10 @@ current_band=<?=json_encode($current_band)?>;
 current_channel=<?=json_encode($current_channel)?>;
 capabilities=<?=json_encode($capabilities)?>;
 labels = {
-	legacy_2: <?=json_encode(t("wlan_title_legacy_mode_2"))?>,
-	legacy_1: <?=json_encode(t("wlan_title_legacy_mode_1"))?>,
-	mixed_2: <?=json_encode(t("wlan_title_mixed_mode_2"))?>,
-	mixed_1: <?=json_encode(t("wlan_title_mixed_mode_1"))?>
+	legacy_2: <?=json_encode(_("Legacy mode (802.11a)"))?>,
+	legacy_1: <?=json_encode(_("Legacy mode (802.11g)"))?>,
+	mixed_2: <?=json_encode(_("Mixed mode (802.11n + 802.11a)"))?>,
+	mixed_1: <?=json_encode(_("Mixed mode (802.11n + 802.11g)"))?>
 
 };
 
@@ -87,7 +87,7 @@ $(document).ready( function() {
             }
             opt = $("<option/>");
             opt.val(cur["channel"]);
-            opt.html("<?=t("Channel")?> " + cur["channel"] + " (" + cur["freq"] + " MHz)");
+            opt.html("<?=_("Channel")?> " + cur["channel"] + " (" + cur["freq"] + " MHz)");
             if( cur["channel"] == current_channel ) {
                 opt.attr("selected", "selected");
             }

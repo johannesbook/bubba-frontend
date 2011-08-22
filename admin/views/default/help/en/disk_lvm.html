@@ -1,0 +1,39 @@
+<h3>
+  Extending your disk
+</h3>
+<p>
+  Extend your home partition with an attached external disk. This will create a single logical volume of the internal home partition and an attached disk. In other words, you will experience one big
+  disk instead of two smaller. The total disk size will be the external disk size added to home partition size.
+</p>
+<h3>
+  Warning
+</h3>
+<p>
+  <strong>Please notice that this is a non reversible operation. After your system has been extended together with the external drive, your system will always need to be connected to the external
+  drive - and will not function without it. To be able to use your {PLATFORM} standalone again, you will need to reinstall the whole system.</strong>
+</p>
+<p>
+  <strong>An old LVM disk will automatically be connected and included into the {PLATFORM} system upon boot, even though you have not set up your {PLATFORM} for an LVM extension. It is impossible to remove the
+  extension without reinstallation. To format an old external LVM extended disk, connect the disk to a already running {PLATFORM}. Then choose 'Format' in the 'Disk -&gt; Information' menu.</strong>
+</p>
+<h3>
+  Create Extended disk (LVM)
+</h3>
+<ol>
+  <li>Attach a external disk, USB or eSATA. Please notice that the disk should be pre formatted, without old RAID or LVM systems.
+  </li>
+  <li>Select the 'Home partition' and the partition from the external disk (for example /dev/sdb).
+  </li>
+  <li>Click 'Extend partition'.
+  </li>
+  <li>Wait for the progress bar to complete.
+  </li>
+  <li>When finished, your system has been extended together with the external drive.
+  </li>
+</ol>
+<h3>
+  Remove Extended disk (LVM)
+</h3>
+<p>
+  To remove Extended disk (LVM) from your system you need to reinstall the whole system.
+</p>

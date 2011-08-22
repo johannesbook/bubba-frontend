@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-11 16:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/stat.html:2
+msgid "Status"
+msgstr "Estado"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:5
+#, fuzzy
+#| msgid ""
+#| "Here you find information about the installed hard drive size and "
+#| "remaining disk space, {PLATFORM} uptime and the installed software "
+#| "revision number."
+msgid ""
+"Here you find information about the installed hard drive size and remaining "
+"disk space, {PLATFORM} uptime and the installed software revision number."
+msgstr ""
+"Aquí encontrarás información sobre la utilización de espacio del disco, "
+"tiempo en marcha de {PLATFORM} y la versión de software instalado."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/stat.html:8
+msgid "System messages"
+msgstr "System messages"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:11
+msgid "Important notifications from the system will be shown here"
+msgstr "Las notificaciones importantes del sistema se muestran aquí"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:14
+#, fuzzy
+#| msgid ""
+#| "' button powers off {PLATFORM} in the same way as pressing the button on "
+#| "the backside of the unit. To start up again, press the button on the "
+#| "backside."
+msgid ""
+"The '<strong>Shutdown</strong>' button powers off {PLATFORM} in the same way "
+"as pressing the button on the backside of the unit. To start up again, press "
+"the button on the backside."
+msgstr ""
+"' desconecta {PLATFORM} de la misma forma que apretando el interruptor "
+"trasero del equipo. Para iniciar de nuevo, presiona el interruptor trasero."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:17
+#, fuzzy
+#| msgid "' button reboots {PLATFORM}."
+msgid "The '<strong>Restart</strong>' button reboots {PLATFORM}."
+msgstr "' rearranca {PLATFORM}."

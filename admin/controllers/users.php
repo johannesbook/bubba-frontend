@@ -9,7 +9,6 @@ class Users extends Controller{
 		require_once(ADMINFUNCS);
 		$this->Auth_model->EnforceAuth('web_admin');
 
-		load_lang("bubba",THEME.'/i18n/'.LANGUAGE);
 	}
 
 	private function _renderfull($content, $head = ''){
@@ -156,17 +155,17 @@ class Users extends Controller{
 					|| $password1 == ""
 					|| $password1 != $password2
 				) {
-					$error = t('users-add-account-validation-error');
+					$error = _('users-add-account-validation-error');
 				} else {
 					if(add_user($realname,$group,$shell,$password1,$username)){
-						$error = t('users-add-account-error');
+						$error = _('users-add-account-error');
 					}
 				}
 				if(!$error) {
 					$this->update_cfg("language",$lang,$username);
 				}
 			} else {
-				$error = t('users-add-account-validation-error');
+				$error = _('users-add-account-validation-error');
 			}
 			$data['success'] = !$error;
 			if( $error ) {
@@ -230,7 +229,7 @@ class Users extends Controller{
 					$data["update"]["message"] = "";
 					foreach($result_chpwd as $key => $error) {
 						if($error) {
-							$error .= " " . t($key);
+							$error .= " " . _($key);
 						}
 					}
 				}
@@ -256,10 +255,10 @@ class Users extends Controller{
 				}
 				*/
 				if( !$error && update_user($realname,$shell?'/bin/bash':'/usr/sbin/nologin',$username)){
-					$error = t("users-edit-account-error", $realname, $shell, $username);
+					$error = sprintf(_("Failed to edit account for %s (%3$s) shell: %2$s"), $realname, $shell, $username);
 				}		
 			} else {
-				$error = t("user_update_error_auth_fail");
+				$error = _("Authorization failure");
 			}
 			
 			$data['success'] = !$error;
@@ -272,7 +271,7 @@ class Users extends Controller{
 					'update', 
 					array(
 						'success' => $data['success'], 
-						'message' => isset($data['html']) ? $data['html'] : t('user_update_ok')
+						'message' => isset($data['html']) ? $data['html'] : _("User information updated")
 					) 
 				);
 			}
@@ -295,7 +294,7 @@ class Users extends Controller{
 
 				// TODO: fix this to only allow users with uid>999 to be deleted
 				if( $username == "root" || $username == "admin" ){		
-					$error = t('users-delete-bad-user-error');
+					$error = _('users-delete-bad-user-error');
 					exit();
 				}
 				if(del_user($username)==0){
@@ -303,19 +302,19 @@ class Users extends Controller{
 					if($userdata){
 						if(rm("/home/$username","root")==0){
 						}else{
-							$error = t('users-delete-userdata-error');
+							$error = _('users-delete-userdata-error');
 						}
 						try {
 							purge_horde( $username );
 						} catch( AdminException $e ) {
-							$error = t('users-delete-userdata-error');
+							$error = _('users-delete-userdata-error');
 						}
 					}
 				}else{
-					$error = t('users-delete-account-error');
+					$error = _('users-delete-account-error');
 				}
 			} else {
-				$error = t("generic-permission-denied");
+				$error = _("Permission denied");
 			}
 			$data['success'] = !$error;
 			if( $error ) {
@@ -348,11 +347,10 @@ class Users extends Controller{
 
 			$data["default_sideboard"] =  (!isset($conf["default_sideboard"]) || $conf["default_sideboard"]);
 			
-			$languages = get_languages();
-			ksort($languages,SORT_LOCALE_STRING);
+			$languages = $this->gettext->get_languages();
 
 			$default_lang["default"]["short_name"] = "";
-			$default_lang["default"]["long_name"] = t("System default");
+			$default_lang["default"]["long_name"] = _("System default");
 			$default_lang["default"]["status"] = "official";
 			
 			$data["available_languages"] = array_merge($default_lang,$languages);
@@ -394,21 +392,21 @@ class Users extends Controller{
 							$data['shell'] = true;
 						$data['realname'] = $ret['info']['realname'];
 						if($ret['info']["usr_existerr"])
-							$data['err']['uname'] .= t("Error, user exists")."<br>";
+							$data['err']['uname'] .= _("Error, user exists")."<br>";
 						if($ret['info']["usr_caseerr"])
-							$data['err']['uname'] .= t("Error, uppercase letters in username")."<br>";
+							$data['err']['uname'] .= _("Error, uppercase letters in username")."<br>";
 						if($ret['info']["usr_nonameerr"])
-							$data['err']['uname'] .= t("Error, no username")."<br>";
+							$data['err']['uname'] .= _("Error, no username")."<br>";
 						if($ret['info']["usr_spacerr"])
-							$data['err']['uname'] .= t("Error, space in username")."<br>";
+							$data['err']['uname'] .= _("Error, space in username")."<br>";
 						if($ret['info']["usr_charerr"])
-							$data['err']['uname'] .= t("Error, illegal characters in username")."<br>";
+							$data['err']['uname'] .= _("Error, illegal characters in username")."<br>";
 						if($ret['info']["usr_longerr"])
-							$data['err']['uname'] .= t("Error, username too long")."<br>";
+							$data['err']['uname'] .= _("Error, username too long")."<br>";
 						if($ret['info']["pwd_charerr"])
-							$data['err']['pwd'] .= t("Error, illegal characters in password")."<br>";
+							$data['err']['pwd'] .= _("Error, illegal characters in password")."<br>";
 						if($ret['info']["pwd_mismatcherr"])
-							$data['err']['pwd'] .= t("Error, passwords do not match")."<br>";
+							$data['err']['pwd'] .= _("Error, passwords do not match")."<br>";
 						if(!$data['err']['uname'])
 							unset($data['err']['uname']);
 						if(!$data['err']['pwd'])

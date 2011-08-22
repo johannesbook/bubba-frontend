@@ -38,9 +38,9 @@ createFileTree = function(obj) {
 								$.throbber.hide();
 								$('#image_' + file + ' > a' ).text( post.name );
 								if(data.error) {
-									update_status(false,"<?=t("Error updating image")?>");
+									update_status(false,"<?=_("Error updating image")?>");
 								} else {
-									update_status(true,"<?=t("Image updated")?>");
+									update_status(true,"<?=_("Image updated")?>");
 								}
 								//$('#tmp').html( data.html );
 							}, 'json' );
@@ -54,7 +54,7 @@ createFileTree = function(obj) {
 					image_metadata = $("<table class='metadata' />");
 					data_row = $("<tr />");
 					data_cell = $('<td />');
-					data_cell.append('<label for="name"><?=t("Image name")?>: </label>');
+					data_cell.append('<label for="name"><?=_("Image name")?>: </label>');
 					data_row.append(data_cell);
 					data_cell = $('<td />');
 					data_cell.append($('<input type="text" id="name"/>').attr('value', data.name));
@@ -64,7 +64,7 @@ createFileTree = function(obj) {
 
 					data_row = $("<tr />");
 					data_cell = $('<td />');
-					data_cell.append('<label for="caption"><?=t("Description")?>: </label>');
+					data_cell.append('<label for="caption"><?=_("Description")?>: </label>');
 					data_row.append(data_cell);
 					data_cell = $('<td />');
 					if(data.caption) {
@@ -78,9 +78,9 @@ createFileTree = function(obj) {
 
 					form.append(image_metadata);
 
-					del = $('<input type="button" value="<?=t("Remove from album")?>" />');
+					del = $('<input type="button" value="<?=_("Remove from album")?>" />');
 					del.click(function() {
-						$.confirm( '<?=t("Remove selected image from album?")?>', '',[
+						$.confirm( '<?=_("Remove selected image from album?")?>', '',[
 					{
 						'label': 'Remove',
 						'callback': function() {
@@ -93,9 +93,9 @@ createFileTree = function(obj) {
 								$('#image_' + file ).remove();
 								$('#album_edit_area').html("");
 								if(data.error) {
-									update_status(false,"<?=t("Error removing image")?>");
+									update_status(false,"<?=_("Error removing image")?>");
 								} else {
-									update_status(true,"<?=t("Image removed from album")?>");
+									update_status(true,"<?=_("Image removed from album")?>");
 								}
 							}, 'json' );
 		
@@ -104,7 +104,7 @@ createFileTree = function(obj) {
 						return false;
 					});
 					form.append(del);
-					form.append($('<input type="submit" value="<?=t("Update")?>" />'));
+					form.append($('<input type="submit" value="<?=_("Update")?>" />'));
 
 				}, 'json' );
 
@@ -146,9 +146,9 @@ createFileTree = function(obj) {
 								$.throbber.hide();
 								$('#album_' + dir + ' > a' ).text( post.name );
 								if(data.error) {
-									update_status(false,"<?=t("Error updating album")?>");
+									update_status(false,"<?=_("Error updating album")?>");
 								} else {
-									update_status(true,"<?=t("Album updated")?>");
+									update_status(true,"<?=_("Album updated")?>");
 								}
 							}, 'json' );
 						return false;
@@ -157,7 +157,7 @@ createFileTree = function(obj) {
 					album_metadata = $("<table class='metadata' />");
 					data_row = $("<tr />");
 					data_cell = $('<td />');
-					data_cell.append('<label for="name"><?=t("Album name")?>: </label>');
+					data_cell.append('<label for="name"><?=_("Album name")?>: </label>');
 					data_row.append(data_cell);
 					data_cell = $('<td />');
 					data_cell.append($('<input type="text" id="name"/>').attr('value', data.name));
@@ -167,7 +167,7 @@ createFileTree = function(obj) {
 
 					data_row = $("<tr />");
 					data_cell = $('<td />');
-					data_cell.append('<label for="caption"><?=t("Description")?>: </label>');
+					data_cell.append('<label for="caption"><?=_("Description")?>: </label>');
 					data_row.append(data_cell);
 					data_cell = $('<td />');
 					if(data.caption) {
@@ -180,13 +180,13 @@ createFileTree = function(obj) {
 					album_metadata.append(data_row);					
 
 					form.append(album_metadata);
-					del = $('<input type="button" value="<?=t("Delete album")?>" />');
+					del = $('<input type="button" value="<?=_("Delete album")?>" />');
 					form.append(del);
-					form.append($('<input type="submit" value="<?=t("Update")?>" />'));
+					form.append($('<input type="submit" value="<?=_("Update")?>" />'));
 					del.click(function() {
 						$.confirm( 
 							'Delete album "' + data.name +'"?', 
-							"<?=t('Delete album')?>",
+							"<?=_('Delete album')?>",
 							[
 								{
 								label : 'Delete album',
@@ -201,9 +201,9 @@ createFileTree = function(obj) {
 										$('#album_edit_area').html("");
 										$('#album_' + dir ).remove();
 										if(data.error) {
-											update_status(false,"<?=t("Error deleting album")?>");
+											update_status(false,"<?=_("Error deleting album")?>");
 										} else {
-										update_status(true,"<?=t("Album deleted")?>");
+										update_status(true,"<?=_("Album deleted")?>");
 										}
 									},
 									'json' 
@@ -245,7 +245,7 @@ createFileTree = function(obj) {
 								.append(
 									$('<label />')
 										.attr('for', 'public')
-										.text('<?=t("Allow anonymous access")?>: ')
+										.text('<?=_("Allow anonymous access")?>: ')
 								)
 								.append(
 									$("<input type='checkbox'/>")
@@ -271,7 +271,7 @@ createFileTree = function(obj) {
 							$('<div class="public_access"/>')
 								.append(
 									$('<label />')
-										.text('<?=t("Anonymous access not granted to parent album.")?>')
+										.text('<?=_("Anonymous access not granted to parent album.")?>')
 										.addClass("comment")
 								)
 							);
@@ -285,11 +285,11 @@ createFileTree = function(obj) {
 					tr.append(
 						$('<td />')
 						.addClass('username')
-						.text("<?=t("Viewer")?>")
+						.text("<?=_("Viewer")?>")
 					);
 					tr.append(
 						$('<td />')
-						.text( "<?=t("Access allowed")?>" )
+						.text( "<?=_("Access allowed")?>" )
 					);
 					box.append( tr );		
 
@@ -332,9 +332,9 @@ createFileTree = function(obj) {
 							}, function(data) {
 								$.throbber.hide();
 								if(data.error) {
-									update_status(false,"<?=t("Error updating user access to public")?>");
+									update_status(false,"<?=_("Error updating user access to public")?>");
 								} else {
-									update_status(true,"<?=t("Album access rights updated")?>");
+									update_status(true,"<?=_("Album access rights updated")?>");
 								}
 							}, 
 							'json'
@@ -359,9 +359,9 @@ createFileTree = function(obj) {
 							}, function(data) {
 								$.throbber.hide();
 								if(data.error) {
-									update_status(false,"<?=t("Error updating user access")?>");
+									update_status(false,"<?=_("Error updating user access")?>");
 								} else {
-									update_status(true,"<?=t("Album access rights updated")?>");
+									update_status(true,"<?=_("Album access rights updated")?>");
 								}
 							}, 
 							'json'
@@ -410,10 +410,10 @@ $(document).ready( function() {
 
 <table id="album" class="ui-table-outline ui-no-hover">
 <tr>
-	<th colspan="2" class="ui-state-default ui-widget-header"><?=t("Existing albums")?></th>
+	<th colspan="2" class="ui-state-default ui-widget-header"><?=_("Existing albums")?></th>
 </tr>
 <tr>
-	<td colspan="2"><div><?=t("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=t("filemanager")?></a></div></td>
+	<td colspan="2"><div><?=_("Adding images is done using the")?> <a href="/admin/filemanager/cd/home/storage/pictures"><?=_("filemanager")?></a></div></td>
 </tr>
 <tr>
 	<td><div id="album_list" /></td>
@@ -422,8 +422,8 @@ $(document).ready( function() {
 <tr></tr>
 <tr>
 	<td class="buttons" colspan="2">
-		<input id="add" type="button" value="<?=t('Create empty album')?>" />
-		<span class='user-group-comment' colspan='2'>(<?=t('Drag and drop to move images/albums')?>)</span>
+		<input id="add" type="button" value="<?=_('Create empty album')?>" />
+		<span class='user-group-comment' colspan='2'>(<?=_('Drag and drop to move images/albums')?>)</span>
 	</td>
 </tr>
 
