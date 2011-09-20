@@ -73,7 +73,51 @@ class Ajax_Settings extends Controller {
 		$this->json_data["disks"] = $usable_disks;
 		$this->json_data["nbrdisks"] = sizeof($usable_disks);
 	}
-	 
+
+  function get_versions() {
+      $versions = get_package_version(array("bubba","bubba3-kernel","bubba-frontend","bubba-backend","bubba-album","filetransferdaemon","squeezecenter"));
+      $this->session->set_userdata("version",$versions['bubba']);
+      $this->json_data = $versions;
+    }
+
+  function update(){
+      $this->load->helper('bubba_socket');
+      try {
+          switch( $this->input->post( 'action' ) ) {
+          case 'upgrade':
+              apt_upgrade_packages();
+              $output = apt_query_progress();
+              $this->json_data = json_decode($output);
+              break;
+          case 'install':
+              apt_install_package( $this->input->post( 'package' ) );
+              $output = apt_query_progress();
+              $this->json_data = json_decode($output);
+              break;
+          case 'progress':
+              $output = apt_query_progress();
+              $this->json_data = json_decode($output);
+              break;
+          }
+      } catch( BubbaSocketException $e ) {
+          if( $e->getCode() == BubbaSocketException::NO_SOCKET ) {
+              $this->json_data = array(
+                  'statusMessage' => 'Fatal error',
+                  'progress' => '100',
+                  'done' => true,
+                  'logs' => array(
+                      'ERROR' => array(
+                          array(
+                              'Code' => 'ERROR',
+                              'Desc' => 'Cannot connect to the updater daemon; Please contact support'
+                          )
+                      )
+                  )
+              );
+          }
+      }
+
+  }
   function _output($output) {
   	if(isset($this->json_data) && sizeof($this->json_data)) {
     	echo json_encode($this->json_data);

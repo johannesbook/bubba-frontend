@@ -1,7 +1,8 @@
 (
 	function($) {
-		$.progress = function jQuery_progress(range) {
-			this.range = range || 100;
+		$.progress = function jQuery_progress(range, precision) {
+            this.range = range || 100;
+            this.precision = typeof(precision) != 'undefined' ? precision : 2
 			this.boxDiv = $( '<div />' ).addClass('progress');
 			this.mainDiv = $( '<div />' ).addClass('progress-main');
 			this.meterDiv = $('<div />').addClass('progress-meter');
@@ -27,7 +28,7 @@
 			},
 			update: function( progress, status ) {
 				this.meterDiv.css( { 'width' : (progress / this.range * 100) + "%" } );
-				this.textDiv.text((progress / this.range * 100).toFixed(2) + "%");
+				this.textDiv.text((progress / this.range * 100).toFixed(this.precision) + "%");
 				this.statusDiv.text(status);
 			},
 			poke: function() {

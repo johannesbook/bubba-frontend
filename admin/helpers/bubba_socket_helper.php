@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class BubbaSocketException extends Exception {
+    const NO_SOCKET = 1;
 	public function __construct($message, $code = 0) {
 		$message .= " (" . socket_strerror($code) . ")";
 		parent::__construct($message, $code);
@@ -25,6 +26,9 @@ class BubbaSocket {
 
 		socket_set_nonblock( $this->_SOCKET );
 		if(!@socket_connect( $this->_SOCKET, $socket )){
+            if( $cmd === false ) {
+                throw new BubbaSocketException("Failed to connect to socket and no shell command was given", BubbaSocketException::NO_SOCKET);
+            }
 
 			$shell_cmd = implode(
 				' ',
@@ -105,8 +109,13 @@ class BubbaSocket {
 		print("<pre>$str</pre>");
 	}
 }
-
 class BubbaAptSocket extends BubbaSocket {
+	function __construct() {
+		parent::__construct( false, false, '/var/run/bubba-aptd.sock' );
+	}
+}
+
+class OldBubbaAptSocket extends BubbaSocket {
 	function __construct() {
 		parent::__construct( 
 			'/usr/lib/web-admin/updatebackend.pl', 
@@ -119,7 +128,7 @@ class BubbaAptSocket extends BubbaSocket {
 	}
 }
 
-class BubbaHotfixSocket extends BubbaSocket {
+class OldBubbaHotfixSocket extends BubbaSocket {
 	function __construct() {
 		parent::__construct( '/usr/lib/web-admin/hotfix.pl', array( '--mode=ithreads', '--daemonize' ), '/tmp/bubba-hotfix.socket' );
 	}
@@ -149,7 +158,6 @@ class BubbaDiskSocket extends BubbaSocket {
 		parent::__construct( '/usr/lib/web-admin/diskdaemon.pl', array( '--debug', '--mode=ithreads', '--daemonize' ), '/tmp/bubba-disk.socket' );
 	}
 }
-
 function apt_query_progress() {
 	$sock = new BubbaAptSocket();
 	$sock->say( json_encode( array( 'action' => 'query_progress' ) ) );
@@ -160,7 +168,7 @@ function apt_query_progress() {
 
 function apt_upgrade_packages() {
 	$sock = new BubbaAptSocket();
-	$sock->say( json_encode( array( 'action' => 'upgrade_packages' ) ) );
+    $sock->say( json_encode( array( 'action' => 'upgrade_packages') ) );
 	$ret = $sock->getline();
 	$sock->close();
 	return $ret;
@@ -174,16 +182,40 @@ function apt_install_package( $package ) {
 	return $ret;
 }
 
-function hotfix_query_progress() {
-	$sock = new BubbaHotfixSocket();
+function old_apt_query_progress() {
+	$sock = new OldBubbaAptSocket();
 	$sock->say( json_encode( array( 'action' => 'query_progress' ) ) );
 	$ret = $sock->getline();
 	$sock->close();
 	return $ret;
 }
 
-function hotfix_run( ) {
-	$sock = new BubbaHotfixSocket();
+function old_apt_upgrade_packages() {
+	$sock = new OldBubbaAptSocket();
+	$sock->say( json_encode( array( 'action' => 'upgrade_packages' ) ) );
+	$ret = $sock->getline();
+	$sock->close();
+	return $ret;
+}
+
+function old_apt_install_package( $package ) {
+	$sock = new OldBubbaAptSocket();
+	$sock->say( json_encode( array( 'action' => 'install_package', 'package' => $package ) ) );
+	$ret = $sock->getline();
+	$sock->close();
+	return $ret;
+}
+
+function old_hotfix_query_progress() {
+	$sock = new OldBubbaHotfixSocket();
+	$sock->say( json_encode( array( 'action' => 'query_progress' ) ) );
+	$ret = $sock->getline();
+	$sock->close();
+	return $ret;
+}
+
+function old_hotfix_run( ) {
+	$sock = new OldBubbaHotfixSocket();
 	$sock->say( json_encode( array( 'action' => 'run' ) ) );
 	$ret = $sock->getline();
 	$sock->close();

@@ -1,3 +1,9 @@
+bubba-frontend (2.3.1~pre1) hugo; urgency=low
+
+  * Rewritten system updater
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 13 Oct 2011 15:30:54 +0200
+
 bubba-frontend (2.3.0.2) vincent hugo; urgency=low
 
   * Backup schedule day fix

@@ -227,22 +227,22 @@ class Settings extends Controller{
 				$this->output->set_output( json_encode( array( 'done' => 1, 'stop' => 0, 'statusMessage' => 'Hotfix check disabled per request' ) ) );
 				return;
 			}
-			hotfix_run();
-			$output = hotfix_query_progress();
+			old_hotfix_run();
+			$output = old_hotfix_query_progress();
 			break;
 		case 'hotfix_progress':
-			$output = hotfix_query_progress();
+			$output = old_hotfix_query_progress();
 			break;
 		case 'upgrade':
-			apt_upgrade_packages();
-			$output = apt_query_progress();
+			old_apt_upgrade_packages();
+			$output = old_apt_query_progress();
 			break;
 		case 'install':
-			apt_install_package( $this->input->post( 'package' ) );
-			$output = apt_query_progress();
+			old_apt_install_package( $this->input->post( 'package' ) );
+			$output = old_apt_query_progress();
 			break;
 		case 'progress':
-			$output = apt_query_progress();
+			$output = old_apt_query_progress();
 			break;
 		case 'get_versions':
 			$versions = get_package_version(array("bubba","bubba3-kernel","bubba-frontend","bubba-backend","bubba-album","filetransferdaemon","squeezecenter"));
@@ -494,11 +494,8 @@ class Settings extends Controller{
 	function software($action = 'upgrade', $package = null ){
 		$data['action'] = $action;
 		$data['package'] = $package;
-		$hotfix_enabled = query_bubbacfg( 'admin', 'hotfix' );
-		if( is_null( $hotfix_enabled ) ) {
-			$hotfix_enabled = true;
-		}
-		$data['hotfix_enabled'] = $hotfix_enabled;
+        $data['version'] = file_get_contents(BUBBA_VERSION);
+
 		$this->_renderfull(
 			$this->load->view(THEME.'/settings/settings_software_view',$data,true),
 			$this->load->view(THEME.'/settings/settings_software_head_view',$data,true)

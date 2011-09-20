@@ -242,6 +242,11 @@ button:hover {
 	padding-left : 33px !important;
 }
 
+.ui-div-small-header {
+    font-size: 12px;
+    padding: 0.25em 1.2em;
+}
+
 label.error {
   -moz-border-radius-bottomleft: 1.5em !important;
   -moz-border-radius-topleft: 1.5em !important;
@@ -324,6 +329,11 @@ div.progress-warn {
 div.progress-notice {
   color: #000;
   font-weight: 500;
+}
+
+div.progress-text {
+    margin-left: .5em;
+    margin-right: .5em;
 }
 
 body {
