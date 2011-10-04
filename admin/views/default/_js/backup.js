@@ -171,7 +171,10 @@ $(function(){
                     toggleClass('disabled', data.running);
 
                 }
-            );
+			);
+
+			// Trigger first entry in list. Bug #1698
+			$('.fn-backup-job-entry').first().trigger('click');
             },
             "json"
         );
