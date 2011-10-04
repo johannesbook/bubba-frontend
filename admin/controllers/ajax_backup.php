@@ -175,7 +175,7 @@ class Ajax_backup extends Controller {
         if (file_exists($path) && is_dir($path) && is_readable($path)) {
             if ($dh = opendir($path)) {
                 while (($file = readdir($dh)) !== false) {
-                    if( $file == '.'  || $file == '..' || !is_dir($path) ) {
+                    if( $file == '.'  || $file == '..' || $file == 'lost+found' || !is_dir($path) ) {
                         continue;
                     }
                     $filename = $path . '/' . $file;
