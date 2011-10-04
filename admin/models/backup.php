@@ -307,6 +307,9 @@ class Backup extends Model {
     public function get_jobs() {
         $dir = "/home/admin/.backup";
         $jobs = array();
+		if(!is_dir($dir)) {
+			return $jobs;
+		}
         foreach( scandir($dir) as $file ) {
             if( !is_dir( "$dir/$file" ) || $file == "." || $file == ".." ) {
                 continue;
