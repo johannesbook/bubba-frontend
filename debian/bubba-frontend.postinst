@@ -24,7 +24,7 @@
 case "$1" in
 	configure)
 		# Enact all probable php cfonfiguration script/modules
-		if dpkg --compare-versions "$2" le "1.0.13-21"; then
+		if dpkg --compare-versions "$2" le "2.4"; then
 			# Enact all probable php cfonfiguration script/modules
 
 			php5="/etc/php5";
@@ -32,9 +32,9 @@ case "$1" in
 
 			php5_sapi="cgi cli apache2";
 
-			php5_cgi_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
-			php5_cli_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
-			php5_apache2_modules="gd.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
+			php5_cgi_modules="gd.ini intl.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
+			php5_cli_modules="gd.ini intl.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
+			php5_apache2_modules="gd.ini intl.ini imap.ini mcrypt.ini mysqli.ini mysql.ini pdo.ini pdo_mysql.ini xcache.ini bubbainfo.ini";
 
 
 			for sapi in $php5_sapi; do

@@ -30,6 +30,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
  libjs-jquery (>= 1.4.2),
  libjs-jquery-ui (>= 1.8),
  libxml-libxml-perl (>= 1.66-1),
- libbubba-info-php
+ libbubba-info-php,
+ php5-intl
 Description: The codeigniter based frontend for the Bubba web-admin
  The frontend consists of a codeigniter based admin-interface
