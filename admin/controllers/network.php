@@ -1032,11 +1032,7 @@ class Network extends Controller{
 		if(isset($data['wiz_data']['back'])) {
 			redirect("/users/wizard");
 		}
-		if(isB3()) {
-			$data['wiz_data']['easyfind']['domain'] = B3_EASYFINDDOMAIN;
-		} else {
-			$data['wiz_data']['easyfind']['domain'] = DEFAULT_EASYFINDDOMAIN;
-		}
+		$data['wiz_data']['easyfind']['domain'] = EASYFIND;
 
 		if(isset($data['wiz_data']['cancel'])) {
 			exit_wizard();
@@ -1100,11 +1096,7 @@ class Network extends Controller{
 				if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['wiz_data']['easyfind']['name'],$host)) {
 					$data['wiz_data']['easyfind']['name'] = $host[1];
 				}
-				if(isB3()) {
-					$data['wiz_data']['easyfind']['domain'] = B3_EASYFINDDOMAIN;
-				} else {
-					$data['wiz_data']['easyfind']['domain'] = DEFAULT_EASYFINDDOMAIN;
-				}
+				$data['wiz_data']['easyfind']['domain'] = EASYFIND;
 				
 				if($strip){
 					$this->load->view($this->load->view(THEME.'/network/network_wizard_view',$data));

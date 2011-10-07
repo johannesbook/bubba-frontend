@@ -782,12 +782,7 @@ class Settings extends Controller{
 					# easyfind selected to be enabled
 					$valid = $this->networkmanager->easyfind_validate($easyfind_name);
 					if($valid) {
-						if(isB3()) {
-							$domain = B3_EASYFINDDOMAIN;
-						} else {
-							$domain = DEFAULT_EASYFINDDOMAIN;
-						}
-						$server_response = $this->networkmanager->easyfind_setname($easyfind_name.".".$domain);
+						$server_response = $this->networkmanager->easyfind_setname($easyfind_name.".".EASYFIND);
                         $this->networkmanager->enable_igd_easyfind(true);
 						if($server_response['error']) {
 							$msg = $this->networkmanager->decode_easyfindmsg($server_response);

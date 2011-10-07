@@ -69,11 +69,6 @@
 			
 			<td><?=_('Easyfind name')?>:</td>
 			<?
-			if(isB3()) {
-				$e_domain = B3_EASYFINDDOMAIN;
-			} else {
-				$e_domain = DEFAULT_EASYFINDDOMAIN;
-			}
 			if(isset($easyfind['name']) && $easyfind['name']) {
 				$e_name = $easyfind['name'];
 			} else {
@@ -89,7 +84,7 @@
 					<?if(! (isset($easyfind['name']) && $easyfind['name']) ):?>disabled="disabled"<?endif?>
 
 				/>
-				<br>(http://<span id="fn-settings-easyfind-url"><?=$e_name?></span>.<?=$e_domain?>)</br>
+				<br>(http://<span id="fn-settings-easyfind-url"><?=$e_name?></span>.<?=EASYFIND?>)</br>
 			</td>
 		</tr>
 
