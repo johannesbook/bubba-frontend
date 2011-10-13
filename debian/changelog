@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre16) hugo; urgency=low
+
+  * bubba-frontend next
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 13 Oct 2011 15:42:59 +0200
+
 bubba-frontend (2.3.1~pre1) hugo; urgency=low
 
   * Rewritten system updater
