@@ -165,6 +165,7 @@ class Downloads extends Controller{
 
 	function index(){
 		$data["uuid"]=uniqid("ftd");
+        $data['enabled'] = query_service("filetransferdaemon");
 
 		$this->_renderfull($this->load->view(THEME.'/downloads/downloads_index_view',$data,true));
 	}	
