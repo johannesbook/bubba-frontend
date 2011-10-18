@@ -13,7 +13,7 @@ class Settings extends Controller{
 
 	}
 	
-	function _renderfull($content,$head=null){
+	function _renderfull($content,$head=null, $mdata){
 
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
@@ -717,111 +717,118 @@ class Settings extends Controller{
 		$this->load->model('networkmanager');
 		$this->load->helper('update_msg');
 
-		$errors = array();
 		$update = false;
 		$data['workgroup'] = $current_workgroup = get_workgroup();
 		$data['hostname'] = $current_hostname = php_uname('n');
 		$data['easyfind'] = $current_easyfind = $this->networkmanager->get_easyfind();
 		
-		if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['easyfind']['name'],$host)) {
-			$data['easyfind']['name'] = $host[1];
-		}
+		try {
+			if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['easyfind']['name'],$host)) {
+				$data['easyfind']['name'] = $host[1];
+			}
 
 
-		if( $this->input->post("samba_update") ) {
-			$update = true;
-			# we update samba
+			if( $this->input->post("samba_update") ) {
+				$update = true;
+				# we update samba
 
-			# Get input hostname and workgroup
-			$hostname=$this->input->post("hostname");
-			$workgroup=$this->input->post('workgroup');
+				# Get input hostname and workgroup
+				$hostname=$this->input->post("hostname");
+				$workgroup=$this->input->post('workgroup');
 
-			$restart_services = false;
+				$restart_services = false;
 
-			if( $hostname != $current_hostname ) {
-				# Hostname is updated
-				if(preg_match("/^[A-Za-z0-9-]+$/",$hostname)){
-					# Valid hostname given
-					if(change_hostname($hostname)){
-						# we failed to update hostname
-						$errors["settings_identity_error_change_hostname"]=true;
-					}else{
+				if( $hostname != $current_hostname ) {
+					# Hostname is updated
+					if(preg_match("/^[A-Za-z0-9-]+$/",$hostname)){
+						# Valid hostname given
+						if(change_hostname($hostname)){
+							# we failed to update hostname
+							throw new Exception(_("Failed to change hostname"));
+						}
 						$restart_services=true;
 						$data['hostname'] = $hostname;
+					}else{
+						# invalid hostname
+						throw new Exception(sprintf(_("Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid"),$hostname));
 					}
-				}else{
-					# invalid hostname
-					$errors["settings_identity_error_invalid_hostname"]=array($hostname);
 				}
-			}
 
-			if( $workgroup != $current_workgroup ) {
-				// TODO : Add errorchecking
-				set_workgroup($workgroup);
-				$restart_services=true;
-				$data['workgroup'] = $workgroup;
+				if( $workgroup != $current_workgroup ) {
+					// TODO : Add errorchecking
+					set_workgroup($workgroup);
+					$restart_services=true;
+					$data['workgroup'] = $workgroup;
 
-			}
-
-			if ($restart_services){
-				if(query_service("samba")){
-					restart_samba();
 				}
-			} else {
-				# We just clicked on the update button
-				$update = false;
-			}
 
-		} elseif( $this->input->post("easyfind_update") ) {
-			$easyfind_name = $this->input->post('easyfind_name');
-			$easyfind_enable = $this->input->post('easyfind_enabled');
-			if( isset($easyfind_name) && ( $easyfind_name  != $current_easyfind['name'] ) && $easyfind_enable) {
-				# we update easyfind
-				$update = true;
-				if( $easyfind_enable ) {
-					# easyfind selected to be enabled
-					$valid = $this->networkmanager->easyfind_validate($easyfind_name);
-					if($valid) {
-						$server_response = $this->networkmanager->easyfind_setname($easyfind_name.".".EASYFIND);
-                        $this->networkmanager->enable_igd_easyfind(true);
-						if($server_response['error']) {
-							$msg = $this->networkmanager->decode_easyfindmsg($server_response);
-							$errors[$msg] = true;
-						} else {
+				if ($restart_services){
+					if(query_service("samba")){
+						restart_samba();
+					}
+				} else {
+					# We just clicked on the update button
+					$update = false;
+				}
+
+			} elseif( $this->input->post("easyfind_update") ) {
+				$easyfind_name = $this->input->post('easyfind_name');
+				$easyfind_enable = $this->input->post('easyfind_enabled');
+				if( isset($easyfind_name) && ( $easyfind_name  != $current_easyfind['name'] ) && $easyfind_enable) {
+					# we update easyfind
+					$update = true;
+					if( $easyfind_enable ) {
+						# easyfind selected to be enabled
+						$valid = $this->networkmanager->easyfind_validate($easyfind_name);
+						if($valid) {
+							$server_response = $this->networkmanager->easyfind_setname($easyfind_name.".".EASYFIND);
+							$this->networkmanager->enable_igd_easyfind(true);
+							if($server_response['error']) {
+								$msg = $this->networkmanager->decode_easyfindmsg($server_response);
+								throw new Exception(sprintf(_("Easyfind failed with following error: %s"), $msg));
+							}
 							$data['easyfind'] = $server_response['record'];
 							// strip the domain from the name
 							if(preg_match("/(.*)\.([\d\w]+\.\w+)$/",$data['easyfind']['name'],$host)) {
 								$data['easyfind']['name'] = $host[1];
 							}
+
+						} else {
+							$data['easyfind']['name'] = $easyfind_name;
+							throw new Exception(sprintf(_("Name '%s' is not valid"), $easyfind_name));
 						}
-						
-					} else {
-						$msg = sprintf(_("Name '%s' is not valid"), $easyfind_name);
-						$data['easyfind']['name'] = $easyfind_name;
-						$errors[$msg] = true;
 					}
-				}
-			} elseif (!$easyfind_enable) {
-				// disable easyfind
-				$update = true;
-			
-				$server_response = $this->networkmanager->easyfind_setname("");
-                $this->networkmanager->enable_igd_easyfind(false);
-				if($data['easyfind']['error'] != "false") {
-					$msg = $this->networkmanager->decode_easyfindmsg($data['easyfind']);
-					$errors[$msg] = true;
-				} else {
+				} elseif (!$easyfind_enable) {
+					// disable easyfind
+					$update = true;
+
+					$server_response = $this->networkmanager->easyfind_setname("");
+					$this->networkmanager->enable_igd_easyfind(false);
+					if($data['easyfind']['error'] != "false") {
+						$msg = $this->networkmanager->decode_easyfindmsg($data['easyfind']);
+						throw new Exception(sprintf(_("Easyfind failed with following error: %s"), $msg));
+					}
 					$data['easyfind']['name'] = "";
+				} else {
+					# We just clicked on the update button
+					$update = false;
 				}
-			} else {
-				# We just clicked on the update button
-				$update = false;
+
 			}
-			
+			$update_msg = array(
+				'success' => true,
+				'message' => _('Update successful')
+			);
+
+		} catch( Exception $e ) {
+			$update_msg = array(
+				'success' => false,
+				'message' => $e->getMessage()
+			);
 		}
 
 		if( $update ) {
-			$data["update"] = create_updatemsg( $errors );
+			$data["update"] = $update_msg;
 		}
 	
 		if($strip){
@@ -829,7 +836,8 @@ class Settings extends Controller{
 		}else{
 			$this->_renderfull(
 				$this->load->view(THEME.'/settings/settings_identity_view',$data,true),
-				$this->load->view(THEME.'/settings/settings_identity_head_view',$data,true)
+				$this->load->view(THEME.'/settings/settings_identity_head_view',$data,true),
+				$data
 			);
 		}
 		

@@ -13,7 +13,7 @@ class Mail extends Controller{
 
 	}
 
-	function _renderfull($content,$head = ""){
+	function _renderfull($content,$head = "", $mdata){
 		if( ! $head ) {
 			$mdata["head"] = $this->load->view(THEME.'/mail/mail_head_view','',true);
 		} else {
@@ -212,8 +212,6 @@ class Mail extends Controller{
 
 	function mc_update($strip="") {
 
-		$errors = array();
-
 		$domain=$this->input->post('domain');
 		$current_mc = $this->_parse_mailcfg(get_mailcfg());
 		$update_postfix = false;
@@ -221,6 +219,10 @@ class Mail extends Controller{
 			// domain updated
 			write_receive_mailcfg($domain);
 			$update_postfix=true;
+			$data["update"] = array(
+				'success' => true,
+				'message' => _('Update successful')
+			);
 		}
 
 		if($update_postfix){
@@ -229,7 +231,6 @@ class Mail extends Controller{
 				start_service("postfix");
 			}
 		}
-		$data["update"] = create_updatemsg($errors);
 		$this->server_settings("",$data);
 	}
 
@@ -247,7 +248,10 @@ class Mail extends Controller{
 		$smtp_passwd_mask=$this->input->post('smtp_passwd_mask');
 
 		$update_postfix=false;
-		$errors = array();
+		$data['update'] = array(
+			'success' => true,
+			'message' => _("Update successful")
+		);
 
 		if(
 			$current_mc["smarthost"] != $smarthost ||
@@ -258,21 +262,17 @@ class Mail extends Controller{
 		) {	// outbound smtp updated
 			if($smarthost!="" && $useauth=="yes"){
 				if($smtpuser=="" || $smtppasswd==""){
-					$errors["mail_server_userpwdmissing"]=true;
+					$data['update'] = array(
+						'success' => false,
+						'message' => _("Missing mail server password")
+					);
 				}else{
 					write_send_mailcfg($smarthost,true,$smtpuser,$smtppasswd, $use_plain_auth == "yes");
 					$update_postfix=true;
 				}
-			}else if($smarthost!=""){
+			}else{
 				write_send_mailcfg($smarthost,false,"","", false);
 				$update_postfix=true;
-			}else{
-				if($useauth=="yes"){
-					$errors["mail_server_servermissing"]=true;
-				}else{
-					write_send_mailcfg($smarthost,false,"","", false);
-					$update_postfix=true;
-				}
 			}
 		}
 		
@@ -282,7 +282,6 @@ class Mail extends Controller{
 				start_service("postfix");
 			}
 		}
-		$data["update"] = create_updatemsg($errors);
 		$this->server_settings("",$data);
 	}	
 	
@@ -339,7 +338,8 @@ class Mail extends Controller{
 		}else{
 			$this->_renderfull(
 				$this->load->view(THEME.'/mail/mail_server_view',$data,true),
-				$this->load->view(THEME.'/mail/mail_server_head_view',$data,true)
+				$this->load->view(THEME.'/mail/mail_server_head_view',$data,true),
+				$data
 			);
 		}
 	}
