@@ -48,9 +48,6 @@ $(document).ready(function() {
         'json');
     });
 
-    $.validator.addMethod('valid_password', function(value, element, params) {
-        return /^\w*$/.test(value);
-    },
     jQuery.format("not a valid password"));
 
     edit_validator = $('form', source_edit_dialog).validate({
@@ -59,7 +56,7 @@ $(document).ready(function() {
                 'required': true
             },
             'password1': {
-                'valid_password': true
+                'required': true
             },
             'password2': {
                 'equalTo': $('form input[name=password1]', source_edit_dialog)

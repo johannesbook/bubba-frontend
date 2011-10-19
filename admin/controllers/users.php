@@ -70,9 +70,6 @@ class Users extends Controller{
 		if (strcmp($pass1,$pass2)) {
 			// Passwords dont match
 			$result["mismatch"]=true;
-		}elseif( !preg_match('/^\w+$/',$pass1)){
-			// Password with illegal chars
-			$result["illegal"]=true;		
 		} else {
 			if(set_unix_password($uname,$pass1)==0){
 				if(set_samba_password($uname,$pass1,$pass2)==0){
@@ -148,7 +145,6 @@ class Users extends Controller{
 					|| $username == "web"
 					|| $username == ""
 					|| strpos($username, ' ') !== false
-					|| !preg_match('/^\w+$/',$password1)
 					|| !preg_match('/^[a-z0-9 _-]+$/',$username)
 					|| strlen($username) > 32
 					|| $username[0] == '-'
