@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-10-07 14:44+0200\n"
+"POT-Creation-Date: 2011-10-19 14:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Acknowledge"
 msgstr ""
 
-#: admin/views/default/downloads/downloads_index_view.php:30
+#: admin/views/default/downloads/downloads_index_view.php:53
 msgid "Add"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Add new backup job"
 msgstr ""
 
-#: admin/views/default/downloads/downloads_index_view.php:20
+#: admin/views/default/downloads/downloads_index_view.php:26
 msgid "Add new download"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgstr ""
 msgid "Attached printers"
 msgstr ""
 
-#: admin/controllers/users.php:168
+#: admin/controllers/users.php:164
 msgid "Authorization denied"
 msgstr ""
 
@@ -261,7 +261,7 @@ msgstr ""
 msgid "Authorization failed"
 msgstr ""
 
-#: admin/controllers/users.php:261
+#: admin/controllers/users.php:257
 msgid "Authorization failure"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgstr ""
 msgid "Backup schedule (step 3 of 4)"
 msgstr ""
 
-#: admin/controllers/users.php:297
+#: admin/controllers/users.php:293
 msgid "Bad username"
 msgstr ""
 
@@ -683,6 +683,10 @@ msgstr ""
 msgid "Download not found"
 msgstr ""
 
+#: admin/views/default/downloads/downloads_index_view.php:19
+msgid "Download service disabled"
+msgstr ""
+
 #: admin/views/default/downloads/downloads_list_view.php:46
 msgid "Download speed"
 msgstr ""
@@ -695,7 +699,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: admin/views/default/downloads/downloads_index_view.php:17
+#: admin/views/default/downloads/downloads_index_view.php:23
 msgid "Downloads"
 msgstr ""
 
@@ -714,6 +718,11 @@ msgstr ""
 
 #: admin/views/default/network/network_wizard_view.php:54
 msgid "Easyfind"
+msgstr ""
+
+#: admin/controllers/settings.php:788 admin/controllers/settings.php:809
+#, php-format
+msgid "Easyfind failed with following error: %s"
 msgstr ""
 
 #: admin/views/default/settings/settings_identity_view.php:70
@@ -850,35 +859,35 @@ msgstr ""
 msgid "Error updating user access to public"
 msgstr ""
 
-#: admin/controllers/users.php:408
+#: admin/controllers/users.php:404
 msgid "Error, illegal characters in password"
 msgstr ""
 
-#: admin/controllers/users.php:404
+#: admin/controllers/users.php:400
 msgid "Error, illegal characters in username"
 msgstr ""
 
-#: admin/controllers/users.php:400
+#: admin/controllers/users.php:396
 msgid "Error, no username"
 msgstr ""
 
-#: admin/controllers/users.php:410
+#: admin/controllers/users.php:406
 msgid "Error, passwords do not match"
 msgstr ""
 
-#: admin/controllers/users.php:402
+#: admin/controllers/users.php:398
 msgid "Error, space in username"
 msgstr ""
 
-#: admin/controllers/users.php:398
+#: admin/controllers/users.php:394
 msgid "Error, uppercase letters in username"
 msgstr ""
 
-#: admin/controllers/users.php:396
+#: admin/controllers/users.php:392
 msgid "Error, user exists"
 msgstr ""
 
-#: admin/controllers/users.php:406
+#: admin/controllers/users.php:402
 msgid "Error, username too long"
 msgstr ""
 
@@ -962,6 +971,10 @@ msgstr ""
 msgid "Failed to aquire suitable type of the filesystem on partition %s"
 msgstr ""
 
+#: admin/controllers/settings.php:747
+msgid "Failed to change hostname"
+msgstr ""
+
 #: admin/controllers/filemanager.php:189
 #, php-format
 msgid "Failed to change permission for following files and folders: %s"
@@ -1043,16 +1056,16 @@ msgstr ""
 msgid "Failed to upload file(s), aborting."
 msgstr ""
 
-#: admin/controllers/users.php:161
+#: admin/controllers/users.php:157
 msgid "Fatal error when adding user"
 msgstr ""
 
-#: admin/controllers/users.php:311
+#: admin/controllers/users.php:307
 #, php-format
 msgid "Fatal error when trying to purge horde configurations for user %s"
 msgstr ""
 
-#: admin/controllers/users.php:315
+#: admin/controllers/users.php:311
 #, php-format
 msgid "Fatal error when trying to remove the user %s"
 msgstr ""
@@ -1152,6 +1165,13 @@ msgstr ""
 msgid "Hostname"
 msgstr ""
 
+#: admin/controllers/settings.php:753
+#, php-format
+msgid ""
+"Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</"
+"strong> is valid"
+msgstr ""
+
 #: admin/views/default/backup/backup_view.php:247
 #: admin/views/default/backup/backup_view.php:283
 #: admin/views/default/backup/backup_view.php:307
@@ -1244,7 +1264,7 @@ msgstr ""
 msgid "Invalid IP range entered"
 msgstr ""
 
-#: admin/controllers/network.php:1067
+#: admin/controllers/network.php:1063
 #, php-format
 msgid "Invalid characters in name %s"
 msgstr ""
@@ -1372,7 +1392,7 @@ msgstr ""
 msgid "Local user"
 msgstr ""
 
-#: admin/views/default/downloads/downloads_index_view.php:24
+#: admin/views/default/downloads/downloads_index_view.php:32
 msgid "Location"
 msgstr ""
 
@@ -1424,6 +1444,10 @@ msgctxt "label"
 msgid "Misc Other Services"
 msgstr ""
 
+#: admin/controllers/mail.php:267
+msgid "Missing mail server password"
+msgstr ""
+
 #: admin/views/default/network/network_wlan_view.php:130
 #, php-format
 msgid "Mixed mode (802.11n + %s)"
@@ -1464,7 +1488,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: admin/controllers/settings.php:804
+#: admin/controllers/settings.php:798
 #, php-format
 msgid "Name '%s' is not valid"
 msgstr ""
@@ -1662,7 +1686,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: admin/controllers/users.php:318 admin/controllers/filemanager.php:107
+#: admin/controllers/users.php:314 admin/controllers/filemanager.php:107
 #: admin/views/default/filemanager/filemanager_index_view.php:17
 #: admin/views/default/backup/backup_view.php:776
 #: admin/views/default/backup/backup_view.php:846
@@ -2169,7 +2193,7 @@ msgctxt "menu"
 msgid "System backup"
 msgstr ""
 
-#: admin/controllers/users.php:354
+#: admin/controllers/users.php:350
 msgid "System default"
 msgstr ""
 
@@ -2455,12 +2479,17 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: admin/views/default/settings/settings_identity_view.php:102
+#: admin/views/default/settings/settings_identity_view.php:97
 msgid "Update Easyfind"
 msgstr ""
 
 #: admin/views/default/settings/settings_identity_view.php:36
 msgid "Update hostname and workgroup"
+msgstr ""
+
+#: admin/controllers/settings.php:820 admin/controllers/mail.php:224
+#: admin/controllers/mail.php:253
+msgid "Update successful"
 msgstr ""
 
 #: admin/views/default/settings/settings_software_view.php:28
@@ -2540,7 +2569,7 @@ msgctxt "menu"
 msgid "User information"
 msgstr ""
 
-#: admin/controllers/users.php:274
+#: admin/controllers/users.php:270
 msgid "User information updated"
 msgstr ""
 
@@ -2559,7 +2588,7 @@ msgstr ""
 msgid "User name"
 msgstr ""
 
-#: admin/controllers/users.php:158
+#: admin/controllers/users.php:154
 msgid "User name validation failed"
 msgstr ""
 
@@ -2645,7 +2674,7 @@ msgstr ""
 msgid "Warning"
 msgstr ""
 
-#: admin/controllers/users.php:306
+#: admin/controllers/users.php:302
 #, php-format
 msgid "Was unabler to remove the home directory for user %s"
 msgstr ""
@@ -2784,6 +2813,6 @@ msgstr ""
 
 #: admin/views/default/network/network_wizard_view.php:80
 #: admin/views/default/network/network_wizard_view.php:87
-#: admin/views/default/settings/settings_identity_view.php:80
+#: admin/views/default/settings/settings_identity_view.php:75
 msgid "your-easyfind-name"
 msgstr ""

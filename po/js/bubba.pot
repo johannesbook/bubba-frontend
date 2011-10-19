@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-10-07 14:44+0200\n"
+"POT-Creation-Date: 2011-10-19 14:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,11 +43,11 @@ msgstr ""
 msgid "Add new email account"
 msgstr ""
 
-#: admin/views/default/_js/user.js:300
+#: admin/views/default/_js/user.js:297
 msgid "Add new user"
 msgstr ""
 
-#: admin/views/default/_js/user.js:388
+#: admin/views/default/_js/user.js:385
 msgid "Add new user to the system"
 msgstr ""
 
@@ -186,16 +186,16 @@ msgstr ""
 msgid "Delete this photo album viewer?"
 msgstr ""
 
-#: admin/views/default/_js/user.js:245
+#: admin/views/default/_js/user.js:242
 msgid "Delete this user from the system?"
 msgstr ""
 
-#: admin/views/default/_js/user.js:257 admin/views/default/_js/user.js:258
-#: admin/views/default/_js/user.js:322
+#: admin/views/default/_js/user.js:254 admin/views/default/_js/user.js:255
+#: admin/views/default/_js/user.js:319
 msgid "Delete user"
 msgstr ""
 
-#: admin/views/default/_js/user.js:254
+#: admin/views/default/_js/user.js:251
 msgid "Delete userdata?"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgstr ""
 #: admin/views/default/_js/album_users.js:30
 #: admin/views/default/_js/backup.js:161
 #: admin/views/default/_js/mail_retrieve.js:150
-#: admin/views/default/_js/user.js:100
+#: admin/views/default/_js/user.js:97
 msgid "Edit"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgstr ""
 msgid "Edit email account information for host <em>%s</em>"
 msgstr ""
 
-#: admin/views/default/_js/user.js:112
+#: admin/views/default/_js/user.js:109
 msgid "Edit user"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgstr ""
 #: admin/views/default/_js/backup.js:684
 #: admin/views/default/_js/mail_retrieve.js:142
 #: admin/views/default/_js/mail_retrieve.js:143
-#: admin/views/default/_js/user.js:96
+#: admin/views/default/_js/user.js:93
 msgid "No"
 msgstr ""
 
@@ -419,7 +419,7 @@ msgstr[1] ""
 msgid "Successfully added new email account"
 msgstr ""
 
-#: admin/views/default/_js/user.js:181
+#: admin/views/default/_js/user.js:178
 msgid "Successfully added new user"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgid "Sucessfully added pictures to the album"
 msgstr ""
 
 #: admin/views/default/_js/mail_retrieve.js:180
-#: admin/views/default/_js/user.js:313
+#: admin/views/default/_js/user.js:310
 msgid "Update"
 msgstr ""
 
@@ -469,11 +469,11 @@ msgstr ""
 msgid "Upload file"
 msgstr ""
 
-#: admin/views/default/_js/user.js:280
+#: admin/views/default/_js/user.js:277
 msgid "User deleted"
 msgstr ""
 
-#: admin/views/default/_js/user.js:222
+#: admin/views/default/_js/user.js:219
 msgid "User information updated"
 msgstr ""
 
@@ -492,7 +492,7 @@ msgstr ""
 #: admin/views/default/_js/backup.js:664
 #: admin/views/default/_js/mail_retrieve.js:142
 #: admin/views/default/_js/mail_retrieve.js:143
-#: admin/views/default/_js/user.js:96
+#: admin/views/default/_js/user.js:93
 msgid "Yes"
 msgstr ""
 
