@@ -61,6 +61,7 @@ po4a.stamp: $(wildcard admin/views/default/help/en/*)
 		--package-version=$(VERSION) \
 		--master-charset=UTF-8 \
 		--localized-charset=UTF-8 \
+		--msgmerge-opt "--no-wrap" \
 		--keep=40 \
 		--rm-backups \
 		po4a.conf
@@ -87,6 +88,7 @@ clean:
 		--package-version=$(VERSION) \
 		--master-charset=UTF-8 \
 		--localized-charset=UTF-8 \
+		--msgmerge-opt "--no-wrap" \
 		--keep=40 \
 		--rm-backups \
 		--rm-translations \
