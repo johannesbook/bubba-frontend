@@ -23,19 +23,10 @@ msgstr "{PLATFORM}-Administration"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/login.html:5
-msgid ""
-"Logged in as administrator you have access to the system settings. Click the "
-"<strong>gear wheel</strong> to administrate your {PLATFORM}."
-msgstr ""
-"Als Administrator haben Sie Zugriff auf die Systemeinstellungen. Klicken Sie "
-"auf das <strong>Zahnrad</strong>, um Ihr {PLATFORM} zu verwalten."
+msgid "Logged in as administrator you have access to the system settings. Click the <strong>gear wheel</strong> to administrate your {PLATFORM}."
+msgstr "Als Administrator haben Sie Zugriff auf die Systemeinstellungen. Klicken Sie auf das <strong>Zahnrad</strong>, um Ihr {PLATFORM} zu verwalten."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/login.html:8
-msgid ""
-"Only use the administrator login to manage {PLATFORM}'s settings. Your "
-"everyday use should be done with another user."
-msgstr ""
-"Das Administrator-Login sollte nur für die Verwaltung von {PLATFORM} "
-"verwendet werden. Für den täglichen Gebrauch melden Sie sich als anderer "
-"Benutzer (Standardbenutzer) an."
+msgid "Only use the administrator login to manage {PLATFORM}'s settings. Your everyday use should be done with another user."
+msgstr "Das Administrator-Login sollte nur für die Verwaltung von {PLATFORM} verwendet werden. Für den täglichen Gebrauch melden Sie sich als anderer Benutzer (Standardbenutzer) an."

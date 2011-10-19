@@ -18,10 +18,5 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_music.html:2
-msgid ""
-"Play your music stored on {PLATFORM} from any PC in the world! Your music "
-"library is available when logged in as your standard user."
-msgstr ""
-"Geben Sie auf {PLATFORM} gespeicherte Musik auf jedem beliebigen PC wieder! "
-"Ihre Musikbibliothek ist verfügbar, wenn Sie sich als Standardbenutzer "
-"anmelden."
+msgid "Play your music stored on {PLATFORM} from any PC in the world! Your music library is available when logged in as your standard user."
+msgstr "Geben Sie auf {PLATFORM} gespeicherte Musik auf jedem beliebigen PC wieder! Ihre Musikbibliothek ist verfügbar, wenn Sie sich als Standardbenutzer anmelden."

@@ -23,23 +23,13 @@ msgstr "Disk"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk.html:5
-msgid ""
-"Here you find the status of internal and external disks and storage devices. "
-"When a new device is attached you must press 'Connect' to be able to use the "
-"device."
-msgstr ""
-"Hier finden Sie den Status der internen und externen Disks und "
-"Speichergeräte. Wenn ein neues Gerät angeschlossen wird, müssen Sie auf "
-"'Verbinden' drücken, damit das Gerät benutzt werden kann."
+msgid "Here you find the status of internal and external disks and storage devices. When a new device is attached you must press 'Connect' to be able to use the device."
+msgstr "Hier finden Sie den Status der internen und externen Disks und Speichergeräte. Wenn ein neues Gerät angeschlossen wird, müssen Sie auf 'Verbinden' drücken, damit das Gerät benutzt werden kann."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk.html:8
-msgid ""
-"<strong>Disk information</strong> - Shows disk name, size, disk type and a "
-"graphical overview of the partitions."
-msgstr ""
-"<strong>Diskdaten</strong> - Zeigt den Disknamen, die Größe, den Disktyp und "
-"eine grafische Übersicht der Partitionen an."
+msgid "<strong>Disk information</strong> - Shows disk name, size, disk type and a graphical overview of the partitions."
+msgstr "<strong>Diskdaten</strong> - Zeigt den Disknamen, die Größe, den Disktyp und eine grafische Übersicht der Partitionen an."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk.html:11
@@ -63,19 +53,13 @@ msgstr "Anschluss einer externen Disk oder eines USB- oder eSATA-Laufwerkes."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:22
-msgid ""
-"Press '<strong>Connect</strong>' to the right of the partition you which to "
-"connect"
+msgid "Press '<strong>Connect</strong>' to the right of the partition you which to connect"
 msgstr ""
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:24
-msgid ""
-"Now you will reach your files in the 'storage/extern' catalogue or by using "
-"for example Windows explorer."
-msgstr ""
-"Nun können Sie auf Ihre Dateien im 'Speicher/Extern'-Katalog oder z. B. mit "
-"dem Windows Explorer öffnen."
+msgid "Now you will reach your files in the 'storage/extern' catalogue or by using for example Windows explorer."
+msgstr "Nun können Sie auf Ihre Dateien im 'Speicher/Extern'-Katalog oder z. B. mit dem Windows Explorer öffnen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk.html:28
@@ -84,13 +68,8 @@ msgstr "<strong>Verbindung trennen</strong>"
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:31
-msgid ""
-"When you want to unplug the external disk, USB or eSATA drive you must click "
-"'Disconnect' first to ensure that it is safe to unplug the device."
-msgstr ""
-"Bevor eine externe Disk, ein USB- oder ein eSATA-Laufwerk getrennt wird, "
-"müssen Sie durch Anklicken von 'Trennen' sicherstellen, dass das Gerät ohne "
-"Datenverlust oder Beschädigung getrennt werden kann."
+msgid "When you want to unplug the external disk, USB or eSATA drive you must click 'Disconnect' first to ensure that it is safe to unplug the device."
+msgstr "Bevor eine externe Disk, ein USB- oder ein eSATA-Laufwerk getrennt wird, müssen Sie durch Anklicken von 'Trennen' sicherstellen, dass das Gerät ohne Datenverlust oder Beschädigung getrennt werden kann."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:33

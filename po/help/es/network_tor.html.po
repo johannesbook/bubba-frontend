@@ -19,18 +19,12 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:1
-msgid ""
-"The Tor network relies on volunteers to donate bandwidth. The more people "
-"who run bridges or relays, the faster the Tor network will be. If you have "
-"at least 20 kilobytes/s each way, please help out Tor by configuring your B3 "
-"to be either a bridge non-exit relay or exit relay."
+msgid "The Tor network relies on volunteers to donate bandwidth. The more people who run bridges or relays, the faster the Tor network will be. If you have at least 20 kilobytes/s each way, please help out Tor by configuring your B3 to be either a bridge non-exit relay or exit relay."
 msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:7
-msgid ""
-"B3 can act as either a bridge, non-exit relay or exit relay in the Tor "
-"network:"
+msgid "B3 can act as either a bridge, non-exit relay or exit relay in the Tor network:"
 msgstr ""
 
 #. type: Content of: <h3>
@@ -40,13 +34,7 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:12
-msgid ""
-"The public servers in the Tor network are called relays. All of the relays "
-"are listed in public directories, which means that anyone can easily get a "
-"list of all the relays in the Tor network. A Tor relay can be either a non-"
-"exit relay or an exit relay. A non-exit relay will only forward traffic on "
-"to other relays in the Tor network. An exit relay can either forward traffic "
-"on to other relays in the Tor network, or to public Internet resources."
+msgid "The public servers in the Tor network are called relays. All of the relays are listed in public directories, which means that anyone can easily get a list of all the relays in the Tor network. A Tor relay can be either a non-exit relay or an exit relay. A non-exit relay will only forward traffic on to other relays in the Tor network. An exit relay can either forward traffic on to other relays in the Tor network, or to public Internet resources."
 msgstr ""
 
 #. type: Content of: <h3>
@@ -56,15 +44,7 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:22
-msgid ""
-"Some Internet Service Providers (ISPs) attempt to prevent users from "
-"accessing the Tor network by blocking connections to known Tor relays.  "
-"Bridge relays (or <i>bridges</i> for short) are non-exit relays that help "
-"these censored users access the Tor network. Unlike other Tor relays, "
-"bridges are not listed in the same public directories as normal relays. "
-"Since there is no complete public list of them, even if your ISP is "
-"filtering connections to all the known Tor relays, they probably won't be "
-"able to block all the bridges."
+msgid "Some Internet Service Providers (ISPs) attempt to prevent users from accessing the Tor network by blocking connections to known Tor relays.  Bridge relays (or <i>bridges</i> for short) are non-exit relays that help these censored users access the Tor network. Unlike other Tor relays, bridges are not listed in the same public directories as normal relays. Since there is no complete public list of them, even if your ISP is filtering connections to all the known Tor relays, they probably won't be able to block all the bridges."
 msgstr ""
 
 #. type: Content of: <h3>
@@ -76,9 +56,7 @@ msgstr "Configuración de servicios"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:33
-msgid ""
-"The default settings are the recommended settings, so if you are unsure, "
-"just leave them as is."
+msgid "The default settings are the recommended settings, so if you are unsure, just leave them as is."
 msgstr ""
 
 #. type: Content of: <h4>
@@ -90,10 +68,7 @@ msgstr "Dirección MAC"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:37
-msgid ""
-"You can let others access your Tor bridge by giving them this line.  The "
-"bridge address consists of your external IP address and the relay port "
-"configured for Tor."
+msgid "You can let others access your Tor bridge by giving them this line.  The bridge address consists of your external IP address and the relay port configured for Tor."
 msgstr ""
 
 #. type: Content of: <h4>
@@ -103,9 +78,7 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:43
-msgid ""
-"The name which your relay will be known as in the Tor network.  Example: \\"
-"\"MyB3Relay\\\"."
+msgid "The name which your relay will be known as in the Tor network.  Example: \\\"MyB3Relay\\\"."
 msgstr ""
 
 #. type: Content of: <h4>
@@ -117,10 +90,7 @@ msgstr "Mas información"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:48
-msgid ""
-"Contact info, such as an email address, to be published in relay "
-"directories, so that the Tor Project can contact you if your relay is "
-"misconfigured or something else goes wrong."
+msgid "Contact info, such as an email address, to be published in relay directories, so that the Tor Project can contact you if your relay is misconfigured or something else goes wrong."
 msgstr ""
 
 #. type: Content of: <h4>
@@ -140,12 +110,7 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:58
-msgid ""
-"Exit policies give you a way to specify what kinds of resources on the "
-"Internet you are willing let other Tor users access from your Tor relay. Tor "
-"uses a default list of exit policies that restrict some services, such as "
-"mail to prevent spam and some default file sharing ports to reduce abuse of "
-"the Tor network."
+msgid "Exit policies give you a way to specify what kinds of resources on the Internet you are willing let other Tor users access from your Tor relay. Tor uses a default list of exit policies that restrict some services, such as mail to prevent spam and some default file sharing ports to reduce abuse of the Tor network."
 msgstr ""
 
 #. type: Content of: <p>

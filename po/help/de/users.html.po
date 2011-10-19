@@ -23,31 +23,18 @@ msgstr "Benutzer"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:5
-msgid ""
-"Here you find all the registered users on your {PLATFORM}. Click on 'Edit "
-"user' to change user information."
-msgstr ""
-"Hier finden Sie alle Benutzer, die für Ihr {PLATFORM} registriert sind. "
-"Klicken Sie auf 'Benutzer bearbeiten', wenn Sie die Daten eines Benutzers "
-"ändern möchten."
+msgid "Here you find all the registered users on your {PLATFORM}. Click on 'Edit user' to change user information."
+msgstr "Hier finden Sie alle Benutzer, die für Ihr {PLATFORM} registriert sind. Klicken Sie auf 'Benutzer bearbeiten', wenn Sie die Daten eines Benutzers ändern möchten."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:8
-msgid ""
-"To allow the administrator to lok in remote (via the WAN port) edit the "
-"adminitrator user and click '<strong>Allow remote access to system settings</"
-"strong>'."
-msgstr ""
-"Damit der Administrator sich extern einloggen kann (über den WAN-Port), "
-"bearbeiten Sie den Administrator-Benutzer und klicken auf '<strong>Remote-"
-"Zugriff auf die Systemeinstellungen erlauben</strong>'."
+msgid "To allow the administrator to lok in remote (via the WAN port) edit the adminitrator user and click '<strong>Allow remote access to system settings</strong>'."
+msgstr "Damit der Administrator sich extern einloggen kann (über den WAN-Port), bearbeiten Sie den Administrator-Benutzer und klicken auf '<strong>Remote-Zugriff auf die Systemeinstellungen erlauben</strong>'."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:11
 msgid "<strong>Allow shell login</strong> permitts a user to log in via SSH."
-msgstr ""
-"<strong>Shell-Login zulassen</strong> erlaubt einem Benutzer, sich per SSH "
-"einzuloggen"
+msgstr "<strong>Shell-Login zulassen</strong> erlaubt einem Benutzer, sich per SSH einzuloggen"
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/users.html:14
@@ -56,12 +43,8 @@ msgstr "Benutzer hinzufügen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:17
-msgid ""
-"Click '<strong>Add new user</strong>' and fill in the information to add a "
-"new user."
-msgstr ""
-"Klicken Sie auf '<strong>Neuen Benutzer hinzufügen</strong>' und machen Sie "
-"die erforderlichen Angaben."
+msgid "Click '<strong>Add new user</strong>' and fill in the information to add a new user."
+msgstr "Klicken Sie auf '<strong>Neuen Benutzer hinzufügen</strong>' und machen Sie die erforderlichen Angaben."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/users.html:20
@@ -70,41 +53,20 @@ msgstr "Benutzer bearbeiten"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:23
-msgid ""
-"<strong>User name</strong> - Changing the user name (login name) is not "
-"possible. To achieve this you will have to delete the user and add a new "
-"user with the correct name."
-msgstr ""
-"<strong>Benutzername</strong> - Der Benutzername (Login-Name) kann nicht "
-"verändert werden. Sie müssen den Benutzer stattdessen löschen und mit seinem "
-"korrekten Namen neu anlegen."
+msgid "<strong>User name</strong> - Changing the user name (login name) is not possible. To achieve this you will have to delete the user and add a new user with the correct name."
+msgstr "<strong>Benutzername</strong> - Der Benutzername (Login-Name) kann nicht verändert werden. Sie müssen den Benutzer stattdessen löschen und mit seinem korrekten Namen neu anlegen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:26
-msgid ""
-"<strong>Real name</strong> - To add the user's 'Real name'; fill in the "
-"information here."
-msgstr ""
-"strong>Echter Name</strong> - Hier geben Sie den 'Echten Namen' des "
-"Benutzers ein."
+msgid "<strong>Real name</strong> - To add the user's 'Real name'; fill in the information here."
+msgstr "strong>Echter Name</strong> - Hier geben Sie den 'Echten Namen' des Benutzers ein."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:29
-msgid ""
-"<strong>Change password</strong> - The administrator can change every users "
-"password. Every user has the possibility to change their own password via "
-"their own log in. It is strongly suggested that the <strong>admin password "
-"is changed</strong> from the default password."
-msgstr ""
-"<strong>Passwort ändern</strong> - Der Administrator kann die Passwörter der "
-"einzelnen Benutzer ändern. Jeder Benutzer hat die Möglichkeit, sein eigenes "
-"Passwort zu ändern, indem er sich einloggt. Es wird dringend empfohlen, das "
-"<strong>Admin-Passwort</strong> zu ändern und nicht das Standard-Passwort zu "
-"verwenden."
+msgid "<strong>Change password</strong> - The administrator can change every users password. Every user has the possibility to change their own password via their own log in. It is strongly suggested that the <strong>admin password is changed</strong> from the default password."
+msgstr "<strong>Passwort ändern</strong> - Der Administrator kann die Passwörter der einzelnen Benutzer ändern. Jeder Benutzer hat die Möglichkeit, sein eigenes Passwort zu ändern, indem er sich einloggt. Es wird dringend empfohlen, das <strong>Admin-Passwort</strong> zu ändern und nicht das Standard-Passwort zu verwenden."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/users.html:33
-msgid ""
-"<strong>User language</strong> - Change the user interface language for the "
-"selected user."
+msgid "<strong>User language</strong> - Change the user interface language for the selected user."
 msgstr ""

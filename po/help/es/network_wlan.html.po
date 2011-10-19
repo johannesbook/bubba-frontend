@@ -41,9 +41,7 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:2
-msgid ""
-"{PLATFORM} can act as your access point, both in 'Router + Firewall + "
-"Server' or in 'Server only' mode."
+msgid "{PLATFORM} can act as your access point, both in 'Router + Firewall + Server' or in 'Server only' mode."
 msgstr ""
 
 #. type: Content of: <h3>
@@ -53,30 +51,18 @@ msgstr "Inalámbrico"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:8
-msgid ""
-"<strong>Wireless access point</strong> - Switch to enable the wireless "
-"access point in {PLATFORM}."
+msgid "<strong>Wireless access point</strong> - Switch to enable the wireless access point in {PLATFORM}."
 msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:11
-msgid ""
-"<strong>Network name (SSID)</strong> - This is the name that identifies a "
-"particular wireless network. The SSID can be up to 32 characters long."
+msgid "<strong>Network name (SSID)</strong> - This is the name that identifies a particular wireless network. The SSID can be up to 32 characters long."
 msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:14
-msgid ""
-"<strong>Password</strong> - The password (aka pass phrase) is a set of "
-"characters that must be entered exactly the same in both your {PLATFORM} and "
-"your network clients. Enter the password in ASCII characters. The length "
-"must be between 8 to 63 for WPA and 5 or 13 characters for WEP."
-msgstr ""
-"<strong>Contraseña</strong> - La contraseña (o palabra de paso) es un "
-"conjunto de caracéres que deben coincidir tanto en tu {PLATFORM} como en tu "
-"cliente de red. Introduce la contraseña en caracteres ASCII. La longitud "
-"debe estar entre 8 a 63 para WPA y 5 o 13 caractéres para WEP."
+msgid "<strong>Password</strong> - The password (aka pass phrase) is a set of characters that must be entered exactly the same in both your {PLATFORM} and your network clients. Enter the password in ASCII characters. The length must be between 8 to 63 for WPA and 5 or 13 characters for WEP."
+msgstr "<strong>Contraseña</strong> - La contraseña (o palabra de paso) es un conjunto de caracéres que deben coincidir tanto en tu {PLATFORM} como en tu cliente de red. Introduce la contraseña en caracteres ASCII. La longitud debe estar entre 8 a 63 para WPA y 5 o 13 caractéres para WEP."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/network_wlan.html:18
@@ -85,63 +71,30 @@ msgstr "Configuración inalámbrica avanzada"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:21
-msgid ""
-"<strong>Band</strong> - Choose what frequency band to use. 802.11n operates "
-"at two frequencies: 5 GHz and 2.4 GHz. Only devices which operate in the "
-"same frequency band can communicate with one another."
-msgstr ""
-"<strong>Band</strong> - Elige la banda de frecuencia a utilizar. 802.11n "
-"opera en dos frecuencias: 5 GHz y 2.4 GHz. Sólo los dispositivos que operan "
-"en la misma banda de frecuencia pueden comunicarse entre sí."
+msgid "<strong>Band</strong> - Choose what frequency band to use. 802.11n operates at two frequencies: 5 GHz and 2.4 GHz. Only devices which operate in the same frequency band can communicate with one another."
+msgstr "<strong>Band</strong> - Elige la banda de frecuencia a utilizar. 802.11n opera en dos frecuencias: 5 GHz y 2.4 GHz. Sólo los dispositivos que operan en la misma banda de frecuencia pueden comunicarse entre sí."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:25
-msgid ""
-"<strong>Mode</strong> - Select which 802.11 mode to operate in. Modes are as "
-"follows: 'Legacy mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode "
-"(802.11n + 802.11a/g)' - up to 300 Mbit/s."
-msgstr ""
-"<strong>Modo</strong> - Selecciona en que modo 802.11 operar. Los modos son "
-"los siguientes: 'Modo compatibilidad (802.11a/g)' - hasta 54 Mbit/s y 'Modo "
-"mixto (802.11n + 802.11a/g)' - hasta 300 Mbit/s."
+msgid "<strong>Mode</strong> - Select which 802.11 mode to operate in. Modes are as follows: 'Legacy mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode (802.11n + 802.11a/g)' - up to 300 Mbit/s."
+msgstr "<strong>Modo</strong> - Selecciona en que modo 802.11 operar. Los modos son los siguientes: 'Modo compatibilidad (802.11a/g)' - hasta 54 Mbit/s y 'Modo mixto (802.11n + 802.11a/g)' - hasta 300 Mbit/s."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:28
-msgid ""
-"<strong>Channel width</strong> - Maximum transfer rate for 20 MHz is 130 "
-"Mbit/s. Maximum transfer rate for 40 MHz is 270 Mbit/s."
-msgstr ""
-"<strong>Amplitud de canal</strong> - El ratio de transferencia máximo para "
-"20 MHz es 130 Mbit/s. Para 40 MHz es 270 Mbit/s."
+msgid "<strong>Channel width</strong> - Maximum transfer rate for 20 MHz is 130 Mbit/s. Maximum transfer rate for 40 MHz is 270 Mbit/s."
+msgstr "<strong>Amplitud de canal</strong> - El ratio de transferencia máximo para 20 MHz es 130 Mbit/s. Para 40 MHz es 270 Mbit/s."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:31
-msgid ""
-"<strong>Encryption</strong> - Choose between WEP, WPA1 or WPA2. WEP is not "
-"recommended due to low security."
-msgstr ""
-"<strong>Encriptación </strong> - Elige entre WEP, WPA1 or WPA2. WEP no se "
-"recomienda debido a su baja seguridad."
+msgid "<strong>Encryption</strong> - Choose between WEP, WPA1 or WPA2. WEP is not recommended due to low security."
+msgstr "<strong>Encriptación </strong> - Elige entre WEP, WPA1 or WPA2. WEP no se recomienda debido a su baja seguridad."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:34
-msgid ""
-"<strong>Channel</strong> - Select the channel on your wireless access point "
-"in {PLATFORM}. In areas with several wireless networks, lower transfer "
-"speeds may be experienced. Then try a different channel.  Channel "
-"availability is different for different countries due to regulations."
-msgstr ""
-"<strong>Canal</strong> - Selecciona el canal de tu punto de acceso "
-"inalámbrico en {PLATFORM}. En zonas con muchas redes inalámbricas, se pueden "
-"experimentar velocidades de trasferencia menores. En ese caso prueba con un "
-"canal diferente. La disponibilidad de canales difiere debido a las "
-"regulaciones de los distintos países."
+msgid "<strong>Channel</strong> - Select the channel on your wireless access point in {PLATFORM}. In areas with several wireless networks, lower transfer speeds may be experienced. Then try a different channel.  Channel availability is different for different countries due to regulations."
+msgstr "<strong>Canal</strong> - Selecciona el canal de tu punto de acceso inalámbrico en {PLATFORM}. En zonas con muchas redes inalámbricas, se pueden experimentar velocidades de trasferencia menores. En ese caso prueba con un canal diferente. La disponibilidad de canales difiere debido a las regulaciones de los distintos países."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:38
-msgid ""
-"<strong>Broadcast SSID</strong> - Show or hide {PLATFORM}s SSID for wireless "
-"devices. By default the SSID is broadcasted."
-msgstr ""
-"<strong>Difusión de SSID</strong> - Mostrar u ocultar el SSID de {PLATFORM} "
-"a los dispositivos inalámbricos. Por defecto el se muestra el SSID."
+msgid "<strong>Broadcast SSID</strong> - Show or hide {PLATFORM}s SSID for wireless devices. By default the SSID is broadcasted."
+msgstr "<strong>Difusión de SSID</strong> - Mostrar u ocultar el SSID de {PLATFORM} a los dispositivos inalámbricos. Por defecto el se muestra el SSID."

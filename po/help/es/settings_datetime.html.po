@@ -24,26 +24,17 @@ msgstr "Fecha y hora"
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:5
 msgid "<strong>Current timezone is</strong> - Shows the selected timezon."
-msgstr ""
-"<strong>Actual huso horario</strong> - Muestra el uso horario selecionado."
+msgstr "<strong>Actual huso horario</strong> - Muestra el uso horario selecionado."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:8
-msgid ""
-"<strong>Select timezone</strong> - Select your timezone in the drop down "
-"list."
-msgstr ""
-"<strong>Selecciona horo horario</strong> - Selecciona tu huso horario en la "
-"lista desplegable."
+msgid "<strong>Select timezone</strong> - Select your timezone in the drop down list."
+msgstr "<strong>Selecciona horo horario</strong> - Selecciona tu huso horario en la lista desplegable."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:11
-msgid ""
-"<strong>Set time automatically</strong> - This enables {PLATFORM} to set the "
-"date and time automatically via an internet server."
-msgstr ""
-"<strong>Establece la hora automáticamente</strong> - Esto permite a "
-"{PLATFORM} establecer la fecha y hora a través de un servidor de internet."
+msgid "<strong>Set time automatically</strong> - This enables {PLATFORM} to set the date and time automatically via an internet server."
+msgstr "<strong>Establece la hora automáticamente</strong> - Esto permite a {PLATFORM} establecer la fecha y hora a través de un servidor de internet."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:14
@@ -62,8 +53,5 @@ msgstr "Idioma por defecto"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:23
-msgid ""
-"<strong>System language</strong> - Select language for the user interface."
-msgstr ""
-"<strong>Idioma del sistema</strong> - Selecciona idioma para la interface de "
-"usuario."
+msgid "<strong>System language</strong> - Select language for the user interface."
+msgstr "<strong>Idioma del sistema</strong> - Selecciona idioma para la interface de usuario."

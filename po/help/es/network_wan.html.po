@@ -46,51 +46,22 @@ msgstr "WAN"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:5
-msgid ""
-"Here you configure how your {PLATFORM} will handle your Wide Area Network "
-"(WAN) port. The default setting is to Obtain an IP address."
-msgstr ""
-"Aquí se configura como tu {PLATFORM} maneja tu puerto Wide Area Network "
-"(WAN). La configuración por defecto es Obtener una dirección IP."
+msgid "Here you configure how your {PLATFORM} will handle your Wide Area Network (WAN) port. The default setting is to Obtain an IP address."
+msgstr "Aquí se configura como tu {PLATFORM} maneja tu puerto Wide Area Network (WAN). La configuración por defecto es Obtener una dirección IP."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:8
 #, fuzzy
-#| msgid ""
-#| "- The Dynamic Host Configuration Protocol (DHCP) automates the assignment "
-#| "of IP address, Netmask, Default gateway, and other IP parameters. Use "
-#| "this option if your internet provider requires you to use DHCP. This is "
-#| "the default and most common option."
-msgid ""
-"<strong>Obtain IP-address automatically (DHCP)</strong> - The Dynamic Host "
-"Configuration Protocol (DHCP) automates the assignment of IP address, "
-"Netmask, Default gateway, and other IP parameters.  Use this option if your "
-"internet provider requires you to use DHCP. This is the default and most "
-"common option."
-msgstr ""
-"<strong>Obtain IP-address automatically (DHCP)</strong> - El protocolo DHCP "
-"automatiza la asignación de direcciones IP, máscaras, gateways, y otros "
-"parámetros IP. Usa esta opción si tu proveedor de internet requiere que "
-"utilices DHCP. El la opción por defecto y la más habitual."
+#| msgid "- The Dynamic Host Configuration Protocol (DHCP) automates the assignment of IP address, Netmask, Default gateway, and other IP parameters. Use this option if your internet provider requires you to use DHCP. This is the default and most common option."
+msgid "<strong>Obtain IP-address automatically (DHCP)</strong> - The Dynamic Host Configuration Protocol (DHCP) automates the assignment of IP address, Netmask, Default gateway, and other IP parameters.  Use this option if your internet provider requires you to use DHCP. This is the default and most common option."
+msgstr "<strong>Obtain IP-address automatically (DHCP)</strong> - El protocolo DHCP automatiza la asignación de direcciones IP, máscaras, gateways, y otros parámetros IP. Usa esta opción si tu proveedor de internet requiere que utilices DHCP. El la opción por defecto y la más habitual."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:12
-msgid ""
-"<strong>Use static IP address settings</strong> - Static IP address, "
-"Netmask, Default gateway and Primary DNS are manually assigned to {PLATFORM} "
-"by the administrator. Use this option if your internet provider requires you "
-"to manually enter the values."
-msgstr ""
-"<strong>Usa configuración estática de IP</strong> - Dirección IP, Netmask, "
-"Gateway y DNS primario se asignan manualmente a {PLATFORM} por el "
-"administrador. Usa esta opción si tu proveedor de internet requiere que "
-"introduzcas los valores manualmente."
+msgid "<strong>Use static IP address settings</strong> - Static IP address, Netmask, Default gateway and Primary DNS are manually assigned to {PLATFORM} by the administrator. Use this option if your internet provider requires you to manually enter the values."
+msgstr "<strong>Usa configuración estática de IP</strong> - Dirección IP, Netmask, Gateway y DNS primario se asignan manualmente a {PLATFORM} por el administrador. Usa esta opción si tu proveedor de internet requiere que introduzcas los valores manualmente."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:16
-msgid ""
-"Please notice that the WAN settings are not editable in the profile "
-"'Automatic network settings', shown for information only."
-msgstr ""
-"Observa que la configuración de WAN no es editable el el perfil "
-"'Configuración automática de red', mostrada como información."
+msgid "Please notice that the WAN settings are not editable in the profile 'Automatic network settings', shown for information only."
+msgstr "Observa que la configuración de WAN no es editable el el perfil 'Configuración automática de red', mostrada como información."

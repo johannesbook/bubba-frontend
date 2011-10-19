@@ -23,24 +23,13 @@ msgstr "Actualización de software"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:5
-msgid ""
-"{PLATFORM}'s software can easily be updated to gain new functionality. Press "
-"'Update system', and the update is automatically performed. Please have "
-"patient, it might take a while to perform an update."
-msgstr ""
-"El software de {PLATFORM} puede ser actualizado fácilmente para obtener "
-"nuevas funcionalidades. Pulsa 'Actualizar sistema', y la actualización se "
-"realiza automáticamente. Por favor ten paciencia, puede llevar un rato "
-"realizar una actualización."
+msgid "{PLATFORM}'s software can easily be updated to gain new functionality. Press 'Update system', and the update is automatically performed. Please have patient, it might take a while to perform an update."
+msgstr "El software de {PLATFORM} puede ser actualizado fácilmente para obtener nuevas funcionalidades. Pulsa 'Actualizar sistema', y la actualización se realiza automáticamente. Por favor ten paciencia, puede llevar un rato realizar una actualización."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:8
-msgid ""
-"After an update, status information is shown. Press the '+' sign to show the "
-"complete message."
-msgstr ""
-"Tras la actualización, se muestra información de estado. Pulsa el signo '+' "
-"para mostrar el mensaje completo."
+msgid "After an update, status information is shown. Press the '+' sign to show the complete message."
+msgstr "Tras la actualización, se muestra información de estado. Pulsa el signo '+' para mostrar el mensaje completo."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/settings_software.html:11
@@ -49,41 +38,18 @@ msgstr "Parches"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:14
-msgid ""
-"This feature collects status information from your {PLATFORM} and sends to "
-"Excito for automated analysis. The update server can then take appropriate "
-"actions if your system has problems. The system information is sent to "
-"Excito via an encrypted connection, and server responses are GPG signed to "
-"ensure the security and that the content is distributed by Excito."
-msgstr ""
-"Esta opción recoge información de estado de tu {PLATFORM} y la envía a "
-"Excito para un análisis automatizado. El servidor de actualizaciones puede "
-"decidir las acciones adecuadas si tu sistena tiene problemas. La información "
-"del sistema se envía a Excito mediante una conexión cifrada, y las "
-"respuestas del servidor se certifican con GPG para asegurar que el contenido "
-"es distribuído por Excito."
+msgid "This feature collects status information from your {PLATFORM} and sends to Excito for automated analysis. The update server can then take appropriate actions if your system has problems. The system information is sent to Excito via an encrypted connection, and server responses are GPG signed to ensure the security and that the content is distributed by Excito."
+msgstr "Esta opción recoge información de estado de tu {PLATFORM} y la envía a Excito para un análisis automatizado. El servidor de actualizaciones puede decidir las acciones adecuadas si tu sistena tiene problemas. La información del sistema se envía a Excito mediante una conexión cifrada, y las respuestas del servidor se certifican con GPG para asegurar que el contenido es distribuído por Excito."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:18
-msgid ""
-"By default this feature is enabled. Use the switch to disable Hotfixes. If "
-"doing so you might not get the most important updates to your {PLATFORM}."
-msgstr ""
-"Por defecto ésta facilidad está activada. Utiliza el interruptor para "
-"desactivar los Parches. En este caso puede que no obtengas actualizaciones "
-"primordiales para tu {PLATFORM}."
+msgid "By default this feature is enabled. Use the switch to disable Hotfixes. If doing so you might not get the most important updates to your {PLATFORM}."
+msgstr "Por defecto ésta facilidad está activada. Utiliza el interruptor para desactivar los Parches. En este caso puede que no obtengas actualizaciones primordiales para tu {PLATFORM}."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:21
-msgid ""
-"<strong>Any information collected by Excito will never be exposed to any "
-"other party than Excito. The information will only be used to pin point "
-"errors and perform the best matched updates for your {PLATFORM}.</strong>"
-msgstr ""
-"<strong>Cualquier información recogida por Excito no se facilitará nunca a "
-"otra compañia distita de Excito. La información solo se utilizará para "
-"recabar errores y facilitar las actualizaciones más pertinentes para tu "
-"{PLATFORM}.</strong>"
+msgid "<strong>Any information collected by Excito will never be exposed to any other party than Excito. The information will only be used to pin point errors and perform the best matched updates for your {PLATFORM}.</strong>"
+msgstr "<strong>Cualquier información recogida por Excito no se facilitará nunca a otra compañia distita de Excito. La información solo se utilizará para recabar errores y facilitar las actualizaciones más pertinentes para tu {PLATFORM}.</strong>"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:25
@@ -153,6 +119,4 @@ msgstr "Versiones actuales de paquetes"
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_software.html:55
 msgid "Detailed information about {PLATFORM} software versions is shown here."
-msgstr ""
-"Aquí se muestra información detallada sobre las versiones de software de "
-"{PLATFORM}."
+msgstr "Aquí se muestra información detallada sobre las versiones de software de {PLATFORM}."

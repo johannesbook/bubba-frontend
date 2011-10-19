@@ -23,22 +23,13 @@ msgstr "Benutzerdaten"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_users.html:5
-msgid ""
-"Here users can change personal information such as 'Real name' and password."
-msgstr ""
-"Hier kann jeder Benutzer seine persönlichen Daten wie z. B. 'Echter Name' "
-"und sein Passwort ändern."
+msgid "Here users can change personal information such as 'Real name' and password."
+msgstr "Hier kann jeder Benutzer seine persönlichen Daten wie z. B. 'Echter Name' und sein Passwort ändern."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_users.html:8
-msgid ""
-"Changing the user name (login name) is not possible. To achieve this you "
-"will have to delete the user via the administrator login and add a new user "
-"with the correct name."
-msgstr ""
-"Der Benutzername (Login-Name) kann nicht verändert werden. Sie müssen sich "
-"dazu als Administrator anmelden, den Benutzer löschen und mit seinem "
-"korrekten Namen neu anlegen."
+msgid "Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name."
+msgstr "Der Benutzername (Login-Name) kann nicht verändert werden. Sie müssen sich dazu als Administrator anmelden, den Benutzer löschen und mit seinem korrekten Namen neu anlegen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_users.html:11

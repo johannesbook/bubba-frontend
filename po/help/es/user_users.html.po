@@ -23,22 +23,13 @@ msgstr "Información de usuario"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_users.html:5
-msgid ""
-"Here users can change personal information such as 'Real name' and password."
-msgstr ""
-"Aquí los usuarios pueden cambiar información personal tal como 'Nombre real' "
-"y contraseña."
+msgid "Here users can change personal information such as 'Real name' and password."
+msgstr "Aquí los usuarios pueden cambiar información personal tal como 'Nombre real' y contraseña."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_users.html:8
-msgid ""
-"Changing the user name (login name) is not possible. To achieve this you "
-"will have to delete the user via the administrator login and add a new user "
-"with the correct name."
-msgstr ""
-"No es posible cambiar el numbre de usuario (nombre de conexión). Para poder "
-"hacer esto tienes que borrar al usuario mediante accediendo como "
-"administrador y añadir un nuevo usuario con el nombre correcto."
+msgid "Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name."
+msgstr "No es posible cambiar el numbre de usuario (nombre de conexión). Para poder hacer esto tienes que borrar al usuario mediante accediendo como administrador y añadir un nuevo usuario con el nombre correcto."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_users.html:11

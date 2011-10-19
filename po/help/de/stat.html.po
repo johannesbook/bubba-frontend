@@ -23,13 +23,8 @@ msgstr "Status"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/stat.html:5
-msgid ""
-"Here you find information about the installed hard drive size and remaining "
-"disk space, {PLATFORM} uptime and the installed software revision number."
-msgstr ""
-"Hier finden Sie Informationen über die installierte Festplatte und den "
-"verbleibenden Speicherplatz, die Aktivitätszeit von {PLATFORM} und die "
-"installierte Software-Version."
+msgid "Here you find information about the installed hard drive size and remaining disk space, {PLATFORM} uptime and the installed software revision number."
+msgstr "Hier finden Sie Informationen über die installierte Festplatte und den verbleibenden Speicherplatz, die Aktivitätszeit von {PLATFORM} und die installierte Software-Version."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/stat.html:8
@@ -43,17 +38,10 @@ msgstr "Hier werden wichtige Meldungen des Systems angezeigt."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/stat.html:14
-msgid ""
-"The '<strong>Shutdown</strong>' button powers off {PLATFORM} in the same way "
-"as pressing the button on the backside of the unit. To start up again, press "
-"the button on the backside."
-msgstr ""
-"Die Taste '<strong>Ausschalten</strong>'  schaltet {PLATFORM} auf die "
-"gleiche Weise aus wie die Taste auf der Rückseite des Gerätes. Um {PLATFORM} "
-"wieder zu starten, drücken Sie die Taste auf der Rückseite."
+msgid "The '<strong>Shutdown</strong>' button powers off {PLATFORM} in the same way as pressing the button on the backside of the unit. To start up again, press the button on the backside."
+msgstr "Die Taste '<strong>Ausschalten</strong>'  schaltet {PLATFORM} auf die gleiche Weise aus wie die Taste auf der Rückseite des Gerätes. Um {PLATFORM} wieder zu starten, drücken Sie die Taste auf der Rückseite."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/stat.html:17
 msgid "The '<strong>Restart</strong>' button reboots {PLATFORM}."
-msgstr ""
-"Mit der Taste '<strong>Neu starten</strong>' wird{PLATFORM} neu gestartet."
+msgstr "Mit der Taste '<strong>Neu starten</strong>' wird{PLATFORM} neu gestartet."

@@ -46,52 +46,25 @@ msgstr "Perfil de red"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:5
-msgid ""
-"Automatic settings will work in most cases, you do probably not need to "
-"change this. Read the technical manual if you need further information."
-msgstr ""
-"La configuración automática funcionará en la mayoría de los casos, y no "
-"necesitarás cambiar esto. Lee el manual técnico si necesitas mayor "
-"información."
+msgid "Automatic settings will work in most cases, you do probably not need to change this. Read the technical manual if you need further information."
+msgstr "La configuración automática funcionará en la mayoría de los casos, y no necesitarás cambiar esto. Lee el manual técnico si necesitas mayor información."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:8
-msgid ""
-"<strong>Automatic network settings</strong> - {PLATFORM} will automatically "
-"try to set an appropriate network configuration."
-msgstr ""
-"<strong>Configuración de red automática</strong> - {PLATFORM} intentará "
-"establecer una configuración de red adecuada."
+msgid "<strong>Automatic network settings</strong> - {PLATFORM} will automatically try to set an appropriate network configuration."
+msgstr "<strong>Configuración de red automática</strong> - {PLATFORM} intentará establecer una configuración de red adecuada."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:11
-msgid ""
-"<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically "
-"try to retrieve network settings on WAN (internet), and use fixed network "
-"settings on the local network providing other computers with network "
-"information."
-msgstr ""
-"<strong>Router + Firewall + Servidor</strong> - {PLATFORM} obtendrá "
-"automáticamente la configuración de red para WAN (internet), y utiliza "
-"configuración de red fija en la red local poveyendo otros equipos con con "
-"información de red."
+msgid "<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically try to retrieve network settings on WAN (internet), and use fixed network settings on the local network providing other computers with network information."
+msgstr "<strong>Router + Firewall + Servidor</strong> - {PLATFORM} obtendrá automáticamente la configuración de red para WAN (internet), y utiliza configuración de red fija en la red local poveyendo otros equipos con con información de red."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:15
-msgid ""
-"<strong>Server only</strong> - {PLATFORM} will automatically try to retreive "
-"network settings on LAN (local network) and the WAN port should be left "
-"unconnected."
-msgstr ""
-"<strong>Servidor únicamente</strong> - {PLATFORM} obtendrá automáticamente "
-"la configuración de red para LAN (local network) y el puerto WAN debe quedar "
-"desconectado."
+msgid "<strong>Server only</strong> - {PLATFORM} will automatically try to retreive network settings on LAN (local network) and the WAN port should be left unconnected."
+msgstr "<strong>Servidor únicamente</strong> - {PLATFORM} obtendrá automáticamente la configuración de red para LAN (local network) y el puerto WAN debe quedar desconectado."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:18
-msgid ""
-"After editing the network settings you might need to reboot your computers "
-"and other network devices in your LAN."
-msgstr ""
-"Tras editar la configuración de red puede ser necesario reiniciar tus "
-"ordenadores y otros dispositivos de tu LAN."
+msgid "After editing the network settings you might need to reboot your computers and other network devices in your LAN."
+msgstr "Tras editar la configuración de red puede ser necesario reiniciar tus ordenadores y otros dispositivos de tu LAN."

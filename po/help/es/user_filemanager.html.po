@@ -31,13 +31,8 @@ msgstr "Acciones de fichero y carpeta"
 #. type: Content of: <p>
 #: admin/views/default/help/en/filemanager.html:14
 #: admin/views/default/help/en/user_filemanager.html:14
-msgid ""
-"Click files or folders and use the icons in the file function bar to perform "
-"different actions. The functions from left to right are:"
-msgstr ""
-"Haz clic en ficheros or carpetas y utiliza los iconos de la barra de "
-"funcioón de fichero para realizar diferentes acciones. Las funciones de "
-"izquierda a derecha son:"
+msgid "Click files or folders and use the icons in the file function bar to perform different actions. The functions from left to right are:"
+msgstr "Haz clic en ficheros or carpetas y utiliza los iconos de la barra de funcioón de fichero para realizar diferentes acciones. Las funciones de izquierda a derecha son:"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/filemanager.html:17
@@ -101,48 +96,25 @@ msgstr "álbum de fotos"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:2
-msgid ""
-"From the File manager you are able to reach your files on {PLATFORM} eaven "
-"if you are away from home."
-msgstr ""
-"Desde el Administrador de archivos puedes acceder a tus ficheros en "
-"{PLATFORM} incluso desde fuera de casa."
+msgid "From the File manager you are able to reach your files on {PLATFORM} eaven if you are away from home."
+msgstr "Desde el Administrador de archivos puedes acceder a tus ficheros en {PLATFORM} incluso desde fuera de casa."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:8
-msgid ""
-"Navigate into a folder by clicking the arrow to the right of the folder name "
-"or double clicking it, navigate up one level by clicking the left arrow or "
-"click the /home/username/ raw."
-msgstr ""
-"Entra en una carpeta haciendo clic en la flecha de la derecha de la carpeta "
-"o haciéndole doble clic, asciende un nivel haciendo clic en la flecha "
-"izquierda o el la línea /home/usuario/"
+msgid "Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ raw."
+msgstr "Entra en una carpeta haciendo clic en la flecha de la derecha de la carpeta o haciéndole doble clic, asciende un nivel haciendo clic en la flecha izquierda o el la línea /home/usuario/"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:40
-msgid ""
-"To view your photos in {PLATFORM}s photo album you have to place the photos "
-"in the home/storage/pictures catalog."
-msgstr ""
-"Para ver tus fotos en el álbum de fotos de {PLATFORM} tienes que poner tus "
-"fotos en el catálogo home/storage/pictures."
+msgid "To view your photos in {PLATFORM}s photo album you have to place the photos in the home/storage/pictures catalog."
+msgstr "Para ver tus fotos en el álbum de fotos de {PLATFORM} tienes que poner tus fotos en el catálogo home/storage/pictures."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:43
-msgid ""
-"Then select the files or folders and use the \"Add to album\" icon in the "
-"file function bar to add your photos to the {PLATFORM} photo album."
-msgstr ""
-"Entonces seleccionas los ficheros o carpetas y utilizas el icono \"Añadir a "
-"álbum\" en la barra de funciones para añadir tus fotos al álbum de fotos de "
-"{PLATFORM}."
+msgid "Then select the files or folders and use the \"Add to album\" icon in the file function bar to add your photos to the {PLATFORM} photo album."
+msgstr "Entonces seleccionas los ficheros o carpetas y utilizas el icono \"Añadir a álbum\" en la barra de funciones para añadir tus fotos al álbum de fotos de {PLATFORM}."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:46
-msgid ""
-"Continue to the Album manager (via {PLATFORM}s start page) to publish the "
-"photos."
-msgstr ""
-"Sigue con el gestor de álbum (mediante la página de inicio de {PLATFORM}) "
-"para publicar las fotos."
+msgid "Continue to the Album manager (via {PLATFORM}s start page) to publish the photos."
+msgstr "Sigue con el gestor de álbum (mediante la página de inicio de {PLATFORM}) para publicar las fotos."

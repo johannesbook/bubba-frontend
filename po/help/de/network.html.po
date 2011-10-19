@@ -46,52 +46,25 @@ msgstr "Netzwerk-Profil"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:5
-msgid ""
-"Automatic settings will work in most cases, you do probably not need to "
-"change this. Read the technical manual if you need further information."
-msgstr ""
-"In den meisten Fällen funktionieren die automatischen Einstellungen, und Sie "
-"müssen hier nichts ändern. Weitere Informationen entnehmen Sie dem "
-"technischen Handbuch."
+msgid "Automatic settings will work in most cases, you do probably not need to change this. Read the technical manual if you need further information."
+msgstr "In den meisten Fällen funktionieren die automatischen Einstellungen, und Sie müssen hier nichts ändern. Weitere Informationen entnehmen Sie dem technischen Handbuch."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:8
-msgid ""
-"<strong>Automatic network settings</strong> - {PLATFORM} will automatically "
-"try to set an appropriate network configuration."
-msgstr ""
-"<strong>Automatische Netzwerkeinstellungen</strong> - {PLATFORM} versucht, "
-"die passende Netzwerkkonfiguration automatisch einzustellen."
+msgid "<strong>Automatic network settings</strong> - {PLATFORM} will automatically try to set an appropriate network configuration."
+msgstr "<strong>Automatische Netzwerkeinstellungen</strong> - {PLATFORM} versucht, die passende Netzwerkkonfiguration automatisch einzustellen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:11
-msgid ""
-"<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically "
-"try to retrieve network settings on WAN (internet), and use fixed network "
-"settings on the local network providing other computers with network "
-"information."
-msgstr ""
-"<strong>Router + Firewall + Server</strong> -  {PLATFORM} versucht, die "
-"Netzwerkeinstellungen für WAN (Internet) automatisch abzurufen und verwendet "
-"fixe Netzwerkeinstellungen im lokalen Netzwerk, wobei Netzwerkdaten für "
-"andere Computer zur Verfügung gestellt werden."
+msgid "<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically try to retrieve network settings on WAN (internet), and use fixed network settings on the local network providing other computers with network information."
+msgstr "<strong>Router + Firewall + Server</strong> -  {PLATFORM} versucht, die Netzwerkeinstellungen für WAN (Internet) automatisch abzurufen und verwendet fixe Netzwerkeinstellungen im lokalen Netzwerk, wobei Netzwerkdaten für andere Computer zur Verfügung gestellt werden."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:15
-msgid ""
-"<strong>Server only</strong> - {PLATFORM} will automatically try to retreive "
-"network settings on LAN (local network) and the WAN port should be left "
-"unconnected."
-msgstr ""
-"<strong>Nur Server</strong> - {PLATFORM} versucht, die Netzwerkeinstellungen "
-"für LAN (lokales Netzwerk) automatisch abzurufen; der WAN-Port sollte frei "
-"bleiben."
+msgid "<strong>Server only</strong> - {PLATFORM} will automatically try to retreive network settings on LAN (local network) and the WAN port should be left unconnected."
+msgstr "<strong>Nur Server</strong> - {PLATFORM} versucht, die Netzwerkeinstellungen für LAN (lokales Netzwerk) automatisch abzurufen; der WAN-Port sollte frei bleiben."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network.html:18
-msgid ""
-"After editing the network settings you might need to reboot your computers "
-"and other network devices in your LAN."
-msgstr ""
-"Nach Bearbeitung der Netzwerkeinstellungen müssen die Computer und andere "
-"Geräte im LAN unter Umständen neu gestartet werden."
+msgid "After editing the network settings you might need to reboot your computers and other network devices in your LAN."
+msgstr "Nach Bearbeitung der Netzwerkeinstellungen müssen die Computer und andere Geräte im LAN unter Umständen neu gestartet werden."

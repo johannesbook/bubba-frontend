@@ -18,13 +18,8 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_album_albums.html:2
-msgid ""
-"Share your digital photos with friends and family! With {PLATFORM} you get "
-"easy to use, out of the box photo album! All you need is your digital "
-"pictures!"
-msgstr ""
-"¡Comparte tus fotos digitales con familia y amigos! ¡con {PLATFORM} tienes "
-"un sencillo, disponible álbum de fotos! ¡Sólo necesitas tus fotos digitales!"
+msgid "Share your digital photos with friends and family! With {PLATFORM} you get easy to use, out of the box photo album! All you need is your digital pictures!"
+msgstr "¡Comparte tus fotos digitales con familia y amigos! ¡con {PLATFORM} tienes un sencillo, disponible álbum de fotos! ¡Sólo necesitas tus fotos digitales!"
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/user_album_albums.html:5
@@ -33,12 +28,8 @@ msgstr "Añadir invitados al álbum"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_album_albums.html:8
-msgid ""
-"Click the menu item <b>Album viewers</b> to add users for private viewing of "
-"photo albums."
-msgstr ""
-"Selecciona el elemento de menú <b>invitados a álbum</b> para añadir usuarios "
-"que puedan ver el álbum de fotos."
+msgid "Click the menu item <b>Album viewers</b> to add users for private viewing of photo albums."
+msgstr "Selecciona el elemento de menú <b>invitados a álbum</b> para añadir usuarios que puedan ver el álbum de fotos."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/user_album_albums.html:11
@@ -47,21 +38,13 @@ msgstr "Añadir álbumes"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_album_albums.html:14
-msgid ""
-"Every user on {PLATFORM} can create and publish photo albums, except for the "
-"administrator."
-msgstr ""
-"Todo usuario de {PLATFORM} puede crear y publicar álbumes de fotos, excepto "
-"el administrador."
+msgid "Every user on {PLATFORM} can create and publish photo albums, except for the administrator."
+msgstr "Todo usuario de {PLATFORM} puede crear y publicar álbumes de fotos, excepto el administrador."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:17
-msgid ""
-"Copy the folders containing your pictures to \\{PLATFORM}\\storage"
-"\\pictures, with for example the built in Filemanager or Windows Explorer."
-msgstr ""
-"Copia las carpetas con las fotos a \\{PLATFORM}\\storage\\pictures, con el "
-"Gestor de archivos incorporado o el Explorador de Windows."
+msgid "Copy the folders containing your pictures to \\{PLATFORM}\\storage\\pictures, with for example the built in Filemanager or Windows Explorer."
+msgstr "Copia las carpetas con las fotos a \\{PLATFORM}\\storage\\pictures, con el Gestor de archivos incorporado o el Explorador de Windows."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:19
@@ -81,23 +64,17 @@ msgstr "Vete hasta /home/storage/pictures."
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:25
 msgid "Select the folders or pictures you wish to add as photo albums."
-msgstr ""
-"Selecciona las carpetas o fotos que quieres añadir como álbumes de fotos."
+msgstr "Selecciona las carpetas o fotos que quieres añadir como álbumes de fotos."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:27
-msgid ""
-"Select the <strong>'Add to album'</strong> icon in the file function bar."
+msgid "Select the <strong>'Add to album'</strong> icon in the file function bar."
 msgstr ""
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:29
-msgid ""
-"Open the <strong>Album manager</strong>. Decide if the added albums should "
-"be public or private. By default all added albums are private."
-msgstr ""
-"Abre el <strong>Gestor de álbumes</strong>. Decide si los álbumes añadidos "
-"deben ser públicos o privados. Por defecto todos los álbumes son privados."
+msgid "Open the <strong>Album manager</strong>. Decide if the added albums should be public or private. By default all added albums are private."
+msgstr "Abre el <strong>Gestor de álbumes</strong>. Decide si los álbumes añadidos deben ser públicos o privados. Por defecto todos los álbumes son privados."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:31
@@ -106,21 +83,13 @@ msgstr "Selecciona tu álbum, a la izquierda de la pantalla."
 
 #. type: Content of: <ol><li><ul><li>
 #: admin/views/default/help/en/user_album_albums.html:33
-msgid ""
-"Ether select the users who you would like to share the album with, then "
-"click Update."
-msgstr ""
-"Bien seleccionas los usuarios con los que quieres compartir el álbum, y "
-"pulsas Actualizar."
+msgid "Ether select the users who you would like to share the album with, then click Update."
+msgstr "Bien seleccionas los usuarios con los que quieres compartir el álbum, y pulsas Actualizar."
 
 #. type: Content of: <ol><li><ul><li>
 #: admin/views/default/help/en/user_album_albums.html:35
-msgid ""
-"Or click 'Public' if you want the album to be open to anyone who can access "
-"your {PLATFORM}, then click Update."
-msgstr ""
-"O marcas 'Público' si quieres que el álbum esté disponible para cualquiera "
-"que acceda a tu {PLATFORM}, y pulsas Actualizar."
+msgid "Or click 'Public' if you want the album to be open to anyone who can access your {PLATFORM}, then click Update."
+msgstr "O marcas 'Público' si quieres que el álbum esté disponible para cualquiera que acceda a tu {PLATFORM}, y pulsas Actualizar."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:39
@@ -139,12 +108,8 @@ msgstr "Selecciona el álbum que quieres editar."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_albums.html:49
-msgid ""
-"To edit album- or picture caption select the object, enter text and click "
-"'Update'."
-msgstr ""
-"Para editar un álbum- o pié de foto selecciona el objeto, introduce el texto "
-"y marca 'Actualizar'."
+msgid "To edit album- or picture caption select the object, enter text and click 'Update'."
+msgstr "Para editar un álbum- o pié de foto selecciona el objeto, introduce el texto y marca 'Actualizar'."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_albums.html:51
@@ -158,11 +123,5 @@ msgstr "Para borrar una foto, selecciona la foto y pulsa 'Quitar del álbum'."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_album_albums.html:57
-msgid ""
-"Your photo albums will be visible by browsing to <a href='http://"
-"{DEFAULT_HOST}/album' target='_blank'>http://{DEFAULT_HOST}/album</a> (<a "
-"href='http://{DEFAULT_HOST}.local/album' target='_blank'>http://"
-"{DEFAULT_HOST}.local/album</a> if using Mac) from inside your home network, "
-"or by browsing to www.-your easyfind name-.{EASYFIND} from outside your "
-"network."
+msgid "Your photo albums will be visible by browsing to <a href='http://{DEFAULT_HOST}/album' target='_blank'>http://{DEFAULT_HOST}/album</a> (<a href='http://{DEFAULT_HOST}.local/album' target='_blank'>http://{DEFAULT_HOST}.local/album</a> if using Mac) from inside your home network, or by browsing to www.-your easyfind name-.{EASYFIND} from outside your network."
 msgstr ""

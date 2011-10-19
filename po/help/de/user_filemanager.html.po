@@ -31,13 +31,8 @@ msgstr "Datei- und Ordnerfunktionen"
 #. type: Content of: <p>
 #: admin/views/default/help/en/filemanager.html:14
 #: admin/views/default/help/en/user_filemanager.html:14
-msgid ""
-"Click files or folders and use the icons in the file function bar to perform "
-"different actions. The functions from left to right are:"
-msgstr ""
-"Klicken Sie auf Dateien oder Ordner und verwenden Sie die Symbole in der "
-"Dateifunktionsleiste, um verschiedene Aktionen durchzuführen. Folgende "
-"Funktionen stehen zur Verfügung (von links nach rechts):"
+msgid "Click files or folders and use the icons in the file function bar to perform different actions. The functions from left to right are:"
+msgstr "Klicken Sie auf Dateien oder Ordner und verwenden Sie die Symbole in der Dateifunktionsleiste, um verschiedene Aktionen durchzuführen. Folgende Funktionen stehen zur Verfügung (von links nach rechts):"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/filemanager.html:17
@@ -101,49 +96,25 @@ msgstr "Fotoalbum"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:2
-msgid ""
-"From the File manager you are able to reach your files on {PLATFORM} eaven "
-"if you are away from home."
-msgstr ""
-"Im Dateimanager können Sie auf Ihre Dateien auf {PLATFORM} zugreifen - sogar "
-"von unterwegs."
+msgid "From the File manager you are able to reach your files on {PLATFORM} eaven if you are away from home."
+msgstr "Im Dateimanager können Sie auf Ihre Dateien auf {PLATFORM} zugreifen - sogar von unterwegs."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:8
-msgid ""
-"Navigate into a folder by clicking the arrow to the right of the folder name "
-"or double clicking it, navigate up one level by clicking the left arrow or "
-"click the /home/username/ raw."
-msgstr ""
-"Navigieren Sie zu einem Ordner, indem Sie auf den Pfeil rechts neben dem "
-"Ordnernamen anklicken oder auf den Ordnernamen doppelklicken, und navigieren "
-"Sie eine Ebene nach oben, indem Sie den Pfeil links anklicken oder in die "
-"Zeile /home/username/ klicken."
+msgid "Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ raw."
+msgstr "Navigieren Sie zu einem Ordner, indem Sie auf den Pfeil rechts neben dem Ordnernamen anklicken oder auf den Ordnernamen doppelklicken, und navigieren Sie eine Ebene nach oben, indem Sie den Pfeil links anklicken oder in die Zeile /home/username/ klicken."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:40
-msgid ""
-"To view your photos in {PLATFORM}s photo album you have to place the photos "
-"in the home/storage/pictures catalog."
-msgstr ""
-"Um Ihre Fotos im {PLATFORM}-Fotoalbum anzuzeigen, müssen Sie die Fotos "
-"lediglich im home/storage/pictures-Katalog ablegen."
+msgid "To view your photos in {PLATFORM}s photo album you have to place the photos in the home/storage/pictures catalog."
+msgstr "Um Ihre Fotos im {PLATFORM}-Fotoalbum anzuzeigen, müssen Sie die Fotos lediglich im home/storage/pictures-Katalog ablegen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:43
-msgid ""
-"Then select the files or folders and use the \"Add to album\" icon in the "
-"file function bar to add your photos to the {PLATFORM} photo album."
-msgstr ""
-"Wählen Sie dann die Dateien oder Ordner oder verwenden Sie das Symbol \"Zu "
-"Album hinzufügen\" in der Dateifunktionsleiste, um Ihre Fotos in das "
-"{PLATFORM}-Fotoalbum einzufügen."
+msgid "Then select the files or folders and use the \"Add to album\" icon in the file function bar to add your photos to the {PLATFORM} photo album."
+msgstr "Wählen Sie dann die Dateien oder Ordner oder verwenden Sie das Symbol \"Zu Album hinzufügen\" in der Dateifunktionsleiste, um Ihre Fotos in das {PLATFORM}-Fotoalbum einzufügen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_filemanager.html:46
-msgid ""
-"Continue to the Album manager (via {PLATFORM}s start page) to publish the "
-"photos."
-msgstr ""
-"Wechseln Sie zum Albummanager (über die {PLATFORM}-Startseite), um Ihre "
-"Fotos zu veröffentlichen."
+msgid "Continue to the Album manager (via {PLATFORM}s start page) to publish the photos."
+msgstr "Wechseln Sie zum Albummanager (über die {PLATFORM}-Startseite), um Ihre Fotos zu veröffentlichen."

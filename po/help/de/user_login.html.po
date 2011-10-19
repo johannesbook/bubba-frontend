@@ -23,10 +23,5 @@ msgstr "Willkommen bei Excito {PLATFORM}!"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_login.html:5
-msgid ""
-"Listen to music, look at your photos, and access your emails and files. You "
-"have all your important information and fun just a mouse click away!"
-msgstr ""
-"Hören Sie Musik, betrachten Sie Ihre Fotos und greifen Sie auf Ihre E-Mails "
-"und Dateien zu. Ein einziger Mausklick bringt Sie zu allen wichtigen "
-"Informationen oder sorgt für unterhaltsame Abwechslung!"
+msgid "Listen to music, look at your photos, and access your emails and files. You have all your important information and fun just a mouse click away!"
+msgstr "Hören Sie Musik, betrachten Sie Ihre Fotos und greifen Sie auf Ihre E-Mails und Dateien zu. Ein einziger Mausklick bringt Sie zu allen wichtigen Informationen oder sorgt für unterhaltsame Abwechslung!"

@@ -23,10 +23,5 @@ msgstr "Historiales"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_logs.html:5
-msgid ""
-"To fault trace on your {PLATFORM} without logging in with SSH use the Logs "
-"function. Select the desired log file in the drop down menu and click 'Show'."
-msgstr ""
-"Para analizar fallos en tu {PLATFORM} sin conectarte con SSH utiliza la "
-"función Historiales. Selecciona el fichero de historial deseado en el menú "
-"desplegable y haz clic en 'Mostrar'."
+msgid "To fault trace on your {PLATFORM} without logging in with SSH use the Logs function. Select the desired log file in the drop down menu and click 'Show'."
+msgstr "Para analizar fallos en tu {PLATFORM} sin conectarte con SSH utiliza la función Historiales. Selecciona el fichero de historial deseado en el menú desplegable y haz clic en 'Mostrar'."

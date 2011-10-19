@@ -23,10 +23,8 @@ msgstr "Añadir Invitados"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_users.html:5
-msgid ""
-"Public album can be seen by anyone, you do not have to add any album users."
-msgstr ""
-"álbum público puede ser visto por cualquiera, no necesitas añadir invitados."
+msgid "Public album can be seen by anyone, you do not have to add any album users."
+msgstr "álbum público puede ser visto por cualquiera, no necesitas añadir invitados."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_users.html:7
@@ -35,11 +33,8 @@ msgstr "álbum privado protegido con contraseña, añade aquí invitados."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_users.html:9
-msgid ""
-"Remember that the {PLATFORM} users and photo album viewers are not the same."
-msgstr ""
-"Recuerda que los usuarios de {PLATFORM} y los invitados a álbum de fotos no "
-"son lo mismo."
+msgid "Remember that the {PLATFORM} users and photo album viewers are not the same."
+msgstr "Recuerda que los usuarios de {PLATFORM} y los invitados a álbum de fotos no son lo mismo."
 
 #. type: Content of: <ul><li><ol><li>
 #: admin/views/default/help/en/user_album_users.html:13

@@ -23,26 +23,18 @@ msgstr "Benutzer hinzufügen"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_users.html:5
-msgid ""
-"Public album can be seen by anyone, you do not have to add any album users."
-msgstr ""
-"Öffentliche Alben können von jedem angesehen werden; Sie brauchen keine "
-"Albumbenutzer erstellen."
+msgid "Public album can be seen by anyone, you do not have to add any album users."
+msgstr "Öffentliche Alben können von jedem angesehen werden; Sie brauchen keine Albumbenutzer erstellen."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_users.html:7
 msgid "Private albums is password protected, add users here."
-msgstr ""
-"Nicht öffentliche Alben sind passwortgeschützt; hier müssen Benutzer "
-"hinzugefügt werden."
+msgstr "Nicht öffentliche Alben sind passwortgeschützt; hier müssen Benutzer hinzugefügt werden."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/user_album_users.html:9
-msgid ""
-"Remember that the {PLATFORM} users and photo album viewers are not the same."
-msgstr ""
-"Denken Sie daran, dass {PLATFORM}-Benutzer und Albumbetrachter nicht "
-"identisch sind."
+msgid "Remember that the {PLATFORM} users and photo album viewers are not the same."
+msgstr "Denken Sie daran, dass {PLATFORM}-Benutzer und Albumbetrachter nicht identisch sind."
 
 #. type: Content of: <ul><li><ol><li>
 #: admin/views/default/help/en/user_album_users.html:13

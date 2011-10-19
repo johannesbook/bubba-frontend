@@ -28,22 +28,13 @@ msgstr "<strong>Aktuelle Zeitzone</strong> - Zeigt die ausgewählte Zeitzone."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:8
-msgid ""
-"<strong>Select timezone</strong> - Select your timezone in the drop down "
-"list."
-msgstr ""
-"<strong>Zeitzone auswählen</strong> - Wählen Sie Ihre Zeitzone in der "
-"Dropdown-Liste aus."
+msgid "<strong>Select timezone</strong> - Select your timezone in the drop down list."
+msgstr "<strong>Zeitzone auswählen</strong> - Wählen Sie Ihre Zeitzone in der Dropdown-Liste aus."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:11
-msgid ""
-"<strong>Set time automatically</strong> - This enables {PLATFORM} to set the "
-"date and time automatically via an internet server."
-msgstr ""
-"<strong>Zeit automatisch einstellen</strong> - Diese Einstellung erlaubt "
-"{PLATFORM}, das Datum und die Uhrzeit automatisch über einen Internetserver "
-"abzurufen."
+msgid "<strong>Set time automatically</strong> - This enables {PLATFORM} to set the date and time automatically via an internet server."
+msgstr "<strong>Zeit automatisch einstellen</strong> - Diese Einstellung erlaubt {PLATFORM}, das Datum und die Uhrzeit automatisch über einen Internetserver abzurufen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:14
@@ -62,6 +53,5 @@ msgstr "Dummy header"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_datetime.html:23
-msgid ""
-"<strong>System language</strong> - Select language for the user interface."
+msgid "<strong>System language</strong> - Select language for the user interface."
 msgstr ""

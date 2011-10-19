@@ -23,12 +23,8 @@ msgstr "Estado"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/stat.html:5
-msgid ""
-"Here you find information about the installed hard drive size and remaining "
-"disk space, {PLATFORM} uptime and the installed software revision number."
-msgstr ""
-"Aquí encontrarás información sobre la utilización de espacio del disco, "
-"tiempo en marcha de {PLATFORM} y la versión de software instalado."
+msgid "Here you find information about the installed hard drive size and remaining disk space, {PLATFORM} uptime and the installed software revision number."
+msgstr "Aquí encontrarás información sobre la utilización de espacio del disco, tiempo en marcha de {PLATFORM} y la versión de software instalado."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/stat.html:8
@@ -42,14 +38,8 @@ msgstr "Las notificaciones importantes del sistema se muestran aquí"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/stat.html:14
-msgid ""
-"The '<strong>Shutdown</strong>' button powers off {PLATFORM} in the same way "
-"as pressing the button on the backside of the unit. To start up again, press "
-"the button on the backside."
-msgstr ""
-"El botón '<strong>Apagar</strong>' desconecta {PLATFORM} de la misma forma "
-"que apretando el interruptor trasero del equipo. Para iniciar de nuevo, "
-"presiona el interruptor trasero."
+msgid "The '<strong>Shutdown</strong>' button powers off {PLATFORM} in the same way as pressing the button on the backside of the unit. To start up again, press the button on the backside."
+msgstr "El botón '<strong>Apagar</strong>' desconecta {PLATFORM} de la misma forma que apretando el interruptor trasero del equipo. Para iniciar de nuevo, presiona el interruptor trasero."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/stat.html:17

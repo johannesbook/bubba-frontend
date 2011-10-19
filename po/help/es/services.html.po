@@ -35,27 +35,17 @@ msgstr "<strong>FTP</strong> - El servidor FTP de {PLATFORM}."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:8
-msgid ""
-"<strong>Anonymous FTP access</strong> - Allow users to log in to FTP server "
-"without a password."
-msgstr ""
-"<strong>Acceso FTP anónimo</strong> - Permite conexión de usuarios al "
-"servidor FTP sin contraseña."
+msgid "<strong>Anonymous FTP access</strong> - Allow users to log in to FTP server without a password."
+msgstr "<strong>Acceso FTP anónimo</strong> - Permite conexión de usuarios al servidor FTP sin contraseña."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:11
-msgid ""
-"<strong>AFP</strong> - The Apple Filing Protocol (AFP) is a network protocol "
-"that offers file services for Mac OS X and original Mac OS."
-msgstr ""
-"<strong>AFP</strong> - El Apple Filing Protocol (AFP) es un protocolo de red "
-"que ofrece servicios de fichero para Sistemas Mac OS."
+msgid "<strong>AFP</strong> - The Apple Filing Protocol (AFP) is a network protocol that offers file services for Mac OS X and original Mac OS."
+msgstr "<strong>AFP</strong> - El Apple Filing Protocol (AFP) es un protocolo de red que ofrece servicios de fichero para Sistemas Mac OS."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:14
-msgid ""
-"<strong>Windows file share</strong> - Windows file share (Samba) is used to "
-"share files and printerns in a Windows network."
+msgid "<strong>Windows file share</strong> - Windows file share (Samba) is used to share files and printerns in a Windows network."
 msgstr ""
 
 #. type: Content of: <h3>
@@ -65,68 +55,35 @@ msgstr "Difusión"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:20
-msgid ""
-"<strong>UPnP streaming</strong> - Universal Plug and Play (UPnP) server. The "
-"server shares/streams media data like audio/video/picture/files to UPnP-"
-"clients on the network. Please notice that if you are located in a unsecure "
-"network; disable UPnP because otherwise you are able to browse the whole "
-"file system via Mediatomb's web interface which could be a security risk."
-msgstr ""
-"<strong>Difusión UPnP</strong> - Servidor para Universal Plug and Play "
-"(UPnP). Comparte/difunde datos como audio/video/fotos/ficheros a clientes-"
-"UPnP en la red. Ojo, si te encuentras en una red no segura, desabilita UPnP "
-"porque todo el sistema puede navegarse mediante la interface web de "
-"Mediatomb, lo que puede ser un riesgo de seguridad."
+msgid "<strong>UPnP streaming</strong> - Universal Plug and Play (UPnP) server. The server shares/streams media data like audio/video/picture/files to UPnP-clients on the network. Please notice that if you are located in a unsecure network; disable UPnP because otherwise you are able to browse the whole file system via Mediatomb's web interface which could be a security risk."
+msgstr "<strong>Difusión UPnP</strong> - Servidor para Universal Plug and Play (UPnP). Comparte/difunde datos como audio/video/fotos/ficheros a clientes-UPnP en la red. Ojo, si te encuentras en una red no segura, desabilita UPnP porque todo el sistema puede navegarse mediante la interface web de Mediatomb, lo que puede ser un riesgo de seguridad."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:24
-msgid ""
-"<strong>DAAP streaming</strong> - Digital Audio Access Protocol (DAAP) "
-"server. Media server for the Roku SoundBridge and iTunes."
-msgstr ""
-"<strong>Difusión DAAP</strong> - Servidor para Digital Audio Access Protocol "
-"(DAAP). Sirve media para el Roku SoundBridge e iTunes."
+msgid "<strong>DAAP streaming</strong> - Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes."
+msgstr "<strong>Difusión DAAP</strong> - Servidor para Digital Audio Access Protocol (DAAP). Sirve media para el Roku SoundBridge e iTunes."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:27
-msgid ""
-"<strong>Squeezebox Server</strong> - is a streaming audio server supported "
-"by Logitech that streams music to The Squeezebox product line."
-msgstr ""
-"<strong>Servidor Squeezebox</strong> - es un servidor de difusión de audio "
-"soportado por Logitech que difunde música a los productos Squeezebox."
+msgid "<strong>Squeezebox Server</strong> - is a streaming audio server supported by Logitech that streams music to The Squeezebox product line."
+msgstr "<strong>Servidor Squeezebox</strong> - es un servidor de difusión de audio soportado por Logitech que difunde música a los productos Squeezebox."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:33
-msgid ""
-"<strong>Send and receive</strong> - This is for postfix the smtp server: "
-"Sending and receiving emails."
-msgstr ""
-"<strong>Enviar y recibir</strong> - Para el servidor smtp de postfix: Envío "
-"y receptión de correos electrónicos."
+msgid "<strong>Send and receive</strong> - This is for postfix the smtp server: Sending and receiving emails."
+msgstr "<strong>Enviar y recibir</strong> - Para el servidor smtp de postfix: Envío y receptión de correos electrónicos."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:36
 #, fuzzy
-#| msgid ""
-#| "- This is for dovecot the IMAP server. This service is required for the "
-#| "webmail access to be functional."
-msgid ""
-"<strong>IMAP (Required for webmail access)</strong> - This is for dovecot "
-"the IMAP server. This service is required for the webmail access to be "
-"functional."
-msgstr ""
-"<strong>IMAP</strong> - Para el servidor IMAP dovecot. Se requiere para que "
-"funcione el acceso webmail."
+#| msgid "- This is for dovecot the IMAP server. This service is required for the webmail access to be functional."
+msgid "<strong>IMAP (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required for the webmail access to be functional."
+msgstr "<strong>IMAP</strong> - Para el servidor IMAP dovecot. Se requiere para que funcione el acceso webmail."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:39
-msgid ""
-"<strong>Email retrieval</strong> - This is for fetchmail, a daemon that "
-"collects emails to {PLATFORM}"
-msgstr ""
-"<strong>Recuperación de correos</strong> - Para fetchmail, un demonio que "
-"recolecta correos electrónicos para {PLATFORM}"
+msgid "<strong>Email retrieval</strong> - This is for fetchmail, a daemon that collects emails to {PLATFORM}"
+msgstr "<strong>Recuperación de correos</strong> - Para fetchmail, un demonio que recolecta correos electrónicos para {PLATFORM}"
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/services.html:42
@@ -140,16 +97,10 @@ msgstr "<strong>Impresión</strong> - servidor de impresión en {PLATFORM}."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:48
-msgid ""
-"<strong>Up and downloads</strong> - possibility to up / download files on "
-"{PLATFORM}, i.e. filemanager and torrents."
-msgstr ""
-"<strong>Carga y descarga</strong> - posibilita subir / descargar ficheros en "
-"{PLATFORM}, p.e. enlaces y torrents."
+msgid "<strong>Up and downloads</strong> - possibility to up / download files on {PLATFORM}, i.e. filemanager and torrents."
+msgstr "<strong>Carga y descarga</strong> - posibilita subir / descargar ficheros en {PLATFORM}, p.e. enlaces y torrents."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:51
-msgid ""
-"<strong>Remote access through other router</strong> - tries to open web "
-"ports (80 and 443) through your router, to allow for remote access."
+msgid "<strong>Remote access through other router</strong> - tries to open web ports (80 and 443) through your router, to allow for remote access."
 msgstr ""

@@ -26,14 +26,8 @@ msgstr "E-Mail"
 #. type: Content of: <p>
 #: admin/views/default/help/en/mail.html:5
 #: admin/views/default/help/en/user_mail.html:5
-msgid ""
-"{PLATFORM} will fetch your email from all your different external email "
-"accounts you may have. The email will be stored on {PLATFORM} and available "
-"via IMAP or webmail, wherever you are."
-msgstr ""
-"{PLATFORM} kann Ihre E-Mail von allen externen E-Mail-Konten abrufen, die "
-"Sie besitzen. Die E-Mails werden auf {PLATFORM} gespeichert und sind per "
-"IMAP oder Webmail von überall aus zugänglich."
+msgid "{PLATFORM} will fetch your email from all your different external email accounts you may have. The email will be stored on {PLATFORM} and available via IMAP or webmail, wherever you are."
+msgstr "{PLATFORM} kann Ihre E-Mail von allen externen E-Mail-Konten abrufen, die Sie besitzen. Die E-Mails werden auf {PLATFORM} gespeichert und sind per IMAP oder Webmail von überall aus zugänglich."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/mail.html:8
@@ -50,23 +44,10 @@ msgstr "{PLATFORM} für E-Mail-Abruf einrichten"
 #. type: Content of: <p>
 #: admin/views/default/help/en/mail.html:14
 #: admin/views/default/help/en/user_mail.html:14
-msgid ""
-"<strong>Add new email account</strong> - To start fetching email from an "
-"external account, click here. Fill in the information given to you by your "
-"email account provider."
-msgstr ""
-"<strong>Neues E-Mail-Konto hinzufügen</strong> - Klicken Sie hier, um mit "
-"dem Abrufen von externen E-Mail-Konten zu beginnen. Geben Sie die Daten ein, "
-"die Sie vom Provider für Ihr E-Mail-Konto erhalten haben."
+msgid "<strong>Add new email account</strong> - To start fetching email from an external account, click here. Fill in the information given to you by your email account provider."
+msgstr "<strong>Neues E-Mail-Konto hinzufügen</strong> - Klicken Sie hier, um mit dem Abrufen von externen E-Mail-Konten zu beginnen. Geben Sie die Daten ein, die Sie vom Provider für Ihr E-Mail-Konto erhalten haben."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/mail.html:17
-msgid ""
-"You must select to which user the retrieved email should be directed, this "
-"must be done for every added email account. Prior to this you must have "
-"added a {PLATFORM} user."
-msgstr ""
-"Sie müssen angeben, zu welchem Benutzer die abgerufene E-Mail geleitet "
-"werden soll; dies muss für jedes hinzugefügte E-Mail-Konto einzeln "
-"festgelegt werden. Zuvor muss ein {PLATFORM}-Benutzer hinzugefügt worden "
-"sein."
+msgid "You must select to which user the retrieved email should be directed, this must be done for every added email account. Prior to this you must have added a {PLATFORM} user."
+msgstr "Sie müssen angeben, zu welchem Benutzer die abgerufene E-Mail geleitet werden soll; dies muss für jedes hinzugefügte E-Mail-Konto einzeln festgelegt werden. Zuvor muss ein {PLATFORM}-Benutzer hinzugefügt worden sein."

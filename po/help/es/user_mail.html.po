@@ -26,14 +26,8 @@ msgstr "Correo"
 #. type: Content of: <p>
 #: admin/views/default/help/en/mail.html:5
 #: admin/views/default/help/en/user_mail.html:5
-msgid ""
-"{PLATFORM} will fetch your email from all your different external email "
-"accounts you may have. The email will be stored on {PLATFORM} and available "
-"via IMAP or webmail, wherever you are."
-msgstr ""
-"{PLATFORM} se encargará de recuperar tu correo desde todas las cuentas de "
-"correo externas que puedas tener. El correo se almacenará en {PLATFORM} y "
-"está disponible vía IMAP o webmail, donde quiera que estés."
+msgid "{PLATFORM} will fetch your email from all your different external email accounts you may have. The email will be stored on {PLATFORM} and available via IMAP or webmail, wherever you are."
+msgstr "{PLATFORM} se encargará de recuperar tu correo desde todas las cuentas de correo externas que puedas tener. El correo se almacenará en {PLATFORM} y está disponible vía IMAP o webmail, donde quiera que estés."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/mail.html:8
@@ -51,16 +45,9 @@ msgstr "Configura {PLATFORM} para recuperar correo electrónico"
 #: admin/views/default/help/en/mail.html:14
 #: admin/views/default/help/en/user_mail.html:14
 #, fuzzy
-msgid ""
-"<strong>Add new email account</strong> - To start fetching email from an "
-"external account, click here. Fill in the information given to you by your "
-"email account provider."
+msgid "<strong>Add new email account</strong> - To start fetching email from an external account, click here. Fill in the information given to you by your email account provider."
 msgstr ""
 "#-#-#-#-#  user_mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<strong>Añade nueva cuenta de correo</strong> - Para comenzar a recuperar "
-"correo de una cuenta externa, Haz clic aquí. Rellena la información "
-"facilitada por el proveedor de tu cuenta de correo.\n"
+"<strong>Añade nueva cuenta de correo</strong> - Para comenzar a recuperar correo de una cuenta externa, Haz clic aquí. Rellena la información facilitada por el proveedor de tu cuenta de correo.\n"
 "#-#-#-#-#  mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<strong>Añade nueva cuenta de correo</strong> - Para comenzar a descargar el "
-"correo desde una cuenta externa, entra aquí. Rellena la información "
-"facilitada por tu proveedor de correo."
+"<strong>Añade nueva cuenta de correo</strong> - Para comenzar a descargar el correo desde una cuenta externa, entra aquí. Rellena la información facilitada por tu proveedor de correo."

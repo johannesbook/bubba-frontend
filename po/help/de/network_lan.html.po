@@ -46,108 +46,45 @@ msgstr "LAN"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_lan.html:5
-msgid ""
-"Here you configure how you reach your {PLATFORM} from computers in your "
-"Local Area Network (LAN). Your {PLATFORM} has an auto detect function on the "
-"LAN port. This means that when connected, {PLATFORM} will search the LAN for "
-"a DHCP server. If a DHCP server is found, {PLATFORM} will configure itself "
-"to obtain an IP address on the LAN port."
-msgstr ""
-"Hier können Sie konfigurieren, wie Sie {PLATFORM} von anderen Computern in "
-"Ihrem Local Area Network (LAN) erreichen. Ihr {PLATFORM} verfügt über eine "
-"automatische Erkennung am LAN-Port. Das heißt, dass {PLATFORM} nach einem "
-"DHCP-Server im LAN sucht, wenn es angeschlossen wird. Wenn ein DHCP-Server "
-"gefunden wird, konfiguriert sich {PLATFORM}."
+msgid "Here you configure how you reach your {PLATFORM} from computers in your Local Area Network (LAN). Your {PLATFORM} has an auto detect function on the LAN port. This means that when connected, {PLATFORM} will search the LAN for a DHCP server. If a DHCP server is found, {PLATFORM} will configure itself to obtain an IP address on the LAN port."
+msgstr "Hier können Sie konfigurieren, wie Sie {PLATFORM} von anderen Computern in Ihrem Local Area Network (LAN) erreichen. Ihr {PLATFORM} verfügt über eine automatische Erkennung am LAN-Port. Das heißt, dass {PLATFORM} nach einem DHCP-Server im LAN sucht, wenn es angeschlossen wird. Wenn ein DHCP-Server gefunden wird, konfiguriert sich {PLATFORM}."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_lan.html:9
-msgid ""
-"<strong>Obtain IP-address automatically</strong> - Use this option if you "
-"use another DHCP server than {PLATFORM} in your LAN, for example a router or "
-"gateway. {PLATFORM} will obtain an IP address automatically."
-msgstr ""
-"<strong>IP-Adresse automatisch erhalten</strong> - Verwenden Sie diese "
-"Option, wenn Sie einen anderen DHCP-Server als den {PLATFORM} in Ihrem LAN "
-"verwenden, wie beispielsweise einen Router oder Gateway. {PLATFORM} wird "
-"automatisch eine IP-Adresse erhalten."
+msgid "<strong>Obtain IP-address automatically</strong> - Use this option if you use another DHCP server than {PLATFORM} in your LAN, for example a router or gateway. {PLATFORM} will obtain an IP address automatically."
+msgstr "<strong>IP-Adresse automatisch erhalten</strong> - Verwenden Sie diese Option, wenn Sie einen anderen DHCP-Server als den {PLATFORM} in Ihrem LAN verwenden, wie beispielsweise einen Router oder Gateway. {PLATFORM} wird automatisch eine IP-Adresse erhalten."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_lan.html:13
-msgid ""
-"<strong>Use static IP address settings -</strong> Your {PLATFORM} will be "
-"reached on this static IP address in your LAN. The default fall back IP is : "
-"<a href='http://192.168.10.1' target= '_blank'>192.168.10.1</a>."
-msgstr ""
-"<strong>Statische IP-Adresse verwenden</strong> - Ihr {PLATFORM} kann im LAN "
-"an dieser statischen IP-Adresse erreicht werden. Die standardmäßige "
-"Rückgriff-IP lautet:"
+msgid "<strong>Use static IP address settings -</strong> Your {PLATFORM} will be reached on this static IP address in your LAN. The default fall back IP is : <a href='http://192.168.10.1' target= '_blank'>192.168.10.1</a>."
+msgstr "<strong>Statische IP-Adresse verwenden</strong> - Ihr {PLATFORM} kann im LAN an dieser statischen IP-Adresse erreicht werden. Die standardmäßige Rückgriff-IP lautet:"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/network_lan.html:18
-msgid ""
-"<strong>Enable DNS service</strong> - The Domain Name System (DNS) "
-"translates domain names into IP addresses. When you type in a domain name, "
-"the DNS server translates the name into the corresponding IP address."
-msgstr ""
-"<strong>DNS-Service aktivieren</strong> - Das Domain Name System (DNS) "
-"übersetzt Domänennamen in IP-Adressen. Wenn Sie einen Domänennamen eingeben, "
-"übersetzt der DNS-Server den Namen in die entsprechende IP-Adresse."
+msgid "<strong>Enable DNS service</strong> - The Domain Name System (DNS) translates domain names into IP addresses. When you type in a domain name, the DNS server translates the name into the corresponding IP address."
+msgstr "<strong>DNS-Service aktivieren</strong> - Das Domain Name System (DNS) übersetzt Domänennamen in IP-Adressen. Wenn Sie einen Domänennamen eingeben, übersetzt der DNS-Server den Namen in die entsprechende IP-Adresse."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/network_lan.html:22
-msgid ""
-"<strong>Enable DHCP server</strong> - The DHCP server gives out IP addresses "
-"when a device, connected into {PLATFORM}'s LAN port, is starting up and "
-"requests an IP address. The device must be set as a DHCP client to 'Obtain "
-"IP address automatically'."
-msgstr ""
-"<strong>DHCP-Server aktivieren</strong> - Der DHCP-Server vergibt IP-"
-"Adressen, wenn ein Gerät, das am LAN-Port von {PLATFORM} angeschlossen ist, "
-"hochgefahren wird und eine IP-Adresse anfordert. Das Gerät muss als DHCP-"
-"Client für 'IP-Adresse automatisch beziehen' konfiguriert sein."
+msgid "<strong>Enable DHCP server</strong> - The DHCP server gives out IP addresses when a device, connected into {PLATFORM}'s LAN port, is starting up and requests an IP address. The device must be set as a DHCP client to 'Obtain IP address automatically'."
+msgstr "<strong>DHCP-Server aktivieren</strong> - Der DHCP-Server vergibt IP-Adressen, wenn ein Gerät, das am LAN-Port von {PLATFORM} angeschlossen ist, hochgefahren wird und eine IP-Adresse anfordert. Das Gerät muss als DHCP-Client für 'IP-Adresse automatisch beziehen' konfiguriert sein."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/network_lan.html:26
-msgid ""
-"<strong>Lease range</strong> - The DHCP address pool (Lease range) contains "
-"the range of the IP address that will automatically be assigned to the "
-"clients (for example computers, media players)  on the network."
-msgstr ""
-"<strong>Lease-Bereich</strong> - Der DHCP-Adressenpool (Lease-Bereich) "
-"enthält den Bereich an IP-Adressen, die automatisch an Clients im Netzwerk "
-"(z. B. Computer, Media-Player) vergeben werden."
+msgid "<strong>Lease range</strong> - The DHCP address pool (Lease range) contains the range of the IP address that will automatically be assigned to the clients (for example computers, media players)  on the network."
+msgstr "<strong>Lease-Bereich</strong> - Der DHCP-Adressenpool (Lease-Bereich) enthält den Bereich an IP-Adressen, die automatisch an Clients im Netzwerk (z. B. Computer, Media-Player) vergeben werden."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_lan.html:31
-msgid ""
-"<strong>Enable Jumbo frames</strong> - This option enables transmissions of "
-"larger data chunks on the LAN interface. <strong>WARNING</strong> - this "
-"requires that all equipment on the LAN works in this environment. Use with "
-"caution. That said, this feature can improve performance on file transfers "
-"between {PLATFORM} and Gigabit capable devices."
-msgstr ""
-"<strong>Jumbo-Frames aktivieren</strong> - Voraussetzung hierfür ist, dass "
-"alle Geräte im LAN entsprechend konfiguriert sind. Diese Einstellung muss "
-"mit Vorsicht verwendet werden, kann aber die Übertragungsleistung zwischen "
-"{PLATFORM} und Gigabit-fähigen Geräten deutlich steigern."
+msgid "<strong>Enable Jumbo frames</strong> - This option enables transmissions of larger data chunks on the LAN interface. <strong>WARNING</strong> - this requires that all equipment on the LAN works in this environment. Use with caution. That said, this feature can improve performance on file transfers between {PLATFORM} and Gigabit capable devices."
+msgstr "<strong>Jumbo-Frames aktivieren</strong> - Voraussetzung hierfür ist, dass alle Geräte im LAN entsprechend konfiguriert sind. Diese Einstellung muss mit Vorsicht verwendet werden, kann aber die Übertragungsleistung zwischen {PLATFORM} und Gigabit-fähigen Geräten deutlich steigern."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_lan.html:35
-msgid ""
-"<strong>DHCP leases</strong> - Shows the current network devices in your LAN "
-"when having {PLATFORM} as your router. If several network devices has the "
-"same hostname the last connected will be shown as a *."
-msgstr ""
-"<strong>DHCP Leases </strong> - Zeigt die aktuellen Netzwerkgeräte in Ihrem "
-"LAN, wenn {PLATFORM} als Router fungiert. Wenn mehrere Netzwerkgeräte den "
-"gleichen Hostnamen tragen, wird das zuletzt angeschlossene mit * angezeigt."
+msgid "<strong>DHCP leases</strong> - Shows the current network devices in your LAN when having {PLATFORM} as your router. If several network devices has the same hostname the last connected will be shown as a *."
+msgstr "<strong>DHCP Leases </strong> - Zeigt die aktuellen Netzwerkgeräte in Ihrem LAN, wenn {PLATFORM} als Router fungiert. Wenn mehrere Netzwerkgeräte den gleichen Hostnamen tragen, wird das zuletzt angeschlossene mit * angezeigt."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_lan.html:39
-msgid ""
-"Please notice that the LAN settings are not editable in the profile "
-"'Automatic network settings', shown for information only."
-msgstr ""
-"Bitte beachten Sie, dass die LAN-Einstellungen im Profil 'Automatische "
-"Netzwerkeinstellungen' nicht bearbeitet werden können; sie können nur "
-"gelesen werden."
+msgid "Please notice that the LAN settings are not editable in the profile 'Automatic network settings', shown for information only."
+msgstr "Bitte beachten Sie, dass die LAN-Einstellungen im Profil 'Automatische Netzwerkeinstellungen' nicht bearbeitet werden können; sie können nur gelesen werden."

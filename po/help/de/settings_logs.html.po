@@ -23,10 +23,5 @@ msgstr "Protokolle"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/settings_logs.html:5
-msgid ""
-"To fault trace on your {PLATFORM} without logging in with SSH use the Logs "
-"function. Select the desired log file in the drop down menu and click 'Show'."
-msgstr ""
-"Verwenden Sie die Protokollfunktionen, wenn Sie Fehler Ihres {PLATFORM} ohne "
-"SSH nachverfolgen möchten. Wählen Sie die gewünschte Protokolldatei und "
-"klicken Sie auf 'Zeigen'."
+msgid "To fault trace on your {PLATFORM} without logging in with SSH use the Logs function. Select the desired log file in the drop down menu and click 'Show'."
+msgstr "Verwenden Sie die Protokollfunktionen, wenn Sie Fehler Ihres {PLATFORM} ohne SSH nachverfolgen möchten. Wählen Sie die gewünschte Protokolldatei und klicken Sie auf 'Zeigen'."

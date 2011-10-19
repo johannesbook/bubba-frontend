@@ -46,47 +46,20 @@ msgstr "WAN"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:5
-msgid ""
-"Here you configure how your {PLATFORM} will handle your Wide Area Network "
-"(WAN) port. The default setting is to Obtain an IP address."
-msgstr ""
-"Hier können Sie konfigurieren, wie {PLATFORM} Ihren Wide Area Network (WAN)-"
-"Port behandelt. Die Standardeinstellung lautet IP-Adresse beziehen."
+msgid "Here you configure how your {PLATFORM} will handle your Wide Area Network (WAN) port. The default setting is to Obtain an IP address."
+msgstr "Hier können Sie konfigurieren, wie {PLATFORM} Ihren Wide Area Network (WAN)-Port behandelt. Die Standardeinstellung lautet IP-Adresse beziehen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:8
-msgid ""
-"<strong>Obtain IP-address automatically (DHCP)</strong> - The Dynamic Host "
-"Configuration Protocol (DHCP) automates the assignment of IP address, "
-"Netmask, Default gateway, and other IP parameters.  Use this option if your "
-"internet provider requires you to use DHCP. This is the default and most "
-"common option."
-msgstr ""
-"<strong>IP-Adresse automatisch beziehen (DHCP)</strong> - Das Dynamic Host "
-"Configuration Protocol (DHCP) automatisiert die Zuweisung von IP-Adresse, "
-"Netmask, Default Gateway und anderen IP-Parametern. Verwenden Sie diese "
-"Option, wenn Ihr Internetprovider die Verwendung von DHCP verlangt. Dies ist "
-"die Standardeinstellung und zugleich die gängigste Option."
+msgid "<strong>Obtain IP-address automatically (DHCP)</strong> - The Dynamic Host Configuration Protocol (DHCP) automates the assignment of IP address, Netmask, Default gateway, and other IP parameters.  Use this option if your internet provider requires you to use DHCP. This is the default and most common option."
+msgstr "<strong>IP-Adresse automatisch beziehen (DHCP)</strong> - Das Dynamic Host Configuration Protocol (DHCP) automatisiert die Zuweisung von IP-Adresse, Netmask, Default Gateway und anderen IP-Parametern. Verwenden Sie diese Option, wenn Ihr Internetprovider die Verwendung von DHCP verlangt. Dies ist die Standardeinstellung und zugleich die gängigste Option."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:12
-msgid ""
-"<strong>Use static IP address settings</strong> - Static IP address, "
-"Netmask, Default gateway and Primary DNS are manually assigned to {PLATFORM} "
-"by the administrator. Use this option if your internet provider requires you "
-"to manually enter the values."
-msgstr ""
-"<strong>Statische IP-Adresse verwenden</strong> - Statische IP-Adresse, "
-"Netmask, Default Gateway und Primary DNS werden vom Administrator manuell zu "
-"{PLATFORM} zugewiesen. Verwenden Sie diese Option, wenn Ihr Internetprovider "
-"die manuelle Eingabe dieser Daten verlangt."
+msgid "<strong>Use static IP address settings</strong> - Static IP address, Netmask, Default gateway and Primary DNS are manually assigned to {PLATFORM} by the administrator. Use this option if your internet provider requires you to manually enter the values."
+msgstr "<strong>Statische IP-Adresse verwenden</strong> - Statische IP-Adresse, Netmask, Default Gateway und Primary DNS werden vom Administrator manuell zu {PLATFORM} zugewiesen. Verwenden Sie diese Option, wenn Ihr Internetprovider die manuelle Eingabe dieser Daten verlangt."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wan.html:16
-msgid ""
-"Please notice that the WAN settings are not editable in the profile "
-"'Automatic network settings', shown for information only."
-msgstr ""
-"Bitte beachten Sie, dass die WAN-Einstellungen im Profil 'Automatische "
-"Netzwerkeinstellungen' nicht bearbeitet werden können; sie können nur "
-"gelesen werden."
+msgid "Please notice that the WAN settings are not editable in the profile 'Automatic network settings', shown for information only."
+msgstr "Bitte beachten Sie, dass die WAN-Einstellungen im Profil 'Automatische Netzwerkeinstellungen' nicht bearbeitet werden können; sie können nur gelesen werden."

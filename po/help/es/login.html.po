@@ -23,18 +23,10 @@ msgstr "{PLATFORM} administration"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/login.html:5
-msgid ""
-"Logged in as administrator you have access to the system settings. Click the "
-"<strong>gear wheel</strong> to administrate your {PLATFORM}."
-msgstr ""
-"Conectado como administrador tienes acceso a la configuración del sistema. "
-"Pincha en <strong>gear wheel</strong> para administrar tu {PLATFORM}."
+msgid "Logged in as administrator you have access to the system settings. Click the <strong>gear wheel</strong> to administrate your {PLATFORM}."
+msgstr "Conectado como administrador tienes acceso a la configuración del sistema. Pincha en <strong>gear wheel</strong> para administrar tu {PLATFORM}."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/login.html:8
-msgid ""
-"Only use the administrator login to manage {PLATFORM}'s settings. Your "
-"everyday use should be done with another user."
-msgstr ""
-"Utiliza la conexión de administrador para gestionar la configuración de "
-"{PLATFORM}. Tu conexión habitual debe realizarse con otro usuario."
+msgid "Only use the administrator login to manage {PLATFORM}'s settings. Your everyday use should be done with another user."
+msgstr "Utiliza la conexión de administrador para gestionar la configuración de {PLATFORM}. Tu conexión habitual debe realizarse con otro usuario."

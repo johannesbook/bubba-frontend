@@ -18,12 +18,8 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk_raid.html:2
-msgid ""
-"The RAID function in {PLATFORM} combines the /home partition and one "
-"external hard disk into a single logical unit."
-msgstr ""
-"Die RAID-Funktion von {PLATFORM} kombiniert die /Home-Partition und eine "
-"externe Harddisk zu einer logischen Einheit."
+msgid "The RAID function in {PLATFORM} combines the /home partition and one external hard disk into a single logical unit."
+msgstr "Die RAID-Funktion von {PLATFORM} kombiniert die /Home-Partition und eine externe Harddisk zu einer logischen Einheit."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/disk_raid.html:5
@@ -32,69 +28,33 @@ msgstr "Wichtig"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/disk_raid.html:9
-msgid ""
-"<strong>Warning!</strong> The process will destroy all user data - both on "
-"the internal and external disk."
-msgstr ""
-"Dieser Vorgang vernichtet sämtliche Benutzerdaten - sowohl auf der internen "
-"als auch auf der externen Disk."
+msgid "<strong>Warning!</strong> The process will destroy all user data - both on the internal and external disk."
+msgstr "Dieser Vorgang vernichtet sämtliche Benutzerdaten - sowohl auf der internen als auch auf der externen Disk."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/disk_raid.html:11
-msgid ""
-"An old RAID disk will automatically be connected and included into the "
-"{PLATFORM} system upon boot, even though you have not set up your {PLATFORM} "
-"for a RAID extension. It is impossible to remove the extension without "
-"reinstallation. To format an old external RAID extended disk, connect the "
-"disk to a already running {PLATFORM}. Then choose 'Format' in the 'Disk -"
-"&gt; Information' menu."
-msgstr ""
-"Alte RAID-Disks werden automatisch verbunden und beim Hochfahren in das "
-"{PLATFORM}-System eingeschlossen, selbst wenn {PLATFORM} nicht für eine RAID-"
-"Erweiterung konfiguriert ist. Die Erweiterung kann nur durch eine "
-"Neuinstallation entfernt werden. Um eine alte, externe RAID-Disk, die als "
-"Erweiterung verwendet wurde, zu formatieren, verbinden Sie die Disk mit dem "
-"hochgefahrenen {PLATFORM}. Wählen Sie dann im Menü 'Disk -&gt; "
-"Informationen' die Option 'Formatieren'."
+msgid "An old RAID disk will automatically be connected and included into the {PLATFORM} system upon boot, even though you have not set up your {PLATFORM} for a RAID extension. It is impossible to remove the extension without reinstallation. To format an old external RAID extended disk, connect the disk to a already running {PLATFORM}. Then choose 'Format' in the 'Disk -&gt; Information' menu."
+msgstr "Alte RAID-Disks werden automatisch verbunden und beim Hochfahren in das {PLATFORM}-System eingeschlossen, selbst wenn {PLATFORM} nicht für eine RAID-Erweiterung konfiguriert ist. Die Erweiterung kann nur durch eine Neuinstallation entfernt werden. Um eine alte, externe RAID-Disk, die als Erweiterung verwendet wurde, zu formatieren, verbinden Sie die Disk mit dem hochgefahrenen {PLATFORM}. Wählen Sie dann im Menü 'Disk -&gt; Informationen' die Option 'Formatieren'."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/disk_raid.html:14
-msgid ""
-"To get out the most of your disks, use an external disk in the same size as "
-"your internal disk in {PLATFORM}."
-msgstr ""
-"Für optimale Leistung sollte die angeschlossene externe Disk genauso groß "
-"sein wie die interne Disk in {PLATFORM}."
+msgid "To get out the most of your disks, use an external disk in the same size as your internal disk in {PLATFORM}."
+msgstr "Für optimale Leistung sollte die angeschlossene externe Disk genauso groß sein wie die interne Disk in {PLATFORM}."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/disk_raid.html:16
-msgid ""
-"Total capacity of the array equals the capacity of the smallest disk in the "
-"array."
-msgstr ""
-"Die Gesamtkapazität des Array entspricht der Kapazität der kleinsten Disk im "
-"Array."
+msgid "Total capacity of the array equals the capacity of the smallest disk in the array."
+msgstr "Die Gesamtkapazität des Array entspricht der Kapazität der kleinsten Disk im Array."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/disk_raid.html:18
-msgid ""
-"It will take some time to create or restore a RAID array. For a 1TB disk it "
-"will take about 4 hours. This is handheld in the background of the "
-"{PLATFORM} system and will not be indicated to the user."
-msgstr ""
-"Die Erstellung bzw. die Wiederherstellung eines RAID-Array kann einige Zeit "
-"in Anspruch nehmen, für eine Disk mit 1 TB ungefähr 4 Stunden. Der Vorgang "
-"läuft im Hintergrund des {PLATFORM}-Systems ab und wird dem Benutzer nicht "
-"angezeigt."
+msgid "It will take some time to create or restore a RAID array. For a 1TB disk it will take about 4 hours. This is handheld in the background of the {PLATFORM} system and will not be indicated to the user."
+msgstr "Die Erstellung bzw. die Wiederherstellung eines RAID-Array kann einige Zeit in Anspruch nehmen, für eine Disk mit 1 TB ungefähr 4 Stunden. Der Vorgang läuft im Hintergrund des {PLATFORM}-Systems ab und wird dem Benutzer nicht angezeigt."
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/disk_raid.html:20
-msgid ""
-"To reuse your {PLATFORM} standalone without the RAID setup you have to "
-"reinstall your {PLATFORM} system."
-msgstr ""
-"Um {PLATFORM} wieder als eigenständiges System ohne RAID-Konfiguration zu "
-"benutzen, muss das {PLATFORM}-System neu installiert werden."
+msgid "To reuse your {PLATFORM} standalone without the RAID setup you have to reinstall your {PLATFORM} system."
+msgstr "Um {PLATFORM} wieder als eigenständiges System ohne RAID-Konfiguration zu benutzen, muss das {PLATFORM}-System neu installiert werden."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/disk_raid.html:24
@@ -103,13 +63,8 @@ msgstr "RAID-Array erstellen"
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:27
-msgid ""
-"Attach an eSATA disk. Please notice that the disk should be pre formatted, "
-"without old RAID or LVM systems."
-msgstr ""
-"Schließen Sie eine eSATA-Disk an. Beachten Sie, dass die Disk bereits "
-"formatiert sein sollte und keine alten RAID- oder LVM-Systeme enthalten "
-"sollte."
+msgid "Attach an eSATA disk. Please notice that the disk should be pre formatted, without old RAID or LVM systems."
+msgstr "Schließen Sie eine eSATA-Disk an. Beachten Sie, dass die Disk bereits formatiert sein sollte und keine alten RAID- oder LVM-Systeme enthalten sollte."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:29
@@ -124,26 +79,17 @@ msgstr "Wählen Sie, welche externe Disk in das Array aufgenommen werden soll."
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:33
 msgid "Warning! All data on both disks will be erased. Click 'Create RAID'."
-msgstr ""
-"Warnung! Auf beiden Disks werden alle Daten gelöscht. Klicken Sie auf 'RAID "
-"erstellen'."
+msgstr "Warnung! Auf beiden Disks werden alle Daten gelöscht. Klicken Sie auf 'RAID erstellen'."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:35
-msgid ""
-"Wait for the progress bar to complete. Be patient, it will take some time to "
-"create a RAID array if you are using large disks."
-msgstr ""
-"Warten Sie, bis die Fortschrittsanzeige beendet ist. Seien Sie geduldig, bei "
-"größeren Disks kann das Erstellen eines RAID-Array einige Zeit in Anspruch "
-"nehmen."
+msgid "Wait for the progress bar to complete. Be patient, it will take some time to create a RAID array if you are using large disks."
+msgstr "Warten Sie, bis die Fortschrittsanzeige beendet ist. Seien Sie geduldig, bei größeren Disks kann das Erstellen eines RAID-Array einige Zeit in Anspruch nehmen."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:37
 msgid "When finished, your external disk has been included in your RAID array."
-msgstr ""
-"Nach Abschluss des Vorgangs ist die externe Disk in das RAID-Array "
-"aufgenommen."
+msgstr "Nach Abschluss des Vorgangs ist die externe Disk in das RAID-Array aufgenommen."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/disk_raid.html:41
@@ -152,23 +98,13 @@ msgstr "RAID-Status"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk_raid.html:44
-msgid ""
-"<strong>List of RAID arrays</strong> - shows the total disk space, i.e. the "
-"smallest available disk (the {PLATFORM} /home partition or the external "
-"eSATA disk) in the array."
-msgstr ""
-"<strong>Liste der RAID-Arrays</strong> - zeigt die Gesamtkapazität an, d. h. "
-"die kleinste verfügbare Disk im Array (die {PLATFORM} /Home-Partition oder "
-"die externe eSATA-Disk)."
+msgid "<strong>List of RAID arrays</strong> - shows the total disk space, i.e. the smallest available disk (the {PLATFORM} /home partition or the external eSATA disk) in the array."
+msgstr "<strong>Liste der RAID-Arrays</strong> - zeigt die Gesamtkapazität an, d. h. die kleinste verfügbare Disk im Array (die {PLATFORM} /Home-Partition oder die externe eSATA-Disk)."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk_raid.html:47
-msgid ""
-"<strong>List of RAID disks</strong> - shows the disks attached to the RAID "
-"system."
-msgstr ""
-"<strong>Liste der RAID-Disks</strong> - zeigt die an das RAID-System "
-"angeschlossenen Disks an."
+msgid "<strong>List of RAID disks</strong> - shows the disks attached to the RAID system."
+msgstr "<strong>Liste der RAID-Disks</strong> - zeigt die an das RAID-System angeschlossenen Disks an."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/disk_raid.html:50
@@ -177,26 +113,18 @@ msgstr "Externe Disk wiederherstellen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk_raid.html:53
-msgid ""
-"If you have a disc failure on your external disk or if you have by mistake "
-"disconnected the external disk you will need to do the following."
-msgstr ""
-"Wenn auf der externen Disk ein Fehler auftritt oder wenn die externe Disk "
-"versehentlich getrennt wurde, müssen Sie wie folgt vorgehen."
+msgid "If you have a disc failure on your external disk or if you have by mistake disconnected the external disk you will need to do the following."
+msgstr "Wenn auf der externen Disk ein Fehler auftritt oder wenn die externe Disk versehentlich getrennt wurde, müssen Sie wie folgt vorgehen."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:56
 msgid "Disconnect the broken external disk from the backside of {PLATFORM}."
-msgstr ""
-"Trennen Sie die fehlerhafte externe Disk vom {PLATFORM} (an der Rückseite)."
+msgstr "Trennen Sie die fehlerhafte externe Disk vom {PLATFORM} (an der Rückseite)."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:58
-msgid ""
-"Attach a new external disk (or reconnect the by mistake disconnected one)."
-msgstr ""
-"Schließen Sie eine neue externe Disk an (oder schließen Sie die "
-"versehentlich getrennte Disk wieder an)."
+msgid "Attach a new external disk (or reconnect the by mistake disconnected one)."
+msgstr "Schließen Sie eine neue externe Disk an (oder schließen Sie die versehentlich getrennte Disk wieder an)."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:60
@@ -207,28 +135,18 @@ msgstr "Klicken Sie auf '<strong>RAID-Array erstellen</strong>'"
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:62
 msgid "Select which external disk to add to RAID array. Click 'Recover array'."
-msgstr ""
-"Wählen Sie, welche externe RAID-Disk in das Array aufgenommen werden soll. "
-"Klicken Sie auf 'Array wiederherstellen'."
+msgstr "Wählen Sie, welche externe RAID-Disk in das Array aufgenommen werden soll. Klicken Sie auf 'Array wiederherstellen'."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:64
-msgid ""
-"Warning! All data will be erased from the external disk. Click 'Recover "
-"array'."
-msgstr ""
-"Warnung! Alle Daten, die sich auf der externen Disk befinden, werden "
-"gelöscht. Klicken Sie auf 'Array wiederherstellen'."
+msgid "Warning! All data will be erased from the external disk. Click 'Recover array'."
+msgstr "Warnung! Alle Daten, die sich auf der externen Disk befinden, werden gelöscht. Klicken Sie auf 'Array wiederherstellen'."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:66
 #: admin/views/default/help/en/disk_raid.html:84
-msgid ""
-"Press 'Close' to continue working with {PLATFORM}. The synchronization is in "
-"progress and will take a while."
-msgstr ""
-"Drücken Sie auf 'Schließen', um die Arbeit mit {PLATFORM} fortzusetzen. Die "
-"Synchronisation wird durchgeführt und nimmt einige Zeit in Anspruch."
+msgid "Press 'Close' to continue working with {PLATFORM}. The synchronization is in progress and will take a while."
+msgstr "Drücken Sie auf 'Schließen', um die Arbeit mit {PLATFORM} fortzusetzen. Die Synchronisation wird durchgeführt und nimmt einige Zeit in Anspruch."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/disk_raid.html:70
@@ -237,14 +155,8 @@ msgstr "Interne Disk wiederherstellen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk_raid.html:73
-msgid ""
-"If you have a disk failure on your internal disk in {PLATFORM} you have to "
-"start by exchanging the disk and reinstalling via an USB memory. Then update "
-"{PLATFORM} to the latest software."
-msgstr ""
-"Wenn bei einer internen Disk in {PLATFORM} ein Fehler auftritt, müssen Sie "
-"die Disk zunächst austauschen und über einen USB-Speicher wiederherstellen. "
-"Danach wird {PLATFORM} auf die neuste Software aktualisiert."
+msgid "If you have a disk failure on your internal disk in {PLATFORM} you have to start by exchanging the disk and reinstalling via an USB memory. Then update {PLATFORM} to the latest software."
+msgstr "Wenn bei einer internen Disk in {PLATFORM} ein Fehler auftritt, müssen Sie die Disk zunächst austauschen und über einen USB-Speicher wiederherstellen. Danach wird {PLATFORM} auf die neuste Software aktualisiert."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:76
@@ -254,15 +166,9 @@ msgstr "Schließen Sie die externe RAID-Disk an, die Ihre Daten enthält."
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:80
 msgid "Select the external disk to add to RAID array. Click 'Recover array'."
-msgstr ""
-"Wählen Sie, welche externe RAID-Disk in das Array aufgenommen werden soll. "
-"Klicken Sie auf 'Array wiederherstellen'."
+msgstr "Wählen Sie, welche externe RAID-Disk in das Array aufgenommen werden soll. Klicken Sie auf 'Array wiederherstellen'."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk_raid.html:82
-msgid ""
-"Warning! All user data and the storage area will be erased from the internal "
-"disk. Click 'Recover array'."
-msgstr ""
-"Warnung! Alle Benutzerdaten und der Speicherbereich auf der internen Disk "
-"werden gelöscht. Klicken Sie auf 'Array wiederherstellen'."
+msgid "Warning! All user data and the storage area will be erased from the internal disk. Click 'Recover array'."
+msgstr "Warnung! Alle Benutzerdaten und der Speicherbereich auf der internen Disk werden gelöscht. Klicken Sie auf 'Array wiederherstellen'."

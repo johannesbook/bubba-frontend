@@ -18,12 +18,8 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/filemanager.html:2
-msgid ""
-"From the File manager you are able to reach your files on {PLATFORM} even if "
-"you are away from home."
-msgstr ""
-"Con el Administrador de archivos tiens la posibilidad de acceder a tus "
-"ficheros en {PLATFORM} incluso desde fuera de casa."
+msgid "From the File manager you are able to reach your files on {PLATFORM} even if you are away from home."
+msgstr "Con el Administrador de archivos tiens la posibilidad de acceder a tus ficheros en {PLATFORM} incluso desde fuera de casa."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/filemanager.html:5
@@ -33,14 +29,8 @@ msgstr "Navegación"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/filemanager.html:8
-msgid ""
-"Navigate into a folder by clicking the arrow to the right of the folder name "
-"or double clicking it, navigate up one level by clicking the left arrow or "
-"click the /home/username/ line."
-msgstr ""
-"Accede a un carpeta mediante la flecha de la derecha o con un doble click, "
-"pasa al niver superior mediante la flecha de la izquierda o seleccionando la "
-"linea /home/usuario/."
+msgid "Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ line."
+msgstr "Accede a un carpeta mediante la flecha de la derecha o con un doble click, pasa al niver superior mediante la flecha de la izquierda o seleccionando la linea /home/usuario/."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/filemanager.html:11
@@ -51,13 +41,8 @@ msgstr "Acciones de fichero y carpeta"
 #. type: Content of: <p>
 #: admin/views/default/help/en/filemanager.html:14
 #: admin/views/default/help/en/user_filemanager.html:14
-msgid ""
-"Click files or folders and use the icons in the file function bar to perform "
-"different actions. The functions from left to right are:"
-msgstr ""
-"Haz clic en ficheros or carpetas y utiliza los iconos de la barra de "
-"funcioón de fichero para realizar diferentes acciones. Las funciones de "
-"izquierda a derecha son:"
+msgid "Click files or folders and use the icons in the file function bar to perform different actions. The functions from left to right are:"
+msgstr "Haz clic en ficheros or carpetas y utiliza los iconos de la barra de funcioón de fichero para realizar diferentes acciones. Las funciones de izquierda a derecha son:"
 
 #. type: Content of: <ul><li>
 #: admin/views/default/help/en/filemanager.html:17
@@ -121,11 +106,5 @@ msgstr "álbum de fotos"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/filemanager.html:40
-msgid ""
-"Logged in as administrator you are not able to add photos to the {PLATFORM} "
-"photo album. Log in with your standard user to add and manage photos and "
-"your albums."
-msgstr ""
-"Conectado como administrador no puedes añadir fotos al álbum de {PLATFORM}. "
-"Conecta con tu usuario estandar para añadir y gestionar tus fotos y tus "
-"álbumes."
+msgid "Logged in as administrator you are not able to add photos to the {PLATFORM} photo album. Log in with your standard user to add and manage photos and your albums."
+msgstr "Conectado como administrador no puedes añadir fotos al álbum de {PLATFORM}. Conecta con tu usuario estandar para añadir y gestionar tus fotos y tus álbumes."

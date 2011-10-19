@@ -18,11 +18,5 @@ msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_mail_editfac.html:2
-msgid ""
-"<strong>Edit account</strong> - Edit the email settings for the external "
-"email account. Use the information given to you by your email account "
-"provider."
-msgstr ""
-"<strong>Editar cuenta</strong> - Edita la configuración de correo para la "
-"cuenta de correo externa. Utiliza la información facilitada por el proveedor "
-"de tu cuenta."
+msgid "<strong>Edit account</strong> - Edit the email settings for the external email account. Use the information given to you by your email account provider."
+msgstr "<strong>Editar cuenta</strong> - Edita la configuración de correo para la cuenta de correo externa. Utiliza la información facilitada por el proveedor de tu cuenta."
