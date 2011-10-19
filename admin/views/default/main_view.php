@@ -52,6 +52,7 @@ config = <?=json_encode(
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.sprintf.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/locale/'.LANGUAGE.'/LC_MESSAGES/bubba.json'?>?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/Gettext.js?v='<?=$this->session->userdata('version')?>'"></script>
+<meta http-equiv=”content-language” content=”<?=LANGUAGE?>” />
 
 <!-- Sideboard gadgets -->
 <!--[if IE]><script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/excanvas.compiled.js"></script><![endif]-->
