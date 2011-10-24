@@ -93,7 +93,7 @@ $(document).ready(function() {
 		var title;
 		if (action == "shutdown") {
 			button_label = pgettext("confirmation button","Shut down");
-			message = sprintf(_("Proceed to shut down %s?"), config.name);
+			message = $.sprintf(_("Proceed to shut down %s?"), config.name);
 			title = _("Shut down");
 		} else {
 			button_label = pgettext("confirmation button","Restart");
