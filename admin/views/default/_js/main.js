@@ -285,20 +285,3 @@ $(document).ready( function() {
 
 	}
 )(jQuery);
-
-jQuery.extend({
-	'message': function(str){
-		if( typeof messages[str] != "undefined" ) {
-			var args = Array.prototype.slice.call(arguments);
-			args.shift(); // str
-			return $.vsprintf(messages[str], args);
-		} else {
-			if( typeof console != "undefined" ) {
-				console.warn("message '%s' was not defined", str);
-			}
-			return str;
-		}
-	}
-}
-);
-

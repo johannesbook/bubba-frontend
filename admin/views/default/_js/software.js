@@ -31,7 +31,7 @@ $("#update").submit(function() {
         data.package = package;
     }
     meter = new $.progress(100, 0);
-    meter.update(0, action == 'install' ? $.message("Preparing to install %s", package) : $.message("Preparing to update system"));
+    meter.update(0, action == 'install' ? $.sprintf(_("Preparing to install %s"), package) : _("Preparing to update system"));
     $("#updater").remove();
     $("#progress").append(meter.root());
     $.ajax({
@@ -80,11 +80,11 @@ $("#update").submit(function() {
                             order = ['DONE', 'ERROR', 'WARN', 'NOTE', 'DEBUG'];
 
                             typemap = {
-                                'DONE': 'Completed',
-                                'ERROR': 'Error!',
-                                'WARN': 'Warning',
-                                'NOTE': 'Note',
-                                'DEBUG': 'Debug'
+                                'DONE': pgettext('status marker','Completed'),
+                                'ERROR': pgettext('status marker','Error!'),
+                                'WARN': pgettext('status marker','Warning'),
+                                'NOTE': pgettext('status marker', 'Note'),
+                                'DEBUG': pgettext('status marker','Debug)'
                             };
                             iconmap = {
                                 'DONE': config.prefix + "/views/" + config.theme + "/_img/upgrade_complete.png",
@@ -143,10 +143,10 @@ $("#update").submit(function() {
                     error: function(xhr, textStatus, errorThrown) {
                         errHandler = function(secs) {
                             if (secs <= 0) {
-                                meter.status('Retrying querying...');
+                                meter.status(_('Retrying querying...'));
                                 waiting = false;
                             } else {
-                                meter.notice('Was unable to connect to server; This is probably due to temporary shutdown of the webserver during upgrade. Please be patient. Will retry communication in ' + secs + ' seconds...');
+                                meter.notice(_('Was unable to connect to server; This is probably due to temporary shutdown of the webserver during upgrade. Please be patient. Will retry communication in ' + secs + ' seconds...'));
                                 window.setTimeout(function() {
                                     errHandler(secs - 1)
                                 },
@@ -160,7 +160,7 @@ $("#update").submit(function() {
             500);
         },
         error: function(xhr, textStatus, errorThrown) {
-            meter.error('Error: ' + textStatus);
+            meter.error($.sprintf(_('Error: %s'), textStatus));
             meter.is_done();
         }
     });
