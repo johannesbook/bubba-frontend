@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-10-24 17:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,19 +91,34 @@ msgstr ""
 #: admin/views/default/help/en/backup.html:36
 msgid ""
 "If you in the future would like to restore a backup not using {PLATFORM}, "
-"this is possible, but only with full backups, and only if the backups are "
-"not encrypted. Browse to your backup target. The full backups are available "
-"as “snapshots” and compressed using gzip. Use any gzip uncompressor to "
-"directly access your data."
+"this is possible but does require a Linux machine with the Duplicity "
+"software installed.  Just point Duplicity to the backup target and perform "
+"the restore. Note that you still ned the password if you chose to encrypt "
+"your backup"
 msgstr ""
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/backup.html:40
-msgid "Save your backup jobs"
+msgid "How long will my backup take?"
 msgstr ""
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/backup.html:43
+msgid ""
+"The first time a backup runs it can be very time consuming. For example 500 "
+"digital photos of 5 MB each would take approximately five hours to complete "
+"the first time, over a fast internet connection or to a local device.  "
+"<em>Note: The following backups only sends changes (new photos) so they will "
+"be faster.</em>"
+msgstr ""
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/backup.html:48
+msgid "Save your backup jobs"
+msgstr ""
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/backup.html:51
 msgid ""
 "As a security measure, perform a settings backup to save your backup jobs if "
 "you have to reinstall your {PLATFORM}. Click Settings in the menu and then "

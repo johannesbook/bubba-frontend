@@ -33,8 +33,16 @@
   Restore a backup not using {PLATFORM}
 </h3>
 <p>
-  If you in the future would like to restore a backup not using {PLATFORM}, this is possible, but only with full backups, and only if the backups are not encrypted. Browse to your backup target. The full
-  backups are available as “snapshots” and compressed using gzip. Use any gzip uncompressor to directly access your data.
+  If you in the future would like to restore a backup not using {PLATFORM}, this is possible but does require a Linux machine with the Duplicity software installed.
+  Just point Duplicity to the backup target and perform the restore. Note that you still ned the password if you chose to encrypt your backup
+</p>
+<h3>
+  How long will my backup take?
+</h3>
+<p>
+  The first time a backup runs it can be very time consuming. For example 500 digital photos of 5 MB each would take approximately five hours to complete the first time,
+  over a fast internet connection or to a local device.
+  <em>Note: The following backups only sends changes (new photos) so they will be faster.</em>
 </p>
 <h3>
   Save your backup jobs
