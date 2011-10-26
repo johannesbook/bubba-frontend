@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-10-26 15:13+0300\n"
 "PO-Revision-Date: 2011-10-06 15:42+0100\n"
 "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/mail.html:2
-#: admin/views/default/help/en/services.html:30
+#: admin/views/default/help/en/services.html:32
 #: admin/views/default/help/en/user_mail.html:2
 msgid "Email"
 msgstr "Correo"
@@ -55,52 +55,52 @@ msgstr "Difusión"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:20
-msgid "<strong>UPnP streaming</strong> - Universal Plug and Play (UPnP) server. The server shares/streams media data like audio/video/picture/files to UPnP-clients on the network. Please notice that if you are located in a unsecure network; disable UPnP because otherwise you are able to browse the whole file system via Mediatomb's web interface which could be a security risk."
-msgstr "<strong>Difusión UPnP</strong> - Servidor para Universal Plug and Play (UPnP). Comparte/difunde datos como audio/video/fotos/ficheros a clientes-UPnP en la red. Ojo, si te encuentras en una red no segura, desabilita UPnP porque todo el sistema puede navegarse mediante la interface web de Mediatomb, lo que puede ser un riesgo de seguridad."
+msgid "<strong>DLNA streaming</strong> - Media streaming server.  The server shares/streams media data like audio/video/picture/files to DLNA-clients on the network.  Many modern media products are DLNA compatible, such as Samsung smart TV's, XBOX 360, Playstation 3, Windows Media Center, DLink Boxee Box, Western Digital TV Live etc.  Having this service enabled means that these products automatically can play content stored on your B3."
+msgstr ""
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:24
+#: admin/views/default/help/en/services.html:26
 msgid "<strong>DAAP streaming</strong> - Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes."
 msgstr "<strong>Difusión DAAP</strong> - Servidor para Digital Audio Access Protocol (DAAP). Sirve media para el Roku SoundBridge e iTunes."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:27
+#: admin/views/default/help/en/services.html:29
 msgid "<strong>Squeezebox Server</strong> - is a streaming audio server supported by Logitech that streams music to The Squeezebox product line."
 msgstr "<strong>Servidor Squeezebox</strong> - es un servidor de difusión de audio soportado por Logitech que difunde música a los productos Squeezebox."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:33
+#: admin/views/default/help/en/services.html:35
 msgid "<strong>Send and receive</strong> - This is for postfix the smtp server: Sending and receiving emails."
 msgstr "<strong>Enviar y recibir</strong> - Para el servidor smtp de postfix: Envío y receptión de correos electrónicos."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:36
+#: admin/views/default/help/en/services.html:38
 #, fuzzy
 #| msgid "- This is for dovecot the IMAP server. This service is required for the webmail access to be functional."
 msgid "<strong>IMAP (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required for the webmail access to be functional."
 msgstr "<strong>IMAP</strong> - Para el servidor IMAP dovecot. Se requiere para que funcione el acceso webmail."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:39
+#: admin/views/default/help/en/services.html:41
 msgid "<strong>Email retrieval</strong> - This is for fetchmail, a daemon that collects emails to {PLATFORM}"
 msgstr "<strong>Recuperación de correos</strong> - Para fetchmail, un demonio que recolecta correos electrónicos para {PLATFORM}"
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/services.html:42
+#: admin/views/default/help/en/services.html:44
 msgid "Other"
 msgstr "Otros"
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:45
+#: admin/views/default/help/en/services.html:47
 msgid "<strong>Printing</strong> - {PLATFORM} print server."
 msgstr "<strong>Impresión</strong> - servidor de impresión en {PLATFORM}."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:48
+#: admin/views/default/help/en/services.html:50
 msgid "<strong>Up and downloads</strong> - possibility to up / download files on {PLATFORM}, i.e. filemanager and torrents."
 msgstr "<strong>Carga y descarga</strong> - posibilita subir / descargar ficheros en {PLATFORM}, p.e. enlaces y torrents."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/services.html:51
+#: admin/views/default/help/en/services.html:53
 msgid "<strong>Remote access through other router</strong> - tries to open web ports (80 and 443) through your router, to allow for remote access."
 msgstr ""
