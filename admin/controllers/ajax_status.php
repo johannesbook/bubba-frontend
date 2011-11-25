@@ -1,5 +1,5 @@
 <?php
-class Ajax_disk extends Controller {
+class Ajax_status extends Controller {
 
     var $json_data=Array(
         'error' => 1,
@@ -17,7 +17,7 @@ class Ajax_disk extends Controller {
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0");
 		$this->output->set_header("Pragma: no-cache");
     )}
-    function _printers() {
+    function printers() {
         $json =  _system('cups-list-printers');
         $this->json_data = json_decode(implode($json),true);
     }
@@ -59,4 +59,4 @@ class Ajax_disk extends Controller {
         echo json_encode($this->json_data);
     }
 
-}§
+}
