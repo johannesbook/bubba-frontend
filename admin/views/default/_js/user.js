@@ -48,8 +48,6 @@ $(document).ready(function() {
         'json');
     });
 
-    jQuery.format("not a valid password"));
-
     edit_validator = $('form', source_edit_dialog).validate({
         rules: {
             'realname': {
