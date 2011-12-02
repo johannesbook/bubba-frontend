@@ -33,8 +33,10 @@
 <!-- Validation -->
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ba-resize.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.validate.js?v='<?=$this->session->userdata('version')?>'"></script>
+<script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/additional-methods.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.ui.throbber.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/jquery.pubsub.js?v='<?=$this->session->userdata('version')?>'"></script>
+
 
 <!-- Config -->
 <script type="text/javascript">
