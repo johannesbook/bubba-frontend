@@ -17,15 +17,8 @@ class Stat extends Controller{
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
 		$mdata["head"] = $this->load->view(THEME.'/stat/stat_head_view',$navdata,true);;
-		if($this->session->userdata("run_wizard")) {
-			$mdata["dialog_menu"] = "";
-			$mdata["content"]="";
-			$mdata["wizard"]=$content;
-		} else {
-			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
-			$mdata["content"]=$content;
-			$mdata["wizard"]="";
-		}
+        $mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
+        $mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}	
 
@@ -89,19 +82,11 @@ class Stat extends Controller{
 		if($strip){
 			$this->load->view(THEME.'/stat/stat_view',$sdata);
 		} else {
-			$sdata['wiz_data'] = array();
 			if( $this->session->userdata("run_wizard") ) {
-				redirect('/settings/wizard');
-			} else {
-				$this->_renderfull($this->load->view(THEME.'/stat/stat_view',$sdata,true));
+                $sdata['run_wizard'] = true;
 			}
+            $this->_renderfull($this->load->view(THEME.'/stat/stat_view',$sdata,true));
 		}
-	}
-
-	function dialog_wizard_exit() {
-		exit_wizard();
-		header("Content-type: application/json");
-		print json_encode(array());		
 	}
 }
 

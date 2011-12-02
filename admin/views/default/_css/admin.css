@@ -898,50 +898,11 @@ body {
   width: 39px;
 }
 
-.ui-widget-wizard, .ui-widget-wizard input, .ui-widget-wizard select {
-
-}
-.ui-widget-wizard form#wizard_settings td:first-child {
-	width : 200px;
-}
-
-.ui-widget-wizard input[type=text]{
-	vertical-align : baseline;
-}
-
 input#easyfind_name {
 	vertical-align : middle;
 }
 input[disabled]#easyfind_name {
 	background-color : #ccc;
-}
-h1.wizard-header {
-  font-size: 22px;
-  margin-top: 0;
-  margin-bottom:17px;
-}
-.ui-widget-wizard th h2 {
-  font-size: 14px;
-
-  text-align: left;
-  margin-bottom : 3px;
-  margin-top : 10px;
-}
-.ui-widget-wizard td {
-	vertical-align : middle;
-	padding-top : 5px;
-	padding-bottom : 5px;
-}
-#fn-wizard-add label {
-	font-size : 14px;	
-}
-.ui-widget-wizard div.ui-wizard-controls {
-	margin-top : 5px;
-}
-
-.ui-widget-wizard td.ui-wizard-existing-users {
-	margin-left : 10px;
-	vertical-align : top;
 }
 
 #body_mail select,#body_mail option {
@@ -1818,24 +1779,12 @@ table.ui-table.ui-table-list tbody tr td:last-child button,#menu li a span {
 #login_menubar {
   margin-top: 45px;
 }
-.ui-widget-wizard,.ui-element-width-50 {
+.ui-element-width-50 {
   width: 48%!important;
 }
 
-.ui-widget-wizard form,.ui-dialog table {
+.ui-dialog table {
   margin: 0;
-}
-
-.ui-wizard-next, #wizard_next {
-  display: inline;
-  float: right;
-  width: 80px;
-}
-
-.ui-wizard-prev,.ui-wizard-exit,#wizard_exit,#wizard_back {
-  display: inline;
-  float: left;
-  width: 80px;
 }
 
 #backup table,#backup input,.ui-dialog label {

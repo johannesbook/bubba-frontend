@@ -152,14 +152,6 @@ function logout_dialog() {
 	);
 }
 
-function exit_wizard() {
-	$.post(config.prefix+"/stat/dialog_wizard_exit",{},function(){
-			window.location.href = config.prefix+"/settings";
-		},'json');
-}
-
-
-
 $(window).load(function() {
 	$('.jclock').jclock();
 });

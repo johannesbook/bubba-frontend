@@ -247,15 +247,6 @@ $(document).ready(function(){
 		};
 	});
 
-	<?if(isset($wizard) && $wizard): ?>
-		// load wizard dialog here
-		$.dialog(
-			$("#wizard").children(),
-			"",
-			{},
-			{dialogClass : 'ui-widget-wizard', draggable : false, close : exit_wizard}
-		);
-	<?endif?>
 });
 </script>
 
@@ -312,13 +303,12 @@ if(isset($head)) {
                 	<?endif?>
                 <?=$navbar?>
             </div>	<!-- header -->		
-            <?if(! (isset($wizard) && $wizard)):?>
+
             <div id="content">
             	<div id="<?=$this->uri->segment(1)?>"> 	<!-- section -->
                 	<?=$content?>
               	</div> 	<!-- section -->
             </div>	<!-- content -->
-          	<?endif?>
             
     		<div id="update_status" class="ui-corner-all ui-state-highlight ui-helper-hidden"></div>
         </td>	<!-- content_wrapper -->
@@ -337,11 +327,6 @@ if(isset($head)) {
 */?>
 		<?=$dialog_menu?>
 
-  <?if(isset($wizard) && $wizard):?>
-		<div id="wizard" class="ui-wizard-<?=$this->uri->segment(1)?>" style="display:none">
-		  	<?=$wizard?>
-		</div> <!-- wizard -->
-	<?endif?>
 	<div id="fn-help-dialog" class="ui-help-dialog ui-helper-hidden"></div>
 
 </body>

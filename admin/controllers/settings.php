@@ -13,19 +13,12 @@ class Settings extends Controller{
 
 	}
 	
-	function _renderfull($content,$head=null, $mdata){
+	function _renderfull($content,$head=null, $mdata=array()){
 
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
-		if($this->session->userdata("run_wizard")) {
-				$mdata["dialog_menu"] = "";
-				$mdata["content"]="";
-				$mdata["wizard"]=$content;
-		} else {
-				$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
-				$mdata["content"]=$content;
-				$mdata["wizard"]="";
-		}
+        $mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
+        $mdata["content"]=$content;
 		if(!is_null($head)) {
 			$mdata['head'] = $head;
 		}
@@ -363,8 +356,6 @@ class Settings extends Controller{
 				$data['time'] = $time;
 				$data['t_zone'] = get_current_tz();
 				if($ntp) $data['use_ntp'] = true;
-				
-				unset($data['wiz_data']['postingpage']); // unset to run wizard PREPROCESSING again.
 			}
 		} else { // use ntp
 				if(!service_running("ntpd")) {
@@ -393,15 +384,8 @@ class Settings extends Controller{
 			$this->datetime( $strip, $data );
 		}
 	}	
-	function set_lang($strip="",$lang=null){
-		// set default system language
-		// called directly from reginal settings and indirectly with $lang argument from wizard
-		if(!$lang) {
-			$lang = $this->input->post("lang");
-			$wizard_call=false;
-		} else {
-			$wizard_call=true;	
-		}
+	function set_lang($strip=""){
+        $lang = $this->input->post("lang");
 		if($lang) {
             $languages = $this->gettext->get_languages();
             if(isset($languages[$lang])) {
@@ -412,9 +396,7 @@ class Settings extends Controller{
                 if(! (isset($conf['language']) && $conf['language'])) {
                     $this->session->set_userdata('language',$lang);
                     $this->session->set_userdata('locale',$locale);
-                    if(!$wizard_call) {
-                        redirect('settings/datetime');
-                    }
+                    redirect('settings/datetime');
                 }
                 $data['update'] = array(
                     'success' => true,
@@ -579,138 +561,10 @@ class Settings extends Controller{
 
 
 	function index($strip=""){
-
-		if($this->session->userdata("run_wizard")) {
-			$this->wizard_lang();
-		} else {
-			$this->startwizard();
-		}
-
-	}
-
-	function startwizard($strip="") {
-		if($strip){
-			$this->load->view(THEME.'/settings/settings_wizard_lang_view',"");
-		}else{
-			$this->_renderfull($this->load->view(THEME.'/settings/settings_wizard_lang_view',"",true));
-		}
-	}		
-
-	
-	
-	function wizard_lang($strip="") {
-	
-		$data['wiz_data'] = $this->input->post('wiz_data');
-		if(isset($data['wiz_data']['start'])) {
-			$this->session->set_userdata("run_wizard", true);
-		}
-
-		// should not be needed, no back functions from first page.
-		if(isset($data['wiz_data']['back'])) {
-			redirect("/stat/wizard");
-		}
-
-		if(isset($data['wiz_data']['cancel'])) {
-			exit_wizard();
-		}
-		
-		if(!$this->session->userdata("run_wizard")) {
-			
-			redirect("/stat");
-			
-		} else {
-			
-			// ------------ WIZARD START -------------
-			
-			if(isset($data['wiz_data']['postingpage'])) {
-				// --- POSTPROCESSING SETTINGS ----
-				//print_r("POSTPROCESS: settings");
-				$this->set_lang("",$data['wiz_data']['lang']);
-				
-			} else {
-				// --- PREPROCESSING SETTINGS ----
-				//print_r("PREPROCESS: settings");
-				$data['wiz_data']['available_languages'] = $this->gettext->get_languages();
-			}
-
-			// --- LOADING view SETTINGS ----
-			$data["hide_sideboard"] = true;
-			if(isset($error) || (!isset($data['wiz_data']['postingpage'])) ) { // if error or called from "stat" controller load the same view again.
-				if($strip){
-					$this->load->view($this->load->view(THEME.'/settings/settings_wizard_lang_view',$data));
-				}else{
-					$this->_renderfull($this->load->view(THEME.'/settings/settings_wizard_lang_view',$data,true));
-				}
-			} else {
-				redirect("settings/wizard");
-			}
-		}
-
-	}
-	
-	
-	
-	function wizard($strip="") {
-	
-		$data['wiz_data'] = $this->input->post('wiz_data');
-		if(isset($data['wiz_data']['start'])) {
-			$this->session->set_userdata("run_wizard", true);
-		}
-
-		// should not be needed, no back functions from first page.
-		if(isset($data['wiz_data']['back'])) {
-			redirect("/settings/wizard_lang");
-		}
-
-		if(isset($data['wiz_data']['cancel'])) {
-			exit_wizard();
-		}
-		
-		if(!$this->session->userdata("run_wizard")) {
-			redirect("/stat");
-			
-		} else {
-			
-			// ------------ WIZARD START -------------
-			
-			if(isset($data['wiz_data']['postingpage'])) {
-				// --- POSTPROCESSING SETTINGS ----
-				//d_print_r("POSTPROCESS: settings");
-				//d_print_r($data);
-				
-				$res = $this->setdate("-1"); 
-				
-			}
-			if(!isset($data['wiz_data']['postingpage'])) {
-				// --- PREPROCESSING SETTINGS ----
-				
-				if(service_running("ntpd")) {
-					$data['wiz_data']['use_ntp']= true;
-				}
-				
-				$data['wiz_data']['t_zone'] = get_current_tz();
-				date_default_timezone_set($data['wiz_data']['t_zone']);
-
-				$data['wiz_data']['t_zoneinfo'] = get_timezone_info();
-
-				$data['wiz_data']['date'] = date("Ymd");
-				$data['wiz_data']['time'] = date("Hi");
-				
-				
-			}
-
-			// --- LOADING view SETTINGS ----
-			$data["hide_sideboard"] = true;
-			if(isset($error) || (!isset($data['wiz_data']['postingpage'])) ) { // if error or called from "stat" controller load the same view again.
-				if($strip){
-					$this->load->view($this->load->view(THEME.'/settings/settings_wizard_view',$data));
-				}else{
-					$this->_renderfull($this->load->view(THEME.'/settings/settings_wizard_view',$data,true));
-				}
-			} else {
-				redirect("users/wizard");
-			}
-		}
+        $this->_renderfull(
+            $this->load->view(THEME.'/settings/settings_view','',true),
+            $this->load->view(THEME.'/settings/settings_head_view','',true)
+        );
 	}
 
 	function identity( $strip = "" ) {

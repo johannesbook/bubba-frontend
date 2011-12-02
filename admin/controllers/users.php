@@ -19,15 +19,8 @@ class Users extends Controller{
 		}
 		$navdata["menu"] = $this->menu->retrieve($this->session->userdata('user'),$this->uri->uri_string());
 		$mdata["navbar"]=$this->load->view(THEME.'/nav_view',$navdata,true);
-		if($this->session->userdata('run_wizard')) {
-			$mdata["dialog_menu"] = "";
-			$mdata["content"]="";
-			$mdata["wizard"]=$content;
-		} else {
-			$mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
-			$mdata["content"]=$content;
-			$mdata["wizard"]="";
-		}
+        $mdata["dialog_menu"] = $this->load->view(THEME.'/menu_view',$this->menu->get_dialog_menu(),true);
+        $mdata["content"]=$content;
 		$this->load->view(THEME.'/main_view',$mdata);
 	}
 		
@@ -355,86 +348,6 @@ class Users extends Controller{
 				$this->load->view(THEME.'/users/user_list_view',$data,true),
 				$this->load->view(THEME.'/users/user_list_head_view',$data,true)
 			);
-		}
-	}
-
-	function wizard($strip="") {
-
-		require_once(APPPATH."/legacy/user_auth.php");
-
-
-		$data['wiz_data'] = $this->input->post('wiz_data');
-		if(isset($data['wiz_data']['back'])) {
-			redirect("/settings/wizard");
-		}
-
-		if(isset($data['wiz_data']['cancel'])) {
-			exit_wizard();
-		}
-		if(!$this->session->userdata("run_wizard")) {
-			redirect("/stat");
-		} else {
-			if(isset($data['wiz_data']['postingpage']) || isset($data['wiz_data']['adduser'])) {
-				// --- POSTPROCESSING USERS ----
-
-				if( isset($data['wiz_data']['adduser']) ) {
-					// add user
-					$ret['info'] = $this->add(-1);
-					if(!$ret['info']['success']) {
-						$error = true;
-						$data['err']['uname'] = "";
-						$data['err']['pwd'] = "";
-						$data['uname'] = $ret['info']['uname'];
-						if($ret['info']['shell'] == "/bin/bash")
-							$data['shell'] = true;
-						$data['realname'] = $ret['info']['realname'];
-						if($ret['info']["usr_existerr"])
-							$data['err']['uname'] .= _("Error, user exists")."<br>";
-						if($ret['info']["usr_caseerr"])
-							$data['err']['uname'] .= _("Error, uppercase letters in username")."<br>";
-						if($ret['info']["usr_nonameerr"])
-							$data['err']['uname'] .= _("Error, no username")."<br>";
-						if($ret['info']["usr_spacerr"])
-							$data['err']['uname'] .= _("Error, space in username")."<br>";
-						if($ret['info']["usr_charerr"])
-							$data['err']['uname'] .= _("Error, illegal characters in username")."<br>";
-						if($ret['info']["usr_longerr"])
-							$data['err']['uname'] .= _("Error, username too long")."<br>";
-						if($ret['info']["pwd_charerr"])
-							$data['err']['pwd'] .= _("Error, illegal characters in password")."<br>";
-						if($ret['info']["pwd_mismatcherr"])
-							$data['err']['pwd'] .= _("Error, passwords do not match")."<br>";
-						if(!$data['err']['uname'])
-							unset($data['err']['uname']);
-						if(!$data['err']['pwd'])
-							unset($data['err']['pwd']);
-					}
-
-					// get userlist.
-					$data['wiz_data']['ulist'] = $this->_get_uinfo();
-
-				}
-			} else {
-				// --- PREPROCESSING USERS ----
-				// get userlist.
-				$data['wiz_data']['ulist'] = $this->_get_uinfo();
-			}
-
-			if(  isset($error) ||
-				(!isset($data['wiz_data']['postingpage'])) || 
-				(isset($data['wiz_data']['adduser']))
-			) { // if error/add or called from "stat" controller load the same view again.
-				if($strip){
-					$this->load->view($this->load->view(THEME.'/users/user_wizard_view',$data));
-				}else{
-					$this->_renderfull(
-						$this->load->view(THEME.'/users/user_wizard_view',$data,true),
-						$this->load->view(THEME.'/users/user_wizard_head_view',$data,true)
-					);
-				}
-			} else {
-				redirect("network/wizard");
-			}
 		}
 	}
 
