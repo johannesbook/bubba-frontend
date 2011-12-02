@@ -9,7 +9,10 @@ function _system( /* $command, $args... */ ) {
 	}
 }
 
-function escapeshellargs( array $cmd ) {
+function escapeshellargs( $cmd ) {
+    if(!is_array($cmd)) {
+        $cmd = func_get_args();
+    }
 	$command = array_shift( $cmd );
 	$shell_cmd = implode(
 		' ',
