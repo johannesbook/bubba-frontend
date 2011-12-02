@@ -1,4 +1,5 @@
 <?php
+require_once 'HTTP/Request2.php';
 class NetworkManager extends Model {
 	private $htcap;
 	private $ifcfg;
@@ -79,7 +80,49 @@ class NetworkManager extends Model {
 	public function easyfind_validate( $name ) {
 		if(!$name) return 0;
 		return preg_match( '#^[A-Za-z0-9-]+$#', $name );
-	}
+    }
+
+
+    public function get_mac($if) {
+        if(file_exists("/sys/class/net/$if/address")) {
+            return @file_get_contents("/sys/class/net/$if/address");
+        } else {
+            return null;
+        }
+    }
+
+    public function easyfind_available( $name, $mac ) {
+        if( ! $name ) {
+            return false;
+        }
+
+        $request = new HTTP_Request2('https://easyfind.excito.org/check.php', HTTP_Request2::METHOD_GET, array('ssl_verify_peer' => false));
+        $url = $request->getUrl();
+        $url->setQueryVariables(
+            array(
+                'name' => $name.".".EASYFIND,
+                'mac' => $mac
+            )
+        );
+        $response = $request->send();
+        if ($response->getStatus() == 200) {
+            $data = json_decode($response->getBody(),true);
+            if(is_array($data)) {
+               if(isset($data['error'])) {
+                   throw new Exception("Server responded with error: {$data['error']}");
+               } elseif(isset($data['available'])) {
+                   return $data['available'];
+               } else {
+                   return false;
+               }
+            } else {
+                throw new Exception("Unknown data encountered: " + json_encode($data));
+            }
+        } else {
+            throw new Exception("Server didn't respond with a 200 OK message");
+        }
+
+    }
 
 	public function easyfind_setname( $name ) {
 		return set_easyfind($name);
