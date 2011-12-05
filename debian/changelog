@@ -1,3 +1,24 @@
+bubba-frontend (2.4~pre17) vincent; urgency=low
+
+  * update german translation (Closes: #1737)
+  * megmergeoptions
+  * update word-wrap removal
+  * Adding content-language (Closes: #1741)
+  * Remove last trace of $.message (Closes: #1776)
+  * Fix missing $. before shutdown sprintf
+  * Update backup help text (Closes: #1733)
+  * Change UPnP to DLNA in the help
+  * releasing version 2.3.1
+  * Fix some errors in ajax_status
+  * remove bad code in user.js
+  * fix bug in exec helper fir escapeshellargs
+  * Updating jquery validate and adding additional helpers
+  * remove old wizard
+  * Adding new wizard
+  * update translation files
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 05 Dec 2011 13:44:30 +0100
+
 bubba-frontend (2.4~pre16) hugo; urgency=low
 
   * bubba-frontend next
