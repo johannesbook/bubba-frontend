@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3.0.2-8-g99845c1\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-10-07 14:44+0200\n"
+        "POT-Creation-Date: 2011-12-05 13:41+0100\n"
         "PO-Revision-Date: 2011-10-06 14:12+0100\n"
         "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
         "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -42,11 +42,11 @@ msgstr  "E-Mail-Konto hinzufügen"
 msgid   "Add new email account"
 msgstr  "Neues E-Mail-Konto hinzufügen"
 
-#: admin/views/default/_js/user.js:300
+#: admin/views/default/_js/user.js:295
 msgid   "Add new user"
 msgstr  "Neuen Benutzer hinzufügen"
 
-#: admin/views/default/_js/user.js:388
+#: admin/views/default/_js/user.js:383
 msgid   "Add new user to the system"
 msgstr  "Neuen Benutzer an das System hinzufügen"
 
@@ -82,6 +82,7 @@ msgstr  "Sind Sie sicher, dass Sie die Daten wiederherstellen wollen? Dies "
         "wird die aktuellen Daten mit denen des Backups überschreiben"
 
 #: admin/views/default/_js/backup.js:32 admin/views/default/_js/backup.js:46
+#: admin/views/default/_js/wizard.js:27
 msgid   "Back"
 msgstr  "Zurück"
 
@@ -186,16 +187,16 @@ msgstr  "Fotoalbum-Viewer löschen"
 msgid   "Delete this photo album viewer?"
 msgstr  "Diesen Fotoalbum-Viewer löschen?"
 
-#: admin/views/default/_js/user.js:245
+#: admin/views/default/_js/user.js:240
 msgid   "Delete this user from the system?"
 msgstr  "Diesen Benutzer aus dem System löschen?"
 
-#: admin/views/default/_js/user.js:257 admin/views/default/_js/user.js:258
-#: admin/views/default/_js/user.js:322
+#: admin/views/default/_js/user.js:252 admin/views/default/_js/user.js:253
+#: admin/views/default/_js/user.js:317
 msgid   "Delete user"
 msgstr  "Benutzer löschen"
 
-#: admin/views/default/_js/user.js:254
+#: admin/views/default/_js/user.js:249
 msgid   "Delete userdata?"
 msgstr  "Benutzerdaten löschen?"
 
@@ -216,7 +217,7 @@ msgstr  "Als ZIP herunterladen"
 #: admin/views/default/_js/album_users.js:30
 #: admin/views/default/_js/backup.js:161
 #: admin/views/default/_js/mail_retrieve.js:150
-#: admin/views/default/_js/user.js:100
+#: admin/views/default/_js/user.js:95
 msgid   "Edit"
 msgstr  "Bearbeiten"
 
@@ -229,7 +230,7 @@ msgstr  "Albumviewer bearbeiten"
 msgid   "Edit email account information for host <em>%s</em>"
 msgstr  "E-Mail-Kontoinformation für Host <em>%s</em> bearbeiten"
 
-#: admin/views/default/_js/user.js:112
+#: admin/views/default/_js/user.js:107
 msgid   "Edit user"
 msgstr  "Benutzer bearbeiten"
 
@@ -237,12 +238,20 @@ msgstr  "Benutzer bearbeiten"
 msgid   "Email account updated"
 msgstr  "E-Mail-Konto aktualisiert"
 
+#: admin/views/default/_js/wizard.js:151
+msgid   "Error applying changes"
+msgstr  ""
+
 #: admin/views/default/_js/backup.js:133
 msgid   "Failed"
 msgstr  "Fehler"
 
 #: admin/views/default/_js/backup.js:759
 msgid   "File/Directory selector"
+msgstr  ""
+
+#: admin/views/default/_js/wizard.js:150
+msgid   "Following errors where encountered when trying to apply the changes: "
 msgstr  ""
 
 #: admin/views/default/_js/tor.js:76
@@ -269,13 +278,14 @@ msgid   "Move files"
 msgstr  "Dateien verschieben"
 
 #: admin/views/default/_js/backup.js:26 admin/views/default/_js/backup.js:40
+#: admin/views/default/_js/wizard.js:21
 msgid   "Next"
 msgstr  "Weiter"
 
 #: admin/views/default/_js/backup.js:684
 #: admin/views/default/_js/mail_retrieve.js:142
 #: admin/views/default/_js/mail_retrieve.js:143
-#: admin/views/default/_js/user.js:96
+#: admin/views/default/_js/user.js:91
 msgid   "No"
 msgstr  "Nein"
 
@@ -394,6 +404,10 @@ msgctxt "button"
 msgid   "Select"
 msgstr  ""
 
+#: admin/views/default/_js/wizard.js:157
+msgid   "Setup complete. Enjoy!"
+msgstr  ""
+
 #: admin/views/default/_js/stat.js:97
 msgid   "Shut down"
 msgstr  ""
@@ -401,6 +415,10 @@ msgstr  ""
 #: admin/views/default/_js/stat.js:95
 msgctxt "confirmation button"
 msgid   "Shut down"
+msgstr  ""
+
+#: admin/views/default/_js/wizard.js:36
+msgid   "Startup wizard"
 msgstr  ""
 
 #: admin/views/default/_js/filemanager.js:210
@@ -419,7 +437,7 @@ msgstr[1]       ""
 msgid   "Successfully added new email account"
 msgstr  "Neues E-Mail-Konto erfolgreich hinzugefügt"
 
-#: admin/views/default/_js/user.js:181
+#: admin/views/default/_js/user.js:176
 msgid   "Successfully added new user"
 msgstr  "Neuen Benutzer erfolgreich hinzugefügt"
 
@@ -454,7 +472,7 @@ msgid   "Sucessfully added pictures to the album"
 msgstr  "Bilder wurden erfolgreich zum Album hinzugefügt"
 
 #: admin/views/default/_js/mail_retrieve.js:180
-#: admin/views/default/_js/user.js:313
+#: admin/views/default/_js/user.js:308
 msgid   "Update"
 msgstr  "Aktualisieren"
 
@@ -470,11 +488,11 @@ msgstr  "Viewer aktualisieren"
 msgid   "Upload file"
 msgstr  "Dateien zu B3 hochladen"
 
-#: admin/views/default/_js/user.js:280
+#: admin/views/default/_js/user.js:275
 msgid   "User deleted"
 msgstr  "Benutzer gelöscht"
 
-#: admin/views/default/_js/user.js:222
+#: admin/views/default/_js/user.js:217
 msgid   "User information updated"
 msgstr  "Die Benutzerinformation wurde aktualisiert"
 
@@ -493,7 +511,7 @@ msgstr  "Viewer aktualisiert"
 #: admin/views/default/_js/backup.js:664
 #: admin/views/default/_js/mail_retrieve.js:142
 #: admin/views/default/_js/mail_retrieve.js:143
-#: admin/views/default/_js/user.js:96
+#: admin/views/default/_js/user.js:91
 msgid   "Yes"
 msgstr  "Ja"
 
@@ -537,6 +555,10 @@ msgstr  ""
 #: admin/views/default/_js/backup.js:136
 msgid   "why?"
 msgstr  "Warum?"
+
+#: admin/views/default/_js/wizard.js:12
+msgid   "your-easyfind-name"
+msgstr  ""
 
 #: admin/views/default/_js/backup.js:437
 msgid   "{0} is already in use"
