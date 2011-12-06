@@ -22,7 +22,7 @@ class Menu extends Model {
 
         $this->bubba_menubar = array(
             array(
-                'label' => pgettext('menu',"Filemanager"),
+                'label' => pgettext('menu',"File Manager"),
                 'id' => 'filemanager',
                 'uri' => '/filemanager',
                 'auth' => true,
@@ -101,7 +101,7 @@ class Menu extends Model {
                 'allow' => array( 'admin' ),
             ),
             array(
-                'label' => pgettext('menu',"Filemanager"),
+                'label' => pgettext('menu',"File Manager"),
                 'id' => 'filemanager',
                 'uri' => 'filemanager'
             ),

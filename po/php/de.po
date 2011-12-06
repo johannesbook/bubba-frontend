@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3.0.2-8-g99845c1\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-12-05 13:41+0100\n"
+        "POT-Creation-Date: 2011-12-06 14:57+0100\n"
         "PO-Revision-Date: 2011-10-05 18:00+0100\n"
         "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1057,14 +1057,15 @@ msgstr  ""
 msgid   "Fatal error when trying to remove the user %s"
 msgstr  ""
 
+#: admin/models/menu.php:25 admin/models/menu.php:104
+#, fuzzy
+msgctxt "menu"
+msgid   "File Manager"
+msgstr  "Dateimanager"
+
 #: admin/views/default/services/services_view.php:4
 msgid   "File sharing"
 msgstr  "Filesharing"
-
-#: admin/models/menu.php:25 admin/models/menu.php:104
-msgctxt "menu"
-msgid   "Filemanager"
-msgstr  "Dateimanager"
 
 #: admin/views/default/backup/backup_view.php:413
 msgid   "Files to backup (step 1 of 4)"

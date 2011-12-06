@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-12-05 13:41+0100\n"
+        "POT-Creation-Date: 2011-12-06 14:57+0100\n"
         "PO-Revision-Date: 2011-10-07 14:44+0200\n"
         "Last-Translator: Automatically generated\n"
         "Language-Team: none\n"
@@ -1031,14 +1031,15 @@ msgstr  "Fatal error when trying to purge horde configurations for user %s"
 msgid   "Fatal error when trying to remove the user %s"
 msgstr  "Fatal error when trying to remove the user %s"
 
+#: admin/models/menu.php:25 admin/models/menu.php:104
+#, fuzzy
+msgctxt "menu"
+msgid   "File Manager"
+msgstr  "Filemanager"
+
 #: admin/views/default/services/services_view.php:4
 msgid   "File sharing"
 msgstr  "File sharing"
-
-#: admin/models/menu.php:25 admin/models/menu.php:104
-msgctxt "menu"
-msgid   "Filemanager"
-msgstr  "Filemanager"
 
 #: admin/views/default/backup/backup_view.php:413
 msgid   "Files to backup (step 1 of 4)"
