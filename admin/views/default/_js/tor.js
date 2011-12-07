@@ -71,12 +71,16 @@ $(function(){
             }
             $.throbber.show();
         },
-        'success':   function (data) {
-            $.throbber.hide();
-            $.alert(_('It might take up to 20 minutes for Tor to self-test if the configuration is fully functional, please inspect the log file (Settings→Logs→tor) for verification"'), null, null, function(){
-                location.reload(true);
-            });
-        }
+		'success':   function (data) {
+			$.throbber.hide();
+			if($("#enabled").is(':checked')) {
+				$.alert(_('It might take up to 20 minutes for Tor to self-test if the configuration is fully functional, please inspect the log file (Settings→Logs→tor) for verification"'), null, null, function(){
+					location.reload(true);
+				});
+			} else {
+				location.reload(true);
+			}
+		}
     });
 
     // Display average and max bandwidth rates. If "Custom" is
