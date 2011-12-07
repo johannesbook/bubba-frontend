@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-12-07 18:58+0100\n"
 "PO-Revision-Date: 2011-10-06 15:42+0100\n"
 "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,98 +77,112 @@ msgid "Select which external disk to include in the array."
 msgstr "Selecciona el disco externo a incluir en el grupo."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:33
-msgid "Warning! All data on both disks will be erased. Click 'Create RAID'."
+#: admin/views/default/help/en/disk_raid.html:34
+#, fuzzy
+#| msgid "Click 'Create RAID array'"
+msgid "Click 'Create RAID'."
+msgstr "Haz clic en 'Crear RAID'"
+
+#. type: Content of: <ol><li><p>
+#: admin/views/default/help/en/disk_raid.html:35
+msgid "<strong>Warning!</strong> Nothing may access /home while doing this operation. Make sure to exit any open ssh connections, shut down any samba/AFP connections and shut off all other services that may access /home."
+msgstr ""
+
+#. type: Content of: <ol><li><p>
+#: admin/views/default/help/en/disk_raid.html:36
+#, fuzzy
+#| msgid "Warning! All data on both disks will be erased. Click 'Create RAID'."
+msgid "<strong>Warning!</strong> All data on both disks will be erased."
 msgstr "¡Precaución! Todos los datos de ambos discos serán borrados. Haz clic en 'Crear RAID'."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:35
+#: admin/views/default/help/en/disk_raid.html:38
 msgid "Wait for the progress bar to complete. Be patient, it will take some time to create a RAID array if you are using large disks."
 msgstr "Espera a que se completa la barra de progreso. Ten paciencia, llevará algún tiempo crear un grupo RAID si estás utilizando discos grandes."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:37
+#: admin/views/default/help/en/disk_raid.html:40
 msgid "When finished, your external disk has been included in your RAID array."
 msgstr "Cuando finalice, tu disco externo habrá sido incluído en tu grupo RAID."
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/disk_raid.html:41
+#: admin/views/default/help/en/disk_raid.html:44
 msgid "RAID status"
 msgstr "Estado del RAID"
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:44
+#: admin/views/default/help/en/disk_raid.html:47
 msgid "<strong>List of RAID arrays</strong> - shows the total disk space, i.e. the smallest available disk (the {PLATFORM} /home partition or the external eSATA disk) in the array."
 msgstr "<strong>Lista de grupos RAID</strong> - muestra el espacio en disco total, p.e. el del menor disco disponible (la partición /home {PLATFORM} o el disco externo eSATA) del conjunto."
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:47
+#: admin/views/default/help/en/disk_raid.html:50
 msgid "<strong>List of RAID disks</strong> - shows the disks attached to the RAID system."
 msgstr "<strong>Lista de discos RAID</strong> - muestra los discos agregados al grupo RAID."
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/disk_raid.html:50
+#: admin/views/default/help/en/disk_raid.html:53
 msgid "Recover an external disk"
 msgstr "Recuperar un disco externo"
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:53
+#: admin/views/default/help/en/disk_raid.html:56
 msgid "If you have a disc failure on your external disk or if you have by mistake disconnected the external disk you will need to do the following."
 msgstr "Si tienes un fallo de disco en tu unidad externa o si has desconectado por error el disco externo debes hacer lo siguiente."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:56
+#: admin/views/default/help/en/disk_raid.html:59
 msgid "Disconnect the broken external disk from the backside of {PLATFORM}."
 msgstr "Desconecta el disco externo averiado de la trasera de {PLATFORM}."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:58
+#: admin/views/default/help/en/disk_raid.html:61
 msgid "Attach a new external disk (or reconnect the by mistake disconnected one)."
 msgstr "Inserta un nuevo disco externo (o reconecta el desconectado por error)."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:60
-#: admin/views/default/help/en/disk_raid.html:78
+#: admin/views/default/help/en/disk_raid.html:63
+#: admin/views/default/help/en/disk_raid.html:81
 msgid "Click on '<strong>Recover RAID array</strong>'."
 msgstr "Haz clic en '<strong>Recuperar grupo RAID</strong>"
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:62
+#: admin/views/default/help/en/disk_raid.html:65
 msgid "Select which external disk to add to RAID array. Click 'Recover array'."
 msgstr "Selecciona el disco externo a añadir al grupo RAID. Haz clic en 'Recuperar grupo'."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:64
+#: admin/views/default/help/en/disk_raid.html:67
 msgid "Warning! All data will be erased from the external disk. Click 'Recover array'."
 msgstr "¡Precaución! Todos los datos del disco externo serán borrados. Haz clic en 'Recuperar grupo'."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:66
-#: admin/views/default/help/en/disk_raid.html:84
+#: admin/views/default/help/en/disk_raid.html:69
+#: admin/views/default/help/en/disk_raid.html:87
 msgid "Press 'Close' to continue working with {PLATFORM}. The synchronization is in progress and will take a while."
 msgstr "Pulsa 'Cerrar' para continuar trabajando con {PLATFORM}. La sincronización está en progreso y le llevará un buen rato."
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/disk_raid.html:70
+#: admin/views/default/help/en/disk_raid.html:73
 msgid "Recover an internal disk"
 msgstr "Recuperar un disco interno"
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:73
+#: admin/views/default/help/en/disk_raid.html:76
 msgid "If you have a disk failure on your internal disk in {PLATFORM} you have to start by exchanging the disk and reinstalling via an USB memory. Then update {PLATFORM} to the latest software."
 msgstr "Si tienes un fallo de tu disco interno en {PLATFORM} tienes que comenzar por cambiar el disco y reinstalarlo mediante una memoria USB. Después actualiza {PLATFORM} al software más reciente."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:76
+#: admin/views/default/help/en/disk_raid.html:79
 msgid "Attach the external RAID disk that is containing your data."
 msgstr "Inserta el disco RAID externo que contiene tus datos."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:80
+#: admin/views/default/help/en/disk_raid.html:83
 msgid "Select the external disk to add to RAID array. Click 'Recover array'."
 msgstr "Selecciona el disco externo para agregar al grupo RAID. Haz clic en 'Recuperar grupo'."
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:82
+#: admin/views/default/help/en/disk_raid.html:85
 msgid "Warning! All user data and the storage area will be erased from the internal disk. Click 'Recover array'."
 msgstr "¡Precaución! Todos los datos de usuario y el área storage serán borrados del disco interno disco. Haz clic en 'Recuperar grupo'."

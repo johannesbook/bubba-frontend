@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-12-06 14:57+0100\n"
+        "POT-Creation-Date: 2011-12-07 18:57+0100\n"
         "PO-Revision-Date: 2011-10-07 14:44+0200\n"
         "Last-Translator: Automatically generated\n"
         "Language-Team: none\n"
@@ -91,11 +91,6 @@ msgstr  "Acknowledge"
 #: admin/views/default/downloads/downloads_index_view.php:53
 msgid   "Add"
 msgstr  "Add"
-
-#: admin/views/default/disk/disk_raid_head_view.php:42
-#: admin/views/default/disk/disk_raid_head_view.php:55
-msgid   "Add disk to RAID array"
-msgstr  "Add disk to RAID array"
 
 #: admin/views/default/upload/upload_index_view.php:153
 msgid   "Add entry"
@@ -269,10 +264,6 @@ msgstr  "Auto adjust date and time"
 msgid   "Automatic network settings"
 msgstr  "Automatic network settings"
 
-#: admin/views/default/network/network_tor_view.php:119
-msgid   "Automatically distribute my bridge address"
-msgstr  "Automatically distribute my bridge address"
-
 #: admin/views/default/stat/stat_view.php:23
 msgid   "Available"
 msgstr  "Available"
@@ -367,7 +358,6 @@ msgid   "Cable/DSL 768 Kbps"
 msgstr  "Cable/DSL 768 Kbps"
 
 #: admin/views/default/network/network_head_view.php:40
-#: admin/views/default/disk/disk_raid_head_view.php:151
 #: admin/views/default/disk/disk_head_view.php:19
 #: admin/views/default/disk/disk_head_view.php:55
 #: admin/views/default/disk/disk_head_view.php:58
@@ -423,10 +413,6 @@ msgstr  "Choose backup destination (step 3 of 5)"
 msgid   "Choose easyfind name (step 5 of 5)"
 msgstr  "Choose a name for this job (step 1 of 5)"
 
-#: admin/views/default/disk/disk_raid_head_view.php:75
-#: admin/views/default/disk/disk_raid_head_view.php:82
-#: admin/views/default/disk/disk_raid_head_view.php:137
-#: admin/views/default/disk/disk_raid_head_view.php:207
 #: admin/views/default/upload/upload_index_view.php:186
 msgid   "Close"
 msgstr  "Close"
@@ -463,15 +449,6 @@ msgstr  "Continue"
 msgid   "Continue formatting the disk?"
 msgstr  "Continue formatting the disk?"
 
-#: admin/views/default/disk/disk_raid_head_view.php:181
-msgid   "Continue to create RAID?"
-msgstr  "Continue to create RAID?"
-
-#: admin/views/default/disk/disk_raid_head_view.php:50
-#: admin/views/default/disk/disk_raid_head_view.php:111
-msgid   "Continue to recover RAID?"
-msgstr  "Continue to recover RAID?"
-
 #: admin/controllers/disk.php:62
 msgid   "Converting system to RAID"
 msgstr  "Converting system to RAID"
@@ -480,12 +457,6 @@ msgstr  "Converting system to RAID"
 msgid   "Create LVM"
 msgstr  "Create LVM"
 
-#: admin/views/default/disk/disk_raid_head_view.php:172
-#: admin/views/default/disk/disk_raid_head_view.php:186
-msgid   "Create RAID"
-msgstr  "Create RAID"
-
-#: admin/views/default/disk/disk_raid_head_view.php:143
 #: admin/views/default/disk/disk_raid_view.php:8
 msgid   "Create RAID array"
 msgstr  "Create RAID array"
@@ -502,14 +473,6 @@ msgstr  "Create empty album"
 #, fuzzy
 msgid   "Create initial user (step 4 of 5)"
 msgstr  "Select backup schedule (step 4 of 5)"
-
-#: admin/views/default/disk/disk_raid_head_view.php:179
-msgid   "Creating the RAID array will <strong>destroy all content</strong> on "
-        "your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage') and "
-        "erase the selected external disk"
-msgstr  "Creating the RAID array will <strong>destroy all content</strong> on "
-        "your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage') and "
-        "erase the selected external disk"
 
 #: admin/views/default/disk/disk_raid_view.php:38
 #, php-format
@@ -872,11 +835,6 @@ msgstr  "Error: No help text was found for entry %s"
 #: admin/controllers/ajax_backup.php:54
 msgid   "Every month"
 msgstr  "Every month"
-
-#: admin/views/default/disk/disk_raid_head_view.php:19
-#: admin/views/default/disk/disk_raid_head_view.php:144
-msgid   "Examining existing disks"
-msgstr  "Examining existing disks"
 
 #: admin/views/default/main_view.php:293
 msgid   "Excito"
@@ -1381,6 +1339,10 @@ msgctxt "menu"
 msgid   "Mail"
 msgstr  "Mail"
 
+#: admin/views/default/network/network_tor_view.php:119
+msgid   "Make this a private bridge"
+msgstr  ""
+
 #: admin/views/default/login_view.php:11
 msgid   "Manual"
 msgstr  "Manual"
@@ -1513,10 +1475,6 @@ msgstr  "No access"
 msgid   "No backup medium found"
 msgstr  "No backup medium found"
 
-#: admin/views/default/disk/disk_raid_head_view.php:136
-msgid   "No disks with RAID data found"
-msgstr  "No disks with RAID data found"
-
 #: admin/views/default/downloads/downloads_list_view.php:42
 msgid   "No info"
 msgstr  "No info"
@@ -1524,10 +1482,6 @@ msgstr  "No info"
 #: admin/views/default/stat/stat_view.php:85
 msgid   "No system messages available"
 msgstr  "No system messages available"
-
-#: admin/views/default/disk/disk_raid_head_view.php:206
-msgid   "No usable disk found"
-msgstr  "No usable disk found"
 
 #: admin/views/default/network/network_tor_view.php:4
 msgid   "No valid timezone set."
@@ -1651,10 +1605,6 @@ msgstr  "Permission denied"
 msgid   "Please do not remove power until all leds are turned off"
 msgstr  "Please do not remove power until all leds are turned off"
 
-#: admin/views/default/disk/disk_raid_head_view.php:180
-msgid   "Please make sure that you have backup of all files"
-msgstr  "Please make sure that you have backup of all files"
-
 #: admin/views/default/login_view.php:49
 msgid   "Please read the users manual for advice."
 msgstr  "Please read the users manual for advice."
@@ -1679,9 +1629,6 @@ msgstr  "Please select profile"
 msgid   "Please specify label for your new partition"
 msgstr  "Please specify label for your new partition"
 
-#: admin/views/default/disk/disk_raid_head_view.php:60
-#: admin/views/default/disk/disk_raid_head_view.php:121
-#: admin/views/default/disk/disk_raid_head_view.php:191
 #: admin/views/default/disk/disk_head_view.php:47
 #: admin/views/default/disk/disk_lvm_head_view.php:18
 msgid   "Please wait..."
@@ -1783,15 +1730,9 @@ msgstr  "Read only"
 msgid   "Real name"
 msgstr  "Real name"
 
-#: admin/views/default/disk/disk_raid_head_view.php:18
 #: admin/views/default/disk/disk_raid_view.php:14
 msgid   "Recover RAID array"
 msgstr  "Recover RAID array"
-
-#: admin/views/default/disk/disk_raid_head_view.php:103
-#: admin/views/default/disk/disk_raid_head_view.php:116
-msgid   "Recover internal disk"
-msgstr  "Recover internal disk"
 
 #: admin/views/default/disk/disk_raid_view.php:11
 msgid   "Recover internal disk or add a new external disk to existing RAID "
@@ -1803,34 +1744,10 @@ msgstr  "Recover internal disk or add a new external disk to existing RAID "
 msgid   "Recovering RAID"
 msgstr  "Recovering RAID"
 
-#: admin/views/default/disk/disk_raid_head_view.php:188
-msgid   "Recovering RAID array"
-msgstr  "Recovering RAID array"
-
 #: admin/views/default/disk/disk_raid_view.php:34
 #, php-format
 msgid   "Recovering RAID array '%s'"
 msgstr  "Recovering RAID array '%s'"
-
-#: admin/views/default/disk/disk_raid_head_view.php:57
-msgid   "Recovering external disk in RAID array"
-msgstr  "Recovering external disk in RAID array"
-
-#: admin/views/default/disk/disk_raid_head_view.php:118
-msgid   "Recovering internal disk in RAID array"
-msgstr  "Recovering internal disk in RAID array"
-
-#: admin/views/default/disk/disk_raid_head_view.php:49
-msgid   "Recovering the RAID array will <strong>destroy all content</strong> "
-        "on the selected extenal disk"
-msgstr  "Recovering the RAID array will <strong>destroy all content</strong> "
-        "on the selected extenal disk"
-
-#: admin/views/default/disk/disk_raid_head_view.php:110
-msgid   "Recovering the RAID array will <strong>destroy all content</strong> "
-        "on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')"
-msgstr  "Recovering the RAID array will <strong>destroy all content</strong> "
-        "on your internal disk (/home&nbsp;-&nbsp;including&nbsp;'storage')"
 
 #: admin/views/default/network/network_tor_view.php:92
 msgid   "Relay port"
@@ -1921,6 +1838,10 @@ msgstr  "Retrieve email"
 msgid   "Router + Firewall + Server"
 msgstr  "Router + Firewall + Server"
 
+#: admin/views/default/network/network_tor_view.php:63
+msgid   "Run Tor as"
+msgstr  ""
+
 #: admin/controllers/ajax_backup.php:87
 msgid   "Running"
 msgstr  "Running"
@@ -1955,10 +1876,6 @@ msgstr  "Seeding"
 msgid   "Select backup schedule (step 4 of 5)"
 msgstr  "Select backup schedule (step 4 of 5)"
 
-#: admin/views/default/disk/disk_raid_head_view.php:25
-msgid   "Select external disk to add to RAID array"
-msgstr  "Select external disk to add to RAID array"
-
 #: admin/views/default/wizard_lang_view.php:2
 #, fuzzy
 msgid   "Select language (step 1 of 5)"
@@ -1967,16 +1884,6 @@ msgstr  "Select backup schedule (step 4 of 5)"
 #: admin/views/default/backup/backup_view.php:66
 msgid   "Select what you want to backup (step 2 of 5)"
 msgstr  "Select what you want to backup (step 2 of 5)"
-
-#: admin/views/default/disk/disk_raid_head_view.php:155
-msgid   "Select which external disk to include in the array. An external disk "
-        "with the same size is recommended"
-msgstr  "Select which external disk to include in the array. An external disk "
-        "with the same size is recommended"
-
-#: admin/views/default/disk/disk_raid_head_view.php:85
-msgid   "Select which external disk to recover RAID data from"
-msgstr  "Select which external disk to recover RAID data from"
 
 #: admin/views/default/services/services_view.php:50
 msgid   "Send and recieve"
@@ -2247,14 +2154,6 @@ msgstr  "The system was unable to restore the system from an backup"
 msgid   "The targeted width of the channel in MHz"
 msgstr  "The targeted width of the channel in MHz"
 
-#: admin/views/default/disk/disk_raid_head_view.php:74
-msgid   "There are no usable external disks attached, please add an external "
-        "e-SATA disk and try again"
-msgstr  "There are no usable external disks attached, please add an external "
-        "e-SATA disk and try again"
-
-#: admin/views/default/disk/disk_raid_head_view.php:81
-#: admin/views/default/disk/disk_raid_head_view.php:150
 #: admin/views/default/disk/disk_head_view.php:18
 msgid   "There seem to be disks mounted, please unmount these and try again"
 msgstr  "There seem to be disks mounted, please unmount these and try again"
@@ -2597,9 +2496,6 @@ msgstr  "WPA2"
 msgid   "WWW"
 msgstr  "WWW"
 
-#: admin/views/default/disk/disk_raid_head_view.php:47
-#: admin/views/default/disk/disk_raid_head_view.php:108
-#: admin/views/default/disk/disk_raid_head_view.php:177
 #: admin/views/default/disk/disk_head_view.php:34
 msgid   "Warning"
 msgstr  "Warning"
@@ -2658,10 +2554,6 @@ msgstr  "Workgroup"
 #: admin/views/default/settings/settings_datetime_view.php:52
 msgid   "YYYYMMDD"
 msgstr  "YYYYMMDD"
-
-#: admin/views/default/network/network_tor_view.php:63
-msgid   "Your B3 can be either a bridge, non-exit relay or exit relay"
-msgstr  "Your B3 can be either a bridge, non-exit relay or exit relay"
 
 #: admin/views/default/backup/backup_view.php:344
 #: admin/views/default/backup/backup_view.php:691
@@ -2745,8 +2637,30 @@ msgstr  "with"
 msgid   "your-easyfind-name"
 msgstr  "your-easyfind-name"
 
+#~ msgid        "Add disk to RAID array"
+#~ msgstr       "Add disk to RAID array"
+
 #~ msgid        "Add user"
 #~ msgstr       "Add user"
+
+#~ msgid        "Automatically distribute my bridge address"
+#~ msgstr       "Automatically distribute my bridge address"
+
+#~ msgid        "Continue to create RAID?"
+#~ msgstr       "Continue to create RAID?"
+
+#~ msgid        "Continue to recover RAID?"
+#~ msgstr       "Continue to recover RAID?"
+
+#~ msgid        "Create RAID"
+#~ msgstr       "Create RAID"
+
+#~ msgid        "Creating the RAID array will <strong>destroy all content</"
+#~      "strong> on your internal disk (/home&nbsp;-&nbsp;"
+#~      "including&nbsp;'storage') and erase the selected external disk"
+#~ msgstr       "Creating the RAID array will <strong>destroy all content</"
+#~      "strong> on your internal disk (/home&nbsp;-&nbsp;"
+#~      "including&nbsp;'storage') and erase the selected external disk"
 
 #~ msgid        "Empty name not allowed"
 #~ msgstr       "Empty name not allowed"
@@ -2778,6 +2692,9 @@ msgstr  "your-easyfind-name"
 #~ msgid        "Error, username too long"
 #~ msgstr       "Error, username too long"
 
+#~ msgid        "Examining existing disks"
+#~ msgstr       "Examining existing disks"
+
 #~ msgid        "Existing users"
 #~ msgstr       "Existing users"
 
@@ -2799,6 +2716,50 @@ msgstr  "your-easyfind-name"
 #~ msgid        "Next"
 #~ msgstr       "Next"
 
+#~ msgid        "No disks with RAID data found"
+#~ msgstr       "No disks with RAID data found"
+
+#~ msgid        "No usable disk found"
+#~ msgstr       "No usable disk found"
+
+#~ msgid        "Please make sure that you have backup of all files"
+#~ msgstr       "Please make sure that you have backup of all files"
+
+#~ msgid        "Recover internal disk"
+#~ msgstr       "Recover internal disk"
+
+#~ msgid        "Recovering RAID array"
+#~ msgstr       "Recovering RAID array"
+
+#~ msgid        "Recovering external disk in RAID array"
+#~ msgstr       "Recovering external disk in RAID array"
+
+#~ msgid        "Recovering internal disk in RAID array"
+#~ msgstr       "Recovering internal disk in RAID array"
+
+#~ msgid        "Recovering the RAID array will <strong>destroy all content</"
+#~      "strong> on the selected extenal disk"
+#~ msgstr       "Recovering the RAID array will <strong>destroy all content</"
+#~      "strong> on the selected extenal disk"
+
+#~ msgid        "Recovering the RAID array will <strong>destroy all content</"
+#~      "strong> on your internal disk (/home&nbsp;-&nbsp;"
+#~      "including&nbsp;'storage')"
+#~ msgstr       "Recovering the RAID array will <strong>destroy all content</"
+#~      "strong> on your internal disk (/home&nbsp;-&nbsp;"
+#~      "including&nbsp;'storage')"
+
+#~ msgid        "Select external disk to add to RAID array"
+#~ msgstr       "Select external disk to add to RAID array"
+
+#~ msgid        "Select which external disk to include in the array. An "
+#~      "external disk with the same size is recommended"
+#~ msgstr       "Select which external disk to include in the array. An "
+#~      "external disk with the same size is recommended"
+
+#~ msgid        "Select which external disk to recover RAID data from"
+#~ msgstr       "Select which external disk to recover RAID data from"
+
 #~ msgid        "Setup complete"
 #~ msgstr       "Setup complete"
 
@@ -2817,8 +2778,16 @@ msgstr  "your-easyfind-name"
 #~ msgid        "Step 4/4: Network setup"
 #~ msgstr       "Step 4/4: Network setup"
 
+#~ msgid        "There are no usable external disks attached, please add an "
+#~      "external e-SATA disk and try again"
+#~ msgstr       "There are no usable external disks attached, please add an "
+#~      "external e-SATA disk and try again"
+
 #~ msgid        "Time and language"
 #~ msgstr       "Time and language"
 
 #~ msgid        "Timezone"
 #~ msgstr       "Timezone"
+
+#~ msgid        "Your B3 can be either a bridge, non-exit relay or exit relay"
+#~ msgstr       "Your B3 can be either a bridge, non-exit relay or exit relay"

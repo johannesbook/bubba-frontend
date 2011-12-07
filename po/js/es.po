@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3.0.2-8-g99845c1\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-12-05 13:41+0100\n"
+        "POT-Creation-Date: 2011-12-07 18:57+0100\n"
         "PO-Revision-Date: 2011-10-06 17:54+0100\n"
         "Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr  "Project-Id-Version: bubba-frontend 2.3.0.2-8-g99845c1\n"
         "Content-Transfer-Encoding: 8bit\n"
         "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin/views/default/_js/tor.js:169
+#: admin/views/default/_js/tor.js:173
 msgid   "<p>Enabling Tor means that your B3 will be a part of the Tor "
         "anonymizing network. This will allow users all over the world to use "
         "your B3 to protect their privacy and reach a free and open Internet. "
@@ -251,7 +251,7 @@ msgstr  ""
 msgid   "Following errors where encountered when trying to apply the changes: "
 msgstr  ""
 
-#: admin/views/default/_js/tor.js:76
+#: admin/views/default/_js/tor.js:77
 msgid   "It might take up to 20 minutes for Tor to self-test if the "
         "configuration is fully functional, please inspect the log file "
         "(Settings→Logs→tor) for verification\""
@@ -307,7 +307,7 @@ msgstr  "Fotos añadidas"
 msgid   "Please enter a valid hostname or IPv4 address"
 msgstr  ""
 
-#: admin/views/default/_js/tor.js:172
+#: admin/views/default/_js/tor.js:176
 msgid   "Please note"
 msgstr  ""
 

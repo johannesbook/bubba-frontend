@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-10-19 14:40+0300\n"
+"POT-Creation-Date: 2011-12-07 18:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,8 +100,8 @@ msgstr ""
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:43
 msgid ""
-"The name which your relay will be known as in the Tor network.  Example: \\"
-"\"MyB3Relay\\\"."
+"The name which your relay will be known as in the Tor network.  Example: "
+"\"My{PLATFORM}Relay\"."
 msgstr ""
 
 #. type: Content of: <h4>

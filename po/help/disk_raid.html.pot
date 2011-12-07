@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"POT-Creation-Date: 2011-12-07 18:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,29 +99,42 @@ msgid "Select which external disk to include in the array."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:33
-msgid "Warning! All data on both disks will be erased. Click 'Create RAID'."
+#: admin/views/default/help/en/disk_raid.html:34
+msgid "Click 'Create RAID'."
+msgstr ""
+
+#. type: Content of: <ol><li><p>
+#: admin/views/default/help/en/disk_raid.html:35
+msgid ""
+"<strong>Warning!</strong> Nothing may access /home while doing this "
+"operation. Make sure to exit any open ssh connections, shut down any samba/"
+"AFP connections and shut off all other services that may access /home."
+msgstr ""
+
+#. type: Content of: <ol><li><p>
+#: admin/views/default/help/en/disk_raid.html:36
+msgid "<strong>Warning!</strong> All data on both disks will be erased."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:35
+#: admin/views/default/help/en/disk_raid.html:38
 msgid ""
 "Wait for the progress bar to complete. Be patient, it will take some time to "
 "create a RAID array if you are using large disks."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:37
+#: admin/views/default/help/en/disk_raid.html:40
 msgid "When finished, your external disk has been included in your RAID array."
 msgstr ""
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/disk_raid.html:41
+#: admin/views/default/help/en/disk_raid.html:44
 msgid "RAID status"
 msgstr ""
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:44
+#: admin/views/default/help/en/disk_raid.html:47
 msgid ""
 "<strong>List of RAID arrays</strong> - shows the total disk space, i.e. the "
 "smallest available disk (the {PLATFORM} /home partition or the external "
@@ -129,68 +142,68 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:47
+#: admin/views/default/help/en/disk_raid.html:50
 msgid ""
 "<strong>List of RAID disks</strong> - shows the disks attached to the RAID "
 "system."
 msgstr ""
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/disk_raid.html:50
+#: admin/views/default/help/en/disk_raid.html:53
 msgid "Recover an external disk"
 msgstr ""
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:53
+#: admin/views/default/help/en/disk_raid.html:56
 msgid ""
 "If you have a disc failure on your external disk or if you have by mistake "
 "disconnected the external disk you will need to do the following."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:56
+#: admin/views/default/help/en/disk_raid.html:59
 msgid "Disconnect the broken external disk from the backside of {PLATFORM}."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:58
+#: admin/views/default/help/en/disk_raid.html:61
 msgid ""
 "Attach a new external disk (or reconnect the by mistake disconnected one)."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:60
-#: admin/views/default/help/en/disk_raid.html:78
+#: admin/views/default/help/en/disk_raid.html:63
+#: admin/views/default/help/en/disk_raid.html:81
 msgid "Click on '<strong>Recover RAID array</strong>'."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:62
+#: admin/views/default/help/en/disk_raid.html:65
 msgid "Select which external disk to add to RAID array. Click 'Recover array'."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:64
+#: admin/views/default/help/en/disk_raid.html:67
 msgid ""
 "Warning! All data will be erased from the external disk. Click 'Recover "
 "array'."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:66
-#: admin/views/default/help/en/disk_raid.html:84
+#: admin/views/default/help/en/disk_raid.html:69
+#: admin/views/default/help/en/disk_raid.html:87
 msgid ""
 "Press 'Close' to continue working with {PLATFORM}. The synchronization is in "
 "progress and will take a while."
 msgstr ""
 
 #. type: Content of: <h3>
-#: admin/views/default/help/en/disk_raid.html:70
+#: admin/views/default/help/en/disk_raid.html:73
 msgid "Recover an internal disk"
 msgstr ""
 
 #. type: Content of: <p>
-#: admin/views/default/help/en/disk_raid.html:73
+#: admin/views/default/help/en/disk_raid.html:76
 msgid ""
 "If you have a disk failure on your internal disk in {PLATFORM} you have to "
 "start by exchanging the disk and reinstalling via an USB memory. Then update "
@@ -198,17 +211,17 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:76
+#: admin/views/default/help/en/disk_raid.html:79
 msgid "Attach the external RAID disk that is containing your data."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:80
+#: admin/views/default/help/en/disk_raid.html:83
 msgid "Select the external disk to add to RAID array. Click 'Recover array'."
 msgstr ""
 
 #. type: Content of: <ol><li>
-#: admin/views/default/help/en/disk_raid.html:82
+#: admin/views/default/help/en/disk_raid.html:85
 msgid ""
 "Warning! All user data and the storage area will be erased from the internal "
 "disk. Click 'Recover array'."
