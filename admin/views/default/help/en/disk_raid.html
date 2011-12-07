@@ -30,7 +30,10 @@
   </li>
   <li>Select which external disk to include in the array.
   </li>
-  <li>Warning! All data on both disks will be erased. Click 'Create RAID'.
+  <li>
+  Click 'Create RAID'.
+  <p><strong>Warning!</strong> Nothing may access /home while doing this operation. Make sure to exit any open ssh connections, shut down any samba/AFP connections and shut off all other services that may access /home.</p>
+  <p><strong>Warning!</strong> All data on both disks will be erased.</p>
   </li>
   <li>Wait for the progress bar to complete. Be patient, it will take some time to create a RAID array if you are using large disks.
   </li>
