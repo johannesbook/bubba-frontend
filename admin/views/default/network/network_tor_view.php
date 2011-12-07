@@ -60,7 +60,7 @@
 <table class="ui-table-outline">
 
 <tr>
-	<td class="col2"><label for="choose"><?=_("Your B3 can be either a bridge, non-exit relay or exit relay")?></label></td>
+	<td class="col2"><label for="choose"><?=_("Run Tor as")?></label></td>
 	<td>
 		<select name="tor_type" id="tor_type">
 <?foreach(array('bridge', 'non_exit', 'exit') as $t ):?>
