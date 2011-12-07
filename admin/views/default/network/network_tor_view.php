@@ -116,15 +116,15 @@
 </tr>
 
 <tr>
-	<td class="col2"><label for="public_bridge"><?=_("Automatically distribute my bridge address")?></label></td>
+	<td class="col2"><label for="private_bridge"><?=_("Make this a private bridge")?></label></td>
 	<td>
 		<input
 			type="checkbox"
 			class="slide"
-			name="public_bridge"
-			id="public_bridge"
-			value="public"
-            <?if($public_bridge):?>checked="checked"<?endif?>
+			name="private_bridge"
+			id="private_bridge"
+			value="private"
+            <?if($private_bridge):?>checked="checked"<?endif?>
 		/>
 	</td>
 </tr>

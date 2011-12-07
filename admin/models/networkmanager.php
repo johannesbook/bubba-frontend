@@ -1174,10 +1174,10 @@ class NetworkManager extends Model {
 
         switch($data['tor_type']) {
         case 'bridge':
-            if(isset($data['public_bridge'])) {
-                $cfg[] = "PublishServerDescriptor 1";
-            } else {
+            if(isset($data['private_bridge'])) {
                 $cfg[] = "PublishServerDescriptor 0";
+            } else {
+                $cfg[] = "PublishServerDescriptor 1";
             }
             $cfg[] = "SocksPort 0";
             $cfg[] = "BridgeRelay 1";
