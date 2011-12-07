@@ -31,7 +31,7 @@ class Services extends Controller{
    		$afp_enabled = $this->input->post('afp_enabled');
 		$afp_status = query_service("netatalk");
 
-		$daap_status=query_service("mt-daapd");
+		$daap_status=query_service("forked-daapd");
 		$daap_enabled=$this->input->post('daap_enabled');
 
 		$upnp_status=query_service("minidlna");
@@ -103,12 +103,12 @@ class Services extends Controller{
 			}
 
 			if($daap_status && !$daap_enabled){
-				remove_service("mt-daapd");
-				stop_service("mt-daapd");
+				remove_service("forked-daapd");
+				stop_service("forked-daapd");
 				$daap_status=0;
 			}else if(!$daap_status && $daap_enabled){
-				add_service("mt-daapd");
-				start_service("mt-daapd");
+				add_service("forked-daapd");
+				start_service("forked-daapd");
 				$daap_status=1;        
 			}           
 

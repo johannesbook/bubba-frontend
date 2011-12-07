@@ -368,10 +368,9 @@ class NetworkManager extends Model {
 	        stop_service("avahi-daemon");
 	        start_service("avahi-daemon");
 	    }
-	    if(query_service("mt-daapd")){
-	        stop_service("mt-daapd");
-					sleep(1);
-	        start_service("mt-daapd");
+	    if(query_service("forked-daapd")){
+	        stop_service("forked-daapd");
+	        start_service("forked-daapd");
 	    }
 	    if(query_service("minidlna")){
 		    stop_service("minidlna");
