@@ -1025,6 +1025,15 @@ class NetworkManager extends Model {
 
 	# Get the bridge address
     public function get_tor_bridge_address() {
+		# First check if the user has manually specified an address in the config file
+		$torrc = $this->get_tor_config();
+		foreach ($torrc as $line) {
+			if(preg_match("/Address\s+(?P<address>.*?)\s*(?:#|$)/m", $line, $m)) {
+				return $m['address'];
+			}
+		}
+
+		# Now check if the log says something about our address
         if(file_exists("/var/log/tor/notices.log")){
             $log = file_get_contents("/var/log/tor/notices.log");
             $list = preg_grep("#Now checking whether ORPort#", explode("\n",$log));
@@ -1033,7 +1042,9 @@ class NetworkManager extends Model {
             if($m) {
                 return "bridge $m[1]";
             }
-        }
+		}
+
+		# Else, we have no clue
         return "N/A";
     }
 
