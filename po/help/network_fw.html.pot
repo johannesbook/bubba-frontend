@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-10-07 14:43+0300\n"
+"POT-Creation-Date: 2011-12-07 19:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,10 +89,10 @@ msgstr ""
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_fw.html:33
 msgid ""
-"Choose 'Port forward to internal network' or 'Open {PLATFORM}|2 port' with "
-"the radio buttons. The first will open a port from Internet (WAN) to a "
-"network device in your internal network (LAN). The later one will open a "
-"port from Internet (WAN) to {PLATFORM}."
+"Choose 'Port forward to internal network' or 'Open {PLATFORM} port' with the "
+"radio buttons. The first will open a port from Internet (WAN) to a network "
+"device in your internal network (LAN). The later one will open a port from "
+"Internet (WAN) to {PLATFORM}."
 msgstr ""
 
 #. type: Content of: <p>
