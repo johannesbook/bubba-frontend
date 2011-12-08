@@ -610,7 +610,7 @@ $(function(){
         return false;
     });
 
-    $('.fn-backup-restore-action').live('change', function(e) {
+    $('.fn-backup-restore-action').live('click', function(e) {
         e.stopPropagation();
 		if( $(this).val() == 'newdir' ) {
 			$('#fn-backup-restore-target').removeAttr('disabled');
