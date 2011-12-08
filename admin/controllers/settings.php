@@ -567,6 +567,10 @@ class Settings extends Controller{
         );
 	}
 
+    function startwizard() {
+        $this->index();
+    }
+
 	function identity( $strip = "" ) {
 		$this->load->model('networkmanager');
 
