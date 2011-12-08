@@ -1008,3 +1008,92 @@ class Network extends Controller{
 	function index($strip=""){
 		$this->profile();
 	}
+
+	# Below are two functions for Tor
+	function tor($strip="", $msg="") {
+		# Check that avalid timezone has been set
+        $data['tor_configurable'] = get_current_tz() != "UTC";
+
+		# Is Tor enabled?
+		$data['enabled'] = $this->networkmanager->tor_enabled();
+
+		# If the user is running a bridge, we will want to
+		# display the bridge IP:Port
+        $data['type'] = $this->networkmanager->get_tor_type();
+
+
+		$data['bridge_address'] = $data['type'] == 'bridge' ? $this->networkmanager->get_tor_bridge_address() : '';
+		$data['private_bridge'] = $data['type'] == 'bridge' ? !$this->networkmanager->get_tor_public_bridge() : false;
+
+		# Let the user read values from /etc/tor/torrc
+		$data['nickname'] = $this->networkmanager->get_tor_nickname();
+		$data['contact'] = $this->networkmanager->get_tor_contact();
+		$data['relay_port'] = $this->networkmanager->get_tor_relay_port();
+		$data['dir_port'] = $this->networkmanager->get_tor_dir_port();
+		$data['bandwidth_rate'] = $this->networkmanager->get_tor_bandwidth_rate();
+		$data['bandwidth_burst'] = $this->networkmanager->get_tor_bandwidth_burst();
+
+        $bw = 'custom';
+        if(preg_match("#(?P<rate>\d+) KB(?:ytes) (?P<burst>\d+) KB(?:ytes)#", "$data[bandwidth_rate] $data[bandwidth_burst]", $m)) {
+            switch("$m[rate]-$m[burst]") {
+            case '32-64':
+                $bw = '256';
+                break;
+            case '64-128':
+                $bw = '512';
+                break;
+            case '92-192':
+                $bw = '768';
+                break;
+            case '192-384':
+                $bw = 't1';
+                break;
+            case '5120-10240':
+                $bw = 'highbw';
+                break;
+            }
+        }
+        $data['bwtype'] = $bw;
+        unset($bw);
+
+		# Define ports for exit policies
+		#
+		# Ports represented by the "Websites" checkbox
+		$data['ports_http'] = "80";
+
+		# Ports represented by the "Secure Websites" checkbox
+		$data['ports_https'] = "443";
+
+		# Ports represented by the "Retrieve Mail" checkbox
+		$data['ports_mail'] = array("110", "143", "993", "995");
+
+		# Ports represented by the "Instant Messaging" checkbox
+		$data['ports_im'] = array("706", "1863", "5050", "5190", "5222", "5223", "8300", "8888");
+
+		# Ports represented by the "IRC" checkbox
+		$data['ports_irc'] = array("6660-6669", "6697", "7000-7001");
+
+        if($data['type'] == 'exit') {
+            $data['exit_policies'] = $this->networkmanager->tor_get_exit_policies();
+        } else {
+            $data['exit_policies'] = array(
+                'http' => true,
+                'https' => true,
+                'mail' => true,
+                'im' => true,
+                'irc' => true,
+                'misc' => false
+            );
+        }
+
+		# Small note about the "misc" checkbox: when ticked, it
+		# does *not* add "reject *:*" after the accepts
+
+		# Load the view
+		if($strip) {
+			$this->load->view(THEME.'/network/network_tor_view.php',$data);
+		} else {
+			$this->_renderfull($this->load->view(THEME.'/network/network_tor_view.php',$data,true));
+		}
+	}
+}
