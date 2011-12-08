@@ -1,3 +1,20 @@
+bubba-frontend (2.4~pre18) vincent; urgency=low
+
+  * Change Filemanager to File Manager (Closes: #1787)
+  * Tor: don't show alert when disabling Tor (Closes: #1798)
+  * mt-daapd → forked-daapd
+  * Tor text change (relay type) (Closes: #1801)
+  * change public bridge to private bridge logic (Closes: #1802)
+  * Tor: Show address if address is sat in config (Closes: #1803)
+  * fix escape error in help file plus generalize (Closes: #1804)
+  * Move disk raid js to own file
+  * Add aditional warning for RAID creation (Closes: #1785)
+  * update translation files
+  * remove loose 2 after PLATFORM (Closes: #1789)
+  * trigger on click instead of change (Closes: #1764)
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 08 Dec 2011 14:36:53 +0100
+
 bubba-frontend (2.4~pre17) vincent; urgency=low
 
   * update german translation (Closes: #1737)
