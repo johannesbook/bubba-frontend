@@ -8,7 +8,6 @@ class Mail extends Controller{
 		require_once(APPPATH."/legacy/defines.php");
 		require_once(ADMINFUNCS);
 
-		$this->load->helper('update_msg');
 		$this->Auth_model->EnforceAuth('web_admin');
 
 	}

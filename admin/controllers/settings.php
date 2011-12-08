@@ -569,7 +569,6 @@ class Settings extends Controller{
 
 	function identity( $strip = "" ) {
 		$this->load->model('networkmanager');
-		$this->load->helper('update_msg');
 
 		$update = false;
 		$data['workgroup'] = $current_workgroup = get_workgroup();
