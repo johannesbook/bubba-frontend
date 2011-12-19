@@ -1,3 +1,12 @@
+bubba-frontend (2.4~pre19) vincent; urgency=low
+
+  * readding missing tor controller
+  * really remove update_msg helper call
+  * need the startwizard redirect
+  * squeezecenter → logitechmediaserver
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 19 Dec 2011 16:03:57 +0100
+
 bubba-frontend (2.4~pre18) vincent; urgency=low
 
   * Change Filemanager to File Manager (Closes: #1787)
