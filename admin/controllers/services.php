@@ -37,10 +37,10 @@ class Services extends Controller{
 		$upnp_status=query_service("minidlna");
 		$upnp_enabled=$this->input->post('upnp_enabled');   
    
-		$squeezecenter_packagename='squeezecenter';
-		$squeezecenter_status=query_service("squeezecenter");
-		$squeezecenter_installed=is_installed($squeezecenter_packagename);
-		$squeezecenter_enabled=$this->input->post('squeezecenter_enabled');   
+		$logitechmediaserver_packagename='logitechmediaserver';
+		$logitechmediaserver_status=query_service("logitechmediaserver");
+		$logitechmediaserver_installed=is_installed($logitechmediaserver_packagename);
+		$logitechmediaserver_enabled=$this->input->post('logitechmediaserver_enabled');
    
 		$print_status=query_service("cups");
 		$print_enabled=$this->input->post('print_enabled');
@@ -121,14 +121,14 @@ class Services extends Controller{
 				start_service("minidlna");
 				$upnp_status=1;        
 			}           
-			if($squeezecenter_status && !$squeezecenter_enabled){
-				remove_service("squeezecenter");
-				stop_service("squeezecenter");
-				$squeezecenter_status=0;
-			}else if(!$squeezecenter_status && $squeezecenter_enabled){
-				add_service("squeezecenter");
-				start_service("squeezecenter");
-				$squeezecenter_status=1;        
+			if($logitechmediaserver_status && !$logitechmediaserver_enabled){
+				remove_service("logitechmediaserver");
+				stop_service("logitechmediaserver");
+				$logitechmediaserver_status=0;
+			}else if(!$logitechmediaserver_status && $logitechmediaserver_enabled){
+				add_service("logitechmediaserver");
+				start_service("logitechmediaserver");
+				$logitechmediaserver_status=1;
 			}       
 
 			if($print_status && !$print_enabled){
@@ -202,9 +202,9 @@ class Services extends Controller{
 		$data["anon_status"]=$anon_status;
 		$data["afp_status"]=$afp_status;
 		$data["upnp_status"]=$upnp_status;
-		$data["squeezecenter_status"]=$squeezecenter_status;
-		$data["squeezecenter_installed"]=$squeezecenter_installed;
-		$data["squeezecenter_packagename"]=$squeezecenter_packagename;
+		$data["logitechmediaserver_status"]=$logitechmediaserver_status;
+		$data["logitechmediaserver_installed"]=$logitechmediaserver_installed;
+		$data["logitechmediaserver_packagename"]=$logitechmediaserver_packagename;
 		$data["daap_status"]=$daap_status;
 		$data["smtp_status"]=$smtp_status;
 		$data["imap_status"]=$imap_status;

@@ -74,7 +74,7 @@ class Ajax_Settings extends Controller {
 	}
 
   function get_versions() {
-      $versions = get_package_version(array("bubba","bubba3-kernel","bubba-frontend","bubba-backend","bubba-album","filetransferdaemon","squeezecenter"));
+      $versions = get_package_version(array("bubba","bubba3-kernel","bubba-frontend","bubba-backend","bubba-album","filetransferdaemon","logitechmediaserver"));
       $this->session->set_userdata("version",$versions['bubba']);
       $this->json_data = $versions;
     }

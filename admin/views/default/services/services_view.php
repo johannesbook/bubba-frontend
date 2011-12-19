@@ -31,15 +31,9 @@
       <td ><input name="daap_enabled" type="checkbox" class="slide" value="1" <?= $daap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-	  <td><label for=""><?=_('Squeezebox Server')?></label>
-		<?if(!$squeezecenter_installed):?>
-<div>
-		<?=_("Squeezebox server isn't installed, please click")?> <a href="<?=FORMPREFIX?>/settings/software/install/<?=$squeezecenter_packagename?>"><?=_("here")?></a> <?=_('to install squeezecenter')?>.
-</div>
-		<?endif?>
-</td>
+	  <td><label for=""><?=_('Squeezebox Server')?></label></td>
 	  <td >
-		<input name="squeezecenter_enabled" type="checkbox" class="slide" value="1" <?= $squeezecenter_status?"checked=\"checked\"":"" ?> <?=$squeezecenter_installed?'':'disabled="disabled"'?>/>
+		<input name="logitechmediaserver_enabled" type="checkbox" class="slide" value="1" <?= $logitechmediaserver_status?"checked=\"checked\"":"" ?>/>
 	</td>
    </tr>	 
 </table>
