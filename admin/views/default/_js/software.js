@@ -84,7 +84,7 @@ $("#update").submit(function() {
                                 'ERROR': pgettext('status marker','Error!'),
                                 'WARN': pgettext('status marker','Warning'),
                                 'NOTE': pgettext('status marker', 'Note'),
-                                'DEBUG': pgettext('status marker','Debug)'
+                                'DEBUG': pgettext('status marker','Debug')
                             };
                             iconmap = {
                                 'DONE': config.prefix + "/views/" + config.theme + "/_img/upgrade_complete.png",
