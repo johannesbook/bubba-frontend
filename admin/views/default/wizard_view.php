@@ -1,4 +1,4 @@
-
+<h2 class="fn-dialog-header"><?=_("Setup wizard")?></h2>
 <form id="my-form">
 
     <div id="fn-wizard-step-2" class="step">

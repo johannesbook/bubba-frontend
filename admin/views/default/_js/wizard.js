@@ -33,7 +33,7 @@ function do_run_wizard(){
 
 
     wizard_element = $('<div/>');
-    wizard_dialog = $.dialog(wizard_element, _("Setup wizard"), butts, {
+    wizard_dialog = $.dialog(wizard_element, "", butts, {
         'width': 600,
         'height': 400,
         'resizable': false,
