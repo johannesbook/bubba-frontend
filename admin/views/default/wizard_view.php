@@ -54,7 +54,7 @@
     </div>
 
     <div id="fn-wizard-step-4" class="step">
-        <h3><?=_("Create initial user (step 4 of 5)")?></h3>
+        <h3><?=_("Create user (step 4 of 5)")?></h3>
         <p>
             <em>
                 <?=sprintf(_("For day-to-day operations it's recommended to use a regular user. You can later add more users for every person using the %s"), NAME)?>
