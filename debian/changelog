@@ -1,3 +1,11 @@
+bubba-frontend (2.4~pre20) vincent hugo; urgency=low
+
+  * Update wizard strings
+  * Include the wizard header as an h2 header in body (Closes: #1810)
+  * Fix syntax error in JS code for software update
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 20 Dec 2011 16:57:08 +0100
+
 bubba-frontend (2.4~pre19) vincent; urgency=low
 
   * readding missing tor controller
