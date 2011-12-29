@@ -16,7 +16,8 @@ class Ajax_status extends Controller {
 		$this->output->set_header('Expires: '.gmdate('D, d M Y H:i:s', time()).' GMT');
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0");
 		$this->output->set_header("Pragma: no-cache");
-    )}
+	}
+
     function printers() {
         $json =  _system('cups-list-printers');
         $this->json_data = json_decode(implode($json),true);
