@@ -346,7 +346,10 @@ class Menu extends Model {
     }
 
     public function resolve($id) {
-        if(isset($this->resolver_list[$id])){
+		if(!$id){
+			# no id means we are on first page
+			return _("Home");
+		}else if(isset($this->resolver_list[$id])){
             return $this->resolver_list[$id];
         } else {
             return "N/A";
