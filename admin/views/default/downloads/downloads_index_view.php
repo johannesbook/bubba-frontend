@@ -29,7 +29,7 @@ $(document).ready(function(){
         <tr>
             <td>
                 <label for="downloads-addurl">
-                    <?=_("Location"):?>
+                    <?=_("Location")?>
                 </label>
                 <input
                     id="download-addurl"
