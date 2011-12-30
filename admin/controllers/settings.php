@@ -10,6 +10,7 @@ class Settings extends Controller{
 		
 
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
+		$this->load->model('system');
 
 	}
 	
@@ -32,7 +33,7 @@ class Settings extends Controller{
 			$data['use_ntp']= true;
 		}
 		
-		$data['t_zone'] = get_current_tz();
+		$data['t_zone'] = $this->system->get_timezone();
 		date_default_timezone_set($data['t_zone']);
 
 		$data['t_zoneinfo'] = get_timezone_info();
@@ -354,7 +355,7 @@ class Settings extends Controller{
 				);				
 				$data['date'] = $date;
 				$data['time'] = $time;
-				$data['t_zone'] = get_current_tz();
+				$data['t_zone'] = $this->system->get_timezone();
 				if($ntp) $data['use_ntp'] = true;
 			}
 		} else { // use ntp

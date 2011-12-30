@@ -11,6 +11,7 @@ class Network extends Controller{
 		$this->Auth_model->enforce_policy('web_admin','administer', 'admin');
 		$this->load->helper('network');
 		$this->load->model('networkmanager');
+		$this->load->model('system');
 	}
 
 
@@ -682,7 +683,7 @@ class Network extends Controller{
 		$conf=parse_ini_file("/home/admin/.bubbacfg");
 		$data['wlan_configurable'] = $this->networkmanager->exists_wlan_card() 
 					&& $this->session->userdata("network_profile") != "custom"
-					&& get_current_tz() != "UTC";
+					&& $this->system->get_timezone() != "UTC";
 		
 		if($msg == "update") {
 			$data['update'] = 1; // indicate that the user has pressed update with green status bar.
@@ -1012,7 +1013,7 @@ class Network extends Controller{
 	# Below are two functions for Tor
 	function tor($strip="", $msg="") {
 		# Check that avalid timezone has been set
-        $data['tor_configurable'] = get_current_tz() != "UTC";
+        $data['tor_configurable'] = $this->system->get_timezone() != "UTC";
 
 		# Is Tor enabled?
 		$data['enabled'] = $this->networkmanager->tor_enabled();
