@@ -195,9 +195,9 @@
 <?if($cell=="http"):?>
 			<?=pgettext("label", "Websites")?>
 <?elseif($cell=="https"):?>
-			<?=pgettext("label", "Secure websites (SSL)'")?>
+			<?=pgettext("label", "Secure websites (SSL)")?>
 <?elseif($cell=="mail"):?>
-			<?=pgettext("label", "Retrieve Mail (POP, IMAP)'")?>
+			<?=pgettext("label", "Retrieve Mail (POP, IMAP)")?>
 <?elseif($cell=="im"):?>
 			<?=pgettext("label", "Instant Messaging (IM)")?>
 <?elseif($cell=="irc"):?>
