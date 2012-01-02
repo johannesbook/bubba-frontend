@@ -68,9 +68,9 @@
 <?if($t == "bridge"):?>
 				<?=_("Bridge")?>
 <?elseif($t == "non_exit"):?>
-				<?=_("Non-exit node")?>
+				<?=_("Non-exit relay")?>
 <?else:?>
-				<?=_("Exit node")?>
+				<?=_("Exit relay")?>
 <?endif?>
 			</option>
 <?endforeach?>
