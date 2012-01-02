@@ -1,3 +1,12 @@
+bubba-frontend (2.4~pre21) vincent hugo; urgency=low
+
+  * add special case for home page resolver id return (Closes: #1815)
+  * syntax error in ajax_status (Closes: #1691)
+  * Syntax error in downloads (Closes: #1819)
+  * Use the system model get_timezone function (Closes: #1812)
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 02 Jan 2012 17:35:24 +0100
+
 bubba-frontend (2.4~pre20) vincent hugo; urgency=low
 
   * Update wizard strings
