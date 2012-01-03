@@ -1,3 +1,11 @@
+bubba-frontend (2.4~pre22) vincent hugo; urgency=low
+
+  * change node to relay (Closes: #1801)
+  * remove rouge characters (Closes: #1823)
+  * Fix logic in bridge and private bridge code (Closes: #1821)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 03 Jan 2012 15:10:25 +0100
+
 bubba-frontend (2.4~pre21) vincent hugo; urgency=low
 
   * add special case for home page resolver id return (Closes: #1815)
