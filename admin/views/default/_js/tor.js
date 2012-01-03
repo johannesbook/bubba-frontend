@@ -141,8 +141,8 @@ $(function(){
             $("#dir_port").removeAttr("value");
 
             // Enable the bridge distribution checkbox
-            $("#private_bridge").attr("disabled","disabled");
-            $("#private_bridge").removeAttr("checked");
+            $("#private_bridge").removeAttr("disabled");
+            $("#private_bridge").attr("checked","checked");
         } else {
             // Disable the bridge address line
             $("#bridge_address").closest('tr').hide();
@@ -151,8 +151,8 @@ $(function(){
             $("#dir_port").removeAttr("disabled");
 
             // Disable the bridge distribution checkbox
-            $("#private_bridge").removeAttr("disabled");
-            $("#private_bridge").attr("checked","checked");
+            $("#private_bridge").attr("disabled","disabled");
+            $("#private_bridge").removeAttr("checked");
         }
 
         // Configure Tor as an exit relay
@@ -164,6 +164,7 @@ $(function(){
             $(".fn_exit_policies").attr("disabled","disabled");
         }
     });
+	$("#tor_type").change();
 });
 
 
