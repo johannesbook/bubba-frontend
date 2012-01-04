@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-12-07 18:57+0100\n"
+"POT-Creation-Date: 2012-01-04 17:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: admin/views/default/_js/tor.js:173
+#: admin/views/default/_js/tor.js:174
 msgid ""
 "<p>Enabling Tor means that your B3 will be a part of the Tor anonymizing "
 "network. This will allow users all over the world to use your B3 to protect "
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Please enter a valid hostname or IPv4 address"
 msgstr ""
 
-#: admin/views/default/_js/tor.js:176
+#: admin/views/default/_js/tor.js:177
 msgid "Please note"
 msgstr ""
 
@@ -415,10 +415,6 @@ msgstr ""
 #: admin/views/default/_js/stat.js:95
 msgctxt "confirmation button"
 msgid "Shut down"
-msgstr ""
-
-#: admin/views/default/_js/wizard.js:36
-msgid "Startup wizard"
 msgstr ""
 
 #: admin/views/default/_js/filemanager.js:210

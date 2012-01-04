@@ -69,7 +69,6 @@ msgstr "Datensicherungen ohne {PLATFORM} wiederherstellen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/backup.html:36
-#| msgid "If you in the future would like to restore a backup not using {PLATFORM}, this is possible, but only with full backups, and only if the backups are not encrypted. Browse to your backup target. The full backups are available as “snapshots” and compressed using gzip. Use any gzip uncompressor to directly access your data."
 msgid "If you in the future would like to restore a backup not using {PLATFORM}, this is possible but does require a Linux machine with the Duplicity software installed.  Just point Duplicity to the backup target and perform the restore. Note that you still ned the password if you chose to encrypt your backup"
 msgstr "Wenn Sie zu einem späteren Zeitpunkt eine Datensicherung wiederherstellen möchten, ohne {PLATFORM} zu verwenden, ist dies mit Hilfe eines Linux Systems und darauf installierter Duplicity Software möglich.  Wählen Sie in Duplicity einfach das Ziel der Datensicherung und führen Sie die Wiederherstellung durch. Beachten Sie, dass Sie weiterhin das Passwort benötigen, wenn Sie entschieden haben, Ihre Datensicherung zu verschlüsseln"
 
