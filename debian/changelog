@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre24) vincent hugo; urgency=low
+
+  * update german translations (Closes: #1816)
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 04 Jan 2012 17:49:03 +0100
+
 bubba-frontend (2.4~pre23) vincent hugo; urgency=low
 
   * Add original favicon (Closes: #1826)
