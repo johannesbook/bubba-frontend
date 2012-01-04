@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-12-06 14:57+0100\n"
-"PO-Revision-Date: 2011-10-05 15:23+0100\n"
-"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-12-26 22:31+0100\n"
+"Last-Translator: René Jaun <translationservice@jaunscorner.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -43,9 +43,7 @@ msgstr "Außer dem Administrator kann jeder, der bei {PLATFORM} registriert ist,
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:17
-#, fuzzy
-#| msgid "Copy the folders containing your pictures to \\{PLATFORM}\\storage\\pictures, with for example the built in Filemanager or Windows Explorer."
-msgid "Copy the folders containing your pictures to \\{PLATFORM}\\storage\\pictures, with for example the built in File Manager or Windows Explorer."
+msgid "Copy the folders containing your pictures to \\{PLATFORM}\\storage\\pictures, with for example the built in Filemanager or Windows Explorer."
 msgstr "Kopieren Sie die Ordner mit Ihren Bildern z. B. Mit dem integrierten Dateimanager oder mit dem Windows Explorer zu \\{PLATFORM}\\storage\\pictures."
 
 #. type: Content of: <ol><li>
@@ -55,9 +53,7 @@ msgstr "Melden Sie sich als Standardbenutzer bei {PLATFORM} an."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:21
-#, fuzzy
-#| msgid "Click 'Filemanager'."
-msgid "Click 'File Manager'."
+msgid "Click 'Filemanager'."
 msgstr "Klicken Sie auf 'Dateimanager'."
 
 #. type: Content of: <ol><li>
@@ -73,7 +69,7 @@ msgstr "Wählen Sie die Ordner oder Bilder, die Sie als oder zu Fotoalben hinzuf
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:27
 msgid "Select the <strong>'Add to album'</strong> icon in the file function bar."
-msgstr ""
+msgstr "Wählen Sie das <strong>'Zu Album hinzufügen'</strong> Symbol in der Dateifunktionsleiste."
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/user_album_albums.html:29
@@ -128,4 +124,4 @@ msgstr "Um ein Bild zu löschen, markieren Sie das Bild und klicken dann auf 'Au
 #. type: Content of: <p>
 #: admin/views/default/help/en/user_album_albums.html:57
 msgid "Your photo albums will be visible by browsing to <a href='http://{DEFAULT_HOST}/album' target='_blank'>http://{DEFAULT_HOST}/album</a> (<a href='http://{DEFAULT_HOST}.local/album' target='_blank'>http://{DEFAULT_HOST}.local/album</a> if using Mac) from inside your home network, or by browsing to www.-your easyfind name-.{EASYFIND} from outside your network."
-msgstr ""
+msgstr "Betrachten Sie Ihre Fotoalben, indem Sie die Adresse <a href='http://{DEFAULT_HOST}/album' target='_blank'>http://{DEFAULT_HOST}/album</a> (<a href='http://{DEFAULT_HOST}.local/album' target='_blank'>http://{DEFAULT_HOST}.local/album</a> unter Mac Geräten) innerhalb Ihres Heimnetzwerks, oder www.-Ihr Easyfind Name-.{EASYFIND} ausserhalb Ihres Netzwerks aufrufen."

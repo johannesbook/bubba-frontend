@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
 "POT-Creation-Date: 2011-08-22 21:04+0300\n"
-"PO-Revision-Date: 2011-10-05 14:39+0100\n"
-"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"PO-Revision-Date: 2011-12-27 04:08+0100\n"
+"Last-Translator: René Jaun <translationservice@jaunscorner.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -23,21 +23,8 @@ msgstr ""
 #: admin/views/default/help/en/network_wan.html:19
 #: admin/views/default/help/en/network.html:21
 #: admin/views/default/help/en/settings_trafficsettings.html:15
-#, fuzzy
 msgid "<i>Update</i> saves your changes."
-msgstr ""
-"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> - speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen."
+msgstr "<i>Aktualisieren</i> speichert Ihre Änderungen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:2
@@ -72,17 +59,17 @@ msgstr "Erweiterte Wireless-Einstellungen"
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:21
 msgid "<strong>Band</strong> - Choose what frequency band to use. 802.11n operates at two frequencies: 5 GHz and 2.4 GHz. Only devices which operate in the same frequency band can communicate with one another."
-msgstr ""
+msgstr "<strong>Band</strong> - Wählen Sie das zu verwendende Frequenzband. 802.11n arbeitet auf zwei Frequenzen: 5 GHz und 2.4 GHz. Nur Geräte, die auf demselben Frequenzband arbeiten, können miteinander kommunizieren."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:25
 msgid "<strong>Mode</strong> - Select which 802.11 mode to operate in. Modes are as follows: 'Legacy mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode (802.11n + 802.11a/g)' - up to 300 Mbit/s."
-msgstr ""
+msgstr "<strong>Modus</strong> - Wählen Sie den zu verwendenden 802.11 Modus. Folgende Modi stehen zur Auswahl: 'Legacy Modus (802.11a/g)' - Bis zu 54 Mbit/s und 'Gemischter Modus (802.11n + 802.11a/g)' - bis zu 300 Mbit/s."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:28
 msgid "<strong>Channel width</strong> - Maximum transfer rate for 20 MHz is 130 Mbit/s. Maximum transfer rate for 40 MHz is 270 Mbit/s."
-msgstr ""
+msgstr "<strong>Kanalbreite</strong> - Die höchste Übertragungsgeschwindigkeit für 20 MHz beträgt 130 Mbit/s. Die höchste Geschwindigkeit für 40 MHz beträgt 270 Mbit/s."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_wlan.html:31

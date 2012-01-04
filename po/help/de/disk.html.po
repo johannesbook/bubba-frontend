@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
 "POT-Creation-Date: 2011-08-22 21:04+0300\n"
-"PO-Revision-Date: 2011-10-05 15:38+0100\n"
-"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"PO-Revision-Date: 2011-12-20 11:34+0100\n"
+"Last-Translator: René Jaun <translationservice@jaunscorner.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Externe Disks"
 #. type: Content of: <p>
 #: admin/views/default/help/en/disk.html:17
 msgid "<strong>Connecting</strong>"
-msgstr ""
+msgstr "<strong>Verbinden</strong>"
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:20
@@ -54,7 +54,7 @@ msgstr "Anschluss einer externen Disk oder eines USB- oder eSATA-Laufwerkes."
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:22
 msgid "Press '<strong>Connect</strong>' to the right of the partition you which to connect"
-msgstr ""
+msgstr "Klicken Sie den '<strong>Verbinden</strong>' Schalter rechts der Partition, die Sie verbinden möchten"
 
 #. type: Content of: <ol><li>
 #: admin/views/default/help/en/disk.html:24

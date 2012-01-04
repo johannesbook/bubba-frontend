@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2011-12-07 18:58+0100\n"
-"PO-Revision-Date: 2011-10-07 14:43+0300\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2011-10-19 14:40+0300\n"
+"PO-Revision-Date: 2011-12-26 22:21+0100\n"
+"Last-Translator: René Jaun <translationservice@jaunscorner.com>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -20,100 +20,97 @@ msgstr ""
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:1
 msgid "The Tor network relies on volunteers to donate bandwidth. The more people who run bridges or relays, the faster the Tor network will be. If you have at least 20 kilobytes/s each way, please help out Tor by configuring your B3 to be either a bridge non-exit relay or exit relay."
-msgstr ""
+msgstr "Das Tor Netzwerk wird unterstützt durch freiwillige, welche ihre Internet-Bandbreite spenden. Je mehr Leute Bridges oder Relays ausführen, umso schneller wird das Tor Netzwerk. Falls Sie mindestens 20 kilobytes/s (Up- und Downstream) haben, unterstützen Sie bitte das Tor Projekt, indem Sie Ihren B3 entweder als Brücke, Nicht-Ausgangsrelay oder Ausgangsrelay konfigurieren."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:7
 msgid "B3 can act as either a bridge, non-exit relay or exit relay in the Tor network:"
-msgstr ""
+msgstr "B3 kann im Tor Netzwerk entweder als Brücke, Nicht-Ausgangsrelay oder Ausgangsrelay eingesetzt werden:"
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/network_tor.html:10
 msgid "Relays"
-msgstr ""
+msgstr "Relays"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:12
 msgid "The public servers in the Tor network are called relays. All of the relays are listed in public directories, which means that anyone can easily get a list of all the relays in the Tor network. A Tor relay can be either a non-exit relay or an exit relay. A non-exit relay will only forward traffic on to other relays in the Tor network. An exit relay can either forward traffic on to other relays in the Tor network, or to public Internet resources."
-msgstr ""
+msgstr "Die öffentlichen Server im Tor Netzwerk nennt man Relays. Alle Relays werden in öffentlichen Verzeichnissen aufgeführt - das heisst, dass es für alle einfach ist, eine Liste aller Relays im Tor netzwerk zu erhalten. Ein Tor Relay kann entweder als Nicht-ausgangsrelay oder Ausgangsrelay konfiguriert sein. Ein Nicht-Ausgangsrelay wird nur Daten an andere Tor Relays weiterleiten; ein Ausgangsrelay leitet dagegen Daten sowohl an andere Tor Relays wie auch an öffentliche Internet-Dienste weiter."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/network_tor.html:20
 msgid "Bridges"
-msgstr ""
+msgstr "Brücken"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:22
 msgid "Some Internet Service Providers (ISPs) attempt to prevent users from accessing the Tor network by blocking connections to known Tor relays.  Bridge relays (or <i>bridges</i> for short) are non-exit relays that help these censored users access the Tor network. Unlike other Tor relays, bridges are not listed in the same public directories as normal relays. Since there is no complete public list of them, even if your ISP is filtering connections to all the known Tor relays, they probably won't be able to block all the bridges."
-msgstr ""
+msgstr "Einige Internet-Dienstanbieter (ISPs) versuchen, ihrre Nutzer am Zugriff auf das Tor Netzwerk zu hindern, indem sie bekannte Tor Relays blockieren.  Brücken-Relays (auch Brücken oder <i>bridges</i>) sind Nicht-Ausgangsrelays, die diesen eingeschränkten Benutzern helfen, auf das Tor Netzwerk zuzugreifen. Entgegen anderen Tor Relays werden Brücken nicht in den gleichen, öffentlichen Verzeichnissen aufgeführt. Da es somit keine vollständige öffentliche Liste gibt, wird ihr ISP, auch wenn sie alle bekannten Tor Relays filtern, wohl nie auch sämtliche Tor Brücken blockieren können."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/network_tor.html:31
-#, fuzzy
 #| msgid "Services settings"
 msgid "The settings"
-msgstr "Diensteinstellungen"
+msgstr "Die Einstellungen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:33
 msgid "The default settings are the recommended settings, so if you are unsure, just leave them as is."
-msgstr ""
+msgstr "Die Standard-Einstellungen sind die üblicherweise empfohlenen Einstellungen. Sollten Sie sich also bei der Konfiguration unsicher fühlen, belassen Sie die Einstellungen wie sie sind."
 
 #. type: Content of: <h4>
 #: admin/views/default/help/en/network_tor.html:35
-#, fuzzy
 #| msgid "MAC address"
 msgid "Bridge address"
-msgstr "MAC-Adresse"
+msgstr "Bridge Adresse"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:37
 msgid "You can let others access your Tor bridge by giving them this line.  The bridge address consists of your external IP address and the relay port configured for Tor."
-msgstr ""
+msgstr "Sie können anderen den Zugang zu Ihrer Tor Brücke ermöglichen, indem Sie ihnen diese Angabe übermitteln.  Die Bridge Adresse besteht aus Ihrer externen IP Adresse und der Relay Port-Nummer, die Sie für Tor konfiguriert haben."
 
 #. type: Content of: <h4>
 #: admin/views/default/help/en/network_tor.html:41
 msgid "Nickname"
-msgstr ""
+msgstr "Nickname"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:43
-msgid "The name which your relay will be known as in the Tor network.  Example: \"My{PLATFORM}Relay\"."
-msgstr ""
+msgid "The name which your relay will be known as in the Tor network.  Example: \\\"MyB3Relay\\\"."
+msgstr "Der Name, unter welchem Ihr Relay im Tor Netzwerk bekannt sein wird.  Beispiel: \\\"MeinB3Relay\\\"."
 
 #. type: Content of: <h4>
 #: admin/views/default/help/en/network_tor.html:46
-#, fuzzy
 #| msgid "More information"
 msgid "Contact information"
-msgstr "Weitere Informationen"
+msgstr "Kontaktinformationen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:48
 msgid "Contact info, such as an email address, to be published in relay directories, so that the Tor Project can contact you if your relay is misconfigured or something else goes wrong."
-msgstr ""
+msgstr "Kontaktinformationen, wie etwa eine E-Mail-Adresse, welche in Relay Verzeichnissen veröffentlicht wird und die es dem Tor Projekt ermöglicht, Sie zu kontaktieren, falls Ihr Relay falsch konfiguriert oder sonst ein Fehler aufgetreten sein sollte."
 
 #. type: Content of: <h4>
 #: admin/views/default/help/en/network_tor.html:52
 msgid "Automatically distribute my bridge address"
-msgstr ""
+msgstr "Die Adresse meiner Brücke automatisch bekannt machen"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:54
 msgid "If not selected only people invited by you can use your bridge."
-msgstr ""
+msgstr "Ist diese Option nicht ausgewählt, können nur Leute, die von Ihnen eingeladen wurden, Ihre Brücke nutzen."
 
 #. type: Content of: <h4>
 #: admin/views/default/help/en/network_tor.html:56
 msgid "Exit policies"
-msgstr ""
+msgstr "Ausgangsregeln"
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:58
 msgid "Exit policies give you a way to specify what kinds of resources on the Internet you are willing let other Tor users access from your Tor relay. Tor uses a default list of exit policies that restrict some services, such as mail to prevent spam and some default file sharing ports to reduce abuse of the Tor network."
-msgstr ""
+msgstr "Ausgangsregeln (Engl. Exit policies) erlauben Ihnen, festzulegen, auf welche Arten von Diensten auf dem Internet Sie andere Tor Benutzer über Ihr Relay zugreifen lassen wollen. Tor nutzt bereits eine Standard-Liste von Ausgangsregeln, die einige Dienste einschränken, wie etwa E-Mail (um Spam zu verhindern) und einige Standard File-Sharing-Ports (um dem Missbrauch des Tor Relay Netzwerks vorzubeugen)."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/network_tor.html:64
 msgid "Please read the users manual for more detailed information on this."
-msgstr ""
+msgstr "Bitte konsultieren Sie das Benutzerhandbuch, um weitere Informationen hierzu zu erhalten."

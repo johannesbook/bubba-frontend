@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
 "POT-Creation-Date: 2011-10-26 15:13+0300\n"
-"PO-Revision-Date: 2011-10-05 14:44+0100\n"
-"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"PO-Revision-Date: 2011-12-27 04:16+0100\n"
+"Last-Translator: René Jaun <translationservice@jaunscorner.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "Streaming"
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:20
 msgid "<strong>DLNA streaming</strong> - Media streaming server.  The server shares/streams media data like audio/video/picture/files to DLNA-clients on the network.  Many modern media products are DLNA compatible, such as Samsung smart TV's, XBOX 360, Playstation 3, Windows Media Center, DLink Boxee Box, Western Digital TV Live etc.  Having this service enabled means that these products automatically can play content stored on your B3."
-msgstr ""
+msgstr "<strong>DLNA streaming</strong> - Media streaming server.  Der Server stellt Mediendaten, also Audio/Videos/Bilder/Dateien für DLNA-Geräte im Netzwerk bereit.  Viele moderne Medienprodukte sind mit DLNA kompatibel, beispielsweise Samsung smart TV's, XBOX 360, Playstation 3, Windows Media Center, DLink Boxee Box, Western Digital TV Live usw.  Wenn Sie diesen Dienst aktivieren, können kompatible Geräte automatisch die auf Ihrem B3 gespeicherten Inhalte abspielen."
 
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:26
@@ -101,4 +101,4 @@ msgstr "<strong>Uploads/Downloads</strong> - Möglichkeit zum Hoch- und Herunter
 #. type: Content of: <p>
 #: admin/views/default/help/en/services.html:53
 msgid "<strong>Remote access through other router</strong> - tries to open web ports (80 and 443) through your router, to allow for remote access."
-msgstr ""
+msgstr "<strong>Fernzugriff durch anderen Router</strong> - versucht die Web Ports (80 and 443) durch Ihren Router zu öffnen, um Fernzugriff zu erlauben."

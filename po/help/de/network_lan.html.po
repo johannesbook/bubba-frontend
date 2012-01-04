@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
 "POT-Creation-Date: 2011-10-07 14:43+0300\n"
-"PO-Revision-Date: 2011-10-05 14:35+0100\n"
-"Last-Translator: Carl Fürstenberg <carl@excito.com>\n"
+"PO-Revision-Date: 2011-12-27 04:00+0100\n"
+"Last-Translator: René Jaun <translationservice@jaunscorner.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -23,21 +23,8 @@ msgstr ""
 #: admin/views/default/help/en/network_wan.html:19
 #: admin/views/default/help/en/network_wlan.html:41
 #: admin/views/default/help/en/settings_trafficsettings.html:15
-#, fuzzy
 msgid "<i>Update</i> saves your changes."
-msgstr ""
-"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> - speichert Ihre Änderungen.\n"
-"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
-"<i>Aktualisieren</i> speichert Ihre Änderungen."
+msgstr "<i>Aktualisieren</i> speichert Ihre Änderungen."
 
 #. type: Content of: <h3>
 #: admin/views/default/help/en/network_lan.html:2
