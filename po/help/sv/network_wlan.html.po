@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-04 23:50+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:2
+msgid "{PLATFORM} can act as your access point, both in 'Router + Firewall + Server' or in 'Server only' mode."
+msgstr "{PLATFORM} kan fungera som en trådlös accesspunkt, både i Router- och i Server-läge. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wlan.html:5
+msgid "Wireless"
+msgstr "Trådlöst"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:8
+msgid "<strong>Wireless access point</strong> - Switch to enable the wireless access point in {PLATFORM}."
+msgstr "<strong>Trådlös accesspunkt</strong> - Klicka för att slå på den trådlösa accesspunkten. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:11
+msgid "<strong>Network name (SSID)</strong> - This is the name that identifies a particular wireless network. The SSID can be up to 32 characters long."
+msgstr "<strong>Nätverksnamn (SSID)</strong> - Detta är namnet som syns på din dator i listan över trådlösa nätverk. Det kan vara upp till 32 tecken långt. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:14
+msgid "<strong>Password</strong> - The password (aka pass phrase) is a set of characters that must be entered exactly the same in both your {PLATFORM} and your network clients. Enter the password in ASCII characters. The length must be between 8 to 63 for WPA and 5 or 13 characters for WEP."
+msgstr "<strong>Lösenord</strong> - Lösenordet måste vara mellan 8 och 63 tecken för WPA och 5 eller 13 tecken för WEP."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_wlan.html:18
+msgid "Advanced wireless settings"
+msgstr "Avancerade trådlösa inställningar"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:21
+msgid "<strong>Band</strong> - Choose what frequency band to use. 802.11n operates at two frequencies: 5 GHz and 2.4 GHz. Only devices which operate in the same frequency band can communicate with one another."
+msgstr "<strong>Band</strong> - Välj vilket frekvensband du vill använda. Observera att klienterna måste kunna arbeta i samma frekvensband för att det ska fungera. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:25
+msgid "<strong>Mode</strong> - Select which 802.11 mode to operate in. Modes are as follows: 'Legacy mode (802.11a/g)' - up to 54 Mbit/s and 'Mixed mode (802.11n + 802.11a/g)' - up to 300 Mbit/s."
+msgstr "<strong>Läge</strong> - Välj vilket 802.11-läge den ska arbeta i. 'Legacy mode (802.11a/g)' - är upp till 54 Mbit/s och 'Mixed mode (802.11n + 802.11a/g)' - upp till 300 Mbit/s."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:28
+msgid "<strong>Channel width</strong> - Maximum transfer rate for 20 MHz is 130 Mbit/s. Maximum transfer rate for 40 MHz is 270 Mbit/s."
+msgstr "<strong>Kanalbredd</strong> - Maximal överföringshastighet för 20 MHz är 130 Mbit/s. Maximalt för 40 MHz är 270 Mbit/s. Det snabba alternativet är dock känsligare för andra störande nätverk. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:31
+msgid "<strong>Encryption</strong> - Choose between WEP, WPA1 or WPA2. WEP is not recommended due to low security."
+msgstr "<strong>Kryptering</strong> - Välj mellan WEP, WPA1 eller WPA2. WEP rekommenderas ej då det är en gammal standard och inte särskilt säker. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:34
+msgid "<strong>Channel</strong> - Select the channel on your wireless access point in {PLATFORM}. In areas with several wireless networks, lower transfer speeds may be experienced. Then try a different channel.  Channel availability is different for different countries due to regulations."
+msgstr "<strong>Kanal</strong> - Välj vilken kanal den ska arbeta i. Om du upplever dålig hastighet så prova en annan kanal. Detta kan nämligen bero på krockande andra trådlösa nätverk. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_wlan.html:38
+msgid "<strong>Broadcast SSID</strong> - Show or hide {PLATFORM}s SSID for wireless devices. By default the SSID is broadcasted."
+msgstr "<strong>Visa SSID</strong> - SSID kan döljas om man vill hålla sitt nätverk hemligt. Man måste då manuellt skriva in SSID på klienterna för att de ska hitta nätverket. "

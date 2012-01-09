@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-01 23:10+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:2
+#: admin/views/default/help/en/services.html:30
+#: admin/views/default/help/en/user_mail.html:2
+msgid "Email"
+msgstr "Epost"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:5
+#: admin/views/default/help/en/user_mail.html:5
+#, fuzzy
+msgid "{PLATFORM} will fetch your email from all your different external email accounts you may have. The email will be stored on {PLATFORM} and available via IMAP or webmail, wherever you are."
+msgstr ""
+"#-#-#-#-#  user_mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"{PLATFORM} hämtar din epost från olika externa epostkonton du kan ha. Eposten lagras på din {PLATFORM} och är tillgänglig via IMAP eller webbmail, var du än är. \n"
+"#-#-#-#-#  mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"{PLATFORM} kommer att hämta epost från olika externa konton du har. Eposten kommer att lagras på {PLATFORM} och vara tillgängliga via IMAP eller webb-mailen. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:8
+#: admin/views/default/help/en/user_mail.html:8
+#, fuzzy
+msgid "Active email accounts will be shown here."
+msgstr ""
+"#-#-#-#-#  user_mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"Aktiva epostkonton visas här. \n"
+"#-#-#-#-#  mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"Aktiva epost-konton visas här."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:11
+#: admin/views/default/help/en/user_mail.html:11
+#, fuzzy
+msgid "Set up {PLATFORM} for retrieving email"
+msgstr ""
+"#-#-#-#-#  user_mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"Ställ in {PLATFORM} för att ta emot mail\n"
+"#-#-#-#-#  mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"Konfigurera {PLATFORM} för att hämta epost"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:14
+#: admin/views/default/help/en/user_mail.html:14
+#, fuzzy
+msgid "<strong>Add new email account</strong> - To start fetching email from an external account, click here. Fill in the information given to you by your email account provider."
+msgstr ""
+"#-#-#-#-#  user_mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<strong>Lägg till ett nytt epostkonto</strong> - Klicka här och fyll i informationen som efterfrågas. Du får denna av din epostleverantör. \n"
+"#-#-#-#-#  mail.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<strong>Lägg till ett epostkonto</strong> - För att börja hämta epost från ett externt konto, klicka här. Fyll i informationen du fått från din epostleverantör. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/mail.html:17
+msgid "You must select to which user the retrieved email should be directed, this must be done for every added email account. Prior to this you must have added a {PLATFORM} user."
+msgstr "Du måste välja vilken användare som ska få den hämtade eposten, och detta måste göras för varje tillagt epostkonto. "

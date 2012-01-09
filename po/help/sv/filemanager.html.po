@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-10-07 14:43+0300\n"
+"PO-Revision-Date: 2012-01-01 23:06+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:2
+msgid "From the File manager you are able to reach your files on {PLATFORM} even if you are away from home."
+msgstr "Från filhanteraren kan du nå dina filer på {PLATFORM} även om du är hemifrån. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/filemanager.html:5
+#: admin/views/default/help/en/user_filemanager.html:5
+msgid "Navigation"
+msgstr "Navigation"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:8
+msgid "Navigate into a folder by clicking the arrow to the right of the folder name or double clicking it, navigate up one level by clicking the left arrow or click the /home/username/ line."
+msgstr "Navigera in i en katalog genom att klicka på pilen till höger om katalognamnet, eller genom att dubbelklicka på den. Navigera upp en nivå genom att klicka på vänsterpilen eller klicka på /home/användarnamn/-raden. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/filemanager.html:11
+#: admin/views/default/help/en/user_filemanager.html:11
+msgid "File and folder actions"
+msgstr "Fil- och katalogoperationer"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:14
+#: admin/views/default/help/en/user_filemanager.html:14
+#, fuzzy
+msgid "Click files or folders and use the icons in the file function bar to perform different actions. The functions from left to right are:"
+msgstr ""
+"#-#-#-#-#  user_filemanager.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"Klicka på filer eller kataloger och använd ikonerna i funktionslisten för att göra olika operationer. Funktionerna är, från vänster till höger:\n"
+"#-#-#-#-#  filemanager.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"Klicka på filer eller kataloger och använd ikonerna i funktionslisten för att utföra olika operationer. Funktionerna, från vänster till höger, är:"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:17
+#: admin/views/default/help/en/user_filemanager.html:17
+msgid "Create folder"
+msgstr "Skapa katalog"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:19
+#: admin/views/default/help/en/user_filemanager.html:19
+msgid "Upload file"
+msgstr "Ladda upp fil"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:21
+#: admin/views/default/help/en/user_filemanager.html:21
+msgid "Download as zip"
+msgstr "Ladda ner som zip"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:23
+#: admin/views/default/help/en/user_filemanager.html:23
+msgid "Move files"
+msgstr "Flytta filer"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:25
+#: admin/views/default/help/en/user_filemanager.html:25
+msgid "Copy files"
+msgstr "Kopiera filer"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:27
+#: admin/views/default/help/en/user_filemanager.html:27
+msgid "Rename"
+msgstr "Döp om"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:29
+#: admin/views/default/help/en/user_filemanager.html:29
+msgid "Change permissions"
+msgstr "Ändra rättigheter"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:31
+#: admin/views/default/help/en/user_filemanager.html:31
+msgid "Add to album"
+msgstr "Lägg till till album"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/filemanager.html:33
+#: admin/views/default/help/en/user_filemanager.html:33
+msgid "Delete"
+msgstr "Radera"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/filemanager.html:37
+#: admin/views/default/help/en/user_filemanager.html:37
+msgid "Photo album"
+msgstr "Fotoalbum"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/filemanager.html:40
+msgid "Logged in as administrator you are not able to add photos to the {PLATFORM} photo album. Log in with your standard user to add and manage photos and your albums."
+msgstr "Inloggad som administratör kan du inte lägga till foton till fotoalbum. Logga in med ditt vanliga användarnamn för att göra detta. "

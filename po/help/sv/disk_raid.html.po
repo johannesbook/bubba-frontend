@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-12-07 18:58+0100\n"
+"PO-Revision-Date: 2012-01-01 22:54+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_raid.html:2
+msgid "The RAID function in {PLATFORM} combines the /home partition and one external hard disk into a single logical unit."
+msgstr "RAID-funktionen i {PLATFORM} kombinerar /home-partitionen med en extern disk till en enkel logisk enhet. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_raid.html:5
+msgid "Important"
+msgstr "Viktigt"
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/disk_raid.html:9
+msgid "<strong>Warning!</strong> The process will destroy all user data - both on the internal and external disk."
+msgstr "<strong>Varning!</strong>Denna process kommer att förstöra all användardata - både på den interna och externa disken. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/disk_raid.html:11
+msgid "An old RAID disk will automatically be connected and included into the {PLATFORM} system upon boot, even though you have not set up your {PLATFORM} for a RAID extension. It is impossible to remove the extension without reinstallation. To format an old external RAID extended disk, connect the disk to a already running {PLATFORM}. Then choose 'Format' in the 'Disk -&gt; Information' menu."
+msgstr "En gammal RAID-disk kommer automatiskt att kopplas in och inlemmas i {PLATFORM}-systemet vid systemstart, även om du inte ställt in din {PLATFORM} för RAID. Det är omöjligt att ta bort RAID utan en total ominstallation. För att formattera en gammal RAID-utökad disk, koppla in den i en redan körande {PLATFORM}. Välj sedan 'Format' i 'Disk -&gt; Information'-menyn. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/disk_raid.html:14
+msgid "To get out the most of your disks, use an external disk in the same size as your internal disk in {PLATFORM}."
+msgstr "För att få ut mesta möjliga plats på dina diskar, använd en extern disk med samma storlek som den i din {PLATFORM}. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/disk_raid.html:16
+msgid "Total capacity of the array equals the capacity of the smallest disk in the array."
+msgstr "Total kapacitet i RAID-systemet kommer att bli den storlek den minsta av dina diskar har. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/disk_raid.html:18
+msgid "It will take some time to create or restore a RAID array. For a 1TB disk it will take about 4 hours. This is handheld in the background of the {PLATFORM} system and will not be indicated to the user."
+msgstr "Det kommer att ta tid att skapa eller återställa ett RAID-system. För en 1 TB disk tar det ungefär fyra timmar. Detta hanteras i bakgrunden på din {PLATFORM} och kommer inte att märkas av användaren. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/disk_raid.html:20
+msgid "To reuse your {PLATFORM} standalone without the RAID setup you have to reinstall your {PLATFORM} system."
+msgstr "För att återanvända din {PLATFORM} ensam, utan den externa RAID-disken, måste du installera om din {PLATFORM}. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_raid.html:24
+msgid "Create RAID array"
+msgstr "Skapa ett RAID-system"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:27
+msgid "Attach an eSATA disk. Please notice that the disk should be pre formatted, without old RAID or LVM systems."
+msgstr "Anslut en eSATA-disk. Notera att disken bör vara förformatterad, utan gamla RAID eller LVM-system. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:29
+msgid "Click 'Create RAID array'"
+msgstr "Klicka 'Skapa ett RAID-system'"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:31
+msgid "Select which external disk to include in the array."
+msgstr "Välj vilken externa disk som ska inkluderas i RAID-systemet."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:34
+#, fuzzy
+#| msgid "Click 'Create RAID array'"
+msgid "Click 'Create RAID'."
+msgstr "Klicka 'Skapa ett RAID-system'"
+
+#. type: Content of: <ol><li><p>
+#: admin/views/default/help/en/disk_raid.html:35
+msgid "<strong>Warning!</strong> Nothing may access /home while doing this operation. Make sure to exit any open ssh connections, shut down any samba/AFP connections and shut off all other services that may access /home."
+msgstr ""
+
+#. type: Content of: <ol><li><p>
+#: admin/views/default/help/en/disk_raid.html:36
+#, fuzzy
+#| msgid "Warning! All data on both disks will be erased. Click 'Create RAID'."
+msgid "<strong>Warning!</strong> All data on both disks will be erased."
+msgstr "Varning! All data på båda diskarna kommer att raderas. Klicka 'Skapa RAID'. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:38
+msgid "Wait for the progress bar to complete. Be patient, it will take some time to create a RAID array if you are using large disks."
+msgstr "Invänta att processen slutförs. Ha tålamod, det kan ta en god stund om du använder stora diskar. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:40
+msgid "When finished, your external disk has been included in your RAID array."
+msgstr "När operationen slutförts har din externa disk lagts till i RAID-systemet. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_raid.html:44
+msgid "RAID status"
+msgstr "RAID-status"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_raid.html:47
+msgid "<strong>List of RAID arrays</strong> - shows the total disk space, i.e. the smallest available disk (the {PLATFORM} /home partition or the external eSATA disk) in the array."
+msgstr "<strong>Lista av RAID-system</strong> - visar total diskstorlek, alltså den minsta av de inkluderade diskarna i RAID-systemet. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_raid.html:50
+msgid "<strong>List of RAID disks</strong> - shows the disks attached to the RAID system."
+msgstr "<strong>Lista av RAID-system</strong> - visar diskar anslutna till RAID-systemet."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_raid.html:53
+msgid "Recover an external disk"
+msgstr "Återställ en extern disk"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_raid.html:56
+msgid "If you have a disc failure on your external disk or if you have by mistake disconnected the external disk you will need to do the following."
+msgstr "OM du har disk-fel på din externa disk eller om du av misstag kopplat ur den externa disken måste du göra följande."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:59
+msgid "Disconnect the broken external disk from the backside of {PLATFORM}."
+msgstr "Koppla ur den trasiga externa disken från baksidan på {PLATFORM}. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:61
+msgid "Attach a new external disk (or reconnect the by mistake disconnected one)."
+msgstr "Koppla in en ny extern disk (eller koppla in den av misstag urkopplade). "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:63
+#: admin/views/default/help/en/disk_raid.html:81
+msgid "Click on '<strong>Recover RAID array</strong>'."
+msgstr "Klicka på '<strong>Återskapa RAID-system</strong>'."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:65
+msgid "Select which external disk to add to RAID array. Click 'Recover array'."
+msgstr "Välj vilken externa disk som ska läggas till RAID-systemet. Klicka på 'Återskapa RAID-system'. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:67
+msgid "Warning! All data will be erased from the external disk. Click 'Recover array'."
+msgstr "Varning! All data kommer att raderas från den externa disken. Klicka på 'Återskapa RAID-system'. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:69
+#: admin/views/default/help/en/disk_raid.html:87
+msgid "Press 'Close' to continue working with {PLATFORM}. The synchronization is in progress and will take a while."
+msgstr "Tryck 'Stäng' för att fortsätta arbeta på din {PLATFORM}. Synkroniseringen är igång och kommer att ta en stund. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk_raid.html:73
+msgid "Recover an internal disk"
+msgstr "Återskapa en intern disk. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk_raid.html:76
+msgid "If you have a disk failure on your internal disk in {PLATFORM} you have to start by exchanging the disk and reinstalling via an USB memory. Then update {PLATFORM} to the latest software."
+msgstr "Om du har disk-fel på din interna disk i {PLATFORM} måste du börja med att byta ut disken och installera om systemet med ett USB-minne. Uppdatera sedan {PLATFORM} till den senaste mjukvaran. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:79
+msgid "Attach the external RAID disk that is containing your data."
+msgstr "Koppla in den externa RAID-disken som innehåller din data. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:83
+msgid "Select the external disk to add to RAID array. Click 'Recover array'."
+msgstr "Välj den externa disk du vill lägga till RAID-systemet. Klicka på 'Återskapa RAID-system'. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk_raid.html:85
+msgid "Warning! All user data and the storage area will be erased from the internal disk. Click 'Recover array'."
+msgstr "Varning! All data kommer att raderas från din interna disk. Klicka 'Återskapa RAID-system'. "

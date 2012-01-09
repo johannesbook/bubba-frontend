@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-10-26 15:13+0300\n"
+"PO-Revision-Date: 2012-01-02 23:18+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/mail.html:2
+#: admin/views/default/help/en/services.html:32
+#: admin/views/default/help/en/user_mail.html:2
+msgid "Email"
+msgstr "Epost"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/services.html:2
+msgid "File sharing"
+msgstr "Fildelning"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:5
+msgid "<strong>FTP</strong> - The {PLATFORM} FTP server."
+msgstr "<strong>FTP</strong> - {PLATFORM}'s FTP-server."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:8
+msgid "<strong>Anonymous FTP access</strong> - Allow users to log in to FTP server without a password."
+msgstr "<strong>Anonym FTP-åtkomst</strong> - Tillåter användare att logga in på FTP utan lösenord."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:11
+msgid "<strong>AFP</strong> - The Apple Filing Protocol (AFP) is a network protocol that offers file services for Mac OS X and original Mac OS."
+msgstr "<strong>AFP</strong> - 'Apple Filing Protocol' (AFP) är ett nätverksprotokoll för att hantera filer på Mac OS X. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:14
+msgid "<strong>Windows file share</strong> - Windows file share (Samba) is used to share files and printerns in a Windows network."
+msgstr "<strong>Windows fildelning</strong> - Windows fildelning (Samba) används för att hantera filer och skrivare på ett windowsnätverk. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/services.html:17
+msgid "Streaming"
+msgstr "Strömmning"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:20
+msgid "<strong>DLNA streaming</strong> - Media streaming server.  The server shares/streams media data like audio/video/picture/files to DLNA-clients on the network.  Many modern media products are DLNA compatible, such as Samsung smart TV's, XBOX 360, Playstation 3, Windows Media Center, DLink Boxee Box, Western Digital TV Live etc.  Having this service enabled means that these products automatically can play content stored on your B3."
+msgstr "<strong>DLNA-strömning</strong>.  Denna tjänst delar ut och strömmar media som ljud och bild till DLNA-enheter på nätverket. Många moderna mediaenheter (TV, stereo etc.) stöder DLNA, såsom Samsung smart TV'ar, XBOX 360, Playstation 3, Windows Media Center, DLink Boxee Box, Western Digital TV Live etc.  Med denna tjänst igång kan dessa enheter spela upp media från {PLATFORM}. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:26
+msgid "<strong>DAAP streaming</strong> - Digital Audio Access Protocol (DAAP) server. Media server for the Roku SoundBridge and iTunes."
+msgstr "<strong>DAAP-strömning</strong> - Digital Audio Access Protocol (DAAP)-server. Detta är mediaservern för iTunes och Roku / Pinnacle soundbridge och flera andra mediaklienter. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:29
+msgid "<strong>Squeezebox Server</strong> - is a streaming audio server supported by Logitech that streams music to The Squeezebox product line."
+msgstr "<strong>Logitech Media server</strong> - är en mediaserver som stödjer Logitechs mediaspelare såsom Squeezebox. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:35
+msgid "<strong>Send and receive</strong> - This is for postfix the smtp server: Sending and receiving emails."
+msgstr "<strong>Skicka och ta emot</strong> - Detta är för postfix - SMTP-servern, och låter din B3 skicka och ta emot epost. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:38
+msgid "<strong>IMAP (Required for webmail access)</strong> - This is for dovecot the IMAP server. This service is required for the webmail access to be functional."
+msgstr "<strong>IMAP (krävs för webmail-access)</strong> - Detta ä rför dovecot - IMAP-servern. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:41
+msgid "<strong>Email retrieval</strong> - This is for fetchmail, a daemon that collects emails to {PLATFORM}"
+msgstr "<strong>Eposthämtning</strong> - Detta är för fetchmail, en tjänst som samlar in epost till {PLATFORM}"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/services.html:44
+msgid "Other"
+msgstr "Annat"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:47
+msgid "<strong>Printing</strong> - {PLATFORM} print server."
+msgstr "<strong>Skrivare</strong> - {PLATFORM} skrivarserver"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:50
+msgid "<strong>Up and downloads</strong> - possibility to up / download files on {PLATFORM}, i.e. filemanager and torrents."
+msgstr "<strong>Upp- och nedladdningar</strong> - låter användare ladda upp och ner filer till {PLATFORM}. T.ex. kräver webbfilhanteraren detta, och även torrent-nedladdaren. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/services.html:53
+msgid "<strong>Remote access through other router</strong> - tries to open web ports (80 and 443) through your router, to allow for remote access."
+msgstr "<strong>Fjärråtkomst genom annan router</strong> - denna tjänst försöker öppna port 80 och 443 (web) genom en annan router, för att underlätta fjärråtkomst. "

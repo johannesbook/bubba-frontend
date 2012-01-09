@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-12-07 18:58+0100\n"
+"PO-Revision-Date: 2012-01-02 23:06+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:1
+msgid "The Tor network relies on volunteers to donate bandwidth. The more people who run bridges or relays, the faster the Tor network will be. If you have at least 20 kilobytes/s each way, please help out Tor by configuring your B3 to be either a bridge non-exit relay or exit relay."
+msgstr "Tor-nätverket förlitar sig på frivilliga för att få nätverket att fungera. Ju fler människor som kör en Tor-server, ju snabbare kommer Tor-nätverket att bli. Om du har åtminstone 20 kilobyte/s åt båda hållen över, så vänligen hjälp till genom att slå på Tor i din {PLATFORM}. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:7
+msgid "B3 can act as either a bridge, non-exit relay or exit relay in the Tor network:"
+msgstr "{PLATFORM} kan fungera antingen som 'bridge', 'non-exit relay' eller 'exit relay' i Tor-nätverket:"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_tor.html:10
+msgid "Relays"
+msgstr "Relays"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:12
+msgid "The public servers in the Tor network are called relays. All of the relays are listed in public directories, which means that anyone can easily get a list of all the relays in the Tor network. A Tor relay can be either a non-exit relay or an exit relay. A non-exit relay will only forward traffic on to other relays in the Tor network. An exit relay can either forward traffic on to other relays in the Tor network, or to public Internet resources."
+msgstr "Publika servrar i Tor-nätverket kallas 'relays' eller relän. Alla relän syns i publika listor, vilket innebär att vem som helst enkelt kan få se vilka relän som finns. Ett Tor-relä kan vara antingen ett 'non-exit'-relä eller ett 'exit'-relä. Ett 'non-exit'-relä kommer endast att skicka vidare trafik till andra relän i Tor-nätverket. Ett 'exit'-relay kan antingen skicka trafik till andra relän, eller till resten av internet. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_tor.html:20
+msgid "Bridges"
+msgstr "Bridges"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:22
+msgid "Some Internet Service Providers (ISPs) attempt to prevent users from accessing the Tor network by blocking connections to known Tor relays.  Bridge relays (or <i>bridges</i> for short) are non-exit relays that help these censored users access the Tor network. Unlike other Tor relays, bridges are not listed in the same public directories as normal relays. Since there is no complete public list of them, even if your ISP is filtering connections to all the known Tor relays, they probably won't be able to block all the bridges."
+msgstr "Vissa internetleverantörer (ISP:er) försöker hindra användare från att access Tor-nätverket genom att blockera kopplingar till kända Tor-relän. 'Bridges' (bryggor) är 'non-exit'-relän som hjälper dessa cencurerade användare att nå Tor-nätverket. Till skillnad från relän är bryggor därför inte listade publikt. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_tor.html:31
+msgid "The settings"
+msgstr "Inställningar"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:33
+msgid "The default settings are the recommended settings, so if you are unsure, just leave them as is."
+msgstr "Standardinställningarna är de som rekommenderas, så är du osäker går det utmärkt att lämna dem som de är. "
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:35
+msgid "Bridge address"
+msgstr "Bryggadress"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:37
+msgid "You can let others access your Tor bridge by giving them this line.  The bridge address consists of your external IP address and the relay port configured for Tor."
+msgstr "Du kan låta andra få åtkomst till din Tor-brygga genom att skicka dem den här adressen. Den består av din externa IP-adress och reläporten som är inställd för Tor. "
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:41
+msgid "Nickname"
+msgstr "Smeknamn"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:43
+#, fuzzy
+#| msgid "The name which your relay will be known as in the Tor network.  Example: \\\"MyB3Relay\\\"."
+msgid "The name which your relay will be known as in the Tor network.  Example: \"My{PLATFORM}Relay\"."
+msgstr "Detta är namnet som din {PLATFORM} kommer att ha på Tor-nätverket. "
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:46
+msgid "Contact information"
+msgstr "Kontaktinformation"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:48
+msgid "Contact info, such as an email address, to be published in relay directories, so that the Tor Project can contact you if your relay is misconfigured or something else goes wrong."
+msgstr "Kontaktinfo, som en epostadress, för att publiceras på de publika relälistorna. Syftet är främst att Tor-projektet ska kunna kontakta dig om din {PLATFORM} är felkonfigurerad eller om något annat är galet. "
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:52
+msgid "Automatically distribute my bridge address"
+msgstr "Distribuera automatiskt min bryggadress"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:54
+msgid "If not selected only people invited by you can use your bridge."
+msgstr "Om detta inte är ikryssat kan endast folk som du bjudit in använda din brygga. "
+
+#. type: Content of: <h4>
+#: admin/views/default/help/en/network_tor.html:56
+msgid "Exit policies"
+msgstr "Exit-policy"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:58
+msgid "Exit policies give you a way to specify what kinds of resources on the Internet you are willing let other Tor users access from your Tor relay. Tor uses a default list of exit policies that restrict some services, such as mail to prevent spam and some default file sharing ports to reduce abuse of the Tor network."
+msgstr "Detta ger dig ett sätt att välja vilken typ av trafik som du vill att andra Tor-användare ska kunna nå genom din {PLATFORM}. Tor använder en standarduppsättning av exit-policy som stoppar vissa tjänster, som epost för att förhindra spam, och visa fildelarnätverk för att förhindra missbruk av Tor. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_tor.html:64
+msgid "Please read the users manual for more detailed information on this."
+msgstr "Vänligen läs användarmanualen för vidare infromation om detta. "

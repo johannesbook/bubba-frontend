@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2011-12-19 23:28+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk.html:2
+msgid "Disk"
+msgstr "Disk"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk.html:5
+msgid "Here you find the status of internal and external disks and storage devices. When a new device is attached you must press 'Connect' to be able to use the device."
+msgstr "Här hittar du statusen på interna och externa diskar och lagringsenheter. När en ny enhet kopplas in måste du trycka 'Anslut' för att kunna använda enheten. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk.html:8
+msgid "<strong>Disk information</strong> - Shows disk name, size, disk type and a graphical overview of the partitions."
+msgstr "<strong>Diskinformation</stron> - Visar diskens namn, storlek, disktyp och en grafisk översikt över partitionerna. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk.html:11
+msgid "<strong>Partition information</strong> - Description of the partitions."
+msgstr "<strong>Partitionsinformation</strong> - Visar en beskrivning av partitionerna"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/disk.html:14
+msgid "External disks"
+msgstr "Externa diskar"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk.html:17
+msgid "<strong>Connecting</strong>"
+msgstr "<strong>Ansluter</strong>"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk.html:20
+msgid "Attach a external disk, USB or eSATA drive."
+msgstr "Lägg till en extern disk, USB eller eSATA-enhet."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk.html:22
+msgid "Press '<strong>Connect</strong>' to the right of the partition you which to connect"
+msgstr "Klicka '<strong>Anslut</strong>' till höger om partitionen du vill ansluta till"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk.html:24
+msgid "Now you will reach your files in the 'storage/extern' catalogue or by using for example Windows explorer."
+msgstr "Nu kan du nå dina filer i 'storage/extern'-katalogen eller genom att använda t.ex. windows utforskaren."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/disk.html:28
+msgid "<strong>Disconnecting</strong>"
+msgstr "<strong>Kopplar från</strong>"
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk.html:31
+msgid "When you want to unplug the external disk, USB or eSATA drive you must click 'Disconnect' first to ensure that it is safe to unplug the device."
+msgstr "När du vill koppla ur din externa disk, USB eller eSATA, måste du trycka 'Koppla från' först, annars riskerar du att förlora data. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/disk.html:33
+msgid "Then unplug the cable."
+msgstr "Koppla sedan ur kabeln. "

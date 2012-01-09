@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-12-07 19:02+0100\n"
+"PO-Revision-Date: 2012-01-01 23:31+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:2
+msgid "{PLATFORM} has an built in firewall to protect your internal network and {PLATFORM} itself."
+msgstr "{PLATFORM} har en inbyggd brandvägg för att skydda ditt lokala nätverk och {PLATFORM} själv."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_fw.html:5
+msgid "<strong>Allow external (WAN) access {PLATFORM} services</strong>"
+msgstr "<strong>Tillåt extern (WAN) åtkomst till {PLATFORM}'s tjänster</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:8
+msgid "<strong><strong>SSH (Port 22)</strong> - Enables Secure Shell (SSH) to {PLATFORM} from WAN.</strong>"
+msgstr "<strong><strong>SSH (Port 22)</strong> - Tillåter åtkomst via SSH (Secure Shell) till {PLATFORM} från WAN.</strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:11
+msgid "<strong>Email server (Port 25)</strong> - Enables access from WWW to {PLATFORM}'s port 25. This is the default email server port for sending and receiving email."
+msgstr "<strong>Epostserver (Port 25)</strong> - Tillåter åtkomst från internet till {PLATFORM}'s port 25. Detta är standardporten för att skicka och ta emot epost. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:14
+msgid "<strong>WWW (HTTP / HTTPS Ports 80 / 443)</strong> - Enables WWW traffic to {PLATFORM} from WAN."
+msgstr "<strong>WWW (HTTP / HTTPS Ports 80 / 443)</strong> - Tillåter internettrafik från internet till {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:17
+msgid "<strong>Email (IMAP / IMAPS Ports 143 / 993)</strong> - Enables access from WWW to {PLATFORM}'s ports 143 and 993. These ports are used for sending and receiving email."
+msgstr "<strong>Epost (IMAP / IMAPS Portar 143 / 993)</strong> - Tillåter åtkomst från internet till {PLATFORM}'s portar 143 och 993. Dessa portar används för att skicka och ta emot epost. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:20
+msgid "<strong>FTP (Port 21)/strong&gt; - Enables FTP connections from WAN to {PLATFORM}'s port 21.</strong>"
+msgstr "<strong>FTP (Port 21)/strong&gt; - Tillåter FTP-kopplingar från internet. </strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:23
+msgid "<strong><strong>Downloader (Ports 10000-14000)</strong> - Enables faster torrent download. This rule opens the ports 10000-14000.</strong>"
+msgstr "<strong><strong>Nedladdare (Portar 10000-14000)</strong> - Detta tillåter snabbare torrent-nedladdningar. </strong>"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:26
+msgid "<strong>Respond to ping (ICMP type 8)</strong> - Enables ping from WAN. The default setting disables computers on the Internet to get a reply back from {PLATFORM} when it is being 'pinged'. This increases the security."
+msgstr "<strong>Svara på ping (ICMP typ 8)</strong> - Tillåter Ping från internet (WAN). Standardinställningen har detta avstängt av säkerhetsskäl. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_fw.html:30
+msgid "Advanced firewall settings"
+msgstr "Avancerade brandväggsinställningar"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:33
+#, fuzzy
+#| msgid "Choose 'Port forward to internal network' or 'Open {PLATFORM}|2 port' with the radio buttons. The first will open a port from Internet (WAN) to a network device in your internal network (LAN). The later one will open a port from Internet (WAN) to {PLATFORM}."
+msgid "Choose 'Port forward to internal network' or 'Open {PLATFORM} port' with the radio buttons. The first will open a port from Internet (WAN) to a network device in your internal network (LAN). The later one will open a port from Internet (WAN) to {PLATFORM}."
+msgstr "Välj 'Portvidarebefordring till internt nätverk' eller 'Öppna {PLATFORM} port' med knapparna. Den första öppnar en port från internet (WAN) till någon enhet på ditt lokala nätverk. Den adnra öppnar en port till en tjänst i {PLATFORM}. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:37
+msgid "<strong>Source IP</strong> - The source IP on the WAN side that the port forward will be directed to. Enter 'all' if all the port forward are not directed to a specific IP address."
+msgstr "<strong>Käll-IP-adress</strong> - Käll-IP-adressen på WAN-sidan som porten ska vidarebefordras till. Fyll i 'all' om det inte gäller någon specifik IP-adress. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:40
+msgid "<strong>Public port</strong> - The port number on the WAN side. You can input a single port or a range of ports (ex. 4001:4005)."
+msgstr "<strong>Publik port</strong> - Portnumret på WAN-sidan. Du kan skriva en ensam port eller flera (tex. 4001:4005)."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:43
+msgid "<strong>Private port</strong> - The port number on the LAN side. Enter a single start port if range is used in Public port (ex. 4001)."
+msgstr "<strong>Privat port</strong> - Portnummret på LAN-sidan. Om du angett flera portar i 'Publik port' ska du bara ange startporten här (ex. 4001)."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:46
+msgid "<strong>Private IP</strong> - The destination IP on the LAN side network that will be providing the virtual services (desired port forward)."
+msgstr "<strong>Privat IP</strong> - Destinationen på LAN-sidan som din vidarebefordring ska gå till. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:49
+msgid "<strong>Protocol</strong> - The protocol used for the virtual service: TCP or UDP."
+msgstr "<strong>Protokoll</strong> - Protokollet som används för tjänsten du vidarebefordrar: TCP eller UDP. Är du osäker så prova TCP, detta är det vanligaste. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network_fw.html:52
+msgid "User defined open / forwarded ports"
+msgstr "Öppnade eller vidarebefordrade portar"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:55
+msgid "This shows the enabled port forwards. Press the pen symbol to the right of the rule to edit the port forward. Press the red X to the right of the rule to delete the port forward."
+msgstr "Detta visar portvidarebefordringar. Klicka på pennan för att redigera. Klicka på krysset för att radera portvidarebefordringen. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar. "

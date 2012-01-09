@@ -1,0 +1,28 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-04 23:33+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_login.html:2
+msgid "Welcome to {PLATFORM}!"
+msgstr "Välkommen till {PLATFORM}!"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_login.html:5
+msgid "Listen to music, look at your photos, and access your emails and files. You have all your important information and fun just a mouse click away!"
+msgstr "Lyssna på musik, se dina bilder och nå din email och dina filer. Allt du behöver, när som helst, var som helst! "

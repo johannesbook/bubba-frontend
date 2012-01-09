@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-04 23:38+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_users.html:2
+msgid "User information"
+msgstr "Användarinformation"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_users.html:5
+msgid "Here users can change personal information such as 'Real name' and password."
+msgstr "Här kan användare ändra sin personliga information. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_users.html:8
+msgid "Changing the user name (login name) is not possible. To achieve this you will have to delete the user via the administrator login and add a new user with the correct name."
+msgstr "Det går inte att ändra användarnamn. För att göra detta måste du ta bort användaren och sedan lägga till en ny. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_users.html:11
+msgid "The user interface language may be changed here."
+msgstr "Språket för användargränssnittet kan ändras här. "

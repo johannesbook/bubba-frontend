@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-01 23:17+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/network.html:2
+msgid "Network profile"
+msgstr "Nätverksprofil"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:5
+msgid "Automatic settings will work in most cases, you do probably not need to change this. Read the technical manual if you need further information."
+msgstr "Automatiska inställningar fungerar i de flesta fall, du behöver normalt inte ändra detta. Vänligen läs användarmanualen om du behöver ytterligare information. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:8
+msgid "<strong>Automatic network settings</strong> - {PLATFORM} will automatically try to set an appropriate network configuration."
+msgstr "<strong>Automatiska nätverksinställningar</strong> - {PLATFORM} kommer automatiskt att känna av och ställa in lämpliga inställningar. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:11
+msgid "<strong>Router + Firewall + Server</strong> - {PLATFORM} will automatically try to retrieve network settings on WAN (internet), and use fixed network settings on the local network providing other computers with network information."
+msgstr "<strong>Router + Brandvägg + Server</strong> - {PLATFORM} kommer automatiskt att få inställningar på WAN-porten (internet), och använda en fast IP på LAN-porten och låta klienter på LAN få nätverksinställningar automatiskt från {PLATFORM}."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:15
+msgid "<strong>Server only</strong> - {PLATFORM} will automatically try to retreive network settings on LAN (local network) and the WAN port should be left unconnected."
+msgstr "<strong>Endast server</strong> - {PLATFORM} kommer automatiskt att be om nätverksinställningar på LAN (lokala nätverket). WAN-porten bör inte användas i detta läge. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network.html:18
+msgid "After editing the network settings you might need to reboot your computers and other network devices in your LAN."
+msgstr "Efter att du ändrat nätverksinställningarna kan du behöva starta om din dator och andra nätverksenheter på ditt lokala nätverk. "

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-04 22:29+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_datetime.html:2
+msgid "Date and time"
+msgstr "Datum och tid"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:5
+msgid "<strong>Current timezone is</strong> - Shows the selected timezon."
+msgstr "<strong>Nuvarande tidszon är</strong> - Visar nuvarande tidszon"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:8
+msgid "<strong>Select timezone</strong> - Select your timezone in the drop down list."
+msgstr "<strong>Välj tidszon</strong> - Välj din tidszon i listan. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:11
+msgid "<strong>Set time automatically</strong> - This enables {PLATFORM} to set the date and time automatically via an internet server."
+msgstr "<strong>Ställ in tid automatiskt</strong> - Detta låter {PLATFORM} ställa in tiden automatiskt från en tidsserver på internet. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:14
+msgid "<strong>Date</strong> - Set the system date manually."
+msgstr "<strong>Datum</strong> - Ställ in {PLATFORM}'s datum automatiskt."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:17
+msgid "<strong>Time</strong> - Set the system time manually."
+msgstr "<strong>Tid</strong> - Ställ in {PLATFORM}'s tid manuellt."
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_datetime.html:20
+msgid "Default system language"
+msgstr "Standardspråk"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_datetime.html:23
+msgid "<strong>System language</strong> - Select language for the user interface."
+msgstr "<strong>Systemspråk</strong> - Välj språk för användarinterfacet. "

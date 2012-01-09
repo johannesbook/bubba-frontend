@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-12-06 14:57+0100\n"
+"PO-Revision-Date: 2012-01-09 14:34+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:2
+msgid "Share your digital photos with friends and family! With {PLATFORM} you get easy to use, out of the box photo album! All you need is your digital pictures!"
+msgstr "Dela dina foton med släkt och vänner! Med {PLATFORM} får du ett lättanvänt fotoalbum! "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_album_albums.html:5
+msgid "Add Album viewers"
+msgstr "Lägg till albumanvändare"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:8
+msgid "Click the menu item <b>Album viewers</b> to add users for private viewing of photo albums."
+msgstr "Klicka på menyknappen <strong>Album viewers</b> för att lägga till användare för privat visning av fotoalbum. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_album_albums.html:11
+msgid "Add albums"
+msgstr "Lägg till album"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:14
+msgid "Every user on {PLATFORM} can create and publish photo albums, except for the administrator."
+msgstr "Alla användare på {PLATFORM} kan skapa och publicera fotoalbum, förutom administratören. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:17
+#, fuzzy
+#| msgid "Copy the folders containing your pictures to \\{PLATFORM}\\storage\\pictures, with for example the built in Filemanager or Windows Explorer."
+msgid "Copy the folders containing your pictures to \\{PLATFORM}\\storage\\pictures, with for example the built in File Manager or Windows Explorer."
+msgstr "Kopiera kataloger som innehåller dina bilder till \\{PLATFORM}\\storage\\pictures, t.ex. med din dators filhanterare, FTP eller någon annan valfri metod du föredrar. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:19
+msgid "Log in as your standard user on {PLATFORM}."
+msgstr "Logga in som din vanliga användare på {PLATFORM}."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:21
+#, fuzzy
+#| msgid "Click 'Filemanager'."
+msgid "Click 'File Manager'."
+msgstr "Klicka på 'File manager'."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:23
+msgid "Browse to /home/storage/pictures."
+msgstr "Gå till /home/storage/pictures."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:25
+msgid "Select the folders or pictures you wish to add as photo albums."
+msgstr "Välj kataloger eller bilder du vill lägga till i fotoalbumet. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:27
+msgid "Select the <strong>'Add to album'</strong> icon in the file function bar."
+msgstr "Väl <strong>'Lägg till i album'</strong>-ikonen i funktionslisten."
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:29
+msgid "Open the <strong>Album manager</strong>. Decide if the added albums should be public or private. By default all added albums are private."
+msgstr "Öppna <strong>Albumhanteraren</strong. Välj om albumen ska vara publika eller privata. Standardinställningen är att alla album blir privata. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:31
+msgid "Click your album, on the left side of the screen."
+msgstr "Klicka på ditt album till vänster på skärmen. "
+
+#. type: Content of: <ol><li><ul><li>
+#: admin/views/default/help/en/user_album_albums.html:33
+msgid "Ether select the users who you would like to share the album with, then click Update."
+msgstr "Välj användarna som du ska dela ditt album med, klicka sedan på Uppdatera. "
+
+#. type: Content of: <ol><li><ul><li>
+#: admin/views/default/help/en/user_album_albums.html:35
+msgid "Or click 'Public' if you want the album to be open to anyone who can access your {PLATFORM}, then click Update."
+msgstr "Eller klicka 'Publik' om du vill att albumet ska vara öppet för alla som kan nå din {PLATFORM}. Klicka sedan Update. "
+
+#. type: Content of: <ol><li>
+#: admin/views/default/help/en/user_album_albums.html:39
+msgid "Done!"
+msgstr "Klart!"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/user_album_albums.html:43
+msgid "Edit albums"
+msgstr "Ändra altum"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:46
+msgid "Click the album you wish to edit."
+msgstr "Klicka på albumet du önskar ändra. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_album_albums.html:49
+msgid "To edit album- or picture caption select the object, enter text and click 'Update'."
+msgstr "För att ändra ett album eller en bild, välj objektet, gör dina ändringar och klicka på 'Update'. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_album_albums.html:51
+msgid "To delete an album, select the album and press 'Delete album'."
+msgstr "För att radera ett album, välj albumet och klicka 'Radera album'. "
+
+#. type: Content of: <ul><li>
+#: admin/views/default/help/en/user_album_albums.html:53
+msgid "To delete a picture, select the picture and press 'Remove from album'."
+msgstr "För att radera en bild, välj bilden och klicka 'Radera'. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/user_album_albums.html:57
+msgid "Your photo albums will be visible by browsing to <a href='http://{DEFAULT_HOST}/album' target='_blank'>http://{DEFAULT_HOST}/album</a> (<a href='http://{DEFAULT_HOST}.local/album' target='_blank'>http://{DEFAULT_HOST}.local/album</a> if using Mac) from inside your home network, or by browsing to www.-your easyfind name-.{EASYFIND} from outside your network."
+msgstr "Dina fotoalbum kommer att finnas bakom foto-knappen på {PLATFORM}'s förstasida. "

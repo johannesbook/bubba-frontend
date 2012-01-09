@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-04 23:11+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/stat.html:2
+msgid "Status"
+msgstr "Status"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:5
+msgid "Here you find information about the installed hard drive size and remaining disk space, {PLATFORM} uptime and the installed software revision number."
+msgstr "Här finns diverse information om statusen på din {PLATFORM}. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/stat.html:8
+msgid "System messages"
+msgstr "Systemmeddelanden"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:11
+msgid "Important notifications from the system will be shown here"
+msgstr "Viktiga notifieringar från systemet kommer att visas här"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:14
+msgid "The '<strong>Shutdown</strong>' button powers off {PLATFORM} in the same way as pressing the button on the backside of the unit. To start up again, press the button on the backside."
+msgstr "'<strong>Stäng av</strong>' -knappen stänger ner din {PLATFORM} på samma sätt som om du håller in knappen på baksidan av din {PLATFORM}. För att starta igen, tryck in knappen på baksidan. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/stat.html:17
+msgid "The '<strong>Restart</strong>' button reboots {PLATFORM}."
+msgstr "'<strong>Starta om</strong>'- knappen bootar om din {PLATFORM}."

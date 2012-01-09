@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Excito Electronics AB
+# This file is distributed under the same license as the bubba-frontend package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2011-08-22 21:04+0300\n"
+"PO-Revision-Date: 2012-01-04 23:09+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/network_lan.html:42
+#: admin/views/default/help/en/network_wlan.html:41
+#: admin/views/default/help/en/network_fw.html:58
+#: admin/views/default/help/en/network_wan.html:19
+#: admin/views/default/help/en/network.html:21
+#: admin/views/default/help/en/settings_trafficsettings.html:15
+#, fuzzy
+msgid "<i>Update</i> saves your changes."
+msgstr ""
+"#-#-#-#-#  network_wan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_lan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_wlan.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  settings_trafficsettings.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar.\n"
+"#-#-#-#-#  network_fw.html.po (bubba-frontend 2.3)  #-#-#-#-#\n"
+"<i>Uppdatera</i> sparar dina ändringar. "
+
+#. type: Content of: <h3>
+#: admin/views/default/help/en/settings_trafficsettings.html:2
+msgid "Traffic"
+msgstr "Traffik"
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_trafficsettings.html:5
+msgid "To control the maximum upload / download speed on your torrents adjust the 'Traffic' setting."
+msgstr "För att kontrollera max upp- och nedladdningshastighet kan du justera traffik-inställningen."
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_trafficsettings.html:8
+msgid "For example if you have a limited broadband connection you do not want to fill your uplink completely. Then set the 'Max upload speed' to a preferred value. Use 'Max download speed' in the same manner."
+msgstr "Man kan ha nytta av att begränsa hastigheterna för upp- och nedladdning om man har en långsam internetuppkoppling och inte vill att en torrent-nedladdning ska ta all bandbredd. "
+
+#. type: Content of: <p>
+#: admin/views/default/help/en/settings_trafficsettings.html:12
+msgid "Using -1 as value = no speed limit."
+msgstr "Använd -1 som värde för att stänga av hastighetsbegränsningen. "
