@@ -611,14 +611,11 @@ $(function(){
     });
 
     $('.fn-backup-restore-action').live('click', function(e) {
-        e.stopPropagation();
 		if( $(this).val() == 'newdir' ) {
 			$('#fn-backup-restore-target').removeAttr('disabled');
 		} else {
 			$('#fn-backup-restore-target').attr('disabled', 'disabled');
 		}
-
-		return false;
 	});
 
     $('.fn-job-restore').live('click', function(e) {
