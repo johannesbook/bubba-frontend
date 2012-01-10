@@ -8,6 +8,19 @@ Copyright: 2008-2012 Excito Electronics AB
 License: GPL-2.0+
 
 Files:
+ admin/views/default/network/network_tor_view.php
+ admin/views/default/_js/tor.js
+ admin/views/default/help/en/network_tor.html
+Copyright:
+ 2011 Tor Project
+ 2011-2012 Excito Electronics AB
+License: GPL-2.0+
+Comment:
+ These files was created as a cooperation between the Tor Project
+ and Excito Electronics AB. The help text is based on the help text
+ for the vidalia application.
+
+Files:
  admin/views/default/_img/bubba*.png
  admin/views/default/_img/toggle*.png
  admin/views/default/_img/upgrade*.png
@@ -20,9 +33,7 @@ Files:
  admin/views/default/_icons/*
  admin/views/default/favicon*
 Copyright: 2008-2012 Excito Electronics AB
-License: Excito
-
-License: Excito
+Disclaimer:
  These files are the own property of Excito Electronics AB and are not
  free to use outside the realm of an Excito Electronics product.
 

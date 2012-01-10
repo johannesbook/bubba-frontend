@@ -1,3 +1,10 @@
+bubba-frontend (2.4~pre25) hugo vincent; urgency=low
+
+  * updating copyright file to include information about Tor collaboration
+    (Closes: #1805)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 10 Jan 2012 15:49:45 +0100
+
 bubba-frontend (2.4~pre24) vincent hugo; urgency=low
 
   * update german translations (Closes: #1816)
