@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre26) hugo vincent; urgency=low
+
+  * Remove dash as a legal character for tor nickname.
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 12 Jan 2012 14:27:44 +0100
+
 bubba-frontend (2.4~pre25) hugo vincent; urgency=low
 
   * updating copyright file to include information about Tor collaboration

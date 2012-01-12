@@ -13,7 +13,7 @@ $(function(){
         return this.optional(element) || jQuery.inArray(parseInt(value),arr) == -1;
     });
     jQuery.validator.addMethod("alphanum", function(value, element, arr) {
-        return this.optional(element) || /^[a-z0-9\-]+$/i.test(value);
+        return this.optional(element) || /^[a-z0-9]+$/i.test(value);
     },jQuery.format("Please enter only alphanumeric characters [A-Za-z0-9]"));
 
     var $torvalidator = $("#TorCFG").validate({
