@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre27) hugo vincent; urgency=low
+
+  * fix dialog buttons in disk raid js (Closes: #1828)
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 13 Jan 2012 13:27:55 +0100
+
 bubba-frontend (2.4~pre26) hugo vincent; urgency=low
 
   * Remove dash as a legal character for tor nickname.
