@@ -51,7 +51,7 @@ $autoload['libraries'] = array( 'session', 'gettext' );
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'html', 'exec', 'gettext');
+$autoload['helper'] = array('url', 'html', 'exec', 'gettext', 'model_load_model');
 
 
 /*

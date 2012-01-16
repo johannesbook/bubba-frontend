@@ -563,8 +563,8 @@ class Backup extends Model {
 
     public function restore($jobname, $date, $action, $target, $selection) {
 
-		$this->load->model("system");
-		date_default_timezone_set($this->system->get_timezone());
+        $system = model_load_model("system");
+		date_default_timezone_set($system->get_timezone());
 		if($date) {
 			$date = date("c",strtotime($date));
 		}
