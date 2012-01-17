@@ -1,3 +1,12 @@
+bubba-frontend (2.4~pre29) hugo vincent; urgency=low
+
+  * Add parameter 3 to renederfull (Closes: #1836)
+  * Remove the automatic checking of private bridge (Closes: #1834)
+  * Fix syntax error in ajax_status (Closes: #1691)
+  * update that default language into default locale on upgrade (Closes: #1838)
+
+ -- Carl Fürstenberg <carl@excito.com>  Tue, 17 Jan 2012 14:59:04 +0100
+
 bubba-frontend (2.4~pre28) hugo vincent; urgency=low
 
   * Fix model loading from model backup (Closes: #1831)
