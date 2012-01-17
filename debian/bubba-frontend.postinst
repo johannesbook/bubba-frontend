@@ -23,6 +23,24 @@
 
 case "$1" in
 	configure)
+		# Update system language
+		if dpkg --compare-versions "$2" le "2.4"; then
+			if ! grep default_locale /home/admin/.bubbacfg; then
+				case $(grep default_lang /home/admin/.bubbacfg | cut -f 2 -d=) in
+					"en")
+						locale=en_US;;
+					"de")
+						locale=de_DE;;
+					"es")
+						locale=es_ES;;
+					"sv")
+						locale=sv_SE;;
+				esac
+				echo "default_locale=$locale" >> /home/admin/.bubbacfg
+
+			fi
+		fi
+
 		# Enact all probable php cfonfiguration script/modules
 		if dpkg --compare-versions "$2" le "2.4"; then
 			# Enact all probable php cfonfiguration script/modules
