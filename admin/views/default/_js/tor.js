@@ -142,7 +142,6 @@ $(function(){
 
             // Enable the bridge distribution checkbox
             $("#private_bridge").removeAttr("disabled");
-            $("#private_bridge").attr("checked","checked");
         } else {
             // Disable the bridge address line
             $("#bridge_address").closest('tr').hide();
@@ -152,7 +151,6 @@ $(function(){
 
             // Disable the bridge distribution checkbox
             $("#private_bridge").attr("disabled","disabled");
-            $("#private_bridge").removeAttr("checked");
         }
 
         // Configure Tor as an exit relay
