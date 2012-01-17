@@ -318,7 +318,8 @@ class Mail extends Controller{
 
 			$this->_renderfull(
 				$this->load->view(THEME.'/mail/mail_retrieve_view',$data,true),
-				$this->load->view(THEME.'/mail/mail_retrieve_head_view',$data,true)
+				$this->load->view(THEME.'/mail/mail_retrieve_head_view',$data,true),
+				$data
 			);
 		}
 	}
