@@ -29,8 +29,8 @@ class Ajax_status extends Controller {
         foreach( $disks as &$disk ) {
             $disk['hdtemp'] = get_hdtemp($disk['dev']);
             foreach( $disk['partitions'] as &$partition ) {
-                if(isset($partition['mountpath'] && $partition['mountpath'] != "") {
-                    $partition['free_space'] = disk_free_space($partition['mountpath'])
+                if(isset($partition['mountpath']) && $partition['mountpath'] != "") {
+                    $partition['free_space'] = disk_free_space($partition['mountpath']);
                 }
             }
             unset($partition);
