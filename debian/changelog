@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre30) hugo vincent; urgency=low
+
+  * Fixing status identifiers from diskdaemon (Closes: #1837)
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 19 Jan 2012 13:38:02 +0100
+
 bubba-frontend (2.4~pre29) hugo vincent; urgency=low
 
   * Add parameter 3 to renederfull (Closes: #1836)

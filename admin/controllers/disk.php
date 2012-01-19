@@ -55,17 +55,21 @@ class Disk extends Controller{
 			$data['type'] = $type;
 			$data['progress'] = $this->disk_model->query_progress();
             switch($type) {
-            case 'lvm':
+            case 'add_to_lvm':
                 $data['title'] = _("Extending user storage space");
                 break;
             case 'create_raid':
                 $data['title'] = _("Converting system to RAID");
                 break;
-            case 'restore_raid':
+            case 'restore_raid_broken_external':
+            case 'restore_raid_broken_internal':
                 $data['title'] = _("Recovering RAID");
                 break;
-            case 'format':
+            case 'format_disk':
                 $data['title'] = _("Formatting disk");
+                break;
+            default:
+                $data['title'] = "N/A";
                 break;
             }
 			$this->_renderfull($this->load->view(THEME.'/disk/disk_progress_view.php',$data,true), '/disk/disk_progress_head_view', $data);
