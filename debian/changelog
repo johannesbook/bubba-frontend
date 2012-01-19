@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre32) hugo vincent; urgency=low
+
+  * should remove the call as well
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 19 Jan 2012 16:57:56 +0100
+
 bubba-frontend (2.4~pre31) hugo vincent; urgency=low
 
   * remove convinience copy of the jquery.ui.dialog
