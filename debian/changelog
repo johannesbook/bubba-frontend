@@ -1,3 +1,9 @@
+bubba-frontend (2.4~pre31) hugo vincent; urgency=low
+
+  * remove convinience copy of the jquery.ui.dialog
+
+ -- Carl Fürstenberg <carl@excito.com>  Thu, 19 Jan 2012 16:50:41 +0100
+
 bubba-frontend (2.4~pre30) hugo vincent; urgency=low
 
   * Fixing status identifiers from diskdaemon (Closes: #1837)
