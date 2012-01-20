@@ -1,3 +1,11 @@
+bubba-frontend (2.4~pre33) hugo vincent; urgency=low
+
+  * Regression, fix invocation to create buttons
+  * upgrade jquery-form-wizard to solve the brokeness in the old code
+  * Fix regression where pressing enter on login didn't work anymore
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 20 Jan 2012 18:13:25 +0100
+
 bubba-frontend (2.4~pre32) hugo vincent; urgency=low
 
   * should remove the call as well

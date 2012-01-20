@@ -277,11 +277,11 @@ $.fn.ajaxSubmit = function(options) {
 			doSubmit();
 		else
 			setTimeout(doSubmit, 10); // this lets dom updates render
-
+	
 		var domCheckCount = 100;
 
 		function cb() {
-			if (cbInvoked)
+			if (cbInvoked) 
 				return;
 
 			var ok = true;
@@ -298,7 +298,7 @@ $.fn.ajaxSubmit = function(options) {
 				 	if (--domCheckCount) {
 						// in some browsers (Opera) the iframe DOM is not always traversable when
 						// the onload callback fires, so we loop a bit to accommodate
-						log('requeing onLoad callback, DOM not available');
+				 		log('requeing onLoad callback, DOM not available');
 						setTimeout(cb, 250);
 						return;
 					}

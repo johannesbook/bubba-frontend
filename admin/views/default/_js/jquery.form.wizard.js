@@ -429,7 +429,7 @@
 		},
 
 		options: {
-			historyEnabled	: false,
+	   		historyEnabled	: false,
 			validationEnabled : false,
 			validationOptions : undefined,
 			formPluginEnabled : false,
