@@ -1,57 +1,437 @@
 /*
- * jQuery wizard plug-in 2.0.1
+ * jQuery wizard plug-in 3.0.5
  *
  *
- * Copyright (c) 2010 Jan Sundman (jan.sundman[at]aland.net)
+ * Copyright (c) 2011 Jan Sundman (jan.sundman[at]aland.net)
+ *
+ * http://www.thecodemine.org
  *
  * Licensed under the MIT licens:
  *   http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  */
-   
+
+
 (function($){
-	
-  $.fn.formwizard = function(wizardSettings, validationSettings, formOptions){
+	$.widget("ui.formwizard", {
 
-	var form = $(this);
-	var steps = form.find(".step");
+		_init: function() {
 
-	switch(arguments[0]){
-		case "state":
-			return getWizardState();
-		case "reset":
-			resetWizard();
-			return $(this);
-		case "show":
-			(form[0].settings.historyEnabled)?$.historyLoad("_" + arguments[1].substr(arguments[1].indexOf("#") + 1)):show("_" + arguments[1].substr(arguments[1].indexOf("#") + 1));
-			return $(this);
-		case "destroy":
-			destroy();
-			return $(this);
-		default:
-			if(form[0].settings === undefined){
-				initialize();
-			}
-	}
-
-	function initialize(){
-		var formOptionsSuccess = (formOptions)?formOptions.success:undefined;
-		form[0].formSettings = $.extend(formOptions,{
-		success	: function(data){ 
-				if(formOptions && formOptions.resetForm || !formOptions){
-					resetWizard();
+			var wizard = this;
+			var formOptionsSuccess = this.options.formOptions.success;
+			var formOptionsComplete = this.options.formOptions.complete;
+			var formOptionsBeforeSend = this.options.formOptions.beforeSend;
+			var formOptionsBeforeSubmit = this.options.formOptions.beforeSubmit;
+			var formOptionsBeforeSerialize = this.options.formOptions.beforeSerialize;
+			this.options.formOptions = $.extend(this.options.formOptions,{
+				success	: function(responseText, textStatus, xhr){
+					if(formOptionsSuccess){
+						formOptionsSuccess(responseText, textStatus, xhr);
+					}
+					if(wizard.options.formOptions && wizard.options.formOptions.resetForm || !wizard.options.formOptions){
+						wizard._reset();
+					}
+				},
+				complete : function(xhr, textStatus){
+					if(formOptionsComplete){
+						formOptionsComplete(xhr, textStatus);
+					}
+					wizard._enableNavigation();
+				},
+				beforeSubmit : function(arr, theForm, options) {
+					if(formOptionsBeforeSubmit){
+						var shouldSubmit = formOptionsBeforeSubmit(arr, theForm, options);
+						if(!shouldSubmit)
+							wizard._enableNavigation();
+						return shouldSubmit;
+					}
+				},
+				beforeSend : function(xhr) {
+					if(formOptionsBeforeSend){
+						var shouldSubmit = formOptionsBeforeSend(xhr);
+						if(!shouldSubmit)
+							wizard._enableNavigation();
+						return shouldSubmit;
+					}
+				},
+				beforeSerialize: function(form, options) {
+					if(formOptionsBeforeSerialize){
+						var shouldSubmit = formOptionsBeforeSerialize(form, options);
+						if(!shouldSubmit)
+							wizard._enableNavigation();
+						return shouldSubmit;
+					}
 				}
-				if(formOptionsSuccess){
-					formOptionsSuccess(data);
+			});
+
+			this.steps = this.element.find(".step").hide();
+
+			this.firstStep = this.steps.eq(0).attr("id");
+			this.activatedSteps = new Array();
+			this.isLastStep = false;
+			this.previousStep = undefined;
+			this.currentStep = this.steps.eq(0).attr("id");
+			this.nextButton	= this.element.find(this.options.next)
+					.click(function() {
+						return wizard._next();
+					});
+
+			this.nextButtonInitinalValue = this.nextButton.val();
+			this.nextButton.val(this.options.textNext);
+
+				this.backButton	= this.element.find(this.options.back)
+					.click(function() {
+						wizard._back();return false;
+					});
+
+				this.backButtonInitinalValue = this.backButton.val();
+				this.backButton.val(this.options.textBack);
+
+			if(this.options.validationEnabled && jQuery().validate  == undefined){
+				this.options.validationEnabled = false;
+				if( (window['console'] !== undefined) ){
+					console.log("%s", "validationEnabled option set, but the validation plugin is not included");
+				}
+			}else if(this.options.validationEnabled){
+				this.element.validate(this.options.validationOptions);
+			}
+			if(this.options.formPluginEnabled && jQuery().ajaxSubmit == undefined){
+				this.options.formPluginEnabled = false;
+				if( (window['console'] !== undefined) ){
+					console.log("%s", "formPluginEnabled option set but the form plugin is not included");
+				}
+			}
+
+			if(this.options.disableInputFields == true){
+				$(this.steps).find(":input:not('.wizard-ignore')").attr("disabled","disabled");
+			}
+
+			if(this.options.historyEnabled){
+				$(window).bind('hashchange', undefined, function(event){
+					var hashStep = event.getState( "_" + $(wizard.element).attr( 'id' )) || wizard.firstStep;
+					if(hashStep !== wizard.currentStep){
+						if(wizard.options.validationEnabled && hashStep === wizard._navigate(wizard.currentStep)){
+							if(!wizard.element.valid()){
+								wizard._updateHistory(wizard.currentStep);
+								wizard.element.validate().focusInvalid();
+
+								return false;
+							}
+						}
+						if(hashStep !== wizard.currentStep)
+							wizard._show(hashStep);
+					}
+				});
+			}
+
+			this.element.addClass("ui-formwizard");
+			this.element.find(":input").addClass("ui-wizard-content");
+			this.steps.addClass("ui-formwizard-content");
+			this.backButton.addClass("ui-formwizard-button ui-wizard-content");
+			this.nextButton.addClass("ui-formwizard-button ui-wizard-content");
+
+			if(!this.options.disableUIStyles){
+				this.element.addClass("ui-helper-reset ui-widget ui-widget-content ui-helper-reset ui-corner-all");
+				this.element.find(":input").addClass("ui-helper-reset ui-state-default");
+				this.steps.addClass("ui-helper-reset ui-corner-all");
+				this.backButton.addClass("ui-helper-reset ui-state-default");
+				this.nextButton.addClass("ui-helper-reset ui-state-default");
+			}
+			this._show(undefined);
+			return $(this);
+		},
+
+		_next : function(){
+			if(this.options.validationEnabled){
+				if(!this.element.valid()){
+					this.element.validate().focusInvalid();
+					return false;
+				}
+			}
+
+			if(this.options.remoteAjax != undefined){
+				var options = this.options.remoteAjax[this.currentStep];
+				var wizard = this;
+				if(options !== undefined){
+					var success = options.success;
+					var beforeSend = options.beforeSend;
+					var complete = options.complete;
+
+					options = $.extend({},options,{
+						success: function(data, statusText){
+							if((success !== undefined && success(data, statusText)) || (success == undefined)){
+								wizard._continueToNextStep();
+							}
+						},
+						beforeSend : function(xhr){
+							wizard._disableNavigation();
+							if(beforeSend !== undefined)
+								beforeSend(xhr);
+							$(wizard.element).trigger('before_remote_ajax', {"currentStep" : wizard.currentStep});
+						},
+						complete : function(xhr, statusText){
+							if(complete !== undefined)
+								complete(xhr, statusText);
+							$(wizard.element).trigger('after_remote_ajax', {"currentStep" : wizard.currentStep});
+							wizard._enableNavigation();
+						}
+					})
+					this.element.ajaxSubmit(options);
+					return false;
+				}
+			}
+
+			return this._continueToNextStep();
+		},
+
+		_back : function(){
+			if(this.activatedSteps.length > 0){
+				if(this.options.historyEnabled){
+					this._updateHistory(this.activatedSteps[this.activatedSteps.length - 2]);
 				}else{
-					alert("success");
+					this._show(this.activatedSteps[this.activatedSteps.length - 2], true);
 				}
 			}
-		});
-	
-		form[0].settings = $.extend({
+			return false;
+		},
+
+		_continueToNextStep : function(){
+			if(this.isLastStep){
+				for(var i = 0; i < this.activatedSteps.length; i++){
+					this.steps.filter("#" + this.activatedSteps[i]).find(":input").not(".wizard-ignore").removeAttr("disabled");
+				}
+				if(!this.options.formPluginEnabled){
+					return true;
+				}else{
+					this._disableNavigation();
+					this.element.ajaxSubmit(this.options.formOptions);
+					return false;
+				}
+			}
+
+			var step = this._navigate(this.currentStep);
+			if(step == this.currentStep){
+				return false;
+			}
+			if(this.options.historyEnabled){
+				this._updateHistory(step);
+			}else{
+				this._show(step, true);
+			}
+			return false;
+		},
+
+		_updateHistory : function(step){
+			var state = {};
+			state["_" + $(this.element).attr('id')] = step;
+			$.bbq.pushState(state);
+		},
+
+		_disableNavigation : function(){
+			this.nextButton.attr("disabled","disabled");
+			this.backButton.attr("disabled","disabled");
+			if(!this.options.disableUIStyles){
+				this.nextButton.removeClass("ui-state-active").addClass("ui-state-disabled");
+				this.backButton.removeClass("ui-state-active").addClass("ui-state-disabled");
+			}
+		},
+
+		_enableNavigation : function(){
+			if(this.isLastStep){
+				this.nextButton.val(this.options.textSubmit);
+			}else{
+				this.nextButton.val(this.options.textNext);
+			}
+
+			if($.trim(this.currentStep) !== this.steps.eq(0).attr("id")){
+				this.backButton.removeAttr("disabled");
+				if(!this.options.disableUIStyles){
+					this.backButton.removeClass("ui-state-disabled").addClass("ui-state-active");
+				}
+			}
+
+			this.nextButton.removeAttr("disabled");
+			if(!this.options.disableUIStyles){
+				this.nextButton.removeClass("ui-state-disabled").addClass("ui-state-active");
+			}
+		},
+
+		_animate : function(oldStep, newStep, stepShownCallback){
+			this._disableNavigation();
+			var old = this.steps.filter("#" + oldStep);
+			var current = this.steps.filter("#" + newStep);
+			old.find(":input").not(".wizard-ignore").attr("disabled","disabled");
+			current.find(":input").not(".wizard-ignore").removeAttr("disabled");
+			var wizard = this;
+			old.animate(wizard.options.outAnimation, wizard.options.outDuration, wizard.options.easing, function(){
+				current.animate(wizard.options.inAnimation, wizard.options.inDuration, wizard.options.easing, function(){
+					if(wizard.options.focusFirstInput)
+						current.find(":input:first").focus();
+					wizard._enableNavigation();
+
+					stepShownCallback.apply(wizard);
+				});
+				return;
+			});
+		},
+
+		_checkIflastStep : function(step){
+			this.isLastStep = false;
+			if($("#" + step).hasClass(this.options.submitStepClass) || this.steps.filter(":last").attr("id") == step){
+				this.isLastStep = true;
+			}
+		},
+
+		_getLink : function(step){
+			var link = undefined;
+			var links = this.steps.filter("#" + step).find(this.options.linkClass);
+
+			if(links != undefined){
+				if(links.filter(":radio,:checkbox").size() > 0){
+					link = links.filter(this.options.linkClass + ":checked").val();
+				}else{
+					link = $(links).val();
+				}
+			}
+			return link;
+		},
+
+		_navigate : function(step){
+			var link = this._getLink(step);
+			if(link != undefined){
+				if((link != "" && link != null && link != undefined) && this.steps.filter("#" + link).attr("id") != undefined){
+					return link;
+				}
+				return this.currentStep;
+			}else if(link == undefined && !this.isLastStep){
+				var step1 =  this.steps.filter("#" + step).next().attr("id");
+				return step1;
+			}
+		},
+
+		_show : function(step){
+			var backwards = false;
+			var triggerStepShown = step !== undefined;
+			if(step == undefined || step == ""){
+					this.activatedSteps.pop();
+					step = this.firstStep;
+					this.activatedSteps.push(step);
+			}else{
+				if($.inArray(step, this.activatedSteps) > -1){
+					backwards = true;
+					this.activatedSteps.pop();
+				}else {
+					this.activatedSteps.push(step);
+				}
+			}
+
+			if(this.currentStep !== step || step === this.firstStep){
+				this.previousStep = this.currentStep;
+				this._checkIflastStep(step);
+				this.currentStep = step;
+				var stepShownCallback = function(){if(triggerStepShown)$(this.element).trigger('step_shown', $.extend({"isBackNavigation" : backwards},this._state()));};
+				this._animate(this.previousStep, step, stepShownCallback);
+			};
+
+
+		},
+
+	   _reset : function(){
+			this.element.resetForm()
+			$("label,:input,textarea",this).removeClass("error");
+			for(var i = 0; i < this.activatedSteps.length; i++){
+				this.steps.filter("#" + this.activatedSteps[i]).hide().find(":input").attr("disabled","disabled");
+			}
+			this.activatedSteps = new Array();
+			this.previousStep = undefined;
+			this.isLastStep = false;
+			if(this.options.historyEnabled){
+				this._updateHistory(this.firstStep);
+			}else{
+				this._show(this.firstStep);
+			}
+
+		},
+
+		_state : function(state){
+			var currentState = { "settings" : this.options,
+				"activatedSteps" : this.activatedSteps,
+				"isLastStep" : this.isLastStep,
+				"isFirstStep" : this.currentStep === this.firstStep,
+				"previousStep" : this.previousStep,
+				"currentStep" : this.currentStep,
+				"backButton" : this.backButton,
+				"nextButton" : this.nextButton,
+				"steps" : this.steps,
+				"firstStep" : this.firstStep
+			}
+
+			if(state !== undefined)
+				return currentState[state];
+
+			return currentState;
+		},
+
+	  /*Methods*/
+
+		show : function(step){
+			if(this.options.historyEnabled){
+				this._updateHistory(step);
+			}else{
+				this._show(step);
+			}
+		},
+
+		state : function(state){
+			return this._state(state);
+		},
+
+		reset : function(){
+			this._reset();
+		},
+
+		next : function(){
+			this._next();
+		},
+
+		back : function(){
+			this._back();
+		},
+
+		destroy: function() {
+			this.element.find("*").removeAttr("disabled").show();
+			this.nextButton.unbind("click").val(this.nextButtonInitinalValue).removeClass("ui-state-disabled").addClass("ui-state-active");
+			this.backButton.unbind("click").val(this.backButtonInitinalValue).removeClass("ui-state-disabled").addClass("ui-state-active");
+			this.backButtonInitinalValue = undefined;
+			this.nextButtonInitinalValue = undefined;
+			this.activatedSteps = undefined;
+			this.previousStep = undefined;
+			this.currentStep = undefined;
+			this.isLastStep = undefined;
+			this.options = undefined;
+			this.nextButton = undefined;
+			this.backButton = undefined;
+			this.formwizard = undefined;
+			this.element = undefined;
+			this.steps = undefined;
+			this.firstStep = undefined;
+		},
+
+		update_steps : function(){
+			this.steps = this.element.find(".step").addClass("ui-formwizard-content");
+			this.steps.not("#" + this.currentStep).hide().find(":input").addClass("ui-wizard-content").attr("disabled","disabled");
+			this._checkIflastStep(this.currentStep);
+			this._enableNavigation();
+			if(!this.options.disableUIStyles){
+				this.steps.addClass("ui-helper-reset ui-corner-all");
+				this.steps.find(":input").addClass("ui-helper-reset ui-state-default");
+			}
+		},
+
+		options: {
 			historyEnabled	: false,
 			validationEnabled : false,
+			validationOptions : undefined,
 			formPluginEnabled : false,
 			linkClass	: ".link",
 			submitStepClass : "submit_step",
@@ -60,283 +440,17 @@
 			textSubmit : 'Submit',
 			textNext : 'Next',
 			textBack : 'Back',
-			afterNext: undefined,
-			afterBack: undefined,
-			serverSideValidationUrls : undefined,
-			inAnimation : 'fadeIn',
-			outAnimation : 'fadeOut',
+			remoteAjax : undefined,
+			inAnimation : {opacity: 'show'},
+			outAnimation: {opacity: 'hide'},
+			inDuration : 400,
+			outDuration: 400,
+			easing: 'swing',
 			focusFirstInput : false,
 			disableInputFields : true,
-			showBackOnFirstStep : false
-		}, wizardSettings);	
-		
-		form[0].activatedSteps = new Array();
-		form[0].isLastStep = false;
-		form[0].previousStep = undefined;
-		form[0].currentStep = steps.eq(0).attr("id");	
-		form[0].backButton	= typeof form[0].settings.back.jquery != 'undefined' ? form[0].settings.back : form.find(form[0].settings.back);
-		form[0].nextButton	= typeof form[0].settings.next.jquery != 'undefined' ? form[0].settings.next : form.find(form[0].settings.next);	
-		form[0].backButton.button();
-		form[0].nextButton.button();
-		form[0].originalResetValue = form[0].backButton.button('option', 'label');
-		form[0].originalSubmitValue = form[0].nextButton.button('option', 'label');
-
-		if(form[0].settings.validationEnabled && jQuery().validate  == undefined){
-			form[0].settings.validationEnabled = false;
-			alert("the validation plugin needs to be included");
-		}else if(form[0].settings.validationEnabled){
-			form.validate(validationSettings);
+			formOptions : { reset: true, success: function(data) { if( (window['console'] !== undefined) ){console.log("%s", "form submit successful");}},
+			disableUIStyles : false
 		}
-	
-		if(form[0].settings.formPluginEnabled && jQuery().ajaxSubmit == undefined){
-			form[0].settings.formPluginEnabled = false;
-			alert("the form plugin needs to be included");
-		}
-		
-		steps.hide();
-		if(form[0].settings.disableInputFields == true){
-			$(steps).find(":input").attr("disabled","disabled");
-		}
-		
-		if(form[0].settings.historyEnabled && $.historyInit  == undefined){
-			form[0].settings.historyEnabled = false;
-			alert("the history plugin needs to be included");
-		}else if(form[0].settings.historyEnabled){
-			$.historyInit(show);
-			$.historyLoad("_" + form[0].currentStep);
-		}else{
-			show(undefined);
-		}
-		form[0].initialized = true;
-		form[0].backButton.button('option', 'label', form[0].settings.textBack);
-		return $(this);
-	}
-
-	form[0].nextButton.click(function(){		
-		if(form[0].settings.validationEnabled){
-			if(!form.valid()){form.validate().focusInvalid();return false;}
-		}
-		if(form[0].isLastStep){ 
-			for(var i = 0; i < form[0].activatedSteps.length; i++){
-				steps.filter("#" + form[0].activatedSteps[i]).find(":input").removeAttr("disabled");
-			}
-			if(form[0].settings.formPluginEnabled){
-				form[0].initialized = false;
-				form.ajaxSubmit(form[0].formSettings);
-				return false;
-			}
-			form.submit();
-			return false;
-		}
-
-		if(form[0].settings.serverSideValidationUrls){
-		  var options = form[0].settings.serverSideValidationUrls[form[0].currentStep];
-			if(options != undefined){ 
-			  var success = options.success;
-				$.extend(options,{success: function(data, statusText){
-						if((success != undefined && success(data, statusText)) || (success == undefined)){
-							continueToNextStep();
-						}
-					}})
-				form.ajaxSubmit(options);
-				return false;
-			}
-		}
-		continueToNextStep();
-		
-		return false;
-	});
-
-	form[0].backButton.click(function(){
-		if(form[0].settings.historyEnabled && form[0].activatedSteps.length > 0){
-			history.back();
-		}else if(form[0].activatedSteps.length > 0){
-			show("_" + form[0].activatedSteps[form[0].activatedSteps.length - 2]);
-		}
-
-		return false;
-	});
-
-	function continueToNextStep(){
-		form[0].initialized = true;
-		var step = navigate(form[0].currentStep);
-		if(step == form[0].currentStep){
-			animate(step,step);
-			return;
-		}
-		if(form[0].settings.historyEnabled){
-			$.historyLoad("_" + step);
-		}else{
-			show("_" + step);
-		}
-	}
-
-	function disableNavigation(){
-		form[0].nextButton.button("disable");
-		form[0].backButton.button("disable");
-	}
-	
-	function enableNavigation(){
-		if(form[0].isLastStep){
-			form[0].nextButton.button('option', 'label', form[0].settings.textSubmit);
-		}else{
-			form[0].nextButton.button('option', 'label', form[0].settings.textNext);
-		}
-		if( ! form[0].currentStep || form[0].currentStep !== steps.eq(0).attr("id") ){
-			form[0].backButton.button('enable').show();
-		}else if(!form[0].settings.showBackOnFirstStep){
-			form[0].backButton.hide();
-		}
-				
-		form[0].nextButton.button('enable');
-	}
-
-	function animate(oldStep, newStep){
-		disableNavigation();
-		var old = steps.filter("#" + oldStep);
-		var current = steps.filter("#" + newStep);
-		old.find(":input").attr("disabled","disabled");
-		current.find(":input").removeAttr("disabled");
-
-		if(form[0].settings.historyEnabled){
-			old[form[0].settings.outAnimation](0);
-			current[form[0].settings.inAnimation](400,function(){
-				if(form[0].settings.focusFirstInput)
-						current.find(":input:first").focus();
-				enableNavigation();						
-			});
-			return;
-		}
-		
-		old[form[0].settings.outAnimation](400, function(){
-			current[form[0].settings.inAnimation](400,function(){
-				if(form[0].settings.focusFirstInput)
-					current.find(":input:first").focus();
-				enableNavigation();
-			});		
-		});
-	}
-
-	function checkIflastStep(step){
-		form[0].isLastStep = false;
-		if($("#" + step).hasClass(form[0].settings.submitStepClass) || steps.filter(":last").attr("id") == step){
-			form[0].isLastStep = true;
-		}
-	}
-
-	function getLink(step){
-		var link = undefined;
-		var links = steps.filter("#" + step).find(form[0].settings.linkClass);
-
-		if(links != undefined && links.length == 1){
-			link = $(links).val();
-		}else if(links != undefined && links.length > 1){ 
-			link = links.filter(form[0].settings.linkClass + ":checked").val();
-		}else{
-			link = undefined;
-		}
-		return link;
-	}
-
-	function navigate(step){
-		var link = getLink(step);
-		if(link != undefined){
-			if((link != "" && link != null && link != undefined) && steps.filter("#" + link).attr("id") != undefined){
-				return link;
-			}
-			return form[0].currentStep;				
-		}else if(link == undefined && !form[0].isLastStep){	
-			var currentStepIndex = steps.index($("#" + form[0].currentStep));
-			return steps.filter(":eq(" + (1 * currentStepIndex + 1)  + ")").attr("id");
-		}
-	}
-	
-	function show(step){
-		var backwards = false;
-		if(step == undefined || step == ""){ 
-				form[0].activatedSteps.pop();
-				step = $(steps).eq(0).attr("id");
-				form[0].activatedSteps.push(step);
-		}else{	
-			step = step.substr(1);
-			if(form[0].activatedSteps[form[0].activatedSteps.length - 2] == step){
-				backwards = true;
-				form[0].activatedSteps.pop();
-			}else {
-				form[0].activatedSteps.push(step);
-			}
-		}
-		var oldStep = form[0].currentStep;
-		checkIflastStep(step);
-		form[0].previousStep = oldStep;
-		form[0].currentStep = step;
-		animate(oldStep, step);	
-		if(backwards){
-			if(form[0].settings.afterBack)	
-				form[0].settings.afterBack({"currentStep" : form[0].currentStep, 
-													"previousStep" : form[0].previousStep,
-													"isLastStep" : form[0].isLastStep, 
-													"activatedSteps" : form[0].activatedSteps});
-		}else if(form[0].initialized){
-			if(form[0].settings.afterNext)
-				form[0].settings.afterNext({"currentStep" : form[0].currentStep, 
-														"previousStep" : form[0].previousStep,
-														"isLastStep" : form[0].isLastStep, 
-														"activatedSteps" : form[0].activatedSteps});
-		}
-		
-	}
-		
-	function resetWizard(){
-		form[0].reset()
-		$("label,:input,textarea",this).removeClass("error");		
-		for(var i = 0; i < form[0].activatedSteps.length; i++){
-			steps.filter("#" + form[0].activatedSteps[i]).hide().find(":input").attr("disabled","disabled");
-		}
-		form[0].activatedSteps = new Array();
-		form[0].previousStep = undefined;	
-		form[0].isLastStep = false;	
-		var step = steps.eq(0).attr("id");
-		if(form[0].settings.historyEnabled){
-			$.historyLoad("_" + step);
-		}else{
-			show("_" + step);
-		}		
-	}
-	
-	function getWizardState(){
-		return { "settings" : form[0].settings,
-			"activatedSteps" : form[0].activatedSteps,
-			"isLastStep" : form[0].isLastStep,
-			"previousStep" : form[0].previousStep,
-			"currentStep" : form[0].currentStep,
-			"backButton" : form[0].backButton,
-			"nextButton" :form[0].nextButton
-		}
-	}
-	
-	function destroy(){
-		form[0].reset();
-		$(steps).show();
-		if(form[0].settings.disableInputFields == true){
-			$(steps).find(":input").removeAttr("disabled");
-		}
-
-		form[0].backButton.button('enable').button('option', 'label', form[0].originalResetValue).show();
-		form[0].nextButton.button('option', 'label', form[0].originalSubmitValue);
-		form[0].nextButton.unbind("click");
-		form[0].backButton.unbind("click")
-		form[0].activatedSteps = undefined;
-		form[0].previousStep = undefined;
-		form[0].currentStep = undefined;
-		form[0].isLastStep = undefined;
-		form[0].settings = undefined;
-		form[0].nextButton = undefined;
-		form[0].backButton = undefined;
-		form[0].formwizard = undefined;
-		form[0] = undefined;
-		steps = undefined;
-		form = undefined;
-	}
-};
+   }
+ });
 })(jQuery);

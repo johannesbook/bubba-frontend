@@ -8,15 +8,15 @@ $(function(){
             'minWidth': 600,
             'minHeight': 300,
             'resizable': true,
-            'position': ['center',200]
-        },
+			'position': ['center',200]
+		},
         'edit': {
             'width': 600,
             //            'height': 500,
             'minWidth': 600,
             'minHeight': 300,
             'resizable': true,
-            'position': ['center',200]
+			'position': ['center',200]
         }
     };
 
@@ -24,29 +24,41 @@ $(function(){
         'create': [
             {
                 'text': _("Next"),
-                options: {
-                    'class': 'ui-next-button ui-element-width-50'
-                }
+				'class': 'ui-next-button ui-element-width-50',
+				'click': function() {
+					if($("#fn-backup-create")) {
+						$("#fn-backup-create").formwizard('next');
+					}
+				}
             },
             {
                 'text': _("Back"),
-                options: {
-                    'class': 'ui-prev-button ui-element-width-50'
-                }
+				'class': 'ui-prev-button ui-element-width-50',
+				'click': function() {
+					if($("#fn-backup-create")) {
+						$("#fn-backup-create").formwizard('back');
+					}
+				}
             }
         ],
         'edit': [
             {
                 'text': _("Next"),
-                options: {
-                    'class': 'ui-next-button ui-element-width-50'
-                }
+				'class': 'ui-next-button ui-element-width-50',
+				'click': function() {
+					if($("#fn-backup-edit")) {
+						$("#fn-backup-edit").formwizard('next');
+					}
+				}
             },
             {
                 'text': _("Back"),
-                options: {
-                    'class': 'ui-prev-button ui-element-width-50'
-                }
+				'class': 'ui-prev-button ui-element-width-50',
+				'click': function() {
+					if($("#fn-backup-edit")) {
+						$("#fn-backup-edit").formwizard('back');
+					}
+				}
             }
         ]
 
@@ -60,8 +72,56 @@ $(function(){
     var dialog_onclose = {
     };
 
-    var dialog_pre_open_callbacks = {
-    };
+	var dialog_pre_open_callbacks = {
+		create : function(){ // when the dialog is opened
+			var buttons = dialogs.create.dialog('widget').find(".ui-dialog-buttonset button"); // cache the buttons
+			buttons.eq(1).button("disable"); // disable the back button (on the first step)
+			buttons.eq(0).click(function(){ // when Next is clicked
+				if($("#fn-backup-create").formwizard("option", "validationEnabled") && !$("#fn-backup-create").validate().numberOfInvalids()){ // if statement needed if validation is enabled
+					buttons.button("disable"); // disable the buttons to prevent double click
+				}
+			});
+
+			buttons.eq(1).click(function(){ // when Back is clicked
+				buttons.button("disable"); // disable the buttons to prevent double click
+			});
+
+			$("#fn-backup-create").bind("step_shown", function(e,data){ // when a step is shown..
+				buttons.button("enable"); // enable the dialog buttons
+
+				if(data.isLastStep){ // if last step
+					buttons.eq(0).text($("#fn-backup-create").formwizard("option","textSubmit")); // change text of the button to 'Submit' and return
+				}else if(data.isFirstStep){ // if first step
+					buttons.eq(1).button("disable"); // disable the Back button
+				}
+				buttons.eq(0).text($("#fn-backup-create").formwizard("option","textNext")); // set the text of the Next button to 'Next'
+			});
+		},
+		edit : function(){ // when the dialog is opened
+			var buttons = dialogs.edit.dialog('widget').find(".ui-dialog-buttonset button"); // cache the buttons
+			buttons.eq(1).button("disable"); // disable the back button (on the first step)
+			buttons.eq(0).click(function(){ // when Next is clicked
+				if($("#fn-backup-edit").formwizard("option", "validationEnabled") && !$("#fn-backup-edit").validate().numberOfInvalids()){ // if statement needed if validation is enabled
+					buttons.button("disable"); // disable the buttons to prevent double click
+				}
+			});
+
+			buttons.eq(1).click(function(){ // when Back is clicked
+				buttons.button("disable"); // disable the buttons to prevent double click
+			});
+
+			$("#fn-backup-edit").bind("step_shown", function(e,data){ // when a step is shown..
+				buttons.button("enable"); // enable the dialog buttons
+
+				if(data.isLastStep){ // if last step
+					buttons.eq(0).text($("#fn-backup-edit").formwizard("option","textSubmit")); // change text of the button to 'Submit' and return
+				}else if(data.isFirstStep){ // if first step
+					buttons.eq(1).button("disable"); // disable the Back button
+				}
+				buttons.eq(0).text($("#fn-backup-edit").formwizard("option","textNext")); // set the text of the Next button to 'Next'
+			});
+		}
+	};
 
     var dialog_callbacks = {
         'create': function() {
@@ -210,10 +270,8 @@ $(function(){
                 'click': function() {
                     dialog_callbacks[value].apply(dialogs[value], arguments);
                 },
-                options: {
-                    id: 'fn-' + value + '-dialog-button',
-                    'class': 'ui-element-width-100'
-                }
+				id: 'fn-' + value + '-dialog-button',
+				'class': 'ui-element-width-100'
             }];
         }
         if( dialog_onclose[value] ) {
@@ -224,7 +282,6 @@ $(function(){
         );
 
         $("#fn-backup-" + value + "-dialog").submit(function() {
-            $(this).closest('.ui-dialog').find('.ui-dialog-buttonpane').children('button.ui-button').button("disable");
             dialog_callbacks[value].apply(dialogs[value]);
 
             return false;
@@ -232,8 +289,6 @@ $(function(){
     });
 
 
-    var create_buttonpane = dialogs.create.dialog('widget').children('.ui-dialog-buttonpane');
-    var edit_buttonpane = dialogs.edit.dialog('widget').children('.ui-dialog-buttonpane');
 	jQuery.validator.addMethod("alnum", function(value, element, params) {
 		return this.optional(element) || /^[a-z0-9]+$/i.test(value);
 	}, _("Only alphanumreric values are allowed for the name"));
@@ -245,117 +300,118 @@ $(function(){
     }, _("Please enter a valid hostname or IPv4 address"));
 
     $("#fn-backup-create").formwizard(
-        {
-            resetForm: true,
-            historyEnabled: !true,
-            validationEnabled: true,
-            formPluginEnabled: true,
-            back: create_buttonpane.find('.ui-prev-button'),
-            next: create_buttonpane.find('.ui-next-button'),
-            textSubmit: _("Complete"),
-            showBackOnFirstStep: true,
-            afterNext: function(wizardData) {
-                switch( wizardData.currentStep ) {
-                case "fn-backup-create-form-step-2":
-                    $("#fn-backup-create-selection-custom-browse").button('disable');
-                    break;
-                case "fn-backup-create-form-step-3":
-                    $('#fn-backup-create-protocol').change();
-                    break;
-                case "fn-backup-create-form-step-4":
-                    $('.fn-backup-schedule').change();
-                    break;
-                case "fn-backup-create-form-step-5":
-                    $("#fn-backup-create-security-enable").change();
-                    break;
-                }
-            },
-            afterBack: function(wizardData) {
-                if( wizardData.currentStep === "fn-backup-create-form-step-4" ) {
-                    $('.fn-backup-schedule').change();
-                }
-            }
-        },
-        {
-            'rules': {
-                'name': {
-					'alnum': true,
-                    'required': true,
-                    'remote': {
-                        'type': 'POST',
-                        'url': config.prefix + "/ajax_backup/validate"
-                    }
-                },
-                'target-device': {
-                    'required': function(element) {
-                        return $('#fn-backup-create-protocol option:selected').val() == 'file';
-                    }
-                },
-                'target-hostname': {
-                    'hostname': true,
-                    'required': function(element) {
-                        return $('#fn-backup-create-protocol option:selected').val() != 'file';
-                    }
-                },
-                'target-username': {
-                    'required': function(element) {
-                        return $('#fn-backup-create-protocol option:selected').val() != 'file';
-                    }
-                },
-                'target-password': {
-                    'required': function(element) {
-                        return $('#fn-backup-create-protocol option:selected').val() != 'file';
-                    }
-                },
-                'selection': {
-                    'required': true
-                },
-                'protocol': {
-                    'required': true
-                },
-                'schedule-type': {
-                    'required': true
-                },
-                'security-password': {
-                    'required': function(element) {
-                        return $('#fn-backup-create-security-enable').is(':checked');
-                    }
-                },
-                'security-password2': {
-                    'equalTo': '#fn-backup-create-security-password'
-                }
+		{
+			resetForm: true,
+			historyEnabled: !true,
+			validationEnabled: true,
+			formPluginEnabled: true,
+			disableUIStyles: true,
+			textNext: _("Next"),
+			textBack: _("Back"),
+			textSubmit: _("Complete"),
+			showBackOnFirstStep: true,
+			afterNext: function(wizardData) {
+				switch( wizardData.currentStep ) {
+				case "fn-backup-create-form-step-2":
+					$("#fn-backup-create-selection-custom-browse").button('disable');
+					break;
+				case "fn-backup-create-form-step-3":
+					$('#fn-backup-create-protocol').change();
+					break;
+				case "fn-backup-create-form-step-4":
+					$('.fn-backup-schedule').change();
+					break;
+				case "fn-backup-create-form-step-5":
+					$("#fn-backup-create-security-enable").change();
+					break;
+				}
+			},
+			afterBack: function(wizardData) {
+				if( wizardData.currentStep === "fn-backup-create-form-step-4" ) {
+					$('.fn-backup-schedule').change();
+				}
+			},
+			validationOptions: {
+				'rules': {
+					'name': {
+						'alnum': true,
+						'required': true,
+						'remote': {
+							'type': 'POST',
+							'url': config.prefix + "/ajax_backup/validate"
+						}
+					},
+					'target-device': {
+						'required': function(element) {
+							return $('#fn-backup-create-protocol option:selected').val() == 'file';
+						}
+					},
+					'target-hostname': {
+						'hostname': true,
+						'required': function(element) {
+							return $('#fn-backup-create-protocol option:selected').val() != 'file';
+						}
+					},
+					'target-username': {
+						'required': function(element) {
+							return $('#fn-backup-create-protocol option:selected').val() != 'file';
+						}
+					},
+					'target-password': {
+						'required': function(element) {
+							return $('#fn-backup-create-protocol option:selected').val() != 'file';
+						}
+					},
+					'selection': {
+						'required': true
+					},
+					'protocol': {
+						'required': true
+					},
+					'schedule-type': {
+						'required': true
+					},
+					'security-password': {
+						'required': function(element) {
+							return $('#fn-backup-create-security-enable').is(':checked');
+						}
+					},
+					'security-password2': {
+						'equalTo': '#fn-backup-create-security-password'
+					}
 
-            },
-            'messages': {
-                'name': {
-                    'remote': jQuery.format("{0} is already in use")
-                }
-            }
-        },
-        {
-            'url': config.prefix + "/ajax_backup/create",
-            'type': 'post',
-            'dataType': 'json',
-            'beforeSubmit': function(arr, $form, options) {
-                var $custom = $('#fn-backup-create-selection-custom-selection');
-                $.each(
-                    $custom.data('selection'),
-                    function() {
-                        arr.push({'name': 'dirs[]', 'value': this});
-                    }
-                );
-                console.log(arr);
-                //               $.throbber.show();
+				},
+				'messages': {
+					'name': {
+						'remote': jQuery.format("{0} is already in use")
+					}
+				}
+			},
+			formOptions: {
+				'url': config.prefix + "/ajax_backup/create",
+				'type': 'post',
+				'dataType': 'json',
+				'beforeSubmit': function(arr, $form, options) {
+					var $custom = $('#fn-backup-create-selection-custom-selection');
+					$.each(
+						$custom.data('selection'),
+						function() {
+							arr.push({'name': 'dirs[]', 'value': this});
+						}
+					);
+					console.log(arr);
+					//               $.throbber.show();
 
-                return true;
-            },
-            'reset': true,
-            'success': function( data ) {
-                $.throbber.hide();
-                dialogs.create.dialog('close');
-                update_backup_jobs_table();
-            }
-        }
+					return true;
+				},
+				'reset': true,
+				'success': function( data ) {
+					$.throbber.hide();
+					dialogs.create.dialog('close');
+					update_backup_jobs_table();
+				}
+			}
+		}
     );
 
     $("#fn-backup-edit").formwizard(
@@ -364,8 +420,9 @@ $(function(){
             historyEnabled: !true,
             validationEnabled: true,
             formPluginEnabled: true,
-            back: edit_buttonpane.find('.ui-prev-button'),
-            next: edit_buttonpane.find('.ui-next-button'),
+			disableUIStyles: true,
+			textNext: _("Next"),
+			textBack: _("Back"),
             textSubmit: _("Complete"),
             showBackOnFirstStep: true,
             afterNext: function(wizardData) {
@@ -470,7 +527,6 @@ $(function(){
 
         $('#fn-backup-create-selection-custom-selection').data('selection', []);
         dialogs.create.dialog("open");
-        dialogs.create.dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
     });
 
     $(".fn-job-edit").live('click', function(e){
@@ -526,7 +582,6 @@ $(function(){
 
             $('#fn-backup-edit-security-enable').attr('checked', data.GPG_key !== '' ? 'checked' : '');
             $('#fn-backup-edit-security-password, #fn-backup-edit-security-password2').val(data.GPG_key);
-            dialogs.edit.dialog('widget').find('.ui-dialog-buttonpane .ui-prev-button').button('disable');
         }, 'json');
 
         return false;
