@@ -56,10 +56,8 @@ function dialog_login(e) {
 				'click': function() {
 					return postlogin_callback.apply(that, [e])
 				},
-				options: {
-					'id': 'fn-login-dialog-button',
-					'class': 'ui-element-width-100'
-				}
+				'id': 'fn-login-dialog-button',
+				'class': 'ui-element-width-100'
 			}], {
 				dialogClass: "ui-login-dialog",
 				draggable: false,
@@ -95,6 +93,14 @@ function dialog_login(e) {
 							$("input[name=username]", self).focus()
 						}
 					}
+					$("#div-login-dialog input[name=password]").keypress(function(e) {
+						if (e.which == $.ui.keyCode.ENTER) {
+							$("#fn-login-dialog-button").click();
+							return false;
+						}
+						return true;
+					});
+
 
 				}
 			});
@@ -112,13 +118,6 @@ $(document).ready(function() {
 		$('#fn-topnav-logout div:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
 		$('#s-topnav-logout').text(_("Login"));
 	}
-	$("#fn-login-dialog-form input").keypress(function(e) {
-		if (e.which == $.ui.keyCode.ENTER) {
-			$("#fn-login-dialog-button").trigger('click');
-			return false;
-		}
-		return true;
-	});
 
 	$(".fn-require-auth").click(function(e) {
 		dialog_login.apply(this, [e]);
