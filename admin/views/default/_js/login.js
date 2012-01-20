@@ -52,8 +52,8 @@ function dialog_login(e) {
             */
 			$.dialog(
 			$("#div-login-dialog").show(), "", [{
-				'label': _("Login"),
-				'callback': function() {
+				'text': _("Login"),
+				'click': function() {
 					return postlogin_callback.apply(that, [e])
 				},
 				options: {

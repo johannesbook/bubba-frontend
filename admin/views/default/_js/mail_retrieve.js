@@ -120,8 +120,8 @@ $(document).ready(function(){
 				_("Delete email account?"),
 				[
 					{
-						'label': _("Delete"),
-						'callback': function(){edit_dialog_delete_dialog_callback.apply(this,[post_data])},
+						'text': _("Delete"),
+						'click': function(){edit_dialog_delete_dialog_callback.apply(this,[post_data])},
 						options: { id: 'fn-mail-edit-dialog-delete-confirm-button' }
 					}
 				]
@@ -164,8 +164,8 @@ $(document).ready(function(){
 			'',
 			[
 				{
-					'label': _("Add email account"),
-					'callback': add_dialog_button_callback,
+					'text': _("Add email account"),
+					'click': add_dialog_button_callback,
 					options: { id: 'fn-mail-add-dialog-button' }
 				}	
 			],
@@ -177,13 +177,13 @@ $(document).ready(function(){
 			'',
 			[
 				{
-					'label': _("Update"),
-					'callback': edit_dialog_button_update_callback,
+					'text': _("Update"),
+					'click': edit_dialog_button_update_callback,
 					options: { id: 'fn-mail-edit-dialog-button' }
 				},
 				{
-					'label': _("Delete"),
-					'callback': edit_dialog_button_delete_callback,
+					'text': _("Delete"),
+					'click': edit_dialog_button_delete_callback,
 					options: { id: 'fn-mail-edit-dialog-delete-button' }
 				}		
 			],

@@ -18,13 +18,13 @@ $('#fn-wizard-easyfind-name').live('keyup',function(){
 function do_run_wizard(){
     butts = [
         {
-            'label': _("Next"),
+            'text': _("Next"),
             options: {
                 'class': 'ui-next-button ui-element-width-50'
             }
         },
         {
-            'label': _("Back"),
+            'text': _("Back"),
             options: {
                 'class': 'ui-prev-button ui-element-width-50'
             }

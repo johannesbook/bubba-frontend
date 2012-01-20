@@ -38,8 +38,8 @@ $(document).ready( function() {
                             dialog.dialog('option', 'beforeclose', function(){return true});
                             dialog.dialog('option', 'buttons', [
                                 {
-                                    'label': _("Close"),
-                                    'callback': function(){$(this).dialog('close')}
+                                    'text': _("Close"),
+                                    'click': function(){$(this).dialog('close')}
                                 }
                             ]);
                         } else {

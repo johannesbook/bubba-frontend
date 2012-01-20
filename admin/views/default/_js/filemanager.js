@@ -270,7 +270,7 @@ buttons = [{
 	'disabled': false,
 	'type': 'ui-icons ui-icon-plusthick',
 	'alt': _("Create folder"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		dialogs["mkdir"].dialog("open");
 	}
@@ -280,7 +280,7 @@ buttons = [{
 	'disabled': false,
 	'type': 'ui-icons ui-icon-upload',
 	'alt': _("Upload file"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		window.open(config.prefix + "/upload/index" + $("#filetable").filemanager('option', 'root'), "", "width=500,height=250.menubar=no,toolbar=no,location=no,directories=no,personalbar=no,status=no,dialog=yes");
 	}
@@ -290,7 +290,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-download',
 	'alt': _("Download as zip"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		var files = $("#filetable").filemanager('getSelected');
 
@@ -322,7 +322,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-move',
 	'alt': _("Move files"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		copymove_callback.apply(this, ['move']);
 	}
@@ -332,7 +332,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-copy',
 	'alt': _("Copy files"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		copymove_callback.apply(this, ['copy']);
 	}
@@ -342,7 +342,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-pencil',
 	'alt': _("Rename files"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		dialogs["rename"].dialog("open");
 	}
@@ -352,7 +352,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-unlocked',
 	'alt': _("Change permissions"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		dialogs["perm"].dialog("open");
 	}
@@ -362,7 +362,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-album',
 	'alt': _("Add to album"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		dialogs["album"].dialog("open");
 	}
@@ -372,7 +372,7 @@ buttons = [{
 	'disabled': true,
 	'type': 'ui-icons ui-icon-trash ui-filemanager-buttonbar-last',
 	'alt': _("Delete"),
-	'callback': function() {
+	'click': function() {
 		hide_status();
 		dialogs["delete"].dialog("open");
 	}
@@ -498,8 +498,8 @@ $(document).ready(function() {
 		};
 		dialogs[value] = $.dialog(
 		$("#fn-filemanager-" + value + "-dialog"), "", [{
-			'label': button_labels[value],
-			'callback': function() {
+			'text': button_labels[value],
+			'click': function() {
 				dialog_callbacks[value].apply(dialogs[value], arguments)
 			},
 			options: {

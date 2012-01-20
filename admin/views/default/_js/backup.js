@@ -23,13 +23,13 @@ $(function(){
     var dialog_buttons = {
         'create': [
             {
-                'label': _("Next"),
+                'text': _("Next"),
                 options: {
                     'class': 'ui-next-button ui-element-width-50'
                 }
             },
             {
-                'label': _("Back"),
+                'text': _("Back"),
                 options: {
                     'class': 'ui-prev-button ui-element-width-50'
                 }
@@ -37,13 +37,13 @@ $(function(){
         ],
         'edit': [
             {
-                'label': _("Next"),
+                'text': _("Next"),
                 options: {
                     'class': 'ui-next-button ui-element-width-50'
                 }
             },
             {
-                'label': _("Back"),
+                'text': _("Back"),
                 options: {
                     'class': 'ui-prev-button ui-element-width-50'
                 }
@@ -79,7 +79,7 @@ $(function(){
             {},
             function(data) {
                 $.each(data.disks, function(label, partitions) {
-                    var $group = $('<optgroup/>', {'label': label}).appendTo($select);
+                    var $group = $('<optgroup/>', {'text': label}).appendTo($select);
                     $.each(partitions, function() {
                         var partition = this;
                         $('<option/>', {'value': partition.uuid, 'html': partition.label}).appendTo($group);
@@ -206,8 +206,8 @@ $(function(){
             buttons = dialog_buttons[value];
         } else {
             buttons = [{
-                'label': button_labels[value],
-                'callback': function() {
+                'text': button_labels[value],
+                'click': function() {
                     dialog_callbacks[value].apply(dialogs[value], arguments);
                 },
                 options: {
@@ -540,8 +540,8 @@ $(function(){
             _("Remove backup job"),
             [
                 {
-                    'label': _("Remove backup job"),
-                    'callback': function(){
+                    'text': _("Remove backup job"),
+                    'click': function(){
                         var confirm_dialog = $(this);
                         $.throbber.show();
                         $.post(
@@ -578,8 +578,8 @@ $(function(){
             _("Run backup job now"),
             [
                 {
-                    'label': _("Run backup job"),
-                    'callback': function(){
+                    'text': _("Run backup job"),
+                    'click': function(){
                         var confirm_dialog = $(this);
                         $.throbber.show();
                         $.post(
@@ -641,8 +641,8 @@ $(function(){
             _("Restore backed up data"),
             [
                 {
-                    'label': _("Restore selected files and directories"),
-					'callback': function(e) {
+                    'text': _("Restore selected files and directories"),
+					'click': function(e) {
 						if( !$validator.form() ) {
 							$(e.target).closest('button').button('enable');
 							return false;
@@ -658,8 +658,8 @@ $(function(){
                             _("Confirm restore"),
                             [
                                 {
-                                    'label': _("Yes"),
-                                    'callback': function(e) {
+                                    'text': _("Yes"),
+                                    'click': function(e) {
                                         $.throbber.show();
 										var self = this;
                                         $.post(config.prefix + "/ajax_backup/restore",
@@ -678,8 +678,8 @@ $(function(){
                                     }
                                 },
                                 {
-                                    'label': _("No"),
-                                    'callback': function(e) {
+                                    'text': _("No"),
+                                    'click': function(e) {
                                         $(this).dialog('close');
                                     }
                                 }
@@ -756,8 +756,8 @@ $(function(){
                 _("File/Directory selector"),
                 [
                     {
-                        'label': pgettext("button","Select"),
-                        'callback': function() {
+                        'text': pgettext("button","Select"),
+                        'click': function() {
                             $(this).dialog('close');
                         },
                         options: {

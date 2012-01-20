@@ -250,8 +250,8 @@ $(document).ready(function() {
         }));
         $.confirm(
             body, _("Delete user"), [{
-                'label': _("Delete user"),
-                'callback': function() {
+                'text': _("Delete user"),
+                'click': function() {
                     if (userdata_delete.is(':checked')) {
                         post_data.userdata = 'on';
                     }
@@ -292,8 +292,8 @@ $(document).ready(function() {
     add_source_edit_dialog.find('input[name=input_username]').addClass('fn-primary-field');
     add_dialog = $.dialog(
         add_source_edit_dialog, '', [{
-            'label': _("Add new user"),
-            'callback': add_dialog_button_callback,
+            'text': _("Add new user"),
+            'click': add_dialog_button_callback,
             options: {
                 id: 'fn-users-add-dialog-button'
             }
@@ -305,8 +305,8 @@ $(document).ready(function() {
     edit_source_edit_dialog.find('input[name=realname]').addClass('fn-primary-field');
 
     edit_dialog_buttons = [{
-        'label': _("Update"),
-        'callback': edit_dialog_button_update_callback,
+        'text': _("Update"),
+        'click': edit_dialog_button_update_callback,
         options: {
             id: 'fn-users-edit-dialog-button'
         }
@@ -314,8 +314,8 @@ $(document).ready(function() {
 
     if (allowed_to_delete) {
         edit_dialog_buttons.push({
-            'label': _("Delete user"),
-            'callback': open_delete_dialog_callback,
+            'text': _("Delete user"),
+            'click': open_delete_dialog_callback,
             options: {
                 id: 'fn-users-edit-dialog-delete-button'
             }

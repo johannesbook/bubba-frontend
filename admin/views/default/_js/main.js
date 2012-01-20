@@ -140,8 +140,8 @@ function logout_dialog() {
 	
 	var buttons = [
         {
-            'label': _("Logout"),
-			'callback': function(){window.location.href = config.prefix+"/logout";},
+            'text': _("Logout"),
+			'click': function(){window.location.href = config.prefix+"/logout";},
 			options: { 'id': 'fn-logout-dialog-button', 'class' : 'ui-element-width-100' }
 		}
 	];

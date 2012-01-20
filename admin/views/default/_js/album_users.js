@@ -113,8 +113,8 @@ $(document).ready(function(){
 				_("Delete photo album viewer"),
 				[
 					{
-						'label': _("Delete viewer"),
-						'callback': function(){
+						'text': _("Delete viewer"),
+						'click': function(){
 							delete_dialog_button_confirm_callback.apply(this, [post_data])
 						},
 						options: { id: 'fn-users-edit-dialog-delete-confirm-button' }
@@ -153,8 +153,8 @@ $(document).ready(function(){
 			'',
 			[
 				{
-					'label': _("Add new viewer"),
-					'callback': add_dialog_button_callback,
+					'text': _("Add new viewer"),
+					'click': add_dialog_button_callback,
 					options: { id: 'fn-users-add-dialog-button' }
 				}	
 			],
@@ -166,8 +166,8 @@ $(document).ready(function(){
 
 		edit_dialog_buttons = [
 			{
-				'label': _("Update viewer"),
-				'callback': edit_dialog_button_update_callback,
+				'text': _("Update viewer"),
+				'click': edit_dialog_button_update_callback,
 				options: { id: 'fn-users-edit-dialog-button' }
 			}
 		];
@@ -175,8 +175,8 @@ $(document).ready(function(){
 		if( allowed_to_delete ) {
 			edit_dialog_buttons.push(
 				{
-					'label': _("Delete viewer"),
-					'callback': open_delete_dialog_callback,
+					'text': _("Delete viewer"),
+					'click': open_delete_dialog_callback,
 					options: { id: 'fn-users-edit-dialog-delete-button' }
 				}		
 			);
