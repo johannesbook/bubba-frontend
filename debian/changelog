@@ -1,3 +1,10 @@
+bubba-frontend (2.4~pre34) hugo vincent; urgency=low
+
+  * fix truth value deciding if showing login or logout (Closes: #1861)
+  * Fix fixed width buttons (Closes: #1858)
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 23 Jan 2012 14:20:35 +0100
+
 bubba-frontend (2.4~pre33) hugo vincent; urgency=low
 
   * Regression, fix invocation to create buttons
