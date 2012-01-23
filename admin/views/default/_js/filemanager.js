@@ -502,10 +502,8 @@ $(document).ready(function() {
 			'click': function() {
 				dialog_callbacks[value].apply(dialogs[value], arguments)
 			},
-			options: {
-				id: 'fn-' + value + '-dialog-button',
-				'class': 'ui-element-width-100'
-			}
+            id: 'fn-' + value + '-dialog-button',
+            'class': 'ui-element-width-100'
 		}], options);
 
 		$("#fn-filemanager-" + value + "-dialog").submit(function() {

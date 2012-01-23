@@ -142,7 +142,8 @@ function logout_dialog() {
         {
             'text': _("Logout"),
 			'click': function(){window.location.href = config.prefix+"/logout";},
-			options: { 'id': 'fn-logout-dialog-button', 'class' : 'ui-element-width-100' }
+            'id': 'fn-logout-dialog-button',
+            'class' : 'ui-element-width-100'
 		}
 	];
 	$.confirm( 
@@ -235,7 +236,17 @@ $(document).ready( function() {
 
 			div.attr('title', header);
 			div.html(message);
-			div.dialog( options );
+            div.dialog( options );
+            var my_buttons = div.find('.ui-dialog-buttonset button');
+            switch(my_buttons.length) {
+            case 2:
+                my_buttons.addClass('ui-element-width-50');
+                break;
+            case 1:
+                my_buttons.addClass('ui-element-width-100');
+                break;
+            }
+
 			return div;
 		};
 

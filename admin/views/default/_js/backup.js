@@ -618,7 +618,7 @@ $(function(){
                         );
 
                     },
-                    options: { id: 'fn-backup-job-dialog-remove-confirm-button' }
+                    id: 'fn-backup-job-dialog-remove-confirm-button'
                 }
             ]
         );
@@ -658,7 +658,7 @@ $(function(){
                         );
 
                     },
-                    options: { id: 'fn-backup-job-dialog-run-confirm-button' }
+                    id: 'fn-backup-job-dialog-run-confirm-button'
                 }
             ]
         );
@@ -741,9 +741,7 @@ $(function(){
                             ]
                         );
                     },
-                    options: {
-                        'class': 'ui-element-width-100'
-                    }
+                    'class': 'ui-element-width-100'
                 }
             ],
             {
@@ -815,9 +813,7 @@ $(function(){
                         'click': function() {
                             $(this).dialog('close');
                         },
-                        options: {
-                            'class': 'ui-element-width-100'
-                        }
+                        'class': 'ui-element-width-100'
                     }
                 ],
                 {

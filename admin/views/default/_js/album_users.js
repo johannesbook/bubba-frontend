@@ -117,7 +117,7 @@ $(document).ready(function(){
 						'click': function(){
 							delete_dialog_button_confirm_callback.apply(this, [post_data])
 						},
-						options: { id: 'fn-users-edit-dialog-delete-confirm-button' }
+						id: 'fn-users-edit-dialog-delete-confirm-button'
 					}
 				]
 			);
@@ -155,7 +155,7 @@ $(document).ready(function(){
 				{
 					'text': _("Add new viewer"),
 					'click': add_dialog_button_callback,
-					options: { id: 'fn-users-add-dialog-button' }
+					id: 'fn-users-add-dialog-button'
 				}	
 			],
 			dialog_options	
@@ -168,7 +168,7 @@ $(document).ready(function(){
 			{
 				'text': _("Update viewer"),
 				'click': edit_dialog_button_update_callback,
-				options: { id: 'fn-users-edit-dialog-button' }
+				id: 'fn-users-edit-dialog-button'
 			}
 		];
 
@@ -177,7 +177,7 @@ $(document).ready(function(){
 				{
 					'text': _("Delete viewer"),
 					'click': open_delete_dialog_callback,
-					options: { id: 'fn-users-edit-dialog-delete-button' }
+					id: 'fn-users-edit-dialog-delete-button'
 				}		
 			);
 		}

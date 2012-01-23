@@ -257,9 +257,7 @@ $(document).ready(function() {
                     }
                     delete_dialog_button_confirm_callback.apply(this, [post_data])
                 },
-                options: {
-                    id: 'fn-users-edit-dialog-delete-confirm-button'
-                }
+                id: 'fn-users-edit-dialog-delete-confirm-button'
             }]);
     };
 
@@ -294,9 +292,7 @@ $(document).ready(function() {
         add_source_edit_dialog, '', [{
             'text': _("Add new user"),
             'click': add_dialog_button_callback,
-            options: {
-                id: 'fn-users-add-dialog-button'
-            }
+            id: 'fn-users-add-dialog-button'
         }], dialog_options
     );
 
@@ -307,18 +303,14 @@ $(document).ready(function() {
     edit_dialog_buttons = [{
         'text': _("Update"),
         'click': edit_dialog_button_update_callback,
-        options: {
-            id: 'fn-users-edit-dialog-button'
-        }
+        id: 'fn-users-edit-dialog-button'
     }];
 
     if (allowed_to_delete) {
         edit_dialog_buttons.push({
             'text': _("Delete user"),
             'click': open_delete_dialog_callback,
-            options: {
-                id: 'fn-users-edit-dialog-delete-button'
-            }
+            id: 'fn-users-edit-dialog-delete-button'
         });
     }
 
