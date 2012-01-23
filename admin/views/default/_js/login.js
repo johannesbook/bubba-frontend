@@ -114,7 +114,7 @@ function dialog_login(e) {
 
 $(document).ready(function() {
 
-	if(authenticated) {
+	if(!authenticated) {
 		$('#fn-topnav-logout div:first').removeClass("ui-icon-logout").addClass("ui-icon-login");
 		$('#s-topnav-logout').text(_("Login"));
 	}
