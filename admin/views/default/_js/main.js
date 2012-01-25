@@ -237,7 +237,7 @@ $(document).ready( function() {
 			div.attr('title', header);
 			div.html(message);
             div.dialog( options );
-            var my_buttons = div.find('.ui-dialog-buttonset button');
+            var my_buttons = div.dialog('widget').find('.ui-dialog-buttonset button');
             switch(my_buttons.length) {
             case 2:
                 my_buttons.addClass('ui-element-width-50');
