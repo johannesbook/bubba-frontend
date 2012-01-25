@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2012-01-04 17:44+0100\n"
+"POT-Creation-Date: 2012-01-25 15:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin/views/default/main_view.php:120
+#: admin/views/default/main_view.php:117
 #, php-format
 msgid "%s Help"
 msgstr ""
@@ -129,7 +129,7 @@ msgstr ""
 msgid "Admin user not allowed to login on WAN interface."
 msgstr ""
 
-#: admin/views/default/main_view.php:282
+#: admin/views/default/main_view.php:279
 msgid "Administration"
 msgstr ""
 
@@ -268,7 +268,7 @@ msgstr ""
 msgid "Available"
 msgstr ""
 
-#: admin/views/default/main_view.php:301
+#: admin/views/default/main_view.php:298
 msgid "B3 start page"
 msgstr ""
 
@@ -357,7 +357,7 @@ msgctxt "bwlimit"
 msgid "Cable/DSL 768 Kbps"
 msgstr ""
 
-#: admin/views/default/network/network_head_view.php:40
+#: admin/views/default/network/network_head_view.php:38
 #: admin/views/default/disk/disk_head_view.php:19
 #: admin/views/default/disk/disk_head_view.php:55
 #: admin/views/default/disk/disk_head_view.php:58
@@ -440,7 +440,7 @@ msgstr ""
 msgid "Contact information"
 msgstr ""
 
-#: admin/views/default/network/network_head_view.php:36
+#: admin/views/default/network/network_head_view.php:34
 msgid "Continue"
 msgstr ""
 
@@ -830,7 +830,7 @@ msgstr ""
 msgid "Every month"
 msgstr ""
 
-#: admin/views/default/main_view.php:297
+#: admin/views/default/main_view.php:294
 msgid "Excito"
 msgstr ""
 
@@ -1028,7 +1028,7 @@ msgstr ""
 msgid "Format disk"
 msgstr ""
 
-#: admin/controllers/disk.php:68
+#: admin/controllers/disk.php:69
 #: admin/views/default/disk/disk_head_view.php:44
 msgid "Formatting disk"
 msgstr ""
@@ -1050,11 +1050,11 @@ msgstr ""
 msgid "Handle email for domain"
 msgstr ""
 
-#: admin/views/default/main_view.php:283
+#: admin/views/default/main_view.php:280
 msgid "Help"
 msgstr ""
 
-#: admin/models/menu.php:351 admin/views/default/main_view.php:281
+#: admin/models/menu.php:351 admin/views/default/main_view.php:278
 msgid "Home"
 msgstr ""
 
@@ -1306,7 +1306,7 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: admin/views/default/main_view.php:275
+#: admin/views/default/main_view.php:272
 #, php-format
 msgid "Logged in as '%s'"
 msgstr ""
@@ -1315,7 +1315,7 @@ msgstr ""
 msgid "Login required"
 msgstr ""
 
-#: admin/views/default/main_view.php:280
+#: admin/views/default/main_view.php:277
 msgid "Logout"
 msgstr ""
 
@@ -1429,7 +1429,7 @@ msgctxt "menu"
 msgid "Network"
 msgstr ""
 
-#: admin/views/default/network/network_head_view.php:34
+#: admin/views/default/network/network_head_view.php:32
 msgid "Network configuration"
 msgstr ""
 
@@ -1492,7 +1492,7 @@ msgid "Normal operation"
 msgstr ""
 
 #: admin/views/default/filemanager/filemanager_index_view.php:51
-#: admin/views/default/main_view.php:277
+#: admin/views/default/main_view.php:274
 msgid "Not logged in"
 msgstr ""
 
@@ -1730,7 +1730,7 @@ msgstr ""
 msgid "Recover internal disk or add a new external disk to existing RAID array"
 msgstr ""
 
-#: admin/controllers/disk.php:65
+#: admin/controllers/disk.php:66
 msgid "Recovering RAID"
 msgstr ""
 
@@ -1875,7 +1875,7 @@ msgid "Select what you want to backup (step 2 of 5)"
 msgstr ""
 
 #: admin/views/default/services/services_view.php:44
-msgid "Send and recieve"
+msgid "Send and receive"
 msgstr ""
 
 #: admin/views/default/network/network_profile_view.php:27

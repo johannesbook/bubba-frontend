@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bubba-frontend 2.3\n"
 "Report-Msgid-Bugs-To: info@excito.com\n"
-"POT-Creation-Date: 2012-01-04 17:44+0100\n"
+"POT-Creation-Date: 2012-01-25 15:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: admin/views/default/_js/tor.js:174
+#: admin/views/default/_js/tor.js:172
 msgid ""
 "<p>Enabling Tor means that your B3 will be a part of the Tor anonymizing "
 "network. This will allow users all over the world to use your B3 to protect "
@@ -43,11 +43,11 @@ msgstr ""
 msgid "Add new email account"
 msgstr ""
 
-#: admin/views/default/_js/user.js:295
+#: admin/views/default/_js/user.js:293
 msgid "Add new user"
 msgstr ""
 
-#: admin/views/default/_js/user.js:383
+#: admin/views/default/_js/user.js:375
 msgid "Add new user to the system"
 msgstr ""
 
@@ -68,35 +68,36 @@ msgctxt "button"
 msgid "Add to album"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:539
+#: admin/views/default/_js/backup.js:594
 msgid "Are you sure you want to permanently remove this backup job?"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:577
+#: admin/views/default/_js/backup.js:632
 msgid "Are you sure you want to run this backup job now?"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:660
+#: admin/views/default/_js/backup.js:712
 msgid "Are you sure? Any existing files will be overwritten."
 msgstr ""
 
-#: admin/views/default/_js/backup.js:32 admin/views/default/_js/backup.js:46
-#: admin/views/default/_js/wizard.js:27
+#: admin/views/default/_js/backup.js:35 admin/views/default/_js/backup.js:55
+#: admin/views/default/_js/backup.js:310 admin/views/default/_js/backup.js:425
+#: admin/views/default/_js/wizard.js:29 admin/views/default/_js/wizard.js:98
 msgid "Back"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:141
+#: admin/views/default/_js/backup.js:201
 #, javascript-format
 msgid "Backup job %s failed"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:594
+#: admin/views/default/_js/backup.js:649
 msgid ""
 "Backup job has been initialized to be executed at this particlular moment in "
 "time."
 msgstr ""
 
-#: admin/views/default/_js/backup.js:556
+#: admin/views/default/_js/backup.js:611
 msgid "Backup job was removed from the system"
 msgstr ""
 
@@ -118,11 +119,12 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:255 admin/views/default/_js/backup.js:369
+#: admin/views/default/_js/backup.js:311 admin/views/default/_js/backup.js:426
+#: admin/views/default/_js/wizard.js:99
 msgid "Complete"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:661
+#: admin/views/default/_js/backup.js:713
 msgid "Confirm restore"
 msgstr ""
 
@@ -135,7 +137,7 @@ msgstr ""
 msgid "Copy files"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:56
+#: admin/views/default/_js/backup.js:68
 msgctxt "button"
 msgid "Create"
 msgstr ""
@@ -192,7 +194,7 @@ msgid "Delete this user from the system?"
 msgstr ""
 
 #: admin/views/default/_js/user.js:252 admin/views/default/_js/user.js:253
-#: admin/views/default/_js/user.js:317
+#: admin/views/default/_js/user.js:311
 msgid "Delete user"
 msgstr ""
 
@@ -215,7 +217,7 @@ msgid "Download as zip"
 msgstr ""
 
 #: admin/views/default/_js/album_users.js:30
-#: admin/views/default/_js/backup.js:161
+#: admin/views/default/_js/backup.js:221
 #: admin/views/default/_js/mail_retrieve.js:150
 #: admin/views/default/_js/user.js:95
 msgid "Edit"
@@ -238,19 +240,19 @@ msgstr ""
 msgid "Email account updated"
 msgstr ""
 
-#: admin/views/default/_js/wizard.js:151
+#: admin/views/default/_js/wizard.js:162
 msgid "Error applying changes"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:133
+#: admin/views/default/_js/backup.js:193
 msgid "Failed"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:759
+#: admin/views/default/_js/backup.js:809
 msgid "File/Directory selector"
 msgstr ""
 
-#: admin/views/default/_js/wizard.js:150
+#: admin/views/default/_js/wizard.js:161
 msgid "Following errors where encountered when trying to apply the changes: "
 msgstr ""
 
@@ -261,7 +263,7 @@ msgid ""
 "verification\""
 msgstr ""
 
-#: admin/views/default/_js/login.js:55 admin/views/default/_js/login.js:113
+#: admin/views/default/_js/login.js:55 admin/views/default/_js/login.js:119
 msgid "Login"
 msgstr ""
 
@@ -278,12 +280,13 @@ msgstr ""
 msgid "Move files"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:26 admin/views/default/_js/backup.js:40
-#: admin/views/default/_js/wizard.js:21
+#: admin/views/default/_js/backup.js:26 admin/views/default/_js/backup.js:46
+#: admin/views/default/_js/backup.js:309 admin/views/default/_js/backup.js:424
+#: admin/views/default/_js/wizard.js:20 admin/views/default/_js/wizard.js:97
 msgid "Next"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:684
+#: admin/views/default/_js/backup.js:736
 #: admin/views/default/_js/mail_retrieve.js:142
 #: admin/views/default/_js/mail_retrieve.js:143
 #: admin/views/default/_js/user.js:91
@@ -294,7 +297,7 @@ msgstr ""
 msgid "No more system messages available"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:239
+#: admin/views/default/_js/backup.js:294
 msgid "Only alphanumreric values are allowed for the name"
 msgstr ""
 
@@ -307,11 +310,11 @@ msgstr ""
 msgid "Pictures added"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:245
+#: admin/views/default/_js/backup.js:300
 msgid "Please enter a valid hostname or IPv4 address"
 msgstr ""
 
-#: admin/views/default/_js/tor.js:177
+#: admin/views/default/_js/tor.js:175
 msgid "Please note"
 msgstr ""
 
@@ -340,7 +343,7 @@ msgstr ""
 msgid "Proceed to shut down %s?"
 msgstr ""
 
-#: admin/views/default/_js/main.js:150
+#: admin/views/default/_js/main.js:151
 msgid "Proceed with logout?"
 msgstr ""
 
@@ -349,11 +352,11 @@ msgctxt "validation message"
 msgid "Relay port is required"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:157
+#: admin/views/default/_js/backup.js:217
 msgid "Remove"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:540 admin/views/default/_js/backup.js:543
+#: admin/views/default/_js/backup.js:595 admin/views/default/_js/backup.js:598
 msgid "Remove backup job"
 msgstr ""
 
@@ -375,36 +378,36 @@ msgctxt "confirmation button"
 msgid "Restart"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:107
+#: admin/views/default/_js/backup.js:167
 msgid "Restore"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:644
+#: admin/views/default/_js/backup.js:696
 msgid "Restore backed up data"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:647
+#: admin/views/default/_js/backup.js:699
 msgid "Restore selected files and directories"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:581
+#: admin/views/default/_js/backup.js:636
 msgid "Run backup job"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:578
+#: admin/views/default/_js/backup.js:633
 msgid "Run backup job now"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:165
+#: admin/views/default/_js/backup.js:225
 msgid "Run now"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:762
+#: admin/views/default/_js/backup.js:812
 msgctxt "button"
 msgid "Select"
 msgstr ""
 
-#: admin/views/default/_js/wizard.js:157
+#: admin/views/default/_js/wizard.js:168
 msgid "Setup complete. Enjoy!"
 msgstr ""
 
@@ -467,7 +470,7 @@ msgid "Sucessfully added pictures to the album"
 msgstr ""
 
 #: admin/views/default/_js/mail_retrieve.js:180
-#: admin/views/default/_js/user.js:308
+#: admin/views/default/_js/user.js:304
 msgid "Update"
 msgstr ""
 
@@ -483,7 +486,7 @@ msgstr ""
 msgid "Upload file"
 msgstr ""
 
-#: admin/views/default/_js/user.js:275
+#: admin/views/default/_js/user.js:273
 msgid "User deleted"
 msgstr ""
 
@@ -503,7 +506,7 @@ msgstr ""
 msgid "Viewer updated"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:664
+#: admin/views/default/_js/backup.js:716
 #: admin/views/default/_js/mail_retrieve.js:142
 #: admin/views/default/_js/mail_retrieve.js:143
 #: admin/views/default/_js/user.js:91
@@ -542,12 +545,12 @@ msgctxt "validation message"
 msgid "You need to specify contact information"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:57
+#: admin/views/default/_js/backup.js:69
 msgctxt "button"
 msgid "edit"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:136
+#: admin/views/default/_js/backup.js:196
 msgid "why?"
 msgstr ""
 
@@ -555,6 +558,6 @@ msgstr ""
 msgid "your-easyfind-name"
 msgstr ""
 
-#: admin/views/default/_js/backup.js:437
+#: admin/views/default/_js/backup.js:493
 msgid "{0} is already in use"
 msgstr ""
