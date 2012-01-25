@@ -1,3 +1,17 @@
+bubba-frontend (2.4~pre35) hugo vincent; urgency=low
+
+  [ Johannes Book ]
+  * Changed misspelling reieve -> receive
+
+  [ Carl Fürstenberg ]
+  * Remove unused data JS variable (Closes: #1867)
+  * Fix filemanage click action (Closes: #1862)
+  * Fix width of single button dialogs (Closes: #1866)
+  * Fix minor bug in form wizard on destroy (Closes: #1868)
+  * Fix missed updates on backup edit wizard code
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 25 Jan 2012 15:37:21 +0100
+
 bubba-frontend (2.4~pre34) hugo vincent; urgency=low
 
   * fix truth value deciding if showing login or logout (Closes: #1861)
