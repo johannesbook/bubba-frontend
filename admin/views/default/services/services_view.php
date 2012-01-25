@@ -41,7 +41,7 @@
 <table class="ui-table-outline">      
 	<tr><td colspan="2" class="ui-state-default ui-widget-header"><?=_("Email")?></td></tr>
    <tr>
-      <td><label for=""><?=_('Send and recieve')?></label></td>
+      <td><label for=""><?=_('Send and receive')?></label></td>
       <td ><input name="smtp_enabled" type="checkbox" class="slide" value="1" <?= $smtp_status?"checked=\"checked\"":"" ?>/></td>
    </tr>	
    <tr>
