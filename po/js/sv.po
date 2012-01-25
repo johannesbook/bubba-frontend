@@ -44,11 +44,11 @@ msgstr  "Avbryt"
 
 #: admin/views/default/_js/mail_retrieve.js:167
 msgid   "Add email account"
-msgstr  "Lägg till epost-konto"
+msgstr  "Lägg till email-konto"
 
 #: admin/views/default/_js/mail_retrieve.js:232
 msgid   "Add new email account"
-msgstr  "Lägg till nytt epost-konto"
+msgstr  "Lägg till nytt email-konto"
 
 #: admin/views/default/_js/user.js:293
 msgid   "Add new user"
@@ -56,7 +56,7 @@ msgstr  "Lägg till ny användare"
 
 #: admin/views/default/_js/user.js:375
 msgid   "Add new user to the system"
-msgstr  "Lägg till ny användare till systemet"
+msgstr  "Lägg till ny användare"
 
 #: admin/views/default/_js/album_users.js:156
 msgid   "Add new viewer"
@@ -181,12 +181,12 @@ msgstr  "Radera konto för användaren <strong>%s</strong> på servern <strong>"
 
 #: admin/views/default/_js/mail_retrieve.js:120
 msgid   "Delete email account?"
-msgstr  "Radera epost-konto?"
+msgstr  "Radera email-konto?"
 
 #: admin/views/default/_js/mail_server.js:25
 msgctxt "confirmation button"
 msgid   "Delete mail account"
-msgstr  "Radera epost-konto"
+msgstr  "Radera email-konto"
 
 #: admin/views/default/_js/album_users.js:113
 msgid   "Delete photo album viewer"
@@ -237,7 +237,7 @@ msgstr  "Ändra albumanvändare"
 #: admin/views/default/_js/mail_retrieve.js:14
 #, javascript-format
 msgid   "Edit email account information for host <em>%s</em>"
-msgstr  "Ändra epostkontoinformation för värden <em>%s</em>"
+msgstr  "Ändra emailkontoinformation för värden <em>%s</em>"
 
 #: admin/views/default/_js/user.js:107
 msgid   "Edit user"
@@ -245,7 +245,7 @@ msgstr  "Ändra användare"
 
 #: admin/views/default/_js/mail_retrieve.js:69
 msgid   "Email account updated"
-msgstr  "Epost-kontoinformation uppdaterad"
+msgstr  "Email-kontoinformation uppdaterad"
 
 #: admin/views/default/_js/wizard.js:162
 msgid   "Error applying changes"
@@ -416,7 +416,7 @@ msgstr  "Välj"
 
 #: admin/views/default/_js/wizard.js:168
 msgid   "Setup complete. Enjoy!"
-msgstr  "Dina inställningar är sparade. Välkommen! "
+msgstr  "Dina inställningar är nu sparade. Välkommen! "
 
 #: admin/views/default/_js/stat.js:97
 msgid   "Shut down"
@@ -441,7 +441,7 @@ msgstr[1]       "Flytten av filerna eller katalogerna lyckades"
 
 #: admin/views/default/_js/mail_retrieve.js:43
 msgid   "Successfully added new email account"
-msgstr  "Nytt epostkonto tillagt"
+msgstr  "Nytt emailkonto tillagt"
 
 #: admin/views/default/_js/user.js:176
 msgid   "Successfully added new user"
@@ -457,7 +457,7 @@ msgstr  "Katalog skapad"
 
 #: admin/views/default/_js/mail_retrieve.js:93
 msgid   "Successfully deleted email account"
-msgstr  "Epostkontot raderat"
+msgstr  "Emailkontot raderat"
 
 #: admin/views/default/_js/filemanager.js:105
 msgid   "Successfully deleted the files/folders"
