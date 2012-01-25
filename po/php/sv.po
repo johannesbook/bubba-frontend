@@ -3,1099 +3,1088 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-msgid   ""
-msgstr  "Project-Id-Version: bubba-frontend 2.3\n"
-        "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2012-01-25 15:39+0100\n"
-        "PO-Revision-Date: 2011-12-19 23:10+0100\n"
-        "Last-Translator: Johannes Book <johannes@excito.com>\n"
-        "Language-Team: \n"
-        "Language: \n"
-        "MIME-Version: 1.0\n"
-        "Content-Type: text/plain; charset=UTF-8\n"
-        "Content-Transfer-Encoding: 8bit\n"
-        "Plural-Forms: 2\n"
-        "X-Poedit-Language: Swedish\n"
-        "X-Poedit-Country: Sweden\n"
-        "X-Poedit-SourceCharset: utf-8\n"
+msgid ""
+msgstr ""
+"Project-Id-Version: bubba-frontend 2.3\n"
+"Report-Msgid-Bugs-To: info@excito.com\n"
+"POT-Creation-Date: 2012-01-25 15:39+0100\n"
+"PO-Revision-Date: 2012-01-25 16:08+0100\n"
+"Last-Translator: Johannes Book <johannes@excito.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: 2\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: Sweden\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: admin/views/default/main_view.php:117
 #, php-format
-msgid   "%s Help"
-msgstr  "%s Hjälp"
+msgid "%s Help"
+msgstr "%s Hjälp"
 
 #: admin/views/default/network/network_wan_view.php:3
 #: admin/views/default/network/network_lan_view.php:3
 #, php-format
-msgid   "%s is using automatic network settings"
-msgstr  "%s använder automatiska nätverksinställningar"
+msgid "%s is using automatic network settings"
+msgstr "%s använder automatiska nätverksinställningar"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:41
 #, php-format
-msgid   "%s users"
-msgstr  "%s användare"
+msgid "%s users"
+msgstr "%s användare"
 
 #: admin/views/default/network/network_tor_view.php:140
 msgctxt "bwlimit"
-msgid   "&gt; 1.5 Mbps"
-msgstr  "%gt; 1.5 Mbps"
+msgid "&gt; 1.5 Mbps"
+msgstr "%gt; 1.5 Mbps"
 
 #: admin/views/default/settings/settings_identity_view.php:54
-msgid   "'Easyfind' location service"
-msgstr  "'Easyfind' fjärråtkomsttjänst"
+msgid "'Easyfind' location service"
+msgstr "'Easyfind' fjärråtkomsttjänst"
 
 #: admin/views/default/mail/mail_server_view.php:45
-msgid   "(Not recommended, passwords will be sent unencrypted.)"
-msgstr  "(Rekommenderas inte, lösenord kommer att skickas okrypterade.)"
+msgid "(Not recommended, passwords will be sent unencrypted.)"
+msgstr "(Rekommenderas inte, lösenord kommer att skickas okrypterade.)"
 
 #: admin/views/default/network/network_lan_view.php:340
-msgid   "(Please read manual before enabling)"
-msgstr  "(Vänligen läs manualen innan du startar tjänsten)"
+msgid "(Please read manual before enabling)"
+msgstr "(Vänligen läs manualen innan du startar tjänsten)"
 
 #: admin/views/default/network/network_wlan_view.php:89
 #: admin/views/default/network/network_wlan_view.php:92
-msgid   "2.4GHz band used by 802.11g"
-msgstr  "2.4 GHz-bandet används av 802.11g"
+msgid "2.4GHz band used by 802.11g"
+msgstr "2.4 GHz-bandet används av 802.11g"
 
 #: admin/views/default/network/network_wlan_view.php:156
-msgid   "20MHz"
-msgstr  "20 MHz"
+msgid "20MHz"
+msgstr "20 MHz"
 
 #: admin/views/default/network/network_wlan_view.php:159
-msgid   "40MHz"
-msgstr  "40 MHz"
+msgid "40MHz"
+msgstr "40 MHz"
 
 #: admin/views/default/network/network_wlan_view.php:101
 #: admin/views/default/network/network_wlan_view.php:104
-msgid   "5GHz band used by 802.11a"
-msgstr  "5GHz-bandet används av 802.11a"
+msgid "5GHz band used by 802.11a"
+msgstr "5GHz-bandet används av 802.11a"
 
 #: admin/views/default/disk/disk_lvm_head_view.php:11
-msgid   "<p>This will erase all the data on the new, external device. Click "
-        "'Create LVM' to continue.</p> <p>Note: Removal of the new disk from "
-        "the system will require a full system reinstallation.</p>"
-msgstr  "<p>Detta kommer att radera all data på den nya, externa enheten. "
-        "Klicka på 'Skapa LVM' för att fortsätta. </p> <p>Observera: Om du "
-        "senare tar bort den nya disken från systemet kommer systemet att "
-        "behöva en komplett ominstallation. </p>"
+msgid "<p>This will erase all the data on the new, external device. Click 'Create LVM' to continue.</p> <p>Note: Removal of the new disk from the system will require a full system reinstallation.</p>"
+msgstr "<p>Detta kommer att radera all data på den nya, externa enheten. Klicka på 'Skapa LVM' för att fortsätta. </p> <p>Observera: Om du senare tar bort den nya disken från systemet kommer systemet att behöva en komplett ominstallation. </p>"
 
 #: admin/views/default/album/album_album_view.php:292
-msgid   "Access allowed"
-msgstr  "Åtkomst tillåten"
+msgid "Access allowed"
+msgstr "Åtkomst tillåten"
 
-#: admin/views/default/login_view.php:56 admin/views/default/login_view.php:61
+#: admin/views/default/login_view.php:56
+#: admin/views/default/login_view.php:61
 #, php-format
-msgid   "Access not granted for user '%s'."
-msgstr  "Åtkomst tillåts inte för användaren '%s'."
+msgid "Access not granted for user '%s'."
+msgstr "Åtkomst tillåts inte för användaren '%s'."
 
 #: admin/views/default/stat/stat_view.php:79
-msgid   "Acknowledge"
-msgstr  "Bekräfta"
+msgid "Acknowledge"
+msgstr "Bekräfta"
 
 #: admin/views/default/downloads/downloads_index_view.php:53
-msgid   "Add"
-msgstr  "Lägg till"
+msgid "Add"
+msgstr "Lägg till"
 
 #: admin/views/default/upload/upload_index_view.php:153
-msgid   "Add entry"
-msgstr  "Lägg till"
+msgid "Add entry"
+msgstr "Lägg till"
 
 #: admin/views/default/backup/backup_view.php:19
 #: admin/views/default/backup/backup_view.php:41
-msgid   "Add new backup job"
-msgstr  "Lägg till nytt backupjobb"
+msgid "Add new backup job"
+msgstr "Lägg till nytt backupjobb"
 
 #: admin/views/default/downloads/downloads_index_view.php:26
-msgid   "Add new download"
-msgstr  "Lägg till nedladdning"
+msgid "Add new download"
+msgstr "Lägg till nedladdning"
 
 #: admin/views/default/mail/mail_retrieve_view.php:20
-msgid   "Add new email account"
-msgstr  "Lägg till nytt epostkonto"
+msgid "Add new email account"
+msgstr "Lägg till nytt epostkonto"
 
 #: admin/views/default/users/user_list_view.php:19
-msgid   "Add new user"
-msgstr  "Lägg till ny användare"
+msgid "Add new user"
+msgstr "Lägg till ny användare"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:95
-msgid   "Add selected images/folders to photo album?"
-msgstr  "Vill du lägga till dessa bilder/kataloger till fotoalbumet?"
+msgid "Add selected images/folders to photo album?"
+msgstr "Vill du lägga till dessa bilder/kataloger till fotoalbumet?"
 
 #: admin/views/default/album/album_users_view.php:11
-msgid   "Add viewer"
-msgstr  "Lägg till albumanvändare"
+msgid "Add viewer"
+msgstr "Lägg till albumanvändare"
 
 #: admin/views/default/album/album_album_view.php:416
-msgid   "Adding images is done using the"
-msgstr  "Lägg till bilder genom att använda"
+msgid "Adding images is done using the"
+msgstr "Lägg till bilder genom att använda"
 
 #: admin/views/default/login_view.php:49
-msgid   "Admin user not allowed to login on WAN interface."
-msgstr  "Admin-användaren tillåts inte logga in via WAN-porten."
+msgid "Admin user not allowed to login on WAN interface."
+msgstr "Admin-användaren tillåts inte logga in via WAN-porten."
 
 #: admin/views/default/main_view.php:279
-msgid   "Administration"
-msgstr  "Administration"
+msgid "Administration"
+msgstr "Administration"
 
 #: admin/views/default/network/network_tor_view.php:58
-msgid   "Advanced Tor settings"
-msgstr  "Avancerade Tor-inställningar"
+msgid "Advanced Tor settings"
+msgstr "Avancerade Tor-inställningar"
 
 #: admin/views/default/network/network_fw_view.php:178
-msgid   "Advanced firewall settings"
-msgstr  "Avancerade brandväggsinställningar"
+msgid "Advanced firewall settings"
+msgstr "Avancerade brandväggsinställningar"
 
 #: admin/views/default/network/network_wlan_view.php:72
-msgid   "Advanced wireless settings"
-msgstr  "Avancerade trådlösa inställningar"
+msgid "Advanced wireless settings"
+msgstr "Avancerade trådlösa inställningar"
 
 #: admin/views/default/backup/backup_view.php:342
 #: admin/views/default/backup/backup_view.php:689
-msgid   "Age of timeline"
-msgstr  "Ålder på tidslinjen"
+msgid "Age of timeline"
+msgstr "Ålder på tidslinjen"
 
-#: admin/models/menu.php:44 admin/models/menu.php:299
+#: admin/models/menu.php:44
+#: admin/models/menu.php:299
 msgctxt "menu"
-msgid   "Album"
-msgstr  "Album"
+msgid "Album"
+msgstr "Album"
 
 #: admin/views/default/album/album_album_view.php:337
 #: admin/views/default/album/album_album_view.php:364
-msgid   "Album access rights updated"
-msgstr  "Albumets åtkomsträttigheter uppdaterade"
+msgid "Album access rights updated"
+msgstr "Albumets åtkomsträttigheter uppdaterade"
 
 #: admin/views/default/album/album_album_view.php:206
-msgid   "Album deleted"
-msgstr  "Album raderat"
+msgid "Album deleted"
+msgstr "Album raderat"
 
 #: admin/views/default/album/album_album_view.php:160
-msgid   "Album name"
-msgstr  "Albumnamn"
+msgid "Album name"
+msgstr "Albumnamn"
 
 #: admin/views/default/album/album_album_view.php:151
-msgid   "Album updated"
-msgstr  "Albumet uppdaterat"
+msgid "Album updated"
+msgstr "Albumet uppdaterat"
 
-#: admin/models/menu.php:305 admin/models/menu.php:316
+#: admin/models/menu.php:305
+#: admin/models/menu.php:316
 msgctxt "menu"
-msgid   "Albums"
-msgstr  "Album"
+msgid "Albums"
+msgstr "Album"
 
 #: admin/views/default/backup/backup_view.php:77
 #: admin/views/default/backup/backup_view.php:424
-msgid   "All music (/home/storage/music)"
-msgstr  "All musik (/home/storage/music)"
+msgid "All music (/home/storage/music)"
+msgstr "All musik (/home/storage/music)"
 
 #: admin/views/default/backup/backup_view.php:80
 #: admin/views/default/backup/backup_view.php:427
-msgid   "All photos (/home/storage/photos)"
-msgstr  "Alla foton (home/storage/pictures)"
+msgid "All photos (/home/storage/photos)"
+msgstr "Alla foton (home/storage/pictures)"
 
 #: admin/views/default/backup/backup_view.php:71
 #: admin/views/default/backup/backup_view.php:418
-msgid   "All user's data (/home/&lt;all users&gt;)"
-msgstr  "All användardata (/home/&lt;alla användare&gt;)"
+msgid "All user's data (/home/&lt;all users&gt;)"
+msgstr "All användardata (/home/&lt;alla användare&gt;)"
 
 #: admin/views/default/backup/backup_view.php:74
 #: admin/views/default/backup/backup_view.php:421
-msgid   "All user's email (/home/&lt;all users&gt;/Mail)"
-msgstr  "All användares epost (/home/&lt;alla användare&ggt;/Mail)"
+msgid "All user's email (/home/&lt;all users&gt;/Mail)"
+msgstr "All användares epost (/home/&lt;alla användare&ggt;/Mail)"
 
 #: admin/views/default/backup/backup_view.php:83
 #: admin/views/default/backup/backup_view.php:430
-msgid   "All videos (/home/storage/video)"
-msgstr  "Alla videor (/home/storage/videos)"
+msgid "All videos (/home/storage/video)"
+msgstr "Alla videor (/home/storage/videos)"
 
 #: admin/views/default/downloads/downloads_list_view.php:36
-msgid   "Allocating disk"
-msgstr  "Allokerar disk"
+msgid "Allocating disk"
+msgstr "Allokerar disk"
 
 #: admin/views/default/album/album_album_view.php:248
-msgid   "Allow anonymous access"
-msgstr  "Tillåt anonym åtkomst"
+msgid "Allow anonymous access"
+msgstr "Tillåt anonym åtkomst"
 
 #: admin/views/default/network/network_fw_view.php:107
 #, php-format
-msgid   "Allow external (WAN) access to %s services"
-msgstr  "TIllåt tillgång externt (via WAN) för %s tjänster"
+msgid "Allow external (WAN) access to %s services"
+msgstr "TIllåt tillgång externt (via WAN) för %s tjänster"
 
 #: admin/views/default/users/user_list_view.php:120
-msgid   "Allow remote access to system settings"
-msgstr  "Tillåt fjärråtkomst till systeminställningarna"
+msgid "Allow remote access to system settings"
+msgstr "Tillåt fjärråtkomst till systeminställningarna"
 
 #: admin/views/default/users/user_list_view.php:10
-msgid   "Allow shell login"
-msgstr  "Tillåt åtkomst till skalet (ssh)"
+msgid "Allow shell login"
+msgstr "Tillåt åtkomst till skalet (ssh)"
 
 #: admin/views/default/network/network_tor_view.php:13
-msgid   "Allow your B3 to contribute to the Tor network"
-msgstr  "Låt din B3 bidra till Tor-nätverket"
+msgid "Allow your B3 to contribute to the Tor network"
+msgstr "Låt din B3 bidra till Tor-nätverket"
 
 #: admin/views/default/services/services_view.php:10
-msgid   "Anonymous FTP access"
-msgstr  "Anonym FTP-åtkomst"
+msgid "Anonymous FTP access"
+msgstr "Anonym FTP-åtkomst"
 
 #: admin/views/default/album/album_album_view.php:274
-msgid   "Anonymous access not granted to parent album."
-msgstr  "Anonym åtkomst medges inte till huvudalbumet."
+msgid "Anonymous access not granted to parent album."
+msgstr "Anonym åtkomst medges inte till huvudalbumet."
 
 #: admin/views/default/disk/disk_raid_view.php:94
-msgid   "Array name"
-msgstr  "RAID-system-namn"
+msgid "Array name"
+msgstr "RAID-system-namn"
 
 #: admin/views/default/stat/stat_view.php:34
-msgid   "Attached printers"
-msgstr  "Inkopplade skrivare"
+msgid "Attached printers"
+msgstr "Inkopplade skrivare"
 
 #: admin/controllers/users.php:157
-msgid   "Authorization denied"
-msgstr  "Behörighet nekades"
+msgid "Authorization denied"
+msgstr "Behörighet nekades"
 
-#: admin/controllers/mail.php:104 admin/controllers/mail.php:147
+#: admin/controllers/mail.php:104
+#: admin/controllers/mail.php:147
 #: admin/controllers/mail.php:190
-msgid   "Authorization failed"
-msgstr  "Behörighet misslyckades"
+msgid "Authorization failed"
+msgstr "Behörighet misslyckades"
 
 #: admin/controllers/users.php:250
-msgid   "Authorization failure"
-msgstr  "Behörighet misslyckades"
+msgid "Authorization failure"
+msgstr "Behörighet misslyckades"
 
 #: admin/views/default/settings/settings_datetime_view.php:30
-msgid   "Auto adjust date and time"
-msgstr  "Ställ in tid och datum automatiskt"
+msgid "Auto adjust date and time"
+msgstr "Ställ in tid och datum automatiskt"
 
 #: admin/views/default/network/network_profile_view.php:19
-msgid   "Automatic network settings"
-msgstr  "Autmatiska nätverksinställningar"
+msgid "Automatic network settings"
+msgstr "Autmatiska nätverksinställningar"
 
 #: admin/views/default/stat/stat_view.php:23
-msgid   "Available"
-msgstr  "Tillgänglig"
+msgid "Available"
+msgstr "Tillgänglig"
 
 #: admin/views/default/main_view.php:298
-msgid   "B3 start page"
-msgstr  "B3's startsida"
+msgid "B3 start page"
+msgstr "B3's startsida"
 
 #: admin/views/default/settings/settings_netupdate_view.php:24
-msgid   "Back"
-msgstr  "Tillbaka"
+msgid "Back"
+msgstr "Tillbaka"
 
 #: admin/views/default/settings/settings_backuprestore_view.php:31
-msgid   "Backup"
-msgstr  "Backup"
+msgid "Backup"
+msgstr "Backup"
 
 #: admin/models/menu.php:110
 msgctxt "menu"
-msgid   "Backup"
-msgstr  "Backup"
+msgid "Backup"
+msgstr "Backup"
 
 #: admin/views/default/settings/settings_backuprestore_view.php:3
-msgid   "Backup and restore settings"
-msgstr  "Säkerhetskopiera och återställ inställningar"
+msgid "Backup and restore settings"
+msgstr "Säkerhetskopiera och återställ inställningar"
 
 #: admin/views/default/backup/backup_view.php:468
-msgid   "Backup destination (step 2 of 4)"
-msgstr  "Backup-destination (steg 2 av 4)"
+msgid "Backup destination (step 2 of 4)"
+msgstr "Backup-destination (steg 2 av 4)"
 
 #: admin/views/default/backup/backup_view.php:5
-msgid   "Backup jobs"
-msgstr  "Backup-jobb"
+msgid "Backup jobs"
+msgstr "Backup-jobb"
 
 #: admin/views/default/backup/backup_view.php:553
-msgid   "Backup schedule (step 3 of 4)"
-msgstr  "Backup-schema (steg 3 av 4)"
+msgid "Backup schedule (step 3 of 4)"
+msgstr "Backup-schema (steg 3 av 4)"
 
 #: admin/controllers/users.php:286
-msgid   "Bad username"
-msgstr  "Felaktigt användarnamn"
+msgid "Bad username"
+msgstr "Felaktigt användarnamn"
 
 #: admin/views/default/network/network_wlan_view.php:80
-msgid   "Band"
-msgstr  "Band"
+msgid "Band"
+msgstr "Band"
 
 #: admin/views/default/network/network_tor_view.php:170
-msgid   "Bandwidth burst"
-msgstr  "Bandbredd (skur)"
+msgid "Bandwidth burst"
+msgstr "Bandbredd (skur)"
 
 #: admin/views/default/network/network_tor_view.php:133
-msgid   "Bandwidth limits"
-msgstr  "Bandbredd (max)"
+msgid "Bandwidth limits"
+msgstr "Bandbredd (max)"
 
 #: admin/views/default/network/network_tor_view.php:160
-msgid   "Bandwidth rate"
-msgstr  "Bandbredd"
+msgid "Bandwidth rate"
+msgstr "Bandbredd"
 
 #: admin/views/default/settings/settings_traffic_view.php:7
-msgid   "BitTorrent"
-msgstr  "BitTorrent"
+msgid "BitTorrent"
+msgstr "BitTorrent"
 
 #: admin/views/default/network/network_tor_view.php:69
-msgid   "Bridge"
-msgstr  "Brygga"
+msgid "Bridge"
+msgstr "Brygga"
 
 #: admin/views/default/network/network_tor_view.php:85
-msgid   "Bridge address"
-msgstr  "Bryggadress"
+msgid "Bridge address"
+msgstr "Bryggadress"
 
 #: admin/views/default/network/network_wlan_view.php:205
-msgid   "Broadcast SSID"
-msgstr  "Visa SSID"
+msgid "Broadcast SSID"
+msgstr "Visa SSID"
 
 #: admin/views/default/backup/backup_view.php:110
 #: admin/views/default/backup/backup_view.php:457
-msgid   "Browse"
-msgstr  "Bläddra"
+msgid "Browse"
+msgstr "Bläddra"
 
 #: admin/views/default/network/network_tor_view.php:136
 msgctxt "bwlimit"
-msgid   "Cable/DSL 256 Kbps"
-msgstr  "Kabel/xDSL 256 Kbps"
+msgid "Cable/DSL 256 Kbps"
+msgstr "Kabel/xDSL 256 Kbps"
 
 #: admin/views/default/network/network_tor_view.php:137
 msgctxt "bwlimit"
-msgid   "Cable/DSL 512 Kbps"
-msgstr  "Kabel/xDSL 512 Kbps"
+msgid "Cable/DSL 512 Kbps"
+msgstr "Kabel/xDSL 512 Kbps"
 
 #: admin/views/default/network/network_tor_view.php:138
 msgctxt "bwlimit"
-msgid   "Cable/DSL 768 Kbps"
-msgstr  "Kabel/xDSL 768 Kbps"
+msgid "Cable/DSL 768 Kbps"
+msgstr "Kabel/xDSL 768 Kbps"
 
 #: admin/views/default/network/network_head_view.php:38
 #: admin/views/default/disk/disk_head_view.php:19
 #: admin/views/default/disk/disk_head_view.php:55
 #: admin/views/default/disk/disk_head_view.php:58
 #: admin/views/default/downloads/downloads_list_view.php:55
-msgid   "Cancel"
-msgstr  "Avbryt"
+msgid "Cancel"
+msgstr "Avbryt"
 
 #: admin/views/default/wizard_view.php:26
-msgid   "Change Administrator password (step 3 of 5)"
-msgstr  "Ändra administratörsölsenord (steg 3 av 5)"
+msgid "Change Administrator password (step 3 of 5)"
+msgstr "Ändra administratörsölsenord (steg 3 av 5)"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:28
-msgid   "Change permissions"
-msgstr  "Ändra rättigheter"
+msgid "Change permissions"
+msgstr "Ändra rättigheter"
 
 #: admin/views/default/settings/settings_datetime_view.php:16
-msgid   "Change timezone"
-msgstr  "Ändra tidszon"
+msgid "Change timezone"
+msgstr "Ändra tidszon"
 
-#: admin/controllers/ajax_network.php:41 admin/controllers/ajax_network.php:42
+#: admin/controllers/ajax_network.php:41
+#: admin/controllers/ajax_network.php:42
 #: admin/controllers/ajax_network.php:43
-msgid   "Changing network parameters may require a restart of your computer."
-msgstr  "Om du ändrar nätverksinställningar kan din dator behöva startas om."
+msgid "Changing network parameters may require a restart of your computer."
+msgstr "Om du ändrar nätverksinställningar kan din dator behöva startas om."
 
 #: admin/views/default/network/network_wlan_head_view.php:90
 #: admin/views/default/network/network_wlan_view.php:196
-msgid   "Channel"
-msgstr  "Kanal"
+msgid "Channel"
+msgstr "Kanal"
 
 #: admin/views/default/network/network_wlan_view.php:147
-msgid   "Channel width"
-msgstr  "Kanalbandbredd"
+msgid "Channel width"
+msgstr "Kanalbandbredd"
 
 #: admin/views/default/network/network_wlan_view.php:24
 #, php-format
-msgid   "Check this checkbox to enable wireless functionallity for your %s"
-msgstr  "Kryssa i denna kryssruta för att använda trådlös åtkomst för din %s"
+msgid "Check this checkbox to enable wireless functionallity for your %s"
+msgstr "Kryssa i denna kryssruta för att använda trådlös åtkomst för din %s"
 
 #: admin/views/default/downloads/downloads_list_view.php:26
-msgid   "Checking existing files"
-msgstr  "Kontrollerar existerande filer"
+msgid "Checking existing files"
+msgstr "Kontrollerar existerande filer"
 
 #: admin/views/default/backup/backup_view.php:48
-msgid   "Choose a name for this job (step 1 of 5)"
-msgstr  "Välj ett namn för detta jobb (steg 1 av 5)"
+msgid "Choose a name for this job (step 1 of 5)"
+msgstr "Välj ett namn för detta jobb (steg 1 av 5)"
 
 #: admin/views/default/backup/backup_view.php:121
-msgid   "Choose backup destination (step 3 of 5)"
-msgstr  "Välj backup-destination (steg 3 av 5)"
+msgid "Choose backup destination (step 3 of 5)"
+msgstr "Välj backup-destination (steg 3 av 5)"
 
 #: admin/views/default/wizard_view.php:107
-msgid   "Choose easyfind name (step 5 of 5)"
-msgstr  "Välj easyfind-namn (steg 5 av 5)"
+msgid "Choose easyfind name (step 5 of 5)"
+msgstr "Välj easyfind-namn (steg 5 av 5)"
 
 #: admin/views/default/upload/upload_index_view.php:186
-msgid   "Close"
-msgstr  "Stäng"
+msgid "Close"
+msgstr "Stäng"
 
 #: admin/views/default/album/album_users_view.php:31
 #: admin/views/default/wizard_view.php:45
 #: admin/views/default/wizard_view.php:95
 #: admin/views/default/users/user_list_view.php:57
-msgid   "Confirm password"
-msgstr  "Bekräfta lösenord"
+msgid "Confirm password"
+msgstr "Bekräfta lösenord"
 
 #: admin/views/default/disk/disk_view.php:95
 #: admin/views/default/disk/disk_head_view.php:79
-msgid   "Connect"
-msgstr  "Anslut"
+msgid "Connect"
+msgstr "Anslut"
 
 #: admin/views/default/downloads/downloads_list_view.php:28
-msgid   "Connecting to tracker"
-msgstr  "Ansluter till tracker"
+msgid "Connecting to tracker"
+msgstr "Ansluter till tracker"
 
 #: admin/views/default/login_view.php:13
-msgid   "Contact"
-msgstr  "Kontakta"
+msgid "Contact"
+msgstr "Kontakta"
 
 #: admin/views/default/network/network_tor_view.php:43
-msgid   "Contact information"
-msgstr  "Kontaktinformation"
+msgid "Contact information"
+msgstr "Kontaktinformation"
 
 #: admin/views/default/network/network_head_view.php:34
-msgid   "Continue"
-msgstr  "Fortsätt"
+msgid "Continue"
+msgstr "Fortsätt"
 
 #: admin/views/default/disk/disk_head_view.php:37
-msgid   "Continue formatting the disk?"
-msgstr  "Vill du verkligen formattera disken?"
+msgid "Continue formatting the disk?"
+msgstr "Vill du verkligen formattera disken?"
 
 #: admin/controllers/disk.php:62
-msgid   "Converting system to RAID"
-msgstr  "Konverterar systemet till RAID"
+msgid "Converting system to RAID"
+msgstr "Konverterar systemet till RAID"
 
 #: admin/views/default/disk/disk_lvm_head_view.php:14
-msgid   "Create LVM"
-msgstr  "Skapa LVM"
+msgid "Create LVM"
+msgstr "Skapa LVM"
 
 #: admin/views/default/disk/disk_raid_view.php:8
-msgid   "Create RAID array"
-msgstr  "Skapa RAID-system"
+msgid "Create RAID array"
+msgstr "Skapa RAID-system"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:65
-msgid   "Create a new folder"
-msgstr  "Skapa ny katalog"
+msgid "Create a new folder"
+msgstr "Skapa ny katalog"
 
 #: admin/views/default/album/album_album_view.php:425
-msgid   "Create empty album"
-msgstr  "Skapa tomt album"
+msgid "Create empty album"
+msgstr "Skapa tomt album"
 
 #: admin/views/default/wizard_view.php:57
-#, fuzzy
-msgid   "Create user (step 4 of 5)"
-msgstr  "Skapa användare (steg 4 av 5)"
+msgid "Create user (step 4 of 5)"
+msgstr "Skapa användare (steg 4 av 5)"
 
 #: admin/views/default/disk/disk_raid_view.php:38
 #, php-format
-msgid   "Current recover progress is %d%% and is estimated to finish in %d "
-        "hours %d minutes"
-msgstr  "Återställning pågår (%d%%) och beräknas vara slutförd inom %d timmar "
-        "och %d minuter"
+msgid "Current recover progress is %d%% and is estimated to finish in %d hours %d minutes"
+msgstr "Återställning pågår (%d%%) och beräknas vara slutförd inom %d timmar och %d minuter"
 
 #: admin/views/default/disk/disk_raid_view.php:42
 #, php-format
-msgid   "Current recover progress is %d%% and is estimated to finish in %d "
-        "minutes"
-msgstr  "Återställning pågår (%d%%) och beräknas vara slutförd inom %d minuter"
+msgid "Current recover progress is %d%% and is estimated to finish in %d minutes"
+msgstr "Återställning pågår (%d%%) och beräknas vara slutförd inom %d minuter"
 
 #: admin/views/default/settings/settings_datetime_view.php:9
-msgid   "Current timezone is"
-msgstr  "Nuvarande tidszon är"
+msgid "Current timezone is"
+msgstr "Nuvarande tidszon är"
 
 #: admin/views/default/settings/settings_software_view.php:2
-msgid   "Current version"
-msgstr  "Nuvarande version"
+msgid "Current version"
+msgstr "Nuvarande version"
 
 #: admin/views/default/network/network_tor_view.php:141
 msgctxt "bwlimit"
-msgid   "Custom"
-msgstr  "Anpassad"
+msgid "Custom"
+msgstr "Anpassad"
 
 #: admin/views/default/network/network_tor_view.php:147
-msgid   "Custom bandwidth limits"
-msgstr  "Anpassade bandbreddsbegränsningar"
+msgid "Custom bandwidth limits"
+msgstr "Anpassade bandbreddsbegränsningar"
 
 #: admin/views/default/backup/backup_view.php:89
 #: admin/views/default/backup/backup_view.php:436
-msgid   "Custom selection"
-msgstr  "Anpassat urval"
+msgid "Custom selection"
+msgstr "Anpassat urval"
 
 #: admin/views/default/services/services_view.php:30
-msgid   "DAAP streaming"
-msgstr  "DAAP-strömmning"
+msgid "DAAP streaming"
+msgstr "DAAP-strömmning"
 
 #: admin/views/default/network/network_lan_view.php:368
-msgid   "DHCP leases"
-msgstr  "DHCP-utdelningar"
+msgid "DHCP leases"
+msgstr "DHCP-utdelningar"
 
 #: admin/views/default/services/services_view.php:26
-msgid   "DLNA streaming"
-msgstr  "DLNA-strömning"
+msgid "DLNA streaming"
+msgstr "DLNA-strömning"
 
 #: admin/views/default/backup/backup_view.php:302
 #: admin/views/default/backup/backup_view.php:649
-msgid   "Daily at"
-msgstr  "Dagligen kl."
+msgid "Daily at"
+msgstr "Dagligen kl."
 
 #: admin/views/default/backup/backup_view.php:30
 #: admin/views/default/backup/backup_view.php:765
 #: admin/views/default/backup/backup_view.php:834
 #: admin/views/default/filemanager/filemanager_index_view.php:9
-msgid   "Date"
-msgstr  "Datum"
+msgid "Date"
+msgstr "Datum"
 
 #: admin/views/default/settings/settings_datetime_view.php:5
-msgid   "Date and time"
-msgstr  "Datum och tid"
+msgid "Date and time"
+msgstr "Datum och tid"
 
 #: admin/views/default/backup/backup_view.php:236
 #: admin/views/default/backup/backup_view.php:583
-msgid   "Day of the month"
-msgstr  "Dag i månaden"
+msgid "Day of the month"
+msgstr "Dag i månaden"
 
 #: admin/views/default/backup/backup_view.php:271
 #: admin/views/default/backup/backup_view.php:618
-msgid   "Day of the week"
-msgstr  "Veckodag"
+msgid "Day of the week"
+msgstr "Veckodag"
 
 #: admin/views/default/network/network_wan_view.php:39
 #: admin/views/default/network/network_lan_view.php:137
-msgid   "Default gateway"
-msgstr  "Standardgateway"
+msgid "Default gateway"
+msgstr "Standardgateway"
 
 #: admin/views/default/settings/settings_datetime_view.php:82
 #: admin/views/default/users/user_list_view.php:69
-msgid   "Default system language"
-msgstr  "Standardspråk"
+msgid "Default system language"
+msgstr "Standardspråk"
 
 #: admin/controllers/settings.php:404
-msgid   "Default system language updated"
-msgstr  "Standardspråk uppdaterat"
+msgid "Default system language updated"
+msgstr "Standardspråk uppdaterat"
 
 #: admin/views/default/album/album_album_view.php:183
 #: admin/views/default/album/album_album_view.php:189
-msgid   "Delete album"
-msgstr  "Radera album"
+msgid "Delete album"
+msgstr "Radera album"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:92
-msgid   "Delete selected files and/or folders?"
-msgstr  "Radera valda filer och/eller kataloger?"
+msgid "Delete selected files and/or folders?"
+msgstr "Radera valda filer och/eller kataloger?"
 
 #: admin/views/default/album/album_album_view.php:67
 #: admin/views/default/album/album_album_view.php:170
-msgid   "Description"
-msgstr  "Beskrivning"
+msgid "Description"
+msgstr "Beskrivning"
 
 #: admin/views/default/settings/settings_backuprestore_view.php:7
-msgid   "Destination"
-msgstr  "Destination"
+msgid "Destination"
+msgstr "Destination"
 
 #: admin/views/default/settings/settings_software_view.php:6
 #: admin/views/default/disk/disk_raid_view.php:87
-msgid   "Detailed information"
-msgstr  "Detaljerad information"
+msgid "Detailed information"
+msgstr "Detaljerad information"
 
 #: admin/views/default/disk/disk_view.php:7
-msgid   "Device"
-msgstr  "Enhet"
+msgid "Device"
+msgstr "Enhet"
 
 #: admin/views/default/backup/backup_view.php:145
 #: admin/views/default/backup/backup_view.php:492
-msgid   "Device to use as target for the backup"
-msgstr  "Enhet som ska användas som backupdestination"
+msgid "Device to use as target for the backup"
+msgstr "Enhet som ska användas som backupdestination"
 
 #: admin/views/default/network/network_tor_view.php:104
-msgid   "Directory port"
-msgstr  "Katalogport"
+msgid "Directory port"
+msgstr "Katalogport"
 
 #: admin/views/default/backup/backup_view.php:218
 #: admin/views/default/backup/backup_view.php:565
-msgid   "Disabled (manually run by pressing \"Run now\")"
-msgstr  "Avstängt (kör manuellt genom att trycka \"Kör nu\")"
+msgid "Disabled (manually run by pressing \"Run now\")"
+msgstr "Avstängt (kör manuellt genom att trycka \"Kör nu\")"
 
 #: admin/views/default/disk/disk_view.php:95
 #: admin/views/default/disk/disk_head_view.php:93
-msgid   "Disconnect"
-msgstr  "Koppla från"
+msgid "Disconnect"
+msgstr "Koppla från"
 
 #: admin/views/default/disk/disk_view.php:6
 #: admin/views/default/disk/disk_raid_view.php:116
-msgid   "Disk"
-msgstr  "Disk"
+msgid "Disk"
+msgstr "Disk"
 
 #: admin/models/menu.php:189
 msgctxt "menu"
-msgid   "Disk"
-msgstr  "Disk"
+msgid "Disk"
+msgstr "Disk"
 
 #: admin/views/default/stat/stat_view.php:19
-msgid   "Disk capacity"
-msgstr  "Diskstorlek"
+msgid "Disk capacity"
+msgstr "Diskstorlek"
 
 #: admin/views/default/disk/disk_view.php:3
-msgid   "Disk information"
-msgstr  "Diskinformation"
+msgid "Disk information"
+msgstr "Diskinformation"
 
 #: admin/models/menu.php:195
 msgctxt "menu"
-msgid   "Disk information"
-msgstr  "Diskinformation"
+msgid "Disk information"
+msgstr "Diskinformation"
 
 #: admin/views/default/disk/disk_raid_view.php:52
 #, php-format
-msgid   "Disk missing in RAID array '%s'"
-msgstr  "Disk saknas i RAID-system '%s'"
+msgid "Disk missing in RAID array '%s'"
+msgstr "Disk saknas i RAID-system '%s'"
 
 #: admin/views/default/disk/disk_view.php:8
-msgid   "Disk size"
-msgstr  "Diskstorlek"
+msgid "Disk size"
+msgstr "Diskstorlek"
 
 #: admin/views/default/downloads/downloads_list_view.php:31
-msgid   "Done downloading (But missing data)"
-msgstr  "Nedladdning slutförd (men data saknas)"
+msgid "Done downloading (But missing data)"
+msgstr "Nedladdning slutförd (men data saknas)"
 
 #: admin/views/default/downloads/downloads_list_view.php:40
-msgid   "Download failed"
-msgstr  "Nedladdning misslyckades"
+msgid "Download failed"
+msgstr "Nedladdning misslyckades"
 
 #: admin/controllers/ajax_upload.php:38
-msgid   "Download not found"
-msgstr  "Nedladdning hittades inte"
+msgid "Download not found"
+msgstr "Nedladdning hittades inte"
 
 #: admin/views/default/downloads/downloads_index_view.php:19
-msgid   "Download service disabled"
-msgstr  "Nedladdningstjänsten avstängd"
+msgid "Download service disabled"
+msgstr "Nedladdningstjänsten avstängd"
 
 #: admin/views/default/downloads/downloads_list_view.php:46
-msgid   "Download speed"
-msgstr  "Nedladdningshastighet"
+msgid "Download speed"
+msgstr "Nedladdningshastighet"
 
 #: admin/views/default/network/network_fw_view.php:152
-msgid   "Downloader"
-msgstr  "Nedladdare"
+msgid "Downloader"
+msgstr "Nedladdare"
 
 #: admin/views/default/downloads/downloads_list_view.php:21
-msgid   "Downloading"
-msgstr  "Laddar ner"
+msgid "Downloading"
+msgstr "Laddar ner"
 
 #: admin/views/default/downloads/downloads_index_view.php:23
-msgid   "Downloads"
-msgstr  "Nedladdningar"
+msgid "Downloads"
+msgstr "Nedladdningar"
 
-#: admin/models/menu.php:55 admin/models/menu.php:325
+#: admin/models/menu.php:55
+#: admin/models/menu.php:325
 msgctxt "menu"
-msgid   "Downloads"
-msgstr  "Nedladdningar"
+msgid "Downloads"
+msgstr "Nedladdningar"
 
 #: admin/views/default/album/album_album_view.php:426
-msgid   "Drag and drop to move images/albums"
-msgstr  "Drag och släpp för att flytta bilder/album"
+msgid "Drag and drop to move images/albums"
+msgstr "Drag och släpp för att flytta bilder/album"
 
 #: admin/controllers/ajax_backup.php:48
-msgid   "Each day"
-msgstr  "Varje dag"
+msgid "Each day"
+msgstr "Varje dag"
 
-#: admin/controllers/settings.php:646 admin/controllers/settings.php:667
-#: admin/controllers/wizard.php:154 admin/controllers/wizard.php:166
+#: admin/controllers/settings.php:646
+#: admin/controllers/settings.php:667
+#: admin/controllers/wizard.php:154
+#: admin/controllers/wizard.php:166
 #, php-format
-msgid   "Easyfind failed with following error: %s"
-msgstr  "Easyfind misslyckades med följande fel: %s"
+msgid "Easyfind failed with following error: %s"
+msgstr "Easyfind misslyckades med följande fel: %s"
 
 #: admin/views/default/settings/settings_identity_view.php:70
-msgid   "Easyfind name"
-msgstr  "Easyfind-namn"
+msgid "Easyfind name"
+msgstr "Easyfind-namn"
 
 #: admin/views/default/settings/settings_identity_view.php:49
-msgid   "Easyfind options"
-msgstr  "Easyfind-alternativ"
+msgid "Easyfind options"
+msgstr "Easyfind-alternativ"
 
 #: admin/views/default/backup/backup_view.php:405
 #: admin/views/default/backup/backup_view.php:752
-msgid   "Edit backup job"
-msgstr  "Ändra backup-jobb"
+msgid "Edit backup job"
+msgstr "Ändra backup-jobb"
 
 #: admin/views/default/network/network_wlan_view.php:4
-msgid   "Either no wireless network card is available or no valid timezone is "
-        "set"
-msgstr  "Antingen har din B3 inget trådlöst nätverk, eller så är tidszon inte "
-        "inställd"
+msgid "Either no wireless network card is available or no valid timezone is set"
+msgstr "Antingen har din B3 inget trådlöst nätverk, eller så är tidszon inte inställd"
 
 #: admin/views/default/network/network_fw_view.php:136
 #: admin/views/default/services/services_view.php:42
-msgid   "Email"
-msgstr  "Epost"
+msgid "Email"
+msgstr "Epost"
 
-#: admin/models/menu.php:273 admin/models/menu.php:291
+#: admin/models/menu.php:273
+#: admin/models/menu.php:291
 msgctxt "menu"
-msgid   "Email"
-msgstr  "Epost"
+msgid "Email"
+msgstr "Epost"
 
 #: admin/views/default/mail/mail_server_view.php:103
-msgid   "Email domain"
-msgstr  "Epostdomän"
+msgid "Email domain"
+msgstr "Epostdomän"
 
 #: admin/views/default/services/services_view.php:52
-msgid   "Email retrieval"
-msgstr  "Epost-insamling"
+msgid "Email retrieval"
+msgstr "Epost-insamling"
 
 #: admin/views/default/mail/mail_server_view.php:9
 #: admin/views/default/network/network_fw_view.php:120
-msgid   "Email server"
-msgstr  "Epostserver"
+msgid "Email server"
+msgstr "Epostserver"
 
 #: admin/views/default/network/network_lan_view.php:235
-msgid   "Enable DHCP server"
-msgstr  "DHCP-server"
+msgid "Enable DHCP server"
+msgstr "DHCP-server"
 
 #: admin/views/default/network/network_lan_view.php:217
-msgid   "Enable DNS service"
-msgstr  "DNS-tjänst"
+msgid "Enable DNS service"
+msgstr "DNS-tjänst"
 
 #: admin/views/default/network/network_tor_view.php:16
-msgid   "Enable Tor"
-msgstr  "Tor"
+msgid "Enable Tor"
+msgstr "Tor"
 
 #: admin/views/default/wizard_view.php:116
-msgid   "Enable easyfind"
-msgstr  "easyfind"
+msgid "Enable easyfind"
+msgstr "easyfind"
 
 #: admin/views/default/network/network_lan_view.php:340
-msgid   "Enable jumbo frames."
-msgstr  "jumbo frames"
+msgid "Enable jumbo frames."
+msgstr "jumbo frames"
 
 #: admin/views/default/backup/backup_view.php:368
 #: admin/views/default/backup/backup_view.php:715
-msgid   "Encrypt the backup on target for increased security"
-msgstr  "Kryptera backupen på destinationen för ökad säkerhet"
+msgid "Encrypt the backup on target for increased security"
+msgstr "Kryptera backupen på destinationen för ökad säkerhet"
 
 #: admin/views/default/mail/mail_retrieve_view.php:11
-msgid   "Encrypted"
-msgstr  "Krypterad"
+msgid "Encrypted"
+msgstr "Krypterad"
 
 #: admin/views/default/network/network_wlan_view.php:167
-msgid   "Encryption"
-msgstr  "Kryptering"
+msgid "Encryption"
+msgstr "Kryptering"
 
 #: admin/views/default/network/network_tor_view.php:49
-msgid   "Enter contact information in case the developers need to contact you "
-        "about problems"
-msgstr  "Skriv in kontaktinformation om utvecklare behöver kontakta dig om "
-        "dina problem"
+msgid "Enter contact information in case the developers need to contact you about problems"
+msgstr "Skriv in kontaktinformation om utvecklare behöver kontakta dig om dina problem"
 
 #: admin/controllers/network.php:281
-msgid   "Error applying settings"
-msgstr  "Misslyckades med att spara inställningarna"
+msgid "Error applying settings"
+msgstr "Misslyckades med att spara inställningarna"
 
 #: admin/controllers/filemanager.php:212
-msgid   "Error creating folder, name already exists"
-msgstr  "Misslyckades med att skapa katalogen - namnet finns redan"
+msgid "Error creating folder, name already exists"
+msgstr "Misslyckades med att skapa katalogen - namnet finns redan"
 
 #: admin/controllers/filemanager.php:207
-msgid   "Error creating folder, no name supplied"
-msgstr  "Misslyckades med att skapa katalogen - inget namn angett"
+msgid "Error creating folder, no name supplied"
+msgstr "Misslyckades med att skapa katalogen - inget namn angett"
 
 #: admin/views/default/album/album_album_view.php:204
-msgid   "Error deleting album"
-msgstr  "Misslyckades med att radera album"
+msgid "Error deleting album"
+msgstr "Misslyckades med att radera album"
 
 #: admin/views/default/album/album_album_view.php:96
-msgid   "Error removing image"
-msgstr  "Misslyckades med att ta bort bild"
+msgid "Error removing image"
+msgstr "Misslyckades med att ta bort bild"
 
 #: admin/controllers/filemanager.php:85
 #, php-format
-msgid   "Error renaming file '%s'"
-msgstr  "Misslyckades med att radera filen '%s'"
+msgid "Error renaming file '%s'"
+msgstr "Misslyckades med att radera filen '%s'"
 
 #: admin/views/default/network/network_lan_view.php:248
-msgid   "Error starting/stopping DHCP server"
-msgstr  "Misslyckades att starta/stoppa DHCP-servern"
+msgid "Error starting/stopping DHCP server"
+msgstr "Misslyckades att starta/stoppa DHCP-servern"
 
 #: admin/views/default/network/network_lan_view.php:229
-msgid   "Error starting/stopping DNS service"
-msgstr  "Misslyckades att starta/stoppa DNS-tjänsten"
+msgid "Error starting/stopping DNS service"
+msgstr "Misslyckades att starta/stoppa DNS-tjänsten"
 
 #: admin/views/default/album/album_album_view.php:149
-msgid   "Error updating album"
-msgstr  "Misslyckades att uppdatera albumet"
+msgid "Error updating album"
+msgstr "Misslyckades att uppdatera albumet"
 
 #: admin/views/default/album/album_album_view.php:41
-msgid   "Error updating image"
-msgstr  "Misslyckades att uppdatea bilden"
+msgid "Error updating image"
+msgstr "Misslyckades att uppdatea bilden"
 
 #: admin/views/default/album/album_album_view.php:362
-msgid   "Error updating user access"
-msgstr  "Misslyckades att uppdatera användaråtkomst"
+msgid "Error updating user access"
+msgstr "Misslyckades att uppdatera användaråtkomst"
 
 #: admin/views/default/album/album_album_view.php:335
-msgid   "Error updating user access to public"
-msgstr  "Misslyckades att uppdatera användaråtkomst till publik"
+msgid "Error updating user access to public"
+msgstr "Misslyckades att uppdatera användaråtkomst till publik"
 
 #: admin/views/default/disk/disk_raid_view.php:58
-msgid   "Error: External disk has malfunctioned"
-msgstr  "Fel: En extern disk fungerar inte"
+msgid "Error: External disk has malfunctioned"
+msgstr "Fel: En extern disk fungerar inte"
 
 #: admin/controllers/help.php:56
 #, php-format
-msgid   "Error: No help text was found for entry %s"
-msgstr  "Fel: Ingen hjälptext hittad för %s"
+msgid "Error: No help text was found for entry %s"
+msgstr "Fel: Ingen hjälptext hittad för %s"
 
 #: admin/controllers/ajax_backup.php:54
-msgid   "Every month"
-msgstr  "Varje månad"
+msgid "Every month"
+msgstr "Varje månad"
 
 #: admin/views/default/main_view.php:294
-msgid   "Excito"
-msgstr  "Excito"
+msgid "Excito"
+msgstr "Excito"
 
 #: admin/views/default/album/album_album_view.php:413
-msgid   "Existing albums"
-msgstr  "Befintliga album"
+msgid "Existing albums"
+msgstr "Befintliga album"
 
 #: admin/views/default/album/album_users_view.php:4
-msgid   "Existing viewers"
-msgstr  "Befintliga albumanvändare"
+msgid "Existing viewers"
+msgstr "Befintliga albumanvändare"
 
 #: admin/views/default/network/network_tor_view.php:178
-msgid   "Exit policies"
-msgstr  "Exit policies"
+msgid "Exit policies"
+msgstr "Exit policies"
 
 #: admin/views/default/network/network_tor_view.php:73
-#, fuzzy
-msgid   "Exit relay"
-msgstr  "Exit node"
+msgid "Exit relay"
+msgstr "Exit relay"
 
 #: admin/views/default/disk/disk_lvm_view.php:4
 #: admin/views/default/disk/disk_lvm_view.php:26
-msgid   "Extend"
-msgstr  "Utöka"
+msgid "Extend"
+msgstr "Utöka"
 
 #: admin/views/default/disk/disk_lvm_view.php:1
 #: admin/views/default/disk/disk_lvm_head_view.php:12
-msgid   "Extend Logical Volume"
-msgstr  "Utöka logisk volym"
+msgid "Extend Logical Volume"
+msgstr "Utöka logisk volym"
 
 #: admin/views/default/disk/disk_lvm_head_view.php:15
-msgid   "Extending disk"
-msgstr  "Utökar disk"
+msgid "Extending disk"
+msgstr "Utökar disk"
 
 #: admin/controllers/disk.php:59
-msgid   "Extending user storage space"
-msgstr  "Utökar lagringsyta"
+msgid "Extending user storage space"
+msgstr "Utökar lagringsyta"
 
 #: admin/views/default/backup/backup_view.php:131
 #: admin/views/default/network/network_fw_view.php:144
-msgid   "FTP"
-msgstr  "FTP"
+msgid "FTP"
+msgstr "FTP"
 
 #: admin/controllers/ajax_disk.php:169
 #, php-format
-msgid   "Failed to aquire an RAID array containing the disk %s"
-msgstr  "Misslyckades att hitta ett RAID-system som innehåller disken %s"
+msgid "Failed to aquire an RAID array containing the disk %s"
+msgstr "Misslyckades att hitta ett RAID-system som innehåller disken %s"
 
 #: admin/models/disk_model.php:196
 #, php-format
-msgid   "Failed to aquire suitable type of the filesystem on partition %s"
-msgstr  "Misslyckades att hitta ett lämplig filsystem på partition %s"
+msgid "Failed to aquire suitable type of the filesystem on partition %s"
+msgstr "Misslyckades att hitta ett lämplig filsystem på partition %s"
 
 #: admin/controllers/settings.php:605
-msgid   "Failed to change hostname"
-msgstr  "Misslyckades att ändra värdnamn"
+msgid "Failed to change hostname"
+msgstr "Misslyckades att ändra värdnamn"
 
 #: admin/controllers/filemanager.php:189
 #, php-format
-msgid   "Failed to change permission for following files and folders: %s"
-msgstr  "Misslyckades att ändra åtkomst för följande filer och kataloger: %s"
+msgid "Failed to change permission for following files and folders: %s"
+msgstr "Misslyckades att ändra åtkomst för följande filer och kataloger: %s"
 
 #: admin/models/networkmanager.php:43
-msgid   "Failed to connect to database."
-msgstr  "Misslyckades att ansluta till databasen"
+msgid "Failed to connect to database."
+msgstr "Misslyckades att ansluta till databasen"
 
 #: admin/controllers/filemanager.php:291
 #, php-format
-msgid   "Failed to copy the following files and folders: %s"
-msgstr  "Misslyckades att kopiera följande filer och kataloger: %s"
+msgid "Failed to copy the following files and folders: %s"
+msgstr "Misslyckades att kopiera följande filer och kataloger: %s"
 
 #: admin/controllers/filemanager.php:223
-msgid   "Failed to create folder"
-msgstr  "Misslyckades att skapa katalog"
+msgid "Failed to create folder"
+msgstr "Misslyckades att skapa katalog"
 
 #: admin/models/disk_model.php:327
 #, php-format
-msgid   "Failed to create fstab entry for %s with %s"
-msgstr  "Misslyckades att skapa fstab-innehåll för %s med %s"
+msgid "Failed to create fstab entry for %s with %s"
+msgstr "Misslyckades att skapa fstab-innehåll för %s med %s"
 
 #: admin/controllers/filemanager.php:62
 #, php-format
-msgid   "Failed to delete following files/folders: %s"
-msgstr  "Misslyckades att radera följande filer/kataloger. %s"
+msgid "Failed to delete following files/folders: %s"
+msgstr "Misslyckades att radera följande filer/kataloger. %s"
 
-#: admin/models/disk_model.php:246 admin/models/disk_model.php:298
+#: admin/models/disk_model.php:246
+#: admin/models/disk_model.php:298
 #, php-format
-msgid   "Failed to find suitable mount path for partition %s"
-msgstr  "Misslyckades att hitta lämplig monteringssökväg för partitionen %s"
+msgid "Failed to find suitable mount path for partition %s"
+msgstr "Misslyckades att hitta lämplig monteringssökväg för partitionen %s"
 
 #: admin/models/disk_model.php:344
 #, php-format
-msgid   "Failed to mount %s"
-msgstr  "Misslyckades att montera %s"
+msgid "Failed to mount %s"
+msgstr "Misslyckades att montera %s"
 
 #: admin/models/disk_model.php:273
 #, php-format
-msgid   "Failed to mount %s on %s"
-msgstr  "Misslyckades att montera %s på %s"
+msgid "Failed to mount %s on %s"
+msgstr "Misslyckades att montera %s på %s"
 
 #: admin/controllers/filemanager.php:260
 #, php-format
-msgid   "Failed to move the following files and folders: %s"
-msgstr  "Misslyckades att flytta följande filer och kataloger: %s"
+msgid "Failed to move the following files and folders: %s"
+msgstr "Misslyckades att flytta följande filer och kataloger: %s"
 
 #: admin/models/disk_model.php:384
 #, php-format
-msgid   "Failed to remove fstab entry for %s with %s"
-msgstr  "Misslyckades att ta bort fstab-innehåll för %s med %s"
+msgid "Failed to remove fstab entry for %s with %s"
+msgstr "Misslyckades att ta bort fstab-innehåll för %s med %s"
 
 #: admin/controllers/settings.php:354
 #, php-format
-msgid   "Failed to set date <strong>%s</strong> and time <strong>%s</strong>"
-msgstr  "Misslyckades att ställa datum <strong>%s</strong> och tid <strong>"
-        "%s</strong>"
+msgid "Failed to set date <strong>%s</strong> and time <strong>%s</strong>"
+msgstr "Misslyckades att ställa datum <strong>%s</strong> och tid <strong>%s</strong>"
 
 #: admin/controllers/settings.php:335
 #, php-format
-msgid   "Failed to set timezone <strong>%s</strong>"
-msgstr  "Misslyckades att spara tidszon <strong>%s</strong>"
+msgid "Failed to set timezone <strong>%s</strong>"
+msgstr "Misslyckades att spara tidszon <strong>%s</strong>"
 
 #: admin/controllers/settings.php:128
-msgid   "Failed to set up mount point for backup"
-msgstr  "Misslyckades att ange monteringssökväg för backup"
+msgid "Failed to set up mount point for backup"
+msgstr "Misslyckades att ange monteringssökväg för backup"
 
 #: admin/controllers/settings.php:175
-msgid   "Failed to set up mount point for restore"
-msgstr  "Misslyckades att ange monteringssökväg för återställning"
+msgid "Failed to set up mount point for restore"
+msgstr "Misslyckades att ange monteringssökväg för återställning"
 
 #: admin/models/disk_model.php:375
 #, php-format
-msgid   "Failed to unmount %s"
-msgstr  "Misslyckades att avmontera %s"
+msgid "Failed to unmount %s"
+msgstr "Misslyckades att avmontera %s"
 
 #: admin/views/default/upload/upload_index_view.php:55
 #: admin/views/default/upload/upload_index_view.php:78
-msgid   "Failed to upload file(s), aborting."
-msgstr  "Misslyckades att ladda upp fil(er), avbryter."
+msgid "Failed to upload file(s), aborting."
+msgstr "Misslyckades att ladda upp fil(er), avbryter."
 
 #: admin/controllers/users.php:150
-msgid   "Fatal error when adding user"
-msgstr  "Misslyckades att lägga till användare"
+msgid "Fatal error when adding user"
+msgstr "Misslyckades att lägga till användare"
 
 #: admin/controllers/users.php:300
 #, php-format
-msgid   "Fatal error when trying to purge horde configurations for user %s"
-msgstr  "Misslyckades att ställa horde-inställningar för användare %s"
+msgid "Fatal error when trying to purge horde configurations for user %s"
+msgstr "Misslyckades att ställa horde-inställningar för användare %s"
 
 #: admin/controllers/users.php:304
 #, php-format
-msgid   "Fatal error when trying to remove the user %s"
-msgstr  "Misslyckades att ta bort användare %s"
+msgid "Fatal error when trying to remove the user %s"
+msgstr "Misslyckades att ta bort användare %s"
 
-#: admin/models/menu.php:25 admin/models/menu.php:104
-#, fuzzy
+#: admin/models/menu.php:25
+#: admin/models/menu.php:104
 msgctxt "menu"
-msgid   "File Manager"
-msgstr  "Filhanterare"
+msgid "File Manager"
+msgstr "Filhanterare"
 
 #: admin/views/default/services/services_view.php:4
-msgid   "File sharing"
-msgstr  "Fildelning"
+msgid "File sharing"
+msgstr "Fildelning"
 
 #: admin/views/default/backup/backup_view.php:413
-msgid   "Files to backup (step 1 of 4)"
-msgstr  "Filer att säkerhetskopiera (steg 1 av 4)"
+msgid "Files to backup (step 1 of 4)"
+msgstr "Filer att säkerhetskopiera (steg 1 av 4)"
 
 #: admin/models/menu.php:176
 msgctxt "menu"
-msgid   "Firewall"
-msgstr  "Brandvägg"
+msgid "Firewall"
+msgstr "Brandvägg"
 
 #: admin/views/default/network/network_tor_view.php:157
 #: admin/views/default/network/network_tor_view.php:167
-msgid   "For Internet connections with fast download speed but slow upload "
-        "speed, please select your upload speed here"
-msgstr  "För internetuppkopplingar med snabb nedladdning men långsam "
-        "uppladdning, vänligen välj uppladdningshastighet här"
+msgid "For Internet connections with fast download speed but slow upload speed, please select your upload speed here"
+msgstr "För internetuppkopplingar med snabb nedladdning men långsam uppladdning, vänligen välj uppladdningshastighet här"
 
 #: admin/views/default/wizard_view.php:60
 #, php-format
-msgid   "For day-to-day operations it's recommended to use a regular user. "
-        "You can later add more users for every person using the %s"
-msgstr  "För dagligt användande rekommenderar vi att du använder en vanlig "
-        "användare. Du kan lägga till fler senare för varje person som "
-        "använder %s"
+msgid "For day-to-day operations it's recommended to use a regular user. You can later add more users for every person using the %s"
+msgstr "För dagligt användande rekommenderar vi att du använder en vanlig användare. Du kan lägga till fler senare för varje person som använder %s"
 
 #: admin/views/default/login_view.php:10
-msgid   "For more information"
-msgstr  "För mer information"
+msgid "For more information"
+msgstr "För mer information"
 
 #: admin/views/default/disk/disk_view.php:21
-msgid   "Format"
-msgstr  "Format"
+msgid "Format"
+msgstr "Format"
 
 #: admin/views/default/disk/disk_head_view.php:13
 #: admin/views/default/disk/disk_head_view.php:30
 #: admin/views/default/disk/disk_head_view.php:42
-msgid   "Format disk"
-msgstr  "Formattera disk"
+msgid "Format disk"
+msgstr "Formattera disk"
 
 #: admin/controllers/disk.php:69
 #: admin/views/default/disk/disk_head_view.php:44
-msgid   "Formatting disk"
-msgstr  "Formatterar disk"
+msgid "Formatting disk"
+msgstr "Formatterar disk"
 
 #: admin/views/default/disk/disk_head_view.php:36
-msgid   "Formatting disk will destroy all data on disk"
-msgstr  "Om du formatterar disken förstörs all data på disken"
+msgid "Formatting disk will destroy all data on disk"
+msgstr "Om du formatterar disken förstörs all data på disken"
 
 #: admin/models/disk_model.php:332
 #, php-format
-msgid   "Found entry for device %s in fstab, but contained no path to mount at"
-msgstr  "Hittade mojäng för enhet %s i fstab, men innehöll ingen sökväg att "
-        "montera på"
+msgid "Found entry for device %s in fstab, but contained no path to mount at"
+msgstr "Hittade mojäng för enhet %s i fstab, men innehöll ingen sökväg att montera på"
 
 #: admin/views/default/settings/settings_datetime_view.php:65
-msgid   "HHmm"
-msgstr  "TTmm"
+msgid "HHmm"
+msgstr "TTmm"
 
 #: admin/views/default/mail/mail_server_view.php:109
-msgid   "Handle email for domain"
-msgstr  "Hantera epost för domän"
+msgid "Handle email for domain"
+msgstr "Hantera epost för domän"
 
 #: admin/views/default/main_view.php:280
-msgid   "Help"
-msgstr  "Hjälp"
+msgid "Help"
+msgstr "Hjälp"
 
-#: admin/models/menu.php:351 admin/views/default/main_view.php:278
-msgid   "Home"
-msgstr  "Hem"
+#: admin/models/menu.php:351
+#: admin/views/default/main_view.php:278
+msgid "Home"
+msgstr "Hem"
 
 #: admin/models/menu.php:97
 msgctxt "menu"
-msgid   "Home"
-msgstr  "Hem"
+msgid "Home"
+msgstr "Hem"
 
 #: admin/views/default/disk/disk_view.php:76
 #: admin/views/default/disk/disk_view.php:80
 #: admin/views/default/disk/disk_lvm_view.php:10
-msgid   "Home partition"
-msgstr  "Hempartition"
+msgid "Home partition"
+msgstr "Hempartition"
 
 #: admin/views/default/mail/mail_retrieve_view.php:7
 #: admin/views/default/mail/mail_retrieve_view.php:39
-msgid   "Host"
-msgstr  "Värd"
+msgid "Host"
+msgstr "Värd"
 
 #: admin/views/default/settings/settings_identity_view.php:10
 #: admin/views/default/network/network_lan_view.php:370
-msgid   "Hostname"
-msgstr  "Värdnamn"
+msgid "Hostname"
+msgstr "Värdnamn"
 
 #: admin/controllers/settings.php:611
 #, php-format
-msgid   "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-"
-        "z0-9-</strong> is valid"
-msgstr  "Värdnamn <strong>%s</strong> är ogiltigt, endast <strong>A-Za-z0-9-</"
-        "strong> är tillåtna"
+msgid "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-z0-9-</strong> is valid"
+msgstr "Värdnamn <strong>%s</strong> är ogiltigt, endast <strong>A-Za-z0-9-</strong> är tillåtna"
 
 #: admin/views/default/backup/backup_view.php:247
 #: admin/views/default/backup/backup_view.php:283
@@ -1103,305 +1092,303 @@ msgstr  "Värdnamn <strong>%s</strong> är ogiltigt, endast <strong>A-Za-z0-9-</
 #: admin/views/default/backup/backup_view.php:594
 #: admin/views/default/backup/backup_view.php:630
 #: admin/views/default/backup/backup_view.php:654
-msgid   "Hour of the day"
-msgstr  "Timme på dagen"
+msgid "Hour of the day"
+msgstr "Timme på dagen"
 
 #: admin/controllers/ajax_backup.php:45
 #: admin/views/default/backup/backup_view.php:327
 #: admin/views/default/backup/backup_view.php:674
-msgid   "Hourly"
-msgstr  "Varje timme"
+msgid "Hourly"
+msgstr "Varje timme"
 
 #: admin/views/default/network/network_wan_view.php:29
 #: admin/views/default/network/network_lan_view.php:47
-msgid   "IP"
-msgstr  "IP"
+msgid "IP"
+msgstr "IP"
 
 #: admin/views/default/network/network_lan_view.php:370
-msgid   "IP-address"
-msgstr  "IP-adress"
+msgid "IP-address"
+msgstr "IP-adress"
 
 #: admin/models/menu.php:225
 msgctxt "menu"
-msgid   "Identity"
-msgstr  "Identitet"
+msgid "Identity"
+msgstr "Identitet"
 
 #: admin/views/default/network/network_tor_view.php:148
-msgid   "If you wish to configure custom bandwidth limits, choose \"Custom\" "
-        "from the dropdown above"
-msgstr  "Önskar du ange anpassade gränser, välj \"Anpassad\" nedan"
+msgid "If you wish to configure custom bandwidth limits, choose \"Custom\" from the dropdown above"
+msgstr "Önskar du ange anpassade gränser, välj \"Anpassad\" nedan"
 
 #: admin/views/default/album/album_album_view.php:57
-msgid   "Image name"
-msgstr  "Bildnamn"
+msgid "Image name"
+msgstr "Bildnamn"
 
 #: admin/views/default/album/album_album_view.php:98
-msgid   "Image removed from album"
-msgstr  "Bild raderad från album"
+msgid "Image removed from album"
+msgstr "Bild raderad från album"
 
 #: admin/views/default/album/album_album_view.php:43
-msgid   "Image updated"
-msgstr  "Bild uppdaterad"
+msgid "Image updated"
+msgstr "Bild uppdaterad"
 
 #: admin/views/default/upload/upload_index_view.php:85
-msgid   "Initializing"
-msgstr  "Startar"
+msgid "Initializing"
+msgstr "Startar"
 
 #: admin/views/default/settings/settings_software_view.php:33
 #, php-format
-msgid   "Install %s"
-msgstr  "Installera %s"
+msgid "Install %s"
+msgstr "Installera %s"
 
 #: admin/views/default/settings/settings_software_view.php:28
 #, php-format
-msgid   "Install package %s"
-msgstr  "Installera paket %s"
+msgid "Install package %s"
+msgstr "Installera paket %s"
 
 #: admin/views/default/network/network_tor_view.php:202
 msgctxt "label"
-msgid   "Instant Messaging (IM)"
-msgstr  "Chat"
+msgid "Instant Messaging (IM)"
+msgstr "Chat"
 
 #: admin/views/default/network/network_tor_view.php:204
 msgctxt "label"
-msgid   "Internet Relay Chat (IRC)"
-msgstr  "Internet Relay Chat (IRC)"
+msgid "Internet Relay Chat (IRC)"
+msgstr "Internet Relay Chat (IRC)"
 
 #: admin/views/default/settings/settings_netupdate_view.php:17
-msgid   "Invalid DNS address"
-msgstr  "Ogiltig DNS-adress"
+msgid "Invalid DNS address"
+msgstr "Ogiltig DNS-adress"
 
 #: admin/views/default/network/network_wan_view.php:115
-msgid   "Invalid DNS setting"
-msgstr  "Ogiltiga DNS-inställningar"
+msgid "Invalid DNS setting"
+msgstr "Ogiltiga DNS-inställningar"
 
 #: admin/views/default/network/network_wan_view.php:30
 #: admin/views/default/network/network_lan_view.php:85
-msgid   "Invalid IP"
-msgstr  "Ogiltigt IP"
+msgid "Invalid IP"
+msgstr "Ogiltigt IP"
 
 #: admin/views/default/settings/settings_netupdate_view.php:11
-msgid   "Invalid IP address"
-msgstr  "Ogiltig IP-adress"
+msgid "Invalid IP address"
+msgstr "Ogiltig IP-adress"
 
 #: admin/views/default/network/network_lan_view.php:331
-msgid   "Invalid IP range entered"
-msgstr  "Ogiltigt IP-adress-område angett"
+msgid "Invalid IP range entered"
+msgstr "Ogiltigt IP-adress-område angett"
 
 #: admin/views/default/network/network_wan_view.php:75
-msgid   "Invalid gateway"
-msgstr  "Ogiltig gateway"
+msgid "Invalid gateway"
+msgstr "Ogiltig gateway"
 
 #: admin/views/default/settings/settings_netupdate_view.php:14
-msgid   "Invalid gateway address"
-msgstr  "Ogiltig gatewayadress"
+msgid "Invalid gateway address"
+msgstr "Ogiltig gatewayadress"
 
 #: admin/views/default/settings/settings_netupdate_view.php:8
-msgid   "Invalid hostname"
-msgstr  "Ogiltigt värdnamn"
+msgid "Invalid hostname"
+msgstr "Ogiltigt värdnamn"
 
 #: admin/views/default/settings/settings_netupdate_view.php:20
 #: admin/views/default/network/network_wan_view.php:35
 #: admin/views/default/network/network_lan_view.php:129
-msgid   "Invalid netmask"
-msgstr  "Ogiltig nätmask"
+msgid "Invalid netmask"
+msgstr "Ogiltig nätmask"
 
 #: admin/controllers/network.php:488
-msgid   "Invalid private IP."
-msgstr  "Ogiltigt privat IP."
+msgid "Invalid private IP."
+msgstr "Ogiltigt privat IP."
 
 #: admin/views/default/login_view.php:46
-msgid   "Invalid user/password combination."
-msgstr  "Felaktigt användarnamn eller lösenord."
+msgid "Invalid user/password combination."
+msgstr "Felaktigt användarnamn eller lösenord."
 
 #: admin/views/default/wizard_view.php:29
-msgid   "It's highly recommended to change the admin password for security "
-        "reasons"
-msgstr  "Det rekommenderas att byta lösenord för admin av säkerhetsskäl"
+msgid "It's highly recommended to change the admin password for security reasons"
+msgstr "Det rekommenderas att byta lösenord för admin av säkerhetsskäl"
 
 #: admin/views/default/backup/backup_view.php:52
-msgid   "Job name"
-msgstr  "Jobbnamn"
+msgid "Job name"
+msgstr "Jobbnamn"
 
 #: admin/views/default/backup/backup_view.php:336
 #: admin/views/default/backup/backup_view.php:683
-msgid   "Keep timeline length of"
-msgstr  "Behåll en tidslinje i"
+msgid "Keep timeline length of"
+msgstr "Behåll en tidslinje i"
 
 #: admin/views/default/network/network_lan_view.php:9
-msgid   "LAN"
-msgstr  "LAN"
+msgid "LAN"
+msgstr "LAN"
 
 #: admin/models/menu.php:166
 msgctxt "menu"
-msgid   "LAN"
-msgstr  "LAN"
+msgid "LAN"
+msgstr "LAN"
 
 #: admin/controllers/network.php:283
-msgid   "LAN configuration updated"
-msgstr  "LAN-konfiguration uppdaterad"
+msgid "LAN configuration updated"
+msgstr "LAN-konfiguration uppdaterad"
 
 #: admin/controllers/network.php:488
-msgid   "LAN is on"
-msgstr  "LAN är på"
+msgid "LAN is on"
+msgstr "LAN är på"
 
 #: admin/models/menu.php:201
 msgctxt "menu"
-msgid   "LVM"
-msgstr  "LVM"
+msgid "LVM"
+msgstr "LVM"
 
 #: admin/views/default/disk/disk_head_view.php:24
-msgid   "Label"
-msgstr  "Etikett"
+msgid "Label"
+msgstr "Etikett"
 
 #: admin/views/default/network/network_lan_view.php:370
-msgid   "Lease expires"
-msgstr  "Utdelning giltig till"
+msgid "Lease expires"
+msgstr "Utdelning giltig till"
 
 #: admin/views/default/network/network_lan_view.php:294
-msgid   "Lease range end"
-msgstr  "Utdelningsområde slut"
+msgid "Lease range end"
+msgstr "Utdelningsområde slut"
 
 #: admin/views/default/network/network_lan_view.php:256
-msgid   "Lease range start"
-msgstr  "Utdelningsområde start"
+msgid "Lease range start"
+msgstr "Utdelningsområde start"
 
 #: admin/views/default/mail/mail_retrieve_view.php:12
-msgid   "Leave copy"
-msgstr  "Lämna kopia"
+msgid "Leave copy"
+msgstr "Lämna kopia"
 
 #: admin/views/default/mail/mail_retrieve_view.php:82
-msgid   "Leave email copy on server"
-msgstr  "Lämna epostkopia på servern"
+msgid "Leave email copy on server"
+msgstr "Lämna epostkopia på servern"
 
 #: admin/views/default/network/network_wlan_view.php:123
 #, php-format
-msgid   "Legacy mode (%s)"
-msgstr  "Bakåtkompatibelt läge (%s)"
+msgid "Legacy mode (%s)"
+msgstr "Bakåtkompatibelt läge (%s)"
 
 #: admin/views/default/network/network_wlan_head_view.php:12
-msgid   "Legacy mode (802.11a)"
-msgstr  "Bakåtkompatibelt läge (802.11a)"
+msgid "Legacy mode (802.11a)"
+msgstr "Bakåtkompatibelt läge (802.11a)"
 
 #: admin/views/default/network/network_wlan_head_view.php:13
-msgid   "Legacy mode (802.11g)"
-msgstr  "Bakåtkompatibelt läge (802.11g)"
+msgid "Legacy mode (802.11g)"
+msgstr "Bakåtkompatibelt läge (802.11g)"
 
 #: admin/views/default/network/network_tor_view.php:86
-msgid   "Let others access your bridge by giving them this line"
-msgstr  "Låt andra komma åt din brygga genom att ge dem denna adress"
+msgid "Let others access your bridge by giving them this line"
+msgstr "Låt andra komma åt din brygga genom att ge dem denna adress"
 
 #: admin/views/default/disk/disk_raid_view.php:95
-msgid   "Level"
-msgstr  "Nivå"
+msgid "Level"
+msgstr "Nivå"
 
 #: admin/views/default/disk/disk_raid_view.php:91
-msgid   "List of RAID arrays"
-msgstr  "Lista över RAID-system"
+msgid "List of RAID arrays"
+msgstr "Lista över RAID-system"
 
 #: admin/views/default/disk/disk_raid_view.php:113
-msgid   "List of RAID disks"
-msgstr  "Lista över RAID-diskar"
+msgid "List of RAID disks"
+msgstr "Lista över RAID-diskar"
 
 #: admin/views/default/backup/backup_view.php:133
-msgid   "Local (USB/eSATA)"
-msgstr  "Lokal (USB/eSATA)"
+msgid "Local (USB/eSATA)"
+msgstr "Lokal (USB/eSATA)"
 
 #: admin/views/default/mail/mail_retrieve_view.php:10
 #: admin/views/default/mail/mail_retrieve_view.php:65
-msgid   "Local user"
-msgstr  "Lokal användare"
+msgid "Local user"
+msgstr "Lokal användare"
 
 #: admin/views/default/downloads/downloads_index_view.php:32
-msgid   "Location"
-msgstr  "Plats"
+msgid "Location"
+msgstr "Plats"
 
 #: admin/views/default/main_view.php:272
 #, php-format
-msgid   "Logged in as '%s'"
-msgstr  "Inloggad som '%s'"
+msgid "Logged in as '%s'"
+msgstr "Inloggad som '%s'"
 
 #: admin/views/default/login_view.php:19
-msgid   "Login required"
-msgstr  "Inloggning krävs"
+msgid "Login required"
+msgstr "Inloggning krävs"
 
 #: admin/views/default/main_view.php:277
-msgid   "Logout"
-msgstr  "Logga ut"
+msgid "Logout"
+msgstr "Logga ut"
 
 #: admin/models/menu.php:254
 msgctxt "menu"
-msgid   "Logs"
-msgstr  "Loggar"
+msgid "Logs"
+msgstr "Loggar"
 
 #: admin/views/default/network/network_lan_view.php:370
-msgid   "MAC-address"
-msgstr  "MAC-adress"
+msgid "MAC-address"
+msgstr "MAC-adress"
 
 #: admin/models/menu.php:129
 msgctxt "menu"
-msgid   "Mail"
-msgstr  "Epost"
+msgid "Mail"
+msgstr "Epost"
 
 #: admin/views/default/network/network_tor_view.php:119
-msgid   "Make this a private bridge"
-msgstr  ""
+msgid "Make this a private bridge"
+msgstr "Gör denna brygga privat"
 
 #: admin/views/default/login_view.php:11
-msgid   "Manual"
-msgstr  "Manual"
+msgid "Manual"
+msgstr "Manual"
 
 #: admin/views/default/settings/settings_traffic_view.php:13
-msgid   "Max download speed"
-msgstr  "Maximal nedladdningshastighet"
+msgid "Max download speed"
+msgstr "Maximal nedladdningshastighet"
 
 #: admin/views/default/settings/settings_traffic_view.php:9
-msgid   "Max upload speed"
-msgstr  "Maximal uppladdningshastighet"
+msgid "Max upload speed"
+msgstr "Maximal uppladdningshastighet"
 
 #: admin/views/default/upload/upload_index_view.php:151
-msgid   "Maximum total upload is 2GByte."
-msgstr  "Maximal uppladdning är 2 GByte, totalt. "
+msgid "Maximum total upload is 2GByte."
+msgstr "Maximal uppladdning är 2 GByte, totalt. "
 
 #: admin/views/default/network/network_tor_view.php:206
 msgctxt "label"
-msgid   "Misc Other Services"
-msgstr  "Diverse andra tjänster"
+msgid "Misc Other Services"
+msgstr "Diverse andra tjänster"
 
 #: admin/controllers/mail.php:266
-msgid   "Missing mail server password"
-msgstr  "Saknar serverlösenord"
+msgid "Missing mail server password"
+msgstr "Saknar serverlösenord"
 
 #: admin/views/default/network/network_wlan_view.php:130
 #, php-format
-msgid   "Mixed mode (802.11n + %s)"
-msgstr  "Blandat läge (802.11n + %s)"
+msgid "Mixed mode (802.11n + %s)"
+msgstr "Blandat läge (802.11n + %s)"
 
 #: admin/views/default/network/network_wlan_head_view.php:14
-msgid   "Mixed mode (802.11n + 802.11a)"
-msgstr  "Blandat läge (802.11n + 802.11a)"
+msgid "Mixed mode (802.11n + 802.11a)"
+msgstr "Blandat läge (802.11n + 802.11a)"
 
 #: admin/views/default/network/network_wlan_head_view.php:15
-msgid   "Mixed mode (802.11n + 802.11g)"
-msgstr  "Blandat läge (802.11n + 802.11g)"
+msgid "Mixed mode (802.11n + 802.11g)"
+msgstr "Blandat läge (802.11n + 802.11g)"
 
 #: admin/views/default/network/network_wlan_view.php:110
-msgid   "Mode"
-msgstr  "Läge"
+msgid "Mode"
+msgstr "Läge"
 
 #: admin/views/default/backup/backup_view.php:231
 #: admin/views/default/backup/backup_view.php:578
-msgid   "Monthly on the"
-msgstr  "Månadsvis, den"
+msgid "Monthly on the"
+msgstr "Månadsvis, den"
 
 #: admin/views/default/disk/disk_view.php:66
-msgid   "Mount path"
-msgstr  "Monterad sökväg"
+msgid "Mount path"
+msgstr "Monterad sökväg"
 
 #: admin/models/menu.php:34
 msgctxt "menu"
-msgid   "Music"
-msgstr  "Musik"
+msgid "Music"
+msgstr "Musik"
 
 #: admin/views/default/backup/backup_view.php:8
 #: admin/views/default/backup/backup_view.php:764
@@ -1409,182 +1396,181 @@ msgstr  "Musik"
 #: admin/views/default/filemanager/filemanager_index_view.php:8
 #: admin/views/default/filemanager/filemanager_index_view.php:70
 #: admin/views/default/filemanager/filemanager_index_view.php:83
-msgid   "Name"
-msgstr  "Namn"
+msgid "Name"
+msgstr "Namn"
 
 #: admin/controllers/settings.php:656
 #, php-format
-msgid   "Name '%s' is not valid"
-msgstr  "Namnet '%s' är inte giltigt"
+msgid "Name '%s' is not valid"
+msgstr "Namnet '%s' är inte giltigt"
 
 #: admin/controllers/wizard.php:157
-msgid   "Name is not valid"
-msgstr  "Namnet är inte giltigt"
+msgid "Name is not valid"
+msgstr "Namnet är inte giltigt"
 
 #: admin/models/networkmanager.php:62
-msgid   "Name is not valid."
-msgstr  "Namnet är inte giltigt."
+msgid "Name is not valid."
+msgstr "Namnet är inte giltigt."
 
 #: admin/models/networkmanager.php:54
-msgid   "Name not available."
-msgstr  "Namnet är inte tillgängligt."
+msgid "Name not available."
+msgstr "Namnet är inte tillgängligt."
 
 #: admin/views/default/network/network_wan_view.php:34
 #: admin/views/default/network/network_lan_view.php:91
-msgid   "Netmask"
-msgstr  "Nätmask"
+msgid "Netmask"
+msgstr "Nätmask"
 
 #: admin/models/menu.php:149
 msgctxt "menu"
-msgid   "Network"
-msgstr  "Nätverk"
+msgid "Network"
+msgstr "Nätverk"
 
 #: admin/views/default/network/network_head_view.php:32
-msgid   "Network configuration"
-msgstr  "Nätverkskonfiguration"
+msgid "Network configuration"
+msgstr "Nätverkskonfiguration"
 
 #: admin/views/default/network/network_wlan_view.php:32
-msgid   "Network name (SSID)"
-msgstr  "Nätverksnamn (SSID)"
+msgid "Network name (SSID)"
+msgstr "Nätverksnamn (SSID)"
 
 #: admin/views/default/network/network_profile_view.php:8
-msgid   "Network profile"
-msgstr  "Nätverksprofil"
+msgid "Network profile"
+msgstr "Nätverksprofil"
 
 #: admin/views/default/settings/settings_netupdate_view.php:1
-msgid   "Network settings"
-msgstr  "Nätverksinställningar"
+msgid "Network settings"
+msgstr "Nätverksinställningar"
 
 #: admin/controllers/ajax_backup.php:57
-msgid   "Never"
-msgstr  "Aldrig"
+msgid "Never"
+msgstr "Aldrig"
 
 #: admin/views/default/album/album_users_view.php:27
 #: admin/views/default/users/user_list_view.php:53
-msgid   "New password"
-msgstr  "Nytt lösenord"
+msgid "New password"
+msgstr "Nytt lösenord"
 
 #: admin/views/default/network/network_tor_view.php:31
-msgid   "Nickname"
-msgstr  "Smeknamn"
+msgid "Nickname"
+msgstr "Smeknamn"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:46
 #: admin/views/default/filemanager/filemanager_index_view.php:56
-msgid   "No access"
-msgstr  "Ingen åtkomst"
+msgid "No access"
+msgstr "Ingen åtkomst"
 
 #: admin/views/default/settings/settings_backuprestore_view.php:15
-msgid   "No backup medium found"
-msgstr  "Hittade inget backupmedium"
+msgid "No backup medium found"
+msgstr "Hittade inget backupmedium"
 
 #: admin/views/default/downloads/downloads_list_view.php:42
-msgid   "No info"
-msgstr  "Ingen information"
+msgid "No info"
+msgstr "Ingen information"
 
 #: admin/views/default/stat/stat_view.php:85
-msgid   "No system messages available"
-msgstr  "Inget systemmedelande tillgängligt"
+msgid "No system messages available"
+msgstr "Inget systemmedelande tillgängligt"
 
 #: admin/views/default/network/network_tor_view.php:4
-msgid   "No valid timezone set."
-msgstr  "Giltig tidszon ej angiven."
+msgid "No valid timezone set."
+msgstr "Giltig tidszon ej angiven."
 
 #: admin/views/default/network/network_tor_view.php:71
-#, fuzzy
-msgid   "Non-exit relay"
-msgstr  "Icke-exit-nod"
+msgid "Non-exit relay"
+msgstr "Icke-exit-relä"
 
 #: admin/views/default/network/network_wlan_view.php:185
-msgid   "None"
-msgstr  "Ingen"
+msgid "None"
+msgstr "Ingen"
 
 #: admin/views/default/disk/disk_raid_view.php:77
-msgid   "Normal operation"
-msgstr  "Normalt läge"
+msgid "Normal operation"
+msgstr "Normalt läge"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:51
 #: admin/views/default/main_view.php:274
-msgid   "Not logged in"
-msgstr  "Inte inloggad"
+msgid "Not logged in"
+msgstr "Inte inloggad"
 
 #: admin/controllers/ajax_backup.php:95
-msgid   "Not run"
-msgstr  "Inte körd"
+msgid "Not run"
+msgstr "Inte körd"
 
 #: admin/controllers/ajax_backup.php:93
-msgid   "OK"
-msgstr  "OK"
+msgid "OK"
+msgstr "OK"
 
 #: admin/views/default/network/network_wan_view.php:16
 #: admin/views/default/network/network_lan_view.php:24
-msgid   "Obtain IP-address automatically"
-msgstr  "Be om IP-adress automatiskt"
+msgid "Obtain IP-address automatically"
+msgstr "Be om IP-adress automatiskt"
 
 #: admin/controllers/ajax_backup.php:51
-msgid   "Once a week"
-msgstr  "En gång i veckan"
+msgid "Once a week"
+msgstr "En gång i veckan"
 
 #: admin/controllers/ajax_backup.php:60
-msgid   "Once in a while"
-msgstr  "Lite ibland"
+msgid "Once in a while"
+msgstr "Lite ibland"
 
 #: admin/views/default/settings/settings_netupdate_view.php:8
-msgid   "Only A-Z,a-z,0-9 and \\\"-\\\" allowed"
-msgstr  "Endast A-Z, a-z, 0.9 och \\\"-\\\" är tillåtna"
+msgid "Only A-Z,a-z,0-9 and \\\"-\\\" allowed"
+msgstr "Endast A-Z, a-z, 0.9 och \\\"-\\\" är tillåtna"
 
 #: admin/views/default/network/network_fw_view.php:190
 #, php-format
-msgid   "Open %s port"
-msgstr  "Öppna %s port"
+msgid "Open %s port"
+msgstr "Öppna %s port"
 
 #: admin/views/default/services/services_view.php:58
-msgid   "Other"
-msgstr  "Annan"
+msgid "Other"
+msgstr "Annan"
 
 #: admin/views/default/mail/mail_server_view.php:15
-msgid   "Outgoing email server"
-msgstr  "Utgående epostserver"
+msgid "Outgoing email server"
+msgstr "Utgående epostserver"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:32
-msgid   "Owner"
-msgstr  "Ägare"
+msgid "Owner"
+msgstr "Ägare"
 
 #: admin/models/menu.php:65
 msgctxt "menu"
-msgid   "PIM"
-msgstr  "PIM"
+msgid "PIM"
+msgstr "PIM"
 
 #: admin/views/default/settings/settings_software_view.php:12
-msgid   "Package name"
-msgstr  "Paketnamn"
+msgid "Package name"
+msgstr "Paketnamn"
 
 #: admin/views/default/settings/settings_software_view.php:13
-msgid   "Package version"
-msgstr  "Paketversion"
+msgid "Package version"
+msgstr "Paketversion"
 
 #: admin/views/default/disk/disk_raid_view.php:117
-msgid   "Parent"
-msgstr  "Huvud"
+msgid "Parent"
+msgstr "Huvud"
 
 #: admin/views/default/disk/disk_view.php:63
-msgid   "Partition"
-msgstr  "Partition"
+msgid "Partition"
+msgstr "Partition"
 
 #: admin/views/default/disk/disk_view.php:60
-msgid   "Partition information"
-msgstr  "Partitionsinformation"
+msgid "Partition information"
+msgstr "Partitionsinformation"
 
 #: admin/views/default/disk/disk_view.php:64
-msgid   "Partition label"
-msgstr  "Partitionsnamn"
+msgid "Partition label"
+msgstr "Partitionsnamn"
 
 #: admin/views/default/disk/disk_view.php:65
-msgid   "Partition size"
-msgstr  "Partitionsstorlek"
+msgid "Partition size"
+msgstr "Partitionsstorlek"
 
 #: admin/views/default/disk/disk_view.php:10
-msgid   "Partitions"
-msgstr  "Partitioner"
+msgid "Partitions"
+msgstr "Partitioner"
 
 #: admin/views/default/mail/mail_retrieve_view.php:60
 #: admin/views/default/mail/mail_server_view.php:70
@@ -1594,86 +1580,85 @@ msgstr  "Partitioner"
 #: admin/views/default/login_view.php:35
 #: admin/views/default/wizard_view.php:36
 #: admin/views/default/wizard_view.php:86
-msgid   "Password"
-msgstr  "Lösenord"
+msgid "Password"
+msgstr "Lösenord"
 
-#: admin/controllers/users.php:307 admin/controllers/filemanager.php:107
+#: admin/controllers/users.php:307
+#: admin/controllers/filemanager.php:107
 #: admin/views/default/backup/backup_view.php:776
 #: admin/views/default/backup/backup_view.php:846
 #: admin/views/default/filemanager/filemanager_index_view.php:17
-msgid   "Permission denied"
-msgstr  "Åtkomst nekad"
+msgid "Permission denied"
+msgstr "Åtkomst nekad"
 
 #: admin/views/default/shutdown_view.php:3
-msgid   "Please do not remove power until all leds are turned off"
-msgstr  "Vänligen bryt inte strömmen förrän alla lysdioder slocknat"
+msgid "Please do not remove power until all leds are turned off"
+msgstr "Vänligen bryt inte strömmen förrän alla lysdioder slocknat"
 
 #: admin/views/default/login_view.php:49
-msgid   "Please read the users manual for advice."
-msgstr  "Vänligen läs användarmanualen för råd."
+msgid "Please read the users manual for advice."
+msgstr "Vänligen läs användarmanualen för råd."
 
 #: admin/views/default/disk/disk_raid_view.php:65
-msgid   "Please replace the disk (also press \"Remove\" below to acknowledge "
-        "the removal of the disk)"
-msgstr  "Vänligen byt hårddisk (tryck också \"Ta bort\" nedan för att "
-        "bekräfta att du tagit bort disken)"
+msgid "Please replace the disk (also press \"Remove\" below to acknowledge the removal of the disk)"
+msgstr "Vänligen byt hårddisk (tryck också \"Ta bort\" nedan för att bekräfta att du tagit bort disken)"
 
-#: admin/controllers/ajax_network.php:41 admin/controllers/ajax_network.php:42
+#: admin/controllers/ajax_network.php:41
+#: admin/controllers/ajax_network.php:42
 #: admin/controllers/ajax_network.php:43
 #, php-format
-msgid   "Please see the manual on how to connect your computer to %s."
-msgstr  "Vänligen se manualen för information om hur man ansluter datorn till "
-        "%s. "
+msgid "Please see the manual on how to connect your computer to %s."
+msgstr "Vänligen se manualen för information om hur man ansluter datorn till %s. "
 
 #: admin/views/default/network/network_profile_view.php:13
-msgid   "Please select profile"
-msgstr  "Vänligen välj profil"
+msgid "Please select profile"
+msgstr "Vänligen välj profil"
 
 #: admin/views/default/disk/disk_head_view.php:21
-msgid   "Please specify label for your new partition"
-msgstr  "Vänligen ange etikett för den nya partitionen"
+msgid "Please specify label for your new partition"
+msgstr "Vänligen ange etikett för den nya partitionen"
 
 #: admin/views/default/disk/disk_head_view.php:47
 #: admin/views/default/disk/disk_lvm_head_view.php:18
-msgid   "Please wait..."
-msgstr  "Vänligen vänta..."
+msgid "Please wait..."
+msgstr "Vänligen vänta..."
 
 #: admin/views/default/network/network_fw_view.php:187
-msgid   "Port forward to internal network"
-msgstr  "Portöppning till det interna nätverket"
+msgid "Port forward to internal network"
+msgstr "Portöppning till det interna nätverket"
 
 #: admin/views/default/network/network_wan_view.php:79
 #: admin/views/default/network/network_lan_view.php:177
-msgid   "Primary DNS"
-msgstr  "Primär DNS"
+msgid "Primary DNS"
+msgstr "Primär DNS"
 
 #: admin/views/default/services/services_view.php:60
-msgid   "Printing"
-msgstr  "Skrivare"
+msgid "Printing"
+msgstr "Skrivare"
 
 #: admin/views/default/network/network_fw_view.php:214
 #: admin/views/default/network/network_fw_view.php:289
-msgid   "Private IP"
-msgstr  "Privat IP"
+msgid "Private IP"
+msgstr "Privat IP"
 
 #: admin/views/default/network/network_fw_view.php:210
 #: admin/views/default/network/network_fw_view.php:288
-msgid   "Private port"
-msgstr  "Privat port"
+msgid "Private port"
+msgstr "Privat port"
 
 #: admin/views/default/network/network_fw_view.php:228
-msgid   "Private port is start port if public port range entered"
-msgstr  "Privat port är startport om publikt portområde är angett"
+msgid "Private port is start port if public port range entered"
+msgstr "Privat port är startport om publikt portområde är angett"
 
 #: admin/views/default/network/network_wan_view.php:4
 #: admin/views/default/network/network_lan_view.php:4
-msgid   "Profile"
-msgstr  "Profil"
+msgid "Profile"
+msgstr "Profil"
 
 #: admin/models/menu.php:155
 msgctxt "menu"
-msgid   "Profile"
-msgstr  "Profil"
+msgid "Profile"
+msgstr "Profil"
 
 #: admin/views/default/mail/mail_retrieve_view.php:8
 #: admin/views/default/mail/mail_retrieve_view.php:43
@@ -1683,619 +1668,596 @@ msgstr  "Profil"
 #: admin/views/default/backup/backup_view.php:476
 #: admin/views/default/network/network_fw_view.php:218
 #: admin/views/default/network/network_fw_view.php:290
-msgid   "Protocol"
-msgstr  "Protokoll"
+msgid "Protocol"
+msgstr "Protokoll"
 
 #: admin/views/default/network/network_fw_view.php:206
 #: admin/views/default/network/network_fw_view.php:287
-msgid   "Public port"
-msgstr  "Publik port"
+msgid "Public port"
+msgstr "Publik port"
 
 #: admin/views/default/network/network_fw_view.php:227
-msgid   "Public port range accepted as start-port:stop-port"
-msgstr  "Publikt portområde ska skrivas som startport:slutport"
+msgid "Public port range accepted as start-port:stop-port"
+msgstr "Publikt portområde ska skrivas som startport:slutport"
 
 #: admin/views/default/downloads/downloads_list_view.php:24
-msgid   "Queued for checking"
-msgstr  "In kö för kontroll"
+msgid "Queued for checking"
+msgstr "In kö för kontroll"
 
 #: admin/models/menu.php:206
 msgctxt "menu"
-msgid   "RAID"
-msgstr  "RAID"
+msgid "RAID"
+msgstr "RAID"
 
 #: admin/views/default/disk/disk_raid_view.php:19
-msgid   "RAID Status"
-msgstr  "RAID-status"
+msgid "RAID Status"
+msgstr "RAID-status"
 
 #: admin/views/default/disk/disk_raid_view.php:48
-msgid   "RAID array degraded"
-msgstr  "RAID-systemet är trasigt"
+msgid "RAID array degraded"
+msgstr "RAID-systemet är trasigt"
 
 #: admin/views/default/disk/disk_raid_view.php:81
-msgid   "RAID not activated"
-msgstr  "RAID är inte aktiverat"
+msgid "RAID not activated"
+msgstr "RAID är inte aktiverat"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:35
 #: admin/views/default/filemanager/filemanager_index_view.php:44
 #: admin/views/default/filemanager/filemanager_index_view.php:54
-msgid   "Read and write"
-msgstr  "Läs och skriv"
+msgid "Read and write"
+msgstr "Läs och skriv"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:36
 #: admin/views/default/filemanager/filemanager_index_view.php:45
 #: admin/views/default/filemanager/filemanager_index_view.php:55
-msgid   "Read only"
-msgstr  "Endast läs"
+msgid "Read only"
+msgstr "Endast läs"
 
 #: admin/views/default/wizard_view.php:77
 #: admin/views/default/users/user_list_view.php:9
 #: admin/views/default/users/user_list_view.php:49
-msgid   "Real name"
-msgstr  "Verkligt namn"
+msgid "Real name"
+msgstr "Verkligt namn"
 
 #: admin/views/default/disk/disk_raid_view.php:14
-msgid   "Recover RAID array"
-msgstr  "Återskapa RAID-system"
+msgid "Recover RAID array"
+msgstr "Återskapa RAID-system"
 
 #: admin/views/default/disk/disk_raid_view.php:11
-msgid   "Recover internal disk or add a new external disk to existing RAID "
-        "array"
-msgstr  "Återskapa intern disk eller lägg till ny extern disk till "
-        "existerande RAID-system"
+msgid "Recover internal disk or add a new external disk to existing RAID array"
+msgstr "Återskapa intern disk eller lägg till ny extern disk till existerande RAID-system"
 
 #: admin/controllers/disk.php:66
-msgid   "Recovering RAID"
-msgstr  "Återskapar RAID"
+msgid "Recovering RAID"
+msgstr "Återskapar RAID"
 
 #: admin/views/default/disk/disk_raid_view.php:34
 #, php-format
-msgid   "Recovering RAID array '%s'"
-msgstr  "Återskapar RAID-system '%s'"
+msgid "Recovering RAID array '%s'"
+msgstr "Återskapar RAID-system '%s'"
 
 #: admin/views/default/network/network_tor_view.php:92
-msgid   "Relay port"
-msgstr  "Reläport"
+msgid "Relay port"
+msgstr "Reläport"
 
 #: admin/views/default/services/services_view.php:68
-msgid   "Remote access through other router"
-msgstr  "Fjärråtkomst genom annan router"
+msgid "Remote access through other router"
+msgstr "Fjärråtkomst genom annan router"
 
 #: admin/views/default/mail/mail_retrieve_view.php:56
-msgid   "Remote user"
-msgstr  "Användare på mailservern"
+msgid "Remote user"
+msgstr "Användare på mailservern"
 
 #: admin/views/default/disk/disk_raid_view.php:130
-msgid   "Remove"
-msgstr  "Ta bort"
+msgid "Remove"
+msgstr "Ta bort"
 
 #: admin/views/default/album/album_album_view.php:81
-msgid   "Remove from album"
-msgstr  "Ta bort från album"
+msgid "Remove from album"
+msgstr "Ta bort från album"
 
 #: admin/views/default/album/album_album_view.php:83
-msgid   "Remove selected image from album?"
-msgstr  "Ta bort vald bild från album?"
+msgid "Remove selected image from album?"
+msgstr "Ta bort vald bild från album?"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:78
-msgid   "Rename"
-msgstr  "Döp om"
+msgid "Rename"
+msgstr "Döp om"
 
 #: admin/views/default/backup/backup_view.php:385
 #: admin/views/default/backup/backup_view.php:732
-msgid   "Repeat password"
-msgstr  "Repetera lösenord"
+msgid "Repeat password"
+msgstr "Repetera lösenord"
 
 #: admin/controllers/filemanager.php:79
 #, php-format
-msgid   "Requested file %s to rename doesn't exists"
-msgstr  "Filen du vill döpa - %s - om finns inte"
+msgid "Requested file %s to rename doesn't exists"
+msgstr "Filen du vill döpa - %s - om finns inte"
 
 #: admin/views/default/services/services_view.php:48
-msgid   "Required for webmail access"
-msgstr  "Krävs för webmail-åtkomst"
+msgid "Required for webmail access"
+msgstr "Krävs för webmail-åtkomst"
 
 #: admin/views/default/network/network_fw_view.php:160
-msgid   "Respond to ping"
-msgstr  "Svara på ping"
+msgid "Respond to ping"
+msgstr "Svara på ping"
 
 #: admin/views/default/stat/stat_view.php:93
-msgid   "Restart"
-msgstr  "Starta om"
+msgid "Restart"
+msgstr "Starta om"
 
 #: admin/views/default/shutdown_view.php:7
 #, php-format
-msgid   "Restarting %s"
-msgstr  "Startar om %s"
+msgid "Restarting %s"
+msgstr "Startar om %s"
 
 #: admin/views/default/settings/settings_backuprestore_view.php:26
-msgid   "Restore"
-msgstr  "Återskapa"
+msgid "Restore"
+msgstr "Återskapa"
 
 #: admin/views/default/backup/backup_view.php:798
-msgid   "Restore file to it’s original place"
-msgstr  "Återskapa filen till dess ursprungliga plats"
+msgid "Restore file to it’s original place"
+msgstr "Återskapa filen till dess ursprungliga plats"
 
 #: admin/views/default/backup/backup_view.php:811
-msgid   "Restore to other place"
-msgstr  "Återskapa till annan plats"
+msgid "Restore to other place"
+msgstr "Återskapa till annan plats"
 
 #: admin/views/default/settings/settings_software_view.php:18
-msgid   "Retreiving package information"
-msgstr  "Hämtar paketinformation"
+msgid "Retreiving package information"
+msgstr "Hämtar paketinformation"
 
 #: admin/views/default/network/network_tor_view.php:200
-#, fuzzy
 msgctxt "label"
-msgid   "Retrieve Mail (POP, IMAP)"
-msgstr  "Hämta epost (POP, IMAP)'"
+msgid "Retrieve Mail (POP, IMAP)"
+msgstr "Hämta epost (POP, IMAP)"
 
 #: admin/views/default/mail/mail_retrieve_view.php:4
-msgid   "Retrieve email"
-msgstr  "Hämta epost"
+msgid "Retrieve email"
+msgstr "Hämta epost"
 
 #: admin/models/menu.php:135
 msgctxt "menu"
-msgid   "Retrieve email"
-msgstr  "Hämta epost"
+msgid "Retrieve email"
+msgstr "Hämta epost"
 
 #: admin/views/default/network/network_profile_view.php:24
-msgid   "Router + Firewall + Server"
-msgstr  "Router + Brandvägg + Server"
+msgid "Router + Firewall + Server"
+msgstr "Router + Brandvägg + Server"
 
 #: admin/views/default/network/network_tor_view.php:63
-msgid   "Run Tor as"
-msgstr  ""
+msgid "Run Tor as"
+msgstr "Kör Tor som"
 
 #: admin/controllers/ajax_backup.php:87
-msgid   "Running"
-msgstr  "Kör"
+msgid "Running"
+msgstr "Kör"
 
 #: admin/views/default/backup/backup_view.php:132
 #: admin/views/default/network/network_fw_view.php:112
-msgid   "SSH"
-msgstr  "SSH"
+msgid "SSH"
+msgstr "SSH"
 
 #: admin/views/default/backup/backup_view.php:10
-msgid   "Schedule"
-msgstr  "Schemalägga"
+msgid "Schedule"
+msgstr "Schemalägga"
 
 #: admin/views/default/network/network_tor_view.php:198
-#, fuzzy
 msgctxt "label"
-msgid   "Secure websites (SSL)"
-msgstr  "Säkra webbsajter (SSL)'"
+msgid "Secure websites (SSL)"
+msgstr "Säkra webbsajter (SSL)"
 
 #: admin/views/default/backup/backup_view.php:705
-msgid   "Security (step 4 of 4)"
-msgstr  "Säkerhet (steg 4 av 4)"
+msgid "Security (step 4 of 4)"
+msgstr "Säkerhet (steg 4 av 4)"
 
 #: admin/views/default/backup/backup_view.php:358
-msgid   "Security (step 5 of 5)"
-msgstr  "Säkerhet (steg 5 av 5)"
+msgid "Security (step 5 of 5)"
+msgstr "Säkerhet (steg 5 av 5)"
 
 #: admin/views/default/downloads/downloads_list_view.php:33
-msgid   "Seeding"
-msgstr  "Seedar"
+msgid "Seeding"
+msgstr "Seedar"
 
 #: admin/views/default/backup/backup_view.php:206
-msgid   "Select backup schedule (step 4 of 5)"
-msgstr  "Välj schemaläggning för din backup (steg 4 av 5)"
+msgid "Select backup schedule (step 4 of 5)"
+msgstr "Välj schemaläggning för din backup (steg 4 av 5)"
 
 #: admin/views/default/wizard_lang_view.php:2
-msgid   "Select language (step 1 of 5)"
-msgstr  "Välj språk (steg 1 av 5)"
+msgid "Select language (step 1 of 5)"
+msgstr "Välj språk (steg 1 av 5)"
 
 #: admin/views/default/backup/backup_view.php:66
-msgid   "Select what you want to backup (step 2 of 5)"
-msgstr  "Välj vad du vill backa upp (steg 2 av 5)"
+msgid "Select what you want to backup (step 2 of 5)"
+msgstr "Välj vad du vill backa upp (steg 2 av 5)"
 
 #: admin/views/default/services/services_view.php:44
-#, fuzzy
-msgid   "Send and receive"
-msgstr  "Skicka och ta emot"
+msgid "Send and receive"
+msgstr "Skicka och ta emot"
 
 #: admin/views/default/network/network_profile_view.php:27
-msgid   "Server only"
-msgstr  "Endast server"
+msgid "Server only"
+msgstr "Endast server"
 
 #: admin/models/networkmanager.php:74
-msgid   "Server responded: "
-msgstr  "Servern svarade:"
+msgid "Server responded: "
+msgstr "Servern svarade:"
 
 #: admin/models/menu.php:141
 msgctxt "menu"
-msgid   "Server settings"
-msgstr  "Serverinställningar"
+msgid "Server settings"
+msgstr "Serverinställningar"
 
 #: admin/models/menu.php:123
 msgctxt "menu"
-msgid   "Services"
-msgstr  "Tjänster"
+msgid "Services"
+msgstr "Tjänster"
 
 #: admin/views/default/network/network_tor_view.php:37
-msgid   "Set a unique nickname for your Tor bridge or relay"
-msgstr  "Välj ett unikt smeknamn för din Tor-brygga eller relä"
+msgid "Set a unique nickname for your Tor bridge or relay"
+msgstr "Välj ett unikt smeknamn för din Tor-brygga eller relä"
 
 #: admin/views/default/wizard_view.php:5
-msgid   "Set timezone (step 2 of 5)"
-msgstr  "Välj tidszon (steg 2 av 5)"
+msgid "Set timezone (step 2 of 5)"
+msgstr "Välj tidszon (steg 2 av 5)"
 
 #: admin/views/default/disk/disk_raid_view.php:5
-msgid   "Set up the internal disk and one external disk into a RAID mirror "
-        "solution (RAID 1)"
-msgstr  "Sätt upp den interna disken tillsammans med en extern disk till en "
-        "RAID-spegling (RAID 1)"
+msgid "Set up the internal disk and one external disk into a RAID mirror solution (RAID 1)"
+msgstr "Sätt upp den interna disken tillsammans med en extern disk till en RAID-spegling (RAID 1)"
 
 #: admin/models/menu.php:213
 msgctxt "menu"
-msgid   "Settings"
-msgstr  "Inställningar"
+msgid "Settings"
+msgstr "Inställningar"
 
 #: admin/views/default/settings/settings_netupdate_view.php:3
-msgid   "Settings updated successfully"
-msgstr  "Inställningarna uppdaterade"
+msgid "Settings updated successfully"
+msgstr "Inställningarna uppdaterade"
 
 #: admin/views/default/disk/disk_raid_view.php:2
-msgid   "Setup RAID array"
-msgstr  "Ställ in RAID-system"
+msgid "Setup RAID array"
+msgstr "Ställ in RAID-system"
 
 #: admin/views/default/wizard_view.php:1
-#, fuzzy
-msgid   "Setup wizard"
-msgstr  "Inställningsguide"
+msgid "Setup wizard"
+msgstr "Inställningsguide"
 
 #: admin/models/menu.php:219
 msgctxt "menu"
-msgid   "Setup wizard"
-msgstr  "Inställningsguide"
+msgid "Setup wizard"
+msgstr "Inställningsguide"
 
 #: admin/views/default/users/user_list_view.php:124
-msgid   "Shell login"
-msgstr  "Skalinloggning"
+msgid "Shell login"
+msgstr "Skalinloggning"
 
 #: admin/views/default/settings/settings_logs_view.php:21
-msgid   "Show"
-msgstr  "Visa"
+msgid "Show"
+msgstr "Visa"
 
 #: admin/views/default/settings/settings_logs_view.php:3
-msgid   "Show logs"
-msgstr  "Visa loggar"
+msgid "Show logs"
+msgstr "Visa loggar"
 
 #: admin/views/default/stat/stat_view.php:92
-msgid   "Shutdown"
-msgstr  "Stäng av"
+msgid "Shutdown"
+msgstr "Stäng av"
 
 #: admin/views/default/shutdown_view.php:2
 #, php-format
-msgid   "Shutting down %s"
-msgstr  "Stänger av %s"
+msgid "Shutting down %s"
+msgstr "Stänger av %s"
 
 #: admin/views/default/backup/backup_view.php:835
 #: admin/views/default/disk/disk_raid_view.php:98
 #: admin/views/default/disk/disk_raid_view.php:119
 #: admin/views/default/filemanager/filemanager_index_view.php:10
 #: admin/views/default/downloads/downloads_list_view.php:50
-msgid   "Size"
-msgstr  "Storlek"
+msgid "Size"
+msgstr "Storlek"
 
 #: admin/views/default/stat/stat_view.php:52
-msgid   "Software update"
-msgstr  "Mjukvaruuppdatering"
+msgid "Software update"
+msgstr "Mjukvaruuppdatering"
 
 #: admin/models/menu.php:249
 msgctxt "menu"
-msgid   "Software update"
-msgstr  "Mjukvaruuppdatering"
+msgid "Software update"
+msgstr "Mjukvaruuppdatering"
 
 #: admin/views/default/stat/stat_view.php:47
-msgid   "Software version"
-msgstr  "Mjukvaruversion"
+msgid "Software version"
+msgstr "Mjukvaruversion"
 
 #: admin/views/default/settings/settings_backuprestore_view.php:7
-msgid   "Source"
-msgstr  "Källa"
+msgid "Source"
+msgstr "Källa"
 
 #: admin/views/default/network/network_fw_view.php:202
 #: admin/views/default/network/network_fw_view.php:286
-msgid   "Source IP"
-msgstr  "Käll-IP"
+msgid "Source IP"
+msgstr "Käll-IP"
 
 #: admin/views/default/services/services_view.php:34
-msgid   "Squeezebox Server"
-msgstr  "Squeezebox server"
+msgid "Squeezebox Server"
+msgstr "Squeezebox server"
 
 #: admin/views/default/settings/settings_view.php:5
-msgid   "Start setup wizard"
-msgstr  "Starta inställningsguiden"
+msgid "Start setup wizard"
+msgstr "Starta inställningsguiden"
 
 #: admin/views/default/upload/upload_index_view.php:155
-msgid   "Start upload"
-msgstr  "Starta uppladdning"
+msgid "Start upload"
+msgstr "Starta uppladdning"
 
 #: admin/views/default/disk/disk_raid_view.php:96
 #: admin/views/default/disk/disk_raid_view.php:118
-msgid   "State"
-msgstr  "Tillstånd"
+msgid "State"
+msgstr "Tillstånd"
 
 #: admin/views/default/backup/backup_view.php:11
 #: admin/views/default/stat/stat_view.php:4
-msgid   "Status"
-msgstr  "Status"
+msgid "Status"
+msgstr "Status"
 
 #: admin/views/default/backup/backup_view.php:86
 #: admin/views/default/backup/backup_view.php:433
-msgid   "Storage (/home/storage)"
-msgstr  "Storage (/home/storage)"
+msgid "Storage (/home/storage)"
+msgstr "Storage (/home/storage)"
 
 #: admin/views/default/services/services_view.php:24
-msgid   "Streaming"
-msgstr  "Strömning"
+msgid "Streaming"
+msgstr "Strömning"
 
 #: admin/views/default/login_view.php:13
-msgid   "Support"
-msgstr  "Hjälp"
+msgid "Support"
+msgstr "Hjälp"
 
 #: admin/views/default/network/network_tor_view.php:23
-msgid   "Switch to enable or disable the Tor bridge or Relay in B3"
-msgstr  "Ändra för att slå på eller av Tor-funktionen i B3"
+msgid "Switch to enable or disable the Tor bridge or Relay in B3"
+msgstr "Ändra för att slå på eller av Tor-funktionen i B3"
 
 #: admin/models/menu.php:243
 msgctxt "menu"
-msgid   "System backup"
-msgstr  "Systembackup"
+msgid "System backup"
+msgstr "Systembackup"
 
 #: admin/controllers/users.php:343
-msgid   "System default"
-msgstr  "Standardinställning för systemet"
+msgid "System default"
+msgstr "Standardinställning för systemet"
 
 #: admin/views/default/settings/settings_identity_view.php:5
-msgid   "System identity"
-msgstr  "Systemets identitet"
+msgid "System identity"
+msgstr "Systemets identitet"
 
 #: admin/views/default/settings/settings_datetime_view.php:86
-msgid   "System language"
-msgstr  "Systemspråk"
+msgid "System language"
+msgstr "Systemspråk"
 
 #: admin/views/default/stat/stat_view.php:60
-msgid   "System messages"
-msgstr  "Systemmeddelanden"
+msgid "System messages"
+msgstr "Systemmeddelanden"
 
 #: admin/views/default/disk/disk_view.php:101
-msgid   "System partitions"
-msgstr  "Systempartitioner"
+msgid "System partitions"
+msgstr "Systempartitioner"
 
 #: admin/models/menu.php:12
 msgctxt "menu"
-msgid   "System settings"
-msgstr  "Systeminställningar"
+msgid "System settings"
+msgstr "Systeminställningar"
 
 #: admin/controllers/settings.php:135
-msgid   "System settings backup was sucessfully created"
-msgstr  "System-backup lyckades"
+msgid "System settings backup was sucessfully created"
+msgstr "System-backup lyckades"
 
 #: admin/controllers/settings.php:182
-msgid   "System settings was sucessfully restored"
-msgstr  "Systemets inställningar återställdes"
+msgid "System settings was sucessfully restored"
+msgstr "Systemets inställningar återställdes"
 
 #: admin/views/default/network/network_tor_view.php:139
 msgctxt "bwlimit"
-msgid   "T1/Cable/DSL 1.5 Mbps"
-msgstr  "T1/Cable/DSL 1.5 Mbps"
+msgid "T1/Cable/DSL 1.5 Mbps"
+msgstr "T1/Cable/DSL 1.5 Mbps"
 
 #: admin/views/default/backup/backup_view.php:9
-msgid   "Target"
-msgstr  "Mål"
+msgid "Target"
+msgstr "Mål"
 
 #: admin/views/default/backup/backup_view.php:140
 #: admin/views/default/backup/backup_view.php:487
-msgid   "Target device"
-msgstr  "Målenhet"
+msgid "Target device"
+msgstr "Målenhet"
 
 #: admin/views/default/backup/backup_view.php:191
 #: admin/views/default/backup/backup_view.php:538
-msgid   "Target directory"
-msgstr  "Målkatalog"
+msgid "Target directory"
+msgstr "Målkatalog"
 
 #: admin/views/default/backup/backup_view.php:152
 #: admin/views/default/backup/backup_view.php:499
-msgid   "Target server"
-msgstr  "Målserver"
+msgid "Target server"
+msgstr "Målserver"
 
 #: admin/views/default/backup/backup_view.php:178
 #: admin/views/default/backup/backup_view.php:525
-msgid   "Target server password"
-msgstr  "Målserverns lösenord"
+msgid "Target server password"
+msgstr "Målserverns lösenord"
 
 #: admin/views/default/backup/backup_view.php:165
 #: admin/views/default/backup/backup_view.php:512
-msgid   "Target server username"
-msgstr  "Målserverns användarnamn"
+msgid "Target server username"
+msgstr "Målserverns användarnamn"
 
 #: admin/views/default/network/network_wlan_view.php:168
-msgid   "The encryption to use"
-msgstr  "Krypteringen att använda"
+msgid "The encryption to use"
+msgstr "Krypteringen att använda"
 
 #: admin/views/default/disk/disk_raid_view.php:62
 #, php-format
-msgid   "The external RAID disk (<strong>%s</strong>) in the RAID array has "
-        "malfunctioned"
-msgstr  "Den externa RAID-disken (<strong>%s</strong>) i RAID-systemet "
-        "fungerar inte"
+msgid "The external RAID disk (<strong>%s</strong>) in the RAID array has malfunctioned"
+msgstr "Den externa RAID-disken (<strong>%s</strong>) i RAID-systemet fungerar inte"
 
 #: admin/views/default/backup/backup_view.php:351
 #: admin/views/default/backup/backup_view.php:698
-msgid   "The longer timeline the more space will be required on target"
-msgstr  "Ju längre tidslinje ju mer plats krävs på målservern"
+msgid "The longer timeline the more space will be required on target"
+msgstr "Ju längre tidslinje ju mer plats krävs på målservern"
 
 #: admin/views/default/network/network_wlan_view.php:198
-msgid   "The main channel to use"
-msgstr  "Huvudkanalen att använda"
+msgid "The main channel to use"
+msgstr "Huvudkanalen att använda"
 
 #: admin/views/default/network/network_wlan_view.php:40
 #, php-format
-msgid   "The network name (also called SSID) is broadcast by %s and will show "
-        "up on clients when browsing wireless networks."
-msgstr  "Nätverksnamnet (även kallat SSID) sänds ut av %s och kommer att "
-        "synas när man letar efter trådlösa nätverk."
+msgid "The network name (also called SSID) is broadcast by %s and will show up on clients when browsing wireless networks."
+msgstr "Nätverksnamnet (även kallat SSID) sänds ut av %s och kommer att synas när man letar efter trådlösa nätverk."
 
 #: admin/views/default/network/network_wlan_view.php:116
-msgid   "The operation mode for selected band"
-msgstr  "Funktionen för valt band"
+msgid "The operation mode for selected band"
+msgstr "Funktionen för valt band"
 
 #: admin/views/default/network/network_wlan_view.php:64
 #, php-format
-msgid   "The password that will be required to connect to %s wirelessly"
-msgstr  "Lösenordet som kommer att krävas för att ansluta till %s trådlöst"
+msgid "The password that will be required to connect to %s wirelessly"
+msgstr "Lösenordet som kommer att krävas för att ansluta till %s trådlöst"
 
 #: admin/controllers/settings.php:140
-msgid   "The system was unable to create a backup"
-msgstr  "Systemet lyckades inte att skapa backupen"
+msgid "The system was unable to create a backup"
+msgstr "Systemet lyckades inte att skapa backupen"
 
 #: admin/controllers/settings.php:187
-msgid   "The system was unable to restore the system from an backup"
-msgstr  "Systemet lyckades inte återställa systemet från säkerhetskopian"
+msgid "The system was unable to restore the system from an backup"
+msgstr "Systemet lyckades inte återställa systemet från säkerhetskopian"
 
 #: admin/views/default/network/network_wlan_view.php:153
-msgid   "The targeted width of the channel in MHz"
-msgstr  "Kanalends bandbredd i MHz"
+msgid "The targeted width of the channel in MHz"
+msgstr "Kanalends bandbredd i MHz"
 
 #: admin/views/default/disk/disk_head_view.php:18
-msgid   "There seem to be disks mounted, please unmount these and try again"
-msgstr  "Där verkar finnas diskar monterade, vänligen avmontera dessa och "
-        "försök igen"
+msgid "There seem to be disks mounted, please unmount these and try again"
+msgstr "Där verkar finnas diskar monterade, vänligen avmontera dessa och försök igen"
 
 #: admin/views/default/network/network_fw_view.php:100
 #: admin/views/default/network/network_wlan_view.php:3
 #: admin/views/default/network/network_wan_view.php:3
 #: admin/views/default/network/network_lan_view.php:3
 #, php-format
-msgid   "These settings are locked"
-msgstr  "Dessa inställningar är låsta"
+msgid "These settings are locked"
+msgstr "Dessa inställningar är låsta"
 
 #: admin/views/default/network/network_tor_view.php:3
-msgid   "These settings are locked."
-msgstr  "Dessa inställningar är låsta"
+msgid "These settings are locked."
+msgstr "Dessa inställningar är låsta"
 
 #: admin/views/default/shutdown_view.php:10
-msgid   "This page should not be reached"
-msgstr  "Denna sidan ska inte kunna nås"
+msgid "This page should not be reached"
+msgstr "Denna sidan ska inte kunna nås"
 
 #: admin/controllers/ajax_network.php:43
 #, php-format
-msgid   "This will restore default network configuration aswell as restarting "
-        "the network on %s."
-msgstr  "Detta kommer att återställa standardinställningarna för nätverk, "
-        "samt starta om nätverket på %s."
+msgid "This will restore default network configuration aswell as restarting the network on %s."
+msgstr "Detta kommer att återställa standardinställningarna för nätverk, samt starta om nätverket på %s."
 
 #: admin/controllers/ajax_network.php:42
 #, php-format
-msgid   "This will set network configuration to router mode and restart the "
-        "network on %s."
-msgstr  "Detta kommer att ställa konfigurationen till router-läge och starta "
-        "om nätverket på %s."
+msgid "This will set network configuration to router mode and restart the network on %s."
+msgstr "Detta kommer att ställa konfigurationen till router-läge och starta om nätverket på %s."
 
 #: admin/controllers/ajax_network.php:41
 #, php-format
-msgid   "This will set network configuration to server mode and restart the "
-        "network on %s."
-msgstr  "Detta kommer att ställa nätverkskonfigurationen till serverläge och "
-        "starta om nätverket på %s."
+msgid "This will set network configuration to server mode and restart the network on %s."
+msgstr "Detta kommer att ställa nätverkskonfigurationen till serverläge och starta om nätverket på %s."
 
 #: admin/models/menu.php:237
 msgctxt "menu"
-msgid   "Time and language"
-msgstr  "Tid och språk"
+msgid "Time and language"
+msgstr "Tid och språk"
 
 #: admin/views/default/backup/backup_view.php:27
-msgid   "Timeline"
-msgstr  "Tidslinje"
+msgid "Timeline"
+msgstr "Tidslinje"
 
 #: admin/controllers/settings.php:378
-msgid   "Timezone, date and/or time was successfully updated"
-msgstr  "Tidszon, datum och/eller tid uppdaterat"
+msgid "Timezone, date and/or time was successfully updated"
+msgstr "Tidszon, datum och/eller tid uppdaterat"
 
 #: admin/views/default/settings/settings_view.php:3
 #, php-format
-msgid   "To configure basic functionality of %s, press the button to start "
-        "the setup wizard."
-msgstr  "För att ställa in de viktigaste delarna på %s, tryck på knappen för "
-        "att starta inställningsguiden."
+msgid "To configure basic functionality of %s, press the button to start the setup wizard."
+msgstr "För att ställa in de viktigaste delarna på %s, tryck på knappen för att starta inställningsguiden."
 
 #: admin/views/default/wizard_view.php:111
 #, php-format
-msgid   "To locate %s from the internet, use 'Easyfind' location service"
-msgstr  "För att hitta %s på internet, använd 'Easyfind'"
+msgid "To locate %s from the internet, use 'Easyfind' location service"
+msgstr "För att hitta %s på internet, använd 'Easyfind'"
 
 #: admin/views/default/shutdown_view.php:5
 #, php-format
-msgid   "To restart %s, press the power button"
-msgstr  "För att återstarta %s, tryck på powerknappen"
+msgid "To restart %s, press the power button"
+msgstr "För att återstarta %s, tryck på powerknappen"
 
 #: admin/views/default/network/network_wan_view.php:4
 #: admin/views/default/network/network_lan_view.php:4
-msgid   "To unlock, select Router or Server profile under the "
-msgstr  "För att låsa upp, välj Router- eller Server-läge under"
+msgid "To unlock, select Router or Server profile under the "
+msgstr "För att låsa upp, välj Router- eller Server-läge under"
 
 #: admin/models/menu.php:181
 msgctxt "menu"
-msgid   "Tor"
-msgstr  "Tor"
+msgid "Tor"
+msgstr "Tor"
 
 #: admin/models/menu.php:231
 msgctxt "menu"
-msgid   "Torrent throttle"
-msgstr  "Torrent hastighetsbegränsning"
+msgid "Torrent throttle"
+msgstr "Torrent hastighetsbegränsning"
 
 #: admin/views/default/upload/upload_index_view.php:170
-msgid   "Total Speed"
-msgstr  "Total hastighet"
+msgid "Total Speed"
+msgstr "Total hastighet"
 
 #: admin/views/default/upload/upload_index_view.php:166
-msgid   "Total Upload"
-msgstr  "Total uppladdning"
+msgid "Total Upload"
+msgstr "Total uppladdning"
 
 #: admin/views/default/settings/settings_traffic_view.php:4
-msgid   "Traffic"
-msgstr  "Traffik"
+msgid "Traffic"
+msgstr "Traffik"
 
 #: admin/views/default/network/network_wlan_view.php:210
-msgid   "Turning this off hides the network - users have to manually type the "
-        "SSID on clients"
-msgstr  "Stänger du av detta döljs nätverket - användare måste då manuellt "
-        "skriva in SSID för att hitta det"
+msgid "Turning this off hides the network - users have to manually type the SSID on clients"
+msgstr "Stänger du av detta döljs nätverket - användare måste då manuellt skriva in SSID för att hitta det"
 
 #: admin/views/default/disk/disk_view.php:9
-msgid   "Type"
-msgstr  "Skriv"
+msgid "Type"
+msgstr "Skriv"
 
 #: admin/models/networkmanager.php:66
-msgid   "Unable to change name on server."
-msgstr  "Lyckades inte ändra namnet på servern."
+msgid "Unable to change name on server."
+msgstr "Lyckades inte ändra namnet på servern."
 
 #: admin/models/networkmanager.php:58
-msgid   "Unable to disable 'easyfind' service."
-msgstr  "Lyckades inte visa 'easyfind'-tjänsten."
+msgid "Unable to disable 'easyfind' service."
+msgstr "Lyckades inte visa 'easyfind'-tjänsten."
 
 #: admin/models/networkmanager.php:70
-msgid   "Unable to get record data from server."
-msgstr  "Lyckades inte få data från servern."
+msgid "Unable to get record data from server."
+msgstr "Lyckades inte få data från servern."
 
 #: admin/models/networkmanager.php:50
-msgid   "Unable to set name on server."
-msgstr  "Lyckades inte ställa in namnet på servern."
+msgid "Unable to set name on server."
+msgstr "Lyckades inte ställa in namnet på servern."
 
 #: admin/models/networkmanager.php:46
-msgid   "Unable to update IP on server."
-msgstr  "Lyckades inte uppdatera IP-numret på servern."
+msgid "Unable to update IP on server."
+msgstr "Lyckades inte uppdatera IP-numret på servern."
 
 #: admin/views/default/downloads/downloads_list_view.php:38
-msgid   "Unknown state"
-msgstr  "Okänt läge"
+msgid "Unknown state"
+msgstr "Okänt läge"
 
 #: admin/views/default/services/services_view.php:64
-msgid   "Up and downloads"
-msgstr  "Upp- och nedladdningar"
+msgid "Up and downloads"
+msgstr "Upp- och nedladdningar"
 
 #: admin/views/default/mail/mail_server_view.php:86
 #: admin/views/default/mail/mail_server_view.php:125
@@ -2312,328 +2274,333 @@ msgstr  "Upp- och nedladdningar"
 #: admin/views/default/network/network_wan_view.php:120
 #: admin/views/default/network/network_lan_view.php:355
 #: admin/views/default/services/services_view.php:73
-msgid   "Update"
-msgstr  "Uppdatera"
+msgid "Update"
+msgstr "Uppdatera"
 
 #: admin/views/default/settings/settings_identity_view.php:97
-msgid   "Update Easyfind"
-msgstr  "Uppdatera Easyfind"
+msgid "Update Easyfind"
+msgstr "Uppdatera Easyfind"
 
 #: admin/views/default/settings/settings_identity_view.php:36
-msgid   "Update hostname and workgroup"
-msgstr  "Uppdatera värdnamn och arbetsgrupp"
+msgid "Update hostname and workgroup"
+msgstr "Uppdatera värdnamn och arbetsgrupp"
 
-#: admin/controllers/settings.php:678 admin/controllers/mail.php:223
+#: admin/controllers/settings.php:678
+#: admin/controllers/mail.php:223
 #: admin/controllers/mail.php:252
-msgid   "Update successful"
-msgstr  "Uppdatering lyckades"
+msgid "Update successful"
+msgstr "Uppdatering lyckades"
 
 #: admin/views/default/settings/settings_software_view.php:28
 #: admin/views/default/settings/settings_software_view.php:37
-msgid   "Update system"
-msgstr  "Uppdatera systemet"
+msgid "Update system"
+msgstr "Uppdatera systemet"
 
 #: admin/views/default/settings/settings_netupdate_view.php:5
-msgid   "Updating settings falied"
-msgstr  "Misslyckades med att uppdatera inställningarna"
+msgid "Updating settings falied"
+msgstr "Misslyckades med att uppdatera inställningarna"
 
 #: admin/views/default/upload/upload_index_view.php:9
-msgid   "Upload"
-msgstr  "Uppladdning"
+msgid "Upload"
+msgstr "Uppladdning"
 
 #: admin/views/default/upload/upload_index_view.php:91
-msgid   "Upload complete"
-msgstr  "Uppladdning slutförd"
+msgid "Upload complete"
+msgstr "Uppladdning slutförd"
 
 #: admin/views/default/upload/upload_index_view.php:144
-msgid   "Upload to"
-msgstr  "Ladda upp till"
+msgid "Upload to"
+msgstr "Ladda upp till"
 
 #: admin/views/default/upload/upload_index_view.php:100
-msgid   "Uploading"
-msgstr  "Laddar upp"
+msgid "Uploading"
+msgstr "Laddar upp"
 
 #: admin/views/default/upload/upload_index_view.php:163
-msgid   "Uploading to"
-msgstr  "Laddar upp till"
+msgid "Uploading to"
+msgstr "Laddar upp till"
 
 #: admin/views/default/stat/stat_view.php:27
-msgid   "Uptime"
-msgstr  "Upptid"
+msgid "Uptime"
+msgstr "Upptid"
 
 #: admin/views/default/settings/settings_traffic_view.php:7
-msgid   "Use -1 for unlimited traffic"
-msgstr  "Använd -1 för obegränsad trafik"
+msgid "Use -1 for unlimited traffic"
+msgstr "Använd -1 för obegränsad trafik"
 
 #: admin/views/default/mail/mail_server_view.php:27
-msgid   "Use authentication"
-msgstr  "Använd autentisering"
+msgid "Use authentication"
+msgstr "Använd autentisering"
 
 #: admin/views/default/mail/mail_retrieve_view.php:78
-msgid   "Use encryption"
-msgstr  "Använd kryptering"
+msgid "Use encryption"
+msgstr "Använd kryptering"
 
 #: admin/views/default/mail/mail_server_view.php:44
-msgid   "Use plain text authentication"
-msgstr  "Använd vanlig textautentisering"
+msgid "Use plain text authentication"
+msgstr "Använd vanlig textautentisering"
 
 #: admin/views/default/network/network_wan_view.php:24
 #: admin/views/default/network/network_lan_view.php:41
-msgid   "Use static IP address settings"
-msgstr  "Använd statiska IP-adressinställningar"
+msgid "Use static IP address settings"
+msgstr "Använd statiska IP-adressinställningar"
 
 #: admin/views/default/mail/mail_server_view.php:60
-msgid   "User"
-msgstr  "Användare"
+msgid "User"
+msgstr "Användare"
 
 #: admin/views/default/settings/settings_datetime_view.php:102
 #: admin/views/default/wizard_lang_view.php:20
 #: admin/views/default/users/user_list_view.php:96
-msgid   "User contributed languages"
-msgstr  "Översättningar inskickade av användare"
+msgid "User contributed languages"
+msgstr "Översättningar inskickade av användare"
 
 #: admin/views/default/network/network_fw_view.php:284
-msgid   "User defined open / forwarded ports"
-msgstr  "Öppna eller vidarebefodrade portar"
+msgid "User defined open / forwarded ports"
+msgstr "Öppna eller vidarebefodrade portar"
 
 #: admin/views/default/users/user_list_view.php:29
-msgid   "User information"
-msgstr  "Användarinformation"
+msgid "User information"
+msgstr "Användarinformation"
 
-#: admin/models/menu.php:267 admin/models/menu.php:286
+#: admin/models/menu.php:267
+#: admin/models/menu.php:286
 msgctxt "menu"
-msgid   "User information"
-msgstr  "Användarinformation"
+msgid "User information"
+msgstr "Användarinformation"
 
 #: admin/controllers/users.php:263
-msgid   "User information updated"
-msgstr  "Användarinformation uppdaterad"
+msgid "User information updated"
+msgstr "Användarinformation uppdaterad"
 
 #: admin/views/default/login_view.php:52
-msgid   "User isn't allowed to login to web admin."
-msgstr  "Användaren får inte logga in till administrationsgränssnittet. "
+msgid "User isn't allowed to login to web admin."
+msgstr "Användaren får inte logga in till administrationsgränssnittet. "
 
 #: admin/views/default/users/user_list_view.php:65
 #: admin/views/default/users/user_list_view.php:78
-msgid   "User language"
-msgstr  "Användarspråk"
+msgid "User language"
+msgstr "Användarspråk"
 
 #: admin/views/default/wizard_view.php:68
 #: admin/views/default/users/user_list_view.php:8
 #: admin/views/default/users/user_list_view.php:45
-msgid   "User name"
-msgstr  "Användarnamn"
+msgid "User name"
+msgstr "Användarnamn"
 
-#: admin/controllers/users.php:147 admin/controllers/wizard.php:134
-msgid   "User name validation failed"
-msgstr  "Användarnamn godkändes inte"
+#: admin/controllers/users.php:147
+#: admin/controllers/wizard.php:134
+msgid "User name validation failed"
+msgstr "Användarnamn godkändes inte"
 
-#: admin/models/menu.php:76 admin/models/menu.php:261
+#: admin/models/menu.php:76
+#: admin/models/menu.php:261
 #: admin/models/menu.php:280
 msgctxt "menu"
-msgid   "User settings"
-msgstr  "Användarinställningar"
+msgid "User settings"
+msgstr "Användarinställningar"
 
 #: admin/views/default/mail/mail_retrieve_view.php:9
 #: admin/views/default/login_view.php:23
-msgid   "Username"
-msgstr  "Användarnamn"
+msgid "Username"
+msgstr "Användarnamn"
 
 #: admin/models/album_model.php:143
-msgid   "Username allready exists"
-msgstr  "Användarnamnet existerar redan"
+msgid "Username allready exists"
+msgstr "Användarnamnet existerar redan"
 
 #: admin/views/default/users/user_list_view.php:5
-msgid   "Users"
-msgstr  "Användare"
+msgid "Users"
+msgstr "Användare"
 
-#: admin/models/menu.php:117 admin/models/menu.php:311
+#: admin/models/menu.php:117
+#: admin/models/menu.php:311
 msgctxt "menu"
-msgid   "Users"
-msgstr  "Användare"
+msgid "Users"
+msgstr "Användare"
 
 #: admin/controllers/album.php:91
-msgid   "Validation failed when adding user account"
-msgstr  "Användarkonto godkändes inte"
+msgid "Validation failed when adding user account"
+msgstr "Användarkonto godkändes inte"
 
 #: admin/controllers/album.php:121
-msgid   "Validation failed when editing user account"
-msgstr  "Användarkonto godkändes inte"
+msgid "Validation failed when editing user account"
+msgstr "Användarkonto godkändes inte"
 
-#: admin/controllers/mail.php:112 admin/controllers/mail.php:166
+#: admin/controllers/mail.php:112
+#: admin/controllers/mail.php:166
 #: admin/controllers/mail.php:198
-msgid   "Validation of input failed"
-msgstr  "Indatan godkändes inte"
+msgid "Validation of input failed"
+msgstr "Indatan godkändes inte"
 
 #: admin/views/default/album/album_album_view.php:288
-msgid   "Viewer"
-msgstr  "Albumanvändare"
+msgid "Viewer"
+msgstr "Albumanvändare"
 
 #: admin/views/default/album/album_users_view.php:23
-msgid   "Viewer name"
-msgstr  "Albumanvändarnamn"
+msgid "Viewer name"
+msgstr "Albumanvändarnamn"
 
 #: admin/views/default/network/network_wan_view.php:10
-msgid   "WAN"
-msgstr  "WAN"
+msgid "WAN"
+msgstr "WAN"
 
 #: admin/models/menu.php:161
 msgctxt "menu"
-msgid   "WAN"
-msgstr  "WAN"
+msgid "WAN"
+msgstr "WAN"
 
 #: admin/views/default/network/network_wlan_view.php:173
-msgid   "WEP"
-msgstr  "WEP"
+msgid "WEP"
+msgstr "WEP"
 
 #: admin/views/default/network/network_wlan_view.php:176
-msgid   "WPA1"
-msgstr  "WPA1"
+msgid "WPA1"
+msgstr "WPA1"
 
 #: admin/views/default/network/network_wlan_view.php:182
-msgid   "WPA1 or WPA2"
-msgstr  "WPA1 eller WPA2"
+msgid "WPA1 or WPA2"
+msgstr "WPA1 eller WPA2"
 
 #: admin/views/default/network/network_wlan_view.php:179
-msgid   "WPA2"
-msgstr  "WPA2"
+msgid "WPA2"
+msgstr "WPA2"
 
 #: admin/views/default/network/network_fw_view.php:128
-msgid   "WWW"
-msgstr  "WWW"
+msgid "WWW"
+msgstr "WWW"
 
 #: admin/views/default/disk/disk_head_view.php:34
-msgid   "Warning"
-msgstr  "Varning"
+msgid "Warning"
+msgstr "Varning"
 
 #: admin/controllers/users.php:295
 #, php-format
-msgid   "Was unabler to remove the home directory for user %s"
-msgstr  "Misslyckades att ta bort hemkatalogen för %s"
+msgid "Was unabler to remove the home directory for user %s"
+msgstr "Misslyckades att ta bort hemkatalogen för %s"
 
 #: admin/views/default/network/network_tor_view.php:196
 msgctxt "label"
-msgid   "Websites"
-msgstr  "Webbsidor"
+msgid "Websites"
+msgstr "Webbsidor"
 
 #: admin/views/default/backup/backup_view.php:266
 #: admin/views/default/backup/backup_view.php:613
-msgid   "Weekly each"
-msgstr  "Veckovis, varje"
+msgid "Weekly each"
+msgstr "Veckovis, varje"
 
 #: admin/views/default/network/network_tor_view.php:98
-msgid   "What port to advertise for incoming Tor connections"
-msgstr  "Vilken port att annonsera för inkomande Tor-anslutningar"
+msgid "What port to advertise for incoming Tor connections"
+msgstr "Vilken port att annonsera för inkomande Tor-anslutningar"
 
 #: admin/views/default/network/network_tor_view.php:111
-msgid   "What port to use when mirroring directory information"
-msgstr  "Vilken port att använda för att spegla kataloginformation"
+msgid "What port to use when mirroring directory information"
+msgstr "Vilken port att använda för att spegla kataloginformation"
 
 #: admin/views/default/shutdown_view.php:8
 #, php-format
-msgid   "When the LED light is solid blue, %s is ready to be used again"
-msgstr  "När lysdioden lyser med fast blått sken är %s redo att användas igen"
+msgid "When the LED light is solid blue, %s is ready to be used again"
+msgstr "När lysdioden lyser med fast blått sken är %s redo att användas igen"
 
 #: admin/views/default/disk/disk_raid_view.php:68
-msgid   "When the disk has been replaced, press \"Recover RAID array\" to add "
-        "the new disk to the array"
-msgstr  "När disken är utbytt, tryck \"Återskapa RAID-system\" för att lägga "
-        "till den nya disken till systemet"
+msgid "When the disk has been replaced, press \"Recover RAID array\" to add the new disk to the array"
+msgstr "När disken är utbytt, tryck \"Återskapa RAID-system\" för att lägga till den nya disken till systemet"
 
 #: admin/views/default/network/network_wlan_view.php:13
-msgid   "Wireless"
-msgstr  "Trådlös"
+msgid "Wireless"
+msgstr "Trådlös"
 
 #: admin/models/menu.php:171
 msgctxt "menu"
-msgid   "Wireless"
-msgstr  "Trådlös"
+msgid "Wireless"
+msgstr "Trådlös"
 
 #: admin/views/default/network/network_wlan_view.php:16
-msgid   "Wireless access point"
-msgstr  "Trådlös accesspunkt"
+msgid "Wireless access point"
+msgstr "Trådlös accesspunkt"
 
 #: admin/views/default/settings/settings_identity_view.php:21
-msgid   "Workgroup"
-msgstr  "Arbetsgrupp"
+msgid "Workgroup"
+msgstr "Arbetsgrupp"
 
 #: admin/views/default/settings/settings_datetime_view.php:52
-msgid   "YYYYMMDD"
-msgstr  "ÅÅÅÅMMDD"
+msgid "YYYYMMDD"
+msgstr "ÅÅÅÅMMDD"
 
 #: admin/views/default/backup/backup_view.php:344
 #: admin/views/default/backup/backup_view.php:691
-msgid   "a day"
-msgstr  "en dag"
+msgid "a day"
+msgstr "en dag"
 
 #: admin/views/default/backup/backup_view.php:349
 #: admin/views/default/backup/backup_view.php:696
-msgid   "a decade"
-msgstr  "ett decennium"
+msgid "a decade"
+msgstr "ett decennium"
 
 #: admin/views/default/backup/backup_view.php:346
 #: admin/views/default/backup/backup_view.php:693
-msgid   "a month"
-msgstr  "en månad"
+msgid "a month"
+msgstr "en månad"
 
 #: admin/views/default/backup/backup_view.php:345
 #: admin/views/default/backup/backup_view.php:692
-msgid   "a week"
-msgstr  "en vecka"
+msgid "a week"
+msgstr "en vecka"
 
 #: admin/views/default/backup/backup_view.php:348
 #: admin/views/default/backup/backup_view.php:695
-msgid   "a year"
-msgstr  "ett år"
+msgid "a year"
+msgstr "ett år"
 
 #: admin/views/default/backup/backup_view.php:242
 #: admin/views/default/backup/backup_view.php:278
 #: admin/views/default/backup/backup_view.php:589
 #: admin/views/default/backup/backup_view.php:625
-msgid   "at"
-msgstr  "kl"
+msgid "at"
+msgstr "kl"
 
 #: admin/views/default/stat/stat_view.php:29
-msgid   "days"
-msgstr  "dagar"
+msgid "days"
+msgstr "dagar"
 
 #: admin/views/default/album/album_album_view.php:416
-msgid   "filemanager"
-msgstr  "filhanterare"
+msgid "filemanager"
+msgstr "filhanterare"
 
 #: admin/views/default/backup/backup_view.php:347
 #: admin/views/default/backup/backup_view.php:694
-msgid   "half a year"
-msgstr  "ett halv år"
+msgid "half a year"
+msgstr "ett halv år"
 
-#: admin/controllers/settings.php:429 admin/controllers/settings.php:430
-msgid   "n/a"
-msgstr  "n/a"
+#: admin/controllers/settings.php:429
+#: admin/controllers/settings.php:430
+msgid "n/a"
+msgstr "n/a"
 
 #: admin/views/default/network/network_fw_view.php:100
-msgid   "no valid WAN port connection"
-msgstr  "ingen giltig WAN-portanslutning"
+msgid "no valid WAN port connection"
+msgstr "ingen giltig WAN-portanslutning"
 
 #: admin/views/default/downloads/downloads_list_view.php:21
 #: admin/views/default/downloads/downloads_list_view.php:28
 #: admin/views/default/downloads/downloads_list_view.php:33
-msgid   "peers"
-msgstr  "noder"
+msgid "peers"
+msgstr "noder"
 
 #: admin/views/default/downloads/downloads_list_view.php:21
 #: admin/views/default/downloads/downloads_list_view.php:28
 #: admin/views/default/downloads/downloads_list_view.php:33
-msgid   "seeds"
-msgstr  "källor"
+msgid "seeds"
+msgstr "källor"
 
 #: admin/views/default/disk/disk_lvm_view.php:19
-msgid   "with"
-msgstr  "med"
+msgid "with"
+msgstr "med"
 
 #: admin/controllers/wizard.php:56
 #: admin/views/default/settings/settings_identity_view.php:75
-msgid   "your-easyfind-name"
-msgstr  "ditt-easyfind-namn"
+msgid "your-easyfind-name"
+msgstr "ditt-easyfind-namn"
 
 #~ msgid        "Add disk to RAID array"
 #~ msgstr       "Lägg till disk till RAID-system"
