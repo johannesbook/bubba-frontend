@@ -43,7 +43,7 @@ msgstr "%gt; 1.5 Mbps"
 
 #: admin/views/default/settings/settings_identity_view.php:54
 msgid "'Easyfind' location service"
-msgstr "'Easyfind' fjärråtkomsttjänst"
+msgstr "'Easyfind'"
 
 #: admin/views/default/mail/mail_server_view.php:45
 msgid "(Not recommended, passwords will be sent unencrypted.)"
@@ -108,7 +108,7 @@ msgstr "Lägg till nedladdning"
 
 #: admin/views/default/mail/mail_retrieve_view.php:20
 msgid "Add new email account"
-msgstr "Lägg till nytt epostkonto"
+msgstr "Lägg till nytt emailkonto"
 
 #: admin/views/default/users/user_list_view.php:19
 msgid "Add new user"
@@ -116,7 +116,7 @@ msgstr "Lägg till ny användare"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:95
 msgid "Add selected images/folders to photo album?"
-msgstr "Vill du lägga till dessa bilder/kataloger till fotoalbumet?"
+msgstr "Vill du lägga till dessa bilder/mappar till fotoalbumet?"
 
 #: admin/views/default/album/album_users_view.php:11
 msgid "Add viewer"
@@ -198,7 +198,7 @@ msgstr "All användardata (/home/&lt;alla användare&gt;)"
 #: admin/views/default/backup/backup_view.php:74
 #: admin/views/default/backup/backup_view.php:421
 msgid "All user's email (/home/&lt;all users&gt;/Mail)"
-msgstr "All användares epost (/home/&lt;alla användare&ggt;/Mail)"
+msgstr "Alla användares email (/home/&lt;alla användare&gt;/Mail)"
 
 #: admin/views/default/backup/backup_view.php:83
 #: admin/views/default/backup/backup_view.php:430
@@ -266,7 +266,7 @@ msgstr "Ställ in tid och datum automatiskt"
 
 #: admin/views/default/network/network_profile_view.php:19
 msgid "Automatic network settings"
-msgstr "Autmatiska nätverksinställningar"
+msgstr "Automatiska nätverksinställningar"
 
 #: admin/views/default/stat/stat_view.php:23
 msgid "Available"
@@ -295,15 +295,15 @@ msgstr "Säkerhetskopiera och återställ inställningar"
 
 #: admin/views/default/backup/backup_view.php:468
 msgid "Backup destination (step 2 of 4)"
-msgstr "Backup-destination (steg 2 av 4)"
+msgstr "Mål för backup (steg 2 av 4)"
 
 #: admin/views/default/backup/backup_view.php:5
 msgid "Backup jobs"
-msgstr "Backup-jobb"
+msgstr "Backupjobb"
 
 #: admin/views/default/backup/backup_view.php:553
 msgid "Backup schedule (step 3 of 4)"
-msgstr "Backup-schema (steg 3 av 4)"
+msgstr "Backupschema (steg 3 av 4)"
 
 #: admin/controllers/users.php:286
 msgid "Bad username"
@@ -371,7 +371,7 @@ msgstr "Avbryt"
 
 #: admin/views/default/wizard_view.php:26
 msgid "Change Administrator password (step 3 of 5)"
-msgstr "Ändra administratörsölsenord (steg 3 av 5)"
+msgstr "Ändra administratörslösenord (steg 3 av 5)"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:28
 msgid "Change permissions"
@@ -411,7 +411,7 @@ msgstr "Välj ett namn för detta jobb (steg 1 av 5)"
 
 #: admin/views/default/backup/backup_view.php:121
 msgid "Choose backup destination (step 3 of 5)"
-msgstr "Välj backup-destination (steg 3 av 5)"
+msgstr "Välj mål för backup (steg 3 av 5)"
 
 #: admin/views/default/wizard_view.php:107
 msgid "Choose easyfind name (step 5 of 5)"
@@ -467,7 +467,7 @@ msgstr "Skapa RAID-system"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:65
 msgid "Create a new folder"
-msgstr "Skapa ny katalog"
+msgstr "Skapa ny mapp"
 
 #: admin/views/default/album/album_album_view.php:425
 msgid "Create empty album"
@@ -511,7 +511,7 @@ msgstr "Anpassat urval"
 
 #: admin/views/default/services/services_view.php:30
 msgid "DAAP streaming"
-msgstr "DAAP-strömmning"
+msgstr "DAAP"
 
 #: admin/views/default/network/network_lan_view.php:368
 msgid "DHCP leases"
@@ -519,7 +519,7 @@ msgstr "DHCP-utdelningar"
 
 #: admin/views/default/services/services_view.php:26
 msgid "DLNA streaming"
-msgstr "DLNA-strömning"
+msgstr "DLNA"
 
 #: admin/views/default/backup/backup_view.php:302
 #: admin/views/default/backup/backup_view.php:649
@@ -568,7 +568,7 @@ msgstr "Radera album"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:92
 msgid "Delete selected files and/or folders?"
-msgstr "Radera valda filer och/eller kataloger?"
+msgstr "Radera valda filer och/eller mappar?"
 
 #: admin/views/default/album/album_album_view.php:67
 #: admin/views/default/album/album_album_view.php:170
@@ -591,7 +591,7 @@ msgstr "Enhet"
 #: admin/views/default/backup/backup_view.php:145
 #: admin/views/default/backup/backup_view.php:492
 msgid "Device to use as target for the backup"
-msgstr "Enhet som ska användas som backupdestination"
+msgstr "Enhet som ska användas som mål för backup"
 
 #: admin/views/default/network/network_tor_view.php:104
 msgid "Directory port"
@@ -699,12 +699,12 @@ msgstr "Easyfind-namn"
 
 #: admin/views/default/settings/settings_identity_view.php:49
 msgid "Easyfind options"
-msgstr "Easyfind-alternativ"
+msgstr "Easyfind"
 
 #: admin/views/default/backup/backup_view.php:405
 #: admin/views/default/backup/backup_view.php:752
 msgid "Edit backup job"
-msgstr "Ändra backup-jobb"
+msgstr "Ändra backupjobb"
 
 #: admin/views/default/network/network_wlan_view.php:4
 msgid "Either no wireless network card is available or no valid timezone is set"
@@ -713,26 +713,26 @@ msgstr "Antingen har din B3 inget trådlöst nätverk, eller så är tidszon int
 #: admin/views/default/network/network_fw_view.php:136
 #: admin/views/default/services/services_view.php:42
 msgid "Email"
-msgstr "Epost"
+msgstr "Email"
 
 #: admin/models/menu.php:273
 #: admin/models/menu.php:291
 msgctxt "menu"
 msgid "Email"
-msgstr "Epost"
+msgstr "Email"
 
 #: admin/views/default/mail/mail_server_view.php:103
 msgid "Email domain"
-msgstr "Epostdomän"
+msgstr "Emaildomän"
 
 #: admin/views/default/services/services_view.php:52
 msgid "Email retrieval"
-msgstr "Epost-insamling"
+msgstr "Email-insamling"
 
 #: admin/views/default/mail/mail_server_view.php:9
 #: admin/views/default/network/network_fw_view.php:120
 msgid "Email server"
-msgstr "Epostserver"
+msgstr "Emailserver"
 
 #: admin/views/default/network/network_lan_view.php:235
 msgid "Enable DHCP server"
@@ -747,8 +747,8 @@ msgid "Enable Tor"
 msgstr "Tor"
 
 #: admin/views/default/wizard_view.php:116
-msgid "Enable easyfind"
-msgstr "easyfind"
+msgid "Enable Easyfind"
+msgstr "Easyfind"
 
 #: admin/views/default/network/network_lan_view.php:340
 msgid "Enable jumbo frames."
@@ -777,11 +777,11 @@ msgstr "Misslyckades med att spara inställningarna"
 
 #: admin/controllers/filemanager.php:212
 msgid "Error creating folder, name already exists"
-msgstr "Misslyckades med att skapa katalogen - namnet finns redan"
+msgstr "Misslyckades med att skapa mappen - namnet finns redan"
 
 #: admin/controllers/filemanager.php:207
 msgid "Error creating folder, no name supplied"
-msgstr "Misslyckades med att skapa katalogen - inget namn angett"
+msgstr "Misslyckades med att skapa mappen - inget namn angett"
 
 #: admin/views/default/album/album_album_view.php:204
 msgid "Error deleting album"
@@ -893,7 +893,7 @@ msgstr "Misslyckades att ändra värdnamn"
 #: admin/controllers/filemanager.php:189
 #, php-format
 msgid "Failed to change permission for following files and folders: %s"
-msgstr "Misslyckades att ändra åtkomst för följande filer och kataloger: %s"
+msgstr "Misslyckades att ändra åtkomst för följande filer och mappar: %s"
 
 #: admin/models/networkmanager.php:43
 msgid "Failed to connect to database."
@@ -902,11 +902,11 @@ msgstr "Misslyckades att ansluta till databasen"
 #: admin/controllers/filemanager.php:291
 #, php-format
 msgid "Failed to copy the following files and folders: %s"
-msgstr "Misslyckades att kopiera följande filer och kataloger: %s"
+msgstr "Misslyckades att kopiera följande filer och mappar: %s"
 
 #: admin/controllers/filemanager.php:223
 msgid "Failed to create folder"
-msgstr "Misslyckades att skapa katalog"
+msgstr "Misslyckades att skapa mappen"
 
 #: admin/models/disk_model.php:327
 #, php-format
@@ -916,7 +916,7 @@ msgstr "Misslyckades att skapa fstab-innehåll för %s med %s"
 #: admin/controllers/filemanager.php:62
 #, php-format
 msgid "Failed to delete following files/folders: %s"
-msgstr "Misslyckades att radera följande filer/kataloger. %s"
+msgstr "Misslyckades att radera följande filer/mappar. %s"
 
 #: admin/models/disk_model.php:246
 #: admin/models/disk_model.php:298
@@ -937,7 +937,7 @@ msgstr "Misslyckades att montera %s på %s"
 #: admin/controllers/filemanager.php:260
 #, php-format
 msgid "Failed to move the following files and folders: %s"
-msgstr "Misslyckades att flytta följande filer och kataloger: %s"
+msgstr "Misslyckades att flytta följande filer och mappar: %s"
 
 #: admin/models/disk_model.php:384
 #, php-format
@@ -1008,7 +1008,7 @@ msgstr "Brandvägg"
 #: admin/views/default/network/network_tor_view.php:157
 #: admin/views/default/network/network_tor_view.php:167
 msgid "For Internet connections with fast download speed but slow upload speed, please select your upload speed here"
-msgstr "För internetuppkopplingar med snabb nedladdning men långsam uppladdning, vänligen välj uppladdningshastighet här"
+msgstr "För Internetuppkopplingar med snabb nedladdning men långsam uppladdning, vänligen välj uppladdningshastighet här"
 
 #: admin/views/default/wizard_view.php:60
 #, php-format
@@ -1049,7 +1049,7 @@ msgstr "TTmm"
 
 #: admin/views/default/mail/mail_server_view.php:109
 msgid "Handle email for domain"
-msgstr "Hantera epost för domän"
+msgstr "Hantera email för domän"
 
 #: admin/views/default/main_view.php:280
 msgid "Help"
@@ -1259,7 +1259,7 @@ msgstr "Lämna kopia"
 
 #: admin/views/default/mail/mail_retrieve_view.php:82
 msgid "Leave email copy on server"
-msgstr "Lämna epostkopia på servern"
+msgstr "Lämna emailkopia på servern"
 
 #: admin/views/default/network/network_wlan_view.php:123
 #, php-format
@@ -1328,7 +1328,7 @@ msgstr "MAC-adress"
 #: admin/models/menu.php:129
 msgctxt "menu"
 msgid "Mail"
-msgstr "Epost"
+msgstr "Email"
 
 #: admin/views/default/network/network_tor_view.php:119
 msgid "Make this a private bridge"
@@ -1470,7 +1470,7 @@ msgstr "Ingen information"
 
 #: admin/views/default/stat/stat_view.php:85
 msgid "No system messages available"
-msgstr "Inget systemmedelande tillgängligt"
+msgstr "Inget systemmeddelande tillgängligt"
 
 #: admin/views/default/network/network_tor_view.php:4
 msgid "No valid timezone set."
@@ -1525,11 +1525,11 @@ msgstr "Öppna %s port"
 
 #: admin/views/default/services/services_view.php:58
 msgid "Other"
-msgstr "Annan"
+msgstr "Övrigt"
 
 #: admin/views/default/mail/mail_server_view.php:15
 msgid "Outgoing email server"
-msgstr "Utgående epostserver"
+msgstr "Utgående emailserver"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:32
 msgid "Owner"
@@ -1810,16 +1810,16 @@ msgstr "Hämtar paketinformation"
 #: admin/views/default/network/network_tor_view.php:200
 msgctxt "label"
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr "Hämta epost (POP, IMAP)"
+msgstr "Hämta email (POP, IMAP)"
 
 #: admin/views/default/mail/mail_retrieve_view.php:4
 msgid "Retrieve email"
-msgstr "Hämta epost"
+msgstr "Hämta email"
 
 #: admin/models/menu.php:135
 msgctxt "menu"
 msgid "Retrieve email"
-msgstr "Hämta epost"
+msgstr "Hämta email"
 
 #: admin/views/default/network/network_profile_view.php:24
 msgid "Router + Firewall + Server"
@@ -1861,7 +1861,7 @@ msgstr "Seedar"
 
 #: admin/views/default/backup/backup_view.php:206
 msgid "Select backup schedule (step 4 of 5)"
-msgstr "Välj schemaläggning för din backup (steg 4 av 5)"
+msgstr "Välj schemaläggning för ditt backupjobb (steg 4 av 5)"
 
 #: admin/views/default/wizard_lang_view.php:2
 msgid "Select language (step 1 of 5)"
@@ -1929,7 +1929,7 @@ msgstr "Inställningsguide"
 
 #: admin/views/default/users/user_list_view.php:124
 msgid "Shell login"
-msgstr "Skalinloggning"
+msgstr "SSH-åtkomst"
 
 #: admin/views/default/settings/settings_logs_view.php:21
 msgid "Show"
@@ -1984,7 +1984,7 @@ msgstr "Squeezebox server"
 
 #: admin/views/default/settings/settings_view.php:5
 msgid "Start setup wizard"
-msgstr "Starta inställningsguiden"
+msgstr "Starta Inställningsguiden"
 
 #: admin/views/default/upload/upload_index_view.php:155
 msgid "Start upload"
@@ -2003,7 +2003,7 @@ msgstr "Status"
 #: admin/views/default/backup/backup_view.php:86
 #: admin/views/default/backup/backup_view.php:433
 msgid "Storage (/home/storage)"
-msgstr "Storage (/home/storage)"
+msgstr "Hela storagemappen (/home/storage)"
 
 #: admin/views/default/services/services_view.php:24
 msgid "Streaming"
@@ -2072,7 +2072,7 @@ msgstr "Målenhet"
 #: admin/views/default/backup/backup_view.php:191
 #: admin/views/default/backup/backup_view.php:538
 msgid "Target directory"
-msgstr "Målkatalog"
+msgstr "Målmapp"
 
 #: admin/views/default/backup/backup_view.php:152
 #: admin/views/default/backup/backup_view.php:499
@@ -2184,12 +2184,12 @@ msgstr "Tidszon, datum och/eller tid uppdaterat"
 #: admin/views/default/settings/settings_view.php:3
 #, php-format
 msgid "To configure basic functionality of %s, press the button to start the setup wizard."
-msgstr "För att ställa in de viktigaste delarna på %s, tryck på knappen för att starta inställningsguiden."
+msgstr "För att ställa in de viktigaste delarna på %s, tryck på knappen för att starta Inställningsguiden."
 
 #: admin/views/default/wizard_view.php:111
 #, php-format
-msgid "To locate %s from the internet, use 'Easyfind' location service"
-msgstr "För att hitta %s på internet, använd 'Easyfind'"
+msgid "To locate %s from the Internet, use 'Easyfind' location service"
+msgstr "För att hitta %s på Internet, använd 'Easyfind'"
 
 #: admin/views/default/shutdown_view.php:5
 #, php-format
@@ -2221,7 +2221,7 @@ msgstr "Total uppladdning"
 
 #: admin/views/default/settings/settings_traffic_view.php:4
 msgid "Traffic"
-msgstr "Traffik"
+msgstr "Trafik"
 
 #: admin/views/default/network/network_wlan_view.php:210
 msgid "Turning this off hides the network - users have to manually type the SSID on clients"
@@ -2236,8 +2236,8 @@ msgid "Unable to change name on server."
 msgstr "Lyckades inte ändra namnet på servern."
 
 #: admin/models/networkmanager.php:58
-msgid "Unable to disable 'easyfind' service."
-msgstr "Lyckades inte visa 'easyfind'-tjänsten."
+msgid "Unable to disable 'Easyfind' service."
+msgstr "Lyckades inte visa 'Easyfind'-tjänsten."
 
 #: admin/models/networkmanager.php:70
 msgid "Unable to get record data from server."
@@ -2477,7 +2477,7 @@ msgstr "Varning"
 #: admin/controllers/users.php:295
 #, php-format
 msgid "Was unabler to remove the home directory for user %s"
-msgstr "Misslyckades att ta bort hemkatalogen för %s"
+msgstr "Misslyckades att ta bort hemmappen för %s"
 
 #: admin/views/default/network/network_tor_view.php:196
 msgctxt "label"
@@ -2495,7 +2495,7 @@ msgstr "Vilken port att annonsera för inkomande Tor-anslutningar"
 
 #: admin/views/default/network/network_tor_view.php:111
 msgid "What port to use when mirroring directory information"
-msgstr "Vilken port att använda för att spegla kataloginformation"
+msgstr "Vilken port att använda för att spegla mappinformation"
 
 #: admin/views/default/shutdown_view.php:8
 #, php-format
@@ -2508,12 +2508,12 @@ msgstr "När disken är utbytt, tryck \"Återskapa RAID-system\" för att lägga
 
 #: admin/views/default/network/network_wlan_view.php:13
 msgid "Wireless"
-msgstr "Trådlös"
+msgstr "Trådlöst"
 
 #: admin/models/menu.php:171
 msgctxt "menu"
 msgid "Wireless"
-msgstr "Trådlös"
+msgstr "Trådlöst"
 
 #: admin/views/default/network/network_wlan_view.php:16
 msgid "Wireless access point"
