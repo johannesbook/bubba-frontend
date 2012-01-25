@@ -31,7 +31,7 @@
       <td ><input name="daap_enabled" type="checkbox" class="slide" value="1" <?= $daap_status?"checked=\"checked\"":"" ?>/></td>
    </tr>
    <tr>
-	  <td><label for=""><?=_('Squeezebox Server')?></label></td>
+	  <td><label for=""><?=_('Squeezebox Server (Logitech)')?></label></td>
 	  <td >
 		<input name="logitechmediaserver_enabled" type="checkbox" class="slide" value="1" <?= $logitechmediaserver_status?"checked=\"checked\"":"" ?>/>
 	</td>
