@@ -450,7 +450,7 @@ jQuery.widget("ui.filemanager", {
 			   .click(function(e){jQuery(this).blur()})
 			   .click(function(){
 					   if(! jQuery(this).hasClass("ui-state-disabled") ) {
-						   value.callback.apply(self.element, arguments);
+						   value.click.apply(self.element, arguments);
 					   }
 				   }).appendTo(self.buttonBar);
 		   });	   
