@@ -400,8 +400,20 @@
 
 		destroy: function() {
 			this.element.find("*").removeAttr("disabled").show();
-			this.nextButton.unbind("click").val(this.nextButtonInitinalValue).removeClass("ui-state-disabled").addClass("ui-state-active");
-			this.backButton.unbind("click").val(this.backButtonInitinalValue).removeClass("ui-state-disabled").addClass("ui-state-active");
+			if(this.nextButton) {
+				var b = this.nextButton;
+				b.unbind("click");
+				b.val(this.nextButtonInitinalValue);
+				b.removeClass("ui-state-disabled");
+				b.addClass("ui-state-active");
+			}
+			if(this.backButton) {
+				var b = this.backButton;
+				b.unbind("click");
+				b.val(this.backButtonInitinalValue);
+				b.removeClass("ui-state-disabled");
+				b.addClass("ui-state-active");
+			}
 			this.backButtonInitinalValue = undefined;
 			this.nextButtonInitinalValue = undefined;
 			this.activatedSteps = undefined;
@@ -427,7 +439,6 @@
 				this.steps.find(":input").addClass("ui-helper-reset ui-state-default");
 			}
 		},
-
 		options: {
 	   		historyEnabled	: false,
 			validationEnabled : false,

@@ -62,7 +62,7 @@ class Menu extends Model {
                 'deny' => array( 'admin' ),
             ),
             array(
-                'label' => pgettext('menu',"PIM"),
+                'label' => pgettext('menu',"Webmail"),
                 'id' => 'pim',
                 'uri' => '/pim',
                 'auth' => false,

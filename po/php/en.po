@@ -6,7 +6,7 @@
 msgid   ""
 msgstr  "Project-Id-Version: bubba-frontend 2.3\n"
         "Report-Msgid-Bugs-To: info@excito.com\n"
-        "POT-Creation-Date: 2011-12-07 18:57+0100\n"
+        "POT-Creation-Date: 2012-01-25 15:39+0100\n"
         "PO-Revision-Date: 2011-10-07 14:44+0200\n"
         "Last-Translator: Automatically generated\n"
         "Language-Team: none\n"
@@ -16,7 +16,7 @@ msgstr  "Project-Id-Version: bubba-frontend 2.3\n"
         "Content-Transfer-Encoding: 8bit\n"
         "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin/views/default/main_view.php:116
+#: admin/views/default/main_view.php:117
 #, php-format
 msgid   "%s Help"
 msgstr  "%s Help"
@@ -129,7 +129,7 @@ msgstr  "Adding images is done using the"
 msgid   "Admin user not allowed to login on WAN interface."
 msgstr  "Admin user not allowed to login on WAN interface."
 
-#: admin/views/default/main_view.php:278
+#: admin/views/default/main_view.php:279
 msgid   "Administration"
 msgstr  "Administration"
 
@@ -247,8 +247,8 @@ msgstr  "Attached printers"
 msgid   "Authorization denied"
 msgstr  "Authorization denied"
 
-#: admin/controllers/mail.php:105 admin/controllers/mail.php:148
-#: admin/controllers/mail.php:191
+#: admin/controllers/mail.php:104 admin/controllers/mail.php:147
+#: admin/controllers/mail.php:190
 msgid   "Authorization failed"
 msgstr  "Authorization failed"
 
@@ -268,7 +268,7 @@ msgstr  "Automatic network settings"
 msgid   "Available"
 msgstr  "Available"
 
-#: admin/views/default/main_view.php:297
+#: admin/views/default/main_view.php:298
 msgid   "B3 start page"
 msgstr  "B3 start page"
 
@@ -357,7 +357,7 @@ msgctxt "bwlimit"
 msgid   "Cable/DSL 768 Kbps"
 msgstr  "Cable/DSL 768 Kbps"
 
-#: admin/views/default/network/network_head_view.php:40
+#: admin/views/default/network/network_head_view.php:38
 #: admin/views/default/disk/disk_head_view.php:19
 #: admin/views/default/disk/disk_head_view.php:55
 #: admin/views/default/disk/disk_head_view.php:58
@@ -441,7 +441,7 @@ msgstr  "Contact"
 msgid   "Contact information"
 msgstr  "Contact information"
 
-#: admin/views/default/network/network_head_view.php:36
+#: admin/views/default/network/network_head_view.php:34
 msgid   "Continue"
 msgstr  "Continue"
 
@@ -471,7 +471,7 @@ msgstr  "Create empty album"
 
 #: admin/views/default/wizard_view.php:57
 #, fuzzy
-msgid   "Create initial user (step 4 of 5)"
+msgid   "Create user (step 4 of 5)"
 msgstr  "Select backup schedule (step 4 of 5)"
 
 #: admin/views/default/disk/disk_raid_view.php:38
@@ -558,7 +558,7 @@ msgstr  "Default gateway"
 msgid   "Default system language"
 msgstr  "Default system language"
 
-#: admin/controllers/settings.php:403
+#: admin/controllers/settings.php:404
 msgid   "Default system language updated"
 msgstr  "Default system language updated"
 
@@ -686,7 +686,7 @@ msgstr  "Drag and drop to move images/albums"
 msgid   "Each day"
 msgstr  "Each day"
 
-#: admin/controllers/settings.php:642 admin/controllers/settings.php:663
+#: admin/controllers/settings.php:646 admin/controllers/settings.php:667
 #: admin/controllers/wizard.php:154 admin/controllers/wizard.php:166
 #, php-format
 msgid   "Easyfind failed with following error: %s"
@@ -712,7 +712,7 @@ msgstr  "Either no wireless network card is available or no valid timezone is "
         "set"
 
 #: admin/views/default/network/network_fw_view.php:136
-#: admin/views/default/services/services_view.php:48
+#: admin/views/default/services/services_view.php:42
 msgid   "Email"
 msgstr  "Email"
 
@@ -725,7 +725,7 @@ msgstr  "Email"
 msgid   "Email domain"
 msgstr  "Email domain"
 
-#: admin/views/default/services/services_view.php:58
+#: admin/views/default/services/services_view.php:52
 msgid   "Email retrieval"
 msgstr  "Email retrieval"
 
@@ -774,7 +774,7 @@ msgid   "Enter contact information in case the developers need to contact you "
 msgstr  "Enter contact information in case the developers need to contact you "
         "about problems"
 
-#: admin/controllers/network.php:280
+#: admin/controllers/network.php:281
 msgid   "Error applying settings"
 msgstr  "Error applying settings"
 
@@ -836,7 +836,7 @@ msgstr  "Error: No help text was found for entry %s"
 msgid   "Every month"
 msgstr  "Every month"
 
-#: admin/views/default/main_view.php:293
+#: admin/views/default/main_view.php:294
 msgid   "Excito"
 msgstr  "Excito"
 
@@ -848,13 +848,14 @@ msgstr  "Existing albums"
 msgid   "Existing viewers"
 msgstr  "Existing viewers"
 
-#: admin/views/default/network/network_tor_view.php:73
-msgid   "Exit node"
-msgstr  "Exit node"
-
 #: admin/views/default/network/network_tor_view.php:178
 msgid   "Exit policies"
 msgstr  "Exit policies"
+
+#: admin/views/default/network/network_tor_view.php:73
+#, fuzzy
+msgid   "Exit relay"
+msgstr  "Exit node"
 
 #: admin/views/default/disk/disk_lvm_view.php:4
 #: admin/views/default/disk/disk_lvm_view.php:26
@@ -889,7 +890,7 @@ msgstr  "Failed to aquire an RAID array containing the disk %s"
 msgid   "Failed to aquire suitable type of the filesystem on partition %s"
 msgstr  "Failed to aquire suitable type of the filesystem on partition %s"
 
-#: admin/controllers/settings.php:601
+#: admin/controllers/settings.php:605
 #, fuzzy
 msgid   "Failed to change hostname"
 msgstr  "Failed to create folder"
@@ -947,21 +948,21 @@ msgstr  "Failed to move the following files and folders: %s"
 msgid   "Failed to remove fstab entry for %s with %s"
 msgstr  "Failed to remove fstab entry for %s with %s"
 
-#: admin/controllers/settings.php:353
+#: admin/controllers/settings.php:354
 #, php-format
 msgid   "Failed to set date <strong>%s</strong> and time <strong>%s</strong>"
 msgstr  "Failed to set date <strong>%s</strong> and time <strong>%s</strong>"
 
-#: admin/controllers/settings.php:334
+#: admin/controllers/settings.php:335
 #, php-format
 msgid   "Failed to set timezone <strong>%s</strong>"
 msgstr  "Failed to set timezone <strong>%s</strong>"
 
-#: admin/controllers/settings.php:127
+#: admin/controllers/settings.php:128
 msgid   "Failed to set up mount point for backup"
 msgstr  "Failed to set up mount point for backup"
 
-#: admin/controllers/settings.php:174
+#: admin/controllers/settings.php:175
 msgid   "Failed to set up mount point for restore"
 msgstr  "Failed to set up mount point for restore"
 
@@ -1035,7 +1036,7 @@ msgstr  "Format"
 msgid   "Format disk"
 msgstr  "Format disk"
 
-#: admin/controllers/disk.php:68
+#: admin/controllers/disk.php:69
 #: admin/views/default/disk/disk_head_view.php:44
 msgid   "Formatting disk"
 msgstr  "Formatting disk"
@@ -1057,11 +1058,11 @@ msgstr  "HHmm"
 msgid   "Handle email for domain"
 msgstr  "Handle email for domain"
 
-#: admin/views/default/main_view.php:279
+#: admin/views/default/main_view.php:280
 msgid   "Help"
 msgstr  "Help"
 
-#: admin/views/default/main_view.php:277
+#: admin/models/menu.php:351 admin/views/default/main_view.php:278
 msgid   "Home"
 msgstr  "Home"
 
@@ -1086,7 +1087,7 @@ msgstr  "Host"
 msgid   "Hostname"
 msgstr  "Hostname"
 
-#: admin/controllers/settings.php:607
+#: admin/controllers/settings.php:611
 #, fuzzy, php-format
 msgid   "Hostname <strong>%s</strong> is invalid, only character <strong>A-Za-"
         "z0-9-</strong> is valid"
@@ -1202,7 +1203,7 @@ msgstr  "Invalid hostname"
 msgid   "Invalid netmask"
 msgstr  "Invalid netmask"
 
-#: admin/controllers/network.php:487
+#: admin/controllers/network.php:488
 msgid   "Invalid private IP."
 msgstr  "Invalid private IP."
 
@@ -1233,11 +1234,11 @@ msgctxt "menu"
 msgid   "LAN"
 msgstr  "LAN"
 
-#: admin/controllers/network.php:282
+#: admin/controllers/network.php:283
 msgid   "LAN configuration updated"
 msgstr  "LAN configuration updated"
 
-#: admin/controllers/network.php:487
+#: admin/controllers/network.php:488
 msgid   "LAN is on"
 msgstr  "LAN is on"
 
@@ -1312,7 +1313,7 @@ msgstr  "Local user"
 msgid   "Location"
 msgstr  "Location"
 
-#: admin/views/default/main_view.php:271
+#: admin/views/default/main_view.php:272
 #, php-format
 msgid   "Logged in as '%s'"
 msgstr  "Logged in as '%s'"
@@ -1321,7 +1322,7 @@ msgstr  "Logged in as '%s'"
 msgid   "Login required"
 msgstr  "Login required"
 
-#: admin/views/default/main_view.php:276
+#: admin/views/default/main_view.php:277
 msgid   "Logout"
 msgstr  "Logout"
 
@@ -1364,7 +1365,7 @@ msgctxt "label"
 msgid   "Misc Other Services"
 msgstr  "Misc Other Services"
 
-#: admin/controllers/mail.php:267
+#: admin/controllers/mail.php:266
 #, fuzzy
 msgid   "Missing mail server password"
 msgstr  "Target server password"
@@ -1409,7 +1410,7 @@ msgstr  "Music"
 msgid   "Name"
 msgstr  "Name"
 
-#: admin/controllers/settings.php:652
+#: admin/controllers/settings.php:656
 #, php-format
 msgid   "Name '%s' is not valid"
 msgstr  "Name '%s' is not valid"
@@ -1437,7 +1438,7 @@ msgctxt "menu"
 msgid   "Network"
 msgstr  "Network"
 
-#: admin/views/default/network/network_head_view.php:34
+#: admin/views/default/network/network_head_view.php:32
 msgid   "Network configuration"
 msgstr  "Network configuration"
 
@@ -1488,7 +1489,8 @@ msgid   "No valid timezone set."
 msgstr  "No valid timezone set."
 
 #: admin/views/default/network/network_tor_view.php:71
-msgid   "Non-exit node"
+#, fuzzy
+msgid   "Non-exit relay"
 msgstr  "Non-exit node"
 
 #: admin/views/default/network/network_wlan_view.php:185
@@ -1500,7 +1502,7 @@ msgid   "Normal operation"
 msgstr  "Normal operation"
 
 #: admin/views/default/filemanager/filemanager_index_view.php:51
-#: admin/views/default/main_view.php:273
+#: admin/views/default/main_view.php:274
 msgid   "Not logged in"
 msgstr  "Not logged in"
 
@@ -1534,7 +1536,7 @@ msgstr  "Only A-Z,a-z,0-9 and \\\"-\\\" allowed"
 msgid   "Open %s port"
 msgstr  "Open %s port"
 
-#: admin/views/default/services/services_view.php:64
+#: admin/views/default/services/services_view.php:58
 msgid   "Other"
 msgstr  "Other"
 
@@ -1643,7 +1645,7 @@ msgstr  "Port forward to internal network"
 msgid   "Primary DNS"
 msgstr  "Primary DNS"
 
-#: admin/views/default/services/services_view.php:66
+#: admin/views/default/services/services_view.php:60
 msgid   "Printing"
 msgstr  "Printing"
 
@@ -1740,7 +1742,7 @@ msgid   "Recover internal disk or add a new external disk to existing RAID "
 msgstr  "Recover internal disk or add a new external disk to existing RAID "
         "array"
 
-#: admin/controllers/disk.php:65
+#: admin/controllers/disk.php:66
 msgid   "Recovering RAID"
 msgstr  "Recovering RAID"
 
@@ -1753,7 +1755,7 @@ msgstr  "Recovering RAID array '%s'"
 msgid   "Relay port"
 msgstr  "Relay port"
 
-#: admin/views/default/services/services_view.php:74
+#: admin/views/default/services/services_view.php:68
 msgid   "Remote access through other router"
 msgstr  "Remote access through other router"
 
@@ -1787,7 +1789,7 @@ msgstr  "Repeat password"
 msgid   "Requested file %s to rename doesn't exists"
 msgstr  "Requested file %s to rename doesn't exists"
 
-#: admin/views/default/services/services_view.php:54
+#: admin/views/default/services/services_view.php:48
 msgid   "Required for webmail access"
 msgstr  "Required for webmail access"
 
@@ -1821,8 +1823,9 @@ msgid   "Retreiving package information"
 msgstr  "Retreiving package information"
 
 #: admin/views/default/network/network_tor_view.php:200
+#, fuzzy
 msgctxt "label"
-msgid   "Retrieve Mail (POP, IMAP)'"
+msgid   "Retrieve Mail (POP, IMAP)"
 msgstr  "Retrieve Mail (POP, IMAP)'"
 
 #: admin/views/default/mail/mail_retrieve_view.php:4
@@ -1856,8 +1859,9 @@ msgid   "Schedule"
 msgstr  "Schedule"
 
 #: admin/views/default/network/network_tor_view.php:198
+#, fuzzy
 msgctxt "label"
-msgid   "Secure websites (SSL)'"
+msgid   "Secure websites (SSL)"
 msgstr  "Secure websites (SSL)'"
 
 #: admin/views/default/backup/backup_view.php:705
@@ -1885,8 +1889,9 @@ msgstr  "Select backup schedule (step 4 of 5)"
 msgid   "Select what you want to backup (step 2 of 5)"
 msgstr  "Select what you want to backup (step 2 of 5)"
 
-#: admin/views/default/services/services_view.php:50
-msgid   "Send and recieve"
+#: admin/views/default/services/services_view.php:44
+#, fuzzy
+msgid   "Send and receive"
 msgstr  "Send and recieve"
 
 #: admin/views/default/network/network_profile_view.php:27
@@ -1934,6 +1939,10 @@ msgstr  "Settings updated successfully"
 #: admin/views/default/disk/disk_raid_view.php:2
 msgid   "Setup RAID array"
 msgstr  "Setup RAID array"
+
+#: admin/views/default/wizard_view.php:1
+msgid   "Setup wizard"
+msgstr  "Setup wizard"
 
 #: admin/models/menu.php:219
 msgctxt "menu"
@@ -1994,10 +2003,6 @@ msgstr  "Source IP"
 #: admin/views/default/services/services_view.php:34
 msgid   "Squeezebox Server"
 msgstr  "Squeezebox Server"
-
-#: admin/views/default/services/services_view.php:37
-msgid   "Squeezebox server isn't installed, please click"
-msgstr  "Squeezebox server isn't installed, please click"
 
 #: admin/views/default/settings/settings_view.php:5
 msgid   "Start setup wizard"
@@ -2064,11 +2069,11 @@ msgctxt "menu"
 msgid   "System settings"
 msgstr  "System settings"
 
-#: admin/controllers/settings.php:134
+#: admin/controllers/settings.php:135
 msgid   "System settings backup was sucessfully created"
 msgstr  "System settings backup was sucessfully created"
 
-#: admin/controllers/settings.php:181
+#: admin/controllers/settings.php:182
 msgid   "System settings was sucessfully restored"
 msgstr  "System settings was sucessfully restored"
 
@@ -2142,11 +2147,11 @@ msgstr  "The operation mode for selected band"
 msgid   "The password that will be required to connect to %s wirelessly"
 msgstr  "The password that will be required to connect to %s wirelessly"
 
-#: admin/controllers/settings.php:139
+#: admin/controllers/settings.php:140
 msgid   "The system was unable to create a backup"
 msgstr  "The system was unable to create a backup"
 
-#: admin/controllers/settings.php:186
+#: admin/controllers/settings.php:187
 msgid   "The system was unable to restore the system from an backup"
 msgstr  "The system was unable to restore the system from an backup"
 
@@ -2204,7 +2209,7 @@ msgstr  "Time and language"
 msgid   "Timeline"
 msgstr  "Timeline"
 
-#: admin/controllers/settings.php:377
+#: admin/controllers/settings.php:378
 msgid   "Timezone, date and/or time was successfully updated"
 msgstr  "Timezone, date and/or time was successfully updated"
 
@@ -2286,7 +2291,7 @@ msgstr  "Unable to update IP on server."
 msgid   "Unknown state"
 msgstr  "Unknown state"
 
-#: admin/views/default/services/services_view.php:70
+#: admin/views/default/services/services_view.php:64
 msgid   "Up and downloads"
 msgstr  "Up and downloads"
 
@@ -2304,7 +2309,7 @@ msgstr  "Up and downloads"
 #: admin/views/default/network/network_wlan_view.php:226
 #: admin/views/default/network/network_wan_view.php:120
 #: admin/views/default/network/network_lan_view.php:355
-#: admin/views/default/services/services_view.php:79
+#: admin/views/default/services/services_view.php:73
 msgid   "Update"
 msgstr  "Update"
 
@@ -2316,8 +2321,8 @@ msgstr  "Update Easyfind"
 msgid   "Update hostname and workgroup"
 msgstr  "Update hostname and workgroup"
 
-#: admin/controllers/settings.php:674 admin/controllers/mail.php:224
-#: admin/controllers/mail.php:253
+#: admin/controllers/settings.php:678 admin/controllers/mail.php:223
+#: admin/controllers/mail.php:252
 #, fuzzy
 msgid   "Update successful"
 msgstr  "Settings updated successfully"
@@ -2454,8 +2459,8 @@ msgstr  "Validation failed when adding user account"
 msgid   "Validation failed when editing user account"
 msgstr  "Validation failed when editing user account"
 
-#: admin/controllers/mail.php:113 admin/controllers/mail.php:167
-#: admin/controllers/mail.php:199
+#: admin/controllers/mail.php:112 admin/controllers/mail.php:166
+#: admin/controllers/mail.php:198
 msgid   "Validation of input failed"
 msgstr  "Validation of input failed"
 
@@ -2600,11 +2605,7 @@ msgstr  "filemanager"
 msgid   "half a year"
 msgstr  "half a year"
 
-#: admin/views/default/services/services_view.php:37
-msgid   "here"
-msgstr  "here"
-
-#: admin/controllers/settings.php:428 admin/controllers/settings.php:429
+#: admin/controllers/settings.php:429 admin/controllers/settings.php:430
 msgid   "n/a"
 msgstr  "n/a"
 
@@ -2623,10 +2624,6 @@ msgstr  "peers"
 #: admin/views/default/downloads/downloads_list_view.php:33
 msgid   "seeds"
 msgstr  "seeds"
-
-#: admin/views/default/services/services_view.php:37
-msgid   "to install squeezecenter"
-msgstr  "to install squeezecenter"
 
 #: admin/views/default/disk/disk_lvm_view.php:19
 msgid   "with"
@@ -2763,8 +2760,8 @@ msgstr  "your-easyfind-name"
 #~ msgid        "Setup complete"
 #~ msgstr       "Setup complete"
 
-#~ msgid        "Setup wizard"
-#~ msgstr       "Setup wizard"
+#~ msgid        "Squeezebox server isn't installed, please click"
+#~ msgstr       "Squeezebox server isn't installed, please click"
 
 #~ msgid        "Step 1/4: Select default language"
 #~ msgstr       "Step 1/4: Select default language"
@@ -2791,3 +2788,9 @@ msgstr  "your-easyfind-name"
 
 #~ msgid        "Your B3 can be either a bridge, non-exit relay or exit relay"
 #~ msgstr       "Your B3 can be either a bridge, non-exit relay or exit relay"
+
+#~ msgid        "here"
+#~ msgstr       "here"
+
+#~ msgid        "to install squeezecenter"
+#~ msgstr       "to install squeezecenter"

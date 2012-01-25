@@ -59,6 +59,7 @@ $(function() {
 							// Updating the buttons in the dialog
 							dialog_element.dialog('option', 'buttons', [{
 								"text": _("Add disk to RAID array"),
+								"class": "ui-element-width-100",
 								"click": function() {
 									// Callback when confirming creation of RAID
 									dialog_element.dialog('option', 'title', _("Recovering external disk in RAID array"));
@@ -89,6 +90,7 @@ $(function() {
 					}));
 					dialog_element.dialog('option', 'buttons', [{
 						"text": _("Close"),
+						"class": "ui-element-width-100",
 						"click": function() {
 							dialog_element.dialog('close');
 						}
@@ -103,6 +105,7 @@ $(function() {
 					}));
 					dialog_element.dialog('option', 'buttons', [{
 						"text": _("Close"),
+						"class": "ui-element-width-100",
 						"click": function() {
 							dialog_element.dialog('close');
 						}
@@ -129,6 +132,7 @@ $(function() {
 					// Updating the buttons in the dialog
 					dialog_element.dialog('option', 'buttons', [{
 						"text": _("Recover internal disk"),
+						"class": "ui-element-width-100",
 						"click": function() {
 							// Callback when choosing to create RAID
 							var external_device = select_obj.val();
@@ -147,6 +151,7 @@ $(function() {
 							// Updating the buttons in the dialog
 							dialog_element.dialog('option', 'buttons', [{
 								"text": _("Recover internal disk"),
+								"class": "ui-element-width-100",
 								"click": function() {
 									// Callback when confirming creation of RAID
 									dialog_element.dialog('option', 'title', _("Recovering internal disk in RAID array"));
@@ -178,6 +183,7 @@ $(function() {
 				}));
 				dialog_element.dialog('option', 'buttons', [{
 					"text": _("Close"),
+					"class": "ui-element-width-100",
 					"click": function() {
 						dialog_element.dialog('close');
 					}
@@ -205,6 +211,7 @@ $(function() {
 				}));
 				dialog_element.dialog('option', 'buttons', [{
 					"text": _("Cancel"),
+					"class": "ui-element-width-100",
 					"click": function() {
 						dialog_element.dialog('close');
 					}
@@ -232,6 +239,7 @@ $(function() {
 					// Updating the buttons in the dialog
 					dialog_element.dialog('option', 'buttons', [{
 						"text": _("Create RAID"),
+						"class": "ui-element-width-100",
 						"click": function() {
 							// Callback when choosing to create RAID
 							external_device = select.val();
@@ -252,6 +260,7 @@ $(function() {
 							// Updating the buttons in the dialog
 							dialog_element.dialog('option', 'buttons', [{
 								"text": _("Create RAID"),
+								"class": "ui-element-width-100",
 								"click": function() {
 									// Callback when confirming creation of RAID
 									dialog_element.dialog('option', 'title', _("Creating RAID array"));
@@ -284,6 +293,7 @@ $(function() {
 					}));
 					dialog_element.dialog('option', 'buttons', [{
 						"text": _("Close"),
+						"class": "ui-element-width-100",
 						"click": function() {
 							dialog_element.dialog('close');
 						}

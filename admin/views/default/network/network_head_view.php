@@ -3,8 +3,6 @@
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/network.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript" src="<?=FORMPREFIX.'/views/'.THEME?>/_js/tor.js?v='<?=$this->session->userdata('version')?>'"></script>
 <script type="text/javascript">
-data = <?=json_encode($exit_policies)?>;
-
 
 function disable_leasefields() {
 	for(i=0;i<4;i++) {

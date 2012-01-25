@@ -415,110 +415,110 @@ $(function(){
     );
 
     $("#fn-backup-edit").formwizard(
-        {
-            resetForm: !true,
-            historyEnabled: !true,
-            validationEnabled: true,
-            formPluginEnabled: true,
+		{
+			resetForm: !true,
+			historyEnabled: !true,
+			validationEnabled: true,
+			formPluginEnabled: true,
 			disableUIStyles: true,
 			textNext: _("Next"),
 			textBack: _("Back"),
-            textSubmit: _("Complete"),
-            showBackOnFirstStep: true,
-            afterNext: function(wizardData) {
-                switch( wizardData.currentStep ) {
-                case "fn-backup-edit-form-step-2":
-                    $("#fn-backup-edit-selection-custom-browse").button('disable');
-                    break;
-                case "fn-backup-edit-form-step-3":
-                    $('#fn-backup-edit-protocol').change();
-                    break;
-                case "fn-backup-edit-form-step-4":
-                    $('.fn-backup-schedule').change();
-                    break;
-                case "fn-backup-edit-form-step-5":
-                    $("#fn-backup-edit-security-enable").change();
-                    break;
-                }
-            },
-            afterBack: function(wizardData) {
-                if( wizardData.currentStep ===  "fn-backup-edit-form-step-4" ) {
-                    $('.fn-backup-schedule').change();
-                }
-            }
-        },
-        {
-            'rules': {
-                'target-device': {
-                    'required': function(element) {
-                        return $('#fn-backup-edit-protocol option:selected').val() == 'file';
-                    }
-                },
-                'target-hostname': {
-                    'hostname': true,
-                    'required': function(element) {
-                        return $('#fn-backup-edit-protocol option:selected').val() != 'file';
-                    }
-                },
-                'target-username': {
-                    'required': function(element) {
-                        return $('#fn-backup-edit-protocol option:selected').val() != 'file';
-                    }
-                },
-                'target-password': {
-                    'required': function(element) {
-                        return $('#fn-backup-edit-protocol option:selected').val() != 'file';
-                    }
-                },
-                'selection': {
-                    'required': true
-                },
-                'protocol': {
-                    'required': true
-                },
-                'schedule-type': {
-                    'required': true
-                },
-                'security-password': {
-                    'required': function(element) {
-                        return $('#fn-backup-edit-security-enable').is(':checked');
-                    }
-                },
-                'security-password2': {
-                    'equalTo': '#fn-backup-edit-security-password'
-                }
+			textSubmit: _("Complete"),
+			showBackOnFirstStep: true,
+			afterNext: function(wizardData) {
+				switch( wizardData.currentStep ) {
+				case "fn-backup-edit-form-step-2":
+					$("#fn-backup-edit-selection-custom-browse").button('disable');
+					break;
+				case "fn-backup-edit-form-step-3":
+					$('#fn-backup-edit-protocol').change();
+					break;
+				case "fn-backup-edit-form-step-4":
+					$('.fn-backup-schedule').change();
+					break;
+				case "fn-backup-edit-form-step-5":
+					$("#fn-backup-edit-security-enable").change();
+					break;
+				}
+			},
+			afterBack: function(wizardData) {
+				if( wizardData.currentStep ===  "fn-backup-edit-form-step-4" ) {
+					$('.fn-backup-schedule').change();
+				}
+			},
+			validationOptions: {
+				'rules': {
+					'target-device': {
+						'required': function(element) {
+							return $('#fn-backup-edit-protocol option:selected').val() == 'file';
+						}
+					},
+					'target-hostname': {
+						'hostname': true,
+						'required': function(element) {
+							return $('#fn-backup-edit-protocol option:selected').val() != 'file';
+						}
+					},
+					'target-username': {
+						'required': function(element) {
+							return $('#fn-backup-edit-protocol option:selected').val() != 'file';
+						}
+					},
+					'target-password': {
+						'required': function(element) {
+							return $('#fn-backup-edit-protocol option:selected').val() != 'file';
+						}
+					},
+					'selection': {
+						'required': true
+					},
+					'protocol': {
+						'required': true
+					},
+					'schedule-type': {
+						'required': true
+					},
+					'security-password': {
+						'required': function(element) {
+							return $('#fn-backup-edit-security-enable').is(':checked');
+						}
+					},
+					'security-password2': {
+						'equalTo': '#fn-backup-edit-security-password'
+					}
 
-            },
-            'messages': {
-                'name': {
-                    'remote': jQuery.format(_("{0} is already in use"))
-                }
-            }
-        },
-        {
-            'url': config.prefix + "/ajax_backup/edit",
-            'type': 'post',
-            'dataType': 'json',
-            'beforeSubmit': function(arr, $form, options) {
-                var $custom = $('#fn-backup-edit-selection-custom-selection');
-                $.each(
-                    $custom.data('selection'),
-                    function() {
-                        arr.push({'name': 'dirs[]', 'value': this});
-                    }
-                );
-                console.log(arr);
-                //               $.throbber.show();
+				},
+				'messages': {
+					'name': {
+						'remote': jQuery.format(_("{0} is already in use"))
+					}
+				}
+			},
+			formOptions: {
+				'url': config.prefix + "/ajax_backup/edit",
+				'type': 'post',
+				'dataType': 'json',
+				'beforeSubmit': function(arr, $form, options) {
+					var $custom = $('#fn-backup-edit-selection-custom-selection');
+					$.each(
+						$custom.data('selection'),
+						function() {
+							arr.push({'name': 'dirs[]', 'value': this});
+						}
+					);
+					console.log(arr);
+					//               $.throbber.show();
 
-                return true;
-            },
-            'reset': !true,
-            'success': function( data ) {
-                $.throbber.hide();
-                dialogs.edit.dialog('close');
-                update_backup_jobs_table();
-            }
-        }
+					return true;
+				},
+				'reset': !true,
+				'success': function( data ) {
+					$.throbber.hide();
+					dialogs.edit.dialog('close');
+					update_backup_jobs_table();
+				}
+			}
+		}
     );
 
 
